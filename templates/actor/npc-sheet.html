@@ -1,0 +1,231 @@
+<form class="{{cssClass}} npc-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="NPC Name"/>
+            </h1>
+            <div class="allegiance-field">
+                <label>Allegiance</label>
+                <select class="allegiance-select" name="system.allegiance">
+                    {{#select system.allegiance}}
+                    {{#each config.allegiances as |label value|}}
+                    <option value="{{value}}">{{label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+            <div class="resource-grid">
+                <div class="resource">
+                    <label>Level</label>
+                    <input type="number" name="system.level" value="{{system.level}}" placeholder="1"/>
+                </div>
+                <div class="resource">
+                    <label>Challenge</label>
+                    <input type="number" name="system.challenge" value="{{system.challenge}}" placeholder="1"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="equipment">Equipment</a>
+        <a class="item" data-tab="behavior">Behavior</a>
+        <a class="item" data-tab="rewards">Rewards</a>
+    </nav>
+
+    <section class="sheet-body">
+        <!-- Description Tab -->
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=system.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <!-- Attributes Tab -->
+        <div class="tab" data-group="primary" data-tab="attributes">
+            <div class="resources">
+                <div class="resource">
+                    <label>HP</label>
+                    <div class="resource-values">
+                        <input type="number" class="resource-value" name="system.attributes.hp.value" 
+                            value="{{system.attributes.hp.value}}" data-resource="hp" data-field="value"/>
+                        <span>/</span>
+                        <input type="number" class="resource-value" name="system.attributes.hp.max" 
+                            value="{{system.attributes.hp.max}}" data-resource="hp" data-field="max"/>
+                    </div>
+                </div>
+                <div class="resource">
+                    <label>MP</label>
+                    <div class="resource-values">
+                        <input type="number" class="resource-value" name="system.attributes.mp.value" 
+                            value="{{system.attributes.mp.value}}" data-resource="mp" data-field="value"/>
+                        <span>/</span>
+                        <input type="number" class="resource-value" name="system.attributes.mp.max" 
+                            value="{{system.attributes.mp.max}}" data-resource="mp" data-field="max"/>
+                    </div>
+                </div>
+                <div class="resource">
+                    <label>EP</label>
+                    <div class="resource-values">
+                        <input type="number" class="resource-value" name="system.attributes.ep.value" 
+                            value="{{system.attributes.ep.value}}" data-resource="ep" data-field="value"/>
+                        <span>/</span>
+                        <input type="number" class="resource-value" name="system.attributes.ep.max" 
+                            value="{{system.attributes.ep.max}}" data-resource="ep" data-field="max"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="abilities">
+                {{#each system.abilities as |ability key|}}
+                <div class="ability">
+                    <label>{{lookup ../config.abilities key}}</label>
+                    <input type="number" class="ability-score" name="system.abilities.{{key}}.value" 
+                        value="{{ability.value}}" data-ability="{{key}}"/>
+                    <span class="ability-mod">({{numberFormat ability.mod sign=true}})</span>
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="traits">
+                <div class="attributes">
+                    <label>
+                        Attributes
+                        <a class="item-create" data-type="attribute"><i class="fas fa-plus"></i></a>
+                    </label>
+                    <div class="item-list">
+                        {{#each attributes as |item id|}}
+                        <div class="item" data-item-id="{{item._id}}">
+                            <div class="item-name">{{item.name}}</div>
+                            <div class="item-controls">
+                                <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                                <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="defects">
+                    <label>
+                        Defects
+                        <a class="item-create" data-type="defect"><i class="fas fa-plus"></i></a>
+                    </label>
+                    <div class="item-list">
+                        {{#each defects as |item id|}}
+                        <div class="item" data-item-id="{{item._id}}">
+                            <div class="item-name">{{item.name}}</div>
+                            <div class="item-controls">
+                                <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                                <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment Tab -->
+        <div class="tab" data-group="primary" data-tab="equipment">
+            <div class="weapons">
+                <label>
+                    Weapons
+                    <a class="item-create" data-type="weapon"><i class="fas fa-plus"></i></a>
+                </label>
+                <div class="item-list">
+                    {{#each equipment.weapons as |item id|}}
+                    <div class="item" data-item-id="{{item._id}}">
+                        <div class="item-name">{{item.name}}</div>
+                        <div class="item-controls">
+                            <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                            <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="armor">
+                <label>
+                    Armor
+                    <a class="item-create" data-type="armor"><i class="fas fa-plus"></i></a>
+                </label>
+                <div class="item-list">
+                    {{#each equipment.armor as |item id|}}
+                    <div class="item" data-item-id="{{item._id}}">
+                        <div class="item-name">{{item.name}}</div>
+                        <div class="item-controls">
+                            <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                            <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="items">
+                <label>
+                    Items
+                    <a class="item-create" data-type="item"><i class="fas fa-plus"></i></a>
+                </label>
+                <div class="item-list">
+                    {{#each equipment.items as |item id|}}
+                    <div class="item" data-item-id="{{item._id}}">
+                        <div class="item-name">{{item.name}}</div>
+                        <div class="item-controls">
+                            <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                            <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Behavior Tab -->
+        <div class="tab" data-group="primary" data-tab="behavior">
+            <div class="form-group">
+                <label>Combat Tactics</label>
+                {{editor content=system.behavior.tactics target="system.behavior.tactics" button=true owner=owner editable=editable}}
+            </div>
+
+            <div class="form-group">
+                <label>Motivations</label>
+                {{editor content=system.behavior.motivations target="system.behavior.motivations" button=true owner=owner editable=editable}}
+            </div>
+
+            <div class="form-group">
+                <label>Quirks</label>
+                {{editor content=system.behavior.quirks target="system.behavior.quirks" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+
+        <!-- Rewards Tab -->
+        <div class="tab" data-group="primary" data-tab="rewards">
+            <div class="form-group">
+                <label>Experience Points</label>
+                <input type="number" name="system.rewards.xp" value="{{system.rewards.xp}}"/>
+            </div>
+
+            <div class="rewards-items">
+                <label>
+                    Loot Items
+                    <a class="item-create" data-type="loot"><i class="fas fa-plus"></i></a>
+                </label>
+                <div class="item-list">
+                    {{#each system.rewards.items as |item id|}}
+                    <div class="item" data-item-id="{{item._id}}">
+                        <div class="item-name">{{item.name}}</div>
+                        <div class="item-controls">
+                            <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                            <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+</form> 

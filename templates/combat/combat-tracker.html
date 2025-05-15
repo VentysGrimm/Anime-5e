@@ -1,0 +1,149 @@
+<section class="{{cssClass}} directory flexcol" id="combat-tracker">
+    <header class="combat-tracker-header">
+        <nav class="encounters flexrow">
+            <a class="combat-button combat-create" title="{{localize 'COMBAT.Create'}}">
+                <i class="fas fa-plus"></i>
+            </a>
+            {{#if combat}}
+            <a class="combat-button combat-cycle" title="{{localize 'COMBAT.EncounterPrevious'}}">
+                <i class="fas fa-caret-left"></i>
+            </a>
+            <h4 class="encounter">{{localize "COMBAT.Encounter"}} {{combat.round}}</h4>
+            <a class="combat-button combat-cycle" title="{{localize 'COMBAT.EncounterNext'}}">
+                <i class="fas fa-caret-right"></i>
+            </a>
+            {{/if}}
+        </nav>
+
+        {{#if combat}}
+        <nav class="encounters flexrow">
+            <a class="combat-button combat-control" data-control="rollAll" title="{{localize 'COMBAT.InitAllNPC'}}">
+                <i class="fas fa-users"></i>
+            </a>
+            <a class="combat-button combat-control" data-control="rollNPC" title="{{localize 'COMBAT.InitAllNPC'}}">
+                <i class="fas fa-users-cog"></i>
+            </a>
+            <a class="combat-button combat-control" data-control="startCombat" title="{{localize 'COMBAT.Begin'}}">
+                <i class="fas fa-play"></i>
+            </a>
+            <a class="combat-button combat-control" data-control="endCombat" title="{{localize 'COMBAT.End'}}">
+                <i class="fas fa-stop"></i>
+            </a>
+            <a class="combat-button combat-settings" title="{{localize 'COMBAT.Settings'}}">
+                <i class="fas fa-cog"></i>
+            </a>
+        </nav>
+        {{/if}}
+    </header>
+
+    <ol class="combat-tracker directory-list">
+        {{#each turns as |turn|}}
+        <li class="combatant actor directory-item flexrow {{turn.css}}" data-combatant-id="{{turn.id}}">
+            <img class="token-image" src="{{turn.img}}" title="{{turn.name}}"/>
+            
+            <div class="token-name flexcol">
+                <h4>{{turn.name}}</h4>
+                <div class="combatant-controls flexrow">
+                    {{#if turn.owner}}
+                    <a class="combatant-control" data-control="toggleHidden" title="{{localize 'COMBAT.ToggleVis'}}">
+                        <i class="fas {{#if turn.hidden}}fa-eye-slash{{else}}fa-eye{{/if}}"></i>
+                    </a>
+                    <a class="combatant-control" data-control="toggleDefeated" title="{{localize 'COMBAT.ToggleDead'}}">
+                        <i class="fas {{#if turn.defeated}}fa-skull{{else}}fa-heart{{/if}}"></i>
+                    </a>
+                    {{/if}}
+                    <div class="initiative">
+                        {{#if turn.hasRolled}}
+                        <span class="init-roll">{{turn.initiative}}</span>
+                        {{else}}
+                        <a class="roll-initiative"><i class="fas fa-dice-d20"></i></a>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="resource-bars flexrow">
+                <!-- HP Bar -->
+                <div class="resource hp">
+                    <div class="resource-label">HP</div>
+                    <div class="resource-value">{{turn.hp.value}}/{{turn.hp.max}}</div>
+                    <div class="resource-bar">
+                        <div class="bar" style="width: {{multiply (divide turn.hp.value turn.hp.max) 100}}%"></div>
+                    </div>
+                </div>
+
+                <!-- MP Bar -->
+                <div class="resource mp">
+                    <div class="resource-label">MP</div>
+                    <div class="resource-value">{{turn.mp.value}}/{{turn.mp.max}}</div>
+                    <div class="resource-bar">
+                        <div class="bar" style="width: {{multiply (divide turn.mp.value turn.mp.max) 100}}%"></div>
+                    </div>
+                </div>
+
+                <!-- Energy Bar -->
+                <div class="resource energy">
+                    <div class="resource-label">Energy</div>
+                    <div class="resource-value">{{turn.energy.value}}/{{turn.energy.max}}</div>
+                    <div class="resource-bar">
+                        <div class="bar" style="width: {{multiply (divide turn.energy.value turn.energy.max) 100}}%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="combat-actions flexrow">
+                <a class="action-toggle {{#unless turn.actions.standard}}used{{/unless}}" 
+                   data-action-type="standard" title="Standard Action">
+                    <i class="fas fa-fist-raised"></i>
+                </a>
+                <a class="action-toggle {{#unless turn.actions.move}}used{{/unless}}" 
+                   data-action-type="move" title="Move Action">
+                    <i class="fas fa-walking"></i>
+                </a>
+                <a class="action-toggle {{#unless turn.actions.swift}}used{{/unless}}" 
+                   data-action-type="swift" title="Swift Action">
+                    <i class="fas fa-bolt"></i>
+                </a>
+            </div>
+
+            <div class="status-effects">
+                {{#each turn.effects as |effect|}}
+                <div class="effect" data-effect-id="{{effect.id}}">
+                    <img src="{{effect.icon}}" title="{{effect.label}} ({{effect.duration.rounds}} rounds)"/>
+                    <div class="effect-controls">
+                        <a class="effect-control" data-action="edit" title="Edit Effect">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="effect-control" data-action="delete" title="Remove Effect">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                {{/each}}
+                <a class="effect-control" data-action="add" title="Add Effect">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+
+            <div class="combatant-controls">
+                <a class="damage-heal" title="Apply Damage/Healing">
+                    <i class="fas fa-heart-broken"></i>
+                </a>
+            </div>
+        </li>
+        {{/each}}
+    </ol>
+
+    {{#if combat}}
+    <nav class="combat-controls flexrow">
+        {{#if combat.round}}
+        <a class="combat-control" data-control="previousTurn" {{#unless combat.previous}}disabled{{/unless}}>
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <a class="combat-control" data-control="nextTurn" {{#unless combat.next}}disabled{{/unless}}>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+        {{/if}}
+    </nav>
+    {{/if}}
+</section> 

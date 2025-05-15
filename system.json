@@ -1,0 +1,61 @@
+{
+  "id": "anime5e",
+  "title": "Anime 5E",
+  "description": "A system for playing Anime 5E in Foundry VTT",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11",
+    "maximum": "11"
+  },
+  "authors": [
+    {
+      "name": "System Creator"
+    }
+  ],
+  "esmodules": [
+    "module/anime5e.js"
+  ],
+  "styles": [
+    "styles/anime5e.css",
+    "styles/character-sheet.css"
+  ],
+  "packs": [
+    {
+      "name": "attributes",
+      "label": "Attributes",
+      "path": "packs/attributes.db",
+      "type": "Item",
+      "system": "anime5e"
+    },
+    {
+      "name": "defects",
+      "label": "Defects",
+      "path": "packs/defects.db",
+      "type": "Item",
+      "system": "anime5e"
+    },
+    {
+      "name": "equipment",
+      "label": "Equipment",
+      "path": "packs/equipment.db",
+      "type": "Item",
+      "system": "anime5e"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "attributes.hp",
+  "secondaryTokenAttribute": "attributes.mp",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt"
+} 

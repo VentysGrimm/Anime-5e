@@ -1,0 +1,40 @@
+<form class="custom-item-form">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" required>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea name="description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Point Refund per Rank</label>
+        <input type="number" name="refund" value="1" min="1" max="5">
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <select name="category">
+            <option value="physical">Physical</option>
+            <option value="mental">Mental</option>
+            <option value="social">Social</option>
+            <option value="supernatural">Supernatural</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Trigger Type</label>
+        <select name="trigger.type">
+            <option value="constant">Constant</option>
+            <option value="conditional">Conditional</option>
+            <option value="situational">Situational</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Trigger Condition</label>
+        <textarea name="trigger.condition" rows="2"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Complications</label>
+        <textarea name="complications" rows="3" placeholder="Enter each complication on a new line"></textarea>
+    </div>
+</form> 

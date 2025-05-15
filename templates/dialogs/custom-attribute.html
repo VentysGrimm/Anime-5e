@@ -1,0 +1,37 @@
+<form class="custom-item-form">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" required>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea name="description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Cost per Rank</label>
+        <input type="number" name="cost" value="1" min="1" max="5">
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <select name="category">
+            <option value="physical">Physical</option>
+            <option value="mental">Mental</option>
+            <option value="social">Social</option>
+            <option value="supernatural">Supernatural</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Activation Type</label>
+        <select name="activation.type">
+            <option value="passive">Passive</option>
+            <option value="action">Action</option>
+            <option value="bonus">Bonus Action</option>
+            <option value="reaction">Reaction</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Minimum Level</label>
+        <input type="number" name="requirements.minLevel" value="1" min="1">
+    </div>
+</form> 

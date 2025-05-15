@@ -1,0 +1,103 @@
+<form class="{{cssClass}} race-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Race Name"/>
+            </h1>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="traits">Traits</a>
+        <a class="item" data-tab="details">Details</a>
+    </nav>
+
+    <section class="sheet-body">
+        <!-- Description Tab -->
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=system.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <!-- Traits Tab -->
+        <div class="tab" data-group="primary" data-tab="traits">
+            <div class="traits-section">
+                <h2>Racial Attributes</h2>
+                <div class="trait-list attributes">
+                    {{#each system.traits.attributes as |attribute id|}}
+                    <div class="trait-entry" data-trait-id="{{id}}">
+                        <input type="text" value="{{attribute.name}}" data-field="name"/>
+                        <input type="number" value="{{attribute.rank}}" data-field="rank" min="1" max="5"/>
+                        <button type="button" class="remove-trait" data-trait-type="attribute" data-trait-id="{{id}}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                    <button type="button" class="add-trait" data-trait-type="attribute">
+                        <i class="fas fa-plus"></i> Add Attribute
+                    </button>
+                </div>
+
+                <h2>Racial Defects</h2>
+                <div class="trait-list defects">
+                    {{#each system.traits.defects as |defect id|}}
+                    <div class="trait-entry" data-trait-id="{{id}}">
+                        <input type="text" value="{{defect.name}}" data-field="name"/>
+                        <input type="number" value="{{defect.rank}}" data-field="rank" min="1" max="5"/>
+                        <button type="button" class="remove-trait" data-trait-type="defect" data-trait-id="{{id}}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                    <button type="button" class="add-trait" data-trait-type="defect">
+                        <i class="fas fa-plus"></i> Add Defect
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details Tab -->
+        <div class="tab" data-group="primary" data-tab="details">
+            <div class="form-group">
+                <label>Size</label>
+                <select name="system.size">
+                    {{#select system.size}}
+                    <option value="tiny">Tiny</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="huge">Huge</option>
+                    {{/select}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Culture</label>
+                <input type="text" name="system.culture" value="{{system.culture}}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Lifespan</label>
+                <input type="text" name="system.lifespan" value="{{system.lifespan}}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Languages</label>
+                <div class="language-list">
+                    {{#each system.languages as |language id|}}
+                    <div class="language-entry">
+                        <input type="text" value="{{language}}" data-language-id="{{id}}"/>
+                        <button type="button" class="remove-language" data-language-id="{{id}}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                    <button type="button" class="add-language">
+                        <i class="fas fa-plus"></i> Add Language
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</form> 

@@ -1,0 +1,369 @@
+.anime5e.sheet.actor {
+    min-width: 720px;
+    min-height: 680px;
+}
+
+.anime5e.sheet.actor .sheet-header {
+    flex: 0 0 120px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.anime5e.sheet.actor .sheet-header .profile-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+    border: 2px solid var(--color-secondary);
+}
+
+.anime5e.sheet.actor .sheet-header .header-fields {
+    flex: 1;
+}
+
+.anime5e.sheet.actor .sheet-header h1.charname {
+    height: 50px;
+    padding: 0px;
+    margin: 5px 0;
+    border-bottom: none;
+}
+
+.anime5e.sheet.actor .sheet-header h1.charname input {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 24px;
+}
+
+.anime5e.sheet.actor .resource {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.anime5e.sheet.actor .resource label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.anime5e.sheet.actor .resource input {
+    width: 45%;
+    height: 28px;
+    text-align: center;
+    border: 1px solid var(--color-secondary);
+    border-radius: 3px;
+}
+
+.anime5e.sheet.actor .resource span {
+    margin: 0 5px;
+    line-height: 28px;
+}
+
+.anime5e.sheet.actor .resource-content {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 3px;
+    border-radius: 3px;
+}
+
+/* Stats Tab */
+.anime5e.sheet.actor .abilities {
+    flex: 0 0 100%;
+}
+
+.anime5e.sheet.actor .ability {
+    height: 70px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 3px;
+    text-align: center;
+}
+
+.anime5e.sheet.actor .ability .ability-mod {
+    height: 24px;
+    margin-top: 3px;
+}
+
+/* Combat Stats */
+.anime5e.sheet.actor .combat-stats {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid var(--color-tertiary);
+    border-radius: 3px;
+}
+
+/* Skills */
+.anime5e.sheet.actor .skills {
+    margin: 10px 0;
+}
+
+.anime5e.sheet.actor .skill {
+    height: 30px;
+    padding: 3px 0;
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+/* Attributes and Defects */
+.anime5e.sheet.actor .attributes-list,
+.anime5e.sheet.actor .defects-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 40px);
+    overflow-y: auto;
+}
+
+.anime5e.sheet.actor .item {
+    padding: 5px;
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    border: 1px solid var(--color-secondary);
+}
+
+.anime5e.sheet.actor .item .item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.anime5e.sheet.actor .item .item-controls {
+    flex: 0 0 60px;
+    text-align: right;
+}
+
+.anime5e.sheet.actor .item .item-description {
+    margin: 5px 0;
+    padding: 5px;
+    border-top: 1px solid var(--color-tertiary);
+}
+
+.anime5e.sheet.actor .item .item-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* Powers */
+.anime5e.sheet.actor .power-stats {
+    margin: 5px 0;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+/* Inventory */
+.anime5e.sheet.actor .inventory-filters {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid var(--color-tertiary);
+    border-radius: 3px;
+}
+
+.anime5e.sheet.actor .items-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.anime5e.sheet.actor .items-list .item-header {
+    font-weight: bold;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.anime5e.sheet.actor .items-list .item {
+    padding: 5px;
+    border-bottom: 1px solid var(--color-tertiary);
+}
+
+.anime5e.sheet.actor .items-list .item .item-name {
+    flex: 2;
+    margin: 0;
+}
+
+.anime5e.sheet.actor .items-list .item .item-detail {
+    flex: 1;
+    text-align: center;
+}
+
+/* Background Tab */
+.anime5e.sheet.actor .background .form-group {
+    margin: 10px 0;
+}
+
+.anime5e.sheet.actor .background textarea {
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Utility Classes */
+.anime5e.sheet.actor .grid {
+    display: grid;
+    gap: 10px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.anime5e.sheet.actor .grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.anime5e.sheet.actor .grid-3col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.anime5e.sheet.actor .flexrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.anime5e.sheet.actor .flexcol {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.anime5e.sheet.actor .flex-group-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.anime5e.sheet.actor .flex-between {
+    justify-content: space-between;
+}
+
+/* Point Buy System */
+.anime5e.sheet.actor .point-buy-summary {
+    padding: 10px;
+    margin: 10px 0;
+    background: rgba(255, 105, 180, 0.05);
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+}
+
+.anime5e.sheet.actor .points-overview {
+    margin-bottom: 15px;
+}
+
+.anime5e.sheet.actor .point-category {
+    text-align: center;
+    padding: 5px;
+}
+
+.anime5e.sheet.actor .point-category label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+}
+
+.anime5e.sheet.actor .point-category input {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid var(--color-secondary);
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.anime5e.sheet.actor .point-category input:disabled {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: var(--color-tertiary);
+}
+
+.anime5e.sheet.actor .points-breakdown {
+    margin-top: 10px;
+}
+
+.anime5e.sheet.actor .points-breakdown table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.anime5e.sheet.actor .points-breakdown th {
+    background: var(--color-primary);
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.anime5e.sheet.actor .points-breakdown td {
+    padding: 5px;
+    border-bottom: 1px solid var(--color-tertiary);
+    text-align: center;
+}
+
+.anime5e.sheet.actor .points-breakdown tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.anime5e.sheet.actor .points-breakdown td:first-child {
+    text-align: left;
+    font-weight: bold;
+}
+
+.anime5e.sheet.actor .points-breakdown .refund {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.anime5e.sheet.actor .points-breakdown tfoot tr {
+    background: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+}
+
+.anime5e.sheet.actor .points-breakdown tfoot td {
+    border-top: 2px solid var(--color-secondary);
+}
+
+/* Add hover effect for rows */
+.anime5e.sheet.actor .points-breakdown tbody tr:hover {
+    background: rgba(255, 105, 180, 0.1);
+    cursor: pointer;
+}
+
+/* Warning state for overspent points */
+.anime5e.sheet.actor .points-overview.overspent input[name="system.points.remaining"] {
+    color: #e74c3c;
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+/* Character Actions */
+.character-actions {
+    margin: 1rem 0;
+    text-align: right;
+}
+
+.character-actions .launch-wizard {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.character-actions .launch-wizard:hover {
+    opacity: 0.9;
+}
+
+.character-actions .launch-wizard i {
+    font-size: 1.1em;
+} 

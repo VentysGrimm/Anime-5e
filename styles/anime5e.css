@@ -1,0 +1,298 @@
+.anime5e {
+    /* Main theme colors */
+    --color-primary: #ff69b4;      /* Hot pink */
+    --color-secondary: #4b0082;    /* Indigo */
+    --color-tertiary: #00ffff;     /* Cyan */
+    --color-accent: #ffd700;       /* Gold */
+    --color-background: #ffffff;    /* White */
+    --color-text: #333333;         /* Dark gray */
+    --color-border: #e0e0e0;       /* Light gray */
+    --color-success: #2ecc71;      /* Green */
+    --color-warning: #f1c40f;      /* Yellow */
+    --color-danger: #e74c3c;       /* Red */
+    
+    /* Font settings */
+    --font-primary: 'Helvetica Neue', Arial, sans-serif;
+    --font-secondary: 'Comic Sans MS', cursive;  /* For anime-style headers */
+    --font-size-small: 12px;
+    --font-size-normal: 14px;
+    --font-size-large: 18px;
+    --font-size-huge: 24px;
+    
+    /* Spacing */
+    --spacing-tiny: 2px;
+    --spacing-small: 5px;
+    --spacing-normal: 10px;
+    --spacing-large: 20px;
+    
+    /* Border radius */
+    --border-radius-small: 3px;
+    --border-radius-normal: 5px;
+    --border-radius-large: 10px;
+}
+
+/* Character Sheet Styles */
+.anime5e.sheet.actor.player-character {
+    min-width: 800px;
+    min-height: 1000px;
+    padding: var(--spacing-normal);
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-primary);
+}
+
+/* Header Section */
+.anime5e.sheet.actor.player-character .sheet-header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: var(--spacing-normal);
+    padding: var(--spacing-normal);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: var(--border-radius-normal);
+    color: white;
+    margin-bottom: var(--spacing-large);
+}
+
+.anime5e .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.anime5e .profile-img {
+    width: 150px;
+    height: 150px;
+    border: 3px solid var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.anime5e .character-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-normal);
+}
+
+/* Stats and Resources */
+.anime5e .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-normal);
+    margin: var(--spacing-large) 0;
+}
+
+.anime5e .resource-box {
+    background: linear-gradient(45deg, var(--color-background), var(--color-border));
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-normal);
+    padding: var(--spacing-normal);
+    text-align: center;
+}
+
+.anime5e .resource-box label {
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-size: var(--font-size-large);
+    text-transform: uppercase;
+}
+
+/* Abilities Section */
+.anime5e .abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-large);
+    margin: var(--spacing-large) 0;
+    padding: var(--spacing-normal);
+    background: rgba(75, 0, 130, 0.05);
+    border-radius: var(--border-radius-large);
+}
+
+.anime5e .ability-box {
+    background: white;
+    border: 2px solid var(--color-secondary);
+    border-radius: var(--border-radius-normal);
+    padding: var(--spacing-normal);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Tabs Styling */
+.anime5e .sheet-tabs {
+    display: flex;
+    gap: var(--spacing-small);
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: var(--spacing-large);
+}
+
+.anime5e .sheet-tabs .item {
+    padding: var(--spacing-normal) var(--spacing-large);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-bottom: none;
+    border-radius: var(--border-radius-normal) var(--border-radius-normal) 0 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.anime5e .sheet-tabs .item.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* Point Buy Summary */
+.anime5e .point-buy-summary {
+    background: linear-gradient(45deg, rgba(255,105,180,0.05), rgba(75,0,130,0.05));
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius-large);
+    padding: var(--spacing-large);
+    margin: var(--spacing-large) 0;
+}
+
+.anime5e .points-breakdown table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-normal);
+}
+
+.anime5e .points-breakdown th {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-normal);
+    text-align: center;
+}
+
+.anime5e .points-breakdown td {
+    padding: var(--spacing-normal);
+    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+}
+
+/* Inventory Grid */
+.anime5e .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-large);
+    margin: var(--spacing-large) 0;
+}
+
+.anime5e .inventory-item {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-normal);
+    padding: var(--spacing-normal);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--spacing-normal);
+    align-items: center;
+}
+
+/* Form Elements */
+.anime5e input[type="text"],
+.anime5e input[type="number"],
+.anime5e select {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-small);
+    padding: var(--spacing-small);
+    font-size: var(--font-size-normal);
+    width: 100%;
+}
+
+.anime5e input[type="number"] {
+    text-align: center;
+}
+
+.anime5e textarea {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-normal);
+    padding: var(--spacing-normal);
+    font-size: var(--font-size-normal);
+    width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Buttons and Controls */
+.anime5e button {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-normal);
+    padding: var(--spacing-small) var(--spacing-normal);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.anime5e button:hover {
+    background: var(--color-secondary);
+}
+
+.anime5e .item-controls {
+    display: flex;
+    gap: var(--spacing-small);
+}
+
+.anime5e .item-control {
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.anime5e .item-control:hover {
+    color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.anime5e .resource-box:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Item Sheet Styles */
+.anime5e .item-sheet {
+    min-width: 460px;
+    min-height: 400px;
+}
+
+.anime5e .item-header {
+    background: var(--color-secondary);
+    color: white;
+    padding: 5px;
+}
+
+/* Power Effects */
+.anime5e .power-effect {
+    border: 1px solid var(--color-primary);
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Utility Classes */
+.anime5e .flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.anime5e .flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.anime5e .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.anime5e .grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+} 

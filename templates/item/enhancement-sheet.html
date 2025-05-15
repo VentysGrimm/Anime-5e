@@ -1,0 +1,97 @@
+<form class="{{cssClass}} enhancement-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Enhancement Name"/>
+            </h1>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="details">Details</a>
+        <a class="item" data-tab="effects">Effects</a>
+    </nav>
+
+    <section class="sheet-body">
+        <!-- Description Tab -->
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=system.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <!-- Details Tab -->
+        <div class="tab" data-group="primary" data-tab="details">
+            <div class="form-group">
+                <label>Cost Modification</label>
+                <div class="cost-controls">
+                    <select name="system.cost.type">
+                        {{#select system.cost.type}}
+                        <option value="multiplier">Multiplier</option>
+                        <option value="flat">Flat</option>
+                        <option value="percentage">Percentage</option>
+                        {{/select}}
+                    </select>
+                    <input type="number" name="system.cost.value" value="{{system.cost.value}}" step="0.1"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Applicable To</label>
+                <div class="applicable-types">
+                    {{#each config.traitTypes as |label type|}}
+                    <label class="checkbox">
+                        <input type="checkbox" name="system.applicableTo" value="{{type}}" 
+                            {{checked (includes ../system.applicableTo type)}}/>
+                        {{label}}
+                    </label>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Requirements</label>
+                <div class="requirements">
+                    <div class="rank-requirements">
+                        <label>Rank Requirements</label>
+                        <div class="rank-range">
+                            <input type="number" name="system.requirements.minRank" value="{{system.requirements.minRank}}" min="1" placeholder="Min"/>
+                            <span>to</span>
+                            <input type="number" name="system.requirements.maxRank" value="{{system.requirements.maxRank}}" min="1" placeholder="Max"/>
+                        </div>
+                    </div>
+
+                    <div class="category-requirements">
+                        <label>Applicable Categories</label>
+                        <div class="trait-categories">
+                            {{#each config.traitCategories as |label category|}}
+                            <label class="checkbox">
+                                <input type="checkbox" name="system.requirements.traitCategories" value="{{category}}" 
+                                    {{checked (includes ../system.requirements.traitCategories category)}}/>
+                                {{label}}
+                            </label>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Effects Tab -->
+        <div class="tab" data-group="primary" data-tab="effects">
+            <div class="effects-list">
+                {{#each system.effects as |effect id|}}
+                <div class="effect-entry">
+                    <input type="text" value="{{effect}}" data-effect-id="{{id}}"/>
+                    <button type="button" class="remove-effect" data-effect-id="{{id}}">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                {{/each}}
+                <button type="button" class="add-effect">
+                    <i class="fas fa-plus"></i> Add Effect
+                </button>
+            </div>
+        </div>
+    </section>
+</form> 

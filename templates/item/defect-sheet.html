@@ -1,0 +1,101 @@
+<form class="{{cssClass}} defect-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Defect Name"/>
+            </h1>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="details">Details</a>
+        <a class="item" data-tab="effects">Effects</a>
+    </nav>
+
+    <section class="sheet-body">
+        <!-- Description Tab -->
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=system.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <!-- Details Tab -->
+        <div class="tab" data-group="primary" data-tab="details">
+            <div class="form-group">
+                <label>Points Refunded per Rank</label>
+                <input type="number" name="system.refund" value="{{system.refund}}" min="1"/>
+            </div>
+
+            <div class="form-group">
+                <label>Rank</label>
+                <div class="rank-controls">
+                    <input type="number" name="system.rank.value" value="{{system.rank.value}}" min="{{system.rank.min}}" max="{{system.rank.max}}"/>
+                    <span class="rank-range">
+                        Min: <input type="number" name="system.rank.min" value="{{system.rank.min}}" min="1"/>
+                        Max: <input type="number" name="system.rank.max" value="{{system.rank.max}}" min="1"/>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <select name="system.category">
+                    {{#select system.category}}
+                    {{#each config.defectCategories as |label key|}}
+                    <option value="{{key}}">{{label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Trigger</label>
+                <div class="trigger-details">
+                    <select name="system.trigger.type">
+                        {{#select system.trigger.type}}
+                        <option value="constant">Constant</option>
+                        <option value="conditional">Conditional</option>
+                        <option value="situational">Situational</option>
+                        {{/select}}
+                    </select>
+                    <input type="text" name="system.trigger.condition" value="{{system.trigger.condition}}" placeholder="Trigger Condition"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Complications</label>
+                <div class="complications-list">
+                    {{#each system.complications as |complication id|}}
+                    <div class="complication-entry">
+                        <input type="text" value="{{complication}}" data-complication-id="{{id}}"/>
+                        <button type="button" class="remove-complication" data-complication-id="{{id}}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                    <button type="button" class="add-complication">
+                        <i class="fas fa-plus"></i> Add Complication
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Effects Tab -->
+        <div class="tab" data-group="primary" data-tab="effects">
+            <div class="effects-list">
+                {{#each system.effects as |effect id|}}
+                <div class="effect-entry">
+                    <input type="text" value="{{effect}}" data-effect-id="{{id}}"/>
+                    <button type="button" class="remove-effect" data-effect-id="{{id}}">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                {{/each}}
+                <button type="button" class="add-effect">
+                    <i class="fas fa-plus"></i> Add Effect
+                </button>
+            </div>
+        </div>
+    </section>
+</form> 

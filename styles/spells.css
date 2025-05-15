@@ -1,0 +1,246 @@
+/* Spell Sheet Styles */
+.anime5e.sheet.item.spell {
+    min-width: 460px;
+    min-height: 400px;
+}
+
+.spell .sheet-header {
+    flex: 0 0 100px;
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.spell .sheet-header img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.spell .sheet-header h1 input {
+    height: 50px;
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Form Groups */
+.spell .form-group {
+    margin: 10px 0;
+    flex: 0 0 auto;
+    align-items: center;
+}
+
+.spell .form-group label {
+    flex: 0 0 120px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.spell .form-group input[type="text"],
+.spell .form-group input[type="number"],
+.spell .form-group select {
+    height: 24px;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    padding: 0 3px;
+}
+
+.spell .form-group input[type="text"],
+.spell .form-group input[type="number"] {
+    width: 60px;
+}
+
+.spell .form-group select {
+    flex: 1;
+}
+
+.spell .form-fields {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+/* Effects Tab */
+.spell .effects-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.spell .effect-change {
+    padding: 5px;
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    align-items: center;
+    gap: 5px;
+}
+
+.spell .effect-change select {
+    flex: 2;
+}
+
+.spell .effect-change input {
+    flex: 1;
+}
+
+.spell .effect-control {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    color: var(--color-text);
+}
+
+.spell .effect-control:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Chat Message Styles */
+.anime5e.chat-card.spell-cast {
+    background: #f0f0f0;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    margin: 5px 0;
+    font-family: var(--font-primary);
+}
+
+.spell-cast .card-header {
+    background: var(--color-primary);
+    color: white;
+    padding: 5px;
+    border-radius: 4px 4px 0 0;
+    align-items: center;
+}
+
+.spell-cast .card-header img {
+    border: none;
+    margin-right: 10px;
+}
+
+.spell-cast .card-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.spell-cast .card-content {
+    padding: 10px;
+}
+
+.spell-cast .spell-info {
+    margin-bottom: 10px;
+}
+
+.spell-cast .spell-school {
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+}
+
+.spell-cast .spell-cast-info {
+    display: flex;
+    gap: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.spell-cast .spell-description {
+    margin: 10px 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 10px 0;
+}
+
+.spell-cast .spell-damage {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.spell-cast .damage-roll {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.spell-cast .damage-roll:hover {
+    opacity: 0.9;
+}
+
+.spell-cast .damage-type {
+    font-style: italic;
+    color: #666;
+}
+
+.spell-cast .spell-modifiers {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.spell-cast .modifier {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 3px 6px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.spell-cast .power-boost {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.spell-cast .energy-cost {
+    font-weight: bold;
+    color: #2980b9;
+    margin-top: 10px;
+}
+
+.spell-cast .card-footer {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 0 0 4px 4px;
+}
+
+.spell-cast .spell-effects h4 {
+    margin: 0 0 5px 0;
+    color: var(--color-secondary);
+}
+
+.spell-cast .spell-effects ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.spell-cast .spell-effects li {
+    font-size: 0.9em;
+    margin: 2px 0;
+}
+
+/* Power Boost Indicator */
+.spell-cast .power-boost-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+} 

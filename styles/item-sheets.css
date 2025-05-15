@@ -1,0 +1,307 @@
+.attribute-sheet,
+.defect-sheet {
+    min-height: 480px;
+}
+
+.attribute-sheet .sheet-header,
+.defect-sheet .sheet-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.attribute-sheet .sheet-header .profile-img,
+.defect-sheet .sheet-header .profile-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.attribute-sheet .sheet-header .header-fields,
+.defect-sheet .sheet-header .header-fields {
+    flex: 1;
+}
+
+.attribute-sheet .sheet-header h1 input,
+.defect-sheet .sheet-header h1 input {
+    width: 100%;
+    height: 2em;
+    margin: 0;
+}
+
+.attribute-sheet .sheet-tabs,
+.defect-sheet .sheet-tabs {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #AAA;
+}
+
+.attribute-sheet .sheet-body,
+.defect-sheet .sheet-body {
+    height: calc(100% - 140px);
+    overflow-y: auto;
+}
+
+.attribute-sheet .form-group,
+.defect-sheet .form-group {
+    margin-bottom: 15px;
+}
+
+.attribute-sheet .form-group label,
+.defect-sheet .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.attribute-sheet .form-group input[type="text"],
+.attribute-sheet .form-group input[type="number"],
+.attribute-sheet .form-group select,
+.defect-sheet .form-group input[type="text"],
+.defect-sheet .form-group input[type="number"],
+.defect-sheet .form-group select {
+    width: 100%;
+    padding: 5px;
+}
+
+.attribute-sheet .rank-controls,
+.defect-sheet .rank-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.attribute-sheet .rank-range,
+.defect-sheet .rank-range {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.attribute-sheet .rank-range input,
+.defect-sheet .rank-range input {
+    width: 60px;
+}
+
+.attribute-sheet .prerequisites-list,
+.attribute-sheet .effects-list,
+.defect-sheet .complications-list,
+.defect-sheet .effects-list {
+    border: 1px solid #DDD;
+    padding: 10px;
+    background: #f9f9f9;
+    margin-top: 5px;
+}
+
+.attribute-sheet .prerequisite-entry,
+.attribute-sheet .effect-entry,
+.defect-sheet .complication-entry,
+.defect-sheet .effect-entry {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.attribute-sheet .prerequisite-entry input,
+.attribute-sheet .effect-entry input,
+.defect-sheet .complication-entry input,
+.defect-sheet .effect-entry input {
+    flex: 1;
+}
+
+.attribute-sheet .prerequisite-entry button,
+.attribute-sheet .effect-entry button,
+.defect-sheet .complication-entry button,
+.defect-sheet .effect-entry button {
+    flex: 0 0 24px;
+    height: 24px;
+    padding: 0;
+    color: #666;
+}
+
+.attribute-sheet .add-prereq,
+.attribute-sheet .add-effect,
+.defect-sheet .add-complication,
+.defect-sheet .add-effect {
+    width: 100%;
+    margin-top: 5px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.attribute-sheet .add-prereq:hover,
+.attribute-sheet .add-effect:hover,
+.defect-sheet .add-complication:hover,
+.defect-sheet .add-effect:hover {
+    background: #d0d0d0;
+}
+
+.attribute-sheet .activation-details,
+.defect-sheet .trigger-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.attribute-sheet .activation-details input,
+.defect-sheet .trigger-details input {
+    width: 100%;
+}
+
+.enhancement-sheet,
+.limiter-sheet {
+    min-height: 480px;
+}
+
+.enhancement-sheet .sheet-header,
+.limiter-sheet .sheet-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.enhancement-sheet .sheet-header .profile-img,
+.limiter-sheet .sheet-header .profile-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.enhancement-sheet .sheet-header .header-fields,
+.limiter-sheet .sheet-header .header-fields {
+    flex: 1;
+}
+
+.enhancement-sheet .sheet-header h1 input,
+.limiter-sheet .sheet-header h1 input {
+    width: 100%;
+    height: 2em;
+    margin: 0;
+}
+
+.enhancement-sheet .sheet-tabs,
+.limiter-sheet .sheet-tabs {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #AAA;
+}
+
+.enhancement-sheet .sheet-body,
+.limiter-sheet .sheet-body {
+    height: calc(100% - 140px);
+    overflow-y: auto;
+}
+
+.enhancement-sheet .form-group,
+.limiter-sheet .form-group {
+    margin-bottom: 15px;
+}
+
+.enhancement-sheet .form-group label,
+.limiter-sheet .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.enhancement-sheet .cost-controls,
+.limiter-sheet .refund-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.enhancement-sheet .cost-controls select,
+.enhancement-sheet .cost-controls input,
+.limiter-sheet .refund-controls select,
+.limiter-sheet .refund-controls input {
+    width: 100%;
+    padding: 5px;
+}
+
+.enhancement-sheet .applicable-types,
+.limiter-sheet .applicable-types,
+.enhancement-sheet .trait-categories,
+.limiter-sheet .trait-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+}
+
+.enhancement-sheet .checkbox,
+.limiter-sheet .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.enhancement-sheet .checkbox input[type="checkbox"],
+.limiter-sheet .checkbox input[type="checkbox"] {
+    margin: 0;
+}
+
+.enhancement-sheet .rank-requirements,
+.limiter-sheet .rank-requirements {
+    margin-bottom: 15px;
+}
+
+.enhancement-sheet .rank-range,
+.limiter-sheet .rank-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.enhancement-sheet .rank-range input,
+.limiter-sheet .rank-range input {
+    width: 80px;
+}
+
+.enhancement-sheet .effects-list,
+.limiter-sheet .effects-list {
+    border: 1px solid #DDD;
+    padding: 10px;
+    background: #f9f9f9;
+    margin-top: 5px;
+}
+
+.enhancement-sheet .effect-entry,
+.limiter-sheet .effect-entry {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.enhancement-sheet .effect-entry input,
+.limiter-sheet .effect-entry input {
+    flex: 1;
+}
+
+.enhancement-sheet .effect-entry button,
+.limiter-sheet .effect-entry button {
+    flex: 0 0 24px;
+    height: 24px;
+    padding: 0;
+    color: #666;
+}
+
+.enhancement-sheet .add-effect,
+.limiter-sheet .add-effect {
+    width: 100%;
+    margin-top: 5px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.enhancement-sheet .add-effect:hover,
+.limiter-sheet .add-effect:hover {
+    background: #d0d0d0;
+} 

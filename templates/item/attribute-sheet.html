@@ -1,0 +1,111 @@
+<form class="{{cssClass}} attribute-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Attribute Name"/>
+            </h1>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="details">Details</a>
+        <a class="item" data-tab="effects">Effects</a>
+    </nav>
+
+    <section class="sheet-body">
+        <!-- Description Tab -->
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=system.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <!-- Details Tab -->
+        <div class="tab" data-group="primary" data-tab="details">
+            <div class="form-group">
+                <label>Cost per Rank</label>
+                <input type="number" name="system.cost" value="{{system.cost}}" min="1"/>
+            </div>
+
+            <div class="form-group">
+                <label>Rank</label>
+                <div class="rank-controls">
+                    <input type="number" name="system.rank.value" value="{{system.rank.value}}" min="{{system.rank.min}}" max="{{system.rank.max}}"/>
+                    <span class="rank-range">
+                        Min: <input type="number" name="system.rank.min" value="{{system.rank.min}}" min="1"/>
+                        Max: <input type="number" name="system.rank.max" value="{{system.rank.max}}" min="1"/>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <select name="system.category">
+                    {{#select system.category}}
+                    {{#each config.attributeCategories as |label key|}}
+                    <option value="{{key}}">{{label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Requirements</label>
+                <div class="requirements">
+                    <div class="form-group">
+                        <label>Minimum Level</label>
+                        <input type="number" name="system.requirements.minLevel" value="{{system.requirements.minLevel}}" min="1"/>
+                    </div>
+                    <div class="prerequisites-list">
+                        <label>Prerequisites</label>
+                        {{#each system.requirements.prerequisites as |prereq id|}}
+                        <div class="prerequisite-entry">
+                            <input type="text" value="{{prereq}}" data-prereq-id="{{id}}"/>
+                            <button type="button" class="remove-prereq" data-prereq-id="{{id}}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        {{/each}}
+                        <button type="button" class="add-prereq">
+                            <i class="fas fa-plus"></i> Add Prerequisite
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Activation</label>
+                <div class="activation-details">
+                    <select name="system.activation.type">
+                        {{#select system.activation.type}}
+                        <option value="">None</option>
+                        <option value="passive">Passive</option>
+                        <option value="action">Action</option>
+                        <option value="bonus">Bonus Action</option>
+                        <option value="reaction">Reaction</option>
+                        {{/select}}
+                    </select>
+                    <input type="number" name="system.activation.cost" value="{{system.activation.cost}}" placeholder="Cost"/>
+                    <input type="text" name="system.activation.condition" value="{{system.activation.condition}}" placeholder="Activation Condition"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Effects Tab -->
+        <div class="tab" data-group="primary" data-tab="effects">
+            <div class="effects-list">
+                {{#each system.effects as |effect id|}}
+                <div class="effect-entry">
+                    <input type="text" value="{{effect}}" data-effect-id="{{id}}"/>
+                    <button type="button" class="remove-effect" data-effect-id="{{id}}">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                {{/each}}
+                <button type="button" class="add-effect">
+                    <i class="fas fa-plus"></i> Add Effect
+                </button>
+            </div>
+        </div>
+    </section>
+</form> 

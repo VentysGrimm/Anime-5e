@@ -1,0 +1,72 @@
+<div class="anime5e chat-card spell-cast">
+    <header class="card-header flexrow">
+        <img src="{{spell.img}}" title="{{spell.name}}" width="36" height="36"/>
+        <h3 class="spell-name">{{spell.name}}</h3>
+    </header>
+
+    <div class="card-content">
+        <div class="spell-info">
+            <div class="spell-school">{{spell.system.school}}</div>
+            <div class="spell-cast-info">
+                <span class="casting-time">{{spell.system.castingTime}}</span>
+                <span class="range">
+                    {{spell.system.range.value}} {{spell.system.range.unit}}
+                    {{#if spell.system.range.extended}}(Extended){{/if}}
+                </span>
+                {{#if spell.system.area.type}}
+                <span class="area">
+                    {{spell.system.area.value}} ft. {{spell.system.area.type}}
+                    {{#if spell.system.area.extended}}(Extended){{/if}}
+                </span>
+                {{/if}}
+                <span class="duration">
+                    {{spell.system.duration.rounds}} rounds
+                    {{#if spell.system.duration.extended}}(Extended){{/if}}
+                </span>
+            </div>
+        </div>
+
+        <div class="spell-description">
+            {{{spell.system.description}}}
+        </div>
+
+        {{#if spell.system.damage.formula}}
+        <div class="spell-damage">
+            <button class="damage-roll" data-formula="{{spell.system.damage.formula}}" data-type="{{spell.system.damage.type}}">
+                <i class="fas fa-dice-d20"></i> Roll Damage
+            </button>
+            <span class="damage-type">{{spell.system.damage.type}}</span>
+        </div>
+        {{/if}}
+
+        <div class="spell-modifiers">
+            {{#if modifiers.powerBoost}}
+            <div class="modifier power-boost">
+                Power Boost: {{modifiers.powerBoost}} (+{{multiply modifiers.powerBoost 50}}% effectiveness)
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="energy-cost">
+            Energy Points: {{cost}}
+        </div>
+    </div>
+
+    <footer class="card-footer">
+        {{#if spell.system.changes.length}}
+        <div class="spell-effects">
+            <h4>Effects:</h4>
+            <ul>
+                {{#each spell.system.changes as |change|}}
+                <li>
+                    {{change.key}}: {{change.mode}} {{change.value}}
+                    {{#if ../modifiers.powerBoost}}
+                    (Boosted: {{multiply change.value (sum 1 (multiply ../modifiers.powerBoost 0.5))}})
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+    </footer>
+</div> 

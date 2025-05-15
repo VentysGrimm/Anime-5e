@@ -1,0 +1,134 @@
+<form class="{{cssClass}} vehicle-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Vehicle Name"/>
+            </h1>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="details">Details</a>
+        <a class="item" data-tab="modifications">Modifications</a>
+    </nav>
+
+    <section class="sheet-body">
+        <!-- Description Tab -->
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=system.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <!-- Details Tab -->
+        <div class="tab" data-group="primary" data-tab="details">
+            <div class="form-group">
+                <label>Vehicle Type</label>
+                <select name="system.vehicleType">
+                    {{#select system.vehicleType}}
+                    {{#each config.vehicleTypes as |label type|}}
+                    <option value="{{type}}">{{label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Size</label>
+                <select name="system.properties.size">
+                    {{#select system.properties.size}}
+                    {{#each config.sizes as |label size|}}
+                    <option value="{{size}}">{{label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Armor Class</label>
+                <input type="number" name="system.properties.ac" value="{{system.properties.ac}}" placeholder="15"/>
+            </div>
+
+            <div class="form-group">
+                <label>Hit Points</label>
+                <input type="number" name="system.properties.hp" value="{{system.properties.hp}}" placeholder="100"/>
+            </div>
+
+            <div class="form-group">
+                <label>Speed (feet/round)</label>
+                <input type="number" name="system.properties.speed" value="{{system.properties.speed}}" placeholder="30"/>
+            </div>
+
+            <div class="form-group">
+                <label>Passenger Capacity</label>
+                <input type="number" name="system.properties.capacity" value="{{system.properties.capacity}}" placeholder="5"/>
+            </div>
+
+            <div class="form-group">
+                <label>Weight (tons)</label>
+                <input type="number" name="system.properties.weight" value="{{system.properties.weight}}" step="0.1"/>
+            </div>
+
+            <div class="form-group crew-requirements">
+                <label>Crew Requirements</label>
+                <div class="crew-controls">
+                    <div class="crew-field">
+                        <label>Required</label>
+                        <input type="number" name="system.crew.required" value="{{system.crew.required}}" min="1"/>
+                    </div>
+                    <div class="crew-field">
+                        <label>Maximum</label>
+                        <input type="number" name="system.crew.maximum" value="{{system.crew.maximum}}" min="1"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Base Cost (Points)</label>
+                <input type="number" name="system.baseCost" value="{{system.baseCost}}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Final Cost</label>
+                <input type="number" name="system.finalCost" value="{{system.finalCost}}" disabled/>
+            </div>
+        </div>
+
+        <!-- Modifications Tab -->
+        <div class="tab" data-group="primary" data-tab="modifications">
+            <div class="form-group">
+                <label>Enhancements</label>
+                <div class="enhancements-list">
+                    {{#each system.enhancements as |enhancement idx|}}
+                    <div class="enhancement-entry">
+                        <span class="name">{{enhancement.name}}</span>
+                        <button type="button" class="remove-enhancement" data-idx="{{idx}}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                    <button type="button" class="add-enhancement">
+                        <i class="fas fa-plus"></i> Add Enhancement
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Limiters</label>
+                <div class="limiters-list">
+                    {{#each system.limiters as |limiter idx|}}
+                    <div class="limiter-entry">
+                        <span class="name">{{limiter.name}}</span>
+                        <button type="button" class="remove-limiter" data-idx="{{idx}}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                    <button type="button" class="add-limiter">
+                        <i class="fas fa-plus"></i> Add Limiter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</form> 

@@ -1,0 +1,133 @@
+<form class="{{cssClass}} weapon-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Weapon Name"/>
+            </h1>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="details">Details</a>
+        <a class="item" data-tab="modifications">Modifications</a>
+    </nav>
+
+    <section class="sheet-body">
+        <!-- Description Tab -->
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=system.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <!-- Details Tab -->
+        <div class="tab" data-group="primary" data-tab="details">
+            <div class="form-group">
+                <label>Weapon Type</label>
+                <select name="system.weaponType">
+                    {{#select system.weaponType}}
+                    {{#each config.weaponTypes as |label type|}}
+                    <option value="{{type}}">{{localize label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Damage</label>
+                <input type="text" name="system.properties.damage" value="{{system.properties.damage}}" placeholder="1d6"/>
+            </div>
+
+            <div class="form-group">
+                <label>Damage Type</label>
+                <select name="system.properties.damageType">
+                    {{#select system.properties.damageType}}
+                    {{#each config.damageTypes as |label type|}}
+                    <option value="{{type}}">{{localize label}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Range (feet)</label>
+                <input type="number" name="system.properties.range" value="{{system.properties.range}}" placeholder="5"/>
+            </div>
+
+            <div class="form-group">
+                <label>Weight</label>
+                <input type="number" name="system.properties.weight" value="{{system.properties.weight}}" step="0.1"/>
+            </div>
+
+            <div class="form-group">
+                <label>Hands Required</label>
+                <select name="system.properties.hands">
+                    {{#select system.properties.hands}}
+                    <option value="1">One-Handed</option>
+                    <option value="2">Two-Handed</option>
+                    {{/select}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Properties</label>
+                <div class="properties-list">
+                    {{#each config.properties as |label prop|}}
+                    <label class="checkbox">
+                        <input type="checkbox" class="property-checkbox" data-property="{{prop}}" 
+                            {{checked (includes ../system.properties.properties prop)}}/>
+                        {{label}}
+                    </label>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Base Cost (Points)</label>
+                <input type="number" name="system.baseCost" value="{{system.baseCost}}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Final Cost</label>
+                <input type="number" name="system.finalCost" value="{{system.finalCost}}" disabled/>
+            </div>
+        </div>
+
+        <!-- Modifications Tab -->
+        <div class="tab" data-group="primary" data-tab="modifications">
+            <div class="form-group">
+                <label>Enhancements</label>
+                <div class="enhancements-list">
+                    {{#each system.enhancements as |enhancement idx|}}
+                    <div class="enhancement-entry">
+                        <span class="name">{{enhancement.name}}</span>
+                        <button type="button" class="remove-enhancement" data-idx="{{idx}}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                    <button type="button" class="add-enhancement">
+                        <i class="fas fa-plus"></i> Add Enhancement
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Limiters</label>
+                <div class="limiters-list">
+                    {{#each system.limiters as |limiter idx|}}
+                    <div class="limiter-entry">
+                        <span class="name">{{limiter.name}}</span>
+                        <button type="button" class="remove-limiter" data-idx="{{idx}}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    {{/each}}
+                    <button type="button" class="add-limiter">
+                        <i class="fas fa-plus"></i> Add Limiter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</form> 

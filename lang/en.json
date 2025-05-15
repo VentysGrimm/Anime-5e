@@ -1,0 +1,274 @@
+{
+    "ANIME5E": {
+        "AbilityStr": "Strength",
+        "AbilityDex": "Dexterity",
+        "AbilityCon": "Constitution",
+        "AbilityInt": "Intelligence",
+        "AbilityWis": "Wisdom",
+        "AbilityCha": "Charisma",
+
+        "AbilityStrAbbr": "STR",
+        "AbilityDexAbbr": "DEX",
+        "AbilityConAbbr": "CON",
+        "AbilityIntAbbr": "INT",
+        "AbilityWisAbbr": "WIS",
+        "AbilityChaAbbr": "CHA",
+
+        "ClassFighter": "Fighter",
+        "ClassMage": "Mage",
+        "ClassRogue": "Rogue",
+        "ClassIdol": "Idol",
+        "ClassSamurai": "Samurai",
+        "ClassNinja": "Ninja",
+
+        "SkillAcrobatics": "Acrobatics",
+        "SkillAthletics": "Athletics",
+        "SkillDeception": "Deception",
+        "SkillInsight": "Insight",
+        "SkillIntimidation": "Intimidation",
+        "SkillInvestigation": "Investigation",
+        "SkillPerformance": "Performance",
+        "SkillPersuasion": "Persuasion",
+        "SkillStealth": "Stealth",
+
+        "PowerSourceKi": "Ki",
+        "PowerSourceMagic": "Magic",
+        "PowerSourceTech": "Technology",
+        "PowerSourceIdol": "Idol Energy",
+
+        "Attributes": {
+            "HP": "Hit Points",
+            "MP": "Magic Points",
+            "AC": "Armor Class",
+            "Initiative": "Initiative",
+            "Speed": "Speed",
+            "Level": "Level",
+            "Experience": "Experience"
+        },
+
+        "CharacterAttributes": {
+            "Label": "Attributes",
+            "Description": "Positive traits that enhance your character (Cost points per rank)",
+            "Types": {
+                "ArtificialParts": {
+                    "Label": "Artificial Parts",
+                    "Cost": 2,
+                    "Description": "Cybernetic or magical enhancements that improve abilities"
+                },
+                "CombatMastery": {
+                    "Label": "Combat Mastery",
+                    "Cost": 2,
+                    "Description": "Enhanced combat capabilities and techniques"
+                },
+                "DynamicSorcery": {
+                    "Label": "Dynamic Sorcery",
+                    "Cost": 3,
+                    "Description": "Flexible magical abilities and spellcasting"
+                },
+                "EnergyBlast": {
+                    "Label": "Energy Blast",
+                    "Cost": 2,
+                    "Description": "Ability to project energy attacks"
+                },
+                "EnhancedMovement": {
+                    "Label": "Enhanced Movement",
+                    "Cost": 1,
+                    "Description": "Improved speed, jumping, or flying"
+                },
+                "ExtraActions": {
+                    "Label": "Extra Actions",
+                    "Cost": 4,
+                    "Description": "Additional actions during combat"
+                },
+                "FastHealing": {
+                    "Label": "Fast Healing",
+                    "Cost": 3,
+                    "Description": "Accelerated recovery from damage"
+                },
+                "ForceField": {
+                    "Label": "Force Field",
+                    "Cost": 2,
+                    "Description": "Protective energy barrier"
+                },
+                "Heightened": {
+                    "Label": "Heightened Awareness",
+                    "Cost": 1,
+                    "Description": "Enhanced senses and perception"
+                },
+                "MindShield": {
+                    "Label": "Mind Shield",
+                    "Cost": 2,
+                    "Description": "Protection against mental attacks"
+                }
+            }
+        },
+
+        "CharacterDefects": {
+            "Label": "Defects",
+            "Description": "Negative traits that limit your character (Refund points per rank)",
+            "Types": {
+                "Achilles": {
+                    "Label": "Achilles Heel",
+                    "Refund": 2,
+                    "Description": "Specific weakness that causes extra damage"
+                },
+                "Cursed": {
+                    "Label": "Cursed",
+                    "Refund": 1,
+                    "Description": "Supernatural affliction bringing misfortune"
+                },
+                "Dependent": {
+                    "Label": "Dependent",
+                    "Refund": 2,
+                    "Description": "NPC who needs protection and care"
+                },
+                "EnergyDrain": {
+                    "Label": "Energy Drain",
+                    "Refund": 3,
+                    "Description": "Powers drain life force or stamina"
+                },
+                "Haunted": {
+                    "Label": "Haunted",
+                    "Refund": 2,
+                    "Description": "Pursued by supernatural entities"
+                },
+                "Nemesis": {
+                    "Label": "Nemesis",
+                    "Refund": 2,
+                    "Description": "Powerful recurring enemy"
+                },
+                "PhysicalDisability": {
+                    "Label": "Physical Disability",
+                    "Refund": 2,
+                    "Description": "Impairment that limits actions"
+                },
+                "Phobia": {
+                    "Label": "Phobia",
+                    "Refund": 1,
+                    "Description": "Debilitating fear of something"
+                },
+                "Restricted": {
+                    "Label": "Restricted Power",
+                    "Refund": 1,
+                    "Description": "Abilities limited by condition"
+                },
+                "Unskilled": {
+                    "Label": "Unskilled",
+                    "Refund": 2,
+                    "Description": "Lack of basic training or knowledge"
+                }
+            }
+        },
+
+        "SheetHeaders": {
+            "Abilities": "Abilities",
+            "Skills": "Skills",
+            "Combat": "Combat",
+            "Powers": "Powers",
+            "Equipment": "Equipment",
+            "Features": "Features",
+            "Biography": "Biography",
+            "Attributes": "Attributes",
+            "Defects": "Defects"
+        },
+
+        "Items": {
+            "Weapon": "Weapon",
+            "Armor": "Armor",
+            "Power": "Power",
+            "Feature": "Feature",
+            "Equipment": "Equipment",
+            "Attribute": "Attribute",
+            "Defect": "Defect",
+            "Race": "Race",
+            "Enhancement": "Enhancement",
+            "Limiter": "Limiter"
+        },
+
+        "WeaponTypes": {
+            "Melee": "Melee",
+            "Ranged": "Ranged"
+        },
+
+        "ArmorTypes": {
+            "Light": "Light",
+            "Medium": "Medium",
+            "Heavy": "Heavy",
+            "Shield": "Shield"
+        },
+
+        "PowerTypes": {
+            "Attack": "Attack",
+            "Utility": "Utility",
+            "Buff": "Buff",
+            "Debuff": "Debuff",
+            "Healing": "Healing"
+        },
+
+        "DamageTypes": {
+            "Physical": "Physical",
+            "Fire": "Fire",
+            "Ice": "Ice",
+            "Lightning": "Lightning",
+            "Force": "Force",
+            "Psychic": "Psychic",
+            "Radiant": "Radiant",
+            "Necrotic": "Necrotic"
+        },
+
+        "Tabs": {
+            "Description": "Description",
+            "Details": "Details",
+            "Effects": "Effects"
+        },
+
+        "Sheets": {
+            "Race": {
+                "Traits": "Racial Traits",
+                "Attributes": "Racial Attributes",
+                "Defects": "Racial Defects",
+                "Details": "Race Details",
+                "Size": "Size",
+                "Culture": "Culture",
+                "Lifespan": "Lifespan",
+                "Languages": "Languages",
+                "AddAttribute": "Add Racial Attribute",
+                "AddDefect": "Add Racial Defect",
+                "AddLanguage": "Add Language",
+                "Description": "Description"
+            },
+            "Enhancement": {
+                "CostType": {
+                    "Label": "Cost Type",
+                    "Multiplier": "Multiplier",
+                    "Flat": "Flat",
+                    "Percentage": "Percentage"
+                },
+                "ApplicableTo": "Applicable To",
+                "Requirements": {
+                    "Label": "Requirements",
+                    "RankRange": "Rank Range",
+                    "Categories": "Applicable Categories"
+                },
+                "Effects": "Effects",
+                "AddEffect": "Add Effect"
+            },
+            "Limiter": {
+                "RefundType": {
+                    "Label": "Refund Type",
+                    "Multiplier": "Multiplier",
+                    "Flat": "Flat",
+                    "Percentage": "Percentage"
+                },
+                "ApplicableTo": "Applicable To",
+                "Requirements": {
+                    "Label": "Requirements",
+                    "RankRange": "Rank Range",
+                    "Categories": "Applicable Categories"
+                },
+                "Effects": "Effects",
+                "AddEffect": "Add Effect"
+            }
+        }
+    }
+} 

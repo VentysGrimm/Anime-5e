@@ -1,0 +1,197 @@
+<form class="{{classes}}" autocomplete="off">
+    <div class="wizard-progress">
+        <div class="progress-bar">
+            <div class="progress" style="width: {{multiply (divide step maxSteps) 100}}%"></div>
+        </div>
+        <div class="step-indicator">Step {{step}} of {{maxSteps}}</div>
+    </div>
+
+    <div class="wizard-body">
+        {{#if (eq step 1)}}
+        <!-- Step 1: Basic Information -->
+        <div class="wizard-step basics">
+            <h2>Basic Information</h2>
+            <div class="form-group">
+                <label>Character Name</label>
+                <input type="text" name="basics.name" value="{{data.basics.name}}" required/>
+            </div>
+            <div class="form-group">
+                <label>Player Name</label>
+                <input type="text" name="basics.playerName" value="{{data.basics.playerName}}" required/>
+            </div>
+            <div class="form-group">
+                <label>Background</label>
+                <textarea name="basics.background">{{data.basics.background}}</textarea>
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if (eq step 2)}}
+        <!-- Step 2: Race Selection -->
+        <div class="wizard-step race">
+            <h2>Choose Your Race</h2>
+            <div class="form-group">
+                <select class="race-select" name="race" required>
+                    <option value="">Select a Race</option>
+                    {{#each races as |race|}}
+                    <option value="{{race.id}}" {{#if (eq ../data.race.id race.id)}}selected{{/if}}>
+                        {{race.name}}
+                    </option>
+                    {{/each}}
+                </select>
+            </div>
+            {{#if data.race}}
+            <div class="race-details">
+                <img src="{{data.race.img}}" width="100" height="100"/>
+                <div class="race-description">
+                    {{{data.race.system.description}}}
+                </div>
+                <div class="race-traits">
+                    <h3>Racial Traits</h3>
+                    <ul>
+                        {{#each data.race.system.traits as |trait|}}
+                        <li>{{trait.name}}: {{trait.description}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+        {{/if}}
+
+        {{#if (eq step 3)}}
+        <!-- Step 3: Class Selection -->
+        <div class="wizard-step class">
+            <h2>Choose Your Class</h2>
+            <div class="form-group">
+                <label>Class</label>
+                <select class="class-select" name="class.name" required>
+                    <option value="">Select a Class</option>
+                    {{#each classes as |label key|}}
+                    <option value="{{key}}" {{#if (eq ../data.class.name key)}}selected{{/if}}>
+                        {{label}}
+                    </option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Starting Level</label>
+                <input type="number" name="class.level" value="{{data.class.level}}" min="1" max="20"/>
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if (eq step 4)}}
+        <!-- Step 4: Ability Scores -->
+        <div class="wizard-step abilities">
+            <h2>Ability Scores</h2>
+            <div class="point-buy-info">
+                <p>Points Remaining: {{data.pointBuy.remaining}}</p>
+                <p>Points Spent: {{data.pointBuy.spent}}</p>
+            </div>
+            <div class="abilities-grid">
+                {{#each data.abilities as |value key|}}
+                <div class="ability-score">
+                    <label>{{key}}</label>
+                    <input type="number" name="abilities.{{key}}" value="{{value}}" 
+                           data-ability="{{key}}" min="8" max="18"/>
+                    <span class="ability-mod">{{numberFormat (subtract (divide (subtract value 10) 2) 0.5) decimals=0 sign=true}}</span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if (eq step 5)}}
+        <!-- Step 5: Attributes and Defects -->
+        <div class="wizard-step attributes">
+            <h2>Attributes & Defects</h2>
+            <div class="point-buy-info">
+                <p>Points Remaining: {{data.pointBuy.remaining}}</p>
+            </div>
+            <div class="form-group">
+                <h3>Attributes</h3>
+                <select class="attribute-select">
+                    <option value="">Add an Attribute</option>
+                    {{#each config.attributes as |attr|}}
+                    <option value="{{attr.id}}">{{attr.name}} ({{attr.cost}} points)</option>
+                    {{/each}}
+                </select>
+                <div class="selected-attributes">
+                    {{#each data.attributes as |attr|}}
+                    <div class="selected-item">
+                        <span>{{attr.name}}</span>
+                        <input type="number" name="attributes.{{attr.id}}.rank" 
+                               value="{{attr.system.rank.value}}" min="1" max="5"/>
+                        <a class="item-delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="form-group">
+                <h3>Defects</h3>
+                <select class="defect-select">
+                    <option value="">Add a Defect</option>
+                    {{#each config.defects as |defect|}}
+                    <option value="{{defect.id}}">{{defect.name}} ({{defect.refund}} points)</option>
+                    {{/each}}
+                </select>
+                <div class="selected-defects">
+                    {{#each data.defects as |defect|}}
+                    <div class="selected-item">
+                        <span>{{defect.name}}</span>
+                        <input type="number" name="defects.{{defect.id}}.rank" 
+                               value="{{defect.system.rank.value}}" min="1" max="5"/>
+                        <a class="item-delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if (eq step 6)}}
+        <!-- Step 6: Powers -->
+        <div class="wizard-step powers">
+            <h2>Powers</h2>
+            <div class="point-buy-info">
+                <p>Points Remaining: {{data.pointBuy.remaining}}</p>
+            </div>
+            <div class="form-group">
+                <select class="power-select">
+                    <option value="">Add a Power</option>
+                    {{#each config.powers as |power|}}
+                    <option value="{{power.id}}">{{power.name}} ({{power.cost}} points)</option>
+                    {{/each}}
+                </select>
+                <div class="selected-powers">
+                    {{#each data.powers as |power|}}
+                    <div class="selected-item">
+                        <span>{{power.name}}</span>
+                        <a class="item-delete"><i class="fas fa-trash"></i></a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+
+    <div class="wizard-nav">
+        {{#if (gt step 1)}}
+        <button type="button" data-direction="prev">
+            <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        {{/if}}
+        
+        {{#if isLastStep}}
+        <button type="submit">
+            Create Character <i class="fas fa-check"></i>
+        </button>
+        {{else}}
+        <button type="button" data-direction="next">
+            Next <i class="fas fa-chevron-right"></i>
+        </button>
+        {{/if}}
+    </div>
+</form> 
