@@ -1,6 +1,6 @@
 import CharacterCreationWizard from "../apps/CharacterCreationWizard.js";
 
-export default class PlayerCharacterSheet extends ActorSheet {
+export class CharacterSheet extends ActorSheet {
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["anime5e", "sheet", "actor", "character"],
@@ -16,13 +16,11 @@ export default class PlayerCharacterSheet extends ActorSheet {
                 dragSelector: ".item-list .item",
                 dropSelector: null
             }],
-            filters: [{
-                inputSelector: ".filter-input",
-                contentSelector: ".filterable-list"
-            }]
+            scrollY: [".sheet-body"]
         });
     }
 
+    /** @override */
     async getData(options={}) {
         const context = await super.getData(options);
         
@@ -32,14 +30,12 @@ export default class PlayerCharacterSheet extends ActorSheet {
         context.flags = this.actor.flags;
         
         // Add character-specific data
-        if (this.actor.type === 'player') {
-            await this._prepareCharacterItems(context);
-            await this._prepareAbilities(context);
-            await this._calculatePointBuy(context);
-        }
+        await this._prepareCharacterItems(context);
+        await this._prepareAbilities(context);
+        await this._calculatePointBuy(context);
 
         // Add roll data for TinyMCE editors
-        context.rollData = this.actor.getRollData();
+        context.rollData = context.actor.getRollData();
 
         // Add config data
         context.config = CONFIG.ANIME5E;
@@ -49,6 +45,28 @@ export default class PlayerCharacterSheet extends ActorSheet {
         context.isEditable = this.isEditable;
 
         return context;
+    }
+
+    /** @override */
+    async _onDropItem(event, data) {
+        if (!this.actor.isOwner) return false;
+        
+        const item = await Item.implementation.fromDropData(data);
+        const itemData = item.toObject();
+
+        // Handle item sorting within the same actor
+        if (this.actor.uuid === item.parent?.uuid) {
+            return this._onSortItem(event, itemData);
+        }
+
+        // Create the owned item
+        return this._onDropItemCreate(itemData);
+    }
+
+    /** @override */
+    async _onDropItemCreate(itemData) {
+        itemData = itemData instanceof Array ? itemData : [itemData];
+        return this.actor.createEmbeddedDocuments("Item", itemData);
     }
 
     async _prepareCharacterItems(context) {
@@ -61,17 +79,19 @@ export default class PlayerCharacterSheet extends ActorSheet {
         // Iterate through items, allocating to containers
         for (const item of this.actor.items) {
             item.img = item.img || foundry.CONST.DEFAULT_TOKEN;
-            if (item.type === 'item') {
-                inventory.push(item);
-            }
-            else if (item.type === 'attribute') {
-                attributes.push(item);
-            }
-            else if (item.type === 'defect') {
-                defects.push(item);
-            }
-            else if (item.type === 'power') {
-                powers.push(item);
+            switch (item.type) {
+                case 'item':
+                    inventory.push(item);
+                    break;
+                case 'attribute':
+                    attributes.push(item);
+                    break;
+                case 'defect':
+                    defects.push(item);
+                    break;
+                case 'power':
+                    powers.push(item);
+                    break;
             }
         }
 
@@ -83,7 +103,7 @@ export default class PlayerCharacterSheet extends ActorSheet {
     }
 
     _calculatePointBuy(sheetData) {
-        const data = sheetData.actor.system;
+        const data = sheetData.system;
         
         // Initialize point buy tracking
         data.points = {
@@ -183,28 +203,31 @@ export default class PlayerCharacterSheet extends ActorSheet {
         costs.cost = costs.points;
     }
 
+    /** @override */
     activateListeners(html) {
         super.activateListeners(html);
 
         // Everything below here is only needed if the sheet is editable
-        if (!this.options.editable) return;
+        if (!this.isEditable) return;
 
         // Add Inventory Item
         html.find('.item-create').click(this._onItemCreate.bind(this));
 
         // Update Inventory Item
         html.find('.item-edit').click(ev => {
-            const li = $(ev.currentTarget).parents(".item");
+            const li = $(ev.currentTarget).closest(".item");
             const item = this.actor.items.get(li.data("itemId"));
-            item.sheet.render(true);
+            item?.sheet.render(true);
         });
 
         // Delete Inventory Item
         html.find('.item-delete').click(ev => {
-            const li = $(ev.currentTarget).parents(".item");
+            const li = $(ev.currentTarget).closest(".item");
             const item = this.actor.items.get(li.data("itemId"));
-            item.delete();
-            li.slideUp(200, () => this.render(false));
+            if (item) {
+                item.delete();
+                li.slideUp(200, () => this.render(false));
+            }
         });
 
         // Add Race
@@ -223,19 +246,6 @@ export default class PlayerCharacterSheet extends ActorSheet {
         html.find('.launch-wizard').click(ev => {
             new CharacterCreationWizard(this.actor).render(true);
         });
-    }
-
-    async _onItemCreate(event) {
-        event.preventDefault();
-        const header = event.currentTarget;
-        const type = header.dataset.type;
-        const itemData = {
-            name: game.i18n.format("ANIME5E.ItemNew", { type: type.capitalize() }),
-            type: type,
-            system: foundry.utils.deepClone(header.dataset)
-        };
-        delete itemData.system.type;
-        return await Item.create(itemData, {parent: this.actor});
     }
 
     _onRaceSelect(event) {
@@ -303,7 +313,7 @@ export default class PlayerCharacterSheet extends ActorSheet {
         const value = Number(element.value);
 
         if (dataset.resource) {
-            let update = {};
+            const update = {};
             update[dataset.resource] = value;
             this.actor.update(update);
         }

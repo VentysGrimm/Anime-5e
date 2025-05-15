@@ -1,6 +1,37 @@
 # Anime 5E System for Foundry VTT
 
-This system allows you to play Anime 5E in Foundry Virtual Tabletop.
+A system for playing Anime 5E in Foundry VTT.
+
+## Directory Structure
+
+```
+anime5e/
+├── assets/           # Static assets like images and sounds
+│   ├── icons/       # System icons
+│   └── images/      # System images
+├── lang/            # Localization files
+│   └── en.json     # English localization
+├── module/          # System JavaScript modules
+│   ├── actor/      # Actor-related modules
+│   ├── apps/       # Application windows
+│   ├── combat/     # Combat-related modules
+│   ├── config/     # System configuration
+│   ├── data/       # Data model definitions
+│   ├── documents/  # Document class definitions
+│   ├── helpers/    # Helper functions and utilities
+│   ├── item/       # Item-related modules
+│   └── sheets/     # Actor and Item sheet classes
+├── packs/          # Compendium packs
+├── styles/         # CSS stylesheets
+│   ├── anime5e.css # Main stylesheet
+│   └── sheets/     # Sheet-specific styles
+├── templates/      # Handlebars templates
+│   ├── actor/      # Actor sheet templates
+│   ├── apps/       # Application templates
+│   └── item/       # Item sheet templates
+├── system.json     # System manifest
+└── README.md       # This file
+```
 
 ## Features
 
@@ -12,11 +43,37 @@ This system allows you to play Anime 5E in Foundry Virtual Tabletop.
 
 ## Installation
 
-1. In Foundry VTT's Configuration and Setup screen, go to "Game Systems"
+1. In Foundry VTT's Configuration and Setup screen, go to Game Systems
 2. Click "Install System"
-3. In the "Manifest URL" field, paste the following URL:
-   [Your manifest URL when you host the system]
-4. Click "Install"
+3. In the Manifest URL field paste: [Your manifest URL]
+
+## Development
+
+### Prerequisites
+
+- Node.js 16+
+- Foundry VTT
+
+### Setup
+
+1. Clone this repository
+2. Run `npm install`
+3. Create a link to your Foundry systems directory:
+   ```bash
+   ln -s /path/to/repo /path/to/foundry/systems/anime5e
+   ```
+
+### Building
+
+```bash
+npm run build
+```
+
+### Testing
+
+```bash
+npm test
+```
 
 ## Manual Installation
 
@@ -43,7 +100,7 @@ This system allows you to play Anime 5E in Foundry Virtual Tabletop.
 
 ## License
 
-This system is licensed under [Your chosen license]
+[Your License]
 
 ## Support
 

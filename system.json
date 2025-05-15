@@ -18,7 +18,10 @@
   ],
   "styles": [
     "styles/anime5e.css",
-    "styles/character-sheet.css"
+    "styles/sheets/character.css",
+    "styles/sheets/npc.css",
+    "styles/sheets/monster.css",
+    "styles/sheets/item.css"
   ],
   "packs": [
     {
@@ -76,17 +79,29 @@
       "player": {
         "label": "Player Character",
         "playable": true,
-        "type": "character"
+        "type": "character",
+        "sheet": {
+          "class": "CharacterSheet",
+          "template": "templates/actor/character-sheet.html"
+        }
       },
       "npc": {
         "label": "Non-Player Character",
         "playable": false,
-        "type": "npc"
+        "type": "npc",
+        "sheet": {
+          "class": "NPCSheet",
+          "template": "templates/actor/npc-sheet.html"
+        }
       },
       "monster": {
         "label": "Monster",
         "playable": false,
-        "type": "monster"
+        "type": "monster",
+        "sheet": {
+          "class": "MonsterSheet",
+          "template": "templates/actor/monster-sheet.html"
+        }
       }
     },
     "Item": {

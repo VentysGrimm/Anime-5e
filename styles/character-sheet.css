@@ -1,42 +1,167 @@
+/* Anime 5E Character Sheet - Based on Official Character Folio */
 .anime5e.sheet.actor {
-    min-width: 720px;
-    min-height: 680px;
+    min-width: 800px;
+    min-height: 800px;
+    font-family: 'Roboto', sans-serif;
+    --primary-color: #4a4a4a;
+    --secondary-color: #7289da;
+    --accent-color: #ff69b4;
+    --border-color: #dcdcdc;
+    --background-primary: #ffffff;
+    --background-secondary: #f5f5f5;
 }
 
+/* Sheet Header */
 .anime5e.sheet.actor .sheet-header {
-    flex: 0 0 120px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-bottom: 10px;
-    border-bottom: 2px solid var(--color-primary);
+    flex: 0 0 150px;
+    border-bottom: 2px solid var(--accent-color);
+    margin-bottom: 15px;
+    padding: 10px;
+    background: var(--background-secondary);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .anime5e.sheet.actor .sheet-header .profile-img {
-    flex: 0 0 100px;
-    height: 100px;
-    margin-right: 10px;
-    border: 2px solid var(--color-secondary);
+    flex: 0 0 120px;
+    height: 120px;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .anime5e.sheet.actor .sheet-header .header-fields {
     flex: 1;
+    padding: 0 15px;
 }
 
 .anime5e.sheet.actor .sheet-header h1.charname {
-    height: 50px;
-    padding: 0px;
-    margin: 5px 0;
-    border-bottom: none;
+    height: 60px;
+    padding: 5px;
+    margin: 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .anime5e.sheet.actor .sheet-header h1.charname input {
     width: 100%;
     height: 100%;
-    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    border: none;
+    background: transparent;
+}
+
+/* Navigation Tabs */
+.anime5e.sheet.actor nav.sheet-navigation {
+    flex: 0 0 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.anime5e.sheet.actor nav.sheet-navigation .item {
+    padding: 5px 20px;
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    font-weight: 500;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.anime5e.sheet.actor nav.sheet-navigation .item.active {
+    background: var(--accent-color);
+    color: white;
+    border-bottom: none;
+}
+
+/* Resource Bars */
+.anime5e.sheet.actor .resource {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.anime5e.sheet.actor .resource label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.anime5e.sheet.actor .resource input {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background: white;
+}
+
+/* Ability Scores */
+.anime5e.sheet.actor .ability {
+    height: 80px;
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.anime5e.sheet.actor .ability:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.anime5e.sheet.actor .ability .ability-name {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.anime5e.sheet.actor .ability .ability-score {
     font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.anime5e.sheet.actor .ability .ability-mod {
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+/* Grid Layouts */
+.anime5e.sheet.actor .grid {
+    display: grid;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.anime5e.sheet.actor .grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.anime5e.sheet.actor .grid-3col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.anime5e.sheet.actor .grid-4col {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Section Styling */
+.anime5e.sheet.actor .section-header {
+    background: var(--secondary-color);
+    color: white;
+    padding: 8px 15px;
+    margin: 15px 0 10px 0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .anime5e.sheet.actor .resource {
@@ -46,20 +171,6 @@
     float: left;
     text-align: center;
     padding: 0 5px;
-}
-
-.anime5e.sheet.actor .resource label {
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.anime5e.sheet.actor .resource input {
-    width: 45%;
-    height: 28px;
-    text-align: center;
-    border: 1px solid var(--color-secondary);
-    border-radius: 3px;
 }
 
 .anime5e.sheet.actor .resource span {
@@ -76,18 +187,6 @@
 /* Stats Tab */
 .anime5e.sheet.actor .abilities {
     flex: 0 0 100%;
-}
-
-.anime5e.sheet.actor .ability {
-    height: 70px;
-    border: 1px solid var(--color-secondary);
-    border-radius: 3px;
-    text-align: center;
-}
-
-.anime5e.sheet.actor .ability .ability-mod {
-    height: 24px;
-    margin-top: 3px;
 }
 
 /* Combat Stats */
@@ -206,21 +305,6 @@
 }
 
 /* Utility Classes */
-.anime5e.sheet.actor .grid {
-    display: grid;
-    gap: 10px;
-    margin: 10px 0;
-    padding: 0;
-}
-
-.anime5e.sheet.actor .grid-2col {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.anime5e.sheet.actor .grid-3col {
-    grid-template-columns: repeat(3, 1fr);
-}
-
 .anime5e.sheet.actor .flexrow {
     display: flex;
     flex-direction: row;
@@ -366,4 +450,224 @@
 
 .character-actions .launch-wizard i {
     font-size: 1.1em;
+}
+
+/* Features and Talents Section */
+.anime5e.sheet.actor .features-talents {
+    padding: 10px;
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.anime5e.sheet.actor .feature-item {
+    margin: 10px 0;
+    padding: 10px;
+    background: var(--background-secondary);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.anime5e.sheet.actor .feature-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.anime5e.sheet.actor .feature-name {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Weapons Section */
+.anime5e.sheet.actor .weapons-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.anime5e.sheet.actor .weapon-card {
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 10px;
+}
+
+.anime5e.sheet.actor .weapon-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.anime5e.sheet.actor .weapon-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+/* Spells Section */
+.anime5e.sheet.actor .spells-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.anime5e.sheet.actor .spell-level {
+    background: var(--background-secondary);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.anime5e.sheet.actor .spell-slot-counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.anime5e.sheet.actor .spell-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+/* Companions and Vehicles Section */
+.anime5e.sheet.actor .companion-vehicle {
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.anime5e.sheet.actor .companion-header,
+.anime5e.sheet.actor .vehicle-header {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.anime5e.sheet.actor .companion-image,
+.anime5e.sheet.actor .vehicle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Inventory Section */
+.anime5e.sheet.actor .inventory-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.anime5e.sheet.actor .inventory-category {
+    flex: 1;
+    min-width: 200px;
+    background: var(--background-secondary);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.anime5e.sheet.actor .inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.anime5e.sheet.actor .item-list {
+    display: grid;
+    gap: 5px;
+}
+
+.anime5e.sheet.actor .inventory-item {
+    display: grid;
+    grid-template-columns: 30px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    background: var(--background-primary);
+    border-radius: 3px;
+}
+
+/* Description Sections */
+.anime5e.sheet.actor .description-field {
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.anime5e.sheet.actor .description-field textarea {
+    width: 100%;
+    min-height: 100px;
+    border: none;
+    background: transparent;
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+/* Points and Experience Section */
+.anime5e.sheet.actor .points-experience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.anime5e.sheet.actor .point-category {
+    background: var(--background-secondary);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.anime5e.sheet.actor .point-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 5px 0;
+}
+
+/* Tabs and Navigation */
+.anime5e.sheet.actor .sheet-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0 5px;
+    margin-bottom: 15px;
+}
+
+.anime5e.sheet.actor .sheet-navigation .item {
+    padding: 8px 15px;
+    background: var(--background-secondary);
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.anime5e.sheet.actor .sheet-navigation .item:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.anime5e.sheet.actor .sheet-navigation .item.active {
+    background: var(--accent-color);
+    color: white;
 } 

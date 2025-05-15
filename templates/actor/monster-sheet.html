@@ -1,4 +1,5 @@
 <form class="{{cssClass}} flexcol monster" autocomplete="off">
+    {{!-- Sheet Header --}}
     <header class="sheet-header">
         <div class="profile-section">
             <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
@@ -75,6 +76,7 @@
         </div>
     </header>
 
+    {{!-- Resource Bars --}}
     <div class="resources-grid">
         <div class="resource-box">
             <label>Hit Points</label>
@@ -106,17 +108,33 @@
         </div>
     </div>
 
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="stats">Stats</a>
-        <a class="item" data-tab="features">Features</a>
-        <a class="item" data-tab="attacks">Attacks</a>
-        <a class="item" data-tab="spells">Spells</a>
-        <a class="item" data-tab="description">Description</a>
+    {{!-- Navigation --}}
+    <nav class="sheet-navigation">
+        <a class="item" data-tab="stats">
+            <i class="fas fa-chart-bar"></i> Stats
+        </a>
+        <a class="item" data-tab="features">
+            <i class="fas fa-star"></i> Features
+        </a>
+        <a class="item" data-tab="attacks">
+            <i class="fas fa-fist-raised"></i> Attacks
+        </a>
+        <a class="item" data-tab="spells">
+            <i class="fas fa-magic"></i> Spells
+        </a>
+        <a class="item" data-tab="description">
+            <i class="fas fa-book-open"></i> Description
+        </a>
     </nav>
 
+    {{!-- Sheet Body --}}
     <section class="sheet-body">
         {{!-- Stats Tab --}}
         <div class="tab stats" data-group="primary" data-tab="stats">
+            {{!-- Abilities --}}
+            <div class="section-header">
+                <span>Abilities</span>
+            </div>
             <div class="abilities-grid">
                 {{#each system.abilities as |ability key|}}
                 <div class="ability-box">
@@ -127,6 +145,10 @@
                 {{/each}}
             </div>
 
+            {{!-- Defenses --}}
+            <div class="section-header">
+                <span>Defenses</span>
+            </div>
             <div class="defenses-grid">
                 <div class="defense-box">
                     <label>Armor Class</label>
@@ -149,26 +171,27 @@
                 </div>
             </div>
 
+            {{!-- Movement --}}
+            <div class="section-header">
+                <span>Movement</span>
+            </div>
             <div class="movement-grid">
-                <div class="movement-box">
-                    <label>Speed</label>
-                    <div class="speed-types">
-                        <div class="speed-item">
-                            <label>Walk</label>
-                            <input type="number" name="system.speed.walk" value="{{system.speed.walk}}" data-dtype="Number"/>
-                        </div>
-                        <div class="speed-item">
-                            <label>Fly</label>
-                            <input type="number" name="system.speed.fly" value="{{system.speed.fly}}" data-dtype="Number"/>
-                        </div>
-                        <div class="speed-item">
-                            <label>Swim</label>
-                            <input type="number" name="system.speed.swim" value="{{system.speed.swim}}" data-dtype="Number"/>
-                        </div>
-                        <div class="speed-item">
-                            <label>Climb</label>
-                            <input type="number" name="system.speed.climb" value="{{system.speed.climb}}" data-dtype="Number"/>
-                        </div>
+                <div class="speed-types">
+                    <div class="speed-item">
+                        <label>Walk</label>
+                        <input type="number" name="system.speed.walk" value="{{system.speed.walk}}" data-dtype="Number"/>
+                    </div>
+                    <div class="speed-item">
+                        <label>Fly</label>
+                        <input type="number" name="system.speed.fly" value="{{system.speed.fly}}" data-dtype="Number"/>
+                    </div>
+                    <div class="speed-item">
+                        <label>Swim</label>
+                        <input type="number" name="system.speed.swim" value="{{system.speed.swim}}" data-dtype="Number"/>
+                    </div>
+                    <div class="speed-item">
+                        <label>Climb</label>
+                        <input type="number" name="system.speed.climb" value="{{system.speed.climb}}" data-dtype="Number"/>
                     </div>
                 </div>
             </div>
@@ -186,7 +209,7 @@
                             <a class="feature-control feature-delete"><i class="fas fa-trash"></i></a>
                         </div>
                     </div>
-                    <textarea name="system.features.{{id}}.description">{{feature.description}}</textarea>
+                    <textarea name="system.features.{{id}}.description" placeholder="Feature description">{{feature.description}}</textarea>
                 </div>
                 {{/each}}
                 <button type="button" class="add-feature">
@@ -249,14 +272,14 @@
                         </div>
                         <div class="spell-stat">
                             <label>Range</label>
-                            <input type="text" name="system.spells.{{id}}.range" value="{{spell.range}}"/>
+                            <input type="text" name="system.spells.{{id}}.range" value="{{spell.range}}" placeholder="e.g. 30 feet"/>
                         </div>
                         <div class="spell-stat">
                             <label>Duration</label>
-                            <input type="text" name="system.spells.{{id}}.duration" value="{{spell.duration}}"/>
+                            <input type="text" name="system.spells.{{id}}.duration" value="{{spell.duration}}" placeholder="e.g. 1 minute"/>
                         </div>
                     </div>
-                    <textarea name="system.spells.{{id}}.description" placeholder="Spell effects and rules">{{spell.description}}</textarea>
+                    <textarea name="system.spells.{{id}}.description" placeholder="Spell description and effects">{{spell.description}}</textarea>
                 </div>
                 {{/each}}
                 <button type="button" class="add-spell">
@@ -267,21 +290,8 @@
 
         {{!-- Description Tab --}}
         <div class="tab description" data-group="primary" data-tab="description">
-            <div class="form-group">
-                <label>Physical Description</label>
-                <textarea name="system.description.physical">{{system.description.physical}}</textarea>
-            </div>
-            <div class="form-group">
-                <label>Behavior</label>
-                <textarea name="system.description.behavior">{{system.description.behavior}}</textarea>
-            </div>
-            <div class="form-group">
-                <label>Habitat</label>
-                <textarea name="system.description.habitat">{{system.description.habitat}}</textarea>
-            </div>
-            <div class="form-group">
-                <label>Notes</label>
-                <textarea name="system.description.notes">{{system.description.notes}}</textarea>
+            <div class="editor">
+                {{editor content=system.description target="system.description" button=true owner=owner editable=editable}}
             </div>
         </div>
     </section>

@@ -1,23 +1,24 @@
 // Import necessary modules and configurations
-import { ANIME5E } from "./schema.js";
-import { Anime5eActor } from "./documents/actor.js";
-import Anime5eItem from "./documents/Anime5eItem.js";
-import { preloadHandlebarsTemplates } from "./templates.js";
-import { AttributeTemplate, DefectTemplate, RaceTemplate, EnhancementTemplate, LimiterTemplate } from "./templates/item-templates.js";
+import { ANIME5E } from "./config/constants.js";
+import { AnimeActor } from "./documents/AnimeActor.js";
+import { AnimeItem } from "./documents/AnimeItem.js";
+import { preloadHandlebarsTemplates } from "./helpers/templates.js";
+import { CharacterSheet } from "./sheets/CharacterSheet.js";
+import { NPCSheet } from "./sheets/NPCSheet.js";
+import { MonsterSheet } from "./sheets/MonsterSheet.js";
 import { RaceSheet } from "./sheets/RaceSheet.js";
 import { AttributeSheet } from "./sheets/AttributeSheet.js";
 import { DefectSheet } from "./sheets/DefectSheet.js";
 import { EnhancementSheet } from "./sheets/EnhancementSheet.js";
 import { LimiterSheet } from "./sheets/LimiterSheet.js";
-import Anime5eActor from "./documents/Anime5eActor.js";
 
 Hooks.once('init', async function() {
     console.log('Anime5E | Initializing Anime 5E System');
 
     // Define custom document classes
     CONFIG.ANIME5E = ANIME5E;
-    CONFIG.Actor.documentClass = Anime5eActor;
-    CONFIG.Item.documentClass = Anime5eItem;
+    CONFIG.Actor.documentClass = AnimeActor;
+    CONFIG.Item.documentClass = AnimeItem;
 
     // Register actor types
     CONFIG.Actor.types = Array.from(ANIME5E.actorTypes);
@@ -48,47 +49,59 @@ Hooks.once('init', async function() {
 
     // Register sheet application classes
     Actors.unregisterSheet("core", ActorSheet);
+    
+    // Register actor sheets
+    Actors.registerSheet("anime5e", CharacterSheet, {
+        types: ["player"],
+        makeDefault: true,
+        label: "ANIME5E.Sheets.PlayerCharacter"
+    });
+    
+    Actors.registerSheet("anime5e", NPCSheet, {
+        types: ["npc"],
+        makeDefault: true,
+        label: "ANIME5E.Sheets.NPC"
+    });
+    
+    Actors.registerSheet("anime5e", MonsterSheet, {
+        types: ["monster"],
+        makeDefault: true,
+        label: "ANIME5E.Sheets.Monster"
+    });
+
+    // Register item sheets
     Items.unregisterSheet("core", ItemSheet);
 
-    // Register the race sheet
+    // Register item sheets
     Items.registerSheet("anime5e", RaceSheet, {
         types: ["race"],
-        makeDefault: true
+        makeDefault: true,
+        label: "ANIME5E.Sheets.Race"
     });
 
-    // Register the attribute sheet
     Items.registerSheet("anime5e", AttributeSheet, {
         types: ["attribute"],
-        makeDefault: true
+        makeDefault: true,
+        label: "ANIME5E.Sheets.Attribute"
     });
 
-    // Register the defect sheet
     Items.registerSheet("anime5e", DefectSheet, {
         types: ["defect"],
-        makeDefault: true
+        makeDefault: true,
+        label: "ANIME5E.Sheets.Defect"
     });
 
-    // Register the enhancement sheet
     Items.registerSheet("anime5e", EnhancementSheet, {
         types: ["enhancement"],
-        makeDefault: true
+        makeDefault: true,
+        label: "ANIME5E.Sheets.Enhancement"
     });
 
-    // Register the limiter sheet
     Items.registerSheet("anime5e", LimiterSheet, {
         types: ["limiter"],
-        makeDefault: true
+        makeDefault: true,
+        label: "ANIME5E.Sheets.Limiter"
     });
-
-    // Register template data for custom items
-    CONFIG.Item.templates = {
-        ...CONFIG.Item.templates,
-        "attribute": AttributeTemplate,
-        "defect": DefectTemplate,
-        "race": RaceTemplate,
-        "enhancement": EnhancementTemplate,
-        "limiter": LimiterTemplate
-    };
 
     // Register custom Handlebars helpers
     Handlebars.registerHelper('formatCost', function(cost) {
@@ -106,28 +119,6 @@ Hooks.once('init', async function() {
 Hooks.once('ready', async function() {
     // Any one-time system initialization that needs to happen after init
     console.log('Anime5E | System Ready');
-
-    // Register context menu options for Attributes and Defects
-    const customItemOptions = {
-        name: "Create Custom",
-        icon: '<i class="fas fa-plus"></i>',
-        condition: li => true,
-        callback: li => {
-            const itemType = li.data("item-type");
-            const template = itemType === "attribute" ? AttributeTemplate : itemType === "defect" ? DefectTemplate : itemType === "enhancement" ? EnhancementTemplate : LimiterTemplate;
-            const actor = game.actors.get(li.parents('[data-actor-id]').data("actor-id"));
-            
-            template.system.isCustom = true;
-            actor.createEmbeddedDocuments("Item", [template]);
-        }
-    };
-
-    // Add context menu option to both Attributes and Defects lists
-    const attributeList = html.find(".attributes-list");
-    const defectList = html.find(".defects-list");
-    
-    new ContextMenu(attributeList, ".item", [customItemOptions]);
-    new ContextMenu(defectList, ".item", [customItemOptions]);
 });
 
 // Handle custom item creation dialog

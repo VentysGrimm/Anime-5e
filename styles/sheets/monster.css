@@ -1,0 +1,341 @@
+/* Monster Sheet Styles */
+.anime5e.sheet.actor.monster {
+    min-width: 720px;
+    min-height: 680px;
+    font-family: 'Roboto', sans-serif;
+    --primary-color: #4a4a4a;
+    --secondary-color: #7289da;
+    --accent-color: #ff69b4;
+    --border-color: #dcdcdc;
+    --background-primary: #ffffff;
+    --background-secondary: #f5f5f5;
+    --danger-color: #e74c3c;
+}
+
+/* Sheet Header */
+.anime5e.sheet.actor.monster .sheet-header {
+    flex: 0 0 140px;
+    border-bottom: 2px solid var(--accent-color);
+    margin-bottom: 15px;
+    padding: 10px;
+    background: var(--background-secondary);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.anime5e.sheet.actor.monster .profile-section {
+    flex: 0 0 120px;
+    margin-right: 15px;
+}
+
+.anime5e.sheet.actor.monster .profile-img {
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.anime5e.sheet.actor.monster .monster-info {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.anime5e.sheet.actor.monster .info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.anime5e.sheet.actor.monster .info-group label {
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.anime5e.sheet.actor.monster .info-group select {
+    width: 100%;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background: white;
+    color: var(--primary-color);
+    padding: 0 5px;
+}
+
+/* Navigation */
+.anime5e.sheet.actor.monster .sheet-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.anime5e.sheet.actor.monster .sheet-navigation .item {
+    padding: 8px 15px;
+    background: var(--background-secondary);
+    border-radius: 5px 5px 0 0;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.anime5e.sheet.actor.monster .sheet-navigation .item:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.anime5e.sheet.actor.monster .sheet-navigation .item.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Resource Bars */
+.anime5e.sheet.actor.monster .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.anime5e.sheet.actor.monster .resource-box {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.anime5e.sheet.actor.monster .resource-box label {
+    display: block;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.anime5e.sheet.actor.monster .resource-content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.anime5e.sheet.actor.monster .resource-content input {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background: white;
+}
+
+.anime5e.sheet.actor.monster .hit-dice {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid var(--border-color);
+}
+
+.anime5e.sheet.actor.monster .hit-dice input {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    background: white;
+}
+
+/* Stats Tab */
+.anime5e.sheet.actor.monster .abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.anime5e.sheet.actor.monster .ability-box {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.anime5e.sheet.actor.monster .ability-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.anime5e.sheet.actor.monster .ability-box label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.anime5e.sheet.actor.monster .ability-box input {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    border: none;
+    background: transparent;
+    margin: 5px 0;
+}
+
+.anime5e.sheet.actor.monster .ability-mod {
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+/* Defenses Grid */
+.anime5e.sheet.actor.monster .defenses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.anime5e.sheet.actor.monster .defense-box {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.anime5e.sheet.actor.monster .defense-box label {
+    display: block;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.anime5e.sheet.actor.monster .saves-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.anime5e.sheet.actor.monster .save-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Movement Grid */
+.anime5e.sheet.actor.monster .movement-grid {
+    margin: 15px 0;
+}
+
+.anime5e.sheet.actor.monster .speed-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.anime5e.sheet.actor.monster .speed-item {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Features, Attacks, and Spells */
+.anime5e.sheet.actor.monster .feature-item,
+.anime5e.sheet.actor.monster .attack-item,
+.anime5e.sheet.actor.monster .spell-item {
+    background: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.anime5e.sheet.actor.monster .feature-header,
+.anime5e.sheet.actor.monster .attack-header,
+.anime5e.sheet.actor.monster .spell-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.anime5e.sheet.actor.monster .feature-controls,
+.anime5e.sheet.actor.monster .attack-controls,
+.anime5e.sheet.actor.monster .spell-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.anime5e.sheet.actor.monster .feature-control,
+.anime5e.sheet.actor.monster .attack-control,
+.anime5e.sheet.actor.monster .spell-control {
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+}
+
+.anime5e.sheet.actor.monster .feature-control:hover,
+.anime5e.sheet.actor.monster .attack-control:hover,
+.anime5e.sheet.actor.monster .spell-control:hover {
+    color: var(--accent-color);
+}
+
+.anime5e.sheet.actor.monster .attack-stats,
+.anime5e.sheet.actor.monster .spell-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.anime5e.sheet.actor.monster .attack-stat,
+.anime5e.sheet.actor.monster .spell-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.anime5e.sheet.actor.monster textarea {
+    width: 100%;
+    min-height: 60px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 5px;
+    resize: vertical;
+}
+
+/* Add Buttons */
+.anime5e.sheet.actor.monster .add-feature,
+.anime5e.sheet.actor.monster .add-attack,
+.anime5e.sheet.actor.monster .add-spell {
+    width: 100%;
+    padding: 10px;
+    background: var(--background-secondary);
+    border: 1px dashed var(--border-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.anime5e.sheet.actor.monster .add-feature:hover,
+.anime5e.sheet.actor.monster .add-attack:hover,
+.anime5e.sheet.actor.monster .add-spell:hover {
+    background: var(--secondary-color);
+    color: white;
+    border-style: solid;
+} 
