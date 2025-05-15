@@ -4,13 +4,13 @@
   "description": "A system for playing Anime 5E in Foundry VTT",
   "version": "1.0.0",
   "compatibility": {
-    "minimum": "10",
-    "verified": "11",
-    "maximum": "11"
+    "minimum": "12",
+    "verified": "12",
+    "maximum": "13"
   },
   "authors": [
     {
-      "name": "System Creator"
+      "name": "Ventys Grimm"
     }
   ],
   "esmodules": [
@@ -20,6 +20,253 @@
     "styles/anime5e.css",
     "styles/character-sheet.css"
   ],
+  "documentTypes": {
+    "Actor": {
+      "types": ["player", "npc", "monster"],
+      "player": {
+        "templates": ["base", "attributes", "abilities"],
+        "biography": {
+          "type": "String",
+          "default": ""
+        },
+        "level": {
+          "type": "Number",
+          "default": 1
+        },
+        "experience": {
+          "type": "Number",
+          "default": 0
+        }
+      },
+      "npc": {
+        "templates": ["base", "attributes"],
+        "cr": {
+          "type": "Number",
+          "default": 0
+        },
+        "biography": {
+          "type": "String",
+          "default": ""
+        }
+      },
+      "monster": {
+        "templates": ["base", "attributes"],
+        "cr": {
+          "type": "Number",
+          "default": 1
+        },
+        "traits": {
+          "type": "Array",
+          "default": []
+        },
+        "actions": {
+          "type": "Array",
+          "default": []
+        },
+        "reactions": {
+          "type": "Array",
+          "default": []
+        },
+        "legendaryActions": {
+          "type": "Array",
+          "default": []
+        }
+      },
+      "templates": {
+        "base": {
+          "hp": {
+            "value": {
+              "type": "Number",
+              "default": 10
+            },
+            "max": {
+              "type": "Number",
+              "default": 10
+            },
+            "temp": {
+              "type": "Number",
+              "default": 0
+            }
+          },
+          "mp": {
+            "value": {
+              "type": "Number",
+              "default": 10
+            },
+            "max": {
+              "type": "Number",
+              "default": 10
+            },
+            "temp": {
+              "type": "Number",
+              "default": 0
+            }
+          },
+          "ac": {
+            "value": {
+              "type": "Number",
+              "default": 10,
+              "min": 0
+            },
+            "base": {
+              "type": "Number",
+              "default": 10
+            },
+            "dexMod": {
+              "type": "Number",
+              "default": 0
+            },
+            "armor": {
+              "type": "Number",
+              "default": 0
+            },
+            "shield": {
+              "type": "Number",
+              "default": 0
+            },
+            "bonus": {
+              "type": "Number",
+              "default": 0
+            }
+          },
+          "initiative": {
+            "value": {
+              "type": "Number",
+              "default": 0
+            }
+          },
+          "speed": {
+            "value": {
+              "type": "Number",
+              "default": 30
+            }
+          }
+        },
+        "attributes": {
+          "attributes": {
+            "type": "Object",
+            "default": {}
+          },
+          "saves": {
+            "type": "Object",
+            "default": {}
+          }
+        },
+        "abilities": {
+          "abilities": {
+            "str": {
+              "value": {
+                "type": "Number",
+                "default": 10
+              },
+              "mod": {
+                "type": "Number",
+                "default": 0
+              }
+            },
+            "dex": {
+              "value": {
+                "type": "Number",
+                "default": 10
+              },
+              "mod": {
+                "type": "Number",
+                "default": 0
+              }
+            },
+            "con": {
+              "value": {
+                "type": "Number",
+                "default": 10
+              },
+              "mod": {
+                "type": "Number",
+                "default": 0
+              }
+            },
+            "int": {
+              "value": {
+                "type": "Number",
+                "default": 10
+              },
+              "mod": {
+                "type": "Number",
+                "default": 0
+              }
+            },
+            "wis": {
+              "value": {
+                "type": "Number",
+                "default": 10
+              },
+              "mod": {
+                "type": "Number",
+                "default": 0
+              }
+            },
+            "cha": {
+              "value": {
+                "type": "Number",
+                "default": 10
+              },
+              "mod": {
+                "type": "Number",
+                "default": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "Item": [
+      "armor",
+      "weapon",
+      "vehicle",
+      "attribute",
+      "defect",
+      "equipment"
+    ]
+  },
+  "sheets": {
+    "Actor": {
+      "player": {
+        "label": "Character Sheet",
+        "class": "Anime5ECharacterSheet",
+        "template": "systems/anime5e/templates/actor/character-sheet.html",
+        "types": ["player"],
+        "default": true
+      },
+      "npc": {
+        "label": "NPC Sheet",
+        "class": "Anime5ENPCSheet",
+        "template": "systems/anime5e/templates/actor/npc-sheet.html",
+        "types": ["npc"]
+      },
+      "monster": {
+        "label": "Monster Sheet",
+        "class": "Anime5EMonsterSheet",
+        "template": "systems/anime5e/templates/actor/monster-sheet.html",
+        "types": ["monster"]
+      }
+    },
+    "Item": {
+      "armor": {
+        "label": "Armor Sheet",
+        "class": "Anime5EArmorSheet",
+        "template": "systems/anime5e/templates/sheets/armor-sheet.html"
+      },
+      "weapon": {
+        "label": "Weapon Sheet",
+        "class": "Anime5EWeaponSheet",
+        "template": "systems/anime5e/templates/sheets/weapon-sheet.html"
+      },
+      "vehicle": {
+        "label": "Vehicle Sheet",
+        "class": "Anime5EVehicleSheet",
+        "template": "systems/anime5e/templates/sheets/vehicle-sheet.html"
+      }
+    }
+  },
   "packs": [
     {
       "name": "attributes",
@@ -41,6 +288,27 @@
       "path": "packs/equipment.db",
       "type": "Item",
       "system": "anime5e"
+    },
+    {
+      "name": "armor",
+      "label": "Armor",
+      "path": "packs/armor.db",
+      "type": "Item",
+      "system": "anime5e"
+    },
+    {
+      "name": "weapons",
+      "label": "Weapons",
+      "path": "packs/weapons.db",
+      "type": "Item",
+      "system": "anime5e"
+    },
+    {
+      "name": "vehicles",
+      "label": "Vehicles",
+      "path": "packs/vehicles.db",
+      "type": "Item",
+      "system": "anime5e"
     }
   ],
   "languages": [
@@ -50,12 +318,12 @@
       "path": "lang/en.json"
     }
   ],
-  "gridDistance": 5,
-  "gridUnits": "ft",
+  "grid.Distance": 5,
+  "grid.Units": "ft",
   "primaryTokenAttribute": "attributes.hp",
   "secondaryTokenAttribute": "attributes.mp",
   "url": "",
-  "manifest": "",
-  "download": "",
+  "manifest": "https://github.com/VentysGrimm/Anime-5e",
+  "download": "https://github.com/VentysGrimm/Anime-5e.git",
   "license": "LICENSE.txt"
 } 

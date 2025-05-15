@@ -269,6 +269,26 @@
                 "Effects": "Effects",
                 "AddEffect": "Add Effect"
             }
+        },
+
+        "ActorTypePlayer": "Player Character",
+        "ActorTypeNPC": "Non-Player Character",
+        "ActorTypeMonster": "Monster",
+        
+        "Character": {
+            "Level": "Level",
+            "Experience": "Experience",
+            "ProficiencyBonus": "Proficiency Bonus",
+            "Initiative": "Initiative",
+            "Speed": "Speed"
+        },
+        
+        "Combat": {
+            "CR": "Challenge Rating",
+            "Actions": "Actions",
+            "Reactions": "Reactions",
+            "LegendaryActions": "Legendary Actions",
+            "Traits": "Traits"
         }
     }
 } 
