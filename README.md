@@ -106,11 +106,11 @@ npm test
 
 For support, please:
 1. Check the [Wiki](link-to-wiki)
-2. Open an issue on the [Issue Tracker](link-to-issues)
+2. Open an issue on the [Issue Tracker]((https://github.com/VentysGrimm/Anime-5e/issues))
 3. Join our [Discord Community](link-to-discord)
 
 ## Credits
 
-- System Creator: [Your Name]
+- System Creator: [Ventys Grimm]
 - Contributors: [List of contributors]
 - Special thanks to the Foundry VTT community 
