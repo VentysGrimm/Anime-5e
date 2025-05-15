@@ -1,9 +1,9 @@
 export class NPCSheet extends ActorSheet {
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["anime5e", "sheet", "actor", "npc"],
             template: "systems/anime5e/templates/actor/npc-sheet.html",
-            width: 720,
+            width: 600,
             height: 680,
             tabs: [{
                 navSelector: ".sheet-tabs",
@@ -13,37 +13,42 @@ export class NPCSheet extends ActorSheet {
             dragDrop: [{
                 dragSelector: ".item-list .item",
                 dropSelector: null
+            }],
+            filters: [{
+                inputSelector: ".filter-input",
+                contentSelector: ".filterable-list"
             }]
         });
     }
 
-    getData() {
-        const data = super.getData();
-        data.system = data.actor.system;
+    async getData(options={}) {
+        const context = await super.getData(options);
+        
+        // Add the actor's data
+        context.actor = this.actor;
+        context.system = this.actor.system;
+        context.flags = this.actor.flags;
 
-        // Add configuration data
-        data.config = {
-            allegiances: {
-                neutral: "Neutral",
-                ally: "Ally",
-                enemy: "Enemy"
-            },
-            abilities: CONFIG.ANIME5E.Abilities,
-            skills: CONFIG.ANIME5E.Skills
-        };
-
-        // Prepare items
-        this._prepareItems(data);
-
-        // Calculate ability modifiers
-        for (let [key, ability] of Object.entries(data.system.abilities)) {
-            ability.mod = Math.floor((ability.value - 10) / 2);
+        // Add NPC-specific data
+        if (this.actor.type === 'npc') {
+            await this._prepareNPCItems(context);
+            await this._prepareAbilities(context);
         }
 
-        return data;
+        // Add roll data for TinyMCE editors
+        context.rollData = this.actor.getRollData();
+
+        // Add config data
+        context.config = CONFIG.ANIME5E;
+
+        // Add owner permissions
+        context.isOwner = this.actor.isOwner;
+        context.isEditable = this.isEditable;
+
+        return context;
     }
 
-    _prepareItems(data) {
+    async _prepareItems(context) {
         // Categorize items
         const attributes = [];
         const defects = [];
@@ -51,7 +56,9 @@ export class NPCSheet extends ActorSheet {
         const armor = [];
         const items = [];
 
-        for (let item of data.actor.items) {
+        // Iterate through items, allocating to containers
+        for (const item of this.actor.items) {
+            item.img = item.img || foundry.CONST.DEFAULT_TOKEN;
             switch (item.type) {
                 case 'attribute':
                     attributes.push(item);
@@ -70,100 +77,151 @@ export class NPCSheet extends ActorSheet {
             }
         }
 
-        // Assign to data
-        data.attributes = attributes;
-        data.defects = defects;
-        data.equipment = {
+        // Assign to context
+        context.attributes = attributes;
+        context.defects = defects;
+        context.equipment = {
             weapons: weapons,
             armor: armor,
             items: items
         };
     }
 
+    async _onDropItem(event, data) {
+        if (!this.actor.isOwner) return false;
+
+        // Get the item from the drag data
+        const item = await Item.implementation.fromDropData(data);
+        if (!item) return;
+
+        // Validate item type is allowed
+        if (!this._validateItemType(item)) {
+            ui.notifications.warn(game.i18n.format("ANIME5E.InvalidItemType", {type: item.type}));
+            return false;
+        }
+
+        // Handle item drop
+        return super._onDropItem(event, data);
+    }
+
     activateListeners(html) {
         super.activateListeners(html);
 
-        // Add item
+        // Everything below here is only needed if the sheet is editable
+        if (!this.isEditable) return;
+
+        // Add Inventory Item
         html.find('.item-create').click(this._onItemCreate.bind(this));
 
-        // Edit item
+        // Update Inventory Item
         html.find('.item-edit').click(ev => {
             const li = $(ev.currentTarget).parents(".item");
             const item = this.actor.items.get(li.data("itemId"));
-            item.sheet.render(true);
+            if (item) item.sheet.render(true);
         });
 
-        // Delete item
+        // Delete Inventory Item
         html.find('.item-delete').click(ev => {
             const li = $(ev.currentTarget).parents(".item");
             const item = this.actor.items.get(li.data("itemId"));
-            item.delete();
-            li.slideUp(200, () => this.render(false));
+            if (item) {
+                new Dialog({
+                    title: game.i18n.localize("ANIME5E.DeleteItemTitle"),
+                    content: game.i18n.format("ANIME5E.DeleteItemContent", {name: item.name}),
+                    buttons: {
+                        delete: {
+                            icon: '<i class="fas fa-trash"></i>',
+                            label: game.i18n.localize("Delete"),
+                            callback: () => {
+                                item.delete();
+                                li.slideUp(200, () => this.render(false));
+                            }
+                        },
+                        cancel: {
+                            icon: '<i class="fas fa-times"></i>',
+                            label: game.i18n.localize("Cancel")
+                        }
+                    },
+                    default: "cancel"
+                }).render(true);
+            }
         });
 
-        // Allegiance change
-        html.find('.allegiance-select').change(this._onAllegianceChange.bind(this));
-
-        // Resource value changes
-        html.find('.resource-value').change(this._onResourceChange.bind(this));
-
-        // Ability score changes
-        html.find('.ability-score').change(this._onAbilityChange.bind(this));
+        // Rollable abilities
+        html.find('.rollable').click(this._onRoll.bind(this));
     }
 
+    /**
+     * Validate that an item type is allowed to be added to this actor
+     * @param {Item} item - The item to validate
+     * @returns {boolean} - Whether the item type is valid
+     * @private
+     */
+    _validateItemType(item) {
+        const allowedTypes = new Set([
+            'weapon', 'armor', 'attribute', 'power'
+        ]);
+        return allowedTypes.has(item.type);
+    }
+
+    /**
+     * Handle creating a new Owned Item for the actor
+     * @param {Event} event - The originating click event
+     * @private
+     */
     async _onItemCreate(event) {
         event.preventDefault();
         const header = event.currentTarget;
         const type = header.dataset.type;
+
+        // Validate item type
+        if (!this._validateItemType({type})) {
+            ui.notifications.warn(game.i18n.format("ANIME5E.InvalidItemType", {type}));
+            return;
+        }
+
+        // Create the item
         const itemData = {
-            name: `New ${type.capitalize()}`,
-            type: type
+            name: game.i18n.format("ANIME5E.ItemNew", { type: type.capitalize() }),
+            type: type,
+            system: foundry.utils.deepClone(header.dataset)
         };
-        await Item.create(itemData, {parent: this.actor});
-    }
+        delete itemData.system.type;
 
-    _onAllegianceChange(event) {
-        event.preventDefault();
-        const newAllegiance = event.currentTarget.value;
-        this.actor.update({"system.allegiance": newAllegiance});
-
-        // Update token border color based on allegiance
-        const tokens = this.actor.getActiveTokens();
-        const borderColors = {
-            neutral: 0x808080, // Gray
-            ally: 0x00ff00,    // Green
-            enemy: 0xff0000     // Red
-        };
-
-        for (let token of tokens) {
-            token.update({
-                "borderColor": borderColors[newAllegiance]
-            });
+        try {
+            await Item.create(itemData, {parent: this.actor});
+        } catch (error) {
+            console.error("Failed to create item:", error);
+            ui.notifications.error(game.i18n.localize("ANIME5E.ItemCreationError"));
         }
     }
 
-    _onResourceChange(event) {
+    /**
+     * Handle clickable rolls
+     * @param {Event} event - The originating click event
+     * @private
+     */
+    async _onRoll(event) {
         event.preventDefault();
         const element = event.currentTarget;
-        const resource = element.dataset.resource;
-        const field = element.dataset.field;
-        const value = Number(element.value);
+        const dataset = element.dataset;
 
-        this.actor.update({
-            [`system.attributes.${resource}.${field}`]: value
-        });
-    }
-
-    _onAbilityChange(event) {
-        event.preventDefault();
-        const element = event.currentTarget;
-        const ability = element.dataset.ability;
-        const value = Number(element.value);
-        const mod = Math.floor((value - 10) / 2);
-
-        this.actor.update({
-            [`system.abilities.${ability}.value`]: value,
-            [`system.abilities.${ability}.mod`]: mod
-        });
+        if (dataset.roll) {
+            try {
+                const roll = new Roll(dataset.roll, this.actor.getRollData());
+                const label = dataset.label ? `Rolling ${dataset.label}` : '';
+                
+                await roll.evaluate({async: true});
+                
+                await roll.toMessage({
+                    speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+                    flavor: label,
+                    rollMode: game.settings.get("core", "rollMode")
+                });
+            } catch (error) {
+                console.error("Roll failed:", error);
+                ui.notifications.error(game.i18n.localize("ANIME5E.RollError"));
+            }
+        }
     }
 } 

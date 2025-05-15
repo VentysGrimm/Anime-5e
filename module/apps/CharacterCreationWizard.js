@@ -1,17 +1,18 @@
 export default class CharacterCreationWizard extends FormApplication {
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["anime5e", "character-wizard"],
             template: "systems/anime5e/templates/apps/character-wizard.html",
             width: 600,
             height: 800,
-            title: "Character Creation Wizard",
+            title: game.i18n.localize("ANIME5E.CharacterWizard"),
             closeOnSubmit: false,
             tabs: [{
                 navSelector: ".wizard-tabs",
                 contentSelector: ".wizard-body",
                 initial: "basics"
-            }]
+            }],
+            scrollY: ["form"]
         });
     }
 
@@ -50,16 +51,25 @@ export default class CharacterCreationWizard extends FormApplication {
         };
     }
 
-    getData() {
-        return {
-            step: this.step,
-            maxSteps: this.maxSteps,
-            data: this.data,
-            races: game.items.filter(i => i.type === "race"),
-            classes: CONFIG.ANIME5E.characterClasses,
-            isLastStep: this.step === this.maxSteps,
-            config: CONFIG.ANIME5E
-        };
+    async getData(options={}) {
+        const context = await super.getData(options);
+        
+        // Add wizard data
+        context.step = this.step;
+        context.maxSteps = this.maxSteps;
+        context.data = this.data;
+        
+        // Add available items
+        context.races = game.items.filter(i => i.type === "race").map(i => i.toObject());
+        context.classes = CONFIG.ANIME5E.characterClasses;
+        
+        // Add step information
+        context.isLastStep = this.step === this.maxSteps;
+        
+        // Add config data
+        context.config = CONFIG.ANIME5E;
+
+        return context;
     }
 
     activateListeners(html) {
@@ -79,61 +89,73 @@ export default class CharacterCreationWizard extends FormApplication {
 
         // Class selection
         html.find(".class-select").change(this._onClassSelect.bind(this));
+
+        // Delete buttons
+        html.find(".item-delete").click(this._onItemDelete.bind(this));
     }
 
     async _updateObject(event, formData) {
+        event.preventDefault();
+        
+        // Update the data based on form values
+        this.data = foundry.utils.mergeObject(this.data, formData);
+
         if (this.step === this.maxSteps) {
-            await this._createCharacter(formData);
+            await this._createCharacter();
         } else {
             this.step++;
             this.render(true);
         }
     }
 
-    async _createCharacter(formData) {
-        const actorData = {
-            name: this.data.basics.name,
-            type: "character",
-            system: {
-                player: this.data.basics.playerName,
-                background: this.data.basics.background,
-                class: this.data.class.name,
-                level: this.data.class.level,
-                abilities: this.data.abilities,
-                points: {
-                    starting: this.data.pointBuy.starting,
-                    spent: this.data.pointBuy.spent,
-                    remaining: this.data.pointBuy.remaining
+    async _createCharacter() {
+        try {
+            // Create base actor
+            const actorData = {
+                name: this.data.basics.name,
+                type: "character",
+                system: {
+                    player: this.data.basics.playerName,
+                    background: this.data.basics.background,
+                    class: this.data.class.name,
+                    level: this.data.class.level,
+                    abilities: foundry.utils.deepClone(this.data.abilities),
+                    points: {
+                        starting: this.data.pointBuy.starting,
+                        spent: this.data.pointBuy.spent,
+                        remaining: this.data.pointBuy.remaining
+                    }
                 }
+            };
+
+            const actor = await Actor.create(actorData);
+
+            // Add items in sequence
+            if (this.data.race) {
+                await actor.createEmbeddedDocuments("Item", [this.data.race]);
             }
-        };
 
-        // Create the actor
-        const actor = await Actor.create(actorData);
+            const itemsToCreate = [
+                ...this.data.attributes,
+                ...this.data.defects,
+                ...this.data.powers
+            ].filter(i => i);
 
-        // Add race
-        if (this.data.race) {
-            await actor.createEmbeddedDocuments("Item", [this.data.race]);
+            if (itemsToCreate.length) {
+                await actor.createEmbeddedDocuments("Item", itemsToCreate);
+            }
+
+            // Close wizard and open character sheet
+            this.close();
+            actor.sheet.render(true);
+
+            // Show success notification
+            ui.notifications.info(game.i18n.format("ANIME5E.CharacterCreated", {name: this.data.basics.name}));
+
+        } catch (error) {
+            console.error("Character Creation Error:", error);
+            ui.notifications.error(game.i18n.localize("ANIME5E.CharacterCreationError"));
         }
-
-        // Add attributes
-        if (this.data.attributes.length) {
-            await actor.createEmbeddedDocuments("Item", this.data.attributes);
-        }
-
-        // Add defects
-        if (this.data.defects.length) {
-            await actor.createEmbeddedDocuments("Item", this.data.defects);
-        }
-
-        // Add powers
-        if (this.data.powers.length) {
-            await actor.createEmbeddedDocuments("Item", this.data.powers);
-        }
-
-        // Close wizard and open character sheet
-        this.close();
-        actor.sheet.render(true);
     }
 
     _onNavigate(event) {
@@ -151,50 +173,77 @@ export default class CharacterCreationWizard extends FormApplication {
 
     _onAbilityChange(event) {
         const ability = event.currentTarget.dataset.ability;
-        const value = parseInt(event.currentTarget.value);
+        const value = Math.clamped(parseInt(event.currentTarget.value), 8, 18);
         this.data.abilities[ability] = value;
         this._updatePointBuy();
+        this.render(false);
     }
 
-    _onAttributeChange(event) {
+    async _onAttributeChange(event) {
         const attributeId = event.currentTarget.value;
         const attribute = game.items.get(attributeId);
         if (attribute) {
             this.data.attributes.push(attribute.toObject());
             this._updatePointBuy();
+            this.render(false);
         }
     }
 
-    _onDefectChange(event) {
+    async _onDefectChange(event) {
         const defectId = event.currentTarget.value;
         const defect = game.items.get(defectId);
         if (defect) {
             this.data.defects.push(defect.toObject());
             this._updatePointBuy();
+            this.render(false);
         }
     }
 
-    _onPowerChange(event) {
+    async _onPowerChange(event) {
         const powerId = event.currentTarget.value;
         const power = game.items.get(powerId);
         if (power) {
             this.data.powers.push(power.toObject());
             this._updatePointBuy();
+            this.render(false);
         }
     }
 
-    _onRaceSelect(event) {
+    async _onRaceSelect(event) {
         const raceId = event.currentTarget.value;
         const race = game.items.get(raceId);
         if (race) {
             this.data.race = race.toObject();
             this._updatePointBuy();
+            this.render(false);
         }
     }
 
     _onClassSelect(event) {
         const className = event.currentTarget.value;
         this.data.class.name = className;
+        this.render(false);
+    }
+
+    _onItemDelete(event) {
+        event.preventDefault();
+        const itemType = event.currentTarget.dataset.type;
+        const itemIndex = parseInt(event.currentTarget.dataset.index);
+
+        switch (itemType) {
+            case "attribute":
+                this.data.attributes.splice(itemIndex, 1);
+                break;
+            case "defect":
+                this.data.defects.splice(itemIndex, 1);
+                break;
+            case "power":
+                this.data.powers.splice(itemIndex, 1);
+                break;
+        }
+
+        this._updatePointBuy();
+        this.render(false);
     }
 
     _updatePointBuy() {

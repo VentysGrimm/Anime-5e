@@ -1,6 +1,6 @@
 export class WeaponSheet extends ItemSheet {
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["anime5e", "sheet", "item", "weapon"],
             template: "systems/anime5e/templates/item/weapon-sheet.html",
             width: 520,
@@ -9,169 +9,198 @@ export class WeaponSheet extends ItemSheet {
                 navSelector: ".sheet-tabs",
                 contentSelector: ".sheet-body",
                 initial: "description"
+            }],
+            dragDrop: [{
+                dragSelector: ".enhancement-list .item, .limiter-list .item",
+                dropSelector: null
+            }],
+            filters: [{
+                inputSelector: ".filter-input",
+                contentSelector: ".filterable-list"
             }]
         });
     }
 
-    getData() {
-        const data = super.getData();
-        data.system = data.item.system;
+    async getData(options={}) {
+        const context = await super.getData(options);
         
-        // Add config data for dropdowns
-        data.config = {
-            weaponTypes: {
-                melee: "ANIME5E.WeaponTypes.Melee",
-                ranged: "ANIME5E.WeaponTypes.Ranged"
-            },
-            damageTypes: CONFIG.ANIME5E.DamageTypes,
-            properties: {
-                light: "Light",
-                heavy: "Heavy",
-                finesse: "Finesse",
-                thrown: "Thrown",
-                versatile: "Versatile",
-                reach: "Reach",
-                loading: "Loading",
-                ammunition: "Ammunition"
-            }
-        };
+        // Add the item's data
+        context.item = this.item;
+        context.system = this.item.system;
+        context.flags = this.item.flags;
         
-        // Calculate final cost based on enhancements and limiters
-        this._calculateFinalCost(data.item);
+        // Add weapon-specific data
+        await this._prepareWeaponData(context);
         
-        return data;
+        // Add roll data for TinyMCE editors
+        context.rollData = this.item.getRollData();
+
+        // Add config data
+        context.config = CONFIG.ANIME5E;
+        
+        // Add owner permissions
+        context.isOwner = this.item.isOwner;
+        context.isEditable = this.isEditable;
+        
+        return context;
+    }
+
+    async _onDropItem(event, data) {
+        if (!this.item.isOwner) return false;
+
+        // Get the item from the drag data
+        const item = await Item.implementation.fromDropData(data);
+        if (!item) return;
+
+        // Validate item type is allowed
+        if (!this._validateItemType(item)) {
+            ui.notifications.warn(game.i18n.format("ANIME5E.InvalidItemType", {type: item.type}));
+            return false;
+        }
+
+        // Handle item drop
+        return super._onDropItem(event, data);
     }
 
     activateListeners(html) {
         super.activateListeners(html);
 
-        // Add enhancement/limiter
-        html.find('.add-enhancement').click(this._onAddEnhancement.bind(this));
-        html.find('.add-limiter').click(this._onAddLimiter.bind(this));
+        // Everything below here is only needed if the sheet is editable
+        if (!this.isEditable) return;
 
-        // Remove enhancement/limiter
-        html.find('.remove-enhancement').click(this._onRemoveEnhancement.bind(this));
-        html.find('.remove-limiter').click(this._onRemoveLimiter.bind(this));
+        // Add Enhancement/Limiter
+        html.find('.item-create').click(this._onItemCreate.bind(this));
 
-        // Toggle property checkboxes
-        html.find('.property-checkbox').change(this._onToggleProperty.bind(this));
-    }
+        // Update Enhancement/Limiter
+        html.find('.item-edit').click(ev => {
+            const li = $(ev.currentTarget).parents(".item");
+            const item = this.item.items.get(li.data("itemId"));
+            if (item) item.sheet.render(true);
+        });
 
-    _calculateFinalCost(item) {
-        let finalCost = item.system.baseCost;
-        
-        // Apply enhancements
-        for (let enhancement of item.system.enhancements) {
-            switch (enhancement.system.cost.type) {
-                case "multiplier":
-                    finalCost *= enhancement.system.cost.value;
-                    break;
-                case "flat":
-                    finalCost += enhancement.system.cost.value;
-                    break;
-                case "percentage":
-                    finalCost += (finalCost * enhancement.system.cost.value / 100);
-                    break;
-            }
-        }
-        
-        // Apply limiters
-        for (let limiter of item.system.limiters) {
-            switch (limiter.system.refund.type) {
-                case "multiplier":
-                    finalCost *= (1 - limiter.system.refund.value);
-                    break;
-                case "flat":
-                    finalCost -= limiter.system.refund.value;
-                    break;
-                case "percentage":
-                    finalCost -= (finalCost * limiter.system.refund.value / 100);
-                    break;
-            }
-        }
-        
-        // Update the final cost if it changed
-        if (item.system.finalCost !== finalCost) {
-            item.update({"system.finalCost": Math.max(0, Math.round(finalCost))});
-        }
-    }
-
-    async _onAddEnhancement(event) {
-        event.preventDefault();
-        const enhancementDialog = new Dialog({
-            title: "Add Enhancement",
-            content: await renderTemplate("systems/anime5e/templates/dialogs/add-enhancement.html", {
-                enhancements: game.items.filter(i => i.type === "enhancement")
-            }),
-            buttons: {
-                add: {
-                    label: "Add",
-                    callback: async (html) => {
-                        const enhancementId = html.find("select[name='enhancement']").val();
-                        const enhancement = game.items.get(enhancementId);
-                        const enhancements = duplicate(this.item.system.enhancements);
-                        enhancements.push(enhancement);
-                        await this.item.update({"system.enhancements": enhancements});
-                    }
-                },
-                cancel: {
-                    label: "Cancel"
-                }
+        // Delete Enhancement/Limiter
+        html.find('.item-delete').click(ev => {
+            const li = $(ev.currentTarget).parents(".item");
+            const item = this.item.items.get(li.data("itemId"));
+            if (item) {
+                new Dialog({
+                    title: game.i18n.localize("ANIME5E.DeleteItemTitle"),
+                    content: game.i18n.format("ANIME5E.DeleteItemContent", {name: item.name}),
+                    buttons: {
+                        delete: {
+                            icon: '<i class="fas fa-trash"></i>',
+                            label: game.i18n.localize("Delete"),
+                            callback: () => {
+                                item.delete();
+                                li.slideUp(200, () => this.render(false));
+                            }
+                        },
+                        cancel: {
+                            icon: '<i class="fas fa-times"></i>',
+                            label: game.i18n.localize("Cancel")
+                        }
+                    },
+                    default: "cancel"
+                }).render(true);
             }
         });
-        enhancementDialog.render(true);
+
+        // Handle damage formula input
+        html.find('.damage-formula').change(this._onDamageFormulaChange.bind(this));
+
+        // Handle weapon property toggles
+        html.find('.weapon-property').click(this._onWeaponPropertyToggle.bind(this));
     }
 
-    async _onAddLimiter(event) {
+    async _validateItemType(item) {
+        const allowedTypes = new Set(['enhancement', 'limiter']);
+        return allowedTypes.has(item.type);
+    }
+
+    async _onItemCreate(event) {
         event.preventDefault();
-        const limiterDialog = new Dialog({
-            title: "Add Limiter",
-            content: await renderTemplate("systems/anime5e/templates/dialogs/add-limiter.html", {
-                limiters: game.items.filter(i => i.type === "limiter")
-            }),
-            buttons: {
-                add: {
-                    label: "Add",
-                    callback: async (html) => {
-                        const limiterId = html.find("select[name='limiter']").val();
-                        const limiter = game.items.get(limiterId);
-                        const limiters = duplicate(this.item.system.limiters);
-                        limiters.push(limiter);
-                        await this.item.update({"system.limiters": limiters});
-                    }
-                },
-                cancel: {
-                    label: "Cancel"
-                }
-            }
-        });
-        limiterDialog.render(true);
-    }
+        const header = event.currentTarget;
+        const type = header.dataset.type;
 
-    _onRemoveEnhancement(event) {
-        event.preventDefault();
-        const idx = event.currentTarget.dataset.idx;
-        const enhancements = duplicate(this.item.system.enhancements);
-        enhancements.splice(idx, 1);
-        this.item.update({"system.enhancements": enhancements});
-    }
-
-    _onRemoveLimiter(event) {
-        event.preventDefault();
-        const idx = event.currentTarget.dataset.idx;
-        const limiters = duplicate(this.item.system.limiters);
-        limiters.splice(idx, 1);
-        this.item.update({"system.limiters": limiters});
-    }
-
-    _onToggleProperty(event) {
-        const prop = event.currentTarget.dataset.property;
-        const properties = duplicate(this.item.system.properties.properties);
-        if (event.currentTarget.checked) {
-            properties.push(prop);
-        } else {
-            properties.splice(properties.indexOf(prop), 1);
+        // Validate item type
+        if (!this._validateItemType({type})) {
+            ui.notifications.warn(game.i18n.format("ANIME5E.InvalidItemType", {type}));
+            return;
         }
-        this.item.update({"system.properties.properties": properties});
+
+        // Create the item
+        const itemData = {
+            name: game.i18n.format("ANIME5E.ItemNew", { type: type.capitalize() }),
+            type: type,
+            system: foundry.utils.deepClone(header.dataset)
+        };
+        delete itemData.system.type;
+
+        try {
+            await Item.create(itemData, {parent: this.item});
+        } catch (error) {
+            console.error("Failed to create item:", error);
+            ui.notifications.error(game.i18n.localize("ANIME5E.ItemCreationError"));
+        }
+    }
+
+    async _onDamageFormulaChange(event) {
+        event.preventDefault();
+        const formula = event.currentTarget.value;
+
+        // Validate the damage formula
+        try {
+            const roll = new Roll(formula);
+            await roll.evaluate({async: true});
+            
+            await this.item.update({
+                "system.damage.formula": formula
+            });
+        } catch (error) {
+            console.error("Invalid damage formula:", error);
+            ui.notifications.error(game.i18n.localize("ANIME5E.InvalidDamageFormula"));
+        }
+    }
+
+    async _onWeaponPropertyToggle(event) {
+        event.preventDefault();
+        const property = event.currentTarget.dataset.property;
+        const isActive = this.item.system.properties[property] || false;
+
+        try {
+            await this.item.update({
+                [`system.properties.${property}`]: !isActive
+            });
+        } catch (error) {
+            console.error("Failed to toggle weapon property:", error);
+            ui.notifications.error(game.i18n.localize("ANIME5E.PropertyToggleError"));
+        }
+    }
+
+    async _prepareWeaponData(context) {
+        // Add weapon properties
+        context.weaponProperties = CONFIG.ANIME5E.weaponProperties;
+        
+        // Add weapon types
+        context.weaponTypes = CONFIG.ANIME5E.weaponTypes;
+        
+        // Add weapon ranges
+        context.weaponRanges = CONFIG.ANIME5E.weaponRanges;
+        
+        // Add damage types
+        context.damageTypes = CONFIG.ANIME5E.damageTypes;
+        
+        // Prepare enhancements and limiters
+        const enhancements = this.item.items.filter(i => i.type === "enhancement");
+        const limiters = this.item.items.filter(i => i.type === "limiter");
+        
+        context.enhancements = enhancements.map(e => e.toObject(false));
+        context.limiters = limiters.map(l => l.toObject(false));
+        
+        // Calculate total enhancement bonus
+        context.totalEnhancementBonus = enhancements.reduce((sum, e) => sum + (e.system.bonus || 0), 0);
+        
+        // Calculate total limiter penalty
+        context.totalLimiterPenalty = limiters.reduce((sum, l) => sum + (l.system.penalty || 0), 0);
     }
 } 

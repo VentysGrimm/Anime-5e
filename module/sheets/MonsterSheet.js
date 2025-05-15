@@ -3,12 +3,12 @@ export default class MonsterSheet extends ActorSheet {
         return mergeObject(super.defaultOptions, {
             classes: ["anime5e", "sheet", "actor", "monster"],
             template: "systems/anime5e/templates/actor/monster-sheet.html",
-            width: 800,
-            height: 1000,
+            width: 600,
+            height: 680,
             tabs: [{
                 navSelector: ".sheet-tabs",
                 contentSelector: ".sheet-body",
-                initial: "stats"
+                initial: "description"
             }],
             dragDrop: [{
                 dragSelector: ".item-list .item",
@@ -17,16 +17,26 @@ export default class MonsterSheet extends ActorSheet {
         });
     }
 
-    getData() {
-        const data = super.getData();
-        data.dtypes = ["String", "Number", "Boolean"];
+    async getData() {
+        const context = await super.getData();
+        
+        // Add the actor's data to context.data
+        const actorData = this.actor.toObject(false);
+        context.actor = actorData;
+        context.system = actorData.system;
 
-        // Prepare items
-        if (this.actor.type == 'monster') {
-            this._prepareMonsterData(data);
+        // Add monster-specific data
+        if (this.actor.type === 'monster') {
+            this._prepareMonsterData(context);
         }
 
-        return data;
+        // Add configuration data
+        context.config = CONFIG.ANIME5E;
+
+        // Add roll data for TinyMCE editors
+        context.rollData = context.actor.getRollData();
+
+        return context;
     }
 
     _prepareMonsterData(sheetData) {

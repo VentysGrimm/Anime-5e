@@ -2,39 +2,56 @@ import CharacterCreationWizard from "../apps/CharacterCreationWizard.js";
 
 export default class PlayerCharacterSheet extends ActorSheet {
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
-            classes: ["anime5e", "sheet", "actor", "player-character"],
-            template: "systems/anime5e/templates/actor/player-character-sheet.html",
-            width: 800,
-            height: 1000,
+        return foundry.utils.mergeObject(super.defaultOptions, {
+            classes: ["anime5e", "sheet", "actor", "character"],
+            template: "systems/anime5e/templates/actor/character-sheet.html",
+            width: 720,
+            height: 680,
             tabs: [{
                 navSelector: ".sheet-tabs",
                 contentSelector: ".sheet-body",
-                initial: "stats"
+                initial: "attributes"
             }],
             dragDrop: [{
                 dragSelector: ".item-list .item",
                 dropSelector: null
+            }],
+            filters: [{
+                inputSelector: ".filter-input",
+                contentSelector: ".filterable-list"
             }]
         });
     }
 
-    getData() {
-        const data = super.getData();
-        data.dtypes = ["String", "Number", "Boolean"];
-
-        // Prepare items
-        if (this.actor.type == 'character') {
-            this._prepareCharacterItems(data);
-            this._calculatePointBuy(data);
+    async getData(options={}) {
+        const context = await super.getData(options);
+        
+        // Add the actor's data
+        context.actor = this.actor;
+        context.system = this.actor.system;
+        context.flags = this.actor.flags;
+        
+        // Add character-specific data
+        if (this.actor.type === 'player') {
+            await this._prepareCharacterItems(context);
+            await this._prepareAbilities(context);
+            await this._calculatePointBuy(context);
         }
 
-        return data;
+        // Add roll data for TinyMCE editors
+        context.rollData = this.actor.getRollData();
+
+        // Add config data
+        context.config = CONFIG.ANIME5E;
+
+        // Add owner permissions
+        context.isOwner = this.actor.isOwner;
+        context.isEditable = this.isEditable;
+
+        return context;
     }
 
-    _prepareCharacterItems(sheetData) {
-        const actorData = sheetData.actor;
-
+    async _prepareCharacterItems(context) {
         // Initialize containers
         const inventory = [];
         const attributes = [];
@@ -42,27 +59,27 @@ export default class PlayerCharacterSheet extends ActorSheet {
         const powers = [];
 
         // Iterate through items, allocating to containers
-        for (let i of sheetData.items) {
-            i.img = i.img || DEFAULT_TOKEN;
-            if (i.type === 'item') {
-                inventory.push(i);
+        for (const item of this.actor.items) {
+            item.img = item.img || foundry.CONST.DEFAULT_TOKEN;
+            if (item.type === 'item') {
+                inventory.push(item);
             }
-            else if (i.type === 'attribute') {
-                attributes.push(i);
+            else if (item.type === 'attribute') {
+                attributes.push(item);
             }
-            else if (i.type === 'defect') {
-                defects.push(i);
+            else if (item.type === 'defect') {
+                defects.push(item);
             }
-            else if (i.type === 'power') {
-                powers.push(i);
+            else if (item.type === 'power') {
+                powers.push(item);
             }
         }
 
-        // Assign and return
-        actorData.inventory = inventory;
-        actorData.attributes = attributes;
-        actorData.defects = defects;
-        actorData.powers = powers;
+        // Assign to context
+        context.inventory = inventory;
+        context.attributes = attributes;
+        context.defects = defects;
+        context.powers = powers;
     }
 
     _calculatePointBuy(sheetData) {
@@ -208,17 +225,17 @@ export default class PlayerCharacterSheet extends ActorSheet {
         });
     }
 
-    _onItemCreate(event) {
+    async _onItemCreate(event) {
         event.preventDefault();
         const header = event.currentTarget;
         const type = header.dataset.type;
         const itemData = {
-            name: `New ${type.capitalize()}`,
+            name: game.i18n.format("ANIME5E.ItemNew", { type: type.capitalize() }),
             type: type,
-            data: duplicate(header.dataset)
+            system: foundry.utils.deepClone(header.dataset)
         };
-        delete itemData.data["type"];
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        delete itemData.system.type;
+        return await Item.create(itemData, {parent: this.actor});
     }
 
     _onRaceSelect(event) {
@@ -258,17 +275,23 @@ export default class PlayerCharacterSheet extends ActorSheet {
         return content;
     }
 
-    _onRoll(event) {
+    async _onRoll(event) {
         event.preventDefault();
         const element = event.currentTarget;
         const dataset = element.dataset;
 
         if (dataset.roll) {
-            let roll = new Roll(dataset.roll, this.actor.getRollData());
-            let label = dataset.label ? `Rolling ${dataset.label}` : '';
-            roll.toMessage({
+            const roll = new Roll(dataset.roll, this.actor.getRollData());
+            const label = dataset.label ? `Rolling ${dataset.label}` : '';
+            
+            // Render the roll
+            await roll.evaluate({async: true});
+            
+            // Create the chat message
+            await roll.toMessage({
                 speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-                flavor: label
+                flavor: label,
+                rollMode: game.settings.get("core", "rollMode")
             });
         }
     }

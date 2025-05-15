@@ -9,28 +9,35 @@ export class ArmorSheet extends ItemSheet {
                 navSelector: ".sheet-tabs",
                 contentSelector: ".sheet-body",
                 initial: "description"
+            }],
+            dragDrop: [{
+                dragSelector: ".enhancement-list .item, .limiter-list .item",
+                dropSelector: null
             }]
         });
     }
 
-    getData() {
-        const data = super.getData();
-        data.system = data.item.system;
+    async getData() {
+        const context = await super.getData();
+        
+        // Add the item's data to context.data
+        const itemData = this.item.toObject(false);
+        context.item = itemData;
+        context.system = itemData.system;
         
         // Add config data for dropdowns
-        data.config = {
-            armorTypes: {
-                light: "ANIME5E.ArmorTypes.Light",
-                medium: "ANIME5E.ArmorTypes.Medium",
-                heavy: "ANIME5E.ArmorTypes.Heavy",
-                shield: "ANIME5E.ArmorTypes.Shield"
-            }
+        context.config = {
+            armorTypes: CONFIG.ANIME5E.ArmorTypes,
+            properties: CONFIG.ANIME5E.ArmorProperties
         };
         
         // Calculate final cost based on enhancements and limiters
-        this._calculateFinalCost(data.item);
+        this._calculateFinalCost(context.item);
         
-        return data;
+        // Add roll data for TinyMCE editors
+        context.rollData = context.item.getRollData();
+        
+        return context;
     }
 
     activateListeners(html) {

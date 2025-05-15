@@ -71,8 +71,67 @@
       "path": "lang/en.json"
     }
   ],
-  "grid.Distance": 5,
-  "grid.Units": "ft",
+  "documentTypes": {
+    "Actor": {
+      "player": {
+        "label": "Player Character",
+        "playable": true,
+        "type": "character"
+      },
+      "npc": {
+        "label": "Non-Player Character",
+        "playable": false,
+        "type": "npc"
+      },
+      "monster": {
+        "label": "Monster",
+        "playable": false,
+        "type": "monster"
+      }
+    },
+    "Item": {
+      "attribute": {
+        "label": "Attribute",
+        "type": "attribute"
+      },
+      "defect": {
+        "label": "Defect",
+        "type": "defect"
+      },
+      "weapon": {
+        "label": "Weapon",
+        "type": "weapon"
+      },
+      "armor": {
+        "label": "Armor",
+        "type": "armor"
+      },
+      "vehicle": {
+        "label": "Vehicle",
+        "type": "vehicle"
+      },
+      "enhancement": {
+        "label": "Enhancement",
+        "type": "enhancement"
+      },
+      "limiter": {
+        "label": "Limiter",
+        "type": "limiter"
+      },
+      "power": {
+        "label": "Power",
+        "type": "power"
+      },
+      "race": {
+        "label": "Race",
+        "type": "race"
+      }
+    }
+  },
+  "grid": {
+    "distance": 5,
+    "units": "ft"
+  },
   "primaryTokenAttribute": "attributes.hp",
   "secondaryTokenAttribute": "attributes.mp",
   "url": "",
