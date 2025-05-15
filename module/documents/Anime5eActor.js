@@ -4,57 +4,10 @@ export default class Anime5eActor extends Actor {
         super.prepareData();
         const actorData = this;
 
-        // Calculate ability modifiers first as they're used by other calculations
-        this._calculateAbilityModifiers(actorData);
-
         // Make separate methods for each actor type
         if (actorData.type === 'player') this._preparePlayerData(actorData);
         else if (actorData.type === 'npc') this._prepareNPCData(actorData);
         else if (actorData.type === 'monster') this._prepareMonsterData(actorData);
-
-        // Calculate derived stats that are common to all actor types
-        this._calculateDerivedStats(actorData);
-    }
-
-    /**
-     * Calculate ability modifiers
-     * @private
-     */
-    _calculateAbilityModifiers(actorData) {
-        if (!actorData.system?.abilities) return;
-
-        const abilities = actorData.system.abilities;
-        for (let [key, ability] of Object.entries(abilities)) {
-            ability.mod = Math.floor((ability.value - 10) / 2);
-        }
-    }
-
-    /**
-     * Calculate derived statistics
-     * @private
-     */
-    _calculateDerivedStats(actorData) {
-        const system = actorData.system;
-
-        // Calculate AC
-        if (system.ac) {
-            // Get dexterity modifier
-            const dexMod = system.abilities?.dex?.mod || 0;
-            system.ac.dexMod = dexMod;
-
-            // Calculate total AC
-            system.ac.value = system.ac.base + 
-                            system.ac.dexMod + 
-                            system.ac.armor + 
-                            system.ac.shield + 
-                            system.ac.bonus;
-        }
-
-        // Calculate initiative if not already set
-        if (system.initiative) {
-            const dexMod = system.abilities?.dex?.mod || 0;
-            system.initiative.value = dexMod + (system.initiative.bonus || 0);
-        }
     }
 
     /** @override */
@@ -86,30 +39,6 @@ export default class Anime5eActor extends Actor {
     /** @override */
     async _preUpdate(changed, options, user) {
         await super._preUpdate(changed, options, user);
-
-        // Handle armor updates
-        if (changed.items) {
-            const equippedArmor = changed.items.filter(i => 
-                i.type === "armor" && i.system?.equipped);
-            
-            if (equippedArmor.length > 0) {
-                let armorBonus = 0;
-                let shieldBonus = 0;
-
-                for (let armor of equippedArmor) {
-                    if (armor.system.type === "shield") {
-                        shieldBonus += armor.system.baseAC;
-                    } else {
-                        armorBonus += armor.system.baseAC;
-                    }
-                }
-
-                changed.system = changed.system || {};
-                changed.system.ac = changed.system.ac || {};
-                changed.system.ac.armor = armorBonus;
-                changed.system.ac.shield = shieldBonus;
-            }
-        }
 
         // Validate the update data
         const validationErrors = this._validateActorData(changed);
@@ -368,22 +297,34 @@ export default class Anime5eActor extends Actor {
         // Calculate level
         data.level = data.experience ? Math.floor(data.experience / 1000) + 1 : 1;
 
+        // Calculate modifiers
+        if (data.abilities) {
+            for (let [key, ability] of Object.entries(data.abilities)) {
+                ability.mod = Math.floor((ability.value - 10) / 2);
+            }
+        }
+
         // Calculate HP
-        if (data.hp) {
-            const hp = data.hp;
-            const conMod = data.abilities?.con?.mod || 0;
-            hp.max = hp.base + (conMod * data.level);
+        if (data.attributes?.hp) {
+            const hp = data.attributes.hp;
+            hp.max = hp.base + (data.abilities?.constitution?.mod || 0) * hp.level;
         }
 
         // Calculate MP
-        if (data.mp) {
-            const mp = data.mp;
-            const wisMod = data.abilities?.wis?.mod || 0;
-            mp.max = mp.base + (wisMod * data.level);
+        if (data.attributes?.mp) {
+            const mp = data.attributes.mp;
+            mp.max = mp.base + (data.abilities?.wisdom?.mod || 0) * mp.level;
         }
 
-        // Calculate proficiency bonus
-        data.proficiencyBonus = Math.floor((data.level + 7) / 4);
+        // Calculate AC
+        if (data.attributes?.ac) {
+            const ac = data.attributes.ac;
+            ac.value = 10 + (data.abilities?.dexterity?.mod || 0);
+            // Add armor bonus if wearing armor
+            if (data.armor && data.armor.value) {
+                ac.value += data.armor.value;
+            }
+        }
     }
 
     /**
@@ -392,22 +333,15 @@ export default class Anime5eActor extends Actor {
     _prepareNPCData(actorData) {
         const data = actorData.system;
         
-        // Calculate proficiency bonus based on CR
-        if (data.cr !== undefined) {
-            data.proficiencyBonus = Math.max(2, Math.floor(data.cr / 4) + 2);
+        // NPC specific calculations
+        if (data.attributes?.hp) {
+            const hp = data.attributes.hp;
+            hp.max = hp.base;
         }
 
-        // Calculate HP and MP
-        if (data.hp) {
-            const hp = data.hp;
-            const conMod = data.abilities?.con?.mod || 0;
-            hp.max = hp.base + conMod;
-        }
-
-        if (data.mp) {
-            const mp = data.mp;
-            const wisMod = data.abilities?.wis?.mod || 0;
-            mp.max = mp.base + wisMod;
+        if (data.attributes?.mp) {
+            const mp = data.attributes.mp;
+            mp.max = mp.base;
         }
     }
 
@@ -417,22 +351,15 @@ export default class Anime5eActor extends Actor {
     _prepareMonsterData(actorData) {
         const data = actorData.system;
         
-        // Calculate proficiency bonus based on CR
-        if (data.cr !== undefined) {
+        // Monster specific calculations
+        if (data.attributes?.hp) {
+            const hp = data.attributes.hp;
+            hp.max = hp.base + (hp.bonus || 0);
+        }
+
+        // Calculate challenge rating bonuses
+        if (data.cr) {
             data.proficiencyBonus = Math.max(2, Math.floor(data.cr / 4) + 2);
-        }
-
-        // Calculate HP and MP
-        if (data.hp) {
-            const hp = data.hp;
-            const conMod = data.abilities?.con?.mod || 0;
-            hp.max = hp.base + (hp.bonus || 0) + conMod;
-        }
-
-        if (data.mp) {
-            const mp = data.mp;
-            const wisMod = data.abilities?.wis?.mod || 0;
-            mp.max = mp.base + (mp.bonus || 0) + wisMod;
         }
     }
 
