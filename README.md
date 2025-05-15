@@ -45,7 +45,7 @@ anime5e/
 
 1. In Foundry VTT's Configuration and Setup screen, go to Game Systems
 2. Click "Install System"
-3. In the Manifest URL field paste: [Your manifest URL]
+3. In the Manifest URL field paste: (https://github.com/VentysGrimm/Anime-5e)
 
 ## Development
 
