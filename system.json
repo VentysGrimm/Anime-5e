@@ -1,0 +1,63 @@
+{
+  "id": "anime5e",
+  "title": "Anime 5e",
+  "description": "A starter Anime 5e game system for Foundry Virtual Tabletop v14.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "VentysGrimm"
+    }
+  ],
+  "esmodules": [
+    "scripts/anime5e.mjs"
+  ],
+  "styles": [
+    "styles/anime5e.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": [
+          "biography"
+        ]
+      },
+      "npc": {
+        "htmlFields": [
+          "biography"
+        ]
+      }
+    },
+    "Item": {
+      "equipment": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "feature": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "power": {
+        "htmlFields": [
+          "description"
+        ]
+      }
+    }
+  },
+  "packs": [],
+  "primaryTokenAttribute": "combat.hitPoints",
+  "secondaryTokenAttribute": "combat.energy",
+  "socket": false
+}

@@ -1,0 +1,146 @@
+<form class="anime5e-form folio-sheet" autocomplete="off">
+  <header class="folio-title">
+    <span class="folio-page-number">4</span>
+    <h1>Basic Information</h1>
+  </header>
+
+  <section class="ability-banner-grid" aria-label='{{localize "ANIME5E.Labels.Abilities"}}'>
+    {{#each abilities as |ability|}}
+      <article class="ability-banner">
+        <label>
+          <span>{{ability.label}}</span>
+          <input type="number" name="system.abilities.{{ability.key}}.value" value="{{ability.data.value}}" {{#unless ../editable}}disabled{{/unless}}>
+        </label>
+        <div class="modifier-block">
+          <span>{{localize "ANIME5E.Labels.Modifier"}}</span>
+          <strong>{{ability.data.modifier}}</strong>
+        </div>
+      </article>
+    {{/each}}
+  </section>
+
+  <section class="folio-stat-row">
+    <label class="circle-stat">
+      <span>Proficiency Bonus</span>
+      <input type="number" name="system.combat.proficiencyBonus" value="{{system.combat.proficiencyBonus}}" {{#unless editable}}disabled{{/unless}}>
+    </label>
+
+    <div class="resource-stat torn-paper">
+      <h2>Hit Points</h2>
+      <label>
+        Maximum
+        <input type="number" name="system.combat.hitPoints.max" value="{{system.combat.hitPoints.max}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Current
+        <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+    </div>
+
+    <label class="shield-stat">
+      <span>Armour Class</span>
+      <input type="number" name="system.combat.armourClass" value="{{system.combat.armourClass}}" {{#unless editable}}disabled{{/unless}}>
+    </label>
+
+    <div class="resource-stat torn-paper">
+      <h2>Energy Points</h2>
+      <label>
+        Maximum
+        <input type="number" name="system.combat.energy.max" value="{{system.combat.energy.max}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Current
+        <input type="number" name="system.combat.energy.value" value="{{system.combat.energy.value}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+    </div>
+
+    <label class="circle-stat">
+      <span>Movement Speed</span>
+      <input type="number" name="system.combat.movementSpeed" value="{{system.combat.movementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
+    </label>
+  </section>
+
+  <main class="folio-main-grid">
+    <section class="folio-ruled-list">
+      {{#each identityRows as |row|}}
+        <label class="folio-line">
+          <span>{{row.label}}:</span>
+          <input type="{{#if row.type}}{{row.type}}{{else}}text{{/if}}" name="{{row.name}}" value="{{row.value}}" {{#unless ../editable}}disabled{{/unless}}>
+        </label>
+      {{/each}}
+    </section>
+
+    <section class="folio-side-stack">
+      <section class="paint-panel level-panel">
+        <header>
+          <label>
+            Character Level
+            <input type="number" name="system.level" value="{{system.level}}" min="1" {{#unless editable}}disabled{{/unless}}>
+          </label>
+          <label>
+            EXP
+            <input type="number" name="system.experience" value="{{system.experience}}" min="0" {{#unless editable}}disabled{{/unless}}>
+          </label>
+        </header>
+        <div class="folio-table compact-table">
+          <div class="table-header">Class</div>
+          <div class="table-header">Level</div>
+          <div class="table-header">Hit Dice</div>
+          {{#each classRows as |classRow|}}
+            <input type="text" name="system.progression.classes.{{classRow.key}}.name" value="{{classRow.data.name}}" {{#unless ../editable}}disabled{{/unless}}>
+            <input type="number" name="system.progression.classes.{{classRow.key}}.level" value="{{classRow.data.level}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
+            <input type="text" name="system.progression.classes.{{classRow.key}}.hitDice" value="{{classRow.data.hitDice}}" {{#unless ../editable}}disabled{{/unless}}>
+          {{/each}}
+        </div>
+      </section>
+
+      <section class="paint-panel">
+        <h2>Common Attack Damage</h2>
+        <div class="folio-table attack-table">
+          <div class="table-header">Weapon</div>
+          <div class="table-header">Modifier</div>
+          <div class="table-header">Type</div>
+          <div class="table-header">Damage</div>
+          {{#each attackRows as |attackRow|}}
+            <input type="text" name="system.combat.attacks.{{attackRow.key}}.weapon" value="{{attackRow.data.weapon}}" {{#unless ../editable}}disabled{{/unless}}>
+            <input type="text" name="system.combat.attacks.{{attackRow.key}}.modifier" value="{{attackRow.data.modifier}}" {{#unless ../editable}}disabled{{/unless}}>
+            <input type="text" name="system.combat.attacks.{{attackRow.key}}.damageType" value="{{attackRow.data.damageType}}" {{#unless ../editable}}disabled{{/unless}}>
+            <input type="text" name="system.combat.attacks.{{attackRow.key}}.damage" value="{{attackRow.data.damage}}" {{#unless ../editable}}disabled{{/unless}}>
+          {{/each}}
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <section class="ledger-section">
+    <h2>Equipment And Features</h2>
+    <ol class="item-list">
+      {{#each items as |item|}}
+        <li class="item-row" data-item-id="{{item.id}}">
+          <img src="{{item.img}}" alt="{{item.name}}">
+          <span>{{item.name}}</span>
+          <small>{{item.type}}</small>
+        </li>
+      {{else}}
+        <li class="item-row">
+          <span></span>
+          <span>No items yet.</span>
+          <small></small>
+        </li>
+      {{/each}}
+    </ol>
+  </section>
+
+  <section class="notes-box">
+    <h2>Physical Description And Important Notes</h2>
+    <textarea name="system.biography" {{#unless editable}}disabled{{/unless}}>{{system.biography}}</textarea>
+  </section>
+
+  <footer class="folio-footer">
+    <strong>Anime 5e</strong>
+    <span>Fifth Edition Fantasy Role-Playing Adventures</span>
+    {{#if editable}}
+      <button type="submit">{{localize "ANIME5E.Labels.Save"}}</button>
+    {{/if}}
+  </footer>
+</form>

@@ -1,0 +1,17 @@
+.vs/
+node_modules/
+dist/
+tmp/
+temp/
+source-material/
+
+# Foundry/LevelDB runtime noise from compendium packs.
+packs/**/LOCK
+packs/**/LOG
+packs/**/LOG.old
+packs/**/CURRENT
+packs/**/MANIFEST-*
+packs/**/*.log
+
+Thumbs.db
+.DS_Store

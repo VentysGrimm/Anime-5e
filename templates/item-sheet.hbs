@@ -1,0 +1,50 @@
+<form class="anime5e-form" autocomplete="off">
+  <header class="sheet-header">
+    <div class="portrait">
+      <img src="{{item.img}}" alt="{{item.name}}">
+      <label>
+        {{localize "ANIME5E.Labels.Source"}}
+        <input type="text" name="img" value="{{item.img}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+    </div>
+    <div class="identity">
+      <label>
+        {{localize "ANIME5E.Labels.Name"}}
+        <input type="text" name="name" value="{{item.name}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <div class="inline-fields">
+        <label>
+          {{localize "ANIME5E.Labels.Type"}}
+          <input type="text" value="{{item.type}}" disabled>
+        </label>
+        <label>
+          {{localize "ANIME5E.Labels.Rank"}}
+          <input type="number" name="system.rank" value="{{system.rank}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          {{localize "ANIME5E.Labels.Cost"}}
+          <input type="number" name="system.cost" value="{{system.cost}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2>{{localize "ANIME5E.Labels.Description"}}</h2>
+    <textarea name="system.description" {{#unless editable}}disabled{{/unless}}>{{system.description}}</textarea>
+  </section>
+
+  <section class="panel">
+    <h2>{{localize "ANIME5E.Labels.Source"}}</h2>
+    <label>
+      {{localize "ANIME5E.Labels.Source"}}
+      <input type="text" name="system.source" value="{{system.source}}" {{#unless editable}}disabled{{/unless}}>
+    </label>
+  </section>
+
+  {{#if editable}}
+    <footer class="sheet-footer">
+      <button type="submit">{{localize "ANIME5E.Labels.Save"}}</button>
+    </footer>
+  {{/if}}
+</form>

@@ -1,0 +1,153 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc"
+    ],
+    "templates": {
+      "base": {
+        "identity": {
+          "alias": "",
+          "playerName": "",
+          "startingDiscretionaryPoints": 0,
+          "engagementBonusPoints": 0,
+          "otherNonLevellingPoints": 0,
+          "sizeTemplate": "",
+          "race": "",
+          "alignment": "",
+          "ageAndGender": "",
+          "heightAndWeight": "",
+          "homelandHabitat": "",
+          "campaignTitle": "",
+          "gameMaster": "",
+          "creationDate": "",
+          "retirementDate": ""
+        },
+        "biography": "",
+        "level": 1,
+        "experience": 0,
+        "abilities": {
+          "strength": {
+            "value": 10,
+            "modifier": 0
+          },
+          "dexterity": {
+            "value": 10,
+            "modifier": 0
+          },
+          "constitution": {
+            "value": 10,
+            "modifier": 0
+          },
+          "intelligence": {
+            "value": 10,
+            "modifier": 0
+          },
+          "wisdom": {
+            "value": 10,
+            "modifier": 0
+          },
+          "charisma": {
+            "value": 10,
+            "modifier": 0
+          }
+        },
+        "combat": {
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "energy": {
+            "value": 10,
+            "max": 10
+          },
+          "armourClass": 10,
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "initiative": 0,
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "tertiary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "",
+              "level": 0,
+              "hitDice": ""
+            },
+            "secondary": {
+              "name": "",
+              "level": 0,
+              "hitDice": ""
+            },
+            "tertiary": {
+              "name": "",
+              "level": 0,
+              "hitDice": ""
+            }
+          }
+        }
+      }
+    },
+    "character": {
+      "templates": [
+        "base"
+      ]
+    },
+    "npc": {
+      "templates": [
+        "base"
+      ]
+    }
+  },
+  "Item": {
+    "types": [
+      "equipment",
+      "feature",
+      "power"
+    ],
+    "templates": {
+      "base": {
+        "description": "",
+        "rank": 1,
+        "cost": 0,
+        "source": ""
+      }
+    },
+    "equipment": {
+      "templates": [
+        "base"
+      ],
+      "equipped": false
+    },
+    "feature": {
+      "templates": [
+        "base"
+      ]
+    },
+    "power": {
+      "templates": [
+        "base"
+      ],
+      "category": ""
+    }
+  }
+}

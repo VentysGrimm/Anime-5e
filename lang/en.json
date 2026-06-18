@@ -1,0 +1,72 @@
+{
+  "ANIME5E": {
+    "SystemName": "Anime 5e",
+    "Sheets": {
+      "Actor": "Anime 5e Actor Sheet",
+      "Item": "Anime 5e Item Sheet"
+    },
+    "Actor": {
+      "FIELDS": {
+        "biography": {
+          "label": "Biography"
+        },
+        "level": {
+          "label": "Level"
+        },
+        "attributes": {
+          "label": "Attributes"
+        },
+        "combat": {
+          "label": "Combat"
+        }
+      }
+    },
+    "Item": {
+      "FIELDS": {
+        "description": {
+          "label": "Description"
+        },
+        "rank": {
+          "label": "Rank"
+        },
+        "cost": {
+          "label": "Cost"
+        },
+        "source": {
+          "label": "Source"
+        }
+      }
+    },
+    "Labels": {
+      "Abilities": "Abilities",
+      "Attributes": "Attributes",
+      "Biography": "Biography",
+      "Combat": "Combat",
+      "Cost": "Cost",
+      "Description": "Description",
+      "Energy": "Energy",
+      "Equipment": "Equipment",
+      "Health": "Health",
+      "Identity": "Identity",
+      "Level": "Level",
+      "Modifier": "Modifier",
+      "Name": "Name",
+      "Rank": "Rank",
+      "Save": "Save",
+      "Source": "Source",
+      "Type": "Type",
+      "Value": "Value"
+    }
+  },
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "equipment": "Equipment",
+      "feature": "Feature",
+      "power": "Power"
+    }
+  }
+}
