@@ -1,0 +1,38 @@
+{
+  "pack": "anime5e.techniques",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Combat Techniques",
+      "color": "#8f765b"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Lightning Reflexes",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/lightning.svg",
+      "system": {
+        "description": "<p>Source-indexed combat technique stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.lightning-reflexes",
+        "sourcePage": 94,
+        "importId": "core.technique.lightning-reflexes",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.lightning-reflexes",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.lightning-reflexes"
+          }
+        }
+      }
+    }
+  ]
+}

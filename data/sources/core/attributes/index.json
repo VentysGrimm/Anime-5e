@@ -1,0 +1,93 @@
+{
+  "pack": "anime5e.attributes",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Attributes",
+      "color": "#7c8fa8"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Armour Proficiency",
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p>Source-indexed attribute stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.armour-proficiency",
+        "sourcePage": 92,
+        "importId": "core.attribute.armour-proficiency",
+        "category": "Proficiency",
+        "progression": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.armour-proficiency",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 92,
+            "importId": "core.attribute.armour-proficiency"
+          }
+        }
+      }
+    },
+    {
+      "name": "Combat Technique",
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p>Source-indexed attribute stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.combat-technique",
+        "sourcePage": 94,
+        "importId": "core.attribute.combat-technique",
+        "category": "Combat",
+        "progression": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.combat-technique",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.attribute.combat-technique"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dynamic Powers",
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p>Source-indexed attribute stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.dynamic-powers",
+        "sourcePage": 99,
+        "importId": "core.attribute.dynamic-powers",
+        "category": "Power",
+        "progression": "Varies"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.dynamic-powers",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 99,
+            "importId": "core.attribute.dynamic-powers"
+          }
+        }
+      }
+    }
+  ]
+}

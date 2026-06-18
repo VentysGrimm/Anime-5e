@@ -1,0 +1,64 @@
+{
+  "pack": "anime5e.defects",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Defects",
+      "color": "#a05f5f"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Marked",
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "description": "<p>Source-indexed defect stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.marked",
+        "sourcePage": 136,
+        "importId": "core.defect.marked",
+        "pointsReturned": 1
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.marked",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 136,
+            "importId": "core.defect.marked"
+          }
+        }
+      }
+    },
+    {
+      "name": "Nemesis",
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/skull.svg",
+      "system": {
+        "description": "<p>Source-indexed defect stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.nemesis",
+        "sourcePage": 136,
+        "importId": "core.defect.nemesis",
+        "pointsReturned": 1
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.nemesis",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 136,
+            "importId": "core.defect.nemesis"
+          }
+        }
+      }
+    }
+  ]
+}

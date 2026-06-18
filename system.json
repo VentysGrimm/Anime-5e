@@ -39,6 +39,31 @@
       }
     },
     "Item": {
+      "armor": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "attribute": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "background": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "class": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "defect": {
+        "htmlFields": [
+          "description"
+        ]
+      },
       "equipment": {
         "htmlFields": [
           "description"
@@ -53,10 +78,96 @@
         "htmlFields": [
           "description"
         ]
+      },
+      "species": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "spell": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "technique": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "trait": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "weapon": {
+        "htmlFields": [
+          "description"
+        ]
       }
     }
   },
-  "packs": [],
+  "packs": [
+    {
+      "name": "character-options",
+      "label": "Core Character Options",
+      "path": "packs/character-options",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "attributes",
+      "label": "Core Attributes",
+      "path": "packs/attributes",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "defects",
+      "label": "Core Defects",
+      "path": "packs/defects",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "powers",
+      "label": "Core Powers",
+      "path": "packs/powers",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "techniques",
+      "label": "Core Techniques",
+      "path": "packs/techniques",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "equipment",
+      "label": "Core Equipment",
+      "path": "packs/equipment",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
   "primaryTokenAttribute": "combat.hitPoints",
   "secondaryTokenAttribute": "combat.energy",
   "socket": false

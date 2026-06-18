@@ -54,6 +54,8 @@
       "Rank": "Rank",
       "Save": "Save",
       "Source": "Source",
+      "SourceId": "Source ID",
+      "SourcePage": "Source Page",
       "Type": "Type",
       "Value": "Value"
     }
@@ -64,9 +66,19 @@
       "npc": "NPC"
     },
     "Item": {
+      "armor": "Armour",
+      "attribute": "Attribute",
+      "background": "Background",
+      "class": "Class",
+      "defect": "Defect",
       "equipment": "Equipment",
       "feature": "Feature",
-      "power": "Power"
+      "power": "Power",
+      "species": "Species",
+      "spell": "Spell",
+      "technique": "Technique",
+      "trait": "Trait",
+      "weapon": "Weapon"
     }
   }
 }

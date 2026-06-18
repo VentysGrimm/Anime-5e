@@ -1,0 +1,75 @@
+{
+  "pack": "anime5e.equipment",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Weapons",
+      "color": "#8f5b5b"
+    },
+    {
+      "name": "Armour",
+      "color": "#6d7884"
+    },
+    {
+      "name": "Gear",
+      "color": "#7a805a"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Longsword",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p>Source-indexed weapon stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.longsword",
+        "sourcePage": 198,
+        "importId": "core.weapon.longsword",
+        "damage": "1d8",
+        "damageType": "Slashing",
+        "properties": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.longsword",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.weapon.longsword"
+          }
+        }
+      }
+    },
+    {
+      "name": "Light Armour",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p>Source-indexed armor stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.light-armour",
+        "sourcePage": 193,
+        "importId": "core.armor.light-armour",
+        "armourClass": 10,
+        "properties": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.light-armour",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 193,
+            "importId": "core.armor.light-armour"
+          }
+        }
+      }
+    }
+  ]
+}

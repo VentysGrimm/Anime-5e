@@ -1,0 +1,38 @@
+{
+  "pack": "anime5e.powers",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Powers",
+      "color": "#7b6fa7"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Dynamic Power - Lesser",
+      "type": "power",
+      "folder": "Powers",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p>Source-indexed power stub for later rules entry.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.power.dynamic-power-lesser",
+        "sourcePage": 99,
+        "importId": "core.power.dynamic-power-lesser",
+        "category": "Dynamic Powers"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.power.dynamic-power-lesser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 99,
+            "importId": "core.power.dynamic-power-lesser"
+          }
+        }
+      }
+    }
+  ]
+}

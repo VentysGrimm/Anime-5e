@@ -120,17 +120,63 @@
   },
   "Item": {
     "types": [
+      "armor",
+      "attribute",
+      "background",
+      "class",
+      "defect",
       "equipment",
       "feature",
-      "power"
+      "power",
+      "species",
+      "spell",
+      "technique",
+      "trait",
+      "weapon"
     ],
     "templates": {
       "base": {
         "description": "",
         "rank": 1,
         "cost": 0,
-        "source": ""
+        "source": "",
+        "sourceId": "",
+        "sourcePage": null,
+        "importId": ""
       }
+    },
+    "armor": {
+      "templates": [
+        "base"
+      ],
+      "armourClass": 10,
+      "properties": ""
+    },
+    "attribute": {
+      "templates": [
+        "base"
+      ],
+      "category": "",
+      "progression": ""
+    },
+    "background": {
+      "templates": [
+        "base"
+      ]
+    },
+    "class": {
+      "templates": [
+        "base"
+      ],
+      "hitDice": "",
+      "primaryAbility": "",
+      "savingThrows": ""
+    },
+    "defect": {
+      "templates": [
+        "base"
+      ],
+      "pointsReturned": 0
     },
     "equipment": {
       "templates": [
@@ -148,6 +194,38 @@
         "base"
       ],
       "category": ""
+    },
+    "species": {
+      "templates": [
+        "base"
+      ],
+      "points": 0
+    },
+    "spell": {
+      "templates": [
+        "base"
+      ],
+      "level": 0,
+      "school": ""
+    },
+    "technique": {
+      "templates": [
+        "base"
+      ],
+      "category": ""
+    },
+    "trait": {
+      "templates": [
+        "base"
+      ]
+    },
+    "weapon": {
+      "templates": [
+        "base"
+      ],
+      "damage": "",
+      "damageType": "",
+      "properties": ""
     }
   }
 }
