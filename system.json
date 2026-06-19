@@ -2,7 +2,7 @@
   "id": "anime5e",
   "title": "Anime 5e",
   "description": "A starter Anime 5e game system for Foundry Virtual Tabletop v14.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "manifest": "https://raw.githubusercontent.com/VentysGrimm/Anime-5e/main/system.json",
   "download": "https://github.com/VentysGrimm/Anime-5e/archive/refs/heads/main.zip",
   "compatibility": {
