@@ -418,6 +418,15 @@
   min-height: 28px;
 }
 
+.anime5e.import-dialog {
+  display: grid;
+  gap: 8px;
+}
+
+.anime5e.import-dialog p {
+  margin: 0;
+}
+
 .anime5e input,
 .anime5e textarea {
   background: rgba(255, 255, 255, 0.7);

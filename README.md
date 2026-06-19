@@ -28,10 +28,12 @@ Then create a world using the `Anime 5e` game system.
 
 ## Core Compendium Import
 
-After launching a world as GM, run this in the Foundry console:
+After launching a world as GM, open **Configure Settings**, choose **Anime 5e Core Compendiums**, and click **Import / Update**.
+
+The same workflow is also available from the Foundry console:
 
 ```js
-await game.anime5e.importCoreCompendiumData();
+game.anime5e.showCoreCompendiumImportDialog();
 ```
 
 The importer uses Foundry's v14 document APIs to create compendium folders and write documents into the declared packs.

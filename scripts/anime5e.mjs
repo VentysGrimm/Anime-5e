@@ -38,6 +38,10 @@ import {
   Anime5eVehicleData,
   Anime5eWeaponData
 } from "../module/documents/item-data.mjs";
+import {
+  Anime5eCompendiumImportDialog,
+  showCoreCompendiumImportDialog
+} from "../module/apps/compendium-import-dialog.mjs";
 import { importCoreCompendiumData } from "../module/data/compendiums.mjs";
 import { Anime5eActorSheet, Anime5eBasicActorSheet } from "../module/sheets/actor-sheet.mjs";
 import { Anime5eItemSheet } from "../module/sheets/item-sheet.mjs";
@@ -87,10 +91,20 @@ Hooks.once("init", () => {
 
   game.anime5e = {
     config: ANIME5E,
-    importCoreCompendiumData
+    importCoreCompendiumData,
+    showCoreCompendiumImportDialog
   };
 
   CONFIG.ANIME5E = ANIME5E;
+
+  game.settings.registerMenu(ANIME5E.id, "coreCompendiumImport", {
+    name: "Anime 5e Core Compendiums",
+    label: "Import / Update",
+    hint: "Import or update source-backed starter content into the declared Anime 5e compendium packs.",
+    icon: "fa-solid fa-file-import",
+    type: Anime5eCompendiumImportDialog,
+    restricted: true
+  });
 
   Object.assign(CONFIG.Actor.dataModels, {
     character: Anime5eCharacterData,

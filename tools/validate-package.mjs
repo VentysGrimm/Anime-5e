@@ -7,6 +7,7 @@ const requiredFiles = [
   "system.json",
   "lang/en.json",
   "scripts/anime5e.mjs",
+  "module/apps/compendium-import-dialog.mjs",
   "module/data/compendiums.mjs",
   "module/documents/actor-data.mjs",
   "module/documents/item-data.mjs",
