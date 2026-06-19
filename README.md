@@ -24,6 +24,7 @@ Then create a world using the `Anime 5e` game system.
 - `templates/` contains editable Handlebars sheets.
 - `styles/anime5e.css` contains system sheet styles.
 - `tools/validate-package.mjs` performs a lightweight local sanity check.
+- `docs/issue-8-verification.md` records the first-pass source review and playable-system verification scope.
 
 ## Core Compendium Import
 

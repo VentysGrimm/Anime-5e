@@ -14,6 +14,42 @@ const FOLIO_TABS = [
   { id: "journal", label: "Journal" }
 ];
 
+const ABILITY_LABELS = {
+  strength: "Strength",
+  dexterity: "Dexterity",
+  constitution: "Constitution",
+  intelligence: "Intelligence",
+  wisdom: "Wisdom",
+  charisma: "Charisma"
+};
+
+const ROLL_MODES = {
+  ability: {
+    label: "Ability Check",
+    includeProficiency: false
+  },
+  proficient: {
+    label: "Proficient Check",
+    includeProficiency: true
+  },
+  savingThrow: {
+    label: "Saving Throw",
+    includeProficiency: false
+  },
+  proficientSavingThrow: {
+    label: "Proficient Save",
+    includeProficiency: true
+  },
+  attack: {
+    label: "Attack Roll",
+    includeProficiency: false
+  },
+  proficientAttack: {
+    label: "Proficient Attack",
+    includeProficiency: true
+  }
+};
+
 const ITEM_GROUP_TYPES = {
   combat: ["weapon", "armor", "shield", "technique", "attribute"],
   attributes: ["attribute", "enhancement", "limiter", "itemAttribute"],
@@ -50,6 +86,10 @@ for (const ability of ["strength", "dexterity", "constitution", "intelligence", 
 function signedModifier(value) {
   const modifier = Number(value) || 0;
   return modifier >= 0 ? `+ ${modifier}` : `- ${Math.abs(modifier)}`;
+}
+
+function buildD20Formula(...modifiers) {
+  return ["1d20", ...modifiers.map((modifier) => signedModifier(modifier))].join(" ");
 }
 
 function localizedType(documentName, type) {
@@ -112,14 +152,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.activeTab = this.tabGroups?.primary ?? "overview";
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
     context.tabs = FOLIO_TABS.map((tab) => ({ ...tab, active: tab.id === context.activeTab }));
-    context.abilities = [
-      { key: "strength", label: "Strength", data: system.abilities.strength },
-      { key: "dexterity", label: "Dexterity", data: system.abilities.dexterity },
-      { key: "constitution", label: "Constitution", data: system.abilities.constitution },
-      { key: "intelligence", label: "Intelligence", data: system.abilities.intelligence },
-      { key: "wisdom", label: "Wisdom", data: system.abilities.wisdom },
-      { key: "charisma", label: "Charisma", data: system.abilities.charisma }
-    ];
+    context.abilities = Object.entries(ABILITY_LABELS).map(([key, label]) => ({
+      key,
+      label,
+      data: system.abilities[key]
+    }));
+    context.rollModes = Object.entries(ROLL_MODES).map(([key, mode]) => ({ key, label: mode.label }));
     context.identityRows = [
       { label: "Character Name", name: "name", value: this.actor.name },
       { label: "Alias", name: "system.identity.alias", value: system.identity.alias },
@@ -199,6 +237,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='roll-initiative']").forEach((button) => {
       button.addEventListener("click", this._onRollInitiative.bind(this));
     });
+    element.querySelectorAll("[data-action='roll-quick']").forEach((button) => {
+      button.addEventListener("click", this._onRollQuick.bind(this));
+    });
     element.querySelectorAll("[data-action='roll-attack']").forEach((button) => {
       button.addEventListener("click", this._onRollAttack.bind(this));
     });
@@ -225,13 +266,32 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!ability) return;
 
     const label = event.currentTarget.dataset.label ?? `${abilityKey} Check`;
-    await this._rollFormula(`1d20 ${signedModifier(ability.modifier)}`, label);
+    await this._rollFormula(buildD20Formula(ability.modifier), label);
   }
 
   async _onRollInitiative(event) {
     event.preventDefault();
     const initiative = this.actor.system.combat?.initiative ?? 0;
-    await this._rollFormula(`1d20 ${signedModifier(initiative)}`, "Initiative");
+    await this._rollFormula(buildD20Formula(initiative), "Initiative");
+  }
+
+  async _onRollQuick(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".quick-roll-panel");
+    const abilityKey = panel?.querySelector("[data-roll-input='ability']")?.value ?? "strength";
+    const modeKey = panel?.querySelector("[data-roll-input='mode']")?.value ?? "ability";
+    const situationalBonus = Number(panel?.querySelector("[data-roll-input='bonus']")?.value) || 0;
+    const ability = this.actor.system.abilities?.[abilityKey];
+    const mode = ROLL_MODES[modeKey] ?? ROLL_MODES.ability;
+    if (!ability) return;
+
+    const modifiers = [ability.modifier];
+    if (mode.includeProficiency) modifiers.push(this.actor.system.combat?.proficiencyBonus ?? 0);
+    if (situationalBonus) modifiers.push(situationalBonus);
+
+    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+    // Anime 5E Core Rules pp. 153-156 define checks, saving throws, initiative, and attacks as d20 plus the relevant modifiers.
+    await this._rollFormula(buildD20Formula(...modifiers), `${mode.label}: ${abilityLabel}`);
   }
 
   async _onRollAttack(event) {
@@ -241,7 +301,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!attack) return;
 
     const modifier = Number(attack.modifier) || 0;
-    await this._rollFormula(`1d20 ${signedModifier(modifier)}`, `${attack.weapon || "Attack"} Roll`);
+    await this._rollFormula(buildD20Formula(modifier), `${attack.weapon || "Attack"} Roll`);
   }
 
   async _rollFormula(formula, label) {

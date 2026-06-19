@@ -528,6 +528,42 @@
   gap: 14px;
 }
 
+.anime5e .quick-roll-panel {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+}
+
+.anime5e .quick-roll-panel h3 {
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.anime5e .quick-roll-controls {
+  align-items: end;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, minmax(90px, 1fr)) auto;
+}
+
+.anime5e .quick-roll-controls label {
+  display: grid;
+  font-size: 0.78rem;
+  font-weight: 800;
+  gap: 3px;
+  text-transform: uppercase;
+}
+
+.anime5e .quick-roll-controls input,
+.anime5e .quick-roll-controls select {
+  min-width: 0;
+}
+
 .anime5e .action-table {
   grid-template-columns: 1.35fr 0.65fr 0.8fr 0.95fr 44px;
 }
@@ -601,6 +637,7 @@
 @media (max-width: 860px) {
   .anime5e .two-column,
   .anime5e .action-table,
+  .anime5e .quick-roll-controls,
   .anime5e .folio-item-list .item-row {
     grid-template-columns: 1fr;
   }
