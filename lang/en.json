@@ -3,6 +3,7 @@
     "SystemName": "Anime 5e",
     "Sheets": {
       "Actor": "Anime 5e Actor Sheet",
+      "BasicActor": "Anime 5e Basic Actor Sheet",
       "Item": "Anime 5e Item Sheet"
     },
     "Actor": {
@@ -44,10 +45,12 @@
       "Combat": "Combat",
       "Cost": "Cost",
       "Description": "Description",
+      "Details": "Details",
       "Energy": "Energy",
       "Equipment": "Equipment",
       "Health": "Health",
       "Identity": "Identity",
+      "ImportId": "Import ID",
       "Level": "Level",
       "Modifier": "Modifier",
       "Name": "Name",
@@ -63,7 +66,11 @@
   "TYPES": {
     "Actor": {
       "character": "Character",
-      "npc": "NPC"
+      "companion": "Companion",
+      "mecha": "Mecha",
+      "monster": "Monster",
+      "npc": "NPC",
+      "vehicle": "Vehicle"
     },
     "Item": {
       "armor": "Armour",
@@ -71,13 +78,30 @@
       "background": "Background",
       "class": "Class",
       "defect": "Defect",
+      "enhancement": "Enhancement",
       "equipment": "Equipment",
       "feature": "Feature",
+      "itemAttribute": "Item Attribute",
+      "itemOfPower": "Item of Power",
+      "language": "Language",
+      "lifepath": "Lifepath Result",
+      "limiter": "Limiter",
+      "loot": "Loot",
+      "material": "Material",
+      "mecha": "Mecha",
+      "monsterVariant": "Monster Variant",
+      "mount": "Mount",
       "power": "Power",
+      "proficiency": "Proficiency",
+      "shield": "Shield",
+      "skill": "Skill",
+      "sizeTemplate": "Size Template",
       "species": "Species",
       "spell": "Spell",
       "technique": "Technique",
+      "tool": "Tool",
       "trait": "Trait",
+      "vehicle": "Vehicle",
       "weapon": "Weapon"
     }
   }

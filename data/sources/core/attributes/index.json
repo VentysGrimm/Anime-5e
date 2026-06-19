@@ -1,93 +1,827 @@
 {
   "pack": "anime5e.attributes",
   "documentType": "Item",
+  "sourceBook": "Anime 5E Fifth Edition Core Rules",
+  "sourceIdPrefix": "core.attribute",
   "folders": [
     {
       "name": "Attributes",
       "color": "#7c8fa8"
     }
   ],
-  "documents": [
+  "documentTemplate": {
+    "type": "attribute",
+    "folder": "Attributes",
+    "img": "icons/svg/aura.svg",
+    "system": {
+      "rank": 1
+    }
+  },
+  "entries": [
+    {
+      "name": "AC Bonus",
+      "img": "icons/svg/shield.svg",
+      "cost": 1,
+      "sourcePage": 92,
+      "category": "Defense",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "+1 Armour Class/Rank",
+      "summary": "Raises the character's Armour Class by making them harder to hit, damage, or target."
+    },
+    {
+      "name": "Alternate Identity",
+      "img": "icons/svg/mystery-man.svg",
+      "cost": 1,
+      "sourcePage": 92,
+      "category": "Identity",
+      "ability": "Constitution",
+      "scope": "Self only; Ongoing",
+      "progression": "1 Alternate Identity/Rank",
+      "summary": "Gives the character alternate outward identities without changing their underlying statistics."
+    },
     {
       "name": "Armour Proficiency",
-      "type": "attribute",
-      "folder": "Attributes",
       "img": "icons/svg/shield.svg",
-      "system": {
-        "description": "<p>Source-indexed attribute stub for later rules entry.</p>",
-        "rank": 1,
-        "cost": 1,
-        "source": "Anime 5E Fifth Edition Core Rules",
-        "sourceId": "core.attribute.armour-proficiency",
-        "sourcePage": 92,
-        "importId": "core.attribute.armour-proficiency",
-        "category": "Proficiency",
-        "progression": ""
-      },
-      "flags": {
-        "anime5e": {
-          "sourceId": "core.attribute.armour-proficiency",
-          "source": {
-            "book": "Anime 5E Fifth Edition Core Rules",
-            "page": 92,
-            "importId": "core.attribute.armour-proficiency"
-          }
-        }
-      }
+      "cost": 1,
+      "sourcePage": 92,
+      "category": "Proficiency",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "+1 Armour Proficiency/Rank",
+      "summary": "Removes the penalties for using a selected armour category."
+    },
+    {
+      "name": "Augmented",
+      "img": "icons/svg/upgrade.svg",
+      "cost": 1,
+      "sourcePage": 92,
+      "category": "Ability",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "+1 Ability Score/Rank",
+      "summary": "Represents an Ability Score increase granted by a defined source such as magic, size, or equipment."
+    },
+    {
+      "name": "Change State",
+      "img": "icons/svg/acid.svg",
+      "cost": 3,
+      "sourcePage": 92,
+      "category": "Form",
+      "ability": "Constitution",
+      "scope": "Self only; 1 minute",
+      "progression": "Descriptive",
+      "summary": "Lets the character temporarily become liquid, gaseous, incorporeal, or energy-like."
+    },
+    {
+      "name": "Cognition",
+      "img": "icons/svg/eye.svg",
+      "cost": 2,
+      "sourcePage": 93,
+      "category": "Perception",
+      "ability": "Intelligence",
+      "scope": "Self only; Instantaneous",
+      "progression": "Descriptive",
+      "summary": "Provides extraordinary insight into information beyond ordinary senses or memory."
+    },
+    {
+      "name": "Combat Mastery",
+      "img": "icons/svg/sword.svg",
+      "cost": 1,
+      "sourcePage": 93,
+      "category": "Combat",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "+1 Attack Bonus/Rank",
+      "summary": "Improves attack accuracy with a direct bonus to attack rolls."
     },
     {
       "name": "Combat Technique",
-      "type": "attribute",
-      "folder": "Attributes",
       "img": "icons/svg/sword.svg",
-      "system": {
-        "description": "<p>Source-indexed attribute stub for later rules entry.</p>",
-        "rank": 1,
-        "cost": 2,
-        "source": "Anime 5E Fifth Edition Core Rules",
-        "sourceId": "core.attribute.combat-technique",
-        "sourcePage": 94,
-        "importId": "core.attribute.combat-technique",
-        "category": "Combat",
-        "progression": ""
-      },
-      "flags": {
-        "anime5e": {
-          "sourceId": "core.attribute.combat-technique",
-          "source": {
-            "book": "Anime 5E Fifth Edition Core Rules",
-            "page": 94,
-            "importId": "core.attribute.combat-technique"
-          }
-        }
-      }
+      "cost": 1,
+      "sourcePage": 94,
+      "category": "Combat",
+      "ability": "-",
+      "scope": "Self only; Situational use",
+      "progression": "1 Combat Technique/Rank",
+      "summary": "Grants defined combat tricks such as special attacks, defenses, or tactical options."
+    },
+    {
+      "name": "Companion",
+      "img": "icons/svg/mystery-man.svg",
+      "cost": 5,
+      "sourcePage": 95,
+      "category": "Companion",
+      "ability": "-",
+      "scope": "External; Permanent",
+      "progression": "Companions are constructed from additional Points by Rank",
+      "summary": "Creates a loyal NPC helper, pet, assistant, or similar subordinate built with its own traits."
+    },
+    {
+      "name": "Connected",
+      "img": "icons/svg/city.svg",
+      "cost": 1,
+      "sourcePage": 98,
+      "category": "Social",
+      "ability": "Charisma",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Represents useful social ties, memberships, contacts, patrons, or access to organizations."
+    },
+    {
+      "name": "Control Environment",
+      "img": "icons/svg/windmill.svg",
+      "cost": 1,
+      "sourcePage": 98,
+      "category": "Environment",
+      "ability": "Wisdom",
+      "scope": "10-foot radius; 1 minute",
+      "progression": "1 Environment/Rank",
+      "summary": "Allows limited control over a selected environmental condition in the surrounding area."
+    },
+    {
+      "name": "Conversion",
+      "img": "icons/svg/cycle.svg",
+      "cost": 3,
+      "sourcePage": 98,
+      "category": "Power",
+      "ability": "Constitution",
+      "scope": "Self only; Ongoing",
+      "progression": "Temporarily gain +1 Point/Rank for every converted point source",
+      "summary": "Temporarily converts one resource or trait into bonus Points for another effect."
     },
     {
       "name": "Dynamic Powers",
-      "type": "attribute",
-      "folder": "Attributes",
       "img": "icons/svg/aura.svg",
-      "system": {
-        "description": "<p>Source-indexed attribute stub for later rules entry.</p>",
-        "rank": 1,
-        "cost": 0,
-        "source": "Anime 5E Fifth Edition Core Rules",
-        "sourceId": "core.attribute.dynamic-powers",
-        "sourcePage": 99,
-        "importId": "core.attribute.dynamic-powers",
-        "category": "Power",
-        "progression": "Varies"
-      },
-      "flags": {
-        "anime5e": {
-          "sourceId": "core.attribute.dynamic-powers",
-          "source": {
-            "book": "Anime 5E Fifth Edition Core Rules",
-            "page": 99,
-            "importId": "core.attribute.dynamic-powers"
-          }
-        }
-      }
+      "cost": 10,
+      "sourcePage": 99,
+      "category": "Power",
+      "ability": "Situationally Variable",
+      "scope": "Situational",
+      "progression": "Descriptive",
+      "summary": "Provides broad flexible control over a major power theme, subject to DM oversight."
+    },
+    {
+      "name": "Dynamic Powers - Lesser",
+      "img": "icons/svg/aura.svg",
+      "cost": 5,
+      "sourcePage": 99,
+      "category": "Power",
+      "ability": "Situationally Variable",
+      "scope": "Situational",
+      "progression": "Descriptive",
+      "summary": "A narrower version of Dynamic Powers focused on a limited theme or expression."
+    },
+    {
+      "name": "Edge",
+      "img": "icons/svg/d20-highlight.svg",
+      "cost": 1,
+      "sourcePage": 100,
+      "category": "Advantage",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "Descriptive",
+      "summary": "Grants an advantage for a defined category of rolls or circumstances."
+    },
+    {
+      "name": "Elasticity",
+      "img": "icons/svg/elastic.svg",
+      "cost": 2,
+      "sourcePage": 100,
+      "category": "Form",
+      "ability": "Constitution",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Lets the body stretch, compress, or bend beyond normal physical limits."
+    },
+    {
+      "name": "Energised",
+      "img": "icons/svg/lightning.svg",
+      "cost": 1,
+      "sourcePage": 101,
+      "category": "Resource",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "+10 Energy/Rank",
+      "summary": "Increases the character's Energy reserve."
+    },
+    {
+      "name": "Enhanced Proficiency",
+      "img": "icons/svg/upgrade.svg",
+      "cost": 2,
+      "sourcePage": 101,
+      "category": "Proficiency",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "+1 Proficiency Bonus/Rank",
+      "summary": "Raises the character's Proficiency Bonus beyond the normal level-based value."
+    },
+    {
+      "name": "Extra Actions",
+      "img": "icons/svg/clockwork.svg",
+      "cost": 4,
+      "sourcePage": 101,
+      "category": "Action",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "+1 Bonus Action/Rank",
+      "summary": "Grants additional Bonus Actions each round, including attacks or spellcasting."
+    },
+    {
+      "name": "Extra Actions - Lesser",
+      "img": "icons/svg/clockwork.svg",
+      "cost": 2,
+      "sourcePage": 101,
+      "category": "Action",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "+1 limited Bonus Action/Rank",
+      "summary": "Grants extra Bonus Actions that cannot be used for attacking or spellcasting."
+    },
+    {
+      "name": "Fast",
+      "img": "icons/svg/running.svg",
+      "cost": 1,
+      "sourcePage": 101,
+      "category": "Movement",
+      "ability": "Dexterity",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Multiplies the character's movement speed at higher Ranks."
+    },
+    {
+      "name": "Features",
+      "img": "icons/svg/puzzle.svg",
+      "cost": 1,
+      "sourcePage": 101,
+      "category": "Feature",
+      "ability": "-",
+      "scope": "Self only; Ongoing",
+      "progression": "1 Feature/Rank",
+      "summary": "Covers secondary traits and utility abilities that do not need a larger Attribute."
+    },
+    {
+      "name": "Flight",
+      "img": "icons/svg/wing.svg",
+      "cost": 3,
+      "sourcePage": 102,
+      "category": "Movement",
+      "ability": "Dexterity",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Gives the character controlled aerial movement with speed determined by Rank."
+    },
+    {
+      "name": "Forced Disadvantage",
+      "img": "icons/svg/d20-grey.svg",
+      "cost": 1,
+      "sourcePage": 102,
+      "category": "Control",
+      "ability": "-",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Forces disadvantage on a defined category of enemy rolls or contest checks."
+    },
+    {
+      "name": "Healing",
+      "img": "icons/svg/heal.svg",
+      "cost": 1,
+      "sourcePage": 102,
+      "category": "Healing",
+      "ability": "Wisdom",
+      "scope": "1 target; Touch; Instantaneous",
+      "progression": "Heal +1d8 Hit Points/Rank",
+      "summary": "Restores Hit Points to a touched target and can support advanced recovery at higher Ranks."
+    },
+    {
+      "name": "Heightened Senses",
+      "img": "icons/svg/eye.svg",
+      "cost": 1,
+      "sourcePage": 102,
+      "category": "Perception",
+      "ability": "Wisdom",
+      "scope": "Self only; Ongoing",
+      "progression": "1 Sense/Rank",
+      "summary": "Improves one selected ordinary sense per Rank."
+    },
+    {
+      "name": "Immunity",
+      "img": "icons/svg/cowled.svg",
+      "cost": 3,
+      "sourcePage": 103,
+      "category": "Resistance",
+      "ability": "Constitution",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Provides strong protection or immunity against a selected damage type, condition, or effect."
+    },
+    {
+      "name": "Immunity - Lesser",
+      "img": "icons/svg/cowled.svg",
+      "cost": 1,
+      "sourcePage": 103,
+      "category": "Resistance",
+      "ability": "Constitution",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "A narrower immunity focused on a limited source, condition, or category."
+    },
+    {
+      "name": "Immutable",
+      "img": "icons/svg/stone-pile.svg",
+      "cost": 1,
+      "sourcePage": 104,
+      "category": "Resistance",
+      "ability": "Constitution",
+      "scope": "Self only; Ongoing",
+      "progression": "+2 Check Bonus/Rank to Resist Bodily Effects",
+      "summary": "Helps resist unwanted bodily transformation, movement, or physical alteration."
+    },
+    {
+      "name": "Inspire",
+      "img": "icons/svg/sun.svg",
+      "cost": 1,
+      "sourcePage": 104,
+      "category": "Support",
+      "ability": "Charisma",
+      "scope": "Nearby targets; One dramatic scene",
+      "progression": "+1 Check Bonus/Rank",
+      "summary": "Bolsters allies with bonuses to relevant checks during a scene."
+    },
+    {
+      "name": "Inspire - Greater",
+      "img": "icons/svg/sun.svg",
+      "cost": 3,
+      "sourcePage": 104,
+      "category": "Support",
+      "ability": "Charisma",
+      "scope": "Nearby targets; One dramatic scene",
+      "progression": "+1 Check Bonus/Rank",
+      "summary": "Extends Inspire to stronger combat-facing rolls such as attacks and Saving Throws."
+    },
+    {
+      "name": "Item",
+      "img": "icons/svg/item-bag.svg",
+      "cost": 4,
+      "sourcePage": 105,
+      "category": "Item",
+      "ability": "-",
+      "scope": "External; Permanent",
+      "progression": "Item(s) with +5 Points/Rank",
+      "summary": "Creates a significant personal item or piece of gear built from Points."
+    },
+    {
+      "name": "Jumping",
+      "img": "icons/svg/wingfoot.svg",
+      "cost": 1,
+      "sourcePage": 105,
+      "category": "Movement",
+      "ability": "Dexterity",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Increases the distance the character can leap."
+    },
+    {
+      "name": "Language",
+      "img": "icons/svg/book.svg",
+      "cost": 1,
+      "sourcePage": 105,
+      "category": "Knowledge",
+      "ability": "Intelligence",
+      "scope": "Self only; Ongoing",
+      "progression": "1 Language/Rank",
+      "summary": "Adds fluency in one additional language per Rank."
+    },
+    {
+      "name": "Massive Damage",
+      "img": "icons/svg/explosion.svg",
+      "cost": 3,
+      "sourcePage": 106,
+      "category": "Combat",
+      "ability": "Strength",
+      "scope": "Self only; Permanent",
+      "progression": "Descriptive",
+      "summary": "Raises damage output for a broad class of physical attacks."
+    },
+    {
+      "name": "Massive Damage - Lesser",
+      "img": "icons/svg/explosion.svg",
+      "cost": 1,
+      "sourcePage": 106,
+      "category": "Combat",
+      "ability": "Strength",
+      "scope": "Self only; Permanent",
+      "progression": "Descriptive",
+      "summary": "Raises damage output for a narrower attack category."
+    },
+    {
+      "name": "Mimic",
+      "img": "icons/svg/mirror.svg",
+      "cost": 4,
+      "sourcePage": 106,
+      "category": "Power",
+      "ability": "Intelligence",
+      "scope": "Self only; Must touch character; 1 minute",
+      "progression": "Can imitate Attributes up to a maximum Rank",
+      "summary": "Temporarily copies another character's Attributes within Rank limits."
+    },
+    {
+      "name": "Mind Control",
+      "img": "icons/svg/brain.svg",
+      "cost": 3,
+      "sourcePage": 106,
+      "category": "Mental",
+      "ability": "Intelligence",
+      "scope": "1 target; Touch; 1 minute",
+      "progression": "Descriptive",
+      "summary": "Influences, commands, or manipulates a target's mind."
+    },
+    {
+      "name": "Mind Control - Lesser",
+      "img": "icons/svg/brain.svg",
+      "cost": 1,
+      "sourcePage": 107,
+      "category": "Mental",
+      "ability": "Intelligence",
+      "scope": "1 target; Touch; 1 minute",
+      "progression": "Descriptive",
+      "summary": "A restricted form of Mind Control limited to a narrow target category or effect."
+    },
+    {
+      "name": "Mind Shield",
+      "img": "icons/svg/barrier.svg",
+      "cost": 1,
+      "sourcePage": 108,
+      "category": "Defense",
+      "ability": "Wisdom",
+      "scope": "Self only; Ongoing",
+      "progression": "+2 Check Bonus/Rank to Resist Mind-Affecting Effects",
+      "summary": "Improves resistance against mental intrusion and psychic influence."
+    },
+    {
+      "name": "Minions",
+      "img": "icons/svg/mystery-man.svg",
+      "cost": 2,
+      "sourcePage": 108,
+      "category": "Companion",
+      "ability": "Charisma",
+      "scope": "External; Permanent",
+      "progression": "Descriptive",
+      "summary": "Provides a group of minor followers or helpers."
+    },
+    {
+      "name": "Minions - Greater",
+      "img": "icons/svg/mystery-man.svg",
+      "cost": 4,
+      "sourcePage": 108,
+      "category": "Companion",
+      "ability": "Charisma",
+      "scope": "External; Permanent",
+      "progression": "Descriptive",
+      "summary": "Provides stronger or more capable minions than the standard version."
+    },
+    {
+      "name": "Monster Training",
+      "img": "icons/svg/pawprint.svg",
+      "cost": 1,
+      "sourcePage": 108,
+      "category": "Companion",
+      "ability": "Charisma or Intelligence",
+      "scope": "Situational use; Ongoing",
+      "progression": "1 Training Technique/Rank",
+      "summary": "Adds techniques for commanding, coordinating, or improving trained monsters."
+    },
+    {
+      "name": "Mulligan",
+      "img": "icons/svg/d20-highlight.svg",
+      "cost": 1,
+      "sourcePage": 110,
+      "category": "Luck",
+      "ability": "-",
+      "scope": "Self only; Ongoing",
+      "progression": "+2 Dice Re-rolls/Rank Each Session",
+      "summary": "Allows a limited number of rerolls during each game session."
+    },
+    {
+      "name": "Nullify",
+      "img": "icons/svg/cancel.svg",
+      "cost": 5,
+      "sourcePage": 110,
+      "category": "Power",
+      "ability": "Intelligence",
+      "scope": "1 target; Touch; 1 minute",
+      "progression": "Can nullify Attributes up to a maximum Rank",
+      "summary": "Suppresses or cancels another character's Attributes within Rank limits."
+    },
+    {
+      "name": "Pocket Dimension",
+      "img": "icons/svg/cave.svg",
+      "cost": 2,
+      "sourcePage": 110,
+      "category": "Space",
+      "ability": "Intelligence",
+      "scope": "External; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Creates or accesses a personal extradimensional space."
+    },
+    {
+      "name": "Portal",
+      "img": "icons/svg/portal.svg",
+      "cost": 5,
+      "sourcePage": 111,
+      "category": "Space",
+      "ability": "Intelligence",
+      "scope": "External and Ongoing; or 1 touched target",
+      "progression": "1 One-Way Dimensional Portal/Rank",
+      "summary": "Creates portals for travel between locations or dimensions."
+    },
+    {
+      "name": "Protected",
+      "img": "icons/svg/shield.svg",
+      "cost": 1,
+      "sourcePage": 111,
+      "category": "Defense",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "Descriptive",
+      "summary": "Provides a defined protection such as cover, safeguarding, or resistance to harm."
+    },
+    {
+      "name": "Regeneration",
+      "img": "icons/svg/heal.svg",
+      "cost": 1,
+      "sourcePage": 112,
+      "category": "Healing",
+      "ability": "-",
+      "scope": "Self only; Ongoing",
+      "progression": "Regain +1 Hit Point/Rank Each Round",
+      "summary": "Restores Hit Points each round and can represent extreme recovery at high Ranks."
+    },
+    {
+      "name": "Resilient",
+      "img": "icons/svg/cowled.svg",
+      "cost": 1,
+      "sourcePage": 112,
+      "category": "Resistance",
+      "ability": "Constitution",
+      "scope": "Self only; Ongoing",
+      "progression": "1 Environment or Condition/Rank",
+      "summary": "Lets the character survive hostile environments or ignore selected conditions."
+    },
+    {
+      "name": "Saving Throw Proficiency",
+      "img": "icons/svg/d20-highlight.svg",
+      "cost": 2,
+      "sourcePage": 112,
+      "category": "Proficiency",
+      "ability": "Variable",
+      "scope": "Self only; Permanent",
+      "progression": "1 Saving Throw Ability Score/Rank",
+      "summary": "Adds Proficiency Bonus to Saving Throws for one selected Ability Score."
+    },
+    {
+      "name": "Sixth Sense",
+      "img": "icons/svg/eye.svg",
+      "cost": 1,
+      "sourcePage": 112,
+      "category": "Perception",
+      "ability": "Wisdom",
+      "scope": "30-foot radius; Ongoing",
+      "progression": "1 Sense/Rank",
+      "summary": "Detects a defined category of hidden or unusual phenomenon."
+    },
+    {
+      "name": "Size Change",
+      "img": "icons/svg/growth.svg",
+      "cost": 5,
+      "sourcePage": 112,
+      "category": "Form",
+      "ability": "Constitution",
+      "scope": "Self only; 1 minute",
+      "progression": "Grow and/or Shrink by 1 Size/Rank",
+      "summary": "Temporarily increases or decreases the character's size."
+    },
+    {
+      "name": "Size Change - Lesser",
+      "img": "icons/svg/growth.svg",
+      "cost": 4,
+      "sourcePage": 112,
+      "category": "Form",
+      "ability": "Constitution",
+      "scope": "Self only; 1 minute",
+      "progression": "Grow or shrink by 1 Size/Rank",
+      "summary": "A version of Size Change limited to either growing or shrinking."
+    },
+    {
+      "name": "Skill Proficiency",
+      "img": "icons/svg/book.svg",
+      "cost": 1,
+      "sourcePage": 113,
+      "category": "Proficiency",
+      "ability": "Variable",
+      "scope": "Self only; Permanent",
+      "progression": "1 Skill Proficiency/Rank",
+      "summary": "Adds one selected Skill proficiency per Rank."
+    },
+    {
+      "name": "Special Movement",
+      "img": "icons/svg/wingfoot.svg",
+      "cost": 1,
+      "sourcePage": 116,
+      "category": "Movement",
+      "ability": "Dexterity",
+      "scope": "Self only; Ongoing",
+      "progression": "1 Movement/Rank",
+      "summary": "Adds special movement options such as climbing, wall-crawling, swinging, or similar mobility."
+    },
+    {
+      "name": "Spell Amplification",
+      "img": "icons/svg/magic-swirl.svg",
+      "cost": 1,
+      "sourcePage": 116,
+      "category": "Spell",
+      "ability": "-",
+      "scope": "Self only; Situational use",
+      "progression": "1 Spell Modification Each Session/Rank",
+      "summary": "Allows limited spell modification or amplification during play."
+    },
+    {
+      "name": "Spell-Like Ability",
+      "img": "icons/svg/magic-swirl.svg",
+      "cost": 1,
+      "sourcePage": 117,
+      "category": "Spell",
+      "ability": "Intelligence",
+      "scope": "Variable",
+      "progression": "Descriptive",
+      "summary": "Represents a spell effect possessed as an innate or unusual ability."
+    },
+    {
+      "name": "Supersense",
+      "img": "icons/svg/eye.svg",
+      "cost": 1,
+      "sourcePage": 118,
+      "category": "Perception",
+      "ability": "Wisdom",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Grants a sense beyond ordinary human capability."
+    },
+    {
+      "name": "Telepathy",
+      "img": "icons/svg/brain.svg",
+      "cost": 3,
+      "sourcePage": 118,
+      "category": "Mental",
+      "ability": "Intelligence",
+      "scope": "1 target; 10-foot radius; 1 minute",
+      "progression": "Descriptive",
+      "summary": "Reads, transmits, and at higher Ranks probes or alters thoughts and memories."
+    },
+    {
+      "name": "Telepathy - Lesser",
+      "img": "icons/svg/brain.svg",
+      "cost": 1,
+      "sourcePage": 119,
+      "category": "Mental",
+      "ability": "Intelligence",
+      "scope": "1 target; 10-foot radius; 1 minute",
+      "progression": "Descriptive",
+      "summary": "A narrower form of Telepathy restricted to a defined target category."
+    },
+    {
+      "name": "Teleport",
+      "img": "icons/svg/teleport.svg",
+      "cost": 3,
+      "sourcePage": 119,
+      "category": "Movement",
+      "ability": "Intelligence",
+      "scope": "Self; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Moves the character instantly between locations without crossing the space between."
+    },
+    {
+      "name": "Tool Proficiency",
+      "img": "icons/svg/anvil.svg",
+      "cost": 1,
+      "sourcePage": 119,
+      "category": "Proficiency",
+      "ability": "Variable",
+      "scope": "Self only; Permanent",
+      "progression": "1 Tool Proficiency/Rank",
+      "summary": "Adds one selected tool proficiency per Rank."
+    },
+    {
+      "name": "Tough",
+      "img": "icons/svg/upgrade.svg",
+      "cost": 1,
+      "sourcePage": 120,
+      "category": "Ability",
+      "ability": "-",
+      "scope": "Self only; Permanent",
+      "progression": "Hit Point Maximum Increased By +10%/Rank",
+      "summary": "Raises the character's maximum Hit Points."
+    },
+    {
+      "name": "Transfer",
+      "img": "icons/svg/cycle.svg",
+      "cost": 3,
+      "sourcePage": 120,
+      "category": "Power",
+      "ability": "Constitution",
+      "scope": "1 target; Touch; 1 minute",
+      "progression": "Transfer Attributes at a maximum Rank",
+      "summary": "Temporarily gives one of the character's Attributes to another target."
+    },
+    {
+      "name": "Tunnelling",
+      "img": "icons/svg/cave.svg",
+      "cost": 1,
+      "sourcePage": 120,
+      "category": "Movement",
+      "ability": "Strength",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Allows the character to move through earth, stone, or similar material."
+    },
+    {
+      "name": "Undetectable",
+      "img": "icons/svg/invisible.svg",
+      "cost": 2,
+      "sourcePage": 120,
+      "category": "Stealth",
+      "ability": "Dexterity",
+      "scope": "Self only; Ongoing",
+      "progression": "1 Sense or Technique/Rank",
+      "summary": "Makes the character difficult or impossible to detect by selected senses or techniques."
+    },
+    {
+      "name": "Unique Attribute",
+      "img": "icons/svg/star.svg",
+      "cost": 0,
+      "costLabel": "1-10 Points/Rank",
+      "sourcePage": 120,
+      "category": "Unique",
+      "ability": "Variable",
+      "scope": "Variable",
+      "progression": "Descriptive",
+      "summary": "Covers custom abilities whose cost and effects are set with DM approval."
+    },
+    {
+      "name": "Unknown Power",
+      "img": "icons/svg/mystery-man.svg",
+      "cost": 0,
+      "costLabel": "Variable",
+      "sourcePage": 121,
+      "category": "Power",
+      "ability": "Variable",
+      "scope": "Variable",
+      "progression": "Special",
+      "summary": "Represents a hidden or unrevealed power whose exact function is intentionally unknown."
+    },
+    {
+      "name": "Water Speed",
+      "img": "icons/svg/water-drop.svg",
+      "cost": 1,
+      "sourcePage": 121,
+      "category": "Movement",
+      "ability": "Dexterity",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Improves swimming or aquatic movement speed."
+    },
+    {
+      "name": "Wealth",
+      "img": "icons/svg/coins.svg",
+      "cost": 3,
+      "sourcePage": 121,
+      "category": "Resource",
+      "ability": "-",
+      "scope": "Self only; Ongoing",
+      "progression": "Descriptive",
+      "summary": "Provides unusual financial resources, income, assets, or purchasing power."
+    },
+    {
+      "name": "Weapon",
+      "img": "icons/svg/sword.svg",
+      "cost": 1,
+      "sourcePage": 124,
+      "category": "Combat",
+      "ability": "-",
+      "scope": "Attacked melee target; Instantaneous",
+      "progression": "+1d4 Damage/Rank or Special",
+      "summary": "Builds a natural, supernatural, or item-based attack with damage and weapon options."
+    },
+    {
+      "name": "Weapon Proficiency",
+      "img": "icons/svg/sword.svg",
+      "cost": 1,
+      "sourcePage": 130,
+      "category": "Proficiency",
+      "ability": "Variable",
+      "scope": "Self only; Permanent",
+      "progression": "Descriptive",
+      "summary": "Adds proficiency with selected weapon groups or specific weapons."
     }
   ]
 }

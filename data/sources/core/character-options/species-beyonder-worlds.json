@@ -1,0 +1,194 @@
+{
+  "pack": "anime5e.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Species - Beyonder Worlds",
+      "color": "#5f7f9d"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Astran",
+      "type": "species",
+      "folder": "Species - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 18.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 14.</p><p><strong>Rules Summary:</strong> Astral-origin folk with Intelligence, brief precognition, extra arms, psychic sense, telepathy, and light telekinesis.</p><p><strong>Variant Note:</strong> Kinetic Astrans trade basic telekinesis for lesser psychokinetic Dynamic Powers.</p>",
+        "rank": 1,
+        "cost": 14,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.species.astran",
+        "sourcePage": 18,
+        "importId": "beyonder-worlds.species.astran",
+        "points": 14
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.species.astran",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 18,
+            "importId": "beyonder-worlds.species.astran"
+          }
+        }
+      }
+    },
+    {
+      "name": "Celestine",
+      "type": "species",
+      "folder": "Species - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 19.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 13.</p><p><strong>Rules Summary:</strong> Divine-looking folk with Constitution, lesser holy-light Dynamic Powers, fast flight, Celestial/Common language, ageing resilience, and a Marked drawback.</p><p><strong>Variant Note:</strong> Blessed Celestines use a more potent divine spellbinding version of their light powers.</p>",
+        "rank": 1,
+        "cost": 13,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.species.celestine",
+        "sourcePage": 19,
+        "importId": "beyonder-worlds.species.celestine",
+        "points": 13
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.species.celestine",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 19,
+            "importId": "beyonder-worlds.species.celestine"
+          }
+        }
+      }
+    },
+    {
+      "name": "Lephorid",
+      "type": "species",
+      "folder": "Species - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 20.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 10.</p><p><strong>Rules Summary:</strong> Rabbit-like folk with Dexterity, fast movement, extended jumping, hearing/smell, enhanced kick damage, and balance/cat-like movement.</p><p><strong>Variant Note:</strong> Lephorilings are Small variants that add stealth edge and tunnelling.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.species.lephorid",
+        "sourcePage": 20,
+        "importId": "beyonder-worlds.species.lephorid",
+        "points": 10
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.species.lephorid",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 20,
+            "importId": "beyonder-worlds.species.lephorid"
+          }
+        }
+      }
+    },
+    {
+      "name": "Starwisp",
+      "type": "species",
+      "folder": "Species - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 21.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 16.</p><p><strong>Rules Summary:</strong> Energy-state beings with light control, high-speed non-corporeal flight, ageing/air/sustenance resilience, and detectable non-corporeal teleportation.</p><p><strong>Variant Note:</strong> Burst Starwisps add spaceflight outside atmospheres.</p>",
+        "rank": 1,
+        "cost": 16,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.species.starwisp",
+        "sourcePage": 21,
+        "importId": "beyonder-worlds.species.starwisp",
+        "points": 16
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.species.starwisp",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 21,
+            "importId": "beyonder-worlds.species.starwisp"
+          }
+        }
+      }
+    },
+    {
+      "name": "Technoid",
+      "type": "species",
+      "folder": "Species - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 22.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Cybernetic/constructed folk with Constitution and Intelligence, computer interface, greater physical protection, regeneration, and broad resilience.</p><p><strong>Variant Note:</strong> Technoid imprints are modular and often add further Features.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.species.technoid",
+        "sourcePage": 22,
+        "importId": "beyonder-worlds.species.technoid",
+        "points": 12
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.species.technoid",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 22,
+            "importId": "beyonder-worlds.species.technoid"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tengu",
+      "type": "species",
+      "folder": "Species - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 23.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 11.</p><p><strong>Rules Summary:</strong> Avian warriors with Strength, Dexterity, Constitution, combat mastery, flight, and natural beak/claw weapons.</p><p><strong>Variant Note:</strong> Storm Tengu add lesser wind Dynamic Powers and lean toward Bender-style builds.</p>",
+        "rank": 1,
+        "cost": 11,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.species.tengu",
+        "sourcePage": 23,
+        "importId": "beyonder-worlds.species.tengu",
+        "points": 11
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.species.tengu",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 23,
+            "importId": "beyonder-worlds.species.tengu"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tuath",
+      "type": "species",
+      "folder": "Species - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 24.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 15.</p><p><strong>Rules Summary:</strong> Small fae spellcasters with AC and combat bonuses, primal magic Dynamic Powers, language, detectable flight, ageing resilience, and size-based combat drawbacks.</p><p><strong>Variant Note:</strong> Glamour Tuatha are Medium-sized variants that replace primal magic with more focused lesser spellbinding.</p>",
+        "rank": 1,
+        "cost": 15,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.species.tuath",
+        "sourcePage": 24,
+        "importId": "beyonder-worlds.species.tuath",
+        "points": 15
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.species.tuath",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 24,
+            "importId": "beyonder-worlds.species.tuath"
+          }
+        }
+      }
+    }
+  ]
+}

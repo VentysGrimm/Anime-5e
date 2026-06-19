@@ -18,6 +18,16 @@ function numberField(initial = 0, options = {}) {
   });
 }
 
+function optionalNumberField(initial = null, options = {}) {
+  return new fields.NumberField({
+    required: false,
+    nullable: true,
+    integer: true,
+    initial,
+    ...options
+  });
+}
+
 function abilityField(initial = 10) {
   return new fields.SchemaField({
     value: numberField(initial),
@@ -57,6 +67,14 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
       identity: new fields.SchemaField({
         alias: textField(),
         playerName: textField(),
+        description: textField(),
+        speciesAndSize: textField(),
+        alignmentAndNotes: textField(),
+        savingThrows: textField(),
+        proficiencies: textField(),
+        actorRole: textField(),
+        challengeRating: textField(),
+        totalPoints: optionalNumberField(),
         startingDiscretionaryPoints: numberField(0, { min: 0 }),
         engagementBonusPoints: numberField(0, { min: 0 }),
         otherNonLevellingPoints: numberField(0, { min: 0 }),
@@ -72,6 +90,25 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         retirementDate: textField()
       }),
       biography: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+      statBlock: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+      notes: new fields.SchemaField({
+        overview: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        combat: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        attributes: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        defects: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        skills: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        powers: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        inventory: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        companions: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        biography: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        journal: new fields.HTMLField({ required: false, blank: true, initial: "" })
+      }),
+      source: new fields.SchemaField({
+        book: textField(),
+        page: optionalNumberField(),
+        sourceId: textField(),
+        importId: textField()
+      }),
       level: numberField(1, { min: 1 }),
       experience: numberField(0, { min: 0 }),
       abilities: new fields.SchemaField({
@@ -119,3 +156,11 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
 export class Anime5eCharacterData extends Anime5eBaseActorData {}
 
 export class Anime5eNpcData extends Anime5eBaseActorData {}
+
+export class Anime5eMonsterData extends Anime5eBaseActorData {}
+
+export class Anime5eCompanionData extends Anime5eBaseActorData {}
+
+export class Anime5eVehicleData extends Anime5eBaseActorData {}
+
+export class Anime5eMechaData extends Anime5eBaseActorData {}

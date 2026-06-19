@@ -1,139 +1,298 @@
-<form class="anime5e-form folio-sheet" autocomplete="off">
+<form class="anime5e-form folio-sheet tabbed-folio-sheet" autocomplete="off">
   <header class="folio-title">
-    <span class="folio-page-number">4</span>
-    <h1>Basic Information</h1>
+    <span class="folio-page-number">A5E</span>
+    <h1>Character Folio</h1>
   </header>
 
-  <section class="ability-banner-grid" aria-label='{{localize "ANIME5E.Labels.Abilities"}}'>
-    {{#each abilities as |ability|}}
-      <article class="ability-banner">
-        <label>
-          <span>{{ability.label}}</span>
-          <input type="number" name="system.abilities.{{ability.key}}.value" value="{{ability.data.value}}" {{#unless ../editable}}disabled{{/unless}}>
-        </label>
-        <div class="modifier-block">
-          <span>{{localize "ANIME5E.Labels.Modifier"}}</span>
-          <strong>{{ability.data.modifier}}</strong>
-        </div>
-      </article>
+  <nav class="sheet-tabs tabs" data-group="primary" aria-label="Character Folio Sections">
+    {{#each tabs as |tab|}}
+      <a class="item{{#if tab.active}} active{{/if}}" data-tab="{{tab.id}}" data-group="primary">{{tab.label}}</a>
     {{/each}}
-  </section>
+  </nav>
 
-  <section class="folio-stat-row">
-    <label class="circle-stat">
-      <span>Proficiency Bonus</span>
-      <input type="number" name="system.combat.proficiencyBonus" value="{{system.combat.proficiencyBonus}}" {{#unless editable}}disabled{{/unless}}>
-    </label>
+  <section class="sheet-body folio-tab-body">
+    <section class="tab folio-tab{{#if activeTabs.overview}} active{{/if}}" data-group="primary" data-tab="overview">
+      <section class="ability-banner-grid" aria-label='{{localize "ANIME5E.Labels.Abilities"}}'>
+        {{#each abilities as |ability|}}
+          <article class="ability-banner">
+            <label>
+              <span>{{ability.label}}</span>
+              <input type="number" name="system.abilities.{{ability.key}}.value" value="{{ability.data.value}}" {{#unless ../editable}}disabled{{/unless}}>
+            </label>
+            <div class="modifier-block">
+              <span>{{localize "ANIME5E.Labels.Modifier"}}</span>
+              <strong>{{ability.data.modifier}}</strong>
+              <button type="button" class="icon-button roll-button" data-action="roll-ability" data-ability="{{ability.key}}" data-label="{{ability.label}} Check" title="Roll {{ability.label}}">
+                <i class="fas fa-dice-d20"></i>
+              </button>
+            </div>
+          </article>
+        {{/each}}
+      </section>
 
-    <div class="resource-stat torn-paper">
-      <h2>Hit Points</h2>
-      <label>
-        Maximum
-        <input type="number" name="system.combat.hitPoints.max" value="{{system.combat.hitPoints.max}}" min="0" {{#unless editable}}disabled{{/unless}}>
-      </label>
-      <label>
-        Current
-        <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" min="0" {{#unless editable}}disabled{{/unless}}>
-      </label>
-    </div>
-
-    <label class="shield-stat">
-      <span>Armour Class</span>
-      <input type="number" name="system.combat.armourClass" value="{{system.combat.armourClass}}" {{#unless editable}}disabled{{/unless}}>
-    </label>
-
-    <div class="resource-stat torn-paper">
-      <h2>Energy Points</h2>
-      <label>
-        Maximum
-        <input type="number" name="system.combat.energy.max" value="{{system.combat.energy.max}}" min="0" {{#unless editable}}disabled{{/unless}}>
-      </label>
-      <label>
-        Current
-        <input type="number" name="system.combat.energy.value" value="{{system.combat.energy.value}}" min="0" {{#unless editable}}disabled{{/unless}}>
-      </label>
-    </div>
-
-    <label class="circle-stat">
-      <span>Movement Speed</span>
-      <input type="number" name="system.combat.movementSpeed" value="{{system.combat.movementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
-    </label>
-  </section>
-
-  <main class="folio-main-grid">
-    <section class="folio-ruled-list">
-      {{#each identityRows as |row|}}
-        <label class="folio-line">
-          <span>{{row.label}}:</span>
-          <input type="{{#if row.type}}{{row.type}}{{else}}text{{/if}}" name="{{row.name}}" value="{{row.value}}" {{#unless ../editable}}disabled{{/unless}}>
+      <section class="folio-stat-row">
+        <label class="circle-stat">
+          <span>Proficiency Bonus</span>
+          <input type="number" name="system.combat.proficiencyBonus" value="{{system.combat.proficiencyBonus}}" {{#unless editable}}disabled{{/unless}}>
         </label>
-      {{/each}}
-    </section>
 
-    <section class="folio-side-stack">
-      <section class="paint-panel level-panel">
-        <header>
+        <div class="resource-stat torn-paper">
+          <h2>Hit Points</h2>
           <label>
-            Character Level
-            <input type="number" name="system.level" value="{{system.level}}" min="1" {{#unless editable}}disabled{{/unless}}>
+            Maximum
+            <input type="number" name="system.combat.hitPoints.max" value="{{system.combat.hitPoints.max}}" min="0" {{#unless editable}}disabled{{/unless}}>
           </label>
           <label>
-            EXP
-            <input type="number" name="system.experience" value="{{system.experience}}" min="0" {{#unless editable}}disabled{{/unless}}>
+            Current
+            <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" min="0" {{#unless editable}}disabled{{/unless}}>
           </label>
-        </header>
-        <div class="folio-table compact-table">
-          <div class="table-header">Class</div>
-          <div class="table-header">Level</div>
-          <div class="table-header">Hit Dice</div>
-          {{#each classRows as |classRow|}}
-            <input type="text" name="system.progression.classes.{{classRow.key}}.name" value="{{classRow.data.name}}" {{#unless ../editable}}disabled{{/unless}}>
-            <input type="number" name="system.progression.classes.{{classRow.key}}.level" value="{{classRow.data.level}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
-            <input type="text" name="system.progression.classes.{{classRow.key}}.hitDice" value="{{classRow.data.hitDice}}" {{#unless ../editable}}disabled{{/unless}}>
-          {{/each}}
         </div>
+
+        <label class="shield-stat">
+          <span>Armour Class</span>
+          <input type="number" name="system.combat.armourClass" value="{{system.combat.armourClass}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+
+        <div class="resource-stat torn-paper">
+          <h2>Energy Points</h2>
+          <label>
+            Maximum
+            <input type="number" name="system.combat.energy.max" value="{{system.combat.energy.max}}" min="0" {{#unless editable}}disabled{{/unless}}>
+          </label>
+          <label>
+            Current
+            <input type="number" name="system.combat.energy.value" value="{{system.combat.energy.value}}" min="0" {{#unless editable}}disabled{{/unless}}>
+          </label>
+        </div>
+
+        <label class="circle-stat">
+          <span>Movement Speed</span>
+          <input type="number" name="system.combat.movementSpeed" value="{{system.combat.movementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        </label>
       </section>
 
-      <section class="paint-panel">
-        <h2>Common Attack Damage</h2>
-        <div class="folio-table attack-table">
-          <div class="table-header">Weapon</div>
-          <div class="table-header">Modifier</div>
-          <div class="table-header">Type</div>
-          <div class="table-header">Damage</div>
-          {{#each attackRows as |attackRow|}}
-            <input type="text" name="system.combat.attacks.{{attackRow.key}}.weapon" value="{{attackRow.data.weapon}}" {{#unless ../editable}}disabled{{/unless}}>
-            <input type="text" name="system.combat.attacks.{{attackRow.key}}.modifier" value="{{attackRow.data.modifier}}" {{#unless ../editable}}disabled{{/unless}}>
-            <input type="text" name="system.combat.attacks.{{attackRow.key}}.damageType" value="{{attackRow.data.damageType}}" {{#unless ../editable}}disabled{{/unless}}>
-            <input type="text" name="system.combat.attacks.{{attackRow.key}}.damage" value="{{attackRow.data.damage}}" {{#unless ../editable}}disabled{{/unless}}>
+      <section class="folio-main-grid">
+        <section class="folio-ruled-list">
+          {{#each identityRows as |row|}}
+            <label class="folio-line">
+              <span>{{row.label}}:</span>
+              <input type="{{#if row.type}}{{row.type}}{{else}}text{{/if}}" name="{{row.name}}" value="{{row.value}}" {{#unless ../editable}}disabled{{/unless}}>
+            </label>
           {{/each}}
-        </div>
+        </section>
+
+        <section class="folio-side-stack">
+          <section class="paint-panel level-panel">
+            <header>
+              <label>
+                Character Level
+                <input type="number" name="system.level" value="{{system.level}}" min="1" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                EXP
+                <input type="number" name="system.experience" value="{{system.experience}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+            </header>
+            <div class="folio-table compact-table">
+              <div class="table-header">Class</div>
+              <div class="table-header">Level</div>
+              <div class="table-header">Hit Dice</div>
+              {{#each classRows as |classRow|}}
+                <input type="text" name="system.progression.classes.{{classRow.key}}.name" value="{{classRow.data.name}}" {{#unless ../editable}}disabled{{/unless}}>
+                <input type="number" name="system.progression.classes.{{classRow.key}}.level" value="{{classRow.data.level}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
+                <input type="text" name="system.progression.classes.{{classRow.key}}.hitDice" value="{{classRow.data.hitDice}}" {{#unless ../editable}}disabled{{/unless}}>
+              {{/each}}
+            </div>
+          </section>
+
+          <section class="notes-box compact-notes">
+            <h2>Character Summary</h2>
+            <textarea name="system.identity.description" {{#unless editable}}disabled{{/unless}}>{{system.identity.description}}</textarea>
+          </section>
+        </section>
       </section>
     </section>
-  </main>
 
-  <section class="ledger-section">
-    <h2>Equipment And Features</h2>
-    <ol class="item-list">
-      {{#each items as |item|}}
-        <li class="item-row" data-item-id="{{item.id}}">
-          <img src="{{item.img}}" alt="{{item.name}}">
-          <span>{{item.name}}</span>
-          <small>{{item.type}}</small>
-        </li>
-      {{else}}
-        <li class="item-row">
-          <span></span>
-          <span>No items yet.</span>
-          <small></small>
-        </li>
-      {{/each}}
-    </ol>
-  </section>
+    <section class="tab folio-tab{{#if activeTabs.combat}} active{{/if}}" data-group="primary" data-tab="combat">
+      <section class="folio-grid two-column">
+        <section class="paint-panel combat-panel">
+          <h2>Combat Core</h2>
+          <div class="inline-fields">
+            <label>
+              Initiative
+              <input type="number" name="system.combat.initiative" value="{{system.combat.initiative}}" {{#unless editable}}disabled{{/unless}}>
+            </label>
+            <button type="button" class="roll-action" data-action="roll-initiative"><i class="fas fa-dice-d20"></i> Initiative</button>
+            <label>
+              Saving Throws
+              <input type="text" name="system.identity.savingThrows" value="{{system.identity.savingThrows}}" {{#unless editable}}disabled{{/unless}}>
+            </label>
+          </div>
+          <div class="folio-table attack-table action-table">
+            <div class="table-header">Weapon</div>
+            <div class="table-header">Modifier</div>
+            <div class="table-header">Type</div>
+            <div class="table-header">Damage</div>
+            <div class="table-header">Roll</div>
+            {{#each attackRows as |attackRow|}}
+              <input type="text" name="system.combat.attacks.{{attackRow.key}}.weapon" value="{{attackRow.data.weapon}}" {{#unless ../editable}}disabled{{/unless}}>
+              <input type="text" name="system.combat.attacks.{{attackRow.key}}.modifier" value="{{attackRow.data.modifier}}" {{#unless ../editable}}disabled{{/unless}}>
+              <input type="text" name="system.combat.attacks.{{attackRow.key}}.damageType" value="{{attackRow.data.damageType}}" {{#unless ../editable}}disabled{{/unless}}>
+              <input type="text" name="system.combat.attacks.{{attackRow.key}}.damage" value="{{attackRow.data.damage}}" {{#unless ../editable}}disabled{{/unless}}>
+              <button type="button" class="icon-button" data-action="roll-attack" data-attack="{{attackRow.key}}" title="Roll attack"><i class="fas fa-dice-d20"></i></button>
+            {{/each}}
+          </div>
+        </section>
 
-  <section class="notes-box">
-    <h2>Physical Description And Important Notes</h2>
-    <textarea name="system.biography" {{#unless editable}}disabled{{/unless}}>{{system.biography}}</textarea>
+        <section class="ledger-section item-drop-panel" data-drop-target="items">
+          <h2>Combat Gear, Techniques, Defenses</h2>
+          <ol class="item-list folio-item-list">
+            {{#each itemGroups.combat as |item|}}
+              <li class="item-row" data-item-id="{{item.id}}">
+                <img src="{{item.img}}" alt="{{item.name}}">
+                <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+                <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+                {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+              </li>
+            {{else}}
+              <li class="item-row empty"><span></span><span>Drop combat items here.</span><small></small></li>
+            {{/each}}
+          </ol>
+        </section>
+      </section>
+      <section class="notes-box"><h2>Combat Notes, Defenses, Conditions</h2><textarea name="system.notes.combat" {{#unless editable}}disabled{{/unless}}>{{system.notes.combat}}</textarea></section>
+    </section>
+
+    <section class="tab folio-tab{{#if activeTabs.attributes}} active{{/if}}" data-group="primary" data-tab="attributes">
+      <section class="ledger-section item-drop-panel" data-drop-target="items">
+        <h2>Anime 5E Attributes, Enhancements, Limiters</h2>
+        <ol class="item-list folio-item-list">
+          {{#each itemGroups.attributes as |item|}}
+            <li class="item-row" data-item-id="{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.name}}">
+              <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+              <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+            </li>
+          {{else}}
+            <li class="item-row empty"><span></span><span>Drop Attributes, Enhancements, or Limiters here.</span><small></small></li>
+          {{/each}}
+        </ol>
+      </section>
+      <section class="notes-box"><h2>Activation, Range, Duration, Targets, Energy Costs</h2><textarea name="system.notes.attributes" {{#unless editable}}disabled{{/unless}}>{{system.notes.attributes}}</textarea></section>
+    </section>
+
+    <section class="tab folio-tab{{#if activeTabs.defects}} active{{/if}}" data-group="primary" data-tab="defects">
+      <section class="ledger-section item-drop-panel" data-drop-target="items">
+        <h2>Defects</h2>
+        <ol class="item-list folio-item-list">
+          {{#each itemGroups.defects as |item|}}
+            <li class="item-row" data-item-id="{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.name}}">
+              <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+              <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+            </li>
+          {{else}}
+            <li class="item-row empty"><span></span><span>Drop Defects here.</span><small></small></li>
+          {{/each}}
+        </ol>
+      </section>
+      <section class="notes-box"><h2>Mechanical Effects, Triggers, Limitations, Roleplaying Guidance</h2><textarea name="system.notes.defects" {{#unless editable}}disabled{{/unless}}>{{system.notes.defects}}</textarea></section>
+    </section>
+
+    <section class="tab folio-tab{{#if activeTabs.skills}} active{{/if}}" data-group="primary" data-tab="skills">
+      <section class="folio-grid two-column">
+        <section class="notes-box"><h2>Saving Throws, Proficiencies, Languages, Movement, Senses</h2><textarea name="system.identity.proficiencies" {{#unless editable}}disabled{{/unless}}>{{system.identity.proficiencies}}</textarea></section>
+        <section class="ledger-section item-drop-panel" data-drop-target="items">
+          <h2>Skills And Proficiencies</h2>
+          <ol class="item-list folio-item-list">
+            {{#each itemGroups.skills as |item|}}
+              <li class="item-row" data-item-id="{{item.id}}">
+                <img src="{{item.img}}" alt="{{item.name}}">
+                <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+                <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+                {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+              </li>
+            {{else}}
+              <li class="item-row empty"><span></span><span>Drop skills, proficiencies, tools, or languages here.</span><small></small></li>
+            {{/each}}
+          </ol>
+        </section>
+      </section>
+      <section class="notes-box"><h2>Trained Capability Notes</h2><textarea name="system.notes.skills" {{#unless editable}}disabled{{/unless}}>{{system.notes.skills}}</textarea></section>
+    </section>
+
+    <section class="tab folio-tab{{#if activeTabs.powers}} active{{/if}}" data-group="primary" data-tab="powers">
+      <section class="ledger-section item-drop-panel" data-drop-target="items">
+        <h2>Dynamic Powers, Spell-Like Abilities, Spells, Techniques</h2>
+        <ol class="item-list folio-item-list">
+          {{#each itemGroups.powers as |item|}}
+            <li class="item-row" data-item-id="{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.name}}">
+              <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+              <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+            </li>
+          {{else}}
+            <li class="item-row empty"><span></span><span>Drop powers, spells, psionics, or techniques here.</span><small></small></li>
+          {{/each}}
+        </ol>
+      </section>
+      <section class="notes-box"><h2>Energy Costs, Activation Rules, Prepared Or Known Powers</h2><textarea name="system.notes.powers" {{#unless editable}}disabled{{/unless}}>{{system.notes.powers}}</textarea></section>
+    </section>
+
+    <section class="tab folio-tab{{#if activeTabs.inventory}} active{{/if}}" data-group="primary" data-tab="inventory">
+      <section class="ledger-section item-drop-panel" data-drop-target="items">
+        <h2>Gear, Items Of Power, Weapons, Armour, Money</h2>
+        <ol class="item-list folio-item-list">
+          {{#each itemGroups.inventory as |item|}}
+            <li class="item-row" data-item-id="{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.name}}">
+              <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+              <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+            </li>
+          {{else}}
+            <li class="item-row empty"><span></span><span>Drop inventory items here.</span><small></small></li>
+          {{/each}}
+        </ol>
+      </section>
+      <section class="notes-box"><h2>Carried, Worn, Stored, Money, Item-Based Attributes</h2><textarea name="system.notes.inventory" {{#unless editable}}disabled{{/unless}}>{{system.notes.inventory}}</textarea></section>
+    </section>
+
+    <section class="tab folio-tab{{#if activeTabs.companions}} active{{/if}}" data-group="primary" data-tab="companions">
+      <section class="ledger-section item-drop-panel" data-drop-target="items">
+        <h2>Companions, Vehicles, Mecha, Mounts</h2>
+        <ol class="item-list folio-item-list">
+          {{#each itemGroups.companions as |item|}}
+            <li class="item-row" data-item-id="{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.name}}">
+              <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+              <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+            </li>
+          {{else}}
+            <li class="item-row empty"><span></span><span>Drop vehicles, mecha, or owned equipment here.</span><small></small></li>
+          {{/each}}
+        </ol>
+      </section>
+      <section class="notes-box"><h2>Owned Creature And Equipment Summaries</h2><textarea name="system.notes.companions" {{#unless editable}}disabled{{/unless}}>{{system.notes.companions}}</textarea></section>
+      <section class="notes-box"><h2>Linked Stat Summary</h2><textarea name="system.statBlock" {{#unless editable}}disabled{{/unless}}>{{system.statBlock}}</textarea></section>
+    </section>
+
+    <section class="tab folio-tab{{#if activeTabs.biography}} active{{/if}}" data-group="primary" data-tab="biography">
+      <section class="folio-grid two-column">
+        <section class="notes-box"><h2>Appearance, Personality, Background, History</h2><textarea name="system.biography" {{#unless editable}}disabled{{/unless}}>{{system.biography}}</textarea></section>
+        <section class="notes-box"><h2>Family, Allies, Enemies, Homeland, Goals, Secrets</h2><textarea name="system.notes.biography" {{#unless editable}}disabled{{/unless}}>{{system.notes.biography}}</textarea></section>
+      </section>
+      <section class="notes-box"><h2>Campaign Role</h2><textarea name="system.identity.actorRole" {{#unless editable}}disabled{{/unless}}>{{system.identity.actorRole}}</textarea></section>
+    </section>
+
+    <section class="tab folio-tab{{#if activeTabs.journal}} active{{/if}}" data-group="primary" data-tab="journal">
+      <section class="notes-box journal-notes"><h2>Session Notes, Adventure Log, Advancement, Rewards, Downtime</h2><textarea name="system.notes.journal" {{#unless editable}}disabled{{/unless}}>{{system.notes.journal}}</textarea></section>
+      <section class="notes-box"><h2>Folio Notes</h2><textarea name="system.notes.overview" {{#unless editable}}disabled{{/unless}}>{{system.notes.overview}}</textarea></section>
+    </section>
   </section>
 
   <footer class="folio-footer">

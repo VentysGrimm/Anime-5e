@@ -15,6 +15,7 @@ Then create a world using the `Anime 5e` game system.
 ## Project Shape
 
 - `system.json` is the Foundry package manifest.
+- Actor and Item subtypes are declared in `system.json` under `documentTypes`; Foundry v14 does not use a root `template.json`.
 - `scripts/anime5e.mjs` is the runtime entry point.
 - `module/documents/` contains v14 `TypeDataModel` classes for Actor and Item subtypes.
 - `module/data/compendiums.mjs` imports starter compendium data into declared packs.

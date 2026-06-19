@@ -1,0 +1,64 @@
+{
+  "pack": "anime5e.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Species - Bonus Character Options",
+      "color": "#6d8f72"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Crogoblin",
+      "type": "species",
+      "folder": "Species - Bonus Character Options",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Bonus Character Options, p. 2.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Hybrid goblin-golem warriors with Strength, combat techniques, darkvision, bodily resistance, magic nullification, Tough, and initiative/Wisdom drawbacks.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Bonus Character Options",
+        "sourceId": "bonus-character-options.species.crogoblin",
+        "sourcePage": 2,
+        "importId": "bonus-character-options.species.crogoblin",
+        "points": 12
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "bonus-character-options.species.crogoblin",
+          "source": {
+            "book": "Anime 5E Bonus Character Options",
+            "page": 2,
+            "importId": "bonus-character-options.species.crogoblin"
+          }
+        }
+      }
+    },
+    {
+      "name": "Loralai",
+      "type": "species",
+      "folder": "Species - Bonus Character Options",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Bonus Character Options, p. 3.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 13.</p><p><strong>Rules Summary:</strong> Aquatic elf cousins with Dexterity/Wisdom, underwater combat edge, aquatic features, enhanced senses in water, languages, underwater resilience, water sense, and water speed.</p>",
+        "rank": 1,
+        "cost": 13,
+        "source": "Anime 5E Bonus Character Options",
+        "sourceId": "bonus-character-options.species.loralai",
+        "sourcePage": 3,
+        "importId": "bonus-character-options.species.loralai",
+        "points": 13
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "bonus-character-options.species.loralai",
+          "source": {
+            "book": "Anime 5E Bonus Character Options",
+            "page": 3,
+            "importId": "bonus-character-options.species.loralai"
+          }
+        }
+      }
+    }
+  ]
+}

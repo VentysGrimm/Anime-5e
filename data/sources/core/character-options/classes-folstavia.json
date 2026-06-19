@@ -1,0 +1,152 @@
+{
+  "pack": "anime5e.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Classes - Folstavia",
+      "color": "#8a7f5e"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Martialist",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 46.</p><p><strong>Hit Die:</strong> d10. <strong>Primary Ability:</strong> Strength or Dexterity. <strong>Saving Throws:</strong> Strength, Constitution.</p><p><strong>Rules Summary:</strong> Special non-supernatural combat class for guards, soldiers, mercenaries, and martial heroes who want broad baseline fighting talent.</p><p><strong>Proficiencies:</strong> Light, medium, and heavy armour; shields; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia",
+        "sourceId": "folstavia.class.martialist",
+        "sourcePage": 46,
+        "importId": "folstavia.class.martialist",
+        "hitDice": "d10",
+        "primaryAbility": "Strength or Dexterity",
+        "savingThrows": "Strength, Constitution"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.martialist",
+          "source": {
+            "book": "Anime 5E Folstavia",
+            "page": 46,
+            "importId": "folstavia.class.martialist"
+          }
+        }
+      }
+    },
+    {
+      "name": "Exemplar",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 48.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Wisdom. <strong>Saving Throws:</strong> Wisdom, Charisma.</p><p><strong>Rules Summary:</strong> Cause-bound champion chosen by an ethos, order, god, or ideal, blending flexible magic with martial and support capability.</p><p><strong>Proficiencies:</strong> Light and medium armour; shields; simple weapons; select 4 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia",
+        "sourceId": "folstavia.class.exemplar",
+        "sourcePage": 48,
+        "importId": "folstavia.class.exemplar",
+        "hitDice": "d8",
+        "primaryAbility": "Wisdom",
+        "savingThrows": "Wisdom, Charisma"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.exemplar",
+          "source": {
+            "book": "Anime 5E Folstavia",
+            "page": 48,
+            "importId": "folstavia.class.exemplar"
+          }
+        }
+      }
+    },
+    {
+      "name": "Maker",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 50.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Intelligence. <strong>Saving Throws:</strong> Intelligence.</p><p><strong>Rules Summary:</strong> Magical-science inventor who uses Infusion and prepared creations to build custom wonders, devices, and field solutions.</p><p><strong>Proficiencies:</strong> Light and medium armour; simple weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia",
+        "sourceId": "folstavia.class.maker",
+        "sourcePage": 50,
+        "importId": "folstavia.class.maker",
+        "hitDice": "d6",
+        "primaryAbility": "Intelligence",
+        "savingThrows": "Intelligence"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.maker",
+          "source": {
+            "book": "Anime 5E Folstavia",
+            "page": 50,
+            "importId": "folstavia.class.maker"
+          }
+        }
+      }
+    },
+    {
+      "name": "Pilot",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 54.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity, Wisdom.</p><p><strong>Rules Summary:</strong> Equipment-focused class for wielders of powerful magical gear, vehicles, or mecha, trading personal breadth for signature hardware.</p><p><strong>Proficiencies:</strong> Light armour; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia",
+        "sourceId": "folstavia.class.pilot",
+        "sourcePage": 54,
+        "importId": "folstavia.class.pilot",
+        "hitDice": "d6",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity, Wisdom"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.pilot",
+          "source": {
+            "book": "Anime 5E Folstavia",
+            "page": 54,
+            "importId": "folstavia.class.pilot"
+          }
+        }
+      }
+    },
+    {
+      "name": "Strider",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 58.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Charisma. <strong>Saving Throws:</strong> Constitution, Wisdom.</p><p><strong>Rules Summary:</strong> Dimensional-energy wielder who heals, teleports, protects, survives hostile realities, and moves allies across impossible distances.</p><p><strong>Proficiencies:</strong> Light and medium armour; shields; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia",
+        "sourceId": "folstavia.class.strider",
+        "sourcePage": 58,
+        "importId": "folstavia.class.strider",
+        "hitDice": "d8",
+        "primaryAbility": "Charisma",
+        "savingThrows": "Constitution, Wisdom"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.strider",
+          "source": {
+            "book": "Anime 5E Folstavia",
+            "page": 58,
+            "importId": "folstavia.class.strider"
+          }
+        }
+      }
+    }
+  ]
+}

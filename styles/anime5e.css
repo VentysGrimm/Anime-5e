@@ -392,6 +392,32 @@
   grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
 }
 
+.anime5e .detail-fields {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.anime5e .detail-fields label {
+  display: grid;
+  gap: 4px;
+}
+
+.anime5e .detail-fields .wide {
+  grid-column: 1 / -1;
+}
+
+.anime5e .detail-fields textarea {
+  min-height: 86px;
+  resize: vertical;
+}
+
+.anime5e .checkbox-field {
+  align-items: center;
+  display: flex;
+  min-height: 28px;
+}
+
 .anime5e input,
 .anime5e textarea {
   background: rgba(255, 255, 255, 0.7);
@@ -412,5 +438,178 @@
   .anime5e .shield-stat {
     aspect-ratio: auto;
     min-height: 92px;
+  }
+}
+
+.anime5e.sheet form.tabbed-folio-sheet {
+  gap: 12px;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.anime5e.sheet .window-content {
+  overflow: hidden;
+}
+
+.anime5e .folio-title,
+.anime5e .sheet-tabs,
+.anime5e .folio-footer {
+  flex: 0 0 auto;
+}
+
+.anime5e .sheet-tabs {
+  align-items: end;
+  border-bottom: 2px solid var(--anime5e-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: -4px;
+}
+
+.anime5e .sheet-tabs .item {
+  background: #ececec;
+  border: 1px solid var(--anime5e-border);
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  color: #2f2f2f;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.1;
+  min-height: 30px;
+  padding: 8px 10px 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.anime5e .sheet-tabs .item.active {
+  background: #fff;
+  color: #17364a;
+  margin-bottom: -2px;
+  padding-bottom: 9px;
+}
+
+.anime5e .folio-tab-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.anime5e .tab:not(.active) {
+  display: none;
+}
+
+.anime5e .folio-tab {
+  display: grid;
+  gap: 16px;
+}
+
+.anime5e .folio-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.anime5e .two-column {
+  grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
+}
+
+.anime5e .compact-notes textarea {
+  min-height: 94px;
+}
+
+.anime5e .journal-notes textarea {
+  min-height: 320px;
+}
+
+.anime5e .combat-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.anime5e .action-table {
+  grid-template-columns: 1.35fr 0.65fr 0.8fr 0.95fr 44px;
+}
+
+.anime5e .icon-button,
+.anime5e .roll-action,
+.anime5e .item-actions button {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+  justify-content: center;
+  min-height: 30px;
+}
+
+.anime5e .icon-button {
+  min-width: 34px;
+  padding: 4px 8px;
+}
+
+.anime5e .modifier-block .roll-button {
+  margin-top: 4px;
+}
+
+.anime5e .item-drop-panel {
+  min-height: 170px;
+}
+
+.anime5e .folio-item-list .item-row {
+  grid-template-columns: 32px minmax(150px, 1fr) minmax(140px, auto) auto;
+}
+
+.anime5e .item-main {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.anime5e .item-main strong,
+.anime5e .item-main small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.anime5e .item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: end;
+}
+
+.anime5e .item-tags span {
+  background: #e7eef1;
+  border: 1px solid #b8ccd4;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  line-height: 1;
+  padding: 4px 6px;
+}
+
+.anime5e .item-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.anime5e .item-row.empty {
+  color: #666;
+  font-style: italic;
+}
+
+@media (max-width: 860px) {
+  .anime5e .two-column,
+  .anime5e .action-table,
+  .anime5e .folio-item-list .item-row {
+    grid-template-columns: 1fr;
+  }
+
+  .anime5e .sheet-tabs .item {
+    flex: 1 1 130px;
+  }
+
+  .anime5e .item-tags {
+    justify-content: start;
   }
 }

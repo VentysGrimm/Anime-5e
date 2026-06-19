@@ -28,6 +28,21 @@ function textField(initial = "") {
   });
 }
 
+function booleanField(initial = false) {
+  return new fields.BooleanField({
+    required: true,
+    initial
+  });
+}
+
+function htmlField(initial = "") {
+  return new fields.HTMLField({
+    required: false,
+    blank: true,
+    initial
+  });
+}
+
 class Anime5eBaseItemData extends foundry.abstract.TypeDataModel {
   static LOCALIZATION_PREFIXES = ["ANIME5E.Item"];
 
@@ -67,12 +82,27 @@ export class Anime5eEquipmentData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
-      equipped: new fields.BooleanField({ required: true, initial: false })
+      equipped: booleanField(),
+      quantity: numberField(1, { min: 0 }),
+      value: textField(),
+      weight: textField()
     };
   }
 }
 
 export class Anime5eFeatureData extends Anime5eBaseItemData {}
+
+export class Anime5eItemOfPowerData extends Anime5eEquipmentData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      itemCategory: textField(),
+      points: numberField(0, { min: 0 }),
+      attunement: textField(),
+      attributeSummary: textField()
+    };
+  }
+}
 
 export class Anime5eSpeciesData extends Anime5eBaseItemData {
   static defineSchema() {
@@ -114,12 +144,136 @@ export class Anime5eTechniqueData extends Anime5eBaseItemData {
   }
 }
 
+export class Anime5eSizeTemplateData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      sizeCategory: textField(),
+      costModifier: numberField(0),
+      armourClassModifier: numberField(0),
+      attackModifier: numberField(0),
+      damageModifier: textField(),
+      strengthModifier: textField(),
+      movementModifier: textField(),
+      space: textField(),
+      reach: textField()
+    };
+  }
+}
+
 export class Anime5eSpellData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
       level: numberField(0, { min: 0 }),
       school: textField()
+    };
+  }
+}
+
+export class Anime5eEnhancementData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      appliesTo: textField(),
+      category: textField()
+    };
+  }
+}
+
+export class Anime5eLimiterData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      appliesTo: textField(),
+      category: textField()
+    };
+  }
+}
+
+export class Anime5eProficiencyData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      category: textField(),
+      ability: textField()
+    };
+  }
+}
+
+export class Anime5eSkillData extends Anime5eProficiencyData {}
+
+export class Anime5eToolData extends Anime5eProficiencyData {}
+
+export class Anime5eLanguageData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      script: textField()
+    };
+  }
+}
+
+export class Anime5eItemAttributeData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      parentAttribute: textField(),
+      appliesTo: textField()
+    };
+  }
+}
+
+export class Anime5eMaterialData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      rating: textField(),
+      durability: textField()
+    };
+  }
+}
+
+export class Anime5eLootData extends Anime5eEquipmentData {}
+
+export class Anime5eMountData extends Anime5eEquipmentData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      creatureType: textField(),
+      size: textField(),
+      challengeRating: textField(),
+      armourClass: numberField(10, { min: 0 }),
+      hitPoints: textField(),
+      speed: textField(),
+      carryingCapacity: textField(),
+      habitat: textField(),
+      communities: textField(),
+      statBlock: htmlField()
+    };
+  }
+}
+
+export class Anime5eVehicleData extends Anime5eEquipmentData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      armourClass: numberField(10, { min: 0 }),
+      speed: textField(),
+      crew: textField(),
+      passengers: textField(),
+      cargo: textField()
+    };
+  }
+}
+
+export class Anime5eMechaData extends Anime5eVehicleData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      size: textField(),
+      pilot: textField(),
+      points: numberField(0, { min: 0 })
     };
   }
 }
@@ -146,3 +300,39 @@ export class Anime5eArmorData extends Anime5eBaseItemData {
 }
 
 export class Anime5eTraitData extends Anime5eBaseItemData {}
+
+export class Anime5eShieldData extends Anime5eArmorData {}
+
+export class Anime5eMonsterVariantData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      baseCreature: textField(),
+      sizeAndType: textField(),
+      challengeRating: textField(),
+      xp: textField(),
+      totalPoints: optionalNumberField(),
+      armour: textField(),
+      armourClass: numberField(10, { min: 0 }),
+      speed: textField(),
+      habitat: textField(),
+      communities: textField(),
+      statBlock: htmlField()
+    };
+  }
+}
+
+export class Anime5eLifepathData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      category: textField(),
+      table: textField(),
+      roll: textField(),
+      result: htmlField(),
+      pointImpact: numberField(0),
+      linkedDocumentType: textField(),
+      linkedSourceId: textField()
+    };
+  }
+}

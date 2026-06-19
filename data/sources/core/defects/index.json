@@ -1,64 +1,383 @@
 {
   "pack": "anime5e.defects",
   "documentType": "Item",
+  "sourceBook": "Anime 5E Fifth Edition Core Rules",
+  "sourceIdPrefix": "core.defect",
   "folders": [
     {
       "name": "Defects",
       "color": "#a05f5f"
     }
   ],
-  "documents": [
+  "documentTemplate": {
+    "type": "defect",
+    "folder": "Defects",
+    "img": "icons/svg/skull.svg",
+    "system": {
+      "rank": 1,
+      "cost": 0
+    }
+  },
+  "entries": [
+    {
+      "name": "AC Penalty",
+      "img": "icons/svg/shield.svg",
+      "sourcePage": 133,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "-1 Armour Class/Rank",
+      "summary": "Reduces Armour Class because the character is easier to hit, damage, or target."
+    },
+    {
+      "name": "Accountability",
+      "img": "icons/svg/book.svg",
+      "sourcePage": 133,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Binds the character to oversight, rules, reporting duties, or consequences from an authority."
+    },
+    {
+      "name": "Bane",
+      "img": "icons/svg/skull.svg",
+      "sourcePage": 133,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "1d8 Damage/Rank Per Round of Exposure",
+      "summary": "Makes a defined substance, condition, or situation harmful to the character."
+    },
+    {
+      "name": "Blind Fury",
+      "img": "icons/svg/explosion.svg",
+      "sourcePage": 133,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "Causes the character to lose control under a chosen trigger and act rashly or violently."
+    },
+    {
+      "name": "Cursed",
+      "img": "icons/svg/skull.svg",
+      "sourcePage": 133,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "Afflicts the character with a supernatural or narrative curse that regularly complicates play."
+    },
+    {
+      "name": "Degraded",
+      "img": "icons/svg/downgrade.svg",
+      "sourcePage": 134,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Represents a reduced Ability Score caused by a defined source rather than normal aptitude."
+    },
+    {
+      "name": "Diminished Proficiency",
+      "img": "icons/svg/downgrade.svg",
+      "sourcePage": 134,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "-1 Proficiency Bonus/Rank",
+      "summary": "Reduces the character's Proficiency Bonus and has broad balance impact."
+    },
+    {
+      "name": "Easily Distracted",
+      "img": "icons/svg/eye.svg",
+      "sourcePage": 134,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Draws the character's attention away when a chosen trigger appears."
+    },
+    {
+      "name": "Fragile",
+      "img": "icons/svg/skull.svg",
+      "sourcePage": 134,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Hit Point Maximum Decreased By -10%/Rank",
+      "summary": "Lowers the character's maximum Hit Points."
+    },
+    {
+      "name": "Hounded",
+      "img": "icons/svg/eye.svg",
+      "sourcePage": 134,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "Makes the character widely recognized, watched, followed, or unable to keep a private life."
+    },
+    {
+      "name": "Impaired Manipulation",
+      "img": "icons/svg/cancel.svg",
+      "sourcePage": 134,
+      "category": "Serious Defect",
+      "points": "-3/-6/-9",
+      "pointsReturned": 3,
+      "progression": "Descriptive",
+      "summary": "Limits or removes the character's ability to manipulate objects with hands or appendages."
+    },
+    {
+      "name": "Impaired Speech",
+      "img": "icons/svg/silenced.svg",
+      "sourcePage": 135,
+      "category": "Serious Defect",
+      "points": "-3/-6/-9",
+      "pointsReturned": 3,
+      "progression": "Descriptive",
+      "summary": "Limits or removes the character's ability to communicate verbally."
+    },
+    {
+      "name": "Inept Attack",
+      "img": "icons/svg/sword.svg",
+      "sourcePage": 135,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "-1 Attack Penalty/Rank",
+      "summary": "Applies a penalty to the character's attack rolls."
+    },
+    {
+      "name": "Ism",
+      "img": "icons/svg/terror.svg",
+      "sourcePage": 135,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "Represents discrimination or social hostility tied to a defined aspect of the character."
+    },
+    {
+      "name": "Limited Damage",
+      "img": "icons/svg/sword.svg",
+      "sourcePage": 135,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "-1 Attack Damage Reduction/Rank",
+      "summary": "Reduces damage under a defined condition or attack category."
+    },
+    {
+      "name": "Magnet",
+      "img": "icons/svg/lightning.svg",
+      "sourcePage": 136,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Attracts unwanted events, attention, mishaps, or complications of a chosen kind."
+    },
     {
       "name": "Marked",
-      "type": "defect",
-      "folder": "Defects",
       "img": "icons/svg/eye.svg",
-      "system": {
-        "description": "<p>Source-indexed defect stub for later rules entry.</p>",
-        "rank": 1,
-        "cost": 0,
-        "source": "Anime 5E Fifth Edition Core Rules",
-        "sourceId": "core.defect.marked",
-        "sourcePage": 136,
-        "importId": "core.defect.marked",
-        "pointsReturned": 1
-      },
-      "flags": {
-        "anime5e": {
-          "sourceId": "core.defect.marked",
-          "source": {
-            "book": "Anime 5E Fifth Edition Core Rules",
-            "page": 136,
-            "importId": "core.defect.marked"
-          }
-        }
-      }
+      "sourcePage": 136,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Makes the character visibly identifiable by a distinctive, hard-to-hide trait."
     },
     {
       "name": "Nemesis",
-      "type": "defect",
-      "folder": "Defects",
       "img": "icons/svg/skull.svg",
-      "system": {
-        "description": "<p>Source-indexed defect stub for later rules entry.</p>",
-        "rank": 1,
-        "cost": 0,
-        "source": "Anime 5E Fifth Edition Core Rules",
-        "sourceId": "core.defect.nemesis",
-        "sourcePage": 136,
-        "importId": "core.defect.nemesis",
-        "pointsReturned": 1
-      },
-      "flags": {
-        "anime5e": {
-          "sourceId": "core.defect.nemesis",
-          "source": {
-            "book": "Anime 5E Fifth Edition Core Rules",
-            "page": 136,
-            "importId": "core.defect.nemesis"
-          }
-        }
-      }
+      "sourcePage": 136,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Gives the character an enemy who regularly interferes with their goals."
+    },
+    {
+      "name": "Nightmares",
+      "img": "icons/svg/terror.svg",
+      "sourcePage": 136,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Burdened sleep or visions regularly interfere with the character's recovery or focus."
+    },
+    {
+      "name": "Obligated",
+      "img": "icons/svg/book.svg",
+      "sourcePage": 137,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "Requires the character to meet ongoing duties, service, debt, or loyalty demands."
+    },
+    {
+      "name": "Obstacle",
+      "img": "icons/svg/cancel.svg",
+      "sourcePage": 137,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Creates a recurring hindrance that complicates a specific kind of action or situation."
+    },
+    {
+      "name": "Opposing Advantage",
+      "img": "icons/svg/d20-grey.svg",
+      "sourcePage": 137,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Gives opponents an advantage against the character under defined circumstances."
+    },
+    {
+      "name": "Phobia",
+      "img": "icons/svg/terror.svg",
+      "sourcePage": 137,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Makes a defined fear disrupt the character when the subject is present or relevant."
+    },
+    {
+      "name": "Physical Impairment",
+      "img": "icons/svg/cancel.svg",
+      "sourcePage": 137,
+      "category": "Serious Defect",
+      "points": "-3/-6/-9",
+      "pointsReturned": 3,
+      "progression": "Descriptive",
+      "summary": "Represents a significant physical limitation with practical adventuring effects."
+    },
+    {
+      "name": "Reduced Damage",
+      "img": "icons/svg/explosion.svg",
+      "sourcePage": 138,
+      "category": "Serious Defect",
+      "points": "-3/-6/-9",
+      "pointsReturned": 3,
+      "progression": "-1 Attack Damage Reduction/Rank",
+      "summary": "Applies a broad reduction to the damage the character inflicts."
+    },
+    {
+      "name": "Secret",
+      "img": "icons/svg/invisible.svg",
+      "sourcePage": 138,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "The character hides information that would cause trouble if revealed."
+    },
+    {
+      "name": "Sensory Impairment",
+      "img": "icons/svg/eye.svg",
+      "sourcePage": 138,
+      "category": "Serious Defect",
+      "points": "-3/-6/-9",
+      "pointsReturned": 3,
+      "progression": "Descriptive",
+      "summary": "Limits or removes one or more ordinary senses."
+    },
+    {
+      "name": "Significant Other",
+      "img": "icons/svg/mystery-man.svg",
+      "sourcePage": 138,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Gives the character an important person whose safety or needs can complicate adventures."
+    },
+    {
+      "name": "Slow",
+      "img": "icons/svg/downgrade.svg",
+      "sourcePage": 138,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Reduces the character's movement speed."
+    },
+    {
+      "name": "Social Fault",
+      "img": "icons/svg/terror.svg",
+      "sourcePage": 139,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "Descriptive",
+      "summary": "Adds a social habit, reputation, attitude, or behavior that regularly creates friction."
+    },
+    {
+      "name": "Special Requirement",
+      "img": "icons/svg/book.svg",
+      "sourcePage": 139,
+      "category": "Serious Defect",
+      "points": "-3/-6/-9",
+      "pointsReturned": 3,
+      "progression": "Descriptive",
+      "summary": "Requires the character to meet a specific condition to function normally."
+    },
+    {
+      "name": "Susceptible",
+      "img": "icons/svg/hazard.svg",
+      "sourcePage": 140,
+      "category": "Lesser Defect",
+      "points": "-1/-2/-3",
+      "pointsReturned": 1,
+      "progression": "+1 Attack Damage Received/Rank",
+      "summary": "Makes the character take extra damage from a defined attack or source."
+    },
+    {
+      "name": "Unique Defect",
+      "img": "icons/svg/star.svg",
+      "sourcePage": 140,
+      "category": "Variable Defect",
+      "points": "Special",
+      "pointsReturned": 0,
+      "progression": "Descriptive",
+      "summary": "Covers a custom drawback whose point value and effects are set with DM approval."
+    },
+    {
+      "name": "Vulnerability",
+      "img": "icons/svg/hazard.svg",
+      "sourcePage": 140,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "Makes a selected attack form, substance, or situation especially dangerous to the character."
+    },
+    {
+      "name": "Wanted",
+      "img": "icons/svg/eye.svg",
+      "sourcePage": 140,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "Places a bounty, legal pursuit, or active search on the character."
+    },
+    {
+      "name": "Weak Point",
+      "img": "icons/svg/skull.svg",
+      "sourcePage": 140,
+      "category": "Greater Defect",
+      "points": "-2/-4/-6",
+      "pointsReturned": 2,
+      "progression": "Descriptive",
+      "summary": "Defines a vulnerable spot or condition that can be exploited."
     }
   ]
 }

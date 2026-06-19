@@ -1,0 +1,744 @@
+{
+  "pack": "anime5e.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Species - Core Rules",
+      "color": "#5b7f95"
+    },
+    {
+      "name": "Species - DnD",
+      "color": "#6f7890"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Archfiend",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 30.</p><p><strong>Size:</strong> Huge. <strong>Point Cost:</strong> 15.</p><p><strong>Rules Summary:</strong> Huge fiend template built around extreme Strength, fast movement, darkvision, damage conversion, protection, tunnelling, and large-size drawbacks.</p>",
+        "rank": 1,
+        "cost": 15,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.archfiend",
+        "sourcePage": 30,
+        "importId": "core.species.archfiend",
+        "points": 15
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.archfiend",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 30,
+            "importId": "core.species.archfiend"
+          }
+        }
+      }
+    },
+    {
+      "name": "Asrai",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 31.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 11.</p><p><strong>Rules Summary:</strong> Winged stewards with Dexterity, Intelligence, and Charisma bonuses, flight, woodland languages, danger sense, and Zen Direction.</p>",
+        "rank": 1,
+        "cost": 11,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.asrai",
+        "sourcePage": 31,
+        "importId": "core.species.asrai",
+        "points": 11
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.asrai",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 31,
+            "importId": "core.species.asrai"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blinkbeast",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 32.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 10.</p><p><strong>Rules Summary:</strong> Forest-linked shapeshifters with a human alternate identity, lesser vegetation powers, teleportation, Sylvan/Common language, and social/agility drawbacks.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.blinkbeast",
+        "sourcePage": 32,
+        "importId": "core.species.blinkbeast",
+        "points": 10
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.blinkbeast",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 32,
+            "importId": "core.species.blinkbeast"
+          }
+        }
+      }
+    },
+    {
+      "name": "Demonaga",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 33.</p><p><strong>Size:</strong> Large. <strong>Point Cost:</strong> 14.</p><p><strong>Rules Summary:</strong> Large fire-resistant serpent folk with strong melee traits, magic-save edge, fast movement, protection, thrown-distance benefits, and large-body penalties.</p>",
+        "rank": 1,
+        "cost": 14,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.demonaga",
+        "sourcePage": 33,
+        "importId": "core.species.demonaga",
+        "points": 14
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.demonaga",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 33,
+            "importId": "core.species.demonaga"
+          }
+        }
+      }
+    },
+    {
+      "name": "Fairy",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 34.</p><p><strong>Size:</strong> Diminutive. <strong>Point Cost:</strong> 4.</p><p><strong>Rules Summary:</strong> Tiny flying folk with strong defence, attack accuracy, light magic, keen smell, languages, and major strength, damage, speed, and vulnerability limits.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.fairy",
+        "sourcePage": 34,
+        "importId": "core.species.fairy",
+        "points": 4
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.fairy",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 34,
+            "importId": "core.species.fairy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Grey",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 35.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Intelligent alien-like folk with ambidexterity, darkvision, ultrasonic communication, heightened senses, basic mind control, and healing magic.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.grey",
+        "sourcePage": 35,
+        "importId": "core.species.grey",
+        "points": 12
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.grey",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 35,
+            "importId": "core.species.grey"
+          }
+        }
+      }
+    },
+    {
+      "name": "Half-Dragon",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 36.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 13.</p><p><strong>Rules Summary:</strong> Draconic heritage package with Strength and Constitution bonuses, flight, lesser fire immunity, Common/Draconic language, and fire breath.</p>",
+        "rank": 1,
+        "cost": 13,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.half-dragon",
+        "sourcePage": 36,
+        "importId": "core.species.half-dragon",
+        "points": 13
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.half-dragon",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 36,
+            "importId": "core.species.half-dragon"
+          }
+        }
+      }
+    },
+    {
+      "name": "Half-Troll",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 37.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 9.</p><p><strong>Rules Summary:</strong> Regenerative folk with Wisdom, darkvision, smell, several languages, strong regeneration, and a Constitution drawback.</p>",
+        "rank": 1,
+        "cost": 9,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.half-troll",
+        "sourcePage": 37,
+        "importId": "core.species.half-troll",
+        "points": 9
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.half-troll",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 37,
+            "importId": "core.species.half-troll"
+          }
+        }
+      }
+    },
+    {
+      "name": "Haud",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 38.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Aggressive reptilian folk with Intelligence, initiative edge, bonus action, darkvision, heightened senses, poison resistance, wall-crawling, and cold-related weaknesses.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.haud",
+        "sourcePage": 38,
+        "importId": "core.species.haud",
+        "points": 12
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.haud",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 38,
+            "importId": "core.species.haud"
+          }
+        }
+      }
+    },
+    {
+      "name": "Kodama",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 39.</p><p><strong>Size:</strong> Tiny. <strong>Point Cost:</strong> 10.</p><p><strong>Rules Summary:</strong> Small spirit folk with Wisdom, strong AC and attack bonuses, state changing, postcognition, banishment/healing magic, and size-based drawbacks.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.kodama",
+        "sourcePage": 39,
+        "importId": "core.species.kodama",
+        "points": 10
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.kodama",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 39,
+            "importId": "core.species.kodama"
+          }
+        }
+      }
+    },
+    {
+      "name": "Nekojin",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 40.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 8.</p><p><strong>Rules Summary:</strong> Catlike folk with Dexterity, initiative edge, darkvision, hearing, rerolls, cat-like movement, and a feline distraction Defect.</p>",
+        "rank": 1,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.nekojin",
+        "sourcePage": 40,
+        "importId": "core.species.nekojin",
+        "points": 8
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.nekojin",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 40,
+            "importId": "core.species.nekojin"
+          }
+        }
+      }
+    },
+    {
+      "name": "Parasite",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 41.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 16.</p><p><strong>Rules Summary:</strong> Symbiotic combat template with elastic limbs, a limited bonus action, lightning immunity, enhanced unarmed damage, extending blades, and loud-sound weakness.</p>",
+        "rank": 1,
+        "cost": 16,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.parasite",
+        "sourcePage": 41,
+        "importId": "core.species.parasite",
+        "points": 16
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.parasite",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 41,
+            "importId": "core.species.parasite"
+          }
+        }
+      }
+    },
+    {
+      "name": "Satyr",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 42.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 7.</p><p><strong>Rules Summary:</strong> Nimble folk with Constitution and Charisma, a limited bonus action, fast movement, jumping, languages, and an easily distracted Defect.</p>",
+        "rank": 1,
+        "cost": 7,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.satyr",
+        "sourcePage": 42,
+        "importId": "core.species.satyr",
+        "points": 7
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.satyr",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 42,
+            "importId": "core.species.satyr"
+          }
+        }
+      }
+    },
+    {
+      "name": "Slime",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 43.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 11.</p><p><strong>Rules Summary:</strong> Elastic small folk with Constitution and Charisma, AC and attack bonuses, regeneration, slithering, and several size, strength, speed, and slime-trail drawbacks.</p>",
+        "rank": 1,
+        "cost": 11,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.slime",
+        "sourcePage": 43,
+        "importId": "core.species.slime",
+        "points": 11
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.slime",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 43,
+            "importId": "core.species.slime"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dragonborn (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 9.</p><p><strong>Rules Summary:</strong> D&D PHB race costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 9,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.dragonborn",
+        "sourcePage": 28,
+        "importId": "core.species.dragonborn",
+        "points": 9
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.dragonborn",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.dragonborn"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dwarf, Hill (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.dwarf-hill",
+        "sourcePage": 28,
+        "importId": "core.species.dwarf-hill",
+        "points": 12
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.dwarf-hill",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.dwarf-hill"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dwarf, Mountain (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 14.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 14,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.dwarf-mountain",
+        "sourcePage": 28,
+        "importId": "core.species.dwarf-mountain",
+        "points": 14
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.dwarf-mountain",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.dwarf-mountain"
+          }
+        }
+      }
+    },
+    {
+      "name": "Elf, Dark (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 13.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 13,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.elf-dark",
+        "sourcePage": 28,
+        "importId": "core.species.elf-dark",
+        "points": 13
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.elf-dark",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.elf-dark"
+          }
+        }
+      }
+    },
+    {
+      "name": "Elf, High (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.elf-high",
+        "sourcePage": 28,
+        "importId": "core.species.elf-high",
+        "points": 12
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.elf-high",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.elf-high"
+          }
+        }
+      }
+    },
+    {
+      "name": "Elf, Wood (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 11.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 11,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.elf-wood",
+        "sourcePage": 28,
+        "importId": "core.species.elf-wood",
+        "points": 11
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.elf-wood",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.elf-wood"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gnome, Forest (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 4.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.gnome-forest",
+        "sourcePage": 28,
+        "importId": "core.species.gnome-forest",
+        "points": 4
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.gnome-forest",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.gnome-forest"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gnome, Rock (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 4.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.gnome-rock",
+        "sourcePage": 28,
+        "importId": "core.species.gnome-rock",
+        "points": 4
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.gnome-rock",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.gnome-rock"
+          }
+        }
+      }
+    },
+    {
+      "name": "Half-Elf (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 10.</p><p><strong>Rules Summary:</strong> D&D PHB race costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.half-elf",
+        "sourcePage": 28,
+        "importId": "core.species.half-elf",
+        "points": 10
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.half-elf",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.half-elf"
+          }
+        }
+      }
+    },
+    {
+      "name": "Half-Orc (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 8.</p><p><strong>Rules Summary:</strong> D&D PHB race costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.half-orc",
+        "sourcePage": 28,
+        "importId": "core.species.half-orc",
+        "points": 8
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.half-orc",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.half-orc"
+          }
+        }
+      }
+    },
+    {
+      "name": "Halfling, Lightfoot (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 3.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.halfling-lightfoot",
+        "sourcePage": 28,
+        "importId": "core.species.halfling-lightfoot",
+        "points": 3
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.halfling-lightfoot",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.halfling-lightfoot"
+          }
+        }
+      }
+    },
+    {
+      "name": "Halfling, Stout (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 5.</p><p><strong>Rules Summary:</strong> D&D PHB race/subrace costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.halfling-stout",
+        "sourcePage": 28,
+        "importId": "core.species.halfling-stout",
+        "points": 5
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.halfling-stout",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.halfling-stout"
+          }
+        }
+      }
+    },
+    {
+      "name": "Human (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 7.</p><p><strong>Rules Summary:</strong> D&D PHB race costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 7,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.human",
+        "sourcePage": 28,
+        "importId": "core.species.human",
+        "points": 7
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.human",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.human"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tiefling (DnD)",
+      "type": "species",
+      "folder": "Species - DnD",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> D&D PHB race costed for Anime 5E using the core race cost summary and breakdown tables.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.tiefling",
+        "sourcePage": 28,
+        "importId": "core.species.tiefling",
+        "points": 12
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.tiefling",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.tiefling"
+          }
+        }
+      }
+    }
+  ]
+}

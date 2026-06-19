@@ -1,0 +1,404 @@
+{
+  "pack": "anime5e.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Classes - Core Rules",
+      "color": "#7f6a9a"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Adventurer",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 54.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity, Constitution, Wisdom.</p><p><strong>Rules Summary:</strong> Flexible class for characters who want broad freedom, bonus points, and room to grow into nearly any adventuring role.</p><p><strong>Proficiencies:</strong> Light and medium armour; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.adventurer",
+        "sourcePage": 54,
+        "importId": "core.class.adventurer",
+        "hitDice": "d6",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity, Constitution, Wisdom"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.adventurer",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 54,
+            "importId": "core.class.adventurer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bender",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 56.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Constitution. <strong>Saving Throws:</strong> Constitution, Wisdom.</p><p><strong>Rules Summary:</strong> Element- or theme-focused power wielder who develops Dynamic Powers, protection, and a narrow but potent supernatural specialty.</p><p><strong>Proficiencies:</strong> Light armour; shields; simple weapons; select 4 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.bender",
+        "sourcePage": 56,
+        "importId": "core.class.bender",
+        "hitDice": "d8",
+        "primaryAbility": "Constitution",
+        "savingThrows": "Constitution, Wisdom"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.bender",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 56,
+            "importId": "core.class.bender"
+          }
+        }
+      }
+    },
+    {
+      "name": "Broker",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 58.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Wisdom. <strong>Saving Throws:</strong> Wisdom.</p><p><strong>Rules Summary:</strong> Social and investigative operator built around contacts, information, hidden things, broad skills, useful features, and acquired resources.</p><p><strong>Proficiencies:</strong> Simple weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.broker",
+        "sourcePage": 58,
+        "importId": "core.class.broker",
+        "hitDice": "d6",
+        "primaryAbility": "Wisdom",
+        "savingThrows": "Wisdom"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.broker",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 58,
+            "importId": "core.class.broker"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dynamic Spellbinder",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 60.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Intelligence. <strong>Saving Throws:</strong> Intelligence.</p><p><strong>Rules Summary:</strong> Flexible magical specialist who controls a major sphere of influence through Dynamic Powers, Energy, and adaptable supernatural effects.</p><p><strong>Proficiencies:</strong> Simple weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.dynamic-spellbinder",
+        "sourcePage": 60,
+        "importId": "core.class.dynamic-spellbinder",
+        "hitDice": "d6",
+        "primaryAbility": "Intelligence",
+        "savingThrows": "Intelligence"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.dynamic-spellbinder",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 60,
+            "importId": "core.class.dynamic-spellbinder"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hunter",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 62.</p><p><strong>Hit Die:</strong> d10. <strong>Primary Ability:</strong> Strength. <strong>Saving Throws:</strong> Strength, Intelligence.</p><p><strong>Rules Summary:</strong> Professional predator and threat-seeker with strong combat foundations, tracking focus, battlefield endurance, and martial reliability.</p><p><strong>Proficiencies:</strong> Light and medium armour; shields; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.hunter",
+        "sourcePage": 62,
+        "importId": "core.class.hunter",
+        "hitDice": "d10",
+        "primaryAbility": "Strength",
+        "savingThrows": "Strength, Intelligence"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.hunter",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 62,
+            "importId": "core.class.hunter"
+          }
+        }
+      }
+    },
+    {
+      "name": "Isekai Student",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 64.</p><p><strong>Hit Die:</strong> d4. <strong>Primary Ability:</strong> Charisma. <strong>Saving Throws:</strong> Charisma.</p><p><strong>Rules Summary:</strong> Transported outsider whose growth leans on unusual gifts, luck, social presence, and genre-bending abilities.</p><p><strong>Proficiencies:</strong> Simple weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.isekai-student",
+        "sourcePage": 64,
+        "importId": "core.class.isekai-student",
+        "hitDice": "d4",
+        "primaryAbility": "Charisma",
+        "savingThrows": "Charisma"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.isekai-student",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 64,
+            "importId": "core.class.isekai-student"
+          }
+        }
+      }
+    },
+    {
+      "name": "Magical Girl/Guy",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 66.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Wisdom. <strong>Saving Throws:</strong> Wisdom, Charisma.</p><p><strong>Rules Summary:</strong> Champion of light and hope with companion support, mobility, recovery, item powers, and broad heroic talents.</p><p><strong>Proficiencies:</strong> Light armour; shields; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.magical-girl-guy",
+        "sourcePage": 66,
+        "importId": "core.class.magical-girl-guy",
+        "hitDice": "d8",
+        "primaryAbility": "Wisdom",
+        "savingThrows": "Wisdom, Charisma"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.magical-girl-guy",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 66,
+            "importId": "core.class.magical-girl-guy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ninja",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 68.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity.</p><p><strong>Rules Summary:</strong> Shadow-trained warrior with stealth, heightened senses, mobility, precise combat, special movement, and supernatural disappearance.</p><p><strong>Proficiencies:</strong> Light armour; shields; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.ninja",
+        "sourcePage": 68,
+        "importId": "core.class.ninja",
+        "hitDice": "d8",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.ninja",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 68,
+            "importId": "core.class.ninja"
+          }
+        }
+      }
+    },
+    {
+      "name": "Pet Monster Trainer",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 70.</p><p><strong>Hit Die:</strong> d4. <strong>Primary Ability:</strong> Charisma. <strong>Saving Throws:</strong> Dexterity, Charisma.</p><p><strong>Rules Summary:</strong> Companion-focused class built around loyal monsters, teamwork, creature support, social presence, and trainer growth.</p><p><strong>Proficiencies:</strong> Simple weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.pet-monster-trainer",
+        "sourcePage": 70,
+        "importId": "core.class.pet-monster-trainer",
+        "hitDice": "d4",
+        "primaryAbility": "Charisma",
+        "savingThrows": "Dexterity, Charisma"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.pet-monster-trainer",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 70,
+            "importId": "core.class.pet-monster-trainer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Psionicist",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 72.</p><p><strong>Hit Die:</strong> d4. <strong>Primary Ability:</strong> Intelligence. <strong>Saving Throws:</strong> Intelligence, Charisma.</p><p><strong>Rules Summary:</strong> Mental-power specialist who develops psychic abilities, perception, mind-linked talents, and flexible paranormal growth.</p><p><strong>Proficiencies:</strong> Light armour; shields; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.psionicist",
+        "sourcePage": 72,
+        "importId": "core.class.psionicist",
+        "hitDice": "d4",
+        "primaryAbility": "Intelligence",
+        "savingThrows": "Intelligence, Charisma"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.psionicist",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 72,
+            "importId": "core.class.psionicist"
+          }
+        }
+      }
+    },
+    {
+      "name": "Samurai",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 74.</p><p><strong>Hit Die:</strong> d10. <strong>Primary Ability:</strong> Strength. <strong>Saving Throws:</strong> Strength, Wisdom.</p><p><strong>Rules Summary:</strong> Honour-bound martial leader with strong weapon training, inspiration, mobility, close-combat damage, and battle-honed senses.</p><p><strong>Proficiencies:</strong> Light, medium, and heavy armour; shields; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.samurai",
+        "sourcePage": 74,
+        "importId": "core.class.samurai",
+        "hitDice": "d10",
+        "primaryAbility": "Strength",
+        "savingThrows": "Strength, Wisdom"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.samurai",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 74,
+            "importId": "core.class.samurai"
+          }
+        }
+      }
+    },
+    {
+      "name": "Shadow Warrior",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 76.</p><p><strong>Hit Die:</strong> d12. <strong>Primary Ability:</strong> Strength. <strong>Saving Throws:</strong> Strength.</p><p><strong>Rules Summary:</strong> Dark dimensional champion with exceptional toughness, martial strength, regeneration, shadow-linked powers, and heavy combat focus.</p><p><strong>Proficiencies:</strong> Light, medium, and heavy armour; shields; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.shadow-warrior",
+        "sourcePage": 76,
+        "importId": "core.class.shadow-warrior",
+        "hitDice": "d12",
+        "primaryAbility": "Strength",
+        "savingThrows": "Strength"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.shadow-warrior",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 76,
+            "importId": "core.class.shadow-warrior"
+          }
+        }
+      }
+    },
+    {
+      "name": "Techknight",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 78.</p><p><strong>Hit Die:</strong> d10. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity, Constitution.</p><p><strong>Rules Summary:</strong> Armoured order-warrior who protects others with advanced gear, training, martial strength, and tech-linked class abilities.</p><p><strong>Proficiencies:</strong> Light, medium, and heavy armour; shields; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.techknight",
+        "sourcePage": 78,
+        "importId": "core.class.techknight",
+        "hitDice": "d10",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity, Constitution"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.techknight",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 78,
+            "importId": "core.class.techknight"
+          }
+        }
+      }
+    },
+    {
+      "name": "Warder",
+      "type": "class",
+      "folder": "Classes - Core Rules",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 80.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Constitution. <strong>Saving Throws:</strong> Constitution.</p><p><strong>Rules Summary:</strong> Mystical ward-inscriber with durable body magic, movement, shared protections, combat utility, and exploratory talent.</p><p><strong>Proficiencies:</strong> Shields; simple weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.class.warder",
+        "sourcePage": 80,
+        "importId": "core.class.warder",
+        "hitDice": "d6",
+        "primaryAbility": "Constitution",
+        "savingThrows": "Constitution"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.class.warder",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 80,
+            "importId": "core.class.warder"
+          }
+        }
+      }
+    }
+  ]
+}

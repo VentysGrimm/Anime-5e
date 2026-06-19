@@ -34,12 +34,55 @@
     <textarea name="system.description" {{#unless editable}}disabled{{/unless}}>{{system.description}}</textarea>
   </section>
 
+  {{#if detailFields}}
+    <section class="panel">
+      <h2>{{localize "ANIME5E.Labels.Details"}}</h2>
+      <div class="detail-fields">
+        {{#each detailFields as |field|}}
+          <label class="{{#if field.isMultiline}}wide{{/if}}">
+            {{field.label}}
+            {{#if field.isBoolean}}
+              <span class="checkbox-field">
+                <input type="hidden" name="{{field.name}}" value="false">
+                <input type="checkbox" name="{{field.name}}" value="true" {{#if field.value}}checked{{/if}} {{#unless ../editable}}disabled{{/unless}}>
+              </span>
+            {{else}}
+              {{#if field.isMultiline}}
+                <textarea name="{{field.name}}" {{#unless ../editable}}disabled{{/unless}}>{{field.displayValue}}</textarea>
+              {{else}}
+                {{#if field.isNumber}}
+                  <input type="number" name="{{field.name}}" value="{{field.displayValue}}" {{#unless ../editable}}disabled{{/unless}}>
+                {{else}}
+                  <input type="text" name="{{field.name}}" value="{{field.displayValue}}" {{#unless ../editable}}disabled{{/unless}}>
+                {{/if}}
+              {{/if}}
+            {{/if}}
+          </label>
+        {{/each}}
+      </div>
+    </section>
+  {{/if}}
+
   <section class="panel">
     <h2>{{localize "ANIME5E.Labels.Source"}}</h2>
-    <label>
-      {{localize "ANIME5E.Labels.Source"}}
-      <input type="text" name="system.source" value="{{system.source}}" {{#unless editable}}disabled{{/unless}}>
-    </label>
+    <div class="inline-fields">
+      <label>
+        {{localize "ANIME5E.Labels.Source"}}
+        <input type="text" name="system.source" value="{{system.source}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        {{localize "ANIME5E.Labels.SourceId"}}
+        <input type="text" name="system.sourceId" value="{{system.sourceId}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        {{localize "ANIME5E.Labels.SourcePage"}}
+        <input type="number" name="system.sourcePage" value="{{system.sourcePage}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        {{localize "ANIME5E.Labels.ImportId"}}
+        <input type="text" name="system.importId" value="{{system.importId}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+    </div>
   </section>
 
   {{#if editable}}

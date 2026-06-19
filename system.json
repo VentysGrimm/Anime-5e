@@ -3,6 +3,8 @@
   "title": "Anime 5e",
   "description": "A starter Anime 5e game system for Foundry Virtual Tabletop v14.",
   "version": "0.1.0",
+  "manifest": "https://raw.githubusercontent.com/VentysGrimm/Anime-5e/main/system.json",
+  "download": "https://github.com/VentysGrimm/Anime-5e/archive/refs/heads/main.zip",
   "compatibility": {
     "minimum": "14",
     "verified": "14"
@@ -29,12 +31,98 @@
     "Actor": {
       "character": {
         "htmlFields": [
-          "biography"
+          "biography",
+          "statBlock",
+          "notes.overview",
+          "notes.combat",
+          "notes.attributes",
+          "notes.defects",
+          "notes.skills",
+          "notes.powers",
+          "notes.inventory",
+          "notes.companions",
+          "notes.biography",
+          "notes.journal"
+        ]
+      },
+      "companion": {
+        "htmlFields": [
+          "biography",
+          "statBlock",
+          "notes.overview",
+          "notes.combat",
+          "notes.attributes",
+          "notes.defects",
+          "notes.skills",
+          "notes.powers",
+          "notes.inventory",
+          "notes.companions",
+          "notes.biography",
+          "notes.journal"
+        ]
+      },
+      "mecha": {
+        "htmlFields": [
+          "biography",
+          "statBlock",
+          "notes.overview",
+          "notes.combat",
+          "notes.attributes",
+          "notes.defects",
+          "notes.skills",
+          "notes.powers",
+          "notes.inventory",
+          "notes.companions",
+          "notes.biography",
+          "notes.journal"
+        ]
+      },
+      "monster": {
+        "htmlFields": [
+          "biography",
+          "statBlock",
+          "notes.overview",
+          "notes.combat",
+          "notes.attributes",
+          "notes.defects",
+          "notes.skills",
+          "notes.powers",
+          "notes.inventory",
+          "notes.companions",
+          "notes.biography",
+          "notes.journal"
         ]
       },
       "npc": {
         "htmlFields": [
-          "biography"
+          "biography",
+          "statBlock",
+          "notes.overview",
+          "notes.combat",
+          "notes.attributes",
+          "notes.defects",
+          "notes.skills",
+          "notes.powers",
+          "notes.inventory",
+          "notes.companions",
+          "notes.biography",
+          "notes.journal"
+        ]
+      },
+      "vehicle": {
+        "htmlFields": [
+          "biography",
+          "statBlock",
+          "notes.overview",
+          "notes.combat",
+          "notes.attributes",
+          "notes.defects",
+          "notes.skills",
+          "notes.powers",
+          "notes.inventory",
+          "notes.companions",
+          "notes.biography",
+          "notes.journal"
         ]
       }
     },
@@ -64,6 +152,11 @@
           "description"
         ]
       },
+      "enhancement": {
+        "htmlFields": [
+          "description"
+        ]
+      },
       "equipment": {
         "htmlFields": [
           "description"
@@ -74,7 +167,80 @@
           "description"
         ]
       },
+      "itemAttribute": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "itemOfPower": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "language": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "lifepath": {
+        "htmlFields": [
+          "description",
+          "result"
+        ]
+      },
+      "limiter": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "loot": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "material": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "mecha": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "monsterVariant": {
+        "htmlFields": [
+          "description",
+          "statBlock"
+        ]
+      },
+      "mount": {
+        "htmlFields": [
+          "description",
+          "statBlock"
+        ]
+      },
       "power": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "proficiency": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "shield": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "skill": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "sizeTemplate": {
         "htmlFields": [
           "description"
         ]
@@ -94,7 +260,17 @@
           "description"
         ]
       },
+      "tool": {
+        "htmlFields": [
+          "description"
+        ]
+      },
       "trait": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "vehicle": {
         "htmlFields": [
           "description"
         ]
