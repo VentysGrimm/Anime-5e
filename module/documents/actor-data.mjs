@@ -35,9 +35,11 @@ function abilityField(initial = 10) {
   });
 }
 
-function resourceField(initial = 10) {
+function resourceField(initial = 10, options = {}) {
+  const valueOptions = options.allowNegative ? {} : { min: 0 };
+
   return new fields.SchemaField({
-    value: numberField(initial, { min: 0 }),
+    value: numberField(initial, valueOptions),
     max: numberField(initial, { min: 0 })
   });
 }
@@ -120,7 +122,7 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         charisma: abilityField()
       }),
       combat: new fields.SchemaField({
-        hitPoints: resourceField(20),
+        hitPoints: resourceField(20, { allowNegative: true }),
         energy: resourceField(10),
         armourClass: numberField(10),
         movementSpeed: numberField(30, { min: 0 }),
@@ -147,9 +149,14 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
       ability.modifier = Math.floor((Number(ability.value) - 10) / 2);
     }
 
-    for (const resource of [this.combat.hitPoints, this.combat.energy]) {
-      resource.value = Math.max(0, Math.min(Number(resource.value), Number(resource.max)));
-    }
+    const hitPoints = this.combat.hitPoints;
+    hitPoints.max = Math.max(0, Number(hitPoints.max));
+    hitPoints.value = Math.min(Number(hitPoints.value), hitPoints.max);
+    hitPoints.value = Math.max(-hitPoints.max, hitPoints.value);
+
+    const energy = this.combat.energy;
+    energy.max = Math.max(0, Number(energy.max));
+    energy.value = Math.max(0, Math.min(Number(energy.value), energy.max));
   }
 }
 

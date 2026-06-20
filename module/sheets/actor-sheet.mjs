@@ -92,6 +92,15 @@ function buildD20Formula(...modifiers) {
   return ["1d20", ...modifiers.map((modifier) => signedModifier(modifier))].join(" ");
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function localizedType(documentName, type) {
   const key = `TYPES.${documentName}.${type}`;
   const localized = game.i18n.localize(key);
@@ -243,6 +252,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='roll-attack']").forEach((button) => {
       button.addEventListener("click", this._onRollAttack.bind(this));
     });
+    element.querySelectorAll("[data-action='roll-damage']").forEach((button) => {
+      button.addEventListener("click", this._onRollDamage.bind(this));
+    });
+    element.querySelectorAll("[data-action='apply-damage'], [data-action='apply-healing']").forEach((button) => {
+      button.addEventListener("click", this._onApplyHitPointChange.bind(this));
+    });
     element.querySelectorAll("[data-action='edit-item']").forEach((button) => {
       button.addEventListener("click", this._onEditItem.bind(this));
     });
@@ -304,12 +319,66 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await this._rollFormula(buildD20Formula(modifier), `${attack.weapon || "Attack"} Roll`);
   }
 
+  async _onRollDamage(event) {
+    event.preventDefault();
+    const attackKey = event.currentTarget.dataset.attack;
+    const attack = this.actor.system.combat?.attacks?.[attackKey];
+    const formula = attack?.damage?.trim();
+    if (!formula) {
+      ui.notifications?.warn("Enter a damage formula before rolling damage.");
+      return;
+    }
+
+    await this._rollFormula(formula, `${attack.weapon || "Attack"} Damage`);
+  }
+
   async _rollFormula(formula, label) {
-    const roll = new Roll(formula);
-    await roll.evaluate();
-    return roll.toMessage({
+    try {
+      const roll = new Roll(formula);
+      await roll.evaluate();
+      return roll.toMessage({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: `${this.actor.name}: ${label}`
+      });
+    } catch (error) {
+      console.error("anime5e | Failed to roll formula", formula, error);
+      ui.notifications?.error(`Anime 5e could not roll "${formula}". Check the formula and try again.`);
+      return null;
+    }
+  }
+
+  async _onApplyHitPointChange(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".damage-panel");
+    const amountInput = panel?.querySelector("[data-damage-input='amount']");
+    const typeInput = panel?.querySelector("[data-damage-input='type']");
+    const amount = Math.max(0, Math.trunc(Number(amountInput?.value) || 0));
+    if (!amount) {
+      ui.notifications?.warn("Enter a damage or healing amount first.");
+      return;
+    }
+
+    const mode = event.currentTarget.dataset.action === "apply-healing" ? "healing" : "damage";
+    await this._applyHitPointChange(amount, mode, typeInput?.value ?? "");
+  }
+
+  async _applyHitPointChange(amount, mode, damageType = "") {
+    const hitPoints = this.actor.system.combat.hitPoints;
+    const current = Number(hitPoints.value) || 0;
+    const max = Math.max(0, Number(hitPoints.max) || 0);
+    const minimum = -max;
+    const next = mode === "healing"
+      ? Math.min(max, current + amount)
+      : Math.max(minimum, current - amount);
+    const label = mode === "healing" ? "heals" : "takes";
+    const typedAmount = mode === "damage" && damageType ? `${amount} ${escapeHtml(damageType)}` : amount;
+    const noun = mode === "healing" ? "HP" : "damage";
+
+    await this.actor.update({ "system.combat.hitPoints.value": next });
+
+    return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `${this.actor.name}: ${label}`
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${current} &rarr; ${next} / ${max}.</p>`
     });
   }
 

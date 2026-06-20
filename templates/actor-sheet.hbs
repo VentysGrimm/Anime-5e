@@ -159,15 +159,32 @@
             <div class="table-header">Modifier</div>
             <div class="table-header">Type</div>
             <div class="table-header">Damage</div>
-            <div class="table-header">Roll</div>
+            <div class="table-header">Attack</div>
+            <div class="table-header">Damage</div>
             {{#each attackRows as |attackRow|}}
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.weapon" value="{{attackRow.data.weapon}}" {{#unless ../editable}}disabled{{/unless}}>
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.modifier" value="{{attackRow.data.modifier}}" {{#unless ../editable}}disabled{{/unless}}>
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.damageType" value="{{attackRow.data.damageType}}" {{#unless ../editable}}disabled{{/unless}}>
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.damage" value="{{attackRow.data.damage}}" {{#unless ../editable}}disabled{{/unless}}>
               <button type="button" class="icon-button" data-action="roll-attack" data-attack="{{attackRow.key}}" title="Roll attack"><i class="fas fa-dice-d20"></i></button>
+              <button type="button" class="icon-button" data-action="roll-damage" data-attack="{{attackRow.key}}" title="Roll damage"><i class="fas fa-bolt"></i></button>
             {{/each}}
           </div>
+          <section class="damage-panel" aria-label="Hit Point Damage And Healing">
+            <h3>Hit Point Changes</h3>
+            <div class="damage-controls">
+              <label>
+                Amount
+                <input type="number" data-damage-input="amount" value="0" min="0">
+              </label>
+              <label>
+                Type
+                <input type="text" data-damage-input="type" placeholder="slashing">
+              </label>
+              <button type="button" class="roll-action" data-action="apply-damage"><i class="fas fa-heart-broken"></i> Damage</button>
+              <button type="button" class="roll-action" data-action="apply-healing"><i class="fas fa-heart"></i> Heal</button>
+            </div>
+          </section>
         </section>
 
         <section class="ledger-section item-drop-panel" data-drop-target="items">

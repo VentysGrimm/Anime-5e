@@ -573,10 +573,6 @@
   min-width: 0;
 }
 
-.anime5e .action-table {
-  grid-template-columns: 1.35fr 0.65fr 0.8fr 0.95fr 44px;
-}
-
 .anime5e .icon-button,
 .anime5e .roll-action,
 .anime5e .item-actions button {
@@ -594,6 +590,45 @@
 
 .anime5e .modifier-block .roll-button {
   margin-top: 4px;
+}
+
+.anime5e .action-table {
+  grid-template-columns: 1.35fr 0.65fr 0.8fr 0.95fr 44px 44px;
+}
+
+.anime5e .damage-panel {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+}
+
+.anime5e .damage-panel h3 {
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.anime5e .damage-controls {
+  align-items: end;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(76px, 0.6fr) minmax(100px, 1fr) auto auto;
+}
+
+.anime5e .damage-controls label {
+  display: grid;
+  font-size: 0.78rem;
+  font-weight: 800;
+  gap: 3px;
+  text-transform: uppercase;
+}
+
+.anime5e .damage-controls input {
+  min-width: 0;
 }
 
 .anime5e .item-drop-panel {
@@ -646,6 +681,7 @@
 @media (max-width: 860px) {
   .anime5e .two-column,
   .anime5e .action-table,
+  .anime5e .damage-controls,
   .anime5e .quick-roll-controls,
   .anime5e .folio-item-list .item-row {
     grid-template-columns: 1fr;

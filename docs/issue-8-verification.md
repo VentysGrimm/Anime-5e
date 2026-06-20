@@ -41,11 +41,11 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 
 - Dynamic Powers automation, including generated effects, Energy Point spending, and roll hooks.
 - Combat Techniques automation beyond source-backed item documents.
-- Damage application, critical hit margins, conditions, and recovery automation.
+- Critical hit margins, conditions, and recovery automation.
 - Full equipment automation for weapons, armor, shields, vehicles, mecha, mounts, and Items of Power.
 - Monster variant import and NPC stat-block parsing from the monster/adventure books.
 - Reputation, faction/path restrictions, law/consequence tracking, and quest/task generation hooks. These are not part of the clearly defined core package pass yet.
-- Dynamic Powers automation, Combat Techniques automation, damage application, and item-specific roll/use actions remain the next mechanical gaps after the visible importer pass.
+- Dynamic Powers automation, Combat Techniques automation, conditions, recovery automation, and item-specific roll/use actions remain the next mechanical gaps after the damage controls pass.
 
 ## Foundry VTT v14 Compatibility Notes
 
@@ -64,19 +64,20 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Companion, mecha, monster, NPC, and vehicle actors can be created and opened with the basic Anime 5e actor sheet.
 - Items can be created and opened with the generic Anime 5e item sheet.
 - Core character data is visible and editable.
-- Characters can roll ability checks, proficient checks, saving throws, proficient saves, initiative, and attacks from the sheet.
+- Characters can roll ability checks, proficient checks, saving throws, proficient saves, initiative, attacks, and attack damage from the sheet.
+- Characters can apply damage or healing to their own Hit Points from the combat panel.
 - Source-backed starter content can be imported into compendiums by a GM through the Configure Settings menu or the runtime importer.
 
 ## Recommended Next Builds
 
-1. Add damage rolls and damage application to the combat panel.
-2. Add item-specific roll/use actions for weapons, Attributes, Defects, powers, techniques, and spells.
-3. Continue source-backed imports for equipment, powers, techniques, monsters, mounts, mecha, and spell conversions.
-4. Add focused runtime smoke tests once a Foundry v14 test harness or manual launch target is available.
+1. Add item-specific roll/use actions for weapons, Attributes, Defects, powers, techniques, and spells.
+2. Continue source-backed imports for equipment, powers, techniques, monsters, mounts, mecha, and spell conversions.
+3. Add focused runtime smoke tests once a Foundry v14 test harness or manual launch target is available.
 
 ## Implemented Follow-Ups
 
 - A GM-only **Anime 5e Core Compendiums** settings menu opens a Foundry v14 `DialogV2` for importing or updating source-backed starter content without using the console.
+- The combat panel can roll entered attack damage formulas and apply damage or healing to the actor's current Hit Points, including negative HP tracking down to the mortal-wound threshold.
 
 ## Missing Files Required For Load
 
