@@ -130,8 +130,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     },
     form: {
       closeOnSubmit: false,
-      handler: this._onSubmit,
-      submitOnChange: true,
+      handler: Anime5eActorSheet._onSubmit,
+      submitOnChange: false,
       submitOnClose: true
     },
     tabs: [
@@ -240,6 +240,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const element = this.element instanceof HTMLElement ? this.element : this.element?.[0];
     if (!element) return;
 
+    this._activateAutoSaveListeners(element);
+
     element.querySelectorAll("[data-action='roll-ability']").forEach((button) => {
       button.addEventListener("click", this._onRollAbility.bind(this));
     });
@@ -272,6 +274,39 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       target.addEventListener("dragover", (event) => event.preventDefault());
       target.addEventListener("drop", this._onDrop.bind(this));
     });
+  }
+
+  _activateAutoSaveListeners(element) {
+    const form = element.querySelector("form");
+    if (!form || !this.isEditable) return;
+
+    const debouncedSave = foundry.utils.debounce(() => this._saveSheetForm(form), 300);
+    const saveNow = () => this._saveSheetForm(form);
+
+    form.querySelectorAll("input[name], textarea[name]").forEach((input) => {
+      input.addEventListener("input", debouncedSave);
+      input.addEventListener("change", saveNow);
+    });
+
+    form.querySelectorAll("select[name]").forEach((select) => {
+      select.addEventListener("change", saveNow);
+    });
+  }
+
+  async _saveSheetForm(form) {
+    if (this._savingSheetForm) return;
+
+    this._savingSheetForm = true;
+    try {
+      const formData = new foundry.applications.ux.FormDataExtended(form);
+      const updateData = normalizeRequiredNumbers(foundry.utils.expandObject(formData.object));
+      await this.actor.update(updateData);
+    } catch (error) {
+      console.error("anime5e | Failed to auto-save actor sheet", error);
+      ui.notifications?.error("Anime 5e could not auto-save the actor sheet. Check the console for details.");
+    } finally {
+      this._savingSheetForm = false;
+    }
   }
 
   async _onRollAbility(event) {
