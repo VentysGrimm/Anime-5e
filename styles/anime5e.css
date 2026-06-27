@@ -412,6 +412,17 @@
   resize: vertical;
 }
 
+.anime5e .item-actions-panel {
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.anime5e .item-action-buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 .anime5e .checkbox-field {
   align-items: center;
   display: flex;
@@ -636,7 +647,7 @@
 }
 
 .anime5e .folio-item-list .item-row {
-  grid-template-columns: 32px minmax(150px, 1fr) minmax(140px, auto) auto;
+  grid-template-columns: 32px minmax(130px, 1fr) minmax(120px, auto) minmax(132px, auto);
 }
 
 .anime5e .item-main {
@@ -670,7 +681,9 @@
 
 .anime5e .item-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 4px;
+  justify-content: end;
 }
 
 .anime5e .item-row.empty {

@@ -195,7 +195,13 @@
                 <img src="{{item.img}}" alt="{{item.name}}">
                 <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
                 <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
-                {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+                <div class="item-actions">
+                  {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                  {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                  {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                  {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                  {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+                </div>
               </li>
             {{else}}
               <li class="item-row empty"><span></span><span>Drop combat items here.</span><small></small></li>
@@ -215,7 +221,13 @@
               <img src="{{item.img}}" alt="{{item.name}}">
               <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
               <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
-              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+              <div class="item-actions">
+                {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+              </div>
             </li>
           {{else}}
             <li class="item-row empty"><span></span><span>Drop Attributes, Enhancements, or Limiters here.</span><small></small></li>
@@ -234,7 +246,13 @@
               <img src="{{item.img}}" alt="{{item.name}}">
               <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
               <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
-              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+              <div class="item-actions">
+                {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+              </div>
             </li>
           {{else}}
             <li class="item-row empty"><span></span><span>Drop Defects here.</span><small></small></li>
@@ -255,7 +273,13 @@
                 <img src="{{item.img}}" alt="{{item.name}}">
                 <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
                 <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
-                {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+                <div class="item-actions">
+                  {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                  {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                  {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                  {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                  {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+                </div>
               </li>
             {{else}}
               <li class="item-row empty"><span></span><span>Drop skills, proficiencies, tools, or languages here.</span><small></small></li>
@@ -275,7 +299,13 @@
               <img src="{{item.img}}" alt="{{item.name}}">
               <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
               <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
-              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+              <div class="item-actions">
+                {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+              </div>
             </li>
           {{else}}
             <li class="item-row empty"><span></span><span>Drop powers, spells, psionics, or techniques here.</span><small></small></li>
@@ -294,7 +324,13 @@
               <img src="{{item.img}}" alt="{{item.name}}">
               <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
               <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
-              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+              <div class="item-actions">
+                {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+              </div>
             </li>
           {{else}}
             <li class="item-row empty"><span></span><span>Drop inventory items here.</span><small></small></li>
@@ -313,7 +349,13 @@
               <img src="{{item.img}}" alt="{{item.name}}">
               <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
               <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
-              {{#if ../editable}}<div class="item-actions"><button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button></div>{{/if}}
+              <div class="item-actions">
+                {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+              </div>
             </li>
           {{else}}
             <li class="item-row empty"><span></span><span>Drop vehicles, mecha, or owned equipment here.</span><small></small></li>

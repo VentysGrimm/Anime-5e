@@ -29,6 +29,24 @@
     </div>
   </header>
 
+  <section class="panel item-actions-panel">
+    <h2>Actions</h2>
+    <div class="item-action-buttons">
+      {{#if itemActions.canUse}}
+        <button type="button" class="roll-action" data-action="use-item"><i class="fas fa-comment"></i> Use</button>
+      {{/if}}
+      {{#if itemActions.canRoll}}
+        <button type="button" class="roll-action" data-action="roll-item"><i class="fas fa-dice-d20"></i> Roll</button>
+      {{/if}}
+      {{#if itemActions.canAttack}}
+        <button type="button" class="roll-action" data-action="roll-item-attack"><i class="fas fa-crosshairs"></i> Attack</button>
+      {{/if}}
+      {{#if itemActions.canDamage}}
+        <button type="button" class="roll-action" data-action="roll-item-damage"><i class="fas fa-bolt"></i> Damage</button>
+      {{/if}}
+    </div>
+  </section>
+
   <section class="panel">
     <h2>{{localize "ANIME5E.Labels.Description"}}</h2>
     <textarea name="system.description" {{#unless editable}}disabled{{/unless}}>{{system.description}}</textarea>

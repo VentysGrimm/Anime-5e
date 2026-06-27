@@ -45,7 +45,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Full equipment automation for weapons, armor, shields, vehicles, mecha, mounts, and Items of Power.
 - Monster variant import and NPC stat-block parsing from the monster/adventure books.
 - Reputation, faction/path restrictions, law/consequence tracking, and quest/task generation hooks. These are not part of the clearly defined core package pass yet.
-- Dynamic Powers automation, Combat Techniques automation, conditions, recovery automation, and item-specific roll/use actions remain the next mechanical gaps after the damage controls pass.
+- Dynamic Powers automation, Combat Techniques automation, conditions, recovery automation, and deeper item-specific automation remain the next mechanical gaps after the first item use/roll pass.
 
 ## Foundry VTT v14 Compatibility Notes
 
@@ -66,18 +66,21 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Core character data is visible and editable.
 - Characters can roll ability checks, proficient checks, saving throws, proficient saves, initiative, attacks, and attack damage from the sheet.
 - Characters can apply damage or healing to their own Hit Points from the combat panel.
+- Characters can use/share embedded items to chat, roll item formulas when present, make item attack rolls, and roll item damage for weapons or other items with damage formulas.
+- Item sheets expose the same use, formula roll, attack, and damage actions for weapons, Attributes, Defects, powers, techniques, spells, and other item documents.
 - Source-backed starter content can be imported into compendiums by a GM through the Configure Settings menu or the runtime importer.
 
 ## Recommended Next Builds
 
-1. Add item-specific roll/use actions for weapons, Attributes, Defects, powers, techniques, and spells.
-2. Continue source-backed imports for equipment, powers, techniques, monsters, mounts, mecha, and spell conversions.
+1. Continue source-backed imports for equipment, powers, techniques, monsters, mounts, mecha, and spell conversions.
+2. Expand item automation for Dynamic Powers, Techniques, spells, equipment, and Items of Power as their source-backed fields are modeled.
 3. Add focused runtime smoke tests once a Foundry v14 test harness or manual launch target is available.
 
 ## Implemented Follow-Ups
 
 - A GM-only **Anime 5e Core Compendiums** settings menu opens a Foundry v14 `DialogV2` for importing or updating source-backed starter content without using the console.
 - The combat panel can roll entered attack damage formulas and apply damage or healing to the actor's current Hit Points, including negative HP tracking down to the mortal-wound threshold.
+- Actor item rows and item sheets now expose item use/share, formula roll, attack roll, and damage roll actions. This gives weapons, Attributes, Defects, powers, techniques, spells, and other source-backed item documents a direct play action while preserving later deeper automation work.
 
 ## Missing Files Required For Load
 

@@ -92,6 +92,10 @@ function buildD20Formula(...modifiers) {
   return ["1d20", ...modifiers.map((modifier) => signedModifier(modifier))].join(" ");
 }
 
+function hasText(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -223,7 +227,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       tags,
       source: system.source,
       sourcePage: system.sourcePage,
-      description: system.description
+      description: system.description,
+      canUse: true,
+      canRoll: hasText(system.roll),
+      canAttack: item.type === "weapon" || Number.isFinite(Number(system.attackModifier)),
+      canDamage: hasText(system.damage)
     };
   }
 
@@ -259,6 +267,18 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='apply-damage'], [data-action='apply-healing']").forEach((button) => {
       button.addEventListener("click", this._onApplyHitPointChange.bind(this));
+    });
+    element.querySelectorAll("[data-action='use-item']").forEach((button) => {
+      button.addEventListener("click", this._onUseItem.bind(this));
+    });
+    element.querySelectorAll("[data-action='roll-item']").forEach((button) => {
+      button.addEventListener("click", this._onRollItem.bind(this));
+    });
+    element.querySelectorAll("[data-action='roll-item-attack']").forEach((button) => {
+      button.addEventListener("click", this._onRollItemAttack.bind(this));
+    });
+    element.querySelectorAll("[data-action='roll-item-damage']").forEach((button) => {
+      button.addEventListener("click", this._onRollItemDamage.bind(this));
     });
     element.querySelectorAll("[data-action='edit-item']").forEach((button) => {
       button.addEventListener("click", this._onEditItem.bind(this));
@@ -367,6 +387,48 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await this._rollFormula(formula, `${attack.weapon || "Attack"} Damage`);
   }
 
+  async _onUseItem(event) {
+    event.preventDefault();
+    const item = this._getEmbeddedItem(event);
+    if (!item) return;
+
+    await this._postItemUse(item);
+  }
+
+  async _onRollItem(event) {
+    event.preventDefault();
+    const item = this._getEmbeddedItem(event);
+    const formula = item?.system?.roll?.trim();
+    if (!formula) {
+      ui.notifications?.warn("Enter a roll formula before rolling this item.");
+      return;
+    }
+
+    await this._rollFormula(formula, `${item.name} Roll`);
+  }
+
+  async _onRollItemAttack(event) {
+    event.preventDefault();
+    const item = this._getEmbeddedItem(event);
+    if (!item) return;
+
+    const modifier = Number(item.system?.attackModifier) || 0;
+    await this._rollFormula(buildD20Formula(modifier), `${item.name} Attack`);
+  }
+
+  async _onRollItemDamage(event) {
+    event.preventDefault();
+    const item = this._getEmbeddedItem(event);
+    const formula = item?.system?.damage?.trim();
+    if (!formula) {
+      ui.notifications?.warn("Enter a damage formula before rolling this item.");
+      return;
+    }
+
+    const damageType = item.system?.damageType ? ` (${item.system.damageType})` : "";
+    await this._rollFormula(formula, `${item.name} Damage${damageType}`);
+  }
+
   async _rollFormula(formula, label) {
     try {
       const roll = new Roll(formula);
@@ -417,15 +479,31 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
   }
 
+  async _postItemUse(item) {
+    const system = item.system ?? {};
+    const source = [system.source, system.sourcePage ? `p. ${system.sourcePage}` : null].filter(Boolean).join(", ");
+    const description = hasText(system.description) ? `<p>${escapeHtml(system.description)}</p>` : "";
+    const sourceLine = source ? `<p><small>${escapeHtml(source)}</small></p>` : "";
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(localizedType("Item", item.type))}</strong></p>${description}${sourceLine}</article>`
+    });
+  }
+
+  _getEmbeddedItem(event) {
+    return this.actor.items.get(event.currentTarget.closest("[data-item-id]")?.dataset.itemId);
+  }
+
   _onEditItem(event) {
     event.preventDefault();
-    const item = this.actor.items.get(event.currentTarget.closest("[data-item-id]")?.dataset.itemId);
+    const item = this._getEmbeddedItem(event);
     item?.sheet?.render(true);
   }
 
   async _onDeleteItem(event) {
     event.preventDefault();
-    const item = this.actor.items.get(event.currentTarget.closest("[data-item-id]")?.dataset.itemId);
+    const item = this._getEmbeddedItem(event);
     await item?.delete();
   }
 
