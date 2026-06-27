@@ -185,6 +185,32 @@
               <button type="button" class="roll-action" data-action="apply-healing"><i class="fas fa-heart"></i> Heal</button>
             </div>
           </section>
+          <section class="equipped-summary" aria-label="Equipped Combat Gear">
+            <h3>Equipped Gear</h3>
+            <div class="equipped-ac">
+              <span>Effective AC</span>
+              <strong>{{equipment.armourClass}}</strong>
+              <small>{{equipment.armourDetails}}</small>
+            </div>
+            {{#if equipment.armourWarning}}
+              <p class="sheet-warning">{{equipment.armourWarning}}</p>
+            {{/if}}
+            <ol class="item-list compact-equipped-list">
+              {{#each equipment.weapons as |item|}}
+                <li class="item-row" data-item-id="{{item.id}}">
+                  <img src="{{item.img}}" alt="{{item.name}}">
+                  <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+                  <div class="item-actions">
+                    {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                    {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                    {{#if ../editable}}<button type="button" data-action="toggle-equipped" title="Unequip"><i class="fas fa-toggle-on"></i></button>{{/if}}
+                  </div>
+                </li>
+              {{else}}
+                <li class="item-row empty"><span></span><span>No equipped weapons.</span><small></small></li>
+              {{/each}}
+            </ol>
+          </section>
         </section>
 
         <section class="ledger-section item-drop-panel" data-drop-target="items">
@@ -200,6 +226,7 @@
                   {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                   {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                   {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                  {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
                   {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
                 </div>
               </li>
@@ -226,6 +253,7 @@
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
               </div>
             </li>
@@ -251,6 +279,7 @@
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
               </div>
             </li>
@@ -278,6 +307,7 @@
                   {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                   {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                   {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                  {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
                   {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
                 </div>
               </li>
@@ -304,6 +334,7 @@
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
               </div>
             </li>
@@ -329,6 +360,7 @@
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
               </div>
             </li>
@@ -354,6 +386,7 @@
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
               </div>
             </li>

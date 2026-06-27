@@ -642,6 +642,60 @@
   min-width: 0;
 }
 
+.anime5e .equipped-summary {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+}
+
+.anime5e .equipped-summary h3 {
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.anime5e .equipped-ac {
+  align-items: center;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: max-content 44px 1fr;
+}
+
+.anime5e .equipped-ac span {
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.anime5e .equipped-ac strong {
+  background: #fff;
+  border: 2px solid var(--anime5e-ink);
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.anime5e .equipped-ac small {
+  min-width: 0;
+}
+
+.anime5e .sheet-warning {
+  background: #fff0d8;
+  border: 1px solid #c78f3a;
+  font-size: 0.82rem;
+  margin: 0;
+  padding: 6px 8px;
+}
+
+.anime5e .compact-equipped-list .item-row {
+  grid-template-columns: 28px minmax(120px, 1fr) minmax(76px, auto);
+}
+
 .anime5e .item-drop-panel {
   min-height: 170px;
 }

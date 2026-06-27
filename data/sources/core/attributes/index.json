@@ -2,826 +2,3781 @@
   "pack": "anime5e.attributes",
   "documentType": "Item",
   "sourceBook": "Anime 5E Fifth Edition Core Rules",
-  "sourceIdPrefix": "core.attribute",
   "folders": [
     {
       "name": "Attributes",
       "color": "#7c8fa8"
+    },
+    {
+      "name": "Attribute Enhancement",
+      "color": "#6f9a7f"
+    },
+    {
+      "name": "Attribute Limiter",
+      "color": "#9a7f6f"
+    },
+    {
+      "name": "Weapon Enhancement",
+      "color": "#8c6fa0"
+    },
+    {
+      "name": "Weapon Limiter",
+      "color": "#a06f6f"
     }
   ],
-  "documentTemplate": {
-    "type": "attribute",
-    "folder": "Attributes",
-    "img": "icons/svg/aura.svg",
-    "system": {
-      "rank": 1
-    }
-  },
-  "entries": [
+  "documents": [
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 92.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> +1 Armour Class/Rank.</p><p><strong>Rules Summary:</strong> Raises the character&#39;s Armour Class by making them harder to hit, damage, or target.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.ac-bonus",
+        "sourcePage": 92,
+        "importId": "core.attribute.ac-bonus",
+        "category": "Defense",
+        "progression": "+1 Armour Class/Rank"
+      },
       "name": "AC Bonus",
-      "img": "icons/svg/shield.svg",
-      "cost": 1,
-      "sourcePage": 92,
-      "category": "Defense",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "+1 Armour Class/Rank",
-      "summary": "Raises the character's Armour Class by making them harder to hit, damage, or target."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.ac-bonus",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 92,
+            "importId": "core.attribute.ac-bonus"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 92.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> 1 Alternate Identity/Rank.</p><p><strong>Rules Summary:</strong> Gives the character alternate outward identities without changing their underlying statistics.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.alternate-identity",
+        "sourcePage": 92,
+        "importId": "core.attribute.alternate-identity",
+        "category": "Identity",
+        "progression": "1 Alternate Identity/Rank"
+      },
       "name": "Alternate Identity",
-      "img": "icons/svg/mystery-man.svg",
-      "cost": 1,
-      "sourcePage": 92,
-      "category": "Identity",
-      "ability": "Constitution",
-      "scope": "Self only; Ongoing",
-      "progression": "1 Alternate Identity/Rank",
-      "summary": "Gives the character alternate outward identities without changing their underlying statistics."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.alternate-identity",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 92,
+            "importId": "core.attribute.alternate-identity"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 92.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> +1 Armour Proficiency/Rank.</p><p><strong>Rules Summary:</strong> Removes the penalties for using a selected armour category.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.armour-proficiency",
+        "sourcePage": 92,
+        "importId": "core.attribute.armour-proficiency",
+        "category": "Proficiency",
+        "progression": "+1 Armour Proficiency/Rank"
+      },
       "name": "Armour Proficiency",
-      "img": "icons/svg/shield.svg",
-      "cost": 1,
-      "sourcePage": 92,
-      "category": "Proficiency",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "+1 Armour Proficiency/Rank",
-      "summary": "Removes the penalties for using a selected armour category."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.armour-proficiency",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 92,
+            "importId": "core.attribute.armour-proficiency"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 92.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> +1 Ability Score/Rank.</p><p><strong>Rules Summary:</strong> Represents an Ability Score increase granted by a defined source such as magic, size, or equipment.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.augmented",
+        "sourcePage": 92,
+        "importId": "core.attribute.augmented",
+        "category": "Ability",
+        "progression": "+1 Ability Score/Rank"
+      },
       "name": "Augmented",
-      "img": "icons/svg/upgrade.svg",
-      "cost": 1,
-      "sourcePage": 92,
-      "category": "Ability",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "+1 Ability Score/Rank",
-      "summary": "Represents an Ability Score increase granted by a defined source such as magic, size, or equipment."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.augmented",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 92,
+            "importId": "core.attribute.augmented"
+          }
+        }
+      }
     },
     {
-      "name": "Change State",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/acid.svg",
-      "cost": 3,
-      "sourcePage": 92,
-      "category": "Form",
-      "ability": "Constitution",
-      "scope": "Self only; 1 minute",
-      "progression": "Descriptive",
-      "summary": "Lets the character temporarily become liquid, gaseous, incorporeal, or energy-like."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 92.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; 1 minute. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Lets the character temporarily become liquid, gaseous, incorporeal, or energy-like.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.change-state",
+        "sourcePage": 92,
+        "importId": "core.attribute.change-state",
+        "category": "Form",
+        "progression": "Descriptive"
+      },
+      "name": "Change State",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.change-state",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 92,
+            "importId": "core.attribute.change-state"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 93.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> Self only; Instantaneous. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Provides extraordinary insight into information beyond ordinary senses or memory.</p>",
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.cognition",
+        "sourcePage": 93,
+        "importId": "core.attribute.cognition",
+        "category": "Perception",
+        "progression": "Descriptive"
+      },
       "name": "Cognition",
-      "img": "icons/svg/eye.svg",
-      "cost": 2,
-      "sourcePage": 93,
-      "category": "Perception",
-      "ability": "Intelligence",
-      "scope": "Self only; Instantaneous",
-      "progression": "Descriptive",
-      "summary": "Provides extraordinary insight into information beyond ordinary senses or memory."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.cognition",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 93,
+            "importId": "core.attribute.cognition"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 93.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> +1 Attack Bonus/Rank.</p><p><strong>Rules Summary:</strong> Improves attack accuracy with a direct bonus to attack rolls.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.combat-mastery",
+        "sourcePage": 93,
+        "importId": "core.attribute.combat-mastery",
+        "category": "Combat",
+        "progression": "+1 Attack Bonus/Rank"
+      },
       "name": "Combat Mastery",
-      "img": "icons/svg/sword.svg",
-      "cost": 1,
-      "sourcePage": 93,
-      "category": "Combat",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "+1 Attack Bonus/Rank",
-      "summary": "Improves attack accuracy with a direct bonus to attack rolls."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.combat-mastery",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 93,
+            "importId": "core.attribute.combat-mastery"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Situational use. <strong>Progression:</strong> 1 Combat Technique/Rank.</p><p><strong>Rules Summary:</strong> Grants defined combat tricks such as special attacks, defenses, or tactical options.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.combat-technique",
+        "sourcePage": 94,
+        "importId": "core.attribute.combat-technique",
+        "category": "Combat",
+        "progression": "1 Combat Technique/Rank"
+      },
       "name": "Combat Technique",
-      "img": "icons/svg/sword.svg",
-      "cost": 1,
-      "sourcePage": 94,
-      "category": "Combat",
-      "ability": "-",
-      "scope": "Self only; Situational use",
-      "progression": "1 Combat Technique/Rank",
-      "summary": "Grants defined combat tricks such as special attacks, defenses, or tactical options."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.combat-technique",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.attribute.combat-technique"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 95.</p><p><strong>Attribute Cost:</strong> 5 Points/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> External; Permanent. <strong>Progression:</strong> Companions are constructed from additional Points by Rank.</p><p><strong>Rules Summary:</strong> Creates a loyal NPC helper, pet, assistant, or similar subordinate built with its own traits.</p>",
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.companion",
+        "sourcePage": 95,
+        "importId": "core.attribute.companion",
+        "category": "Companion",
+        "progression": "Companions are constructed from additional Points by Rank"
+      },
       "name": "Companion",
-      "img": "icons/svg/mystery-man.svg",
-      "cost": 5,
-      "sourcePage": 95,
-      "category": "Companion",
-      "ability": "-",
-      "scope": "External; Permanent",
-      "progression": "Companions are constructed from additional Points by Rank",
-      "summary": "Creates a loyal NPC helper, pet, assistant, or similar subordinate built with its own traits."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.companion",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 95,
+            "importId": "core.attribute.companion"
+          }
+        }
+      }
     },
     {
-      "name": "Connected",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/city.svg",
-      "cost": 1,
-      "sourcePage": 98,
-      "category": "Social",
-      "ability": "Charisma",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Represents useful social ties, memberships, contacts, patrons, or access to organizations."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 98.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Charisma. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Represents useful social ties, memberships, contacts, patrons, or access to organizations.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.connected",
+        "sourcePage": 98,
+        "importId": "core.attribute.connected",
+        "category": "Social",
+        "progression": "Descriptive"
+      },
+      "name": "Connected",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.connected",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 98,
+            "importId": "core.attribute.connected"
+          }
+        }
+      }
     },
     {
-      "name": "Control Environment",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/windmill.svg",
-      "cost": 1,
-      "sourcePage": 98,
-      "category": "Environment",
-      "ability": "Wisdom",
-      "scope": "10-foot radius; 1 minute",
-      "progression": "1 Environment/Rank",
-      "summary": "Allows limited control over a selected environmental condition in the surrounding area."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 98.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Wisdom. <strong>Scope:</strong> 10-foot radius; 1 minute. <strong>Progression:</strong> 1 Environment/Rank.</p><p><strong>Rules Summary:</strong> Allows limited control over a selected environmental condition in the surrounding area.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.control-environment",
+        "sourcePage": 98,
+        "importId": "core.attribute.control-environment",
+        "category": "Environment",
+        "progression": "1 Environment/Rank"
+      },
+      "name": "Control Environment",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.control-environment",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 98,
+            "importId": "core.attribute.control-environment"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/cycle.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 98.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Temporarily gain +1 Point/Rank for every converted point source.</p><p><strong>Rules Summary:</strong> Temporarily converts one resource or trait into bonus Points for another effect.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.conversion",
+        "sourcePage": 98,
+        "importId": "core.attribute.conversion",
+        "category": "Power",
+        "progression": "Temporarily gain +1 Point/Rank for every converted point source"
+      },
       "name": "Conversion",
-      "img": "icons/svg/cycle.svg",
-      "cost": 3,
-      "sourcePage": 98,
-      "category": "Power",
-      "ability": "Constitution",
-      "scope": "Self only; Ongoing",
-      "progression": "Temporarily gain +1 Point/Rank for every converted point source",
-      "summary": "Temporarily converts one resource or trait into bonus Points for another effect."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.conversion",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 98,
+            "importId": "core.attribute.conversion"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 99.</p><p><strong>Attribute Cost:</strong> 10 Points/Rank. <strong>Relevant Ability:</strong> Situationally Variable. <strong>Scope:</strong> Situational. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Provides broad flexible control over a major power theme, subject to DM oversight.</p>",
+        "cost": 10,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.dynamic-powers",
+        "sourcePage": 99,
+        "importId": "core.attribute.dynamic-powers",
+        "category": "Power",
+        "progression": "Descriptive"
+      },
       "name": "Dynamic Powers",
-      "img": "icons/svg/aura.svg",
-      "cost": 10,
-      "sourcePage": 99,
-      "category": "Power",
-      "ability": "Situationally Variable",
-      "scope": "Situational",
-      "progression": "Descriptive",
-      "summary": "Provides broad flexible control over a major power theme, subject to DM oversight."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.dynamic-powers",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 99,
+            "importId": "core.attribute.dynamic-powers"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 99.</p><p><strong>Attribute Cost:</strong> 5 Points/Rank. <strong>Relevant Ability:</strong> Situationally Variable. <strong>Scope:</strong> Situational. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> A narrower version of Dynamic Powers focused on a limited theme or expression.</p>",
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.dynamic-powers-lesser",
+        "sourcePage": 99,
+        "importId": "core.attribute.dynamic-powers-lesser",
+        "category": "Power",
+        "progression": "Descriptive"
+      },
       "name": "Dynamic Powers - Lesser",
-      "img": "icons/svg/aura.svg",
-      "cost": 5,
-      "sourcePage": 99,
-      "category": "Power",
-      "ability": "Situationally Variable",
-      "scope": "Situational",
-      "progression": "Descriptive",
-      "summary": "A narrower version of Dynamic Powers focused on a limited theme or expression."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.dynamic-powers-lesser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 99,
+            "importId": "core.attribute.dynamic-powers-lesser"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/d20-highlight.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 100.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Grants an advantage for a defined category of rolls or circumstances.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.edge",
+        "sourcePage": 100,
+        "importId": "core.attribute.edge",
+        "category": "Advantage",
+        "progression": "Descriptive"
+      },
       "name": "Edge",
-      "img": "icons/svg/d20-highlight.svg",
-      "cost": 1,
-      "sourcePage": 100,
-      "category": "Advantage",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "Descriptive",
-      "summary": "Grants an advantage for a defined category of rolls or circumstances."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.edge",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 100,
+            "importId": "core.attribute.edge"
+          }
+        }
+      }
     },
     {
-      "name": "Elasticity",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/elastic.svg",
-      "cost": 2,
-      "sourcePage": 100,
-      "category": "Form",
-      "ability": "Constitution",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Lets the body stretch, compress, or bend beyond normal physical limits."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 100.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Lets the body stretch, compress, or bend beyond normal physical limits.</p>",
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.elasticity",
+        "sourcePage": 100,
+        "importId": "core.attribute.elasticity",
+        "category": "Form",
+        "progression": "Descriptive"
+      },
+      "name": "Elasticity",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.elasticity",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 100,
+            "importId": "core.attribute.elasticity"
+          }
+        }
+      }
     },
     {
-      "name": "Energised",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/lightning.svg",
-      "cost": 1,
-      "sourcePage": 101,
-      "category": "Resource",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "+10 Energy/Rank",
-      "summary": "Increases the character's Energy reserve."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 101.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> +10 Energy/Rank.</p><p><strong>Rules Summary:</strong> Increases the character&#39;s Energy reserve.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.energised",
+        "sourcePage": 101,
+        "importId": "core.attribute.energised",
+        "category": "Resource",
+        "progression": "+10 Energy/Rank"
+      },
+      "name": "Energised",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.energised",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 101,
+            "importId": "core.attribute.energised"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 101.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> +1 Proficiency Bonus/Rank.</p><p><strong>Rules Summary:</strong> Raises the character&#39;s Proficiency Bonus beyond the normal level-based value.</p>",
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.enhanced-proficiency",
+        "sourcePage": 101,
+        "importId": "core.attribute.enhanced-proficiency",
+        "category": "Proficiency",
+        "progression": "+1 Proficiency Bonus/Rank"
+      },
       "name": "Enhanced Proficiency",
-      "img": "icons/svg/upgrade.svg",
-      "cost": 2,
-      "sourcePage": 101,
-      "category": "Proficiency",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "+1 Proficiency Bonus/Rank",
-      "summary": "Raises the character's Proficiency Bonus beyond the normal level-based value."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.enhanced-proficiency",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 101,
+            "importId": "core.attribute.enhanced-proficiency"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/clockwork.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 101.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> +1 Bonus Action/Rank.</p><p><strong>Rules Summary:</strong> Grants additional Bonus Actions each round, including attacks or spellcasting.</p>",
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.extra-actions",
+        "sourcePage": 101,
+        "importId": "core.attribute.extra-actions",
+        "category": "Action",
+        "progression": "+1 Bonus Action/Rank"
+      },
       "name": "Extra Actions",
-      "img": "icons/svg/clockwork.svg",
-      "cost": 4,
-      "sourcePage": 101,
-      "category": "Action",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "+1 Bonus Action/Rank",
-      "summary": "Grants additional Bonus Actions each round, including attacks or spellcasting."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.extra-actions",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 101,
+            "importId": "core.attribute.extra-actions"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/clockwork.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 101.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> +1 limited Bonus Action/Rank.</p><p><strong>Rules Summary:</strong> Grants extra Bonus Actions that cannot be used for attacking or spellcasting.</p>",
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.extra-actions-lesser",
+        "sourcePage": 101,
+        "importId": "core.attribute.extra-actions-lesser",
+        "category": "Action",
+        "progression": "+1 limited Bonus Action/Rank"
+      },
       "name": "Extra Actions - Lesser",
-      "img": "icons/svg/clockwork.svg",
-      "cost": 2,
-      "sourcePage": 101,
-      "category": "Action",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "+1 limited Bonus Action/Rank",
-      "summary": "Grants extra Bonus Actions that cannot be used for attacking or spellcasting."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.extra-actions-lesser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 101,
+            "importId": "core.attribute.extra-actions-lesser"
+          }
+        }
+      }
     },
     {
-      "name": "Fast",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/running.svg",
-      "cost": 1,
-      "sourcePage": 101,
-      "category": "Movement",
-      "ability": "Dexterity",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Multiplies the character's movement speed at higher Ranks."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 101.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Dexterity. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Multiplies the character&#39;s movement speed at higher Ranks.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.fast",
+        "sourcePage": 101,
+        "importId": "core.attribute.fast",
+        "category": "Movement",
+        "progression": "Descriptive"
+      },
+      "name": "Fast",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.fast",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 101,
+            "importId": "core.attribute.fast"
+          }
+        }
+      }
     },
     {
-      "name": "Features",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/puzzle.svg",
-      "cost": 1,
-      "sourcePage": 101,
-      "category": "Feature",
-      "ability": "-",
-      "scope": "Self only; Ongoing",
-      "progression": "1 Feature/Rank",
-      "summary": "Covers secondary traits and utility abilities that do not need a larger Attribute."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 101.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> 1 Feature/Rank.</p><p><strong>Rules Summary:</strong> Covers secondary traits and utility abilities that do not need a larger Attribute.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.features",
+        "sourcePage": 101,
+        "importId": "core.attribute.features",
+        "category": "Feature",
+        "progression": "1 Feature/Rank"
+      },
+      "name": "Features",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.features",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 101,
+            "importId": "core.attribute.features"
+          }
+        }
+      }
     },
     {
-      "name": "Flight",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/wing.svg",
-      "cost": 3,
-      "sourcePage": 102,
-      "category": "Movement",
-      "ability": "Dexterity",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Gives the character controlled aerial movement with speed determined by Rank."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 102.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Dexterity. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Gives the character controlled aerial movement with speed determined by Rank.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.flight",
+        "sourcePage": 102,
+        "importId": "core.attribute.flight",
+        "category": "Movement",
+        "progression": "Descriptive"
+      },
+      "name": "Flight",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.flight",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 102,
+            "importId": "core.attribute.flight"
+          }
+        }
+      }
     },
     {
-      "name": "Forced Disadvantage",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/d20-grey.svg",
-      "cost": 1,
-      "sourcePage": 102,
-      "category": "Control",
-      "ability": "-",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Forces disadvantage on a defined category of enemy rolls or contest checks."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 102.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Forces disadvantage on a defined category of enemy rolls or contest checks.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.forced-disadvantage",
+        "sourcePage": 102,
+        "importId": "core.attribute.forced-disadvantage",
+        "category": "Control",
+        "progression": "Descriptive"
+      },
+      "name": "Forced Disadvantage",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.forced-disadvantage",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 102,
+            "importId": "core.attribute.forced-disadvantage"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/heal.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 102.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Wisdom. <strong>Scope:</strong> 1 target; Touch; Instantaneous. <strong>Progression:</strong> Heal +1d8 Hit Points/Rank.</p><p><strong>Rules Summary:</strong> Restores Hit Points to a touched target and can support advanced recovery at higher Ranks.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.healing",
+        "sourcePage": 102,
+        "importId": "core.attribute.healing",
+        "category": "Healing",
+        "progression": "Heal +1d8 Hit Points/Rank"
+      },
       "name": "Healing",
-      "img": "icons/svg/heal.svg",
-      "cost": 1,
-      "sourcePage": 102,
-      "category": "Healing",
-      "ability": "Wisdom",
-      "scope": "1 target; Touch; Instantaneous",
-      "progression": "Heal +1d8 Hit Points/Rank",
-      "summary": "Restores Hit Points to a touched target and can support advanced recovery at higher Ranks."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.healing",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 102,
+            "importId": "core.attribute.healing"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 102.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Wisdom. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> 1 Sense/Rank.</p><p><strong>Rules Summary:</strong> Improves one selected ordinary sense per Rank.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.heightened-senses",
+        "sourcePage": 102,
+        "importId": "core.attribute.heightened-senses",
+        "category": "Perception",
+        "progression": "1 Sense/Rank"
+      },
       "name": "Heightened Senses",
-      "img": "icons/svg/eye.svg",
-      "cost": 1,
-      "sourcePage": 102,
-      "category": "Perception",
-      "ability": "Wisdom",
-      "scope": "Self only; Ongoing",
-      "progression": "1 Sense/Rank",
-      "summary": "Improves one selected ordinary sense per Rank."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.heightened-senses",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 102,
+            "importId": "core.attribute.heightened-senses"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/cowled.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 103.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Provides strong protection or immunity against a selected damage type, condition, or effect.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.immunity",
+        "sourcePage": 103,
+        "importId": "core.attribute.immunity",
+        "category": "Resistance",
+        "progression": "Descriptive"
+      },
       "name": "Immunity",
-      "img": "icons/svg/cowled.svg",
-      "cost": 3,
-      "sourcePage": 103,
-      "category": "Resistance",
-      "ability": "Constitution",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Provides strong protection or immunity against a selected damage type, condition, or effect."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.immunity",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 103,
+            "importId": "core.attribute.immunity"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/cowled.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 103.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> A narrower immunity focused on a limited source, condition, or category.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.immunity-lesser",
+        "sourcePage": 103,
+        "importId": "core.attribute.immunity-lesser",
+        "category": "Resistance",
+        "progression": "Descriptive"
+      },
       "name": "Immunity - Lesser",
-      "img": "icons/svg/cowled.svg",
-      "cost": 1,
-      "sourcePage": 103,
-      "category": "Resistance",
-      "ability": "Constitution",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "A narrower immunity focused on a limited source, condition, or category."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.immunity-lesser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 103,
+            "importId": "core.attribute.immunity-lesser"
+          }
+        }
+      }
     },
     {
-      "name": "Immutable",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/stone-pile.svg",
-      "cost": 1,
-      "sourcePage": 104,
-      "category": "Resistance",
-      "ability": "Constitution",
-      "scope": "Self only; Ongoing",
-      "progression": "+2 Check Bonus/Rank to Resist Bodily Effects",
-      "summary": "Helps resist unwanted bodily transformation, movement, or physical alteration."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 104.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> +2 Check Bonus/Rank to Resist Bodily Effects.</p><p><strong>Rules Summary:</strong> Helps resist unwanted bodily transformation, movement, or physical alteration.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.immutable",
+        "sourcePage": 104,
+        "importId": "core.attribute.immutable",
+        "category": "Resistance",
+        "progression": "+2 Check Bonus/Rank to Resist Bodily Effects"
+      },
+      "name": "Immutable",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.immutable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 104,
+            "importId": "core.attribute.immutable"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/sun.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 104.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Charisma. <strong>Scope:</strong> Nearby targets; One dramatic scene. <strong>Progression:</strong> +1 Check Bonus/Rank.</p><p><strong>Rules Summary:</strong> Bolsters allies with bonuses to relevant checks during a scene.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.inspire",
+        "sourcePage": 104,
+        "importId": "core.attribute.inspire",
+        "category": "Support",
+        "progression": "+1 Check Bonus/Rank"
+      },
       "name": "Inspire",
-      "img": "icons/svg/sun.svg",
-      "cost": 1,
-      "sourcePage": 104,
-      "category": "Support",
-      "ability": "Charisma",
-      "scope": "Nearby targets; One dramatic scene",
-      "progression": "+1 Check Bonus/Rank",
-      "summary": "Bolsters allies with bonuses to relevant checks during a scene."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.inspire",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 104,
+            "importId": "core.attribute.inspire"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/sun.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 104.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Charisma. <strong>Scope:</strong> Nearby targets; One dramatic scene. <strong>Progression:</strong> +1 Check Bonus/Rank.</p><p><strong>Rules Summary:</strong> Extends Inspire to stronger combat-facing rolls such as attacks and Saving Throws.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.inspire-greater",
+        "sourcePage": 104,
+        "importId": "core.attribute.inspire-greater",
+        "category": "Support",
+        "progression": "+1 Check Bonus/Rank"
+      },
       "name": "Inspire - Greater",
-      "img": "icons/svg/sun.svg",
-      "cost": 3,
-      "sourcePage": 104,
-      "category": "Support",
-      "ability": "Charisma",
-      "scope": "Nearby targets; One dramatic scene",
-      "progression": "+1 Check Bonus/Rank",
-      "summary": "Extends Inspire to stronger combat-facing rolls such as attacks and Saving Throws."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.inspire-greater",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 104,
+            "importId": "core.attribute.inspire-greater"
+          }
+        }
+      }
     },
     {
-      "name": "Item",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/item-bag.svg",
-      "cost": 4,
-      "sourcePage": 105,
-      "category": "Item",
-      "ability": "-",
-      "scope": "External; Permanent",
-      "progression": "Item(s) with +5 Points/Rank",
-      "summary": "Creates a significant personal item or piece of gear built from Points."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 105.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> External; Permanent. <strong>Progression:</strong> Item(s) with +5 Points/Rank.</p><p><strong>Rules Summary:</strong> Creates a significant personal item or piece of gear built from Points.</p>",
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.item",
+        "sourcePage": 105,
+        "importId": "core.attribute.item",
+        "category": "Item",
+        "progression": "Item(s) with +5 Points/Rank"
+      },
+      "name": "Item",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.item",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 105,
+            "importId": "core.attribute.item"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 105.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Dexterity. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Increases the distance the character can leap.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.jumping",
+        "sourcePage": 105,
+        "importId": "core.attribute.jumping",
+        "category": "Movement",
+        "progression": "Descriptive"
+      },
       "name": "Jumping",
-      "img": "icons/svg/wingfoot.svg",
-      "cost": 1,
-      "sourcePage": 105,
-      "category": "Movement",
-      "ability": "Dexterity",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Increases the distance the character can leap."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.jumping",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 105,
+            "importId": "core.attribute.jumping"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 105.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> 1 Language/Rank.</p><p><strong>Rules Summary:</strong> Adds fluency in one additional language per Rank.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.language",
+        "sourcePage": 105,
+        "importId": "core.attribute.language",
+        "category": "Knowledge",
+        "progression": "1 Language/Rank"
+      },
       "name": "Language",
-      "img": "icons/svg/book.svg",
-      "cost": 1,
-      "sourcePage": 105,
-      "category": "Knowledge",
-      "ability": "Intelligence",
-      "scope": "Self only; Ongoing",
-      "progression": "1 Language/Rank",
-      "summary": "Adds fluency in one additional language per Rank."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.language",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 105,
+            "importId": "core.attribute.language"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 106.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Strength. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Raises damage output for a broad class of physical attacks.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.massive-damage",
+        "sourcePage": 106,
+        "importId": "core.attribute.massive-damage",
+        "category": "Combat",
+        "progression": "Descriptive"
+      },
       "name": "Massive Damage",
-      "img": "icons/svg/explosion.svg",
-      "cost": 3,
-      "sourcePage": 106,
-      "category": "Combat",
-      "ability": "Strength",
-      "scope": "Self only; Permanent",
-      "progression": "Descriptive",
-      "summary": "Raises damage output for a broad class of physical attacks."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.massive-damage",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 106,
+            "importId": "core.attribute.massive-damage"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 106.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Strength. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Raises damage output for a narrower attack category.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.massive-damage-lesser",
+        "sourcePage": 106,
+        "importId": "core.attribute.massive-damage-lesser",
+        "category": "Combat",
+        "progression": "Descriptive"
+      },
       "name": "Massive Damage - Lesser",
-      "img": "icons/svg/explosion.svg",
-      "cost": 1,
-      "sourcePage": 106,
-      "category": "Combat",
-      "ability": "Strength",
-      "scope": "Self only; Permanent",
-      "progression": "Descriptive",
-      "summary": "Raises damage output for a narrower attack category."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.massive-damage-lesser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 106,
+            "importId": "core.attribute.massive-damage-lesser"
+          }
+        }
+      }
     },
     {
-      "name": "Mimic",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/mirror.svg",
-      "cost": 4,
-      "sourcePage": 106,
-      "category": "Power",
-      "ability": "Intelligence",
-      "scope": "Self only; Must touch character; 1 minute",
-      "progression": "Can imitate Attributes up to a maximum Rank",
-      "summary": "Temporarily copies another character's Attributes within Rank limits."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 106.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> Self only; Must touch character; 1 minute. <strong>Progression:</strong> Can imitate Attributes up to a maximum Rank.</p><p><strong>Rules Summary:</strong> Temporarily copies another character&#39;s Attributes within Rank limits.</p>",
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.mimic",
+        "sourcePage": 106,
+        "importId": "core.attribute.mimic",
+        "category": "Power",
+        "progression": "Can imitate Attributes up to a maximum Rank"
+      },
+      "name": "Mimic",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.mimic",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 106,
+            "importId": "core.attribute.mimic"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/brain.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 106.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> 1 target; Touch; 1 minute. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Influences, commands, or manipulates a target&#39;s mind.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.mind-control",
+        "sourcePage": 106,
+        "importId": "core.attribute.mind-control",
+        "category": "Mental",
+        "progression": "Descriptive"
+      },
       "name": "Mind Control",
-      "img": "icons/svg/brain.svg",
-      "cost": 3,
-      "sourcePage": 106,
-      "category": "Mental",
-      "ability": "Intelligence",
-      "scope": "1 target; Touch; 1 minute",
-      "progression": "Descriptive",
-      "summary": "Influences, commands, or manipulates a target's mind."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.mind-control",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 106,
+            "importId": "core.attribute.mind-control"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/brain.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 107.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> 1 target; Touch; 1 minute. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> A restricted form of Mind Control limited to a narrow target category or effect.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.mind-control-lesser",
+        "sourcePage": 107,
+        "importId": "core.attribute.mind-control-lesser",
+        "category": "Mental",
+        "progression": "Descriptive"
+      },
       "name": "Mind Control - Lesser",
-      "img": "icons/svg/brain.svg",
-      "cost": 1,
-      "sourcePage": 107,
-      "category": "Mental",
-      "ability": "Intelligence",
-      "scope": "1 target; Touch; 1 minute",
-      "progression": "Descriptive",
-      "summary": "A restricted form of Mind Control limited to a narrow target category or effect."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.mind-control-lesser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 107,
+            "importId": "core.attribute.mind-control-lesser"
+          }
+        }
+      }
     },
     {
-      "name": "Mind Shield",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/barrier.svg",
-      "cost": 1,
-      "sourcePage": 108,
-      "category": "Defense",
-      "ability": "Wisdom",
-      "scope": "Self only; Ongoing",
-      "progression": "+2 Check Bonus/Rank to Resist Mind-Affecting Effects",
-      "summary": "Improves resistance against mental intrusion and psychic influence."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 108.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Wisdom. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> +2 Check Bonus/Rank to Resist Mind-Affecting Effects.</p><p><strong>Rules Summary:</strong> Improves resistance against mental intrusion and psychic influence.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.mind-shield",
+        "sourcePage": 108,
+        "importId": "core.attribute.mind-shield",
+        "category": "Defense",
+        "progression": "+2 Check Bonus/Rank to Resist Mind-Affecting Effects"
+      },
+      "name": "Mind Shield",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.mind-shield",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 108,
+            "importId": "core.attribute.mind-shield"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 108.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank. <strong>Relevant Ability:</strong> Charisma. <strong>Scope:</strong> External; Permanent. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Provides a group of minor followers or helpers.</p>",
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.minions",
+        "sourcePage": 108,
+        "importId": "core.attribute.minions",
+        "category": "Companion",
+        "progression": "Descriptive"
+      },
       "name": "Minions",
-      "img": "icons/svg/mystery-man.svg",
-      "cost": 2,
-      "sourcePage": 108,
-      "category": "Companion",
-      "ability": "Charisma",
-      "scope": "External; Permanent",
-      "progression": "Descriptive",
-      "summary": "Provides a group of minor followers or helpers."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.minions",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 108,
+            "importId": "core.attribute.minions"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 108.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank. <strong>Relevant Ability:</strong> Charisma. <strong>Scope:</strong> External; Permanent. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Provides stronger or more capable minions than the standard version.</p>",
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.minions-greater",
+        "sourcePage": 108,
+        "importId": "core.attribute.minions-greater",
+        "category": "Companion",
+        "progression": "Descriptive"
+      },
       "name": "Minions - Greater",
-      "img": "icons/svg/mystery-man.svg",
-      "cost": 4,
-      "sourcePage": 108,
-      "category": "Companion",
-      "ability": "Charisma",
-      "scope": "External; Permanent",
-      "progression": "Descriptive",
-      "summary": "Provides stronger or more capable minions than the standard version."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.minions-greater",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 108,
+            "importId": "core.attribute.minions-greater"
+          }
+        }
+      }
     },
     {
-      "name": "Monster Training",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/pawprint.svg",
-      "cost": 1,
-      "sourcePage": 108,
-      "category": "Companion",
-      "ability": "Charisma or Intelligence",
-      "scope": "Situational use; Ongoing",
-      "progression": "1 Training Technique/Rank",
-      "summary": "Adds techniques for commanding, coordinating, or improving trained monsters."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 108.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Charisma or Intelligence. <strong>Scope:</strong> Situational use; Ongoing. <strong>Progression:</strong> 1 Training Technique/Rank.</p><p><strong>Rules Summary:</strong> Adds techniques for commanding, coordinating, or improving trained monsters.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.monster-training",
+        "sourcePage": 108,
+        "importId": "core.attribute.monster-training",
+        "category": "Companion",
+        "progression": "1 Training Technique/Rank"
+      },
+      "name": "Monster Training",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.monster-training",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 108,
+            "importId": "core.attribute.monster-training"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/d20-highlight.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 110.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> +2 Dice Re-rolls/Rank Each Session.</p><p><strong>Rules Summary:</strong> Allows a limited number of rerolls during each game session.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.mulligan",
+        "sourcePage": 110,
+        "importId": "core.attribute.mulligan",
+        "category": "Luck",
+        "progression": "+2 Dice Re-rolls/Rank Each Session"
+      },
       "name": "Mulligan",
-      "img": "icons/svg/d20-highlight.svg",
-      "cost": 1,
-      "sourcePage": 110,
-      "category": "Luck",
-      "ability": "-",
-      "scope": "Self only; Ongoing",
-      "progression": "+2 Dice Re-rolls/Rank Each Session",
-      "summary": "Allows a limited number of rerolls during each game session."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.mulligan",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 110,
+            "importId": "core.attribute.mulligan"
+          }
+        }
+      }
     },
     {
-      "name": "Nullify",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/cancel.svg",
-      "cost": 5,
-      "sourcePage": 110,
-      "category": "Power",
-      "ability": "Intelligence",
-      "scope": "1 target; Touch; 1 minute",
-      "progression": "Can nullify Attributes up to a maximum Rank",
-      "summary": "Suppresses or cancels another character's Attributes within Rank limits."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 110.</p><p><strong>Attribute Cost:</strong> 5 Points/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> 1 target; Touch; 1 minute. <strong>Progression:</strong> Can nullify Attributes up to a maximum Rank.</p><p><strong>Rules Summary:</strong> Suppresses or cancels another character&#39;s Attributes within Rank limits.</p>",
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.nullify",
+        "sourcePage": 110,
+        "importId": "core.attribute.nullify",
+        "category": "Power",
+        "progression": "Can nullify Attributes up to a maximum Rank"
+      },
+      "name": "Nullify",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.nullify",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 110,
+            "importId": "core.attribute.nullify"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/cave.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 110.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> External; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Creates or accesses a personal extradimensional space.</p>",
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.pocket-dimension",
+        "sourcePage": 110,
+        "importId": "core.attribute.pocket-dimension",
+        "category": "Space",
+        "progression": "Descriptive"
+      },
       "name": "Pocket Dimension",
-      "img": "icons/svg/cave.svg",
-      "cost": 2,
-      "sourcePage": 110,
-      "category": "Space",
-      "ability": "Intelligence",
-      "scope": "External; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Creates or accesses a personal extradimensional space."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.pocket-dimension",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 110,
+            "importId": "core.attribute.pocket-dimension"
+          }
+        }
+      }
     },
     {
-      "name": "Portal",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/portal.svg",
-      "cost": 5,
-      "sourcePage": 111,
-      "category": "Space",
-      "ability": "Intelligence",
-      "scope": "External and Ongoing; or 1 touched target",
-      "progression": "1 One-Way Dimensional Portal/Rank",
-      "summary": "Creates portals for travel between locations or dimensions."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 111.</p><p><strong>Attribute Cost:</strong> 5 Points/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> External and Ongoing; or 1 touched target. <strong>Progression:</strong> 1 One-Way Dimensional Portal/Rank.</p><p><strong>Rules Summary:</strong> Creates portals for travel between locations or dimensions.</p>",
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.portal",
+        "sourcePage": 111,
+        "importId": "core.attribute.portal",
+        "category": "Space",
+        "progression": "1 One-Way Dimensional Portal/Rank"
+      },
+      "name": "Portal",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.portal",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 111,
+            "importId": "core.attribute.portal"
+          }
+        }
+      }
     },
     {
-      "name": "Protected",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/shield.svg",
-      "cost": 1,
-      "sourcePage": 111,
-      "category": "Defense",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "Descriptive",
-      "summary": "Provides a defined protection such as cover, safeguarding, or resistance to harm."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 111.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Provides a defined protection such as cover, safeguarding, or resistance to harm.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.protected",
+        "sourcePage": 111,
+        "importId": "core.attribute.protected",
+        "category": "Defense",
+        "progression": "Descriptive"
+      },
+      "name": "Protected",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.protected",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 111,
+            "importId": "core.attribute.protected"
+          }
+        }
+      }
     },
     {
-      "name": "Regeneration",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/heal.svg",
-      "cost": 1,
-      "sourcePage": 112,
-      "category": "Healing",
-      "ability": "-",
-      "scope": "Self only; Ongoing",
-      "progression": "Regain +1 Hit Point/Rank Each Round",
-      "summary": "Restores Hit Points each round and can represent extreme recovery at high Ranks."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 112.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Regain +1 Hit Point/Rank Each Round.</p><p><strong>Rules Summary:</strong> Restores Hit Points each round and can represent extreme recovery at high Ranks.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.regeneration",
+        "sourcePage": 112,
+        "importId": "core.attribute.regeneration",
+        "category": "Healing",
+        "progression": "Regain +1 Hit Point/Rank Each Round"
+      },
+      "name": "Regeneration",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.regeneration",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 112,
+            "importId": "core.attribute.regeneration"
+          }
+        }
+      }
     },
     {
-      "name": "Resilient",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/cowled.svg",
-      "cost": 1,
-      "sourcePage": 112,
-      "category": "Resistance",
-      "ability": "Constitution",
-      "scope": "Self only; Ongoing",
-      "progression": "1 Environment or Condition/Rank",
-      "summary": "Lets the character survive hostile environments or ignore selected conditions."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 112.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> 1 Environment or Condition/Rank.</p><p><strong>Rules Summary:</strong> Lets the character survive hostile environments or ignore selected conditions.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.resilient",
+        "sourcePage": 112,
+        "importId": "core.attribute.resilient",
+        "category": "Resistance",
+        "progression": "1 Environment or Condition/Rank"
+      },
+      "name": "Resilient",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.resilient",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 112,
+            "importId": "core.attribute.resilient"
+          }
+        }
+      }
     },
     {
-      "name": "Saving Throw Proficiency",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/d20-highlight.svg",
-      "cost": 2,
-      "sourcePage": 112,
-      "category": "Proficiency",
-      "ability": "Variable",
-      "scope": "Self only; Permanent",
-      "progression": "1 Saving Throw Ability Score/Rank",
-      "summary": "Adds Proficiency Bonus to Saving Throws for one selected Ability Score."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 112.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank. <strong>Relevant Ability:</strong> Variable. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> 1 Saving Throw Ability Score/Rank.</p><p><strong>Rules Summary:</strong> Adds Proficiency Bonus to Saving Throws for one selected Ability Score.</p>",
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.saving-throw-proficiency",
+        "sourcePage": 112,
+        "importId": "core.attribute.saving-throw-proficiency",
+        "category": "Proficiency",
+        "progression": "1 Saving Throw Ability Score/Rank"
+      },
+      "name": "Saving Throw Proficiency",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.saving-throw-proficiency",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 112,
+            "importId": "core.attribute.saving-throw-proficiency"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 112.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Wisdom. <strong>Scope:</strong> 30-foot radius; Ongoing. <strong>Progression:</strong> 1 Sense/Rank.</p><p><strong>Rules Summary:</strong> Detects a defined category of hidden or unusual phenomenon.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.sixth-sense",
+        "sourcePage": 112,
+        "importId": "core.attribute.sixth-sense",
+        "category": "Perception",
+        "progression": "1 Sense/Rank"
+      },
       "name": "Sixth Sense",
-      "img": "icons/svg/eye.svg",
-      "cost": 1,
-      "sourcePage": 112,
-      "category": "Perception",
-      "ability": "Wisdom",
-      "scope": "30-foot radius; Ongoing",
-      "progression": "1 Sense/Rank",
-      "summary": "Detects a defined category of hidden or unusual phenomenon."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.sixth-sense",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 112,
+            "importId": "core.attribute.sixth-sense"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/growth.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 112.</p><p><strong>Attribute Cost:</strong> 5 Points/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; 1 minute. <strong>Progression:</strong> Grow and/or Shrink by 1 Size/Rank.</p><p><strong>Rules Summary:</strong> Temporarily increases or decreases the character&#39;s size.</p>",
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.size-change",
+        "sourcePage": 112,
+        "importId": "core.attribute.size-change",
+        "category": "Form",
+        "progression": "Grow and/or Shrink by 1 Size/Rank"
+      },
       "name": "Size Change",
-      "img": "icons/svg/growth.svg",
-      "cost": 5,
-      "sourcePage": 112,
-      "category": "Form",
-      "ability": "Constitution",
-      "scope": "Self only; 1 minute",
-      "progression": "Grow and/or Shrink by 1 Size/Rank",
-      "summary": "Temporarily increases or decreases the character's size."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.size-change",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 112,
+            "importId": "core.attribute.size-change"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/growth.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 112.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> Self only; 1 minute. <strong>Progression:</strong> Grow or shrink by 1 Size/Rank.</p><p><strong>Rules Summary:</strong> A version of Size Change limited to either growing or shrinking.</p>",
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.size-change-lesser",
+        "sourcePage": 112,
+        "importId": "core.attribute.size-change-lesser",
+        "category": "Form",
+        "progression": "Grow or shrink by 1 Size/Rank"
+      },
       "name": "Size Change - Lesser",
-      "img": "icons/svg/growth.svg",
-      "cost": 4,
-      "sourcePage": 112,
-      "category": "Form",
-      "ability": "Constitution",
-      "scope": "Self only; 1 minute",
-      "progression": "Grow or shrink by 1 Size/Rank",
-      "summary": "A version of Size Change limited to either growing or shrinking."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.size-change-lesser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 112,
+            "importId": "core.attribute.size-change-lesser"
+          }
+        }
+      }
     },
     {
-      "name": "Skill Proficiency",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/book.svg",
-      "cost": 1,
-      "sourcePage": 113,
-      "category": "Proficiency",
-      "ability": "Variable",
-      "scope": "Self only; Permanent",
-      "progression": "1 Skill Proficiency/Rank",
-      "summary": "Adds one selected Skill proficiency per Rank."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 113.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Variable. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> 1 Skill Proficiency/Rank.</p><p><strong>Rules Summary:</strong> Adds one selected Skill proficiency per Rank.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.skill-proficiency",
+        "sourcePage": 113,
+        "importId": "core.attribute.skill-proficiency",
+        "category": "Proficiency",
+        "progression": "1 Skill Proficiency/Rank"
+      },
+      "name": "Skill Proficiency",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.skill-proficiency",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 113,
+            "importId": "core.attribute.skill-proficiency"
+          }
+        }
+      }
     },
     {
-      "name": "Special Movement",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/wingfoot.svg",
-      "cost": 1,
-      "sourcePage": 116,
-      "category": "Movement",
-      "ability": "Dexterity",
-      "scope": "Self only; Ongoing",
-      "progression": "1 Movement/Rank",
-      "summary": "Adds special movement options such as climbing, wall-crawling, swinging, or similar mobility."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 116.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Dexterity. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> 1 Movement/Rank.</p><p><strong>Rules Summary:</strong> Adds special movement options such as climbing, wall-crawling, swinging, or similar mobility.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.special-movement",
+        "sourcePage": 116,
+        "importId": "core.attribute.special-movement",
+        "category": "Movement",
+        "progression": "1 Movement/Rank"
+      },
+      "name": "Special Movement",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.special-movement",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 116,
+            "importId": "core.attribute.special-movement"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/magic-swirl.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 116.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Situational use. <strong>Progression:</strong> 1 Spell Modification Each Session/Rank.</p><p><strong>Rules Summary:</strong> Allows limited spell modification or amplification during play.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.spell-amplification",
+        "sourcePage": 116,
+        "importId": "core.attribute.spell-amplification",
+        "category": "Spell",
+        "progression": "1 Spell Modification Each Session/Rank"
+      },
       "name": "Spell Amplification",
-      "img": "icons/svg/magic-swirl.svg",
-      "cost": 1,
-      "sourcePage": 116,
-      "category": "Spell",
-      "ability": "-",
-      "scope": "Self only; Situational use",
-      "progression": "1 Spell Modification Each Session/Rank",
-      "summary": "Allows limited spell modification or amplification during play."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.spell-amplification",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 116,
+            "importId": "core.attribute.spell-amplification"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/magic-swirl.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 117.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> Variable. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Represents a spell effect possessed as an innate or unusual ability.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.spell-like-ability",
+        "sourcePage": 117,
+        "importId": "core.attribute.spell-like-ability",
+        "category": "Spell",
+        "progression": "Descriptive"
+      },
       "name": "Spell-Like Ability",
-      "img": "icons/svg/magic-swirl.svg",
-      "cost": 1,
-      "sourcePage": 117,
-      "category": "Spell",
-      "ability": "Intelligence",
-      "scope": "Variable",
-      "progression": "Descriptive",
-      "summary": "Represents a spell effect possessed as an innate or unusual ability."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.spell-like-ability",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 117,
+            "importId": "core.attribute.spell-like-ability"
+          }
+        }
+      }
     },
     {
-      "name": "Supersense",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/eye.svg",
-      "cost": 1,
-      "sourcePage": 118,
-      "category": "Perception",
-      "ability": "Wisdom",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Grants a sense beyond ordinary human capability."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 118.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Wisdom. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Grants a sense beyond ordinary human capability.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.supersense",
+        "sourcePage": 118,
+        "importId": "core.attribute.supersense",
+        "category": "Perception",
+        "progression": "Descriptive"
+      },
+      "name": "Supersense",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.supersense",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 118,
+            "importId": "core.attribute.supersense"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/brain.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 118.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> 1 target; 10-foot radius; 1 minute. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Reads, transmits, and at higher Ranks probes or alters thoughts and memories.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.telepathy",
+        "sourcePage": 118,
+        "importId": "core.attribute.telepathy",
+        "category": "Mental",
+        "progression": "Descriptive"
+      },
       "name": "Telepathy",
-      "img": "icons/svg/brain.svg",
-      "cost": 3,
-      "sourcePage": 118,
-      "category": "Mental",
-      "ability": "Intelligence",
-      "scope": "1 target; 10-foot radius; 1 minute",
-      "progression": "Descriptive",
-      "summary": "Reads, transmits, and at higher Ranks probes or alters thoughts and memories."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.telepathy",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 118,
+            "importId": "core.attribute.telepathy"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/brain.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 119.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> 1 target; 10-foot radius; 1 minute. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> A narrower form of Telepathy restricted to a defined target category.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.telepathy-lesser",
+        "sourcePage": 119,
+        "importId": "core.attribute.telepathy-lesser",
+        "category": "Mental",
+        "progression": "Descriptive"
+      },
       "name": "Telepathy - Lesser",
-      "img": "icons/svg/brain.svg",
-      "cost": 1,
-      "sourcePage": 119,
-      "category": "Mental",
-      "ability": "Intelligence",
-      "scope": "1 target; 10-foot radius; 1 minute",
-      "progression": "Descriptive",
-      "summary": "A narrower form of Telepathy restricted to a defined target category."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.telepathy-lesser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 119,
+            "importId": "core.attribute.telepathy-lesser"
+          }
+        }
+      }
     },
     {
-      "name": "Teleport",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/teleport.svg",
-      "cost": 3,
-      "sourcePage": 119,
-      "category": "Movement",
-      "ability": "Intelligence",
-      "scope": "Self; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Moves the character instantly between locations without crossing the space between."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 119.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Intelligence. <strong>Scope:</strong> Self; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Moves the character instantly between locations without crossing the space between.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.teleport",
+        "sourcePage": 119,
+        "importId": "core.attribute.teleport",
+        "category": "Movement",
+        "progression": "Descriptive"
+      },
+      "name": "Teleport",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.teleport",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 119,
+            "importId": "core.attribute.teleport"
+          }
+        }
+      }
     },
     {
-      "name": "Tool Proficiency",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/anvil.svg",
-      "cost": 1,
-      "sourcePage": 119,
-      "category": "Proficiency",
-      "ability": "Variable",
-      "scope": "Self only; Permanent",
-      "progression": "1 Tool Proficiency/Rank",
-      "summary": "Adds one selected tool proficiency per Rank."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 119.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Variable. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> 1 Tool Proficiency/Rank.</p><p><strong>Rules Summary:</strong> Adds one selected tool proficiency per Rank.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.tool-proficiency",
+        "sourcePage": 119,
+        "importId": "core.attribute.tool-proficiency",
+        "category": "Proficiency",
+        "progression": "1 Tool Proficiency/Rank"
+      },
+      "name": "Tool Proficiency",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.tool-proficiency",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 119,
+            "importId": "core.attribute.tool-proficiency"
+          }
+        }
+      }
     },
     {
-      "name": "Tough",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/upgrade.svg",
-      "cost": 1,
-      "sourcePage": 120,
-      "category": "Ability",
-      "ability": "-",
-      "scope": "Self only; Permanent",
-      "progression": "Hit Point Maximum Increased By +10%/Rank",
-      "summary": "Raises the character's maximum Hit Points."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 120.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> Hit Point Maximum Increased By +10%/Rank.</p><p><strong>Rules Summary:</strong> Raises the character&#39;s maximum Hit Points.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.tough",
+        "sourcePage": 120,
+        "importId": "core.attribute.tough",
+        "category": "Ability",
+        "progression": "Hit Point Maximum Increased By +10%/Rank"
+      },
+      "name": "Tough",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.tough",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 120,
+            "importId": "core.attribute.tough"
+          }
+        }
+      }
     },
     {
-      "name": "Transfer",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/cycle.svg",
-      "cost": 3,
-      "sourcePage": 120,
-      "category": "Power",
-      "ability": "Constitution",
-      "scope": "1 target; Touch; 1 minute",
-      "progression": "Transfer Attributes at a maximum Rank",
-      "summary": "Temporarily gives one of the character's Attributes to another target."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 120.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> Constitution. <strong>Scope:</strong> 1 target; Touch; 1 minute. <strong>Progression:</strong> Transfer Attributes at a maximum Rank.</p><p><strong>Rules Summary:</strong> Temporarily gives one of the character&#39;s Attributes to another target.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.transfer",
+        "sourcePage": 120,
+        "importId": "core.attribute.transfer",
+        "category": "Power",
+        "progression": "Transfer Attributes at a maximum Rank"
+      },
+      "name": "Transfer",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.transfer",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 120,
+            "importId": "core.attribute.transfer"
+          }
+        }
+      }
     },
     {
-      "name": "Tunnelling",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/cave.svg",
-      "cost": 1,
-      "sourcePage": 120,
-      "category": "Movement",
-      "ability": "Strength",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Allows the character to move through earth, stone, or similar material."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 120.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Strength. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Allows the character to move through earth, stone, or similar material.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.tunnelling",
+        "sourcePage": 120,
+        "importId": "core.attribute.tunnelling",
+        "category": "Movement",
+        "progression": "Descriptive"
+      },
+      "name": "Tunnelling",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.tunnelling",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 120,
+            "importId": "core.attribute.tunnelling"
+          }
+        }
+      }
     },
     {
-      "name": "Undetectable",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/invisible.svg",
-      "cost": 2,
-      "sourcePage": 120,
-      "category": "Stealth",
-      "ability": "Dexterity",
-      "scope": "Self only; Ongoing",
-      "progression": "1 Sense or Technique/Rank",
-      "summary": "Makes the character difficult or impossible to detect by selected senses or techniques."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 120.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank. <strong>Relevant Ability:</strong> Dexterity. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> 1 Sense or Technique/Rank.</p><p><strong>Rules Summary:</strong> Makes the character difficult or impossible to detect by selected senses or techniques.</p>",
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.undetectable",
+        "sourcePage": 120,
+        "importId": "core.attribute.undetectable",
+        "category": "Stealth",
+        "progression": "1 Sense or Technique/Rank"
+      },
+      "name": "Undetectable",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.undetectable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 120,
+            "importId": "core.attribute.undetectable"
+          }
+        }
+      }
     },
     {
-      "name": "Unique Attribute",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/star.svg",
-      "cost": 0,
-      "costLabel": "1-10 Points/Rank",
-      "sourcePage": 120,
-      "category": "Unique",
-      "ability": "Variable",
-      "scope": "Variable",
-      "progression": "Descriptive",
-      "summary": "Covers custom abilities whose cost and effects are set with DM approval."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 120.</p><p><strong>Attribute Cost:</strong> 1-10 Points/Rank. <strong>Relevant Ability:</strong> Variable. <strong>Scope:</strong> Variable. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Covers custom abilities whose cost and effects are set with DM approval.</p>",
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.unique-attribute",
+        "sourcePage": 120,
+        "importId": "core.attribute.unique-attribute",
+        "category": "Unique",
+        "progression": "Descriptive"
+      },
+      "name": "Unique Attribute",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.unique-attribute",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 120,
+            "importId": "core.attribute.unique-attribute"
+          }
+        }
+      }
     },
     {
-      "name": "Unknown Power",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/mystery-man.svg",
-      "cost": 0,
-      "costLabel": "Variable",
-      "sourcePage": 121,
-      "category": "Power",
-      "ability": "Variable",
-      "scope": "Variable",
-      "progression": "Special",
-      "summary": "Represents a hidden or unrevealed power whose exact function is intentionally unknown."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 121.</p><p><strong>Attribute Cost:</strong> Variable. <strong>Relevant Ability:</strong> Variable. <strong>Scope:</strong> Variable. <strong>Progression:</strong> Special.</p><p><strong>Rules Summary:</strong> Represents a hidden or unrevealed power whose exact function is intentionally unknown.</p>",
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.unknown-power",
+        "sourcePage": 121,
+        "importId": "core.attribute.unknown-power",
+        "category": "Power",
+        "progression": "Special"
+      },
+      "name": "Unknown Power",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.unknown-power",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 121,
+            "importId": "core.attribute.unknown-power"
+          }
+        }
+      }
     },
     {
-      "name": "Water Speed",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/water-drop.svg",
-      "cost": 1,
-      "sourcePage": 121,
-      "category": "Movement",
-      "ability": "Dexterity",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Improves swimming or aquatic movement speed."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 121.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Dexterity. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Improves swimming or aquatic movement speed.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.water-speed",
+        "sourcePage": 121,
+        "importId": "core.attribute.water-speed",
+        "category": "Movement",
+        "progression": "Descriptive"
+      },
+      "name": "Water Speed",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.water-speed",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 121,
+            "importId": "core.attribute.water-speed"
+          }
+        }
+      }
     },
     {
-      "name": "Wealth",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/coins.svg",
-      "cost": 3,
-      "sourcePage": 121,
-      "category": "Resource",
-      "ability": "-",
-      "scope": "Self only; Ongoing",
-      "progression": "Descriptive",
-      "summary": "Provides unusual financial resources, income, assets, or purchasing power."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 121.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Self only; Ongoing. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Provides unusual financial resources, income, assets, or purchasing power.</p>",
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.wealth",
+        "sourcePage": 121,
+        "importId": "core.attribute.wealth",
+        "category": "Resource",
+        "progression": "Descriptive"
+      },
+      "name": "Wealth",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.wealth",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 121,
+            "importId": "core.attribute.wealth"
+          }
+        }
+      }
     },
     {
+      "type": "attribute",
+      "folder": "Attributes",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 124.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> -. <strong>Scope:</strong> Attacked melee target; Instantaneous. <strong>Progression:</strong> +1d4 Damage/Rank or Special.</p><p><strong>Rules Summary:</strong> Builds a natural, supernatural, or item-based attack with damage and weapon options.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.weapon",
+        "sourcePage": 124,
+        "importId": "core.attribute.weapon",
+        "category": "Combat",
+        "progression": "+1d4 Damage/Rank or Special"
+      },
       "name": "Weapon",
-      "img": "icons/svg/sword.svg",
-      "cost": 1,
-      "sourcePage": 124,
-      "category": "Combat",
-      "ability": "-",
-      "scope": "Attacked melee target; Instantaneous",
-      "progression": "+1d4 Damage/Rank or Special",
-      "summary": "Builds a natural, supernatural, or item-based attack with damage and weapon options."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.weapon",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 124,
+            "importId": "core.attribute.weapon"
+          }
+        }
+      }
     },
     {
-      "name": "Weapon Proficiency",
+      "type": "attribute",
+      "folder": "Attributes",
       "img": "icons/svg/sword.svg",
-      "cost": 1,
-      "sourcePage": 130,
-      "category": "Proficiency",
-      "ability": "Variable",
-      "scope": "Self only; Permanent",
-      "progression": "Descriptive",
-      "summary": "Adds proficiency with selected weapon groups or specific weapons."
+      "system": {
+        "rank": 1,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank. <strong>Relevant Ability:</strong> Variable. <strong>Scope:</strong> Self only; Permanent. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Adds proficiency with selected weapon groups or specific weapons.</p>",
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.attribute.weapon-proficiency",
+        "sourcePage": 130,
+        "importId": "core.attribute.weapon-proficiency",
+        "category": "Proficiency",
+        "progression": "Descriptive"
+      },
+      "name": "Weapon Proficiency",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.attribute.weapon-proficiency",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.attribute.weapon-proficiency"
+          }
+        }
+      }
+    },
+    {
+      "name": "Area",
+      "type": "enhancement",
+      "folder": "Attribute Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 143.</p><p><strong>Category:</strong> Attribute Enhancement. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 0-6 assignments.</p><p><strong>Rules Summary:</strong> Expands an Attribute into a radius of effect, with larger areas requiring more assignments.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.enhancement.area",
+        "sourcePage": 143,
+        "importId": "core.enhancement.area",
+        "appliesTo": "Attribute",
+        "category": "Attribute Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.enhancement.area",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 143,
+            "importId": "core.enhancement.area"
+          }
+        }
+      }
+    },
+    {
+      "name": "Duration",
+      "type": "enhancement",
+      "folder": "Attribute Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 143.</p><p><strong>Category:</strong> Attribute Enhancement. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 0-10 assignments.</p><p><strong>Rules Summary:</strong> Extends how long an Attribute&#39;s effect remains active after use, from minutes up to permanent effects with DM approval.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.enhancement.duration",
+        "sourcePage": 143,
+        "importId": "core.enhancement.duration",
+        "appliesTo": "Attribute",
+        "category": "Attribute Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.enhancement.duration",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 143,
+            "importId": "core.enhancement.duration"
+          }
+        }
+      }
+    },
+    {
+      "name": "Potent",
+      "type": "enhancement",
+      "folder": "Attribute Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 143.</p><p><strong>Category:</strong> Attribute Enhancement. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 0-3 assignments.</p><p><strong>Rules Summary:</strong> Lets a Rank 1 Attribute keep a lower effective Rank after Limiters would otherwise raise its effect too far.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.enhancement.potent",
+        "sourcePage": 143,
+        "importId": "core.enhancement.potent",
+        "appliesTo": "Attribute",
+        "category": "Attribute Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.enhancement.potent",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 143,
+            "importId": "core.enhancement.potent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Range",
+      "type": "enhancement",
+      "folder": "Attribute Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 143.</p><p><strong>Category:</strong> Attribute Enhancement. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 0-6 assignments.</p><p><strong>Rules Summary:</strong> Lets an Attribute originate away from the character, from touch range to city-scale distances.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.enhancement.range",
+        "sourcePage": 143,
+        "importId": "core.enhancement.range",
+        "appliesTo": "Attribute",
+        "category": "Attribute Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.enhancement.range",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 143,
+            "importId": "core.enhancement.range"
+          }
+        }
+      }
+    },
+    {
+      "name": "Targets",
+      "type": "enhancement",
+      "folder": "Attribute Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 143.</p><p><strong>Category:</strong> Attribute Enhancement. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 0-6 assignments.</p><p><strong>Rules Summary:</strong> Allows an Attribute to affect multiple people or objects at the same time.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.enhancement.targets",
+        "sourcePage": 143,
+        "importId": "core.enhancement.targets",
+        "appliesTo": "Attribute",
+        "category": "Attribute Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.enhancement.targets",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 143,
+            "importId": "core.enhancement.targets"
+          }
+        }
+      }
+    },
+    {
+      "name": "Activation",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 145.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires preparation before the Attribute can be used, ranging from one round to one hour.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.activation",
+        "sourcePage": 145,
+        "importId": "core.limiter.activation",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.activation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 145,
+            "importId": "core.limiter.activation"
+          }
+        }
+      }
+    },
+    {
+      "name": "Assisted",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 145.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires one or more special assistants to be present for the Attribute to activate or continue.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.assisted",
+        "sourcePage": 145,
+        "importId": "core.limiter.assisted",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.assisted",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 145,
+            "importId": "core.limiter.assisted"
+          }
+        }
+      }
+    },
+    {
+      "name": "Backlash",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 145.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Creates a harmful side effect when the Attribute fails or misses by the specified margin.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.backlash",
+        "sourcePage": 145,
+        "importId": "core.limiter.backlash",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.backlash",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 145,
+            "importId": "core.limiter.backlash"
+          }
+        }
+      }
+    },
+    {
+      "name": "Charges",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 145.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Limits the Attribute to a small number of uses each day or session.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.charges",
+        "sourcePage": 145,
+        "importId": "core.limiter.charges",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.charges",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 145,
+            "importId": "core.limiter.charges"
+          }
+        }
+      }
+    },
+    {
+      "name": "Concentration",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires ongoing focus to keep a non-instant Attribute active.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.concentration",
+        "sourcePage": 146,
+        "importId": "core.limiter.concentration",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.concentration",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.concentration"
+          }
+        }
+      }
+    },
+    {
+      "name": "Consumable",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Consumes a special focus, reagent, or offering whenever the Attribute is used.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.consumable",
+        "sourcePage": 146,
+        "importId": "core.limiter.consumable",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.consumable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.consumable"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dependent",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Prevents the Attribute from taking effect until one or more other Attributes are active.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.dependent",
+        "sourcePage": 146,
+        "importId": "core.limiter.dependent",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.dependent",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.dependent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deplete",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Spends Energy to activate or maintain the Attribute when optional Energy rules are used.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.deplete",
+        "sourcePage": 146,
+        "importId": "core.limiter.deplete",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.deplete",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.deplete"
+          }
+        }
+      }
+    },
+    {
+      "name": "Detectable",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Makes the Attribute&#39;s use noticeable or traceable by specified detection methods.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.detectable",
+        "sourcePage": 146,
+        "importId": "core.limiter.detectable",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.detectable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.detectable"
+          }
+        }
+      }
+    },
+    {
+      "name": "Emotional",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Restricts use to moments of significant, strong, or extreme emotional investment.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.emotional",
+        "sourcePage": 146,
+        "importId": "core.limiter.emotional",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.emotional",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.emotional"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 147.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Limits the Attribute to a specific setting, condition, or situational trigger.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.environmental",
+        "sourcePage": 147,
+        "importId": "core.limiter.environmental",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.environmental",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 147,
+            "importId": "core.limiter.environmental"
+          }
+        }
+      }
+    },
+    {
+      "name": "Equipment",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 147.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires tools, furnishings, materials, or accessories that aid the Attribute without embodying it.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.equipment",
+        "sourcePage": 147,
+        "importId": "core.limiter.equipment",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.equipment",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 147,
+            "importId": "core.limiter.equipment"
+          }
+        }
+      }
+    },
+    {
+      "name": "Imbue",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 147.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Lets the character grant the Attribute&#39;s use to others for a dramatic scene, usually with Charges.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.imbue",
+        "sourcePage": 147,
+        "importId": "core.limiter.imbue",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.imbue",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 147,
+            "importId": "core.limiter.imbue"
+          }
+        }
+      }
+    },
+    {
+      "name": "Irreversible",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 147.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Makes transformation-style Attributes difficult or slow to undo.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.irreversible",
+        "sourcePage": 147,
+        "importId": "core.limiter.irreversible",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.irreversible",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 147,
+            "importId": "core.limiter.irreversible"
+          }
+        }
+      }
+    },
+    {
+      "name": "Maximum",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Forces the Attribute to function at maximum effective strength instead of allowing lower output.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.maximum",
+        "sourcePage": 148,
+        "importId": "core.limiter.maximum",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.maximum",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.maximum"
+          }
+        }
+      }
+    },
+    {
+      "name": "Object",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Limits an Item-contained Attribute so it benefits the object more than its user.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.object",
+        "sourcePage": 148,
+        "importId": "core.limiter.object",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.object",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.object"
+          }
+        }
+      }
+    },
+    {
+      "name": "Permanent",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Keeps the Attribute always active when that constancy is inconvenient.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.permanent",
+        "sourcePage": 148,
+        "importId": "core.limiter.permanent",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.permanent",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.permanent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Recovery",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires a rest period after using an ongoing Attribute before it can function again.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.recovery",
+        "sourcePage": 148,
+        "importId": "core.limiter.recovery",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.recovery",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.recovery"
+          }
+        }
+      }
+    },
+    {
+      "name": "Semi-Permanent",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Keeps the Attribute normally active but allows temporary suppression by spending Energy.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.semi-permanent",
+        "sourcePage": 148,
+        "importId": "core.limiter.semi-permanent",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.semi-permanent",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.semi-permanent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unique Limiter",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Covers custom restrictions not otherwise listed, with severity set by player and DM agreement.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.unique-limiter",
+        "sourcePage": 148,
+        "importId": "core.limiter.unique-limiter",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.unique-limiter",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.unique-limiter"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unpredictable",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires an Ability check or creates unreliable results when the Attribute is used.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.unpredictable",
+        "sourcePage": 148,
+        "importId": "core.limiter.unpredictable",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.unpredictable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.unpredictable"
+          }
+        }
+      }
+    },
+    {
+      "name": "Accurate",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 125.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Grants advantage on attack rolls with the Weapon.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.accurate",
+        "sourcePage": 125,
+        "importId": "core.weapon-enhancement.accurate",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.accurate",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 125,
+            "importId": "core.weapon-enhancement.accurate"
+          }
+        }
+      }
+    },
+    {
+      "name": "Area",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 125.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-4.</p><p><strong>Rules Summary:</strong> Turns the Weapon into an area attack with larger radii at higher assignments.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.area",
+        "sourcePage": 125,
+        "importId": "core.weapon-enhancement.area",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.area",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 125,
+            "importId": "core.weapon-enhancement.area"
+          }
+        }
+      }
+    },
+    {
+      "name": "Aura",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 125.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Automatically affects creatures that touch the user rather than requiring a normal attack action.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.aura",
+        "sourcePage": 125,
+        "importId": "core.weapon-enhancement.aura",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.aura",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 125,
+            "importId": "core.weapon-enhancement.aura"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blight",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 125.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Can greatly increase or reduce damage based on a Constitution save.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.blight",
+        "sourcePage": 125,
+        "importId": "core.weapon-enhancement.blight",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.blight",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 125,
+            "importId": "core.weapon-enhancement.blight"
+          }
+        }
+      }
+    },
+    {
+      "name": "Contact",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 125.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-2.</p><p><strong>Rules Summary:</strong> Lets the Weapon deliver its effect through skin contact.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.contact",
+        "sourcePage": 125,
+        "importId": "core.weapon-enhancement.contact",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.contact",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 125,
+            "importId": "core.weapon-enhancement.contact"
+          }
+        }
+      }
+    },
+    {
+      "name": "Contagious",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 126.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Passes the Weapon&#39;s damage or effects to others who touch the affected target unless resisted.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.contagious",
+        "sourcePage": 126,
+        "importId": "core.weapon-enhancement.contagious",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.contagious",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 126,
+            "importId": "core.weapon-enhancement.contagious"
+          }
+        }
+      }
+    },
+    {
+      "name": "Continuing",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 126.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1+.</p><p><strong>Rules Summary:</strong> Adds lingering damage over rounds, hours, or days after the initial successful attack.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.continuing",
+        "sourcePage": 126,
+        "importId": "core.weapon-enhancement.continuing",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.continuing",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 126,
+            "importId": "core.weapon-enhancement.continuing"
+          }
+        }
+      }
+    },
+    {
+      "name": "Drain",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 126.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Reduces a specified Ability Score in addition to any damage.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.drain",
+        "sourcePage": 126,
+        "importId": "core.weapon-enhancement.drain",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.drain",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 126,
+            "importId": "core.weapon-enhancement.drain"
+          }
+        }
+      }
+    },
+    {
+      "name": "Enervation",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 126.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1+.</p><p><strong>Rules Summary:</strong> Drains Energy from the target in addition to any damage.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.enervation",
+        "sourcePage": 126,
+        "importId": "core.weapon-enhancement.enervation",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.enervation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 126,
+            "importId": "core.weapon-enhancement.enervation"
+          }
+        }
+      }
+    },
+    {
+      "name": "Flare",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Overloads a sense, such as sight or hearing, unless the target resists.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.flare",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.flare",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.flare",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.flare"
+          }
+        }
+      }
+    },
+    {
+      "name": "Flexible",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Allows a whip-like or extendible attack to trip or disarm instead of dealing damage.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.flexible",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.flexible",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.flexible",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.flexible"
+          }
+        }
+      }
+    },
+    {
+      "name": "Homing",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Lets a narrowly missed projectile or burst return for one more attempt next round.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.homing",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.homing",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.homing",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.homing"
+          }
+        }
+      }
+    },
+    {
+      "name": "Incapacitating",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 2 or 4.</p><p><strong>Rules Summary:</strong> Can immobilise a target with effects such as sleep, paralysis, or petrification.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.incapacitating",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.incapacitating",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.incapacitating",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.incapacitating"
+          }
+        }
+      }
+    },
+    {
+      "name": "Inconspicuous",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 3.</p><p><strong>Rules Summary:</strong> Hides the attack&#39;s visible origin and may enable surprise.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.inconspicuous",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.inconspicuous",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.inconspicuous",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.inconspicuous"
+          }
+        }
+      }
+    },
+    {
+      "name": "Incurable",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Makes wounds harder or impossible to heal until special conditions are met.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.incurable",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.incurable",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.incurable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.incurable"
+          }
+        }
+      }
+    },
+    {
+      "name": "Indirect",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Allows ranged attacks to arc over cover when the target&#39;s location is known.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.indirect",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.indirect",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.indirect",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.indirect"
+          }
+        }
+      }
+    },
+    {
+      "name": "Irritant",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Distracts or partially blinds the target, imposing disadvantage if they fail to resist.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.irritant",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.irritant",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.irritant",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.irritant"
+          }
+        }
+      }
+    },
+    {
+      "name": "Linked",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Attaches this Weapon to a master Weapon so it hits automatically when the master attack succeeds.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.linked",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.linked",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.linked",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.linked"
+          }
+        }
+      }
+    },
+    {
+      "name": "Multidimensional",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 127.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Allows the Weapon to affect targets across dimensional or incorporeal boundaries.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.multidimensional",
+        "sourcePage": 127,
+        "importId": "core.weapon-enhancement.multidimensional",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.multidimensional",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 127,
+            "importId": "core.weapon-enhancement.multidimensional"
+          }
+        }
+      }
+    },
+    {
+      "name": "Penetrating",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-2.</p><p><strong>Rules Summary:</strong> Reduces the Armour Class benefit of physical armour or hide.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.penetrating",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.penetrating",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.penetrating",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.penetrating"
+          }
+        }
+      }
+    },
+    {
+      "name": "Quake",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Creates a linear ground fissure or shock wave under a target.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.quake",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.quake",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.quake",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.quake"
+          }
+        }
+      }
+    },
+    {
+      "name": "Range",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-4.</p><p><strong>Rules Summary:</strong> Extends a Weapon beyond melee reach, from 10 feet to 1,000 feet.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.range",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.range",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.range",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.range"
+          }
+        }
+      }
+    },
+    {
+      "name": "Reach",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Extends melee reach and can let the wielder strike first against shorter melee weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.reach",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.reach",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.reach",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.reach"
+          }
+        }
+      }
+    },
+    {
+      "name": "Selective",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Lets an Area, Aura, or Spreading Weapon choose who is affected.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.selective",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.selective",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.selective",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.selective"
+          }
+        }
+      }
+    },
+    {
+      "name": "Spreading",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1+.</p><p><strong>Rules Summary:</strong> Lets the attack spread to additional nearby targets in a line, cone, or spray.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.spreading",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.spreading",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.spreading",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.spreading"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tangle",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1+.</p><p><strong>Rules Summary:</strong> Restrains targets in physical entanglements that must be damaged or broken.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.tangle",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.tangle",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.tangle",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.tangle"
+          }
+        }
+      }
+    },
+    {
+      "name": "Targetted",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Doubles damage and selected effects against a chosen individual, group, or common category.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.targetted",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.targetted",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.targetted",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.targetted"
+          }
+        }
+      }
+    },
+    {
+      "name": "Trap",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 128.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Places the Weapon as a waiting trap that triggers later.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.trap",
+        "sourcePage": 128,
+        "importId": "core.weapon-enhancement.trap",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.trap",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 128,
+            "importId": "core.weapon-enhancement.trap"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unique",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 129.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1+.</p><p><strong>Rules Summary:</strong> Covers a custom Weapon benefit approved and priced by the DM.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.unique",
+        "sourcePage": 129,
+        "importId": "core.weapon-enhancement.unique",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.unique",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 129,
+            "importId": "core.weapon-enhancement.unique"
+          }
+        }
+      }
+    },
+    {
+      "name": "Vampiric",
+      "type": "enhancement",
+      "folder": "Weapon Enhancement",
+      "img": "icons/svg/upgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 129.</p><p><strong>Category:</strong> Weapon Enhancement. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 2 or 4.</p><p><strong>Rules Summary:</strong> Transfers lost Hit Points, Energy, or Ability values to the attacker for a short time.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-enhancement.vampiric",
+        "sourcePage": 129,
+        "importId": "core.weapon-enhancement.vampiric",
+        "appliesTo": "Weapon",
+        "category": "Weapon Enhancement"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-enhancement.vampiric",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 129,
+            "importId": "core.weapon-enhancement.vampiric"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ammo",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 129.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Limits the Weapon to a small amount of carried ammunition before it must be replenished.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.ammo",
+        "sourcePage": 129,
+        "importId": "core.weapon-limiter.ammo",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.ammo",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 129,
+            "importId": "core.weapon-limiter.ammo"
+          }
+        }
+      }
+    },
+    {
+      "name": "Exclusive",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Restricts the Weapon to a specified category, group, or individual target.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.exclusive",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.exclusive",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.exclusive",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.exclusive"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hands",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Requires two appropriately sized hands or appendages to use the Weapon properly.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.hands",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.hands",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.hands",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.hands"
+          }
+        }
+      }
+    },
+    {
+      "name": "Inaccurate",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Imposes disadvantage on attack rolls with the Weapon.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.inaccurate",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.inaccurate",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.inaccurate",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.inaccurate"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ingest",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Requires the Weapon&#39;s substance to be swallowed before it affects the target.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.ingest",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.ingest",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.ingest",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.ingest"
+          }
+        }
+      }
+    },
+    {
+      "name": "Non-Penetrating",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Makes the Weapon poor against armour or heavy clothing, increasing the defender&#39;s AC.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.non-penetrating",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.non-penetrating",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.non-penetrating",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.non-penetrating"
+          }
+        }
+      }
+    },
+    {
+      "name": "Save",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 2 or 4.</p><p><strong>Rules Summary:</strong> Replaces the attack roll with a target Constitution or Dexterity save.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.save",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.save",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.save",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.save"
+          }
+        }
+      }
+    },
+    {
+      "name": "Toxic",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Only damages living targets and can sometimes be countered by simple precautions.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.toxic",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.toxic",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.toxic",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.toxic"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unique",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1+.</p><p><strong>Rules Summary:</strong> Covers a custom Weapon restriction approved and priced by the DM.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.unique",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.unique",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.unique",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.unique"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unreliable",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Makes the Weapon fail or malfunction on a natural 1 until a condition is met.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.unreliable",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.unreliable",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.unreliable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.unreliable"
+          }
+        }
+      }
     }
   ]
 }

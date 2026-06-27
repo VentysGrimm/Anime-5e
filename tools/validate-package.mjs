@@ -58,6 +58,50 @@ if (!manifest.compatibility || manifest.compatibility.minimum !== "14") {
   throw new Error("Foundry v14 minimum compatibility is not declared.");
 }
 
+function collectSourceBackedPacks(relativePath, seen = new Set()) {
+  if (seen.has(relativePath)) return new Set();
+  seen.add(relativePath);
+
+  const source = readJson(relativePath);
+  const packs = new Set(source.pack ? [source.pack] : []);
+
+  for (const includePath of source.includes ?? []) {
+    for (const pack of collectSourceBackedPacks(includePath, seen)) {
+      packs.add(pack);
+    }
+  }
+
+  return packs;
+}
+
+const sourceBackedPacks = collectSourceBackedPacks("data/core-compendiums.json");
+const generatedPackPaths = [];
+
+for (const pack of manifest.packs ?? []) {
+  if (!pack.name) throw new Error("Manifest pack is missing a name.");
+  if (!pack.path) throw new Error(`Manifest pack "${pack.name}" is missing a path.`);
+
+  const normalizedPath = path.normalize(pack.path);
+  if (path.isAbsolute(pack.path) || normalizedPath.startsWith("..")) {
+    throw new Error(`Manifest pack "${pack.name}" must use a relative package path: ${pack.path}`);
+  }
+
+  const absolutePackPath = path.join(root, pack.path);
+  const packId = `${manifest.id}.${pack.name}`;
+  if (!fs.existsSync(absolutePackPath)) {
+    if (sourceBackedPacks.has(packId)) {
+      generatedPackPaths.push(pack.path);
+      continue;
+    }
+
+    throw new Error(`Manifest pack path does not exist: ${pack.name} -> ${pack.path}`);
+  }
+
+  if (!fs.statSync(absolutePackPath).isDirectory()) {
+    throw new Error(`Manifest pack path is not a directory: ${pack.name} -> ${pack.path}`);
+  }
+}
+
 const packsById = new Map((manifest.packs ?? []).map((pack) => [`${manifest.id}.${pack.name}`, pack]));
 const manifestItemTypes = new Set(Object.keys(manifest.documentTypes?.Item ?? {}));
 const seenSourceIds = new Set();
@@ -207,6 +251,7 @@ const compendiumStats = validateCompendiumSource("data/core-compendiums.json");
 console.log(
   `Validated ${manifest.title} ${manifest.version}: ` +
   `${compendiumStats.jsonFiles} compendium JSON files, ` +
-  `${manifest.packs?.length ?? 0} packs, ` +
+  `${manifest.packs?.length ?? 0} packs` +
+  (generatedPackPaths.length ? ` (${generatedPackPaths.length} source-backed generated), ` : ", ") +
   `${compendiumStats.sourceDocuments} source documents.`
 );

@@ -26,3 +26,14 @@ Then create a world using the `Anime 5e` game system.
 - `tools/validate-package.mjs` performs a lightweight local sanity check.
 - `docs/issue-8-verification.md` records the first-pass source review and playable-system verification scope.
 
+## Compendium Packs
+
+The manifest declares Item compendium packs under `packs/`, but the LevelDB pack
+directories are not committed. A GM creates or updates those packs in Foundry via
+the **Anime 5e Core Compendiums** settings menu, which imports the source-backed
+JSON from `data/sources/core/`.
+
+`tools/validate-package.mjs` checks every declared pack path. A missing physical
+pack directory is accepted only when the pack has a matching source manifest in
+`data/core-compendiums.json`; otherwise validation fails with the missing path.
+

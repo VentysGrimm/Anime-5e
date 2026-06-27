@@ -2,382 +2,948 @@
   "pack": "anime5e.defects",
   "documentType": "Item",
   "sourceBook": "Anime 5E Fifth Edition Core Rules",
-  "sourceIdPrefix": "core.defect",
   "folders": [
     {
       "name": "Defects",
       "color": "#a05f5f"
     }
   ],
-  "documentTemplate": {
-    "type": "defect",
-    "folder": "Defects",
-    "img": "icons/svg/skull.svg",
-    "system": {
-      "rank": 1,
-      "cost": 0
-    }
-  },
-  "entries": [
+  "documents": [
     {
-      "name": "AC Penalty",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/shield.svg",
-      "sourcePage": 133,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "-1 Armour Class/Rank",
-      "summary": "Reduces Armour Class because the character is easier to hit, damage, or target."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 133.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> -1 Armour Class/Rank.</p><p><strong>Rules Summary:</strong> Reduces Armour Class because the character is easier to hit, damage, or target.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.ac-penalty",
+        "sourcePage": 133,
+        "importId": "core.defect.ac-penalty",
+        "pointsReturned": 1
+      },
+      "name": "AC Penalty",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.ac-penalty",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 133,
+            "importId": "core.defect.ac-penalty"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 133.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Binds the character to oversight, rules, reporting duties, or consequences from an authority.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.accountability",
+        "sourcePage": 133,
+        "importId": "core.defect.accountability",
+        "pointsReturned": 1
+      },
       "name": "Accountability",
-      "img": "icons/svg/book.svg",
-      "sourcePage": 133,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Binds the character to oversight, rules, reporting duties, or consequences from an authority."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.accountability",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 133,
+            "importId": "core.defect.accountability"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/skull.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 133.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> 1d8 Damage/Rank Per Round of Exposure.</p><p><strong>Rules Summary:</strong> Makes a defined substance, condition, or situation harmful to the character.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.bane",
+        "sourcePage": 133,
+        "importId": "core.defect.bane",
+        "pointsReturned": 2
+      },
       "name": "Bane",
-      "img": "icons/svg/skull.svg",
-      "sourcePage": 133,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "1d8 Damage/Rank Per Round of Exposure",
-      "summary": "Makes a defined substance, condition, or situation harmful to the character."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.bane",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 133,
+            "importId": "core.defect.bane"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 133.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Causes the character to lose control under a chosen trigger and act rashly or violently.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.blind-fury",
+        "sourcePage": 133,
+        "importId": "core.defect.blind-fury",
+        "pointsReturned": 2
+      },
       "name": "Blind Fury",
-      "img": "icons/svg/explosion.svg",
-      "sourcePage": 133,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "Causes the character to lose control under a chosen trigger and act rashly or violently."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.blind-fury",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 133,
+            "importId": "core.defect.blind-fury"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/skull.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 133.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Afflicts the character with a supernatural or narrative curse that regularly complicates play.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.cursed",
+        "sourcePage": 133,
+        "importId": "core.defect.cursed",
+        "pointsReturned": 2
+      },
       "name": "Cursed",
-      "img": "icons/svg/skull.svg",
-      "sourcePage": 133,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "Afflicts the character with a supernatural or narrative curse that regularly complicates play."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.cursed",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 133,
+            "importId": "core.defect.cursed"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 134.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Represents a reduced Ability Score caused by a defined source rather than normal aptitude.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.degraded",
+        "sourcePage": 134,
+        "importId": "core.defect.degraded",
+        "pointsReturned": 1
+      },
       "name": "Degraded",
-      "img": "icons/svg/downgrade.svg",
-      "sourcePage": 134,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Represents a reduced Ability Score caused by a defined source rather than normal aptitude."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.degraded",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 134,
+            "importId": "core.defect.degraded"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 134.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> -1 Proficiency Bonus/Rank.</p><p><strong>Rules Summary:</strong> Reduces the character&#39;s Proficiency Bonus and has broad balance impact.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.diminished-proficiency",
+        "sourcePage": 134,
+        "importId": "core.defect.diminished-proficiency",
+        "pointsReturned": 2
+      },
       "name": "Diminished Proficiency",
-      "img": "icons/svg/downgrade.svg",
-      "sourcePage": 134,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "-1 Proficiency Bonus/Rank",
-      "summary": "Reduces the character's Proficiency Bonus and has broad balance impact."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.diminished-proficiency",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 134,
+            "importId": "core.defect.diminished-proficiency"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 134.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Draws the character&#39;s attention away when a chosen trigger appears.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.easily-distracted",
+        "sourcePage": 134,
+        "importId": "core.defect.easily-distracted",
+        "pointsReturned": 1
+      },
       "name": "Easily Distracted",
-      "img": "icons/svg/eye.svg",
-      "sourcePage": 134,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Draws the character's attention away when a chosen trigger appears."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.easily-distracted",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 134,
+            "importId": "core.defect.easily-distracted"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/skull.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 134.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Hit Point Maximum Decreased By -10%/Rank.</p><p><strong>Rules Summary:</strong> Lowers the character&#39;s maximum Hit Points.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.fragile",
+        "sourcePage": 134,
+        "importId": "core.defect.fragile",
+        "pointsReturned": 1
+      },
       "name": "Fragile",
-      "img": "icons/svg/skull.svg",
-      "sourcePage": 134,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Hit Point Maximum Decreased By -10%/Rank",
-      "summary": "Lowers the character's maximum Hit Points."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.fragile",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 134,
+            "importId": "core.defect.fragile"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 134.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Makes the character widely recognized, watched, followed, or unable to keep a private life.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.hounded",
+        "sourcePage": 134,
+        "importId": "core.defect.hounded",
+        "pointsReturned": 2
+      },
       "name": "Hounded",
-      "img": "icons/svg/eye.svg",
-      "sourcePage": 134,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "Makes the character widely recognized, watched, followed, or unable to keep a private life."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.hounded",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 134,
+            "importId": "core.defect.hounded"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/cancel.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 134.</p><p><strong>Category:</strong> Serious Defect. <strong>Points:</strong> -3/-6/-9. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Limits or removes the character&#39;s ability to manipulate objects with hands or appendages.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.impaired-manipulation",
+        "sourcePage": 134,
+        "importId": "core.defect.impaired-manipulation",
+        "pointsReturned": 3
+      },
       "name": "Impaired Manipulation",
-      "img": "icons/svg/cancel.svg",
-      "sourcePage": 134,
-      "category": "Serious Defect",
-      "points": "-3/-6/-9",
-      "pointsReturned": 3,
-      "progression": "Descriptive",
-      "summary": "Limits or removes the character's ability to manipulate objects with hands or appendages."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.impaired-manipulation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 134,
+            "importId": "core.defect.impaired-manipulation"
+          }
+        }
+      }
     },
     {
-      "name": "Impaired Speech",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/silenced.svg",
-      "sourcePage": 135,
-      "category": "Serious Defect",
-      "points": "-3/-6/-9",
-      "pointsReturned": 3,
-      "progression": "Descriptive",
-      "summary": "Limits or removes the character's ability to communicate verbally."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 135.</p><p><strong>Category:</strong> Serious Defect. <strong>Points:</strong> -3/-6/-9. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Limits or removes the character&#39;s ability to communicate verbally.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.impaired-speech",
+        "sourcePage": 135,
+        "importId": "core.defect.impaired-speech",
+        "pointsReturned": 3
+      },
+      "name": "Impaired Speech",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.impaired-speech",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 135,
+            "importId": "core.defect.impaired-speech"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 135.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> -1 Attack Penalty/Rank.</p><p><strong>Rules Summary:</strong> Applies a penalty to the character&#39;s attack rolls.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.inept-attack",
+        "sourcePage": 135,
+        "importId": "core.defect.inept-attack",
+        "pointsReturned": 1
+      },
       "name": "Inept Attack",
-      "img": "icons/svg/sword.svg",
-      "sourcePage": 135,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "-1 Attack Penalty/Rank",
-      "summary": "Applies a penalty to the character's attack rolls."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.inept-attack",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 135,
+            "importId": "core.defect.inept-attack"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/terror.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 135.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Represents discrimination or social hostility tied to a defined aspect of the character.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.ism",
+        "sourcePage": 135,
+        "importId": "core.defect.ism",
+        "pointsReturned": 2
+      },
       "name": "Ism",
-      "img": "icons/svg/terror.svg",
-      "sourcePage": 135,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "Represents discrimination or social hostility tied to a defined aspect of the character."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.ism",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 135,
+            "importId": "core.defect.ism"
+          }
+        }
+      }
     },
     {
-      "name": "Limited Damage",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/sword.svg",
-      "sourcePage": 135,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "-1 Attack Damage Reduction/Rank",
-      "summary": "Reduces damage under a defined condition or attack category."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 135.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> -1 Attack Damage Reduction/Rank.</p><p><strong>Rules Summary:</strong> Reduces damage under a defined condition or attack category.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.limited-damage",
+        "sourcePage": 135,
+        "importId": "core.defect.limited-damage",
+        "pointsReturned": 1
+      },
+      "name": "Limited Damage",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.limited-damage",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 135,
+            "importId": "core.defect.limited-damage"
+          }
+        }
+      }
     },
     {
-      "name": "Magnet",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/lightning.svg",
-      "sourcePage": 136,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Attracts unwanted events, attention, mishaps, or complications of a chosen kind."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 136.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Attracts unwanted events, attention, mishaps, or complications of a chosen kind.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.magnet",
+        "sourcePage": 136,
+        "importId": "core.defect.magnet",
+        "pointsReturned": 1
+      },
+      "name": "Magnet",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.magnet",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 136,
+            "importId": "core.defect.magnet"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 136.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Makes the character visibly identifiable by a distinctive, hard-to-hide trait.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.marked",
+        "sourcePage": 136,
+        "importId": "core.defect.marked",
+        "pointsReturned": 1
+      },
       "name": "Marked",
-      "img": "icons/svg/eye.svg",
-      "sourcePage": 136,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Makes the character visibly identifiable by a distinctive, hard-to-hide trait."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.marked",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 136,
+            "importId": "core.defect.marked"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/skull.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 136.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Gives the character an enemy who regularly interferes with their goals.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.nemesis",
+        "sourcePage": 136,
+        "importId": "core.defect.nemesis",
+        "pointsReturned": 1
+      },
       "name": "Nemesis",
-      "img": "icons/svg/skull.svg",
-      "sourcePage": 136,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Gives the character an enemy who regularly interferes with their goals."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.nemesis",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 136,
+            "importId": "core.defect.nemesis"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/terror.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 136.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Burdened sleep or visions regularly interfere with the character&#39;s recovery or focus.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.nightmares",
+        "sourcePage": 136,
+        "importId": "core.defect.nightmares",
+        "pointsReturned": 1
+      },
       "name": "Nightmares",
-      "img": "icons/svg/terror.svg",
-      "sourcePage": 136,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Burdened sleep or visions regularly interfere with the character's recovery or focus."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.nightmares",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 136,
+            "importId": "core.defect.nightmares"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 137.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Requires the character to meet ongoing duties, service, debt, or loyalty demands.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.obligated",
+        "sourcePage": 137,
+        "importId": "core.defect.obligated",
+        "pointsReturned": 2
+      },
       "name": "Obligated",
-      "img": "icons/svg/book.svg",
-      "sourcePage": 137,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "Requires the character to meet ongoing duties, service, debt, or loyalty demands."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.obligated",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 137,
+            "importId": "core.defect.obligated"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/cancel.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 137.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Creates a recurring hindrance that complicates a specific kind of action or situation.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.obstacle",
+        "sourcePage": 137,
+        "importId": "core.defect.obstacle",
+        "pointsReturned": 1
+      },
       "name": "Obstacle",
-      "img": "icons/svg/cancel.svg",
-      "sourcePage": 137,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Creates a recurring hindrance that complicates a specific kind of action or situation."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.obstacle",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 137,
+            "importId": "core.defect.obstacle"
+          }
+        }
+      }
     },
     {
-      "name": "Opposing Advantage",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/d20-grey.svg",
-      "sourcePage": 137,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Gives opponents an advantage against the character under defined circumstances."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 137.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Gives opponents an advantage against the character under defined circumstances.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.opposing-advantage",
+        "sourcePage": 137,
+        "importId": "core.defect.opposing-advantage",
+        "pointsReturned": 1
+      },
+      "name": "Opposing Advantage",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.opposing-advantage",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 137,
+            "importId": "core.defect.opposing-advantage"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/terror.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 137.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Makes a defined fear disrupt the character when the subject is present or relevant.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.phobia",
+        "sourcePage": 137,
+        "importId": "core.defect.phobia",
+        "pointsReturned": 1
+      },
       "name": "Phobia",
-      "img": "icons/svg/terror.svg",
-      "sourcePage": 137,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Makes a defined fear disrupt the character when the subject is present or relevant."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.phobia",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 137,
+            "importId": "core.defect.phobia"
+          }
+        }
+      }
     },
     {
-      "name": "Physical Impairment",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/cancel.svg",
-      "sourcePage": 137,
-      "category": "Serious Defect",
-      "points": "-3/-6/-9",
-      "pointsReturned": 3,
-      "progression": "Descriptive",
-      "summary": "Represents a significant physical limitation with practical adventuring effects."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 137.</p><p><strong>Category:</strong> Serious Defect. <strong>Points:</strong> -3/-6/-9. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Represents a significant physical limitation with practical adventuring effects.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.physical-impairment",
+        "sourcePage": 137,
+        "importId": "core.defect.physical-impairment",
+        "pointsReturned": 3
+      },
+      "name": "Physical Impairment",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.physical-impairment",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 137,
+            "importId": "core.defect.physical-impairment"
+          }
+        }
+      }
     },
     {
-      "name": "Reduced Damage",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/explosion.svg",
-      "sourcePage": 138,
-      "category": "Serious Defect",
-      "points": "-3/-6/-9",
-      "pointsReturned": 3,
-      "progression": "-1 Attack Damage Reduction/Rank",
-      "summary": "Applies a broad reduction to the damage the character inflicts."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 138.</p><p><strong>Category:</strong> Serious Defect. <strong>Points:</strong> -3/-6/-9. <strong>Progression:</strong> -1 Attack Damage Reduction/Rank.</p><p><strong>Rules Summary:</strong> Applies a broad reduction to the damage the character inflicts.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.reduced-damage",
+        "sourcePage": 138,
+        "importId": "core.defect.reduced-damage",
+        "pointsReturned": 3
+      },
+      "name": "Reduced Damage",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.reduced-damage",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 138,
+            "importId": "core.defect.reduced-damage"
+          }
+        }
+      }
     },
     {
-      "name": "Secret",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/invisible.svg",
-      "sourcePage": 138,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "The character hides information that would cause trouble if revealed."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 138.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> The character hides information that would cause trouble if revealed.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.secret",
+        "sourcePage": 138,
+        "importId": "core.defect.secret",
+        "pointsReturned": 2
+      },
+      "name": "Secret",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.secret",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 138,
+            "importId": "core.defect.secret"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 138.</p><p><strong>Category:</strong> Serious Defect. <strong>Points:</strong> -3/-6/-9. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Limits or removes one or more ordinary senses.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.sensory-impairment",
+        "sourcePage": 138,
+        "importId": "core.defect.sensory-impairment",
+        "pointsReturned": 3
+      },
       "name": "Sensory Impairment",
-      "img": "icons/svg/eye.svg",
-      "sourcePage": 138,
-      "category": "Serious Defect",
-      "points": "-3/-6/-9",
-      "pointsReturned": 3,
-      "progression": "Descriptive",
-      "summary": "Limits or removes one or more ordinary senses."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.sensory-impairment",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 138,
+            "importId": "core.defect.sensory-impairment"
+          }
+        }
+      }
     },
     {
-      "name": "Significant Other",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/mystery-man.svg",
-      "sourcePage": 138,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Gives the character an important person whose safety or needs can complicate adventures."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 138.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Gives the character an important person whose safety or needs can complicate adventures.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.significant-other",
+        "sourcePage": 138,
+        "importId": "core.defect.significant-other",
+        "pointsReturned": 1
+      },
+      "name": "Significant Other",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.significant-other",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 138,
+            "importId": "core.defect.significant-other"
+          }
+        }
+      }
     },
     {
-      "name": "Slow",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/downgrade.svg",
-      "sourcePage": 138,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Reduces the character's movement speed."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 138.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Reduces the character&#39;s movement speed.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.slow",
+        "sourcePage": 138,
+        "importId": "core.defect.slow",
+        "pointsReturned": 1
+      },
+      "name": "Slow",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.slow",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 138,
+            "importId": "core.defect.slow"
+          }
+        }
+      }
     },
     {
-      "name": "Social Fault",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/terror.svg",
-      "sourcePage": 139,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "Descriptive",
-      "summary": "Adds a social habit, reputation, attitude, or behavior that regularly creates friction."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 139.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Adds a social habit, reputation, attitude, or behavior that regularly creates friction.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.social-fault",
+        "sourcePage": 139,
+        "importId": "core.defect.social-fault",
+        "pointsReturned": 1
+      },
+      "name": "Social Fault",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.social-fault",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 139,
+            "importId": "core.defect.social-fault"
+          }
+        }
+      }
     },
     {
-      "name": "Special Requirement",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/book.svg",
-      "sourcePage": 139,
-      "category": "Serious Defect",
-      "points": "-3/-6/-9",
-      "pointsReturned": 3,
-      "progression": "Descriptive",
-      "summary": "Requires the character to meet a specific condition to function normally."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 139.</p><p><strong>Category:</strong> Serious Defect. <strong>Points:</strong> -3/-6/-9. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Requires the character to meet a specific condition to function normally.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.special-requirement",
+        "sourcePage": 139,
+        "importId": "core.defect.special-requirement",
+        "pointsReturned": 3
+      },
+      "name": "Special Requirement",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.special-requirement",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 139,
+            "importId": "core.defect.special-requirement"
+          }
+        }
+      }
     },
     {
+      "type": "defect",
+      "folder": "Defects",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 140.</p><p><strong>Category:</strong> Lesser Defect. <strong>Points:</strong> -1/-2/-3. <strong>Progression:</strong> +1 Attack Damage Received/Rank.</p><p><strong>Rules Summary:</strong> Makes the character take extra damage from a defined attack or source.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.susceptible",
+        "sourcePage": 140,
+        "importId": "core.defect.susceptible",
+        "pointsReturned": 1
+      },
       "name": "Susceptible",
-      "img": "icons/svg/hazard.svg",
-      "sourcePage": 140,
-      "category": "Lesser Defect",
-      "points": "-1/-2/-3",
-      "pointsReturned": 1,
-      "progression": "+1 Attack Damage Received/Rank",
-      "summary": "Makes the character take extra damage from a defined attack or source."
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.susceptible",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 140,
+            "importId": "core.defect.susceptible"
+          }
+        }
+      }
     },
     {
-      "name": "Unique Defect",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/star.svg",
-      "sourcePage": 140,
-      "category": "Variable Defect",
-      "points": "Special",
-      "pointsReturned": 0,
-      "progression": "Descriptive",
-      "summary": "Covers a custom drawback whose point value and effects are set with DM approval."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 140.</p><p><strong>Category:</strong> Variable Defect. <strong>Points:</strong> Special. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Covers a custom drawback whose point value and effects are set with DM approval.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.unique-defect",
+        "sourcePage": 140,
+        "importId": "core.defect.unique-defect",
+        "pointsReturned": 0
+      },
+      "name": "Unique Defect",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.unique-defect",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 140,
+            "importId": "core.defect.unique-defect"
+          }
+        }
+      }
     },
     {
-      "name": "Vulnerability",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/hazard.svg",
-      "sourcePage": 140,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "Makes a selected attack form, substance, or situation especially dangerous to the character."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 140.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Makes a selected attack form, substance, or situation especially dangerous to the character.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.vulnerability",
+        "sourcePage": 140,
+        "importId": "core.defect.vulnerability",
+        "pointsReturned": 2
+      },
+      "name": "Vulnerability",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.vulnerability",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 140,
+            "importId": "core.defect.vulnerability"
+          }
+        }
+      }
     },
     {
-      "name": "Wanted",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/eye.svg",
-      "sourcePage": 140,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "Places a bounty, legal pursuit, or active search on the character."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 140.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Places a bounty, legal pursuit, or active search on the character.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.wanted",
+        "sourcePage": 140,
+        "importId": "core.defect.wanted",
+        "pointsReturned": 2
+      },
+      "name": "Wanted",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.wanted",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 140,
+            "importId": "core.defect.wanted"
+          }
+        }
+      }
     },
     {
-      "name": "Weak Point",
+      "type": "defect",
+      "folder": "Defects",
       "img": "icons/svg/skull.svg",
-      "sourcePage": 140,
-      "category": "Greater Defect",
-      "points": "-2/-4/-6",
-      "pointsReturned": 2,
-      "progression": "Descriptive",
-      "summary": "Defines a vulnerable spot or condition that can be exploited."
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 140.</p><p><strong>Category:</strong> Greater Defect. <strong>Points:</strong> -2/-4/-6. <strong>Progression:</strong> Descriptive.</p><p><strong>Rules Summary:</strong> Defines a vulnerable spot or condition that can be exploited.</p>",
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.defect.weak-point",
+        "sourcePage": 140,
+        "importId": "core.defect.weak-point",
+        "pointsReturned": 2
+      },
+      "name": "Weak Point",
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.defect.weak-point",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 140,
+            "importId": "core.defect.weak-point"
+          }
+        }
+      }
     }
   ]
 }

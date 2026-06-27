@@ -120,8 +120,8 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     },
     form: {
       closeOnSubmit: false,
-      handler: this._onSubmit,
-      submitOnChange: false
+      submitOnChange: false,
+      submitOnClose: true
     }
   };
 
@@ -213,9 +213,5 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       speaker: ChatMessage.getSpeaker({ actor: getItemActor(item) }),
       content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(item.type)}</strong></p>${description}${sourceLine}</article>`
     });
-  }
-
-  static async _onSubmit(event, form, formData) {
-    await this.document.update(formData.object);
   }
 }

@@ -11,62 +11,4444 @@
       "color": "#6d7884"
     },
     {
-      "name": "Gear",
+      "name": "Shields",
+      "color": "#6f788c"
+    },
+    {
+      "name": "Item Attributes",
+      "color": "#7c8fa8"
+    },
+    {
+      "name": "Adventuring Gear",
       "color": "#7a805a"
+    },
+    {
+      "name": "Daily Devices",
+      "color": "#6f9186"
+    },
+    {
+      "name": "Items of Power",
+      "color": "#8f6fa8"
+    },
+    {
+      "name": "Protective Devices",
+      "color": "#6f86a8"
+    },
+    {
+      "name": "Armaments",
+      "color": "#a06f5f"
     }
   ],
   "documents": [
+    {
+      "name": "Caltrops (Bag)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d4 Piercing. <strong>Rank:</strong> 1 (1). <strong>Enhancements:</strong> Area 1, Trap 1. <strong>Limiters:</strong> Save 2.</p><p><strong>Rules Summary:</strong> Caltrops (Bag) is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.caltrops-bag",
+        "sourcePage": 196,
+        "importId": "core.weapon.caltrops-bag",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": 1,
+        "enhancements": "Area 1, Trap 1",
+        "limiters": "Save 2",
+        "damage": "1d4",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Melee Weapons; Effective Rank: 1; Enhancements: Area 1, Trap 1; Limiters: Save 2; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.caltrops-bag",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.caltrops-bag"
+          }
+        }
+      }
+    },
+    {
+      "name": "Club",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d4 Bludgeoning. <strong>Rank:</strong> 1. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Club is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.club",
+        "sourcePage": 196,
+        "importId": "core.weapon.club",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Melee Weapons; Table Points: 0"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.club",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.club"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dagger or Knife",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d4 Piercing. <strong>Rank:</strong> 1. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Dagger or Knife is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.dagger-or-knife",
+        "sourcePage": 196,
+        "importId": "core.weapon.dagger-or-knife",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d4",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Melee Weapons; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.dagger-or-knife",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.dagger-or-knife"
+          }
+        }
+      }
+    },
+    {
+      "name": "Greatclub",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d8 Bludgeoning. <strong>Rank:</strong> 1 (2). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Greatclub is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.greatclub",
+        "sourcePage": 196,
+        "importId": "core.weapon.greatclub",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": 2,
+        "enhancements": "",
+        "limiters": "Hands",
+        "damage": "1d8",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Melee Weapons; Effective Rank: 2; Limiters: Hands; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.greatclub",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.greatclub"
+          }
+        }
+      }
+    },
+    {
+      "name": "Handaxe",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d6 Slashing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Handaxe is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.handaxe",
+        "sourcePage": 196,
+        "importId": "core.weapon.handaxe",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Slashing",
+        "properties": "Category: Simple Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.handaxe",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.handaxe"
+          }
+        }
+      }
+    },
+    {
+      "name": "Light Hammer",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d4 Bludgeoning. <strong>Rank:</strong> 1. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Light Hammer is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.light-hammer",
+        "sourcePage": 196,
+        "importId": "core.weapon.light-hammer",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Melee Weapons; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.light-hammer",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.light-hammer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mace",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d6 Bludgeoning. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Mace is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.mace",
+        "sourcePage": 196,
+        "importId": "core.weapon.mace",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.mace",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.mace"
+          }
+        }
+      }
+    },
+    {
+      "name": "Quarterstaff",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d6 Bludgeoning. <strong>Rank:</strong> 1 (2). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Quarterstaff is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.quarterstaff",
+        "sourcePage": 196,
+        "importId": "core.weapon.quarterstaff",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": 2,
+        "enhancements": "",
+        "limiters": "Hands",
+        "damage": "1d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Melee Weapons; Effective Rank: 2; Limiters: Hands; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.quarterstaff",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.quarterstaff"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sap",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d2 Bludgeoning. <strong>Rank:</strong> 1. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Sap is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.sap",
+        "sourcePage": 196,
+        "importId": "core.weapon.sap",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d2",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Melee Weapons; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.sap",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.sap"
+          }
+        }
+      }
+    },
+    {
+      "name": "Scythe",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d6 Slashing. <strong>Rank:</strong> 1 (2). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Scythe is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.scythe",
+        "sourcePage": 196,
+        "importId": "core.weapon.scythe",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": 2,
+        "enhancements": "",
+        "limiters": "Hands",
+        "damage": "1d6",
+        "damageType": "Slashing",
+        "properties": "Category: Simple Melee Weapons; Effective Rank: 2; Limiters: Hands; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.scythe",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.scythe"
+          }
+        }
+      }
+    },
+    {
+      "name": "Spear or Javelin (Melee)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d6 Piercing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Spear or Javelin (Melee) is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.spear-or-javelin-melee",
+        "sourcePage": 196,
+        "importId": "core.weapon.spear-or-javelin-melee",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.spear-or-javelin-melee",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.spear-or-javelin-melee"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unarmed Punch or Kick",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1 Bludgeoning. <strong>Rank:</strong> 0. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Unarmed Punch or Kick is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.unarmed-punch-or-kick",
+        "sourcePage": 196,
+        "importId": "core.weapon.unarmed-punch-or-kick",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Melee Weapons; Table Points: 0"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.unarmed-punch-or-kick",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.unarmed-punch-or-kick"
+          }
+        }
+      }
+    },
+    {
+      "name": "Spiked Gauntlet",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d4 Piercing. <strong>Rank:</strong> 1. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Spiked Gauntlet is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.spiked-gauntlet",
+        "sourcePage": 196,
+        "importId": "core.weapon.spiked-gauntlet",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d4",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Melee Weapons; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.spiked-gauntlet",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.spiked-gauntlet"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wooden Stake",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Simple Melee Weapons. <strong>Damage:</strong> 1d4 Piercing. <strong>Rank:</strong> 1. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Wooden Stake is a Core Rules simple melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.wooden-stake",
+        "sourcePage": 196,
+        "importId": "core.weapon.wooden-stake",
+        "equipped": false,
+        "category": "Simple Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d4",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Melee Weapons; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.wooden-stake",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.wooden-stake"
+          }
+        }
+      }
+    },
+    {
+      "name": "Battleaxe",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d8 Slashing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Battleaxe is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.battleaxe",
+        "sourcePage": 196,
+        "importId": "core.weapon.battleaxe",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d8",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.battleaxe",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.battleaxe"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bastard Sword (One-Hand)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d10 Slashing. <strong>Rank:</strong> 3. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Bastard Sword (One-Hand) is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 3,
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.bastard-sword-one-hand",
+        "sourcePage": 196,
+        "importId": "core.weapon.bastard-sword-one-hand",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d10",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 3"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.bastard-sword-one-hand",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.bastard-sword-one-hand"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bastard Sword (Two-Hands)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d10 Slashing. <strong>Rank:</strong> 3. <strong>Enhancements:</strong> Accurate. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Bastard Sword (Two-Hands) is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 3,
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.bastard-sword-two-hands",
+        "sourcePage": 196,
+        "importId": "core.weapon.bastard-sword-two-hands",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "Accurate",
+        "limiters": "Hands",
+        "damage": "1d10",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Enhancements: Accurate; Limiters: Hands; Table Points: 3"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.bastard-sword-two-hands",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.bastard-sword-two-hands"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bokken (Wooden Sword)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d6 Bludgeoning. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Bokken (Wooden Sword) is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.bokken-wooden-sword",
+        "sourcePage": 196,
+        "importId": "core.weapon.bokken-wooden-sword",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.bokken-wooden-sword",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.bokken-wooden-sword"
+          }
+        }
+      }
+    },
+    {
+      "name": "Garrotte Wire",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 2d6 Slashing. <strong>Rank:</strong> 1 (3). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Hands, Non-Penetrating.</p><p><strong>Rules Summary:</strong> Garrotte Wire is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.garrotte-wire",
+        "sourcePage": 196,
+        "importId": "core.weapon.garrotte-wire",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 3,
+        "enhancements": "",
+        "limiters": "Hands, Non-Penetrating",
+        "damage": "2d6",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 3; Limiters: Hands, Non-Penetrating; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.garrotte-wire",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.garrotte-wire"
+          }
+        }
+      }
+    },
+    {
+      "name": "Greataxe",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d12 Slashing. <strong>Rank:</strong> 2 (3). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Greataxe is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.greataxe",
+        "sourcePage": 196,
+        "importId": "core.weapon.greataxe",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 3,
+        "enhancements": "",
+        "limiters": "Hands",
+        "damage": "1d12",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 3; Limiters: Hands; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.greataxe",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.greataxe"
+          }
+        }
+      }
+    },
+    {
+      "name": "Greatsword",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 2d6 Slashing. <strong>Rank:</strong> 2 (3). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Greatsword is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.greatsword",
+        "sourcePage": 196,
+        "importId": "core.weapon.greatsword",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 3,
+        "enhancements": "",
+        "limiters": "Hands",
+        "damage": "2d6",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 3; Limiters: Hands; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.greatsword",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.greatsword"
+          }
+        }
+      }
+    },
+    {
+      "name": "Katana",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 2d4 Slashing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Katana is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.katana",
+        "sourcePage": 196,
+        "importId": "core.weapon.katana",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "2d4",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.katana",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.katana"
+          }
+        }
+      }
+    },
+    {
+      "name": "Lance, Tournament",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d8 Bludgeoning. <strong>Rank:</strong> 1 (2). <strong>Enhancements:</strong> Reach. <strong>Limiters:</strong> Non-Penetrating, Unreliable.</p><p><strong>Rules Summary:</strong> Lance, Tournament is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.lance-tournament",
+        "sourcePage": 196,
+        "importId": "core.weapon.lance-tournament",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 2,
+        "enhancements": "Reach",
+        "limiters": "Non-Penetrating, Unreliable",
+        "damage": "1d8",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 2; Enhancements: Reach; Limiters: Non-Penetrating, Unreliable; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.lance-tournament",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.lance-tournament"
+          }
+        }
+      }
+    },
+    {
+      "name": "Lance, War",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d12 Piercing. <strong>Rank:</strong> 4 (3). <strong>Enhancements:</strong> Reach. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Lance, War is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 4,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.lance-war",
+        "sourcePage": 196,
+        "importId": "core.weapon.lance-war",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 3,
+        "enhancements": "Reach",
+        "limiters": "",
+        "damage": "1d12",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 3; Enhancements: Reach; Table Points: 4"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.lance-war",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.lance-war"
+          }
+        }
+      }
+    },
     {
       "name": "Longsword",
       "type": "weapon",
       "folder": "Weapons",
       "img": "icons/svg/sword.svg",
       "system": {
-        "description": "<p>Source-indexed weapon stub for later rules entry.</p>",
-        "rank": 1,
-        "cost": 0,
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d8 Slashing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Longsword is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
         "source": "Anime 5E Fifth Edition Core Rules",
         "sourceId": "core.weapon.longsword",
-        "sourcePage": 198,
+        "sourcePage": 196,
         "importId": "core.weapon.longsword",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
         "damage": "1d8",
         "damageType": "Slashing",
-        "properties": ""
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
       },
       "flags": {
         "anime5e": {
           "sourceId": "core.weapon.longsword",
           "source": {
             "book": "Anime 5E Fifth Edition Core Rules",
-            "page": 198,
+            "page": 196,
             "importId": "core.weapon.longsword"
           }
         }
       }
     },
     {
-      "name": "Light Armour",
+      "name": "Maul",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 2d6 Bludgeoning. <strong>Rank:</strong> 2 (3). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Maul is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.maul",
+        "sourcePage": 196,
+        "importId": "core.weapon.maul",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 3,
+        "enhancements": "",
+        "limiters": "Hands",
+        "damage": "2d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 3; Limiters: Hands; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.maul",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.maul"
+          }
+        }
+      }
+    },
+    {
+      "name": "Morningstar Flail",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d8 Piercing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Morningstar Flail is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.morningstar-flail",
+        "sourcePage": 196,
+        "importId": "core.weapon.morningstar-flail",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.morningstar-flail",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.morningstar-flail"
+          }
+        }
+      }
+    },
+    {
+      "name": "Nunchaku",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d6 Bludgeoning. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Nunchaku is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.nunchaku",
+        "sourcePage": 196,
+        "importId": "core.weapon.nunchaku",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.nunchaku",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.nunchaku"
+          }
+        }
+      }
+    },
+    {
+      "name": "Polearm",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d10 Piercing. <strong>Rank:</strong> 3. <strong>Enhancements:</strong> Reach. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Polearm is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 3,
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.polearm",
+        "sourcePage": 196,
+        "importId": "core.weapon.polearm",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "Reach",
+        "limiters": "Hands",
+        "damage": "1d10",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Melee Weapons; Enhancements: Reach; Limiters: Hands; Table Points: 3"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.polearm",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.polearm"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rapier",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d8 Piercing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Rapier is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.rapier",
+        "sourcePage": 196,
+        "importId": "core.weapon.rapier",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.rapier",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.rapier"
+          }
+        }
+      }
+    },
+    {
+      "name": "Scimitar",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d6 Slashing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Scimitar is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.scimitar",
+        "sourcePage": 196,
+        "importId": "core.weapon.scimitar",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.scimitar",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.scimitar"
+          }
+        }
+      }
+    },
+    {
+      "name": "Shield (Bash)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 2d4 Bludgeoning. <strong>Rank:</strong> 1 (2). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Inaccurate.</p><p><strong>Rules Summary:</strong> Shield (Bash) is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.shield-bash",
+        "sourcePage": 196,
+        "importId": "core.weapon.shield-bash",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 2,
+        "enhancements": "",
+        "limiters": "Inaccurate",
+        "damage": "2d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 2; Limiters: Inaccurate; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.shield-bash",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.shield-bash"
+          }
+        }
+      }
+    },
+    {
+      "name": "Shortsword",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d6 Piercing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Shortsword is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.shortsword",
+        "sourcePage": 196,
+        "importId": "core.weapon.shortsword",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.shortsword",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.shortsword"
+          }
+        }
+      }
+    },
+    {
+      "name": "Trident",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d6 Piercing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Trident is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.trident",
+        "sourcePage": 196,
+        "importId": "core.weapon.trident",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.trident",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.trident"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wakizashi",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d6 Slashing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Wakizashi is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.wakizashi",
+        "sourcePage": 196,
+        "importId": "core.weapon.wakizashi",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.wakizashi",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.wakizashi"
+          }
+        }
+      }
+    },
+    {
+      "name": "War Pick",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d8 Piercing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> War Pick is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.war-pick",
+        "sourcePage": 196,
+        "importId": "core.weapon.war-pick",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.war-pick",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.war-pick"
+          }
+        }
+      }
+    },
+    {
+      "name": "Warhammer",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d8 Bludgeoning. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> None. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Warhammer is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.warhammer",
+        "sourcePage": 196,
+        "importId": "core.weapon.warhammer",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": null,
+        "enhancements": "",
+        "limiters": "",
+        "damage": "1d8",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Martial Melee Weapons; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.warhammer",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.warhammer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Weighted Chain",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d6 Bludgeoning. <strong>Rank:</strong> 1 (2). <strong>Enhancements:</strong> Flexible. <strong>Limiters:</strong> Backlash, Inaccurate.</p><p><strong>Rules Summary:</strong> Weighted Chain is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.weighted-chain",
+        "sourcePage": 196,
+        "importId": "core.weapon.weighted-chain",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 2,
+        "enhancements": "Flexible",
+        "limiters": "Backlash, Inaccurate",
+        "damage": "1d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 2; Enhancements: Flexible; Limiters: Backlash, Inaccurate; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.weighted-chain",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.weighted-chain"
+          }
+        }
+      }
+    },
+    {
+      "name": "Whip",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 196.</p><p><strong>Category:</strong> Martial Melee Weapons. <strong>Damage:</strong> 1d4 Slashing. <strong>Rank:</strong> 2 (1). <strong>Enhancements:</strong> Flexible, Range 1. <strong>Limiters:</strong> Non-Penetrating.</p><p><strong>Rules Summary:</strong> Whip is a Core Rules martial melee weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.whip",
+        "sourcePage": 196,
+        "importId": "core.weapon.whip",
+        "equipped": false,
+        "category": "Martial Melee Weapons",
+        "effectiveRank": 1,
+        "enhancements": "Flexible, Range 1",
+        "limiters": "Non-Penetrating",
+        "damage": "1d4",
+        "damageType": "Slashing",
+        "properties": "Category: Martial Melee Weapons; Effective Rank: 1; Enhancements: Flexible, Range 1; Limiters: Non-Penetrating; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.whip",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 196,
+            "importId": "core.weapon.whip"
+          }
+        }
+      }
+    },
+    {
+      "name": "Crossbow, Light",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 1d8 Piercing. <strong>Rank:</strong> 4 (2). <strong>Enhancements:</strong> Penetrating, Range 3. <strong>Limiters:</strong> Activation 1, Hands.</p><p><strong>Rules Summary:</strong> Crossbow, Light is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 4,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.crossbow-light",
+        "sourcePage": 197,
+        "importId": "core.weapon.crossbow-light",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 2,
+        "enhancements": "Penetrating, Range 3",
+        "limiters": "Activation 1, Hands",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 2; Enhancements: Penetrating, Range 3; Limiters: Activation 1, Hands; Table Points: 4"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.crossbow-light",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.crossbow-light"
+          }
+        }
+      }
+    },
+    {
+      "name": "Lasso",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 0d4. <strong>Rank:</strong> 1 (0). <strong>Enhancements:</strong> Range 2, Tangle. <strong>Limiters:</strong> Inaccurate 2.</p><p><strong>Rules Summary:</strong> Lasso is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.lasso",
+        "sourcePage": 197,
+        "importId": "core.weapon.lasso",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 0,
+        "enhancements": "Range 2, Tangle",
+        "limiters": "Inaccurate 2",
+        "damage": "0d4",
+        "damageType": "",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 0; Enhancements: Range 2, Tangle; Limiters: Inaccurate 2; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.lasso",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.lasso"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rock or Object, Huge",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 10d4 Bludgeoning. <strong>Rank:</strong> 11 (10). <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> Inaccurate.</p><p><strong>Rules Summary:</strong> Rock or Object, Huge is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 11,
+        "cost": 11,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.rock-or-object-huge",
+        "sourcePage": 197,
+        "importId": "core.weapon.rock-or-object-huge",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 10,
+        "enhancements": "Range 2",
+        "limiters": "Inaccurate",
+        "damage": "10d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 10; Enhancements: Range 2; Limiters: Inaccurate; Table Points: 11"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.rock-or-object-huge",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.rock-or-object-huge"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rock or Object, Large",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 6d4 Bludgeoning. <strong>Rank:</strong> 7 (6). <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> Inaccurate.</p><p><strong>Rules Summary:</strong> Rock or Object, Large is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 7,
+        "cost": 7,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.rock-or-object-large",
+        "sourcePage": 197,
+        "importId": "core.weapon.rock-or-object-large",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 6,
+        "enhancements": "Range 2",
+        "limiters": "Inaccurate",
+        "damage": "6d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 6; Enhancements: Range 2; Limiters: Inaccurate; Table Points: 7"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.rock-or-object-large",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.rock-or-object-large"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rock or Object, Medium",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 4d4 Bludgeoning. <strong>Rank:</strong> 5 (4). <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> Inaccurate.</p><p><strong>Rules Summary:</strong> Rock or Object, Medium is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 5,
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.rock-or-object-medium",
+        "sourcePage": 197,
+        "importId": "core.weapon.rock-or-object-medium",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 4,
+        "enhancements": "Range 2",
+        "limiters": "Inaccurate",
+        "damage": "4d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 4; Enhancements: Range 2; Limiters: Inaccurate; Table Points: 5"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.rock-or-object-medium",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.rock-or-object-medium"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rock or Object, Small",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 2d4 Bludgeoning. <strong>Rank:</strong> 3 (2). <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> Inaccurate.</p><p><strong>Rules Summary:</strong> Rock or Object, Small is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 3,
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.rock-or-object-small",
+        "sourcePage": 197,
+        "importId": "core.weapon.rock-or-object-small",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 2,
+        "enhancements": "Range 2",
+        "limiters": "Inaccurate",
+        "damage": "2d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 2; Enhancements: Range 2; Limiters: Inaccurate; Table Points: 3"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.rock-or-object-small",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.rock-or-object-small"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rock or Object, Tiny",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 1d4 Bludgeoning. <strong>Rank:</strong> 2 (1). <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> Inaccurate.</p><p><strong>Rules Summary:</strong> Rock or Object, Tiny is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.rock-or-object-tiny",
+        "sourcePage": 197,
+        "importId": "core.weapon.rock-or-object-tiny",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 1,
+        "enhancements": "Range 2",
+        "limiters": "Inaccurate",
+        "damage": "1d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 1; Enhancements: Range 2; Limiters: Inaccurate; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.rock-or-object-tiny",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.rock-or-object-tiny"
+          }
+        }
+      }
+    },
+    {
+      "name": "Shortbow",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 1d6 Piercing. <strong>Rank:</strong> 4 (2). <strong>Enhancements:</strong> Range 3. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Shortbow is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 4,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.shortbow",
+        "sourcePage": 197,
+        "importId": "core.weapon.shortbow",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 2,
+        "enhancements": "Range 3",
+        "limiters": "Hands",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 2; Enhancements: Range 3; Limiters: Hands; Table Points: 4"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.shortbow",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.shortbow"
+          }
+        }
+      }
+    },
+    {
+      "name": "Shuriken or Dart",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 1d4 Piercing. <strong>Rank:</strong> 2 (1). <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> Non-Penetrating.</p><p><strong>Rules Summary:</strong> Shuriken or Dart is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.shuriken-or-dart",
+        "sourcePage": 197,
+        "importId": "core.weapon.shuriken-or-dart",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": 1,
+        "enhancements": "Range 2",
+        "limiters": "Non-Penetrating",
+        "damage": "1d4",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Ranged Weapons; Effective Rank: 1; Enhancements: Range 2; Limiters: Non-Penetrating; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.shuriken-or-dart",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.shuriken-or-dart"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sling",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 1d4 Bludgeoning. <strong>Rank:</strong> 1. <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> Inaccurate, Non-Penetrating.</p><p><strong>Rules Summary:</strong> Sling is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.sling",
+        "sourcePage": 197,
+        "importId": "core.weapon.sling",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": null,
+        "enhancements": "Range 2",
+        "limiters": "Inaccurate, Non-Penetrating",
+        "damage": "1d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Simple Ranged Weapons; Enhancements: Range 2; Limiters: Inaccurate, Non-Penetrating; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.sling",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.sling"
+          }
+        }
+      }
+    },
+    {
+      "name": "Spear or Javelin (Thrown)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Simple Ranged Weapons. <strong>Damage:</strong> 1d6 Piercing. <strong>Rank:</strong> 2. <strong>Enhancements:</strong> Accurate, Range 2. <strong>Limiters:</strong> Ammo 3.</p><p><strong>Rules Summary:</strong> Spear or Javelin (Thrown) is a Core Rules simple ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.spear-or-javelin-thrown",
+        "sourcePage": 197,
+        "importId": "core.weapon.spear-or-javelin-thrown",
+        "equipped": false,
+        "category": "Simple Ranged Weapons",
+        "effectiveRank": null,
+        "enhancements": "Accurate, Range 2",
+        "limiters": "Ammo 3",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "properties": "Category: Simple Ranged Weapons; Enhancements: Accurate, Range 2; Limiters: Ammo 3; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.spear-or-javelin-thrown",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.spear-or-javelin-thrown"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blowgun",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Martial Ranged Weapons. <strong>Damage:</strong> 1 Piercing. <strong>Rank:</strong> 1 (0). <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> Non-Penetrating.</p><p><strong>Rules Summary:</strong> Blowgun is a Core Rules martial ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.blowgun",
+        "sourcePage": 197,
+        "importId": "core.weapon.blowgun",
+        "equipped": false,
+        "category": "Martial Ranged Weapons",
+        "effectiveRank": 0,
+        "enhancements": "Range 2",
+        "limiters": "Non-Penetrating",
+        "damage": "1",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Ranged Weapons; Effective Rank: 0; Enhancements: Range 2; Limiters: Non-Penetrating; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.blowgun",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.blowgun"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bolas",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Martial Ranged Weapons. <strong>Damage:</strong> 0d4. <strong>Rank:</strong> 1 (0). <strong>Enhancements:</strong> Accurate, Potent, Range 2, Tangle. <strong>Limiters:</strong> Ammo 3, Non-Penetrating.</p><p><strong>Rules Summary:</strong> Bolas is a Core Rules martial ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.bolas",
+        "sourcePage": 197,
+        "importId": "core.weapon.bolas",
+        "equipped": false,
+        "category": "Martial Ranged Weapons",
+        "effectiveRank": 0,
+        "enhancements": "Accurate, Potent, Range 2, Tangle",
+        "limiters": "Ammo 3, Non-Penetrating",
+        "damage": "0d4",
+        "damageType": "",
+        "properties": "Category: Martial Ranged Weapons; Effective Rank: 0; Enhancements: Accurate, Potent, Range 2, Tangle; Limiters: Ammo 3, Non-Penetrating; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.bolas",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.bolas"
+          }
+        }
+      }
+    },
+    {
+      "name": "Crossbow, Hand",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Martial Ranged Weapons. <strong>Damage:</strong> 1d6 Piercing. <strong>Rank:</strong> 4 (2). <strong>Enhancements:</strong> Range 2. <strong>Limiters:</strong> None.</p><p><strong>Rules Summary:</strong> Crossbow, Hand is a Core Rules martial ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 4,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.crossbow-hand",
+        "sourcePage": 197,
+        "importId": "core.weapon.crossbow-hand",
+        "equipped": false,
+        "category": "Martial Ranged Weapons",
+        "effectiveRank": 2,
+        "enhancements": "Range 2",
+        "limiters": "",
+        "damage": "1d6",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Ranged Weapons; Effective Rank: 2; Enhancements: Range 2; Table Points: 4"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.crossbow-hand",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.crossbow-hand"
+          }
+        }
+      }
+    },
+    {
+      "name": "Crossbow, Heavy",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Martial Ranged Weapons. <strong>Damage:</strong> 1d10 Piercing. <strong>Rank:</strong> 5 (3). <strong>Enhancements:</strong> Penetrating, Range 3. <strong>Limiters:</strong> Activation 1, Hands.</p><p><strong>Rules Summary:</strong> Crossbow, Heavy is a Core Rules martial ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 5,
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.crossbow-heavy",
+        "sourcePage": 197,
+        "importId": "core.weapon.crossbow-heavy",
+        "equipped": false,
+        "category": "Martial Ranged Weapons",
+        "effectiveRank": 3,
+        "enhancements": "Penetrating, Range 3",
+        "limiters": "Activation 1, Hands",
+        "damage": "1d10",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Ranged Weapons; Effective Rank: 3; Enhancements: Penetrating, Range 3; Limiters: Activation 1, Hands; Table Points: 5"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.crossbow-heavy",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.crossbow-heavy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Longbow",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Martial Ranged Weapons. <strong>Damage:</strong> 1d8 Piercing. <strong>Rank:</strong> 5 (2). <strong>Enhancements:</strong> Range 4. <strong>Limiters:</strong> Hands.</p><p><strong>Rules Summary:</strong> Longbow is a Core Rules martial ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 5,
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.longbow",
+        "sourcePage": 197,
+        "importId": "core.weapon.longbow",
+        "equipped": false,
+        "category": "Martial Ranged Weapons",
+        "effectiveRank": 2,
+        "enhancements": "Range 4",
+        "limiters": "Hands",
+        "damage": "1d8",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Ranged Weapons; Effective Rank: 2; Enhancements: Range 4; Limiters: Hands; Table Points: 5"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.longbow",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.longbow"
+          }
+        }
+      }
+    },
+    {
+      "name": "Net",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Martial Ranged Weapons. <strong>Damage:</strong> 0d4. <strong>Rank:</strong> 1 (0). <strong>Enhancements:</strong> Potent 3, Range 1, Tangle. <strong>Limiters:</strong> Ammo 3, Hands.</p><p><strong>Rules Summary:</strong> Net is a Core Rules martial ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.net",
+        "sourcePage": 197,
+        "importId": "core.weapon.net",
+        "equipped": false,
+        "category": "Martial Ranged Weapons",
+        "effectiveRank": 0,
+        "enhancements": "Potent 3, Range 1, Tangle",
+        "limiters": "Ammo 3, Hands",
+        "damage": "0d4",
+        "damageType": "",
+        "properties": "Category: Martial Ranged Weapons; Effective Rank: 0; Enhancements: Potent 3, Range 1, Tangle; Limiters: Ammo 3, Hands; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.net",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.net"
+          }
+        }
+      }
+    },
+    {
+      "name": "Net, Fighting",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Martial Ranged Weapons. <strong>Damage:</strong> 1d4 Piercing. <strong>Rank:</strong> 1. <strong>Enhancements:</strong> Potent 3, Range 1, Tangle. <strong>Limiters:</strong> Ammo 3, Hands, Non-Penetrating.</p><p><strong>Rules Summary:</strong> Net, Fighting is a Core Rules martial ranged weapons option built from the Weapon Attribute table.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.net-fighting",
+        "sourcePage": 197,
+        "importId": "core.weapon.net-fighting",
+        "equipped": false,
+        "category": "Martial Ranged Weapons",
+        "effectiveRank": null,
+        "enhancements": "Potent 3, Range 1, Tangle",
+        "limiters": "Ammo 3, Hands, Non-Penetrating",
+        "damage": "1d4",
+        "damageType": "Piercing",
+        "properties": "Category: Martial Ranged Weapons; Enhancements: Potent 3, Range 1, Tangle; Limiters: Ammo 3, Hands, Non-Penetrating; Table Points: 1"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.net-fighting",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.net-fighting"
+          }
+        }
+      }
+    },
+    {
+      "name": "Acid (Flask)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Splash Weapons. <strong>Damage:</strong> 1d8 Acid. <strong>Rank:</strong> 6 (2). <strong>Enhancements:</strong> Area 1, Contact 2, Continuing 3, Range 2. <strong>Limiters:</strong> Ammo 3, Inaccurate.</p><p><strong>Rules Summary:</strong> Acid (Flask) is a Core Rules splash weapons option built from the Weapon Attribute table.</p>",
+        "rank": 6,
+        "cost": 6,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.acid-flask",
+        "sourcePage": 197,
+        "importId": "core.weapon.acid-flask",
+        "equipped": false,
+        "category": "Splash Weapons",
+        "effectiveRank": 2,
+        "enhancements": "Area 1, Contact 2, Continuing 3, Range 2",
+        "limiters": "Ammo 3, Inaccurate",
+        "damage": "1d8",
+        "damageType": "Acid",
+        "properties": "Category: Splash Weapons; Effective Rank: 2; Enhancements: Area 1, Contact 2, Continuing 3, Range 2; Limiters: Ammo 3, Inaccurate; Table Points: 6"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.acid-flask",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.acid-flask"
+          }
+        }
+      }
+    },
+    {
+      "name": "Boiling Oil (Barrel)",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Splash Weapons. <strong>Damage:</strong> 2d10 Fire. <strong>Rank:</strong> 6 (5). <strong>Enhancements:</strong> Area 2, Contact 2, Continuing 5. <strong>Limiters:</strong> Activation 2, Ammo 3, Assisted 1, Inaccurate, Hands.</p><p><strong>Rules Summary:</strong> Boiling Oil (Barrel) is a Core Rules splash weapons option built from the Weapon Attribute table.</p>",
+        "rank": 6,
+        "cost": 6,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.boiling-oil-barrel",
+        "sourcePage": 197,
+        "importId": "core.weapon.boiling-oil-barrel",
+        "equipped": false,
+        "category": "Splash Weapons",
+        "effectiveRank": 5,
+        "enhancements": "Area 2, Contact 2, Continuing 5",
+        "limiters": "Activation 2, Ammo 3, Assisted 1, Inaccurate, Hands",
+        "damage": "2d10",
+        "damageType": "Fire",
+        "properties": "Category: Splash Weapons; Effective Rank: 5; Enhancements: Area 2, Contact 2, Continuing 5; Limiters: Activation 2, Ammo 3, Assisted 1, Inaccurate, Hands; Table Points: 6"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.boiling-oil-barrel",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.boiling-oil-barrel"
+          }
+        }
+      }
+    },
+    {
+      "name": "Molotov Cocktail",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Splash Weapons. <strong>Damage:</strong> 2d8 Fire. <strong>Rank:</strong> 6 (4). <strong>Enhancements:</strong> Area 2, Continuing 3, Range 2. <strong>Limiters:</strong> Activation 1, Ammo 3, Inaccurate.</p><p><strong>Rules Summary:</strong> Molotov Cocktail is a Core Rules splash weapons option built from the Weapon Attribute table.</p>",
+        "rank": 6,
+        "cost": 6,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.molotov-cocktail",
+        "sourcePage": 197,
+        "importId": "core.weapon.molotov-cocktail",
+        "equipped": false,
+        "category": "Splash Weapons",
+        "effectiveRank": 4,
+        "enhancements": "Area 2, Continuing 3, Range 2",
+        "limiters": "Activation 1, Ammo 3, Inaccurate",
+        "damage": "2d8",
+        "damageType": "Fire",
+        "properties": "Category: Splash Weapons; Effective Rank: 4; Enhancements: Area 2, Continuing 3, Range 2; Limiters: Activation 1, Ammo 3, Inaccurate; Table Points: 6"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.molotov-cocktail",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.molotov-cocktail"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ballista, Large",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 4d6 Bludgeoning. <strong>Rank:</strong> 6. <strong>Enhancements:</strong> Range 4. <strong>Limiters:</strong> Activation 2, Hands, Inaccurate.</p><p><strong>Rules Summary:</strong> Ballista, Large is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 6,
+        "cost": 6,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.ballista-large",
+        "sourcePage": 197,
+        "importId": "core.weapon.ballista-large",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": null,
+        "enhancements": "Range 4",
+        "limiters": "Activation 2, Hands, Inaccurate",
+        "damage": "4d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Enhancements: Range 4; Limiters: Activation 2, Hands, Inaccurate; Table Points: 6"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.ballista-large",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.ballista-large"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ballista, Medium",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 3d6 Bludgeoning. <strong>Rank:</strong> 3 (4). <strong>Enhancements:</strong> Range 3. <strong>Limiters:</strong> Activation 2, Hands, Inaccurate.</p><p><strong>Rules Summary:</strong> Ballista, Medium is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 3,
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.ballista-medium",
+        "sourcePage": 197,
+        "importId": "core.weapon.ballista-medium",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": 4,
+        "enhancements": "Range 3",
+        "limiters": "Activation 2, Hands, Inaccurate",
+        "damage": "3d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Effective Rank: 4; Enhancements: Range 3; Limiters: Activation 2, Hands, Inaccurate; Table Points: 3"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.ballista-medium",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.ballista-medium"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ballista, Small",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 2d6 Bludgeoning. <strong>Rank:</strong> 3. <strong>Enhancements:</strong> Range 3. <strong>Limiters:</strong> Activation 2, Hands.</p><p><strong>Rules Summary:</strong> Ballista, Small is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 3,
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.ballista-small",
+        "sourcePage": 197,
+        "importId": "core.weapon.ballista-small",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": null,
+        "enhancements": "Range 3",
+        "limiters": "Activation 2, Hands",
+        "damage": "2d6",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Enhancements: Range 3; Limiters: Activation 2, Hands; Table Points: 3"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.ballista-small",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.ballista-small"
+          }
+        }
+      }
+    },
+    {
+      "name": "Catapult, Large",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 5d8 Bludgeoning. <strong>Rank:</strong> 11 (10). <strong>Enhancements:</strong> Area 2, Indirect, Range 4. <strong>Limiters:</strong> Activation 2, Assisted 2, Hands, Inaccurate.</p><p><strong>Rules Summary:</strong> Catapult, Large is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 11,
+        "cost": 11,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.catapult-large",
+        "sourcePage": 197,
+        "importId": "core.weapon.catapult-large",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": 10,
+        "enhancements": "Area 2, Indirect, Range 4",
+        "limiters": "Activation 2, Assisted 2, Hands, Inaccurate",
+        "damage": "5d8",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Effective Rank: 10; Enhancements: Area 2, Indirect, Range 4; Limiters: Activation 2, Assisted 2, Hands, Inaccurate; Table Points: 11"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.catapult-large",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.catapult-large"
+          }
+        }
+      }
+    },
+    {
+      "name": "Catapult, Medium",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 4d8 Bludgeoning. <strong>Rank:</strong> 7 (8). <strong>Enhancements:</strong> Area 1, Indirect, Range 3. <strong>Limiters:</strong> Activation 2, Assisted 2, Hands, Inaccurate.</p><p><strong>Rules Summary:</strong> Catapult, Medium is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 7,
+        "cost": 7,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.catapult-medium",
+        "sourcePage": 197,
+        "importId": "core.weapon.catapult-medium",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": 8,
+        "enhancements": "Area 1, Indirect, Range 3",
+        "limiters": "Activation 2, Assisted 2, Hands, Inaccurate",
+        "damage": "4d8",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Effective Rank: 8; Enhancements: Area 1, Indirect, Range 3; Limiters: Activation 2, Assisted 2, Hands, Inaccurate; Table Points: 7"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.catapult-medium",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.catapult-medium"
+          }
+        }
+      }
+    },
+    {
+      "name": "Catapult, Small",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 3d8 Bludgeoning. <strong>Rank:</strong> 4 (6). <strong>Enhancements:</strong> Indirect, Range 3. <strong>Limiters:</strong> Activation 2, Assisted 2, Hands, Inaccurate.</p><p><strong>Rules Summary:</strong> Catapult, Small is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 4,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.catapult-small",
+        "sourcePage": 197,
+        "importId": "core.weapon.catapult-small",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": 6,
+        "enhancements": "Indirect, Range 3",
+        "limiters": "Activation 2, Assisted 2, Hands, Inaccurate",
+        "damage": "3d8",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Effective Rank: 6; Enhancements: Indirect, Range 3; Limiters: Activation 2, Assisted 2, Hands, Inaccurate; Table Points: 4"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.catapult-small",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.catapult-small"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ram, Large",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 10d4 Bludgeoning. <strong>Rank:</strong> 5 (10). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Activation 1, Assisted 3, Hands.</p><p><strong>Rules Summary:</strong> Ram, Large is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 5,
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.ram-large",
+        "sourcePage": 197,
+        "importId": "core.weapon.ram-large",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": 10,
+        "enhancements": "",
+        "limiters": "Activation 1, Assisted 3, Hands",
+        "damage": "10d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Effective Rank: 10; Limiters: Activation 1, Assisted 3, Hands; Table Points: 5"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.ram-large",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.ram-large"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ram, Medium",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 6d4 Bludgeoning. <strong>Rank:</strong> 3 (6). <strong>Enhancements:</strong> Potent 2. <strong>Limiters:</strong> Activation 1, Assisted 3, Hands.</p><p><strong>Rules Summary:</strong> Ram, Medium is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 3,
+        "cost": 3,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.ram-medium",
+        "sourcePage": 197,
+        "importId": "core.weapon.ram-medium",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": 6,
+        "enhancements": "Potent 2",
+        "limiters": "Activation 1, Assisted 3, Hands",
+        "damage": "6d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Effective Rank: 6; Enhancements: Potent 2; Limiters: Activation 1, Assisted 3, Hands; Table Points: 3"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.ram-medium",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.ram-medium"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ram, Small",
+      "type": "weapon",
+      "folder": "Weapons",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 197.</p><p><strong>Category:</strong> Siege Weapons. <strong>Damage:</strong> 4d4 Bludgeoning. <strong>Rank:</strong> 2 (4). <strong>Enhancements:</strong> None. <strong>Limiters:</strong> Assisted 1, Hands.</p><p><strong>Rules Summary:</strong> Ram, Small is a Core Rules siege weapons option built from the Weapon Attribute table.</p>",
+        "rank": 2,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon.ram-small",
+        "sourcePage": 197,
+        "importId": "core.weapon.ram-small",
+        "equipped": false,
+        "category": "Siege Weapons",
+        "effectiveRank": 4,
+        "enhancements": "",
+        "limiters": "Assisted 1, Hands",
+        "damage": "4d4",
+        "damageType": "Bludgeoning",
+        "properties": "Category: Siege Weapons; Effective Rank: 4; Limiters: Assisted 1, Hands; Table Points: 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon.ram-small",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 197,
+            "importId": "core.weapon.ram-small"
+          }
+        }
+      }
+    },
+    {
+      "name": "Padded",
       "type": "armor",
       "folder": "Armour",
       "img": "icons/svg/shield.svg",
       "system": {
-        "description": "<p>Source-indexed armor stub for later rules entry.</p>",
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Light Armour. <strong>Value:</strong> 5 gp. <strong>Armour Class:</strong> 11 + Dexterity modifier. <strong>Strength:</strong> -. <strong>Stealth:</strong> Disadvantage. <strong>Weight:</strong> 8 lb.</p><p><strong>Rules Summary:</strong> Padded is a Core Rules light armour option from the armour table.</p>",
         "rank": 1,
         "cost": 0,
         "source": "Anime 5E Fifth Edition Core Rules",
-        "sourceId": "core.armor.light-armour",
-        "sourcePage": 193,
-        "importId": "core.armor.light-armour",
-        "armourClass": 10,
-        "properties": ""
+        "sourceId": "core.armor.padded",
+        "sourcePage": 198,
+        "importId": "core.armor.padded",
+        "equipped": false,
+        "category": "Light Armour",
+        "armourClass": 11,
+        "value": "5 gp",
+        "weight": "8 lb",
+        "properties": "Category: Light Armour; Value: 5 gp; AC: 11 + Dexterity modifier; Strength: -; Stealth: Disadvantage; Weight: 8 lb"
       },
       "flags": {
         "anime5e": {
-          "sourceId": "core.armor.light-armour",
+          "sourceId": "core.armor.padded",
           "source": {
             "book": "Anime 5E Fifth Edition Core Rules",
-            "page": 193,
-            "importId": "core.armor.light-armour"
+            "page": 198,
+            "importId": "core.armor.padded"
+          }
+        }
+      }
+    },
+    {
+      "name": "Leather",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Light Armour. <strong>Value:</strong> 10 gp. <strong>Armour Class:</strong> 11 + Dexterity modifier. <strong>Strength:</strong> -. <strong>Stealth:</strong> -. <strong>Weight:</strong> 10 lb.</p><p><strong>Rules Summary:</strong> Leather is a Core Rules light armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.leather",
+        "sourcePage": 198,
+        "importId": "core.armor.leather",
+        "equipped": false,
+        "category": "Light Armour",
+        "armourClass": 11,
+        "value": "10 gp",
+        "weight": "10 lb",
+        "properties": "Category: Light Armour; Value: 10 gp; AC: 11 + Dexterity modifier; Strength: -; Stealth: -; Weight: 10 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.leather",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.leather"
+          }
+        }
+      }
+    },
+    {
+      "name": "Studded Leather",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Light Armour. <strong>Value:</strong> 45 gp. <strong>Armour Class:</strong> 12 + Dexterity modifier. <strong>Strength:</strong> -. <strong>Stealth:</strong> -. <strong>Weight:</strong> 13 lb.</p><p><strong>Rules Summary:</strong> Studded Leather is a Core Rules light armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.studded-leather",
+        "sourcePage": 198,
+        "importId": "core.armor.studded-leather",
+        "equipped": false,
+        "category": "Light Armour",
+        "armourClass": 12,
+        "value": "45 gp",
+        "weight": "13 lb",
+        "properties": "Category: Light Armour; Value: 45 gp; AC: 12 + Dexterity modifier; Strength: -; Stealth: -; Weight: 13 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.studded-leather",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.studded-leather"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hide",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Medium Armour. <strong>Value:</strong> 10 gp. <strong>Armour Class:</strong> 12 + Dexterity modifier (max +2). <strong>Strength:</strong> -. <strong>Stealth:</strong> -. <strong>Weight:</strong> 12 lb.</p><p><strong>Rules Summary:</strong> Hide is a Core Rules medium armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.hide",
+        "sourcePage": 198,
+        "importId": "core.armor.hide",
+        "equipped": false,
+        "category": "Medium Armour",
+        "armourClass": 12,
+        "value": "10 gp",
+        "weight": "12 lb",
+        "properties": "Category: Medium Armour; Value: 10 gp; AC: 12 + Dexterity modifier (max +2); Strength: -; Stealth: -; Weight: 12 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.hide",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.hide"
+          }
+        }
+      }
+    },
+    {
+      "name": "Chain Shirt",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Medium Armour. <strong>Value:</strong> 50 gp. <strong>Armour Class:</strong> 13 + Dexterity modifier (max +2). <strong>Strength:</strong> -. <strong>Stealth:</strong> -. <strong>Weight:</strong> 20 lb.</p><p><strong>Rules Summary:</strong> Chain Shirt is a Core Rules medium armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.chain-shirt",
+        "sourcePage": 198,
+        "importId": "core.armor.chain-shirt",
+        "equipped": false,
+        "category": "Medium Armour",
+        "armourClass": 13,
+        "value": "50 gp",
+        "weight": "20 lb",
+        "properties": "Category: Medium Armour; Value: 50 gp; AC: 13 + Dexterity modifier (max +2); Strength: -; Stealth: -; Weight: 20 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.chain-shirt",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.chain-shirt"
+          }
+        }
+      }
+    },
+    {
+      "name": "Scale Mail",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Medium Armour. <strong>Value:</strong> 50 gp. <strong>Armour Class:</strong> 14 + Dexterity modifier (max +2). <strong>Strength:</strong> -. <strong>Stealth:</strong> Disadvantage. <strong>Weight:</strong> 45 lb.</p><p><strong>Rules Summary:</strong> Scale Mail is a Core Rules medium armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.scale-mail",
+        "sourcePage": 198,
+        "importId": "core.armor.scale-mail",
+        "equipped": false,
+        "category": "Medium Armour",
+        "armourClass": 14,
+        "value": "50 gp",
+        "weight": "45 lb",
+        "properties": "Category: Medium Armour; Value: 50 gp; AC: 14 + Dexterity modifier (max +2); Strength: -; Stealth: Disadvantage; Weight: 45 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.scale-mail",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.scale-mail"
+          }
+        }
+      }
+    },
+    {
+      "name": "Breastplate",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Medium Armour. <strong>Value:</strong> 400 gp. <strong>Armour Class:</strong> 14 + Dexterity modifier (max +2). <strong>Strength:</strong> -. <strong>Stealth:</strong> -. <strong>Weight:</strong> 20 lb.</p><p><strong>Rules Summary:</strong> Breastplate is a Core Rules medium armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.breastplate",
+        "sourcePage": 198,
+        "importId": "core.armor.breastplate",
+        "equipped": false,
+        "category": "Medium Armour",
+        "armourClass": 14,
+        "value": "400 gp",
+        "weight": "20 lb",
+        "properties": "Category: Medium Armour; Value: 400 gp; AC: 14 + Dexterity modifier (max +2); Strength: -; Stealth: -; Weight: 20 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.breastplate",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.breastplate"
+          }
+        }
+      }
+    },
+    {
+      "name": "Half Plate",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Medium Armour. <strong>Value:</strong> 750 gp. <strong>Armour Class:</strong> 15 + Dexterity modifier (max +2). <strong>Strength:</strong> -. <strong>Stealth:</strong> Disadvantage. <strong>Weight:</strong> 40 lb.</p><p><strong>Rules Summary:</strong> Half Plate is a Core Rules medium armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.half-plate",
+        "sourcePage": 198,
+        "importId": "core.armor.half-plate",
+        "equipped": false,
+        "category": "Medium Armour",
+        "armourClass": 15,
+        "value": "750 gp",
+        "weight": "40 lb",
+        "properties": "Category: Medium Armour; Value: 750 gp; AC: 15 + Dexterity modifier (max +2); Strength: -; Stealth: Disadvantage; Weight: 40 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.half-plate",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.half-plate"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ring Mail",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Heavy Armour. <strong>Value:</strong> 30 gp. <strong>Armour Class:</strong> 14. <strong>Strength:</strong> -. <strong>Stealth:</strong> Disadvantage. <strong>Weight:</strong> 40 lb.</p><p><strong>Rules Summary:</strong> Ring Mail is a Core Rules heavy armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.ring-mail",
+        "sourcePage": 198,
+        "importId": "core.armor.ring-mail",
+        "equipped": false,
+        "category": "Heavy Armour",
+        "armourClass": 14,
+        "value": "30 gp",
+        "weight": "40 lb",
+        "properties": "Category: Heavy Armour; Value: 30 gp; AC: 14; Strength: -; Stealth: Disadvantage; Weight: 40 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.ring-mail",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.ring-mail"
+          }
+        }
+      }
+    },
+    {
+      "name": "Chain Mail",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Heavy Armour. <strong>Value:</strong> 75 gp. <strong>Armour Class:</strong> 16. <strong>Strength:</strong> 13. <strong>Stealth:</strong> Disadvantage. <strong>Weight:</strong> 55 lb.</p><p><strong>Rules Summary:</strong> Chain Mail is a Core Rules heavy armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.chain-mail",
+        "sourcePage": 198,
+        "importId": "core.armor.chain-mail",
+        "equipped": false,
+        "category": "Heavy Armour",
+        "armourClass": 16,
+        "value": "75 gp",
+        "weight": "55 lb",
+        "properties": "Category: Heavy Armour; Value: 75 gp; AC: 16; Strength: 13; Stealth: Disadvantage; Weight: 55 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.chain-mail",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.chain-mail"
+          }
+        }
+      }
+    },
+    {
+      "name": "Splint",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Heavy Armour. <strong>Value:</strong> 200 gp. <strong>Armour Class:</strong> 17. <strong>Strength:</strong> 15. <strong>Stealth:</strong> Disadvantage. <strong>Weight:</strong> 60 lb.</p><p><strong>Rules Summary:</strong> Splint is a Core Rules heavy armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.splint",
+        "sourcePage": 198,
+        "importId": "core.armor.splint",
+        "equipped": false,
+        "category": "Heavy Armour",
+        "armourClass": 17,
+        "value": "200 gp",
+        "weight": "60 lb",
+        "properties": "Category: Heavy Armour; Value: 200 gp; AC: 17; Strength: 15; Stealth: Disadvantage; Weight: 60 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.splint",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.splint"
+          }
+        }
+      }
+    },
+    {
+      "name": "Plate",
+      "type": "armor",
+      "folder": "Armour",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Category:</strong> Heavy Armour. <strong>Value:</strong> 1,500 gp. <strong>Armour Class:</strong> 18. <strong>Strength:</strong> 15. <strong>Stealth:</strong> Disadvantage. <strong>Weight:</strong> 65 lb.</p><p><strong>Rules Summary:</strong> Plate is a Core Rules heavy armour option from the armour table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.armor.plate",
+        "sourcePage": 198,
+        "importId": "core.armor.plate",
+        "equipped": false,
+        "category": "Heavy Armour",
+        "armourClass": 18,
+        "value": "1,500 gp",
+        "weight": "65 lb",
+        "properties": "Category: Heavy Armour; Value: 1,500 gp; AC: 18; Strength: 15; Stealth: Disadvantage; Weight: 65 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.armor.plate",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.armor.plate"
+          }
+        }
+      }
+    },
+    {
+      "name": "Buckler",
+      "type": "shield",
+      "folder": "Shields",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 3 gp. <strong>Armour Class Bonus:</strong> +1. <strong>Free Hands:</strong> 2 (Disadvantage). <strong>Dexterity:</strong> -. <strong>Weight:</strong> 4 lb.</p><p><strong>Rules Summary:</strong> Buckler is a Core Rules shield option from the armour and shields table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.shield.buckler",
+        "sourcePage": 198,
+        "importId": "core.shield.buckler",
+        "equipped": false,
+        "category": "Shield",
+        "armourClass": 1,
+        "value": "3 gp",
+        "weight": "4 lb",
+        "properties": "Value: 3 gp; AC Bonus: +1; Free Hands: 2 (Disadvantage); Dexterity: -; Weight: 4 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.shield.buckler",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.shield.buckler"
+          }
+        }
+      }
+    },
+    {
+      "name": "Small Shield",
+      "type": "shield",
+      "folder": "Shields",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 10 gp. <strong>Armour Class Bonus:</strong> +2. <strong>Free Hands:</strong> 1. <strong>Dexterity:</strong> -. <strong>Weight:</strong> 6 lb.</p><p><strong>Rules Summary:</strong> Small Shield is a Core Rules shield option from the armour and shields table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.shield.small-shield",
+        "sourcePage": 198,
+        "importId": "core.shield.small-shield",
+        "equipped": false,
+        "category": "Shield",
+        "armourClass": 2,
+        "value": "10 gp",
+        "weight": "6 lb",
+        "properties": "Value: 10 gp; AC Bonus: +2; Free Hands: 1; Dexterity: -; Weight: 6 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.shield.small-shield",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.shield.small-shield"
+          }
+        }
+      }
+    },
+    {
+      "name": "Large Shield",
+      "type": "shield",
+      "folder": "Shields",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 20 gp. <strong>Armour Class Bonus:</strong> +3. <strong>Free Hands:</strong> 1. <strong>Dexterity:</strong> Disadvantage. <strong>Weight:</strong> 10 lb.</p><p><strong>Rules Summary:</strong> Large Shield is a Core Rules shield option from the armour and shields table.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.shield.large-shield",
+        "sourcePage": 198,
+        "importId": "core.shield.large-shield",
+        "equipped": false,
+        "category": "Shield",
+        "armourClass": 3,
+        "value": "20 gp",
+        "weight": "10 lb",
+        "properties": "Value: 20 gp; AC Bonus: +3; Free Hands: 1; Dexterity: Disadvantage; Weight: 10 lb"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.shield.large-shield",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 198,
+            "importId": "core.shield.large-shield"
+          }
+        }
+      }
+    },
+    {
+      "name": "Capacity",
+      "type": "itemAttribute",
+      "folder": "Item Attributes",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 199.</p><p><strong>Category:</strong> Item-only Attribute. <strong>Applies To:</strong> Items, vehicles, and locations. <strong>Progression:</strong> Rank 1 carries +1 person; Rank 6 carries +50 people or 10 tons..</p><p><strong>Rules Summary:</strong> Lets a vehicle or location carry additional people or cargo beyond its normal single occupant.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item-attribute.capacity",
+        "sourcePage": 199,
+        "importId": "core.item-attribute.capacity",
+        "parentAttribute": "Item",
+        "appliesTo": "Items, vehicles, and locations"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item-attribute.capacity",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 199,
+            "importId": "core.item-attribute.capacity"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ground Speed",
+      "type": "itemAttribute",
+      "folder": "Item Attributes",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 199.</p><p><strong>Category:</strong> Item-only Attribute. <strong>Applies To:</strong> Land vehicles. <strong>Progression:</strong> Rank 1 is 30 feet/round; Rank 6 reaches 1,000 mph..</p><p><strong>Rules Summary:</strong> Gives land vehicles a movement speed when they do not have a natural base speed.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item-attribute.ground-speed",
+        "sourcePage": 199,
+        "importId": "core.item-attribute.ground-speed",
+        "parentAttribute": "Item",
+        "appliesTo": "Land vehicles"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item-attribute.ground-speed",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 199,
+            "importId": "core.item-attribute.ground-speed"
+          }
+        }
+      }
+    },
+    {
+      "name": "3D Manoeuvring Gear",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 200.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Harness that grants exceptional three-axis movement through grappling hooks, jets, and stunt mobility.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.3d-manoeuvring-gear",
+        "sourcePage": 200,
+        "importId": "core.item.3d-manoeuvring-gear",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Combat Technique 2; Fast 2; Special Movement 4; Special Requirement 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.3d-manoeuvring-gear",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 200,
+            "importId": "core.item.3d-manoeuvring-gear"
+          }
+        }
+      }
+    },
+    {
+      "name": "Animal Control Flute",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 200.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Musical item that exerts limited mind control over nearby woodland animals that can hear it.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.animal-control-flute",
+        "sourcePage": 200,
+        "importId": "core.item.animal-control-flute",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Mind Control - Lesser 10 (2), Area 100 ft, Targets 100, Detectable hearing."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.animal-control-flute",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 200,
+            "importId": "core.item.animal-control-flute"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bag of Holding",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 201.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Satchel connected to a large pocket dimension that stores many objects and helps retrieve the desired item.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.bag-of-holding",
+        "sourcePage": 201,
+        "importId": "core.item.bag-of-holding",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Pocket Dimension 4; Sixth Sense 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.bag-of-holding",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 201,
+            "importId": "core.item.bag-of-holding"
+          }
+        }
+      }
+    },
+    {
+      "name": "Belt of Giant Strength",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 201.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Worn item that greatly augments the user&#39;s Strength.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.belt-of-giant-strength",
+        "sourcePage": 201,
+        "importId": "core.item.belt-of-giant-strength",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Augmented 10."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.belt-of-giant-strength",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 201,
+            "importId": "core.item.belt-of-giant-strength"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dimensional Story Book",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 201.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Story book that functions as a two-way portal to the dimension described in its narrative.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.dimensional-story-book",
+        "sourcePage": 201,
+        "importId": "core.item.dimensional-story-book",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Portal 2."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.dimensional-story-book",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 201,
+            "importId": "core.item.dimensional-story-book"
+          }
+        }
+      }
+    },
+    {
+      "name": "Distance Quills",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 201.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Linked writing quills that transcribe messages across enormous distances.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.distance-quills",
+        "sourcePage": 201,
+        "importId": "core.item.distance-quills",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Unique Attribute 10 (1), Range 1,000 miles, Targets 5, Equipment linked quills."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.distance-quills",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 201,
+            "importId": "core.item.distance-quills"
+          }
+        }
+      }
+    },
+    {
+      "name": "Divining Rod",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 201.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Y-shaped rod that points the holder toward nearby sources of water.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.divining-rod",
+        "sourcePage": 201,
+        "importId": "core.item.divining-rod",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Sixth Sense 5 (1), Area 1,000 ft."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.divining-rod",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 201,
+            "importId": "core.item.divining-rod"
+          }
+        }
+      }
+    },
+    {
+      "name": "Love Potion",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 201.</p><p><strong>Item Rank:</strong> 3. <strong>Point Cost:</strong> 12. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Potion that pushes the drinker toward romantic fixation on the first person they encounter.</p>",
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.love-potion",
+        "sourcePage": 201,
+        "importId": "core.item.love-potion",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 12,
+        "attunement": "",
+        "attributeSummary": "Mind Control 5, Duration 1 week, Ingest, Unique Limiter."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.love-potion",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 201,
+            "importId": "core.item.love-potion"
+          }
+        }
+      }
+    },
+    {
+      "name": "Magical Cloth",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 202.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Self-healing cloth that hides wrapped people or objects from magical and spiritual detection.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.magical-cloth",
+        "sourcePage": 202,
+        "importId": "core.item.magical-cloth",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Regeneration 1 (2); Undetectable 2."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.magical-cloth",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 202,
+            "importId": "core.item.magical-cloth"
+          }
+        }
+      }
+    },
+    {
+      "name": "Map Moth",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 202.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Created moth that slowly locates a desired nearby object, person, or concept.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.map-moth",
+        "sourcePage": 202,
+        "importId": "core.item.map-moth",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Dynamic Powers 1, Detection, Potent, Detectable sight."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.map-moth",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 202,
+            "importId": "core.item.map-moth"
+          }
+        }
+      }
+    },
+    {
+      "name": "Master Key",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 202.</p><p><strong>Item Rank:</strong> 3. <strong>Point Cost:</strong> 12. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Key that can open physical and metaphysical locks, including planar barriers and unusual passwords.</p>",
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.master-key",
+        "sourcePage": 202,
+        "importId": "core.item.master-key",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 12,
+        "attunement": "",
+        "attributeSummary": "Dynamic Powers - Lesser 3, Keys."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.master-key",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 202,
+            "importId": "core.item.master-key"
+          }
+        }
+      }
+    },
+    {
+      "name": "Menagerie Ball",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 202.</p><p><strong>Item Rank:</strong> 4. <strong>Point Cost:</strong> 16. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Ball that stores creatures in a forested pocket dimension and recalls selected captives on command.</p>",
+        "rank": 4,
+        "cost": 16,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.menagerie-ball",
+        "sourcePage": 202,
+        "importId": "core.item.menagerie-ball",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 16,
+        "attunement": "",
+        "attributeSummary": "Pocket Dimension 10 (6), 10-mile pocket, Duration 1 week."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.menagerie-ball",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 202,
+            "importId": "core.item.menagerie-ball"
+          }
+        }
+      }
+    },
+    {
+      "name": "Portable Hole",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 203.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Foldable hole that creates a short passage through barriers for a small group.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.portable-hole",
+        "sourcePage": 203,
+        "importId": "core.item.portable-hole",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Teleport 3 (1), Targets 10, wall-only Unique Limiter; Unique Attribute 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.portable-hole",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 203,
+            "importId": "core.item.portable-hole"
+          }
+        }
+      }
+    },
+    {
+      "name": "Scrying Mirror",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 203.</p><p><strong>Item Rank:</strong> 5. <strong>Point Cost:</strong> 20. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Mirror or pool that reveals glimpses of desired people, objects, past events, or possible futures.</p>",
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.scrying-mirror",
+        "sourcePage": 203,
+        "importId": "core.item.scrying-mirror",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 20,
+        "attunement": "",
+        "attributeSummary": "Cognition 5 (6); Cognition 2 (4); Dynamic Powers 1; Sixth Sense 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.scrying-mirror",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 203,
+            "importId": "core.item.scrying-mirror"
+          }
+        }
+      }
+    },
+    {
+      "name": "Terradigger",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 203.</p><p><strong>Item Rank:</strong> 3. <strong>Point Cost:</strong> 12. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Armoured drill vehicle that moves, tunnels, resists pressure, and carries a crossbow weapon.</p>",
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.terradigger",
+        "sourcePage": 203,
+        "importId": "core.item.terradigger",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 12,
+        "attunement": "",
+        "attributeSummary": "AC Bonus 6; Ground Speed 1 (2); Tunnelling 3 (4); Weapon 5 (3)."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.terradigger",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 203,
+            "importId": "core.item.terradigger"
+          }
+        }
+      }
+    },
+    {
+      "name": "True-Sight Glasses",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 203.</p><p><strong>Item Rank:</strong> 4. <strong>Point Cost:</strong> 16. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Glasses that reveal the truth behind illusions, projections, and obscuring effects.</p>",
+        "rank": 4,
+        "cost": 16,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.true-sight-glasses",
+        "sourcePage": 203,
+        "importId": "core.item.true-sight-glasses",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 16,
+        "attunement": "",
+        "attributeSummary": "Dynamic Powers - Lesser 4, Visual Truths."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.true-sight-glasses",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 203,
+            "importId": "core.item.true-sight-glasses"
+          }
+        }
+      }
+    },
+    {
+      "name": "Winged Boots",
+      "type": "itemOfPower",
+      "folder": "Adventuring Gear",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 203.</p><p><strong>Item Rank:</strong> 5. <strong>Point Cost:</strong> 20. <strong>Category:</strong> Adventuring Gear.</p><p><strong>Rules Summary:</strong> Boots that provide fast flight and protection against high-altitude cold and thin air.</p>",
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.winged-boots",
+        "sourcePage": 203,
+        "importId": "core.item.winged-boots",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Adventuring Gear",
+        "points": 20,
+        "attunement": "",
+        "attributeSummary": "Flight 5; Immunity 3; Resilient 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.winged-boots",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 203,
+            "importId": "core.item.winged-boots"
+          }
+        }
+      }
+    },
+    {
+      "name": "Cleaning Drones",
+      "type": "itemOfPower",
+      "folder": "Daily Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 204.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Daily Devices.</p><p><strong>Rules Summary:</strong> Small magical flying devices that autonomously clean and tidy spaces.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.cleaning-drones",
+        "sourcePage": 204,
+        "importId": "core.item.cleaning-drones",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Daily Devices",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Flight 1; Unique Attribute 2."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.cleaning-drones",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 204,
+            "importId": "core.item.cleaning-drones"
+          }
+        }
+      }
+    },
+    {
+      "name": "Grub Carriage",
+      "type": "itemOfPower",
+      "folder": "Daily Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 204.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Daily Devices.</p><p><strong>Rules Summary:</strong> Luxury carriage moved by large grubs that also provides mental protection and Energy recovery.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.grub-carriage",
+        "sourcePage": 204,
+        "importId": "core.item.grub-carriage",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Daily Devices",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Capacity 3; Ground Speed 1 (3); Mind Shield 2; Regeneration 2; Special Requirement 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.grub-carriage",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 204,
+            "importId": "core.item.grub-carriage"
+          }
+        }
+      }
+    },
+    {
+      "name": "Skill Pills",
+      "type": "itemOfPower",
+      "folder": "Daily Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 204.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Daily Devices.</p><p><strong>Rules Summary:</strong> Consumable pills that grant practical experience with a selected Skill for one day.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.skill-pills",
+        "sourcePage": 204,
+        "importId": "core.item.skill-pills",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Daily Devices",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Edge 1; Skill Proficiency 4 (1)."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.skill-pills",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 204,
+            "importId": "core.item.skill-pills"
+          }
+        }
+      }
+    },
+    {
+      "name": "Universal Translator",
+      "type": "itemOfPower",
+      "folder": "Daily Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 204.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Daily Devices.</p><p><strong>Rules Summary:</strong> Device that translates spoken language into the user&#39;s native tongue.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.universal-translator",
+        "sourcePage": 204,
+        "importId": "core.item.universal-translator",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Daily Devices",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Dynamic Powers - Lesser 2, Languages."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.universal-translator",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 204,
+            "importId": "core.item.universal-translator"
+          }
+        }
+      }
+    },
+    {
+      "name": "Water Shoes",
+      "type": "itemOfPower",
+      "folder": "Daily Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 204.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Daily Devices.</p><p><strong>Rules Summary:</strong> Footwear that allows walking across liquid surfaces and swift swimming.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.water-shoes",
+        "sourcePage": 204,
+        "importId": "core.item.water-shoes",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Daily Devices",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Special Movement 2; Water Speed 3."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.water-shoes",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 204,
+            "importId": "core.item.water-shoes"
+          }
+        }
+      }
+    },
+    {
+      "name": "Binding Contract",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 205.</p><p><strong>Item Rank:</strong> 3. <strong>Point Cost:</strong> 12. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Magical agreement that remembers its terms perfectly and enforces them on signatories.</p>",
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.binding-contract",
+        "sourcePage": 205,
+        "importId": "core.item.binding-contract",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 12,
+        "attunement": "",
+        "attributeSummary": "Features 1; Mind Control - Lesser 14 (4)."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.binding-contract",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 205,
+            "importId": "core.item.binding-contract"
+          }
+        }
+      }
+    },
+    {
+      "name": "Energy Well",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 205.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Fixed mystical nexus that grants Energy, healing, perception, mental defence, and luck while present.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.energy-well",
+        "sourcePage": 205,
+        "importId": "core.item.energy-well",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Energised 5; Healing 3; Mind Shield 2; Mulligan 1; Skill Proficiency 1; Unique Defect 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.energy-well",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 205,
+            "importId": "core.item.energy-well"
+          }
+        }
+      }
+    },
+    {
+      "name": "Liquid Suit",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 205.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Form-fitting suit that changes the wearer into liquid and improves movement through fluids.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.liquid-suit",
+        "sourcePage": 205,
+        "importId": "core.item.liquid-suit",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Change State 1; Water Speed 2 (3)."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.liquid-suit",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 205,
+            "importId": "core.item.liquid-suit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Memory Neutraliser",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 205.</p><p><strong>Item Rank:</strong> 3. <strong>Point Cost:</strong> 12. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Device that erases very recent memories from a small group in a nearby area.</p>",
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.memory-neutraliser",
+        "sourcePage": 205,
+        "importId": "core.item.memory-neutraliser",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 12,
+        "attunement": "",
+        "attributeSummary": "Mind Control 5, Area 10 ft, Targets 5, memory-only Unique Limiter."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.memory-neutraliser",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 205,
+            "importId": "core.item.memory-neutraliser"
+          }
+        }
+      }
+    },
+    {
+      "name": "Perception Enhancer",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 205.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Helmet that slows the user&#39;s perception of time to grant extra actions at an Energy cost.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.perception-enhancer",
+        "sourcePage": 205,
+        "importId": "core.item.perception-enhancer",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Extra Actions 1 (3); Mulligan 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.perception-enhancer",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 205,
+            "importId": "core.item.perception-enhancer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Pixie Glove",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 206.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Sparkling glove that shrinks a Medium user to Diminutive size and grants flight.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.pixie-glove",
+        "sourcePage": 206,
+        "importId": "core.item.pixie-glove",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Flight 2; Size Change - Lesser 1 (3)."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.pixie-glove",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 206,
+            "importId": "core.item.pixie-glove"
+          }
+        }
+      }
+    },
+    {
+      "name": "Plasma Gel",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 206.</p><p><strong>Item Rank:</strong> 12. <strong>Point Cost:</strong> 48. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Mystical gel that creates localised gravity control and micro singularity effects at high Energy cost.</p>",
+        "rank": 12,
+        "cost": 48,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.plasma-gel",
+        "sourcePage": 206,
+        "importId": "core.item.plasma-gel",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 48,
+        "attunement": "",
+        "attributeSummary": "Dynamic Powers 6, Gravity, Area 10 ft, Range 30 ft, Deplete 30 Energy/use."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.plasma-gel",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 206,
+            "importId": "core.item.plasma-gel"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ring of Power",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 206.</p><p><strong>Item Rank:</strong> 5. <strong>Point Cost:</strong> 20. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Ancient dominion ring that grants infernal command, protection, inspiration, perception, invisibility, and dangerous curses.</p>",
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.ring-of-power",
+        "sourcePage": 206,
+        "importId": "core.item.ring-of-power",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 20,
+        "attunement": "",
+        "attributeSummary": "Connected 8; Immunity 4 (7); Inspire - Greater 4; Skill Proficiency 1; Sixth Sense 1; Undetectable 2; Cursed 3; Hounded 3; Unique Defect 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.ring-of-power",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 206,
+            "importId": "core.item.ring-of-power"
+          }
+        }
+      }
+    },
+    {
+      "name": "Summoning Keys",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 206.</p><p><strong>Item Rank:</strong> 6. <strong>Point Cost:</strong> 24. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Linked keys that summon contracted extraplanar Companions.</p>",
+        "rank": 6,
+        "cost": 24,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.summoning-keys",
+        "sourcePage": 206,
+        "importId": "core.item.summoning-keys",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 24,
+        "attunement": "",
+        "attributeSummary": "Dynamic Powers 3 (8), Dimensional Companions, Deplete, contract Unique Limiter."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.summoning-keys",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 206,
+            "importId": "core.item.summoning-keys"
+          }
+        }
+      }
+    },
+    {
+      "name": "Teleportation Network",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 208.</p><p><strong>Item Rank:</strong> 5. <strong>Point Cost:</strong> 20. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Network of linked pods that translocates a small group to fixed destinations across great distances or dimensions.</p>",
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.teleportation-network",
+        "sourcePage": 208,
+        "importId": "core.item.teleportation-network",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 20,
+        "attunement": "",
+        "attributeSummary": "Teleport 8 (7), Targets 5, dimensional Unique Enhancement, fixed-pod Equipment."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.teleportation-network",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 208,
+            "importId": "core.item.teleportation-network"
+          }
+        }
+      }
+    },
+    {
+      "name": "Vengeance Gem",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 208.</p><p><strong>Item Rank:</strong> 7. <strong>Point Cost:</strong> 28. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Forehead gem that augments Constitution, reveals near-future danger, and unlocks psionic combat benefits.</p>",
+        "rank": 7,
+        "cost": 28,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.vengeance-gem",
+        "sourcePage": 208,
+        "importId": "core.item.vengeance-gem",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 28,
+        "attunement": "",
+        "attributeSummary": "AC Bonus 5 (6); Augmented 4; Cognition 1 (2); Combat Mastery 4 (5); Dynamic Powers 2."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.vengeance-gem",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 208,
+            "importId": "core.item.vengeance-gem"
+          }
+        }
+      }
+    },
+    {
+      "name": "World Gate",
+      "type": "itemOfPower",
+      "folder": "Items of Power",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 208.</p><p><strong>Item Rank:</strong> 10. <strong>Point Cost:</strong> 40. <strong>Category:</strong> Items of Power.</p><p><strong>Rules Summary:</strong> Permanent two-way gate between worlds through an Anime Multiverse wayline.</p>",
+        "rank": 10,
+        "cost": 40,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.world-gate",
+        "sourcePage": 208,
+        "importId": "core.item.world-gate",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Items of Power",
+        "points": 40,
+        "attunement": "",
+        "attributeSummary": "Portal 10 (2), Duration Permanent, Activation 1 minute."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.world-gate",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 208,
+            "importId": "core.item.world-gate"
+          }
+        }
+      }
+    },
+    {
+      "name": "Animal Multisuit",
+      "type": "itemOfPower",
+      "folder": "Protective Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 209.</p><p><strong>Item Rank:</strong> 3. <strong>Point Cost:</strong> 12. <strong>Category:</strong> Protective Devices.</p><p><strong>Rules Summary:</strong> Enchanted bodysuit that grants armour, animal sensory features, claws, movement, and survival traits.</p>",
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.animal-multisuit",
+        "sourcePage": 209,
+        "importId": "core.item.animal-multisuit",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Protective Devices",
+        "points": 12,
+        "attunement": "",
+        "attributeSummary": "AC Bonus 2; Features 11; Jumping 2."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.animal-multisuit",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 209,
+            "importId": "core.item.animal-multisuit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Cloak of Displacement",
+      "type": "itemOfPower",
+      "folder": "Protective Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 209.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Protective Devices.</p><p><strong>Rules Summary:</strong> Durable cloak that shifts the wearer&#39;s image and hinders incoming attacks.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.cloak-of-displacement",
+        "sourcePage": 209,
+        "importId": "core.item.cloak-of-displacement",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Protective Devices",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "AC Bonus 1; Forced Disadvantage 1."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.cloak-of-displacement",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 209,
+            "importId": "core.item.cloak-of-displacement"
+          }
+        }
+      }
+    },
+    {
+      "name": "Lucky Rabbit's Foot",
+      "type": "itemOfPower",
+      "folder": "Protective Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 209.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Protective Devices.</p><p><strong>Rules Summary:</strong> Charm that improves Wisdom and grants several session rerolls.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.lucky-rabbits-foot",
+        "sourcePage": 209,
+        "importId": "core.item.lucky-rabbits-foot",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Protective Devices",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Augmented 2; Mulligan 3."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.lucky-rabbits-foot",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 209,
+            "importId": "core.item.lucky-rabbits-foot"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sacred Chalice",
+      "type": "itemOfPower",
+      "folder": "Protective Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 209.</p><p><strong>Item Rank:</strong> 5. <strong>Point Cost:</strong> 20. <strong>Category:</strong> Protective Devices.</p><p><strong>Rules Summary:</strong> Healing chalice that grants longevity, strong healing, and resurrection through water from the cup.</p>",
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.sacred-chalice",
+        "sourcePage": 209,
+        "importId": "core.item.sacred-chalice",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Protective Devices",
+        "points": 20,
+        "attunement": "",
+        "attributeSummary": "Features 10 (1); Healing 7 (8); Spell-Like Ability 8."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.sacred-chalice",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 209,
+            "importId": "core.item.sacred-chalice"
+          }
+        }
+      }
+    },
+    {
+      "name": "Shaed Cloak",
+      "type": "itemOfPower",
+      "folder": "Protective Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 209.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Protective Devices.</p><p><strong>Rules Summary:</strong> Cloak that gives alternate identities, healing, and distance-based invisibility.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.shaed-cloak",
+        "sourcePage": 209,
+        "importId": "core.item.shaed-cloak",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Protective Devices",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Alternate Identity 6; Healing 2; Undetectable 1 (2)."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.shaed-cloak",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 209,
+            "importId": "core.item.shaed-cloak"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tin Helm",
+      "type": "itemOfPower",
+      "folder": "Protective Devices",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 209.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Protective Devices.</p><p><strong>Rules Summary:</strong> Folded helm that protects a true believer from mind and body intrusion.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.tin-helm",
+        "sourcePage": 209,
+        "importId": "core.item.tin-helm",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Protective Devices",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Immutable 2 (4); Mind Shield 3 (5)."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.tin-helm",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 209,
+            "importId": "core.item.tin-helm"
+          }
+        }
+      }
+    },
+    {
+      "name": "Beastly Spear",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 210.</p><p><strong>Item Rank:</strong> 5. <strong>Point Cost:</strong> 20. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Bonded spear that grants Energy, flight, anti-demon stealth, and a powerful targeted multidimensional attack.</p>",
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.beastly-spear",
+        "sourcePage": 210,
+        "importId": "core.item.beastly-spear",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 20,
+        "attunement": "",
+        "attributeSummary": "Energised 1; Flight 2 (4); Weapon 15 (5); Undetectable 1; Unique Attribute 2."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.beastly-spear",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 210,
+            "importId": "core.item.beastly-spear"
+          }
+        }
+      }
+    },
+    {
+      "name": "Book of Death",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 210.</p><p><strong>Item Rank:</strong> 6. <strong>Point Cost:</strong> 24. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Book that damages a named target at extreme range through a hidden psychic death attack.</p>",
+        "rank": 6,
+        "cost": 24,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.book-of-death",
+        "sourcePage": 210,
+        "importId": "core.item.book-of-death",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 24,
+        "attunement": "",
+        "attributeSummary": "Weapon 30 (18), Death's Caress."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.book-of-death",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 210,
+            "importId": "core.item.book-of-death"
+          }
+        }
+      }
+    },
+    {
+      "name": "Fireball Collar",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 210.</p><p><strong>Item Rank:</strong> 4. <strong>Point Cost:</strong> 16. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Explosive restraint that detonates when removed or remotely triggered.</p>",
+        "rank": 4,
+        "cost": 16,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.fireball-collar",
+        "sourcePage": 210,
+        "importId": "core.item.fireball-collar",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 16,
+        "attunement": "",
+        "attributeSummary": "Weapon 20, Fireball Explosion."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.fireball-collar",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 210,
+            "importId": "core.item.fireball-collar"
+          }
+        }
+      }
+    },
+    {
+      "name": "Leaching Wand",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 210.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Wand that bypasses armour, prevents easy healing, and transfers stolen vitality to the attacker.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.leaching-wand",
+        "sourcePage": 210,
+        "importId": "core.item.leaching-wand",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Weapon 10 (2), Invading Pulse."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.leaching-wand",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 210,
+            "importId": "core.item.leaching-wand"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mindeater",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 210.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Golden circlet that launches a psychic infection draining Intelligence and spreading by touch.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.mindeater",
+        "sourcePage": 210,
+        "importId": "core.item.mindeater",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Weapon 5 (0), Infection."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.mindeater",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 210,
+            "importId": "core.item.mindeater"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mobius Blade",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 211.</p><p><strong>Item Rank:</strong> 5. <strong>Point Cost:</strong> 20. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Legendary blade that augments Dexterity, controls cold and humidity, changes size, and attacks with dimensional wind.</p>",
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.mobius-blade",
+        "sourcePage": 211,
+        "importId": "core.item.mobius-blade",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 20,
+        "attunement": "",
+        "attributeSummary": "Augmented 4; Control Environment 2; Size Change - Lesser 2; Weapon 11 (5)."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.mobius-blade",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 211,
+            "importId": "core.item.mobius-blade"
+          }
+        }
+      }
+    },
+    {
+      "name": "Pain Doll",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 212.</p><p><strong>Item Rank:</strong> 2. <strong>Point Cost:</strong> 8. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Effigy weapon that harms the represented target from anywhere in the world or a nearby dimensional plane.</p>",
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.pain-doll",
+        "sourcePage": 212,
+        "importId": "core.item.pain-doll",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 8,
+        "attunement": "",
+        "attributeSummary": "Weapon 10 (2), Pain."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.pain-doll",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 212,
+            "importId": "core.item.pain-doll"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sword of Detection",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 212.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Sword imprinted on a race or enemy that detects nearby targets and grants their language.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.sword-of-detection",
+        "sourcePage": 212,
+        "importId": "core.item.sword-of-detection",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 4,
+        "attunement": "",
+        "attributeSummary": "Language 1; Sixth Sense 1; Weapon 3."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.sword-of-detection",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 212,
+            "importId": "core.item.sword-of-detection"
+          }
+        }
+      }
+    },
+    {
+      "name": "Thunder Mace",
+      "type": "itemOfPower",
+      "folder": "Armaments",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 212.</p><p><strong>Item Rank:</strong> 7. <strong>Point Cost:</strong> 28. <strong>Category:</strong> Armaments.</p><p><strong>Rules Summary:</strong> Bonded mace that controls darkness and storms, flies back to its owner, and offers smash and lightning attacks.</p>",
+        "rank": 7,
+        "cost": 28,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.item.thunder-mace",
+        "sourcePage": 212,
+        "importId": "core.item.thunder-mace",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "itemCategory": "Armaments",
+        "points": 28,
+        "attunement": "",
+        "attributeSummary": "Control Environment 2; Flight 2 (5); Weapon 12 (6); Weapon 13 (4); Unique Attribute 2."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.item.thunder-mace",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 212,
+            "importId": "core.item.thunder-mace"
           }
         }
       }

@@ -282,6 +282,11 @@ export class Anime5eWeaponData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      equipped: booleanField(),
+      category: textField(),
+      effectiveRank: optionalNumberField(),
+      enhancements: textField(),
+      limiters: textField(),
       damage: textField(),
       damageType: textField(),
       properties: textField()
@@ -293,7 +298,11 @@ export class Anime5eArmorData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      equipped: booleanField(),
+      category: textField(),
       armourClass: numberField(10, { min: 0 }),
+      value: textField(),
+      weight: textField(),
       properties: textField()
     };
   }

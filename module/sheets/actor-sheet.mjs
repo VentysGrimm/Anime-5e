@@ -60,6 +60,8 @@ const ITEM_GROUP_TYPES = {
   companions: ["vehicle", "mecha"]
 };
 
+const EQUIPPABLE_ITEM_TYPES = new Set(["weapon", "armor", "shield"]);
+
 const REQUIRED_NUMBER_DEFAULTS = {
   "system.level": 1,
   "system.experience": 0,
@@ -90,6 +92,11 @@ function signedModifier(value) {
 
 function buildD20Formula(...modifiers) {
   return ["1d20", ...modifiers.map((modifier) => signedModifier(modifier))].join(" ");
+}
+
+function numberOrZero(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : 0;
 }
 
 function hasText(value) {
@@ -134,7 +141,6 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     },
     form: {
       closeOnSubmit: false,
-      handler: Anime5eActorSheet._onSubmit,
       submitOnChange: false,
       submitOnClose: true
     },
@@ -162,6 +168,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.system = system;
     context.items = items.map((item) => this.constructor._prepareItemContext(item));
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
+    context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
     context.activeTab = this.tabGroups?.primary ?? "overview";
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
     context.tabs = FOLIO_TABS.map((tab) => ({ ...tab, active: tab.id === context.activeTab }));
@@ -228,6 +235,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       source: system.source,
       sourcePage: system.sourcePage,
       description: system.description,
+      equipped: !!system.equipped,
+      equippable: EQUIPPABLE_ITEM_TYPES.has(item.type),
       canUse: true,
       canRoll: hasText(system.roll),
       canAttack: item.type === "weapon" || Number.isFinite(Number(system.attackModifier)),
@@ -240,6 +249,50 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       groups[group] = items.filter((item) => types.includes(item.type));
       return groups;
     }, { all: items });
+  }
+
+  static _prepareEquipmentContext(system, rawItems, preparedItems) {
+    const preparedById = new Map(preparedItems.map((item) => [item.id, item]));
+    const equipped = rawItems.filter((item) => EQUIPPABLE_ITEM_TYPES.has(item.type) && item.system?.equipped);
+    const equippedArmour = equipped.filter((item) => item.type === "armor");
+    const equippedShields = equipped.filter((item) => item.type === "shield");
+    const dexterityModifier = numberOrZero(system.abilities?.dexterity?.modifier);
+    const manualArmourClass = numberOrZero(system.combat?.armourClass) || 10;
+
+    const armourOptions = equippedArmour.map((item) => ({
+      item,
+      armourClass: this._calculateArmourClass(item, dexterityModifier)
+    }));
+    const selectedArmour = armourOptions.reduce((best, option) => {
+      if (!best) return option;
+      return option.armourClass > best.armourClass ? option : best;
+    }, null);
+
+    const shieldBonus = equippedShields.reduce((total, item) => total + numberOrZero(item.system?.armourClass), 0);
+    const armourClass = (selectedArmour?.armourClass ?? manualArmourClass) + shieldBonus;
+    const armourDetails = [
+      selectedArmour ? `${selectedArmour.item.name} ${selectedArmour.armourClass}` : `Manual AC ${manualArmourClass}`,
+      ...equippedShields.map((item) => `${item.name} +${numberOrZero(item.system?.armourClass)}`)
+    ];
+
+    return {
+      armourClass,
+      armourDetails: armourDetails.join(" + "),
+      armourWarning: equippedArmour.length > 1 ? "Multiple armour items are equipped; using the highest armour value." : "",
+      weapons: equipped
+        .filter((item) => item.type === "weapon")
+        .map((item) => preparedById.get(item.id))
+        .filter(Boolean)
+    };
+  }
+
+  static _calculateArmourClass(item, dexterityModifier) {
+    const baseArmourClass = numberOrZero(item.system?.armourClass) || 10;
+    const category = String(item.system?.category ?? item.system?.properties ?? "");
+
+    if (/medium armour/i.test(category)) return baseArmourClass + Math.min(dexterityModifier, 2);
+    if (/heavy armour/i.test(category)) return baseArmourClass;
+    return baseArmourClass + dexterityModifier;
   }
 
   async _onRender(context, options) {
@@ -286,6 +339,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='delete-item']").forEach((button) => {
       button.addEventListener("click", this._onDeleteItem.bind(this));
     });
+    element.querySelectorAll("[data-action='toggle-equipped']").forEach((button) => {
+      button.addEventListener("click", this._onToggleItemEquipped.bind(this));
+    });
     element.querySelectorAll("[data-item-id]").forEach((row) => {
       row.draggable = true;
       row.addEventListener("dragstart", this._onDragStart.bind(this));
@@ -300,8 +356,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const form = element.querySelector("form");
     if (!form || !this.isEditable) return;
 
-    const debouncedSave = foundry.utils.debounce(() => this._saveSheetForm(form), 300);
-    const saveNow = () => this._saveSheetForm(form);
+    const debouncedSave = foundry.utils.debounce(() => this._saveSheetForm(), 300);
+    const saveNow = () => this._saveSheetForm();
 
     form.querySelectorAll("input[name], textarea[name]").forEach((input) => {
       input.addEventListener("input", debouncedSave);
@@ -313,20 +369,23 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
   }
 
-  async _saveSheetForm(form) {
+  async _saveSheetForm() {
     if (this._savingSheetForm) return;
 
     this._savingSheetForm = true;
     try {
-      const formData = new foundry.applications.ux.FormDataExtended(form);
-      const updateData = normalizeRequiredNumbers(foundry.utils.expandObject(formData.object));
-      await this.actor.update(updateData);
+      await this.submit();
     } catch (error) {
       console.error("anime5e | Failed to auto-save actor sheet", error);
       ui.notifications?.error("Anime 5e could not auto-save the actor sheet. Check the console for details.");
     } finally {
       this._savingSheetForm = false;
     }
+  }
+
+  _prepareSubmitData(event, form, formData, updateData) {
+    const submitData = super._prepareSubmitData(event, form, formData, updateData);
+    return normalizeRequiredNumbers(submitData);
   }
 
   async _onRollAbility(event) {
@@ -507,6 +566,16 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await item?.delete();
   }
 
+  async _onToggleItemEquipped(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || !EQUIPPABLE_ITEM_TYPES.has(item.type)) return;
+
+    await item.update({ "system.equipped": !item.system?.equipped });
+  }
+
   _onDragStart(event) {
     const item = this.actor.items.get(event.currentTarget.dataset.itemId);
     if (!item) return;
@@ -529,20 +598,6 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     return this.actor.createEmbeddedDocuments("Item", [item.toObject()]);
   }
 
-  static async _onSubmit(event, form, formData) {
-    const document = this.actor ?? this.document;
-    const updateData = normalizeRequiredNumbers(foundry.utils.expandObject(formData.object));
-
-    try {
-      await document.update(updateData);
-    } catch (error) {
-      console.error("anime5e | Failed to save actor sheet", error);
-      ui.notifications?.error("Anime 5e could not save the actor sheet. Check the console for details.");
-      return false;
-    }
-
-    return true;
-  }
 }
 
 export class Anime5eBasicActorSheet extends Anime5eActorSheet {

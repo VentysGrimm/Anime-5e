@@ -9,14 +9,248 @@
   ],
   "documents": [
     {
+      "name": "Blackout",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Removes the normal disadvantage when attempting a knockout called shot.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.blackout",
+        "sourcePage": 94,
+        "importId": "core.technique.blackout",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.blackout",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.blackout"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blind Fighting",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Allows hand-to-hand fighting in poor light, darkness, or against invisible foes without disadvantage.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.blind-fighting",
+        "sourcePage": 94,
+        "importId": "core.technique.blind-fighting",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.blind-fighting",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.blind-fighting"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blind Shooting",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Allows ranged attacks in poor light, darkness, or against invisible foes without disadvantage.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.blind-shooting",
+        "sourcePage": 94,
+        "importId": "core.technique.blind-shooting",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.blind-shooting",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.blind-shooting"
+          }
+        }
+      }
+    },
+    {
+      "name": "Concealment",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Lets the character hide hand-held objects on their person unless physically searched.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.concealment",
+        "sourcePage": 94,
+        "importId": "core.technique.concealment",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.concealment",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.concealment"
+          }
+        }
+      }
+    },
+    {
+      "name": "Critical Strike",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Reduces the margin threshold needed to score critical hits with attacks.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.critical-strike",
+        "sourcePage": 94,
+        "importId": "core.technique.critical-strike",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.critical-strike",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.critical-strike"
+          }
+        }
+      }
+    },
+    {
+      "name": "Extended Range",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Doubles distances when using ranged weapons.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.extended-range",
+        "sourcePage": 94,
+        "importId": "core.technique.extended-range",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.extended-range",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.extended-range"
+          }
+        }
+      }
+    },
+    {
+      "name": "Far Shot",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Removes disadvantage for attacks beyond a weapon&#39;s effective range, though remote-range damage limits still apply.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.far-shot",
+        "sourcePage": 94,
+        "importId": "core.technique.far-shot",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.far-shot",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.far-shot"
+          }
+        }
+      }
+    },
+    {
+      "name": "Flanking Defence",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Prevents flanking attackers from gaining their normal attack-roll advantage.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.flanking-defence",
+        "sourcePage": 94,
+        "importId": "core.technique.flanking-defence",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.flanking-defence",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.flanking-defence"
+          }
+        }
+      }
+    },
+    {
+      "name": "Judge Opponent",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Lets the character estimate an opponent&#39;s combat ability and remaining durability from observation.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.judge-opponent",
+        "sourcePage": 94,
+        "importId": "core.technique.judge-opponent",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.judge-opponent",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.judge-opponent"
+          }
+        }
+      }
+    },
+    {
       "name": "Lightning Reflexes",
       "type": "technique",
       "folder": "Combat Techniques",
       "img": "icons/svg/lightning.svg",
       "system": {
-        "description": "<p>Source-indexed combat technique stub for later rules entry.</p>",
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Grants a +2 bonus on Initiative rolls.</p>",
         "rank": 1,
-        "cost": 0,
+        "cost": 1,
         "source": "Anime 5E Fifth Edition Core Rules",
         "sourceId": "core.technique.lightning-reflexes",
         "sourcePage": 94,
@@ -30,6 +264,136 @@
             "book": "Anime 5E Fifth Edition Core Rules",
             "page": 94,
             "importId": "core.technique.lightning-reflexes"
+          }
+        }
+      }
+    },
+    {
+      "name": "Multiple Targets",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 2 Combat Technique Ranks.</p><p><strong>Rules Summary:</strong> Allows a single attack roll to strike additional adjacent targets; counts as two Combat Techniques.</p>",
+        "rank": 1,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.multiple-targets",
+        "sourcePage": 94,
+        "importId": "core.technique.multiple-targets",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.multiple-targets",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.multiple-targets"
+          }
+        }
+      }
+    },
+    {
+      "name": "Precise Aim",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 94.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 2 Combat Technique Ranks.</p><p><strong>Rules Summary:</strong> Removes disadvantage on pinpoint attacks, most called shots, and trick shots; counts as two Combat Techniques.</p>",
+        "rank": 1,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.precise-aim",
+        "sourcePage": 94,
+        "importId": "core.technique.precise-aim",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.precise-aim",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 94,
+            "importId": "core.technique.precise-aim"
+          }
+        }
+      }
+    },
+    {
+      "name": "Steady Hand",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 95.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Removes disadvantage for attacks while dashing, mounted, or performing complex movement stunts.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.steady-hand",
+        "sourcePage": 95,
+        "importId": "core.technique.steady-hand",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.steady-hand",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 95,
+            "importId": "core.technique.steady-hand"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tournament Encyclopaedia",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 95.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 1 Combat Technique Rank.</p><p><strong>Rules Summary:</strong> Recalls vital statistics and notable quirks about opponents from a chosen tournament type.</p>",
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.tournament-encyclopaedia",
+        "sourcePage": 95,
+        "importId": "core.technique.tournament-encyclopaedia",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.tournament-encyclopaedia",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 95,
+            "importId": "core.technique.tournament-encyclopaedia"
+          }
+        }
+      }
+    },
+    {
+      "name": "Two Weapons",
+      "type": "technique",
+      "folder": "Combat Techniques",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 95.</p><p><strong>Category:</strong> Combat Technique. <strong>Technique Cost:</strong> 2 Combat Technique Ranks.</p><p><strong>Rules Summary:</strong> Removes the normal disadvantage when fighting with two one-handed weapons; counts as two Combat Techniques.</p>",
+        "rank": 1,
+        "cost": 2,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.technique.two-weapons",
+        "sourcePage": 95,
+        "importId": "core.technique.two-weapons",
+        "category": "Combat Technique"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.technique.two-weapons",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 95,
+            "importId": "core.technique.two-weapons"
           }
         }
       }

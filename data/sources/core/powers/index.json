@@ -9,14 +9,40 @@
   ],
   "documents": [
     {
-      "name": "Dynamic Power - Lesser",
+      "name": "Dynamic Powers",
       "type": "power",
       "folder": "Powers",
-      "img": "icons/svg/upgrade.svg",
+      "img": "icons/svg/aura.svg",
       "system": {
-        "description": "<p>Source-indexed power stub for later rules entry.</p>",
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 99.</p><p><strong>Category:</strong> Dynamic Powers. <strong>Cost:</strong> 10 Points/Rank.</p><p><strong>Rules Summary:</strong> Broad story-driven control over a major concept, natural force, or sphere of influence, with Energy costs by effect Rank.</p>",
         "rank": 1,
-        "cost": 0,
+        "cost": 10,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.power.dynamic-powers",
+        "sourcePage": 99,
+        "importId": "core.power.dynamic-powers",
+        "category": "Dynamic Powers"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.power.dynamic-powers",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 99,
+            "importId": "core.power.dynamic-powers"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dynamic Powers - Lesser",
+      "type": "power",
+      "folder": "Powers",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 99.</p><p><strong>Category:</strong> Dynamic Powers. <strong>Cost:</strong> 5 Points/Rank.</p><p><strong>Rules Summary:</strong> Focused control over a narrower concept, classical element, minor aspect, or limited sphere of influence.</p>",
+        "rank": 1,
+        "cost": 5,
         "source": "Anime 5E Fifth Edition Core Rules",
         "sourceId": "core.power.dynamic-power-lesser",
         "sourcePage": 99,
