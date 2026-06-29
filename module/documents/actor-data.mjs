@@ -105,6 +105,12 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         biography: new fields.HTMLField({ required: false, blank: true, initial: "" }),
         journal: new fields.HTMLField({ required: false, blank: true, initial: "" })
       }),
+      points: new fields.SchemaField({
+        spent: numberField(0, { min: 0 }),
+        refunded: numberField(0, { min: 0 }),
+        available: numberField(0),
+        remaining: numberField(0)
+      }),
       source: new fields.SchemaField({
         book: textField(),
         page: optionalNumberField(),
@@ -157,6 +163,15 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
     const energy = this.combat.energy;
     energy.max = Math.max(0, Number(energy.max));
     energy.value = Math.max(0, Math.min(Number(energy.value), energy.max));
+
+    const points = this.points;
+    const starting = Math.max(0, Number(this.identity.startingDiscretionaryPoints) || 0);
+    const engagement = Math.max(0, Number(this.identity.engagementBonusPoints) || 0);
+    const other = Math.max(0, Number(this.identity.otherNonLevellingPoints) || 0);
+    points.spent = Math.max(0, Number(points.spent) || 0);
+    points.refunded = Math.max(0, Number(points.refunded) || 0);
+    points.available = starting + engagement + other + points.refunded;
+    points.remaining = points.available - points.spent;
   }
 }
 

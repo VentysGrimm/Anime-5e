@@ -102,6 +102,8 @@ const REQUIRED_NUMBER_DEFAULTS = {
   "system.identity.startingDiscretionaryPoints": 0,
   "system.identity.engagementBonusPoints": 0,
   "system.identity.otherNonLevellingPoints": 0,
+  "system.points.spent": 0,
+  "system.points.refunded": 0,
   "system.combat.hitPoints.max": 0,
   "system.combat.hitPoints.value": 0,
   "system.combat.energy.max": 0,
@@ -203,6 +205,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.items = items.map((item) => this.constructor._prepareItemContext(item));
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
+    context.pointSummary = this.constructor._preparePointSummary(system);
     context.activeTab = this.tabGroups?.primary ?? "overview";
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
     context.tabs = FOLIO_TABS.map((tab) => ({ ...tab, active: tab.id === context.activeTab }));
@@ -332,6 +335,19 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         .filter((item) => item.type === "weapon")
         .map((item) => preparedById.get(item.id))
         .filter(Boolean)
+    };
+  }
+
+  static _preparePointSummary(system) {
+    const points = system.points ?? {};
+    const remaining = numberOrZero(points.remaining);
+
+    return {
+      available: numberOrZero(points.available),
+      spent: numberOrZero(points.spent),
+      refunded: numberOrZero(points.refunded),
+      remaining,
+      warning: remaining < 0 ? "Point spending exceeds available points." : ""
     };
   }
 

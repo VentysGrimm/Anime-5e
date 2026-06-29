@@ -256,6 +256,31 @@
   min-width: 0;
 }
 
+.anime5e .point-summary-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.anime5e .point-summary-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(72px, 1fr));
+}
+
+.anime5e .point-summary-panel label {
+  font-size: 0.78rem;
+  gap: 4px;
+}
+
+.anime5e .point-summary-panel input {
+  border: 0;
+  border-bottom: 2px solid var(--anime5e-ink);
+  font-size: 1rem;
+  font-weight: 800;
+  min-width: 0;
+  text-align: center;
+}
+
 .anime5e .folio-table {
   display: grid;
   gap: 8px 10px;

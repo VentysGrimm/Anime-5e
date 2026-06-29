@@ -105,6 +105,31 @@
             </div>
           </section>
 
+          <section class="paint-panel point-summary-panel">
+            <h2>Point Summary</h2>
+            <div class="point-summary-grid">
+              <label>
+                Available
+                <input type="number" value="{{pointSummary.available}}" readonly>
+              </label>
+              <label>
+                Spent
+                <input type="number" name="system.points.spent" value="{{pointSummary.spent}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Refunded
+                <input type="number" name="system.points.refunded" value="{{pointSummary.refunded}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Remaining
+                <input type="number" value="{{pointSummary.remaining}}" readonly>
+              </label>
+            </div>
+            {{#if pointSummary.warning}}
+              <p class="sheet-warning">{{pointSummary.warning}}</p>
+            {{/if}}
+          </section>
+
           <section class="notes-box compact-notes">
             <h2>Character Summary</h2>
             <textarea name="system.identity.description" {{#unless editable}}disabled{{/unless}}>{{system.identity.description}}</textarea>
