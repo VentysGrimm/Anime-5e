@@ -147,7 +147,8 @@
             </div>
             <div class="class-level-summary {{creation.classLevel.status}}">
               <span>Owned Class Levels <strong>{{creation.classLevel.classLevelTotal}}</strong></span>
-              <span>Class Items <strong>{{creation.classLevel.classLevelItems}}</strong></span>
+              <span>Class Items <strong>{{creation.classLevel.classItemCount}}</strong></span>
+              <span>Levelled Items <strong>{{creation.classLevel.classLevelItems}}</strong></span>
               <span>Actor Level <strong>{{creation.classLevel.actorLevel}}</strong></span>
               <span>Status <strong>{{creation.classLevel.statusLabel}}</strong></span>
             </div>
@@ -158,6 +159,9 @@
                 {{/each}}
               </ol>
             {{/if}}
+            {{#each creation.classLevel.warnings as |warning|}}
+              <p class="sheet-warning">{{warning}}</p>
+            {{/each}}
             {{#if creation.classBenefits.active}}
               <section class="class-benefit-panel">
                 <h3>Class-Derived Benefits</h3>

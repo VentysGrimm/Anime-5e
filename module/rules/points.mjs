@@ -173,22 +173,45 @@ export function summarizeClassLevelState(items = [], actorLevel = 1) {
       name: item.name ?? "Unnamed Class",
       level: positiveNumber(item.system?.level)
     }));
+  const classItemCount = classes.length;
   const classLevelItems = classes.filter((item) => item.level > 0).length;
   const classLevelTotal = classes.reduce((total, item) => total + item.level, 0);
+  const incompleteClassNames = classes.filter((item) => item.level <= 0).map((item) => item.name);
   const hasClassLevels = classLevelItems > 0;
   const matchesActorLevel = hasClassLevels && classLevelTotal === normalizedActorLevel;
   const mismatch = hasClassLevels && classLevelTotal !== normalizedActorLevel;
+  const warnings = [];
+
+  if (!classItemCount) warnings.push("No Class item is attached yet.");
+  if (classItemCount && !hasClassLevels) warnings.push("No Class item with a level is attached yet.");
+  if (incompleteClassNames.length) warnings.push(`Class items without a level: ${incompleteClassNames.join(", ")}.`);
+  if (mismatch) warnings.push(`Owned class item levels total ${classLevelTotal}, but actor level is ${normalizedActorLevel}.`);
+  if (classItemCount > 1) {
+    warnings.push("Multiclass support is summary-only; review duplicate class-granted proficiencies, Attribute Ranks, and point reallocations manually.");
+  }
+
+  const statusLabel = !classItemCount
+    ? "No class items"
+    : !hasClassLevels
+      ? "No class levels"
+      : mismatch
+        ? "Mismatch"
+        : classItemCount > 1
+          ? "Review"
+          : "Matches";
 
   return {
     actorLevel: normalizedActorLevel,
+    classItemCount,
     classLevelTotal,
     classLevelItems,
     classes,
     hasClassLevels,
     matchesActorLevel,
     mismatch,
-    status: matchesActorLevel ? "valid" : "warning",
-    statusLabel: matchesActorLevel ? "Matches" : hasClassLevels ? "Mismatch" : "No class levels"
+    warnings,
+    status: warnings.length ? "warning" : "valid",
+    statusLabel
   };
 }
 
@@ -218,12 +241,32 @@ export function summarizeSingleClassBenefits(items = [], actorLevel = 1) {
   }
 
   if (classItems.length > 1) {
-    warnings.push("Multiple Class items are attached; class benefit automation is limited to one class until multiclass support is implemented.");
+    warnings.push("Multiple Class items are attached; class-derived bonus points and benefits are not auto-applied in this slice.");
+    return {
+      active: false,
+      classCount: classItems.length,
+      warnings,
+      bonusPoints: 0,
+      benefits: []
+    };
   }
 
   const classItem = classItems[0];
   const system = classItem.system ?? {};
-  const classLevel = Math.min(20, positiveNumber(system.level) || normalizeCharacterLevel(actorLevel));
+  const explicitClassLevel = positiveNumber(system.level);
+  if (!explicitClassLevel) {
+    warnings.push(`${classItem.name ?? "Class"} has no class level; class-derived benefits are not applied until the Class item level is set.`);
+    return {
+      active: false,
+      classCount: classItems.length,
+      className: classItem.name ?? "Class",
+      warnings,
+      bonusPoints: 0,
+      benefits: []
+    };
+  }
+
+  const classLevel = Math.min(20, explicitClassLevel || normalizeCharacterLevel(actorLevel));
   const progression = Array.isArray(system.progression) ? system.progression : [];
   if (!progression.length) {
     warnings.push(`${classItem.name ?? "Class"} has no structured progression data.`);
@@ -433,6 +476,7 @@ export function calculateAvailablePoints(system = {}) {
 
 export function calculatePointSummary(system = {}, items = []) {
   const owned = calculateOwnedPointTotals(items);
+  const classLevelState = summarizeClassLevelState(items, system.level);
   const classBenefits = summarizeSingleClassBenefits(items, system.level);
   const benchmark = getCharacterBenchmark(system.level);
   const benchmarkSummary = summarizeCharacterBenchmark(benchmark);
@@ -448,16 +492,11 @@ export function calculatePointSummary(system = {}, items = []) {
     + owned.attributeCost
     + owned.equipmentCost;
   const remaining = available - totalSpent;
-  const actorLevel = positiveNumber(system.level);
-  const warnings = [...owned.warningItems, ...classBenefits.warnings, ...benchmarkWarnings];
+  const warnings = [...owned.warningItems, ...classLevelState.warnings, ...classBenefits.warnings, ...benchmarkWarnings];
 
   if (remaining < 0) warnings.push("Point spending exceeds available points.");
   if (owned.speciesCount === 0) warnings.push("No Species/Race item is attached yet.");
   if (owned.speciesCount > 1) warnings.push("Multiple Species/Race items are attached; verify this is intentional.");
-  if (owned.classLevelItems === 0) warnings.push("No Class item with a level is attached yet.");
-  if (owned.classLevelItems > 0 && owned.classLevelTotal !== actorLevel) {
-    warnings.push(`Owned class item levels total ${owned.classLevelTotal}, but actor level is ${actorLevel}.`);
-  }
 
   return {
     available,
@@ -474,6 +513,7 @@ export function calculatePointSummary(system = {}, items = []) {
     totalSpent,
     remaining,
     warnings,
+    classLevel: classLevelState,
     classBenefits,
     benchmark,
     benchmarkSummary,

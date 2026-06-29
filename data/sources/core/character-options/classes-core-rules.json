@@ -358,7 +358,446 @@
         "importId": "core.class.bender",
         "hitDice": "d8",
         "primaryAbility": "Constitution",
-        "savingThrows": "Constitution, Wisdom"
+        "savingThrows": "Constitution, Wisdom",
+        "basePoints": 18,
+        "levellingPoints": 159,
+        "bonusPoints": 23,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 58-59. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Dynamic Powers – Lesser [5]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Immutable",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Immutable [1]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Energised",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Energised [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Edge (Attacks with Dynamic Powers)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +2 Edge (Attacks with Dynamic Powers) [2]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Energised",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Energised [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Immutable",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Immutable [1]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Energised",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Energised [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+4 Forced Disadvantage (All Attacks Against Character)",
+                "rank": 4,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +4 Forced Disadvantage (All Attacks Against Character) [4]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Immutable",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Points [3]; +1 Immutable [1]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers – Lesser",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers – Lesser [5]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -386,7 +825,621 @@
         "importId": "core.class.broker",
         "hitDice": "d6",
         "primaryAbility": "Wisdom",
-        "savingThrows": "Wisdom"
+        "savingThrows": "Wisdom",
+        "basePoints": 17,
+        "levellingPoints": 145,
+        "bonusPoints": 38,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 60-61. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+2 Points [2]; +1 Connected [1]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Sixth Sense [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Features",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Features [1]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Pocket Dimension",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Pocket Dimension [2]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Item [4]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Features",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Connected [1]; +1 Features [1]; +1 Wealth [3]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Saving Throw Proficiency",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Saving Throw Proficiency [2]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Pocket Dimension",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Sixth Sense [1]; +1 Pocket Dimension [2]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Item [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Features",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Connected [1]; +1 Features [1]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Sixth Sense [1]; +1 Wealth [3]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Pocket Dimension",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Connected [1]; +1 Pocket Dimension [2]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Item [4]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Saving Throw Proficiency",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Saving Throw Proficiency [2]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Features",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Connected [1]; +1 Features [1]; +1 Sixth Sense [1]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Pocket Dimension",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Pocket Dimension [2]; +1 Wealth [3]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+2 Item",
+                "rank": 2,
+                "points": 8,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Item [8]; Ability Score Improvement [2]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -414,7 +1467,362 @@
         "importId": "core.class.dynamic-spellbinder",
         "hitDice": "d6",
         "primaryAbility": "Intelligence",
-        "savingThrows": "Intelligence"
+        "savingThrows": "Intelligence",
+        "basePoints": 11,
+        "levellingPoints": 169,
+        "bonusPoints": 20,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 62-63. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Energised",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Energised [1]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Energised",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Energised [1]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Energised",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Energised [1]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Energised",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Energised [1]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -442,7 +1850,439 @@
         "importId": "core.class.hunter",
         "hitDice": "d10",
         "primaryAbility": "Strength",
-        "savingThrows": "Strength, Intelligence"
+        "savingThrows": "Strength, Intelligence",
+        "basePoints": 24,
+        "levellingPoints": 174,
+        "bonusPoints": 2,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 64-65. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Connected [1]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Combat Technique [1]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Special Movement [1]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Wealth [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+3 Massive Damage – Lesser (+1d6 One Type)",
+                "rank": 3,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Connected [1]; +3 Massive Damage – Lesser (+1d6 One Type) [3]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Heightened Senses",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Weapon",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Heightened Senses [1]; +2 Weapon [2]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Connected [1]; +1 Extra Actions [4]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]; +1 Wealth [3]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+3 Massive Damage – Lesser (+1d6 One Type)",
+                "rank": 3,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Massive Damage – Lesser (+1d6 One Type) [3]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Combat Technique [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Heightened Senses",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Heightened Senses [1]; +1 Item [4]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Wealth [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Weapon",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Connected [1]; +2 Weapon [2]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+3 Massive Damage – Lesser (+1d6 One Type)",
+                "rank": 3,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Combat Technique [1]; +3 Massive Damage – Lesser (+1d6 One Type) [3]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Special Movement [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+4 Weapon",
+                "rank": 4,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Weapon [4]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -470,7 +2310,684 @@
         "importId": "core.class.isekai-student",
         "hitDice": "d4",
         "primaryAbility": "Charisma",
-        "savingThrows": "Charisma"
+        "savingThrows": "Charisma",
+        "basePoints": 10,
+        "levellingPoints": 128,
+        "bonusPoints": 62,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 66-67. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Mulligan",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+2 Points [2]; +1 Mulligan [1]; +1 Sixth Sense [1]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Saving Throw Proficiency",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Item [4]; +1 Saving Throw Proficiency [2]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Minions",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Minions [2]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Mulligan",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Mulligan [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Inspire",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Connected [1]; +1 Inspire [1]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Item [4]; +1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Mulligan",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Mulligan [1]; +1 Sixth Sense [1]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Minions",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Connected [1]; +1 Minions [2]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Saving Throw Proficiency",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Skill Proficiency [1]; +1 Saving Throw Proficiency [2]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Inspire",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Mulligan",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Inspire [1]; +1 Item [4]; +1 Mulligan [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Connected [1]; +1 Special Movement [1]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Immutable",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Immutable [1]; +1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Minions",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Mulligan",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Minions [2]; +1 Mulligan [1]; +1 Sixth Sense [1]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Connected [1]; +1 Item [4]; +1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Inspire",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Saving Throw Proficiency",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Inspire [1]; +1 Saving Throw Proficiency [2]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Mulligan",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Mulligan [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Connected [1]; +1 Special Movement [1]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Minions",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Minions [2]; +1 Sixth Sense [1]; +1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Item [4]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "rank": null,
+                "points": 6,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+6 Points [6]; +1 Connected [1]; Ability Score Improvement [2]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -498,7 +3015,439 @@
         "importId": "core.class.magical-girl-guy",
         "hitDice": "d8",
         "primaryAbility": "Wisdom",
-        "savingThrows": "Wisdom, Charisma"
+        "savingThrows": "Wisdom, Charisma",
+        "basePoints": 19,
+        "levellingPoints": 173,
+        "bonusPoints": 8,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 68-69. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Alternate Identity",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Weapon",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Alternate Identity [1]; +1 Companion [5]; +1 Weapon [1]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Companion [5]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Jumping",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Regeneration",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Jumping [1]; +2 Regeneration [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Flight",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Flight [3]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Item [4]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Regeneration",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Weapon",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Regeneration [1]; +1 Weapon [1]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Action",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Action [4]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Saving Throw Proficiency",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Saving Throw Proficiency [2]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Flight",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Flight [3]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Weapon",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Points [3]; +1 Weapon [1]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Regeneration",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]; +1 Regeneration [1]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Flight",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Flight [3]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Weapon",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]; +1 Weapon [1]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Weapon",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Weapon [1]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Dynamic Powers",
+                "rank": 1,
+                "points": 10,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Dynamic Powers [10]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -526,7 +3475,607 @@
         "importId": "core.class.ninja",
         "hitDice": "d8",
         "primaryAbility": "Dexterity",
-        "savingThrows": "Dexterity"
+        "savingThrows": "Dexterity",
+        "basePoints": 22,
+        "levellingPoints": 157,
+        "bonusPoints": 21,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 70-71. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Jumping",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Point [1];+1 Jumping [1]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Edge (Initiative Rolls)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1];+2 Edge (Initiative Rolls) [2]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Heightened Senses",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Massive Damage – Lesser (+1d4 Sneak Attacks)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Heightened Senses [1]; +2 Massive Damage – Lesser (+1d4 Sneak Attacks) [2]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Special Movement [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Extra Actions [4]; +1 Special Movement [1]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Jumping",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1];+1 Jumping [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Teleport",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Sixth Sense [1]; +1 Teleport [3]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Control Environment (Darkness)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Massive Damage – Lesser (+1d4 Sneak Attacks)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Control Environment (Darkness) [1]; +2 Massive Damage – Lesser (+1d4 Sneak Attacks) [2]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Fast",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Heightened Senses",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Fast [1]; +1 Heightened Senses [1]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1];+1 Combat Technique [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Jumping",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1];+1 Combat Technique [1]; +1 Jumping [1]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+4 Forced Disadvantage (All Attacks Against Character)",
+                "rank": 4,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +4 Forced Disadvantage (All Attacks Against Character) [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Massive Damage – Lesser (+1d4 Sneak Attacks)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +2 Massive Damage – Lesser (+1d4 Sneak Attacks) [2]; +1 Special Movement [1]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Teleport",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Teleport [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Control Environment (Silence)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Control Environment (Silence) [1]; +1 Sixth Sense [1]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Jumping",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Jumping [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Undetectable (Sight 2)",
+                "rank": 2,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Extra Actions [4]; +2 Undetectable (Sight 2) [4]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+4 Edge (Attack Rolls)",
+                "rank": 4,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +4 Edge (Attack Rolls) [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Heightened Senses",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Massive Damage – Lesser (+1d4 Sneak Attacks)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Heightened Senses [1]; +2 Massive Damage – Lesser (+1d4 Sneak Attacks) [2]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Special Movement",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2];+2 Special Movement [2]; Ability Score Improvement [2]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -554,7 +4103,586 @@
         "importId": "core.class.pet-monster-trainer",
         "hitDice": "d4",
         "primaryAbility": "Charisma",
-        "savingThrows": "Dexterity, Charisma"
+        "savingThrows": "Dexterity, Charisma",
+        "basePoints": 12,
+        "levellingPoints": 143,
+        "bonusPoints": 45,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 72-73. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Companion [5]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Monster Training",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Monster Training [1]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Companion [5]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Monster Training",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Telepathy – Lesser (Pet Monster)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Monster Training [1]; +1 Telepathy – Lesser (Pet Monster) [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Points [3]; +1 Companion [5]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Saving Throw Proficiency",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Saving Throw Proficiency [2]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Monster Training",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Companion [5]; +1 Monster Training [1]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]; +1 Wealth [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Companion [5]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Point",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Monster Training",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions – Lesser",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Point [4]; +1 Monster Training [1]; +1 Extra Actions – Lesser [1]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Companion [5]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Saving Throw Proficiency",
+                "rank": 1,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Telepathy – Lesser (Pet Monster)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Saving Throw Proficiency [2]; +1 Telepathy – Lesser (Pet Monster) [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Monster Training",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Points [3]; +1 Companion [5]; +1 Monster Training [1]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 Skill Proficiency [1]; +1 Wealth [3]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Companion [5]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Monster Training",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Telepathy – Lesser (Pet Monster)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Monster Training [1]; +1 Telepathy – Lesser (Pet Monster) [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Points [3]; +1 Companion [5]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Point",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Telepathy",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Point [3]; +1 Telepathy [3]; +1 Wealth [3]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Companion",
+                "rank": 1,
+                "points": 5,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Monster Training",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Companion [5]; +1 Monster Training [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Points [3]; +1 Wealth [3]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -582,7 +4710,334 @@
         "importId": "core.class.psionicist",
         "hitDice": "d4",
         "primaryAbility": "Intelligence",
-        "savingThrows": "Intelligence, Charisma"
+        "savingThrows": "Intelligence, Charisma",
+        "basePoints": 15,
+        "levellingPoints": 165,
+        "bonusPoints": 20,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 74-75. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 2 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Point [1] (+ 2 spellcasting)"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 4 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 4 spellcasting)"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 6 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 6 spellcasting)"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 5 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 5 spellcasting)"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 9 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 9 spellcasting)"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 5 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 5 spellcasting)"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 11 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 11 spellcasting)"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 6 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 6 spellcasting)"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 8 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 8 spellcasting)"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 6 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 6 spellcasting)"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 9 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 9 spellcasting)"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 8 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 8 spellcasting)"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 10 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 10 spellcasting)"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 9 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 9 spellcasting)"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 11 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 11 spellcasting)"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point (+ 10 spellcasting)",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1] (+ 10 spellcasting)"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -610,7 +5065,495 @@
         "importId": "core.class.samurai",
         "hitDice": "d10",
         "primaryAbility": "Strength",
-        "savingThrows": "Strength, Wisdom"
+        "savingThrows": "Strength, Wisdom",
+        "basePoints": 25,
+        "levellingPoints": 165,
+        "bonusPoints": 10,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 76-77. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+2 Edge (Initiative Rolls)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+2 Edge (Initiative Rolls) [2]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Fast",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Fast [1]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique (Judge Opponent)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Combat Technique (Judge Opponent) [1]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+2 Combat Technique (Two Weapons)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Inspire",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Combat Technique (Two Weapons) [2]; +1 Inspire [1]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+3 Massive Damage – Lesser (+1d6 Melee Weapons)",
+                "rank": 3,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Massive Damage – Lesser (+1d6 Melee Weapons) [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique (Critical Strike)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Jumping",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Combat Technique (Critical Strike) [1]; +1 Jumping [1]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]; +1 Extra Actions [4]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Special Movement [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique (Blind Fighting)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Inspire",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Combat Technique (Blind Fighting) [1]; +1 Inspire [1]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Weapon",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +2 Weapon [2]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+3 Massive Damage – Lesser (+1d6 Melee Weapons)",
+                "rank": 3,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Massive Damage – Lesser (+1d6 Melee Weapons) [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique (Extended Range)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Combat Technique (Extended Range) [1]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Jumping",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Mulligan",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Weapon",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Jumping [1]; +1 Mulligan [1]; +2 Weapon [2]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Inspire",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Inspire [1]; +1 Skill Proficiency [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Weapon",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]; +2 Weapon [2]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+3 Massive Damage – Lesser (+1d6 Melee Weapons)",
+                "rank": 3,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Massive Damage – Lesser (+1d6 Melee Weapons) [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Inspire",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Inspire [1]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Wealth",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+2 Weapon",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Wealth [3]; +2 Weapon [2]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -638,7 +5581,334 @@
         "importId": "core.class.shadow-warrior",
         "hitDice": "d12",
         "primaryAbility": "Strength",
-        "savingThrows": "Strength"
+        "savingThrows": "Strength",
+        "basePoints": 21,
+        "levellingPoints": 179,
+        "bonusPoints": 0,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 78-79. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Regeneration",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Regeneration [1]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+2 Change State",
+                "rank": 2,
+                "points": 6,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Change State [6]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Size Change – Lesser (Grow)",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Size Change – Lesser (Grow) [4]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+4 Massive Damage – Lesser (+1d8 Melee Attacks)",
+                "rank": 4,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Massive Damage – Lesser (+1d8 Melee Attacks) [4]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Regeneration",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Regeneration [1]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Ability Score Improvement [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Size Change – Lesser (Grow)",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Size Change – Lesser (Grow) [4]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Regeneration",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Regeneration [1]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+4 Massive Damage – Lesser (+1d8 Melee Attacks)",
+                "rank": 4,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Massive Damage – Lesser (+1d8 Melee Attacks) [4]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Ability Score Improvement [2]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Size Change – Lesser (Grow)",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Size Change – Lesser (Grow) [4]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Ability Score Improvement [2]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Regeneration",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Regeneration [1]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Skill Proficiency [1]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+2 Change State",
+                "rank": 2,
+                "points": 6,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Change State [6]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -666,7 +5936,460 @@
         "importId": "core.class.techknight",
         "hitDice": "d10",
         "primaryAbility": "Dexterity",
-        "savingThrows": "Dexterity, Constitution"
+        "savingThrows": "Dexterity, Constitution",
+        "basePoints": 25,
+        "levellingPoints": 170,
+        "bonusPoints": 5,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 80-81. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+2 Combat Technique",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Connected (Techknight Order)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "Techknight Amour",
+                "rank": null,
+                "points": 0,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+2 Combat Technique [2]; +1 Connected (Techknight Order) [1]; Techknight Amour [0]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Protected (-1 Melee damage)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]; +1 Protected (-1 Melee damage) [1]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Ability Score Improvement [2]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Protected (-1 Ranged damage)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Combat Technique [1]; +1 Protected (-1 Ranged damage) [1]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+2 Edge (Saving Throws for 1 Ability)",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Protected (-1 Melee damage)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Edge (Saving Throws for 1 Ability) [2]; +1 Protected (-1 Melee damage) [1]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Combat Technique [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Protected (-1 Ranged damage)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]; +1 Protected (-1 Ranged damage) [1]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Protected (-1 Melee damage)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Protected (-1 Melee damage) [1]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Protected (-1 Ranged damage)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]; +1 Protected (-1 Ranged damage) [1]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Sixth Sense",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Control Environment (Silence)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Sixth Sense [1]; +1 Control Environment (Silence) [1]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Combat Technique",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Combat Technique [1]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Item",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Protected (-1 Melee damage)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Item [4]; +1 Protected (-1 Melee damage) [1]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Ability Score Improvement [2]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Protected (-1 Ranged damage)",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Protected (-1 Ranged damage) [1]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {
@@ -694,7 +6417,579 @@
         "importId": "core.class.warder",
         "hitDice": "d6",
         "primaryAbility": "Constitution",
-        "savingThrows": "Constitution"
+        "savingThrows": "Constitution",
+        "basePoints": 15,
+        "levellingPoints": 150,
+        "bonusPoints": 35,
+        "finalClassPoints": 200,
+        "progressionNotes": "<p>Progression encoded from Anime 5E Fifth Edition Core Rules, PDF pp. 82-83. Multiclass duplicate benefit and reallocation handling is currently shown as a warning rather than automated.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Massive Damage (+1)",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "See Class Features and first-level proficiencies on this item.",
+            "notes": "+1 Massive Damage (+1) [3]; +1 Special Movement [1]"
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 AC Bonus",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 AC Bonus [1]; +1 Skill Proficiency [1]; +1 Special Movement [1]"
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Transfer",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Transfer [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Massive Damage (+1)",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Massive Damage (+1) [3]; +1 Special Movement [1]"
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 AC Bonus",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 AC Bonus [1]; +1 Extra Actions [4]"
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Transfer",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Transfer [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Massive Damage (+1)",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Massive Damage (+1) [3]; +1 Special Movement [1]"
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 AC Bonus",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Tool Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Points [3]; +1 AC Bonus [1]; +1 Skill Proficiency [1]; +1 Tool Proficiency [1]"
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Extra Actions [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Massive Damage (+1)",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Transfer",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Massive Damage (+1) [3]; +1 Special Movement [1]; +1 Transfer [3]"
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+2 AC Bonus",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +2 AC Bonus [2]"
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Point",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Point [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "rank": null,
+                "points": 3,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Massive Damage (+1)",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+3 Points [3]; +1 Massive Damage (+1) [3]; +1 Special Movement [1]"
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 AC Bonus",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 AC Bonus [1]; +1 Extra Actions [4]"
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 1,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+1 Point",
+                "rank": null,
+                "points": 1,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Transfer",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Point [1]; +1 Transfer [3]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "rank": null,
+                "points": 2,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Massive Damage (+1)",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Special Movement",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 Points [2]; +1 Massive Damage (+1) [3]; +1 Special Movement [1]"
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "attribute",
+                "label": "+1 AC Bonus",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Skill Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Points [4]; +1 AC Bonus [1]; +1 Skill Proficiency [1]"
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Point",
+                "rank": null,
+                "points": 4,
+                "notes": "Flexible Bonus Points"
+              },
+              {
+                "type": "abilityScoreImprovement",
+                "label": "Ability Score Improvement",
+                "rank": null,
+                "points": 2,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+4 Point [4]; Ability Score Improvement [2]"
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+1 Extra Actions",
+                "rank": 1,
+                "points": 4,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Massive Damage (+1)",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+1 Extra Actions [4]; +1 Massive Damage (+1) [3]"
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 0,
+            "benefits": [
+              {
+                "type": "attribute",
+                "label": "+2 AC Bonus",
+                "rank": 2,
+                "points": 2,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Tool Proficiency",
+                "rank": 1,
+                "points": 1,
+                "notes": ""
+              },
+              {
+                "type": "attribute",
+                "label": "+1 Transfer",
+                "rank": 1,
+                "points": 3,
+                "notes": ""
+              }
+            ],
+            "proficiencies": "",
+            "notes": "+2 AC Bonus [2]; +1 Tool Proficiency [1]; +1 Transfer [3]"
+          }
+        ]
       },
       "flags": {
         "anime5e": {

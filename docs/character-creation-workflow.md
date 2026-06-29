@@ -24,6 +24,9 @@ This milestone starts the Anime 5e character creation build path.
 - Added level progress helpers for current XP, next level threshold, XP needed, and progress within the current level band.
 - Added a Folio class level summary derived from owned Class items without applying class benefits.
 - Added structured Class item progression data and an item-sheet progression table, seeded first with the Core Rules Adventurer 1-20 unrestricted Bonus Point progression.
+- Expanded structured progression data to all 14 Core Rules classes.
+- Added Folio multiclass review warnings for missing levels, actor-level mismatches, duplicate class-granted benefits, and manual reallocation notes.
+- Limited class-derived Bonus Point automation to a single levelled Class item until advanced multiclass support is implemented.
 
 ## Current validation warnings
 
@@ -32,12 +35,15 @@ The point helper can warn when:
 - point spending exceeds available points;
 - no Species/Race item is attached;
 - multiple Species/Race items are attached;
+- no Class item is attached;
 - no Class item with a level is attached;
+- attached Class items have incomplete levels;
 - owned class item levels do not match actor level;
+- multiple Class items require manual duplicate-benefit and reallocation review;
 - ranked Attributes have no cost;
 - ranked Defects have no point return.
 - a character exceeds the optional Table 01 benchmark limits for their level band.
-- owned Class item levels do not match the actor level.
+- multiple Class items are attached before advanced multiclass automation is available.
 
 ## Next build step
 
