@@ -1,4 +1,5 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
+import { applyEnergyChange, applyHitPointChange } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -446,6 +447,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='apply-damage'], [data-action='apply-healing']").forEach((button) => {
       button.addEventListener("click", this._onApplyHitPointChange.bind(this));
     });
+    element.querySelectorAll("[data-action='spend-energy'], [data-action='restore-energy']").forEach((button) => {
+      button.addEventListener("click", this._onApplyEnergyChange.bind(this));
+    });
     element.querySelectorAll("[data-action='use-item']").forEach((button) => {
       button.addEventListener("click", this._onUseItem.bind(this));
     });
@@ -707,22 +711,38 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   async _applyHitPointChange(amount, mode, damageType = "") {
-    const hitPoints = this.actor.system.combat.hitPoints;
-    const current = Number(hitPoints.value) || 0;
-    const max = Math.max(0, Number(hitPoints.max) || 0);
-    const minimum = -max;
-    const next = mode === "healing"
-      ? Math.min(max, current + amount)
-      : Math.max(minimum, current - amount);
+    const change = await applyHitPointChange(this.actor, amount, mode);
     const label = mode === "healing" ? "heals" : "takes";
-    const typedAmount = mode === "damage" && damageType ? `${amount} ${escapeHtml(damageType)}` : amount;
+    const typedAmount = mode === "damage" && damageType ? `${change.amount} ${escapeHtml(damageType)}` : change.amount;
     const noun = mode === "healing" ? "HP" : "damage";
-
-    await this.actor.update({ "system.combat.hitPoints.value": next });
 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${current} &rarr; ${next} / ${max}.</p>`
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.</p>`
+    });
+  }
+
+  async _onApplyEnergyChange(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".energy-panel");
+    const amountInput = panel?.querySelector("[data-energy-input='amount']");
+    const amount = Math.max(0, Math.trunc(Number(amountInput?.value) || 0));
+    if (!amount) {
+      ui.notifications?.warn("Enter an Energy amount first.");
+      return;
+    }
+
+    const mode = event.currentTarget.dataset.action === "restore-energy" ? "restore" : "spend";
+    await this._applyEnergyChange(amount, mode);
+  }
+
+  async _applyEnergyChange(amount, mode) {
+    const change = await applyEnergyChange(this.actor, amount, mode);
+    const verb = mode === "restore" ? "restores" : "spends";
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${verb} ${change.amount} Energy. EP ${change.current} &rarr; ${change.next} / ${change.max}.</p>`
     });
   }
 

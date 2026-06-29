@@ -676,7 +676,8 @@
   grid-template-columns: 1.35fr 0.65fr 0.8fr 0.95fr 44px 44px;
 }
 
-.anime5e .damage-panel {
+.anime5e .damage-panel,
+.anime5e .energy-panel {
   background: rgba(255, 255, 255, 0.64);
   border: 1px solid var(--anime5e-border);
   display: grid;
@@ -684,7 +685,8 @@
   padding: 10px;
 }
 
-.anime5e .damage-panel h3 {
+.anime5e .damage-panel h3,
+.anime5e .energy-panel h3 {
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0;
@@ -692,14 +694,20 @@
   text-transform: uppercase;
 }
 
-.anime5e .damage-controls {
+.anime5e .damage-controls,
+.anime5e .energy-controls {
   align-items: end;
   display: grid;
   gap: 8px;
   grid-template-columns: minmax(76px, 0.6fr) minmax(100px, 1fr) auto auto;
 }
 
-.anime5e .damage-controls label {
+.anime5e .energy-controls {
+  grid-template-columns: minmax(76px, 1fr) auto auto;
+}
+
+.anime5e .damage-controls label,
+.anime5e .energy-controls label {
   display: grid;
   font-size: 0.78rem;
   font-weight: 800;
@@ -707,7 +715,8 @@
   text-transform: uppercase;
 }
 
-.anime5e .damage-controls input {
+.anime5e .damage-controls input,
+.anime5e .energy-controls input {
   min-width: 0;
 }
 
@@ -860,6 +869,7 @@
   .anime5e .two-column,
   .anime5e .action-table,
   .anime5e .damage-controls,
+  .anime5e .energy-controls,
   .anime5e .quick-roll-controls,
   .anime5e .ledger-heading,
   .anime5e .folio-item-list .item-row {
