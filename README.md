@@ -25,6 +25,7 @@ Then create a world using the `Anime 5e` game system.
 - `styles/anime5e.css` contains system sheet styles.
 - `tools/validate-package.mjs` performs a lightweight local sanity check.
 - `docs/issue-8-verification.md` records the first-pass source review and playable-system verification scope.
+- `docs/actor-data-strategy.md` records the Character Folio actor-vs-owned-Item data strategy.
 
 ## Compendium Packs
 

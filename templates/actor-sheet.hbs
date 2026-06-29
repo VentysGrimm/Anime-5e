@@ -111,6 +111,38 @@
           </section>
         </section>
       </section>
+
+      <section class="ledger-section item-drop-panel" data-drop-target="items">
+        <header class="ledger-heading">
+          <h2>Character Options</h2>
+          {{#if editable}}
+            <div class="ledger-actions">
+              <button type="button" data-action="create-item" data-item-type="species" title="Create Species"><i class="fas fa-plus"></i><span>Species</span></button>
+              <button type="button" data-action="create-item" data-item-type="class" title="Create Class"><i class="fas fa-plus"></i><span>Class</span></button>
+              <button type="button" data-action="create-item" data-item-type="background" title="Create Background"><i class="fas fa-plus"></i><span>Background</span></button>
+            </div>
+          {{/if}}
+        </header>
+        <ol class="item-list folio-item-list">
+          {{#each itemGroups.characterOptions as |item|}}
+            <li class="item-row" data-item-id="{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.name}}">
+              <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+              <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+              <div class="item-actions">
+                {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+                {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
+                {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+              </div>
+            </li>
+          {{else}}
+            <li class="item-row empty"><span></span><span>No character option items.</span><small></small></li>
+          {{/each}}
+        </ol>
+      </section>
     </section>
 
     <section class="tab folio-tab{{#if activeTabs.combat}} active{{/if}}" data-group="primary" data-tab="combat">
@@ -214,7 +246,17 @@
         </section>
 
         <section class="ledger-section item-drop-panel" data-drop-target="items">
-          <h2>Combat Gear, Techniques, Defenses</h2>
+          <header class="ledger-heading">
+            <h2>Combat Gear, Techniques, Defenses</h2>
+            {{#if editable}}
+              <div class="ledger-actions">
+                <button type="button" data-action="create-item" data-item-type="weapon" title="Create Weapon"><i class="fas fa-plus"></i><span>Weapon</span></button>
+                <button type="button" data-action="create-item" data-item-type="armor" title="Create Armour"><i class="fas fa-plus"></i><span>Armour</span></button>
+                <button type="button" data-action="create-item" data-item-type="shield" title="Create Shield"><i class="fas fa-plus"></i><span>Shield</span></button>
+                <button type="button" data-action="create-item" data-item-type="technique" title="Create Technique"><i class="fas fa-plus"></i><span>Technique</span></button>
+              </div>
+            {{/if}}
+          </header>
           <ol class="item-list folio-item-list">
             {{#each itemGroups.combat as |item|}}
               <li class="item-row" data-item-id="{{item.id}}">
@@ -241,7 +283,16 @@
 
     <section class="tab folio-tab{{#if activeTabs.attributes}} active{{/if}}" data-group="primary" data-tab="attributes">
       <section class="ledger-section item-drop-panel" data-drop-target="items">
-        <h2>Anime 5E Attributes, Enhancements, Limiters</h2>
+        <header class="ledger-heading">
+          <h2>Anime 5E Attributes, Enhancements, Limiters</h2>
+          {{#if editable}}
+            <div class="ledger-actions">
+              <button type="button" data-action="create-item" data-item-type="attribute" title="Create Attribute"><i class="fas fa-plus"></i><span>Attribute</span></button>
+              <button type="button" data-action="create-item" data-item-type="enhancement" title="Create Enhancement"><i class="fas fa-plus"></i><span>Enhancement</span></button>
+              <button type="button" data-action="create-item" data-item-type="limiter" title="Create Limiter"><i class="fas fa-plus"></i><span>Limiter</span></button>
+            </div>
+          {{/if}}
+        </header>
         <ol class="item-list folio-item-list">
           {{#each itemGroups.attributes as |item|}}
             <li class="item-row" data-item-id="{{item.id}}">
@@ -267,7 +318,14 @@
 
     <section class="tab folio-tab{{#if activeTabs.defects}} active{{/if}}" data-group="primary" data-tab="defects">
       <section class="ledger-section item-drop-panel" data-drop-target="items">
-        <h2>Defects</h2>
+        <header class="ledger-heading">
+          <h2>Defects</h2>
+          {{#if editable}}
+            <div class="ledger-actions">
+              <button type="button" data-action="create-item" data-item-type="defect" title="Create Defect"><i class="fas fa-plus"></i><span>Defect</span></button>
+            </div>
+          {{/if}}
+        </header>
         <ol class="item-list folio-item-list">
           {{#each itemGroups.defects as |item|}}
             <li class="item-row" data-item-id="{{item.id}}">
@@ -295,7 +353,16 @@
       <section class="folio-grid two-column">
         <section class="notes-box"><h2>Saving Throws, Proficiencies, Languages, Movement, Senses</h2><textarea name="system.identity.proficiencies" {{#unless editable}}disabled{{/unless}}>{{system.identity.proficiencies}}</textarea></section>
         <section class="ledger-section item-drop-panel" data-drop-target="items">
-          <h2>Skills And Proficiencies</h2>
+          <header class="ledger-heading">
+            <h2>Skills And Proficiencies</h2>
+            {{#if editable}}
+              <div class="ledger-actions">
+                <button type="button" data-action="create-item" data-item-type="skill" title="Create Skill"><i class="fas fa-plus"></i><span>Skill</span></button>
+                <button type="button" data-action="create-item" data-item-type="proficiency" title="Create Proficiency"><i class="fas fa-plus"></i><span>Proficiency</span></button>
+                <button type="button" data-action="create-item" data-item-type="language" title="Create Language"><i class="fas fa-plus"></i><span>Language</span></button>
+              </div>
+            {{/if}}
+          </header>
           <ol class="item-list folio-item-list">
             {{#each itemGroups.skills as |item|}}
               <li class="item-row" data-item-id="{{item.id}}">
@@ -322,7 +389,16 @@
 
     <section class="tab folio-tab{{#if activeTabs.powers}} active{{/if}}" data-group="primary" data-tab="powers">
       <section class="ledger-section item-drop-panel" data-drop-target="items">
-        <h2>Dynamic Powers, Spell-Like Abilities, Spells, Techniques</h2>
+        <header class="ledger-heading">
+          <h2>Dynamic Powers, Spell-Like Abilities, Spells, Techniques</h2>
+          {{#if editable}}
+            <div class="ledger-actions">
+              <button type="button" data-action="create-item" data-item-type="power" title="Create Power"><i class="fas fa-plus"></i><span>Power</span></button>
+              <button type="button" data-action="create-item" data-item-type="spell" title="Create Spell"><i class="fas fa-plus"></i><span>Spell</span></button>
+              <button type="button" data-action="create-item" data-item-type="technique" title="Create Technique"><i class="fas fa-plus"></i><span>Technique</span></button>
+            </div>
+          {{/if}}
+        </header>
         <ol class="item-list folio-item-list">
           {{#each itemGroups.powers as |item|}}
             <li class="item-row" data-item-id="{{item.id}}">
@@ -348,7 +424,16 @@
 
     <section class="tab folio-tab{{#if activeTabs.inventory}} active{{/if}}" data-group="primary" data-tab="inventory">
       <section class="ledger-section item-drop-panel" data-drop-target="items">
-        <h2>Gear, Items Of Power, Weapons, Armour, Money</h2>
+        <header class="ledger-heading">
+          <h2>Gear, Items Of Power, Weapons, Armour, Money</h2>
+          {{#if editable}}
+            <div class="ledger-actions">
+              <button type="button" data-action="create-item" data-item-type="equipment" title="Create Equipment"><i class="fas fa-plus"></i><span>Equipment</span></button>
+              <button type="button" data-action="create-item" data-item-type="itemOfPower" title="Create Item of Power"><i class="fas fa-plus"></i><span>Item of Power</span></button>
+              <button type="button" data-action="create-item" data-item-type="loot" title="Create Loot"><i class="fas fa-plus"></i><span>Loot</span></button>
+            </div>
+          {{/if}}
+        </header>
         <ol class="item-list folio-item-list">
           {{#each itemGroups.inventory as |item|}}
             <li class="item-row" data-item-id="{{item.id}}">
@@ -374,7 +459,17 @@
 
     <section class="tab folio-tab{{#if activeTabs.companions}} active{{/if}}" data-group="primary" data-tab="companions">
       <section class="ledger-section item-drop-panel" data-drop-target="items">
-        <h2>Companions, Vehicles, Mecha, Mounts</h2>
+        <header class="ledger-heading">
+          <h2>Companions, Vehicles, Mecha, Mounts</h2>
+          {{#if editable}}
+            <div class="ledger-actions">
+              <button type="button" data-action="create-item" data-item-type="mount" title="Create Mount"><i class="fas fa-plus"></i><span>Mount</span></button>
+              <button type="button" data-action="create-item" data-item-type="vehicle" title="Create Vehicle"><i class="fas fa-plus"></i><span>Vehicle</span></button>
+              <button type="button" data-action="create-item" data-item-type="mecha" title="Create Mecha"><i class="fas fa-plus"></i><span>Mecha</span></button>
+              <button type="button" data-action="create-item" data-item-type="monsterVariant" title="Create Monster Variant"><i class="fas fa-plus"></i><span>Variant</span></button>
+            </div>
+          {{/if}}
+        </header>
         <ol class="item-list folio-item-list">
           {{#each itemGroups.companions as |item|}}
             <li class="item-row" data-item-id="{{item.id}}">

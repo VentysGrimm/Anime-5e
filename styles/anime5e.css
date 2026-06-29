@@ -290,6 +290,41 @@
   text-align: center;
 }
 
+.anime5e .ledger-heading {
+  align-items: center;
+  background: var(--anime5e-dark);
+  color: #fff;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(180px, 1fr) auto;
+}
+
+.anime5e .ledger-heading h2 {
+  background: transparent;
+  color: inherit;
+  min-width: 0;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.anime5e .ledger-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: end;
+  padding: 4px 6px;
+}
+
+.anime5e .ledger-actions button {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.72rem;
+  gap: 4px;
+  min-height: 26px;
+  padding: 3px 6px;
+  white-space: nowrap;
+}
+
 .anime5e .item-list {
   display: grid;
   margin: 0;
@@ -759,8 +794,13 @@
   .anime5e .action-table,
   .anime5e .damage-controls,
   .anime5e .quick-roll-controls,
+  .anime5e .ledger-heading,
   .anime5e .folio-item-list .item-row {
     grid-template-columns: 1fr;
+  }
+
+  .anime5e .ledger-actions {
+    justify-content: start;
   }
 
   .anime5e .sheet-tabs .item {

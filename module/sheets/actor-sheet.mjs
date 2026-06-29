@@ -51,14 +51,48 @@ const ROLL_MODES = {
 };
 
 const ITEM_GROUP_TYPES = {
+  characterOptions: ["species", "class", "background", "sizeTemplate", "lifepath", "feature", "trait"],
   combat: ["weapon", "armor", "shield", "technique", "attribute"],
   attributes: ["attribute", "enhancement", "limiter", "itemAttribute"],
   defects: ["defect"],
   skills: ["skill", "proficiency", "tool", "language", "trait", "background", "feature"],
   powers: ["power", "spell", "technique"],
-  inventory: ["equipment", "loot", "weapon", "armor", "shield", "material", "itemAttribute"],
-  companions: ["vehicle", "mecha"]
+  inventory: ["equipment", "loot", "weapon", "armor", "shield", "material", "itemAttribute", "itemOfPower"],
+  companions: ["mount", "vehicle", "mecha", "monsterVariant"]
 };
+
+const DEFAULT_ITEM_TYPES = [
+  "armor",
+  "attribute",
+  "background",
+  "class",
+  "defect",
+  "enhancement",
+  "equipment",
+  "feature",
+  "itemAttribute",
+  "itemOfPower",
+  "language",
+  "lifepath",
+  "limiter",
+  "loot",
+  "material",
+  "mecha",
+  "monsterVariant",
+  "mount",
+  "power",
+  "proficiency",
+  "shield",
+  "skill",
+  "sizeTemplate",
+  "species",
+  "spell",
+  "technique",
+  "tool",
+  "trait",
+  "vehicle",
+  "weapon"
+];
 
 const EQUIPPABLE_ITEM_TYPES = new Set(["weapon", "armor", "shield"]);
 
@@ -245,10 +279,19 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   static _prepareItemGroups(items) {
+    const byType = this._itemTypes().reduce((groups, type) => {
+      groups[type] = items.filter((item) => item.type === type);
+      return groups;
+    }, {});
+
     return Object.entries(ITEM_GROUP_TYPES).reduce((groups, [group, types]) => {
       groups[group] = items.filter((item) => types.includes(item.type));
       return groups;
-    }, { all: items });
+    }, { all: items, byType });
+  }
+
+  static _itemTypes() {
+    return CONFIG.ANIME5E?.itemTypes ?? DEFAULT_ITEM_TYPES;
   }
 
   static _prepareEquipmentContext(system, rawItems, preparedItems) {
@@ -344,6 +387,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='delete-item']").forEach((button) => {
       button.addEventListener("click", this._onDeleteItem.bind(this));
+    });
+    element.querySelectorAll("[data-action='create-item']").forEach((button) => {
+      button.addEventListener("click", this._onCreateItem.bind(this));
     });
     element.querySelectorAll("[data-action='toggle-equipped']").forEach((button) => {
       button.addEventListener("click", this._onToggleItemEquipped.bind(this));
@@ -569,7 +615,48 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   async _onDeleteItem(event) {
     event.preventDefault();
     const item = this._getEmbeddedItem(event);
-    await item?.delete();
+    if (!item || !this.isEditable) return;
+
+    const confirmed = await this._confirmItemDeletion(item);
+    if (!confirmed) return;
+
+    await item.delete();
+  }
+
+  async _confirmItemDeletion(item) {
+    const DialogV2 = foundry.applications.api.DialogV2;
+    if (DialogV2?.confirm) {
+      return DialogV2.confirm({
+        window: { title: "Delete Owned Item" },
+        content: `<p>Delete <strong>${escapeHtml(item.name)}</strong> from ${escapeHtml(this.actor.name)}?</p>`,
+        yes: { label: "Delete" },
+        no: { label: "Cancel" }
+      });
+    }
+
+    return window.confirm(`Delete ${item.name} from ${this.actor.name}?`);
+  }
+
+  async _onCreateItem(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const type = event.currentTarget.dataset.itemType ?? "equipment";
+    if (!this.constructor._itemTypes().includes(type)) {
+      ui.notifications?.warn(`Anime 5e does not define an item type named "${type}".`);
+      return;
+    }
+
+    const typeLabel = localizedType("Item", type);
+    const [item] = await this.actor.createEmbeddedDocuments("Item", [
+      {
+        name: `New ${typeLabel}`,
+        type,
+        img: "icons/svg/item-bag.svg"
+      }
+    ]);
+
+    item?.sheet?.render(true);
   }
 
   async _onToggleItemEquipped(event) {
