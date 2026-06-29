@@ -184,7 +184,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     },
     form: {
       closeOnSubmit: false,
-      submitOnChange: false,
+      submitOnChange: true,
       submitOnClose: true
     }
   };
