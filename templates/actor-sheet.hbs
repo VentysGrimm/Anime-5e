@@ -158,6 +158,30 @@
                 {{/each}}
               </ol>
             {{/if}}
+            {{#if creation.classBenefits.active}}
+              <section class="class-benefit-panel">
+                <h3>Class-Derived Benefits</h3>
+                <div class="class-benefit-grid">
+                  <span>Active Class <strong>{{creation.classBenefits.className}}</strong></span>
+                  <span>Class Level <strong>{{creation.classBenefits.classLevel}}</strong></span>
+                  <span>Hit Dice <strong>{{creation.classBenefits.hitDicePool}}</strong></span>
+                  <span>Proficiency <strong>+{{creation.classBenefits.proficiencyBonus}}</strong></span>
+                  <span>Saving Throws <strong>{{creation.classBenefits.savingThrows}}</strong></span>
+                  <span>Bonus Points <strong>{{creation.classBenefits.bonusPoints}}</strong></span>
+                </div>
+                {{#if creation.classBenefits.proficiencies}}
+                  <p>{{creation.classBenefits.proficiencies}}</p>
+                {{/if}}
+                <ol class="class-benefit-list">
+                  {{#each creation.classBenefits.benefits as |benefit|}}
+                    <li><span>Level {{benefit.level}}</span><strong>{{benefit.label}}</strong></li>
+                  {{/each}}
+                </ol>
+              </section>
+            {{/if}}
+            {{#each creation.classBenefits.warnings as |warning|}}
+              <p class="sheet-warning">{{warning}}</p>
+            {{/each}}
           </section>
 
           <section class="paint-panel creation-panel">
@@ -230,6 +254,10 @@
               <label>
                 Classes
                 <input type="number" value="{{pointSummary.classCost}}" readonly>
+              </label>
+              <label>
+                Class Bonus
+                <input type="number" value="{{pointSummary.classBonusPoints}}" readonly>
               </label>
               <label>
                 Attributes

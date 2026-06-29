@@ -139,6 +139,7 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         abilityScoreCost: numberField(0, { min: 0 }),
         speciesCost: numberField(0, { min: 0 }),
         classCost: numberField(0, { min: 0 }),
+        classBonusPoints: numberField(0, { min: 0 }),
         attributeCost: numberField(0, { min: 0 }),
         defectRefund: numberField(0, { min: 0 }),
         equipmentCost: numberField(0, { min: 0 }),

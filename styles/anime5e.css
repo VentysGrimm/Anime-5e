@@ -506,6 +506,68 @@
   text-align: right;
 }
 
+.anime5e .class-benefit-panel {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.anime5e .class-benefit-panel h3 {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.anime5e .class-benefit-grid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(3, minmax(92px, 1fr));
+}
+
+.anime5e .class-benefit-grid span {
+  display: grid;
+  font-size: 0.72rem;
+  font-weight: 800;
+  gap: 2px;
+  min-width: 0;
+  text-transform: uppercase;
+}
+
+.anime5e .class-benefit-panel p {
+  font-size: 0.78rem;
+  margin: 0;
+}
+
+.anime5e .class-benefit-list {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  max-height: 150px;
+  overflow: auto;
+  padding: 0;
+}
+
+.anime5e .class-benefit-list li {
+  align-items: center;
+  border-top: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 68px minmax(140px, 1fr);
+  min-height: 26px;
+  padding: 4px 0;
+}
+
+.anime5e .class-benefit-list span,
+.anime5e .class-benefit-list strong {
+  min-width: 0;
+}
+
 .anime5e .attack-table {
   grid-template-columns: 1.35fr 0.75fr 0.75fr 0.95fr;
 }
@@ -1203,6 +1265,8 @@
 @media (max-width: 860px) {
   .anime5e .two-column,
   .anime5e .action-table,
+  .anime5e .class-benefit-grid,
+  .anime5e .class-benefit-list li,
   .anime5e .class-progression-table,
   .anime5e .damage-controls,
   .anime5e .energy-controls,

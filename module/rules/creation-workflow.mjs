@@ -37,6 +37,7 @@ function summarizePointState(actor) {
     "system.points.abilityScoreCost": summary.abilityScoreCost,
     "system.points.speciesCost": summary.speciesCost,
     "system.points.classCost": summary.classCost,
+    "system.points.classBonusPoints": summary.classBonusPoints,
     "system.points.attributeCost": summary.attributeCost,
     "system.points.defectRefund": summary.defectRefund,
     "system.points.equipmentCost": summary.equipmentCost,

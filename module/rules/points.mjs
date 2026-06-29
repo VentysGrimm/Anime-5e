@@ -192,6 +192,80 @@ export function summarizeClassLevelState(items = [], actorLevel = 1) {
   };
 }
 
+function formatGrantedBenefit(benefit = {}) {
+  const label = benefit.label || benefit.type || "Benefit";
+  const points = numberOrZero(benefit.points);
+  const rank = numberOrZero(benefit.rank);
+  const rankText = rank > 0 ? ` Rank ${rank}` : "";
+  const pointText = points !== 0 ? ` [${points}]` : "";
+  const notes = typeof benefit.notes === "string" && benefit.notes.trim() ? ` - ${benefit.notes.trim()}` : "";
+
+  return `${label}${rankText}${pointText}${notes}`;
+}
+
+export function summarizeSingleClassBenefits(items = [], actorLevel = 1) {
+  const classItems = (items ?? []).filter((item) => item?.type === "class");
+  const warnings = [];
+
+  if (!classItems.length) {
+    return {
+      active: false,
+      classCount: 0,
+      warnings,
+      bonusPoints: 0,
+      benefits: []
+    };
+  }
+
+  if (classItems.length > 1) {
+    warnings.push("Multiple Class items are attached; class benefit automation is limited to one class until multiclass support is implemented.");
+  }
+
+  const classItem = classItems[0];
+  const system = classItem.system ?? {};
+  const classLevel = Math.min(20, positiveNumber(system.level) || normalizeCharacterLevel(actorLevel));
+  const progression = Array.isArray(system.progression) ? system.progression : [];
+  if (!progression.length) {
+    warnings.push(`${classItem.name ?? "Class"} has no structured progression data.`);
+  }
+
+  const rows = progression
+    .filter((row) => positiveNumber(row.level) > 0 && positiveNumber(row.level) <= classLevel)
+    .sort((a, b) => positiveNumber(a.level) - positiveNumber(b.level));
+  const lastRow = rows[rows.length - 1] ?? null;
+  const bonusPoints = rows.reduce((total, row) => total + positiveNumber(row.points), 0);
+  const hitDice = system.hitDice ?? "";
+  const savingThrows = system.savingThrows ?? "";
+  const proficiencies = rows
+    .map((row) => row.proficiencies)
+    .filter((value) => typeof value === "string" && value.trim().length)
+    .join("; ");
+  const benefits = rows.flatMap((row) => {
+    const rowBenefits = Array.isArray(row.benefits) ? row.benefits : [];
+    return rowBenefits.map((benefit) => ({
+      level: positiveNumber(row.level),
+      label: formatGrantedBenefit(benefit),
+      points: positiveNumber(benefit.points),
+      notes: benefit.notes ?? ""
+    }));
+  });
+
+  return {
+    active: true,
+    classCount: classItems.length,
+    className: classItem.name ?? "Class",
+    classLevel,
+    hitDice,
+    hitDicePool: hitDice ? `${classLevel}${hitDice}` : "",
+    proficiencyBonus: positiveNumber(lastRow?.proficiencyBonus),
+    savingThrows,
+    proficiencies,
+    bonusPoints,
+    benefits,
+    warnings
+  };
+}
+
 export function getCharacterBenchmark(level) {
   const characterLevel = normalizeCharacterLevel(level);
   return CHARACTER_BENCHMARKS.find((benchmark) => characterLevel >= benchmark.minLevel && characterLevel <= benchmark.maxLevel)
@@ -359,13 +433,14 @@ export function calculateAvailablePoints(system = {}) {
 
 export function calculatePointSummary(system = {}, items = []) {
   const owned = calculateOwnedPointTotals(items);
+  const classBenefits = summarizeSingleClassBenefits(items, system.level);
   const benchmark = getCharacterBenchmark(system.level);
   const benchmarkSummary = summarizeCharacterBenchmark(benchmark);
   const benchmarkWarnings = calculateBenchmarkWarnings(system, items);
   const abilityScoreCost = calculateAbilityScoreCost(system.abilities);
   const manualSpent = positiveNumber(system.points?.spent);
   const manualRefund = positiveNumber(system.points?.refunded);
-  const available = calculateAvailablePoints(system) + owned.defectRefund;
+  const available = calculateAvailablePoints(system) + owned.defectRefund + classBenefits.bonusPoints;
   const totalSpent = abilityScoreCost
     + manualSpent
     + owned.speciesCost
@@ -374,7 +449,7 @@ export function calculatePointSummary(system = {}, items = []) {
     + owned.equipmentCost;
   const remaining = available - totalSpent;
   const actorLevel = positiveNumber(system.level);
-  const warnings = [...owned.warningItems, ...benchmarkWarnings];
+  const warnings = [...owned.warningItems, ...classBenefits.warnings, ...benchmarkWarnings];
 
   if (remaining < 0) warnings.push("Point spending exceeds available points.");
   if (owned.speciesCount === 0) warnings.push("No Species/Race item is attached yet.");
@@ -395,9 +470,11 @@ export function calculatePointSummary(system = {}, items = []) {
     equipmentCost: owned.equipmentCost,
     defectRefund: owned.defectRefund,
     totalRefunded: manualRefund + owned.defectRefund,
+    classBonusPoints: classBenefits.bonusPoints,
     totalSpent,
     remaining,
     warnings,
+    classBenefits,
     benchmark,
     benchmarkSummary,
     benchmarkWarnings,
@@ -411,6 +488,7 @@ export function applyPointSummaryToSystem(system = {}, items = []) {
   system.points.abilityScoreCost = summary.abilityScoreCost;
   system.points.speciesCost = summary.speciesCost;
   system.points.classCost = summary.classCost;
+  system.points.classBonusPoints = summary.classBonusPoints;
   system.points.attributeCost = summary.attributeCost;
   system.points.defectRefund = summary.defectRefund;
   system.points.equipmentCost = summary.equipmentCost;

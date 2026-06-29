@@ -485,6 +485,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       hasRecommendedExperience: recommendedExperience !== null,
       levelProgress,
       classLevel,
+      classBenefits: pointSummary.classBenefits,
       benchmark: pointSummary.benchmark,
       benchmarkSummary: pointSummary.benchmarkSummary,
       validationStatus,
