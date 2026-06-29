@@ -264,7 +264,7 @@
 .anime5e .point-summary-grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(4, minmax(72px, 1fr));
+  grid-template-columns: repeat(3, minmax(88px, 1fr));
 }
 
 .anime5e .point-summary-panel label {

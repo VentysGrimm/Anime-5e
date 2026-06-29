@@ -346,6 +346,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       available: numberOrZero(points.available),
       spent: numberOrZero(points.spent),
       refunded: numberOrZero(points.refunded),
+      abilityScoreCost: numberOrZero(points.abilityScoreCost),
+      totalSpent: numberOrZero(points.totalSpent),
       remaining,
       warning: remaining < 0 ? "Point spending exceeds available points." : ""
     };

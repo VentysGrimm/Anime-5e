@@ -113,12 +113,20 @@
                 <input type="number" value="{{pointSummary.available}}" readonly>
               </label>
               <label>
-                Spent
+                Ability Scores
+                <input type="number" value="{{pointSummary.abilityScoreCost}}" readonly>
+              </label>
+              <label>
+                Other Spent
                 <input type="number" name="system.points.spent" value="{{pointSummary.spent}}" min="0" {{#unless editable}}disabled{{/unless}}>
               </label>
               <label>
                 Refunded
                 <input type="number" name="system.points.refunded" value="{{pointSummary.refunded}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Total Spent
+                <input type="number" value="{{pointSummary.totalSpent}}" readonly>
               </label>
               <label>
                 Remaining

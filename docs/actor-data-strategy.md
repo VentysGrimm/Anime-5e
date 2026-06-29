@@ -10,7 +10,7 @@ Actor data is reserved for values that belong to the actor even when no owned It
 
 - Identity and campaign bookkeeping: alias, player name, race/species text, size template text, alignment, campaign title, GM, creation/retirement dates, and character role.
 - Character progression summary: level, experience, and class summary rows for quick sheet editing.
-- Point bookkeeping inputs and derived summary: starting Discretionary Points, Engagement Bonus Points, other non-levelling points, spent points, refunded points, available points, remaining points, and optional total points.
+- Point bookkeeping inputs and derived summary: starting Discretionary Points, Engagement Bonus Points, other non-levelling points, manual spent points, refunded points, Ability Score cost, total spent, available points, remaining points, and optional total points.
 - Core ability/resource state: ability scores and modifiers, Hit Points, Energy Points, Armour Class, movement speed, proficiency bonus, initiative, and quick attack rows.
 - Folio notes: overview, combat, attributes, defects, skills, powers, inventory, companions, biography, and journal notes.
 - Rich text summaries: biography and linked stat block notes for non-character actors or companion-style records.

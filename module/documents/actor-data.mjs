@@ -108,6 +108,8 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
       points: new fields.SchemaField({
         spent: numberField(0, { min: 0 }),
         refunded: numberField(0, { min: 0 }),
+        abilityScoreCost: numberField(0, { min: 0 }),
+        totalSpent: numberField(0, { min: 0 }),
         available: numberField(0),
         remaining: numberField(0)
       }),
@@ -170,8 +172,13 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
     const other = Math.max(0, Number(this.identity.otherNonLevellingPoints) || 0);
     points.spent = Math.max(0, Number(points.spent) || 0);
     points.refunded = Math.max(0, Number(points.refunded) || 0);
+    points.abilityScoreCost = Object.values(this.abilities).reduce((total, ability) => {
+      // Core Rules p. 24: each Ability Score costs Points equal to the assigned score.
+      return total + Math.max(0, Number(ability.value) || 0);
+    }, 0);
+    points.totalSpent = points.abilityScoreCost + points.spent;
     points.available = starting + engagement + other + points.refunded;
-    points.remaining = points.available - points.spent;
+    points.remaining = points.available - points.totalSpent;
   }
 }
 
