@@ -68,7 +68,8 @@
       </label>
       <label>
         Movement
-        <input type="number" name="system.combat.movementSpeed" value="{{system.combat.movementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        <input type="number" name="system.combat.movementSpeed" value="{{system.combat.baseMovementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        {{#if combatEffects.movement}}<small class="derived-stat-note">{{combatEffects.movement}}</small>{{/if}}
       </label>
       <label>
         Proficiency

@@ -449,7 +449,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     return {
       hitPoints: hitPointBonus ? `${formatSigned(hitPointBonus)} effective ${numberOrZero(system.combat?.hitPoints?.max)}` : "",
       energy: energyBonus ? `${formatSigned(energyBonus)} effective ${numberOrZero(system.combat?.energy?.max)}` : "",
-      armourClass: armourClassBonus ? `${formatSigned(armourClassBonus)} effective ${numberOrZero(system.combat?.armourClass)}` : ""
+      armourClass: armourClassBonus ? `${formatSigned(armourClassBonus)} effective ${numberOrZero(system.combat?.armourClass)}` : "",
+      movement: hasText(system.combat?.movementSummary) ? system.combat.movementSummary : ""
     };
   }
 

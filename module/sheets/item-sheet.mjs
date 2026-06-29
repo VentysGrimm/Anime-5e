@@ -4,7 +4,7 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
-const MULTILINE_FIELDS = new Set(["constructionNotes", "progressionNotes", "result", "statBlock"]);
+const MULTILINE_FIELDS = new Set(["constructionNotes", "movementModes", "progressionNotes", "result", "statBlock"]);
 const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
 const NUMBER_FIELDS = new Set([
   "armourClass",
@@ -58,6 +58,7 @@ const FIELD_LABELS = {
   linkedDocumentType: "Linked Document Type",
   linkedSourceId: "Linked Source ID",
   material: "Material",
+  movementModes: "Movement Modes",
   movementModifier: "Movement Modifier",
   parentAttribute: "Parent Attribute",
   pointImpact: "Point Impact",

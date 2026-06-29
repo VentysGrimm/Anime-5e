@@ -170,7 +170,13 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         armourClass: numberField(10),
         baseArmourClass: numberField(10),
         armourClassEffectBonus: numberField(0),
+        baseMovementSpeed: numberField(30, { min: 0 }),
         movementSpeed: numberField(30, { min: 0 }),
+        movementSpeedMultiplier: textField("x1"),
+        flightSpeed: textField(),
+        waterSpeed: textField(),
+        specialMovement: textField(),
+        movementSummary: textField(),
         proficiencyBonus: numberField(2),
         initiative: numberField(0),
         attacks: new fields.SchemaField({
@@ -228,6 +234,17 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
     energy.effectBonus = attributeEffects.energyMaxBonus;
     energy.max = Math.max(0, baseEnergyMax + attributeEffects.energyMaxBonus);
     energy.value = Math.max(0, Math.min(numberOrFallback(sourceSystem.combat?.energy?.value, energy.value), energy.max));
+
+    const movement = attributeEffects.movement;
+    const baseMovementSpeed = Math.max(0, numberOrFallback(sourceSystem.combat?.movementSpeed, numberOrFallback(this.combat.movementSpeed, 30)));
+    movement.baseGroundSpeed = baseMovementSpeed;
+    this.combat.baseMovementSpeed = baseMovementSpeed;
+    this.combat.movementSpeed = movement.groundSpeed;
+    this.combat.movementSpeedMultiplier = movement.multiplierLabel;
+    this.combat.flightSpeed = movement.flightSpeed;
+    this.combat.waterSpeed = movement.waterSpeed;
+    this.combat.specialMovement = movement.specialModes.join(", ");
+    this.combat.movementSummary = movement.summary.join("; ");
 
     this.creation.startingLevel = Math.max(1, Number(this.creation.startingLevel) || Number(this.level) || 1);
     this.creation.startingExperience = Math.max(0, Number(this.creation.startingExperience) || Number(this.experience) || 0);
