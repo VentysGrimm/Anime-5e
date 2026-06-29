@@ -2,7 +2,8 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
-const MULTILINE_FIELDS = new Set(["result", "statBlock"]);
+const MULTILINE_FIELDS = new Set(["constructionNotes", "result", "statBlock"]);
+const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
 const NUMBER_FIELDS = new Set([
   "armourClass",
   "armourClassModifier",
@@ -30,7 +31,10 @@ const FIELD_LABELS = {
   challengeRating: "Challenge Rating",
   communities: "Communities",
   costModifier: "Cost Modifier",
+  constructionNotes: "Construction Notes",
+  constructionStatus: "Construction Status",
   creatureType: "Creature Type",
+  currency: "Currency",
   damageModifier: "Damage Modifier",
   dexterityRule: "Dexterity Rule",
   equipped: "Equipped",
@@ -123,6 +127,14 @@ function buildItemActions(item, systemData) {
   };
 }
 
+function buildConstructionPlaceholder(item) {
+  if (!CONSTRUCTION_ITEM_TYPES.has(item.type)) return null;
+
+  return {
+    message: "Point-built item construction is not fully automated yet. Track rank, points, Attribute Summary, value, weight, attunement, and construction notes here."
+  };
+}
+
 export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static DEFAULT_OPTIONS = {
     classes: ["anime5e", "sheet", "item-sheet"],
@@ -153,6 +165,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.system = this.item.system;
     context.detailFields = buildDetailFields(systemData);
     context.itemActions = buildItemActions(this.item, systemData);
+    context.constructionPlaceholder = buildConstructionPlaceholder(this.item);
     return context;
   }
 

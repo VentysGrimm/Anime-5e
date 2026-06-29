@@ -3270,10 +3270,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Combat Technique 2; Fast 2; Special Movement 4; Special Requirement 1."
+        "attributeSummary": "Combat Technique 2; Fast 2; Special Movement 4; Special Requirement 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3303,10 +3306,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Mind Control - Lesser 10 (2), Area 100 ft, Targets 100, Detectable hearing."
+        "attributeSummary": "Mind Control - Lesser 10 (2), Area 100 ft, Targets 100, Detectable hearing.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3336,10 +3342,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Pocket Dimension 4; Sixth Sense 1."
+        "attributeSummary": "Pocket Dimension 4; Sixth Sense 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3369,10 +3378,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Augmented 10."
+        "attributeSummary": "Augmented 10.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3402,10 +3414,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Portal 2."
+        "attributeSummary": "Portal 2.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3435,10 +3450,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Unique Attribute 10 (1), Range 1,000 miles, Targets 5, Equipment linked quills."
+        "attributeSummary": "Unique Attribute 10 (1), Range 1,000 miles, Targets 5, Equipment linked quills.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3468,10 +3486,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Sixth Sense 5 (1), Area 1,000 ft."
+        "attributeSummary": "Sixth Sense 5 (1), Area 1,000 ft.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3501,10 +3522,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 12,
         "attunement": "",
-        "attributeSummary": "Mind Control 5, Duration 1 week, Ingest, Unique Limiter."
+        "attributeSummary": "Mind Control 5, Duration 1 week, Ingest, Unique Limiter.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3534,10 +3558,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Regeneration 1 (2); Undetectable 2."
+        "attributeSummary": "Regeneration 1 (2); Undetectable 2.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3567,10 +3594,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Dynamic Powers 1, Detection, Potent, Detectable sight."
+        "attributeSummary": "Dynamic Powers 1, Detection, Potent, Detectable sight.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3600,10 +3630,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 12,
         "attunement": "",
-        "attributeSummary": "Dynamic Powers - Lesser 3, Keys."
+        "attributeSummary": "Dynamic Powers - Lesser 3, Keys.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3633,10 +3666,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 16,
         "attunement": "",
-        "attributeSummary": "Pocket Dimension 10 (6), 10-mile pocket, Duration 1 week."
+        "attributeSummary": "Pocket Dimension 10 (6), 10-mile pocket, Duration 1 week.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3666,10 +3702,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Teleport 3 (1), Targets 10, wall-only Unique Limiter; Unique Attribute 1."
+        "attributeSummary": "Teleport 3 (1), Targets 10, wall-only Unique Limiter; Unique Attribute 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3699,10 +3738,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 20,
         "attunement": "",
-        "attributeSummary": "Cognition 5 (6); Cognition 2 (4); Dynamic Powers 1; Sixth Sense 1."
+        "attributeSummary": "Cognition 5 (6); Cognition 2 (4); Dynamic Powers 1; Sixth Sense 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3732,10 +3774,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 12,
         "attunement": "",
-        "attributeSummary": "AC Bonus 6; Ground Speed 1 (2); Tunnelling 3 (4); Weapon 5 (3)."
+        "attributeSummary": "AC Bonus 6; Ground Speed 1 (2); Tunnelling 3 (4); Weapon 5 (3).",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3765,10 +3810,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 16,
         "attunement": "",
-        "attributeSummary": "Dynamic Powers - Lesser 4, Visual Truths."
+        "attributeSummary": "Dynamic Powers - Lesser 4, Visual Truths.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3798,10 +3846,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Adventuring Gear",
         "points": 20,
         "attunement": "",
-        "attributeSummary": "Flight 5; Immunity 3; Resilient 1."
+        "attributeSummary": "Flight 5; Immunity 3; Resilient 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3831,10 +3882,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Daily Devices",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Flight 1; Unique Attribute 2."
+        "attributeSummary": "Flight 1; Unique Attribute 2.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3864,10 +3918,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Daily Devices",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Capacity 3; Ground Speed 1 (3); Mind Shield 2; Regeneration 2; Special Requirement 1."
+        "attributeSummary": "Capacity 3; Ground Speed 1 (3); Mind Shield 2; Regeneration 2; Special Requirement 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3897,10 +3954,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Daily Devices",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Edge 1; Skill Proficiency 4 (1)."
+        "attributeSummary": "Edge 1; Skill Proficiency 4 (1).",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3930,10 +3990,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Daily Devices",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Dynamic Powers - Lesser 2, Languages."
+        "attributeSummary": "Dynamic Powers - Lesser 2, Languages.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3963,10 +4026,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Daily Devices",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Special Movement 2; Water Speed 3."
+        "attributeSummary": "Special Movement 2; Water Speed 3.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -3996,10 +4062,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 12,
         "attunement": "",
-        "attributeSummary": "Features 1; Mind Control - Lesser 14 (4)."
+        "attributeSummary": "Features 1; Mind Control - Lesser 14 (4).",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4029,10 +4098,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Energised 5; Healing 3; Mind Shield 2; Mulligan 1; Skill Proficiency 1; Unique Defect 1."
+        "attributeSummary": "Energised 5; Healing 3; Mind Shield 2; Mulligan 1; Skill Proficiency 1; Unique Defect 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4062,10 +4134,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Change State 1; Water Speed 2 (3)."
+        "attributeSummary": "Change State 1; Water Speed 2 (3).",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4095,10 +4170,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 12,
         "attunement": "",
-        "attributeSummary": "Mind Control 5, Area 10 ft, Targets 5, memory-only Unique Limiter."
+        "attributeSummary": "Mind Control 5, Area 10 ft, Targets 5, memory-only Unique Limiter.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4128,10 +4206,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Extra Actions 1 (3); Mulligan 1."
+        "attributeSummary": "Extra Actions 1 (3); Mulligan 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4161,10 +4242,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Flight 2; Size Change - Lesser 1 (3)."
+        "attributeSummary": "Flight 2; Size Change - Lesser 1 (3).",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4194,10 +4278,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 48,
         "attunement": "",
-        "attributeSummary": "Dynamic Powers 6, Gravity, Area 10 ft, Range 30 ft, Deplete 30 Energy/use."
+        "attributeSummary": "Dynamic Powers 6, Gravity, Area 10 ft, Range 30 ft, Deplete 30 Energy/use.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4227,10 +4314,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 20,
         "attunement": "",
-        "attributeSummary": "Connected 8; Immunity 4 (7); Inspire - Greater 4; Skill Proficiency 1; Sixth Sense 1; Undetectable 2; Cursed 3; Hounded 3; Unique Defect 1."
+        "attributeSummary": "Connected 8; Immunity 4 (7); Inspire - Greater 4; Skill Proficiency 1; Sixth Sense 1; Undetectable 2; Cursed 3; Hounded 3; Unique Defect 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4260,10 +4350,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 24,
         "attunement": "",
-        "attributeSummary": "Dynamic Powers 3 (8), Dimensional Companions, Deplete, contract Unique Limiter."
+        "attributeSummary": "Dynamic Powers 3 (8), Dimensional Companions, Deplete, contract Unique Limiter.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4293,10 +4386,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 20,
         "attunement": "",
-        "attributeSummary": "Teleport 8 (7), Targets 5, dimensional Unique Enhancement, fixed-pod Equipment."
+        "attributeSummary": "Teleport 8 (7), Targets 5, dimensional Unique Enhancement, fixed-pod Equipment.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4326,10 +4422,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 28,
         "attunement": "",
-        "attributeSummary": "AC Bonus 5 (6); Augmented 4; Cognition 1 (2); Combat Mastery 4 (5); Dynamic Powers 2."
+        "attributeSummary": "AC Bonus 5 (6); Augmented 4; Cognition 1 (2); Combat Mastery 4 (5); Dynamic Powers 2.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4359,10 +4458,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Items of Power",
         "points": 40,
         "attunement": "",
-        "attributeSummary": "Portal 10 (2), Duration Permanent, Activation 1 minute."
+        "attributeSummary": "Portal 10 (2), Duration Permanent, Activation 1 minute.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4392,10 +4494,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Protective Devices",
         "points": 12,
         "attunement": "",
-        "attributeSummary": "AC Bonus 2; Features 11; Jumping 2."
+        "attributeSummary": "AC Bonus 2; Features 11; Jumping 2.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4425,10 +4530,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Protective Devices",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "AC Bonus 1; Forced Disadvantage 1."
+        "attributeSummary": "AC Bonus 1; Forced Disadvantage 1.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4458,10 +4566,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Protective Devices",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Augmented 2; Mulligan 3."
+        "attributeSummary": "Augmented 2; Mulligan 3.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4491,10 +4602,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Protective Devices",
         "points": 20,
         "attunement": "",
-        "attributeSummary": "Features 10 (1); Healing 7 (8); Spell-Like Ability 8."
+        "attributeSummary": "Features 10 (1); Healing 7 (8); Spell-Like Ability 8.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4524,10 +4638,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Protective Devices",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Alternate Identity 6; Healing 2; Undetectable 1 (2)."
+        "attributeSummary": "Alternate Identity 6; Healing 2; Undetectable 1 (2).",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4557,10 +4674,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Protective Devices",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Immutable 2 (4); Mind Shield 3 (5)."
+        "attributeSummary": "Immutable 2 (4); Mind Shield 3 (5).",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4590,10 +4710,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 20,
         "attunement": "",
-        "attributeSummary": "Energised 1; Flight 2 (4); Weapon 15 (5); Undetectable 1; Unique Attribute 2."
+        "attributeSummary": "Energised 1; Flight 2 (4); Weapon 15 (5); Undetectable 1; Unique Attribute 2.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4623,10 +4746,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 24,
         "attunement": "",
-        "attributeSummary": "Weapon 30 (18), Death's Caress."
+        "attributeSummary": "Weapon 30 (18), Death's Caress.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4656,10 +4782,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 16,
         "attunement": "",
-        "attributeSummary": "Weapon 20, Fireball Explosion."
+        "attributeSummary": "Weapon 20, Fireball Explosion.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4689,10 +4818,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Weapon 10 (2), Invading Pulse."
+        "attributeSummary": "Weapon 10 (2), Invading Pulse.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4722,10 +4854,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Weapon 5 (0), Infection."
+        "attributeSummary": "Weapon 5 (0), Infection.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4755,10 +4890,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 20,
         "attunement": "",
-        "attributeSummary": "Augmented 4; Control Environment 2; Size Change - Lesser 2; Weapon 11 (5)."
+        "attributeSummary": "Augmented 4; Control Environment 2; Size Change - Lesser 2; Weapon 11 (5).",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4788,10 +4926,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 8,
         "attunement": "",
-        "attributeSummary": "Weapon 10 (2), Pain."
+        "attributeSummary": "Weapon 10 (2), Pain.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4821,10 +4962,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 4,
         "attunement": "",
-        "attributeSummary": "Language 1; Sixth Sense 1; Weapon 3."
+        "attributeSummary": "Language 1; Sixth Sense 1; Weapon 3.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {
@@ -4854,10 +4998,13 @@
         "quantity": 1,
         "value": "",
         "weight": "",
+        "currency": "gp",
         "itemCategory": "Armaments",
         "points": 28,
         "attunement": "",
-        "attributeSummary": "Control Environment 2; Flight 2 (5); Weapon 12 (6); Weapon 13 (4); Unique Attribute 2."
+        "attributeSummary": "Control Environment 2; Flight 2 (5); Weapon 12 (6); Weapon 13 (4); Unique Attribute 2.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
       },
       "flags": {
         "anime5e": {

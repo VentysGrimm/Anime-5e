@@ -85,7 +85,10 @@ export class Anime5eEquipmentData extends Anime5eBaseItemData {
       equipped: booleanField(),
       quantity: numberField(1, { min: 0 }),
       value: textField(),
-      weight: textField()
+      weight: textField(),
+      currency: textField("gp"),
+      constructionStatus: textField("Manual bookkeeping"),
+      constructionNotes: htmlField()
     };
   }
 }

@@ -81,6 +81,13 @@
     </section>
   {{/if}}
 
+  {{#if constructionPlaceholder}}
+    <section class="panel construction-panel">
+      <h2>Item Construction</h2>
+      <p>{{constructionPlaceholder.message}}</p>
+    </section>
+  {{/if}}
+
   <section class="panel">
     <h2>{{localize "ANIME5E.Labels.Source"}}</h2>
     <div class="inline-fields">

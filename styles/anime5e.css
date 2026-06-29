@@ -423,6 +423,15 @@
   gap: 6px;
 }
 
+.anime5e .construction-panel {
+  background: #fff8ea;
+  border-color: #c79b52;
+}
+
+.anime5e .construction-panel p {
+  margin: 0;
+}
+
 .anime5e .checkbox-field {
   align-items: center;
   display: flex;

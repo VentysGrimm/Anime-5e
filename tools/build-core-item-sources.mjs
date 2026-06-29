@@ -720,10 +720,13 @@ function namedItemDocument([name, folder, page, rank, points, summary, attribute
       quantity: 1,
       value: "",
       weight: "",
+      currency: "gp",
       itemCategory: folder,
       points,
       attunement: "",
-      attributeSummary
+      attributeSummary,
+      constructionStatus: "Manual bookkeeping",
+      constructionNotes: "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
     }
   });
 }
