@@ -1,3 +1,5 @@
+import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
+
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
@@ -119,15 +121,6 @@ const REQUIRED_NUMBER_DEFAULTS = {
 
 for (const ability of ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"]) {
   REQUIRED_NUMBER_DEFAULTS[`system.abilities.${ability}.value`] = 10;
-}
-
-function signedModifier(value) {
-  const modifier = Number(value) || 0;
-  return modifier >= 0 ? `+ ${modifier}` : `- ${Math.abs(modifier)}`;
-}
-
-function buildD20Formula(...modifiers) {
-  return ["1d20", ...modifiers.map((modifier) => signedModifier(modifier))].join(" ");
 }
 
 function numberOrZero(value) {
@@ -519,13 +512,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!ability) return;
 
     const label = event.currentTarget.dataset.label ?? `${abilityKey} Check`;
-    await this._rollFormula(buildD20Formula(ability.modifier), label);
+    await this._rollFormula(buildD20Formula([ability.modifier]), label);
   }
 
   async _onRollInitiative(event) {
     event.preventDefault();
     const initiative = this.actor.system.combat?.initiative ?? 0;
-    await this._rollFormula(buildD20Formula(initiative), "Initiative");
+    await this._rollFormula(buildD20Formula([initiative]), "Initiative");
   }
 
   async _onRollQuick(event) {
@@ -544,7 +537,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
     // Anime 5E Core Rules pp. 153-156 define checks, saving throws, initiative, and attacks as d20 plus the relevant modifiers.
-    await this._rollFormula(buildD20Formula(...modifiers), `${mode.label}: ${abilityLabel}`);
+    await this._rollFormula(buildD20Formula(modifiers), `${mode.label}: ${abilityLabel}`);
   }
 
   async _onRollAttack(event) {
@@ -554,7 +547,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!attack) return;
 
     const modifier = Number(attack.modifier) || 0;
-    await this._rollFormula(buildD20Formula(modifier), `${attack.weapon || "Attack"} Roll`);
+    await this._rollFormula(buildD20Formula([modifier]), `${attack.weapon || "Attack"} Roll`);
   }
 
   async _onRollDamage(event) {
@@ -596,7 +589,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!item) return;
 
     const modifier = Number(item.system?.attackModifier) || 0;
-    await this._rollFormula(buildD20Formula(modifier), `${item.name} Attack`);
+    await this._rollFormula(buildD20Formula([modifier]), `${item.name} Attack`);
   }
 
   async _onRollItemDamage(event) {
@@ -614,12 +607,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
   async _rollFormula(formula, label) {
     try {
-      const roll = new Roll(formula);
-      await roll.evaluate();
-      return roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `${this.actor.name}: ${label}`
-      });
+      return rollAnime5eFormula({ actor: this.actor, formula, label });
     } catch (error) {
       console.error("anime5e | Failed to roll formula", formula, error);
       ui.notifications?.error(`Anime 5e could not roll "${formula}". Check the formula and try again.`);

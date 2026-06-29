@@ -814,6 +814,30 @@
   font-style: italic;
 }
 
+.anime5e.chat-card.roll-card {
+  display: grid;
+  gap: 6px;
+}
+
+.anime5e.chat-card.roll-card h3 {
+  margin: 0;
+}
+
+.anime5e.chat-card .roll-summary {
+  display: grid;
+  gap: 3px 8px;
+  grid-template-columns: max-content 1fr;
+  margin: 0;
+}
+
+.anime5e.chat-card .roll-summary dt {
+  font-weight: 700;
+}
+
+.anime5e.chat-card .roll-summary dd {
+  margin: 0;
+}
+
 @media (max-width: 860px) {
   .anime5e .two-column,
   .anime5e .action-table,

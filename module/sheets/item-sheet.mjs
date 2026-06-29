@@ -1,3 +1,5 @@
+import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
+
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
@@ -82,15 +84,6 @@ function humanizeFieldName(fieldName) {
 
 function hasText(value) {
   return typeof value === "string" && value.trim().length > 0;
-}
-
-function signedModifier(value) {
-  const modifier = Number(value) || 0;
-  return modifier >= 0 ? `+ ${modifier}` : `- ${Math.abs(modifier)}`;
-}
-
-function buildD20Formula(...modifiers) {
-  return ["1d20", ...modifiers.map((modifier) => signedModifier(modifier))].join(" ");
 }
 
 function getItemActor(item) {
@@ -204,7 +197,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   async _onRollAttack(event) {
     event.preventDefault();
     const modifier = Number(this.item.system?.attackModifier) || 0;
-    await this._rollFormula(buildD20Formula(modifier), `${this.item.name} Attack`);
+    await this._rollFormula(buildD20Formula([modifier]), `${this.item.name} Attack`);
   }
 
   async _onRollDamage(event) {
@@ -221,12 +214,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   async _rollFormula(formula, label) {
     try {
-      const roll = new Roll(formula);
-      await roll.evaluate();
-      return roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: getItemActor(this.item) }),
-        flavor: label
-      });
+      return rollAnime5eFormula({ actor: getItemActor(this.item), formula, label });
     } catch (error) {
       console.error("anime5e | Failed to roll item formula", formula, error);
       ui.notifications?.error(`Anime 5e could not roll "${formula}". Check the formula and try again.`);
