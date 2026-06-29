@@ -43,6 +43,7 @@ import {
   showCoreCompendiumImportDialog
 } from "../module/apps/compendium-import-dialog.mjs";
 import { importCoreCompendiumData } from "../module/data/compendiums.mjs";
+import { registerCreationWorkflowHooks } from "../module/rules/creation-workflow.mjs";
 import * as Anime5ePoints from "../module/rules/points.mjs";
 import * as Anime5eResources from "../module/rules/resources.mjs";
 import * as Anime5eRolls from "../module/rules/rolls.mjs";
@@ -173,6 +174,8 @@ Hooks.once("init", () => {
     makeDefault: true,
     types: ANIME5E.itemTypes
   });
+
+  registerCreationWorkflowHooks();
 });
 
 Hooks.once("ready", () => {
