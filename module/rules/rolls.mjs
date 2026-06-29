@@ -51,12 +51,19 @@ export function renderRollFlavor({ actor = null, label = "Roll", formula = "", r
   `;
 }
 
+export async function evaluateAnime5eFormula(formula) {
+  if (!formula) throw new Error("A roll formula is required.");
+
+  const roll = new Roll(formula);
+  await roll.evaluate();
+  return roll;
+}
+
 export async function rollAnime5eFormula({ formula, actor = null, label = "Roll", mode = "normal", speaker = null } = {}) {
   if (!formula) throw new Error("A roll formula is required.");
 
   const rollMode = normalizeD20Mode(mode);
-  const roll = new Roll(formula);
-  await roll.evaluate();
+  const roll = await evaluateAnime5eFormula(formula);
 
   return roll.toMessage({
     speaker: speaker ?? (actor ? ChatMessage.getSpeaker({ actor }) : ChatMessage.getSpeaker()),

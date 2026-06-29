@@ -1,4 +1,4 @@
-import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
+import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -532,7 +532,31 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   async _onRollInitiative(event) {
     event.preventDefault();
     const initiative = this.actor.system.combat?.initiative ?? 0;
-    await this._rollFormula(buildD20Formula([initiative]), "Initiative");
+    const formula = buildD20Formula([initiative]);
+    const combatant = this._getActiveCombatant();
+    if (!combatant) {
+      await this._rollFormula(formula, "Initiative");
+      return;
+    }
+
+    try {
+      const roll = await evaluateAnime5eFormula(formula);
+      await game.combat.setInitiative(combatant.id, roll.total);
+
+      await roll.toMessage({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor, token: combatant.token }),
+        flavor: renderRollFlavor({
+          actor: this.actor,
+          label: "Initiative",
+          formula,
+          result: roll.total,
+          mode: "normal"
+        })
+      });
+    } catch (error) {
+      console.error("anime5e | Failed to roll combat initiative", error);
+      ui.notifications?.error("Anime 5e could not roll initiative. Check the console for details.");
+    }
   }
 
   async _onRollQuick(event) {
@@ -716,6 +740,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
   _getEmbeddedItem(event) {
     return this.actor.items.get(event.currentTarget.closest("[data-item-id]")?.dataset.itemId);
+  }
+
+  _getActiveCombatant() {
+    const combatants = game.combat?.combatants?.contents ?? Array.from(game.combat?.combatants ?? []);
+    return combatants.find((combatant) => combatant.actor?.id === this.actor.id || combatant.actorId === this.actor.id);
   }
 
   _onEditItem(event) {
