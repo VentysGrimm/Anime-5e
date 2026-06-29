@@ -1,3 +1,5 @@
+import { applyPointSummaryToSystem } from "../rules/points.mjs";
+
 const fields = foundry.data.fields;
 
 function textField(initial = "") {
@@ -91,6 +93,15 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         creationDate: textField(),
         retirementDate: textField()
       }),
+      creation: new fields.SchemaField({
+        startingLevel: numberField(1, { min: 1 }),
+        startingExperience: numberField(0, { min: 0 }),
+        abilityPointMode: textField("Score equals Point cost"),
+        speciesApplied: textField(),
+        classApplied: textField(),
+        validationStatus: textField("draft"),
+        validationNotes: textField()
+      }),
       biography: new fields.HTMLField({ required: false, blank: true, initial: "" }),
       statBlock: new fields.HTMLField({ required: false, blank: true, initial: "" }),
       notes: new fields.SchemaField({
@@ -109,6 +120,12 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         spent: numberField(0, { min: 0 }),
         refunded: numberField(0, { min: 0 }),
         abilityScoreCost: numberField(0, { min: 0 }),
+        speciesCost: numberField(0, { min: 0 }),
+        classCost: numberField(0, { min: 0 }),
+        attributeCost: numberField(0, { min: 0 }),
+        defectRefund: numberField(0, { min: 0 }),
+        equipmentCost: numberField(0, { min: 0 }),
+        totalRefunded: numberField(0, { min: 0 }),
         totalSpent: numberField(0, { min: 0 }),
         available: numberField(0),
         remaining: numberField(0)
@@ -166,19 +183,10 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
     energy.max = Math.max(0, Number(energy.max));
     energy.value = Math.max(0, Math.min(Number(energy.value), energy.max));
 
-    const points = this.points;
-    const starting = Math.max(0, Number(this.identity.startingDiscretionaryPoints) || 0);
-    const engagement = Math.max(0, Number(this.identity.engagementBonusPoints) || 0);
-    const other = Math.max(0, Number(this.identity.otherNonLevellingPoints) || 0);
-    points.spent = Math.max(0, Number(points.spent) || 0);
-    points.refunded = Math.max(0, Number(points.refunded) || 0);
-    points.abilityScoreCost = Object.values(this.abilities).reduce((total, ability) => {
-      // Core Rules p. 24: each Ability Score costs Points equal to the assigned score.
-      return total + Math.max(0, Number(ability.value) || 0);
-    }, 0);
-    points.totalSpent = points.abilityScoreCost + points.spent;
-    points.available = starting + engagement + other + points.refunded;
-    points.remaining = points.available - points.totalSpent;
+    this.creation.startingLevel = Math.max(1, Number(this.creation.startingLevel) || Number(this.level) || 1);
+    this.creation.startingExperience = Math.max(0, Number(this.creation.startingExperience) || Number(this.experience) || 0);
+
+    applyPointSummaryToSystem(this, this.parent?.items?.contents ?? []);
   }
 }
 

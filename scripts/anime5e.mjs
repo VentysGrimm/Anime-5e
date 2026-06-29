@@ -43,6 +43,7 @@ import {
   showCoreCompendiumImportDialog
 } from "../module/apps/compendium-import-dialog.mjs";
 import { importCoreCompendiumData } from "../module/data/compendiums.mjs";
+import * as Anime5ePoints from "../module/rules/points.mjs";
 import * as Anime5eResources from "../module/rules/resources.mjs";
 import * as Anime5eRolls from "../module/rules/rolls.mjs";
 import { Anime5eActorSheet, Anime5eBasicActorSheet } from "../module/sheets/actor-sheet.mjs";
@@ -94,6 +95,7 @@ Hooks.once("init", () => {
   game.anime5e = {
     config: ANIME5E,
     importCoreCompendiumData,
+    points: Anime5ePoints,
     resources: Anime5eResources,
     rolls: Anime5eRolls,
     showCoreCompendiumImportDialog
