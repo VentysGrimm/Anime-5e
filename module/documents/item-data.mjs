@@ -43,6 +43,35 @@ function htmlField(initial = "") {
   });
 }
 
+function arrayField(element, initial = []) {
+  return new fields.ArrayField(element, {
+    required: true,
+    nullable: false,
+    initial
+  });
+}
+
+function classBenefitField() {
+  return new fields.SchemaField({
+    type: textField(),
+    label: textField(),
+    rank: optionalNumberField(),
+    points: numberField(0),
+    notes: textField()
+  });
+}
+
+function classProgressionEntryField() {
+  return new fields.SchemaField({
+    level: numberField(1, { min: 1, max: 20 }),
+    proficiencyBonus: numberField(2, { min: 0 }),
+    points: numberField(0),
+    benefits: arrayField(classBenefitField()),
+    proficiencies: textField(),
+    notes: textField()
+  });
+}
+
 class Anime5eBaseItemData extends foundry.abstract.TypeDataModel {
   static LOCALIZATION_PREFIXES = ["ANIME5E.Item"];
 
@@ -125,9 +154,14 @@ export class Anime5eClassData extends Anime5eBaseItemData {
       level: numberField(0, { min: 0 }),
       basePoints: numberField(0, { min: 0 }),
       pointsPerLevel: numberField(0, { min: 0 }),
+      levellingPoints: numberField(0, { min: 0 }),
+      bonusPoints: numberField(0, { min: 0 }),
+      finalClassPoints: numberField(0, { min: 0 }),
       hitDice: textField(),
       primaryAbility: textField(),
-      savingThrows: textField()
+      savingThrows: textField(),
+      progression: arrayField(classProgressionEntryField()),
+      progressionNotes: htmlField()
     };
   }
 }

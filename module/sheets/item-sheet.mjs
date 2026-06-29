@@ -4,14 +4,17 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
-const MULTILINE_FIELDS = new Set(["constructionNotes", "result", "statBlock"]);
+const MULTILINE_FIELDS = new Set(["constructionNotes", "progressionNotes", "result", "statBlock"]);
 const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
 const NUMBER_FIELDS = new Set([
   "armourClass",
   "armourClassModifier",
   "attackModifier",
   "basePoints",
+  "bonusPoints",
   "costModifier",
+  "finalClassPoints",
+  "levellingPoints",
   "level",
   "pointImpact",
   "points",
@@ -60,6 +63,7 @@ const FIELD_LABELS = {
   pointImpact: "Point Impact",
   pointsPerLevel: "Points Per Level",
   primaryAbility: "Primary Ability",
+  progressionNotes: "Progression Notes",
   proficiencyGroup: "Proficiency Group",
   range: "Range",
   savingThrows: "Saving Throws",
@@ -133,6 +137,42 @@ function buildConstructionPlaceholder(item) {
   };
 }
 
+function formatBenefit(benefit) {
+  const label = benefit.label || benefit.type || "Benefit";
+  const rank = Number(benefit.rank);
+  const points = Number(benefit.points);
+  const rankText = Number.isFinite(rank) && rank > 0 ? ` Rank ${rank}` : "";
+  const pointText = Number.isFinite(points) && points !== 0 ? ` [${points}]` : "";
+  const notes = hasText(benefit.notes) ? ` - ${benefit.notes}` : "";
+
+  return `${label}${rankText}${pointText}${notes}`;
+}
+
+function buildClassProgression(item, systemData) {
+  if (item.type !== "class") return null;
+
+  const entries = Array.isArray(systemData.progression) ? systemData.progression : [];
+  if (!entries.length) return null;
+
+  return {
+    summary: [
+      { label: "1st-Level Base Points", value: systemData.basePoints },
+      { label: "Levelling Points", value: systemData.levellingPoints },
+      { label: "Bonus Points 1-20", value: systemData.bonusPoints },
+      { label: "Final Class Points", value: systemData.finalClassPoints }
+    ],
+    entries: entries.map((entry) => ({
+      level: entry.level,
+      levelLabel: `${entry.level}`,
+      proficiencyBonus: `+${Number(entry.proficiencyBonus) || 0}`,
+      points: Number(entry.points) || 0,
+      benefits: (entry.benefits ?? []).map(formatBenefit).join("; "),
+      proficiencies: entry.proficiencies ?? "",
+      notes: entry.notes ?? ""
+    }))
+  };
+}
+
 export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static DEFAULT_OPTIONS = {
     classes: ["anime5e", "sheet", "item-sheet"],
@@ -164,6 +204,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.detailFields = buildDetailFields(systemData);
     context.itemActions = buildItemActions(this.item, systemData);
     context.constructionPlaceholder = buildConstructionPlaceholder(this.item);
+    context.classProgression = buildClassProgression(this.item, systemData);
     return context;
   }
 

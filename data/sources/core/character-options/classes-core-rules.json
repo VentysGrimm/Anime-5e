@@ -23,7 +23,314 @@
         "importId": "core.class.adventurer",
         "hitDice": "d6",
         "primaryAbility": "Dexterity",
-        "savingThrows": "Dexterity, Constitution, Wisdom"
+        "savingThrows": "Dexterity, Constitution, Wisdom",
+        "basePoints": 23,
+        "levellingPoints": 65,
+        "bonusPoints": 102,
+        "finalClassPoints": 190,
+        "progressionNotes": "<p>Adventurers gain unrestricted Bonus Points instead of fixed class Attributes as they advance. Source: Anime 5E Fifth Edition Core Rules, PDF pp. 56-57.</p>",
+        "progression": [
+          {
+            "level": 1,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "points": 2,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "Light and medium armour; simple weapons; two martial weapons of choice; two tools of choice; Dexterity, Constitution, and Wisdom saves; five skills of choice.",
+            "notes": "d6 Hit Dice; 6 + Constitution modifier HP at 1st level."
+          },
+          {
+            "level": 2,
+            "proficiencyBonus": 2,
+            "points": 2,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+2 Points",
+                "points": 2,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 3,
+            "proficiencyBonus": 2,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "points": 3,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 4,
+            "proficiencyBonus": 2,
+            "points": 3,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+3 Points",
+                "points": 3,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 5,
+            "proficiencyBonus": 3,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "points": 4,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 6,
+            "proficiencyBonus": 3,
+            "points": 4,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+4 Points",
+                "points": 4,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 7,
+            "proficiencyBonus": 3,
+            "points": 5,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+5 Points",
+                "points": 5,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 8,
+            "proficiencyBonus": 3,
+            "points": 5,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+5 Points",
+                "points": 5,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 9,
+            "proficiencyBonus": 4,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 10,
+            "proficiencyBonus": 4,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 11,
+            "proficiencyBonus": 4,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 12,
+            "proficiencyBonus": 4,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 13,
+            "proficiencyBonus": 5,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 14,
+            "proficiencyBonus": 5,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 15,
+            "proficiencyBonus": 5,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 16,
+            "proficiencyBonus": 5,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 17,
+            "proficiencyBonus": 6,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 18,
+            "proficiencyBonus": 6,
+            "points": 6,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+6 Points",
+                "points": 6,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 19,
+            "proficiencyBonus": 6,
+            "points": 7,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+7 Points",
+                "points": 7,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          },
+          {
+            "level": 20,
+            "proficiencyBonus": 6,
+            "points": 7,
+            "benefits": [
+              {
+                "type": "bonusPoints",
+                "label": "+7 Points",
+                "points": 7,
+                "notes": "Unrestricted Bonus Points"
+              }
+            ],
+            "proficiencies": "",
+            "notes": "Unrestricted Bonus Points."
+          }
+        ]
       },
       "flags": {
         "anime5e": {

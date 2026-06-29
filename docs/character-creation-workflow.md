@@ -23,6 +23,7 @@ This milestone starts the Anime 5e character creation build path.
 - Added Core Rules Table 01 character benchmark data and Folio warnings for ability scores, Attribute ranks, proficiency bonus, and Armour Class.
 - Added level progress helpers for current XP, next level threshold, XP needed, and progress within the current level band.
 - Added a Folio class level summary derived from owned Class items without applying class benefits.
+- Added structured Class item progression data and an item-sheet progression table, seeded first with the Core Rules Adventurer 1-20 unrestricted Bonus Point progression.
 
 ## Current validation warnings
 

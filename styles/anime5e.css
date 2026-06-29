@@ -744,6 +744,42 @@
   margin: 0;
 }
 
+.anime5e .class-progression-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.anime5e .class-progression-summary {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+}
+
+.anime5e .class-progression-summary span {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  font-size: 0.76rem;
+  font-weight: 800;
+  gap: 3px;
+  padding: 6px 8px;
+  text-transform: uppercase;
+}
+
+.anime5e .class-progression-table {
+  display: grid;
+  gap: 4px 6px;
+  grid-template-columns: 44px 48px 56px minmax(180px, 1fr) minmax(160px, 1fr);
+}
+
+.anime5e .class-progression-table > span {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  font-size: 0.78rem;
+  min-width: 0;
+  padding: 5px 6px;
+}
+
 .anime5e .checkbox-field {
   align-items: center;
   display: flex;
@@ -1167,6 +1203,7 @@
 @media (max-width: 860px) {
   .anime5e .two-column,
   .anime5e .action-table,
+  .anime5e .class-progression-table,
   .anime5e .damage-controls,
   .anime5e .energy-controls,
   .anime5e .folio-page-heading,

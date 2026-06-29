@@ -81,6 +81,31 @@
     </section>
   {{/if}}
 
+  {{#if classProgression}}
+    <section class="panel class-progression-panel">
+      <h2>Class Progression</h2>
+      <div class="class-progression-summary">
+        {{#each classProgression.summary as |summary|}}
+          <span>{{summary.label}} <strong>{{summary.value}}</strong></span>
+        {{/each}}
+      </div>
+      <div class="class-progression-table">
+        <div class="table-header">Level</div>
+        <div class="table-header">Prof</div>
+        <div class="table-header">Points</div>
+        <div class="table-header">Benefits</div>
+        <div class="table-header">Notes</div>
+        {{#each classProgression.entries as |entry|}}
+          <span>{{entry.levelLabel}}</span>
+          <span>{{entry.proficiencyBonus}}</span>
+          <span>{{entry.points}}</span>
+          <span>{{entry.benefits}}</span>
+          <span>{{entry.notes}}</span>
+        {{/each}}
+      </div>
+    </section>
+  {{/if}}
+
   {{#if constructionPlaceholder}}
     <section class="panel construction-panel">
       <h2>Item Construction</h2>
