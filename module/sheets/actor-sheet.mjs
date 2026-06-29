@@ -268,11 +268,17 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       return option.armourClass > best.armourClass ? option : best;
     }, null);
 
-    const shieldBonus = equippedShields.reduce((total, item) => total + numberOrZero(item.system?.armourClass), 0);
+    const shieldBonus = equippedShields.reduce((total, item) => {
+      const modifier = item.system?.armourClassModifier ?? item.system?.armourClass;
+      return total + numberOrZero(modifier);
+    }, 0);
     const armourClass = (selectedArmour?.armourClass ?? manualArmourClass) + shieldBonus;
     const armourDetails = [
       selectedArmour ? `${selectedArmour.item.name} ${selectedArmour.armourClass}` : `Manual AC ${manualArmourClass}`,
-      ...equippedShields.map((item) => `${item.name} +${numberOrZero(item.system?.armourClass)}`)
+      ...equippedShields.map((item) => {
+        const modifier = item.system?.armourClassModifier ?? item.system?.armourClass;
+        return `${item.name} +${numberOrZero(modifier)}`;
+      })
     ];
 
     return {

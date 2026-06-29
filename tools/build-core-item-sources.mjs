@@ -556,8 +556,11 @@ function buildPowers() {
 }
 
 function weaponDocument([name, category, damage, damageType, rank, effectiveRank, enhancements, limiters, points, page]) {
+  const range = /\bRange\s+\d+/i.exec(enhancements)?.[0] ?? "";
+  const sourceTable = "Core Rules Weapon Attribute Table";
   const properties = [
     `Category: ${category}`,
+    range ? `Range: ${range}` : null,
     effectiveRank === null ? null : `Effective Rank: ${effectiveRank}`,
     enhancements ? `Enhancements: ${enhancements}` : null,
     limiters ? `Limiters: ${limiters}` : null,
@@ -575,15 +578,23 @@ function weaponDocument([name, category, damage, damageType, rank, effectiveRank
     sourceIdPrefix: "core.weapon",
     details: [
       ["Category", category],
+      ["Proficiency Group", category],
       ["Damage", damageType ? `${damage} ${damageType}` : damage],
+      ["Range", range || "Melee or special"],
       ["Rank", effectiveRank === null ? String(rank) : `${rank} (${effectiveRank})`],
       ["Enhancements", enhancements || "None"],
-      ["Limiters", limiters || "None"]
+      ["Limiters", limiters || "None"],
+      ["Source Table", sourceTable]
     ],
     summary: `${name} is a Core Rules ${category.toLowerCase()} option built from the Weapon Attribute table.`,
     system: {
       equipped: false,
       category,
+      proficiencyGroup: category,
+      range,
+      value: "",
+      weight: "",
+      sourceTable,
       effectiveRank,
       enhancements,
       limiters,
@@ -595,6 +606,7 @@ function weaponDocument([name, category, damage, damageType, rank, effectiveRank
 }
 
 function armourDocument([name, folder, category, armourClass, value, acFormula, strength, stealth, weight]) {
+  const sourceTable = "Core Rules Armour Table";
   return makeDocument({
     name,
     type: "armor",
@@ -608,21 +620,28 @@ function armourDocument([name, folder, category, armourClass, value, acFormula, 
       ["Armour Class", acFormula],
       ["Strength", strength],
       ["Stealth", stealth],
-      ["Weight", weight]
+      ["Weight", weight],
+      ["Source Table", sourceTable]
     ],
     summary: `${name} is a Core Rules ${category.toLowerCase()} option from the armour table.`,
     system: {
       equipped: false,
       category,
       armourClass,
+      dexterityRule: acFormula,
+      strengthRequirement: strength,
+      stealth,
       value,
       weight,
+      sourceTable,
       properties: `Category: ${category}; Value: ${value}; AC: ${acFormula}; Strength: ${strength}; Stealth: ${stealth}; Weight: ${weight}`
     }
   });
 }
 
 function shieldDocument([name, armourClass, value, hands, dexterity, weight]) {
+  const sourceTable = "Core Rules Shields Table";
+  const shieldSize = name === "Buckler" ? "Buckler" : name.replace(" Shield", "");
   return makeDocument({
     name,
     type: "shield",
@@ -635,15 +654,24 @@ function shieldDocument([name, armourClass, value, hands, dexterity, weight]) {
       ["Armour Class Bonus", `+${armourClass}`],
       ["Free Hands", hands],
       ["Dexterity", dexterity],
-      ["Weight", weight]
+      ["Weight", weight],
+      ["Source Table", sourceTable]
     ],
     summary: `${name} is a Core Rules shield option from the armour and shields table.`,
     system: {
       equipped: false,
       category: "Shield",
       armourClass,
+      armourClassModifier: armourClass,
+      dexterityRule: dexterity,
+      strengthRequirement: "",
+      stealth: "",
       value,
       weight,
+      sourceTable,
+      shieldSize,
+      material: "",
+      freeHands: hands,
       properties: `Value: ${value}; AC Bonus: +${armourClass}; Free Hands: ${hands}; Dexterity: ${dexterity}; Weight: ${weight}`
     }
   });

@@ -284,6 +284,11 @@ export class Anime5eWeaponData extends Anime5eBaseItemData {
       ...super.defineSchema(),
       equipped: booleanField(),
       category: textField(),
+      proficiencyGroup: textField(),
+      range: textField(),
+      value: textField(),
+      weight: textField(),
+      sourceTable: textField(),
       effectiveRank: optionalNumberField(),
       enhancements: textField(),
       limiters: textField(),
@@ -301,8 +306,12 @@ export class Anime5eArmorData extends Anime5eBaseItemData {
       equipped: booleanField(),
       category: textField(),
       armourClass: numberField(10, { min: 0 }),
+      dexterityRule: textField(),
+      strengthRequirement: textField(),
+      stealth: textField(),
       value: textField(),
       weight: textField(),
+      sourceTable: textField(),
       properties: textField()
     };
   }
@@ -310,7 +319,17 @@ export class Anime5eArmorData extends Anime5eBaseItemData {
 
 export class Anime5eTraitData extends Anime5eBaseItemData {}
 
-export class Anime5eShieldData extends Anime5eArmorData {}
+export class Anime5eShieldData extends Anime5eArmorData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      shieldSize: textField(),
+      material: textField(),
+      armourClassModifier: numberField(0),
+      freeHands: textField()
+    };
+  }
+}
 
 export class Anime5eMonsterVariantData extends Anime5eBaseItemData {
   static defineSchema() {
