@@ -24,6 +24,7 @@ const NUMBER_FIELDS = new Set([
 
 const FIELD_LABELS = {
   appliesTo: "Applies To",
+  ability: "Ability Target",
   armour: "Armour",
   armourClass: "Armour Class",
   armourClassModifier: "Armour Class Modifier",

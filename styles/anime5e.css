@@ -184,6 +184,67 @@
   text-align: center;
 }
 
+.anime5e .derived-stat-note {
+  color: #4f4f4f;
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-top: 3px;
+  min-height: 0.75rem;
+  text-transform: uppercase;
+}
+
+.anime5e .attribute-effect-summary {
+  display: grid;
+  gap: 10px;
+}
+
+.anime5e .attribute-effect-summary h2 {
+  margin-bottom: 0;
+}
+
+.anime5e .attribute-effect-totals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.anime5e .attribute-effect-totals span {
+  background: #fff;
+  border: 1px solid var(--anime5e-border);
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 4px 7px;
+  text-transform: uppercase;
+}
+
+.anime5e .attribute-effect-list {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.anime5e .attribute-effect-list li {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 120px minmax(140px, 1fr) minmax(140px, 1.2fr);
+  min-height: 32px;
+  padding: 6px 8px;
+}
+
+.anime5e .attribute-effect-list strong,
+.anime5e .attribute-effect-list span,
+.anime5e .attribute-effect-list small {
+  min-width: 0;
+}
+
 .anime5e .folio-main-grid {
   display: grid;
   gap: 28px;

@@ -18,6 +18,7 @@
             <label>
               <span>{{ability.label}}</span>
               <input type="number" name="system.abilities.{{ability.key}}.value" value="{{ability.data.value}}" {{#unless ../editable}}disabled{{/unless}}>
+              {{#if ability.effectText}}<small class="derived-stat-note">{{ability.effectText}}</small>{{/if}}
             </label>
             <div class="modifier-block">
               <span>{{localize "ANIME5E.Labels.Modifier"}}</span>
@@ -40,7 +41,8 @@
           <h2>Hit Points</h2>
           <label>
             Maximum
-            <input type="number" name="system.combat.hitPoints.max" value="{{system.combat.hitPoints.max}}" min="0" {{#unless editable}}disabled{{/unless}}>
+            <input type="number" name="system.combat.hitPoints.max" value="{{system.combat.hitPoints.baseMax}}" min="0" {{#unless editable}}disabled{{/unless}}>
+            {{#if combatEffects.hitPoints}}<small class="derived-stat-note">{{combatEffects.hitPoints}}</small>{{/if}}
           </label>
           <label>
             Current
@@ -50,14 +52,16 @@
 
         <label class="shield-stat">
           <span>Armour Class</span>
-          <input type="number" name="system.combat.armourClass" value="{{system.combat.armourClass}}" {{#unless editable}}disabled{{/unless}}>
+          <input type="number" name="system.combat.armourClass" value="{{system.combat.baseArmourClass}}" {{#unless editable}}disabled{{/unless}}>
+          {{#if combatEffects.armourClass}}<small class="derived-stat-note">{{combatEffects.armourClass}}</small>{{/if}}
         </label>
 
         <div class="resource-stat torn-paper">
           <h2>Energy Points</h2>
           <label>
             Maximum
-            <input type="number" name="system.combat.energy.max" value="{{system.combat.energy.max}}" min="0" {{#unless editable}}disabled{{/unless}}>
+            <input type="number" name="system.combat.energy.max" value="{{system.combat.energy.baseMax}}" min="0" {{#unless editable}}disabled{{/unless}}>
+            {{#if combatEffects.energy}}<small class="derived-stat-note">{{combatEffects.energy}}</small>{{/if}}
           </label>
           <label>
             Current
@@ -70,6 +74,25 @@
           <input type="number" name="system.combat.movementSpeed" value="{{system.combat.movementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
         </label>
       </section>
+
+      {{#if attributeEffects.active}}
+        <section class="attribute-effect-summary paint-panel">
+          <h2>Active Attribute Effects</h2>
+          {{#if attributeEffects.hasTotals}}
+            <div class="attribute-effect-totals">
+              {{#each attributeEffects.totals as |total|}}<span>{{total}}</span>{{/each}}
+            </div>
+          {{/if}}
+          <ol class="attribute-effect-list">
+            {{#each attributeEffects.effects as |effect|}}
+              <li><strong>{{effect.label}}</strong><span>{{effect.detail}}</span><small>{{effect.source}}</small></li>
+            {{/each}}
+          </ol>
+          {{#each attributeEffects.warnings as |warning|}}
+            <p class="sheet-warning">{{warning}}</p>
+          {{/each}}
+        </section>
+      {{/if}}
 
       <section class="folio-main-grid">
         <section class="folio-ruled-list">

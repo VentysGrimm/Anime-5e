@@ -63,6 +63,7 @@ export class Anime5eAttributeData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      ability: textField(),
       category: textField(),
       progression: textField()
     };
@@ -73,6 +74,7 @@ export class Anime5eDefectData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      ability: textField(),
       pointsReturned: numberField(0, { min: 0 })
     };
   }

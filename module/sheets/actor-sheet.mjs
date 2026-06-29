@@ -1,4 +1,5 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
+import { buildCoreAttributeEffectContext } from "../rules/attribute-effects.mjs";
 import { applyEnergyChange, applyHitPointChange } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -135,6 +136,10 @@ function numberOrZero(value) {
   return Number.isFinite(number) ? number : 0;
 }
 
+function formatSigned(value) {
+  return value > 0 ? `+${value}` : String(value);
+}
+
 function hasText(value) {
   return typeof value === "string" && value.trim().length > 0;
 }
@@ -206,13 +211,19 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
     context.pointSummary = this.constructor._preparePointSummary(system, items);
+    context.attributeEffects = buildCoreAttributeEffectContext({
+      system: this.actor._source?.system ?? system,
+      items
+    });
+    context.combatEffects = this.constructor._prepareCombatEffectContext(system);
     context.activeTab = this.tabGroups?.primary ?? "overview";
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
     context.tabs = FOLIO_TABS.map((tab) => ({ ...tab, active: tab.id === context.activeTab }));
     context.abilities = Object.entries(ABILITY_LABELS).map(([key, label]) => ({
       key,
       label,
-      data: system.abilities[key]
+      data: system.abilities[key],
+      effectText: this.constructor._formatAbilityEffectText(system.abilities[key])
     }));
     context.rollModes = Object.entries(ROLL_MODES).map(([key, mode]) => ({ key, label: mode.label }));
     context.d20Modes = D20_ROLL_MODES;
@@ -337,6 +348,24 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         .filter((item) => item.type === "weapon")
         .map((item) => preparedById.get(item.id))
         .filter(Boolean)
+    };
+  }
+
+  static _formatAbilityEffectText(ability) {
+    const effectBonus = numberOrZero(ability?.effectBonus);
+    if (!effectBonus) return "";
+    return `${formatSigned(effectBonus)} effective ${numberOrZero(ability?.effectiveValue)}`;
+  }
+
+  static _prepareCombatEffectContext(system) {
+    const hitPointBonus = numberOrZero(system.combat?.hitPoints?.effectBonus);
+    const energyBonus = numberOrZero(system.combat?.energy?.effectBonus);
+    const armourClassBonus = numberOrZero(system.combat?.armourClassEffectBonus);
+
+    return {
+      hitPoints: hitPointBonus ? `${formatSigned(hitPointBonus)} effective ${numberOrZero(system.combat?.hitPoints?.max)}` : "",
+      energy: energyBonus ? `${formatSigned(energyBonus)} effective ${numberOrZero(system.combat?.energy?.max)}` : "",
+      armourClass: armourClassBonus ? `${formatSigned(armourClassBonus)} effective ${numberOrZero(system.combat?.armourClass)}` : ""
     };
   }
 

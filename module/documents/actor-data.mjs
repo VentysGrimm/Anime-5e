@@ -1,4 +1,5 @@
 import { applyPointSummaryToSystem } from "../rules/points.mjs";
+import { ABILITY_KEYS, calculateCoreAttributeEffects } from "../rules/attribute-effects.mjs";
 
 const fields = foundry.data.fields;
 
@@ -20,6 +21,11 @@ function numberField(initial = 0, options = {}) {
   });
 }
 
+function numberOrFallback(value, fallback = 0) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : fallback;
+}
+
 function optionalNumberField(initial = null, options = {}) {
   return new fields.NumberField({
     required: false,
@@ -33,6 +39,9 @@ function optionalNumberField(initial = null, options = {}) {
 function abilityField(initial = 10) {
   return new fields.SchemaField({
     value: numberField(initial),
+    baseValue: numberField(initial),
+    effectBonus: numberField(0),
+    effectiveValue: numberField(initial),
     modifier: numberField(0)
   });
 }
@@ -42,7 +51,9 @@ function resourceField(initial = 10, options = {}) {
 
   return new fields.SchemaField({
     value: numberField(initial, valueOptions),
-    max: numberField(initial, { min: 0 })
+    max: numberField(initial, { min: 0 }),
+    baseMax: numberField(initial, { min: 0 }),
+    effectBonus: numberField(0)
   });
 }
 
@@ -150,6 +161,8 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         hitPoints: resourceField(20, { allowNegative: true }),
         energy: resourceField(10),
         armourClass: numberField(10),
+        baseArmourClass: numberField(10),
+        armourClassEffectBonus: numberField(0),
         movementSpeed: numberField(30, { min: 0 }),
         proficiencyBonus: numberField(2),
         initiative: numberField(0),
@@ -170,18 +183,44 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    for (const ability of Object.values(this.abilities)) {
-      ability.modifier = Math.floor((Number(ability.value) - 10) / 2);
+    const sourceSystem = this.parent?._source?.system ?? this;
+    const ownedItems = this.parent?.items?.contents ?? [];
+    const attributeEffects = calculateCoreAttributeEffects({ system: sourceSystem, items: ownedItems });
+
+    for (const abilityKey of ABILITY_KEYS) {
+      const ability = this.abilities[abilityKey];
+      const sourceAbility = sourceSystem.abilities?.[abilityKey] ?? ability;
+      const baseValue = numberOrFallback(sourceAbility.value, numberOrFallback(ability.value, 10));
+      const effectBonus = attributeEffects.abilityBonuses[abilityKey] ?? 0;
+      const effectiveValue = Math.max(0, baseValue + effectBonus);
+
+      ability.value = baseValue;
+      ability.baseValue = baseValue;
+      ability.effectBonus = effectBonus;
+      ability.effectiveValue = effectiveValue;
+      ability.modifier = Math.floor((effectiveValue - 10) / 2);
     }
 
+    const baseArmourClass = Math.max(0, numberOrFallback(sourceSystem.combat?.armourClass, numberOrFallback(this.combat.armourClass, 10)));
+    this.combat.baseArmourClass = baseArmourClass;
+    this.combat.armourClassEffectBonus = attributeEffects.armourClassBonus;
+    this.combat.armourClass = Math.max(0, baseArmourClass + attributeEffects.armourClassBonus);
+
     const hitPoints = this.combat.hitPoints;
-    hitPoints.max = Math.max(0, Number(hitPoints.max));
-    hitPoints.value = Math.min(Number(hitPoints.value), hitPoints.max);
+    const baseHitPointMax = Math.max(0, numberOrFallback(sourceSystem.combat?.hitPoints?.max, numberOrFallback(hitPoints.max, 20)));
+    hitPoints.baseMax = baseHitPointMax;
+    hitPoints.effectBonus = attributeEffects.hitPointMaxBonus;
+    hitPoints.max = Math.max(0, baseHitPointMax + attributeEffects.hitPointMaxBonus);
+    hitPoints.value = numberOrFallback(sourceSystem.combat?.hitPoints?.value, hitPoints.value);
+    hitPoints.value = Math.min(hitPoints.value, hitPoints.max);
     hitPoints.value = Math.max(-hitPoints.max, hitPoints.value);
 
     const energy = this.combat.energy;
-    energy.max = Math.max(0, Number(energy.max));
-    energy.value = Math.max(0, Math.min(Number(energy.value), energy.max));
+    const baseEnergyMax = Math.max(0, numberOrFallback(sourceSystem.combat?.energy?.max, numberOrFallback(energy.max, 10)));
+    energy.baseMax = baseEnergyMax;
+    energy.effectBonus = attributeEffects.energyMaxBonus;
+    energy.max = Math.max(0, baseEnergyMax + attributeEffects.energyMaxBonus);
+    energy.value = Math.max(0, Math.min(numberOrFallback(sourceSystem.combat?.energy?.value, energy.value), energy.max));
 
     this.creation.startingLevel = Math.max(1, Number(this.creation.startingLevel) || Number(this.level) || 1);
     this.creation.startingExperience = Math.max(0, Number(this.creation.startingExperience) || Number(this.experience) || 0);
