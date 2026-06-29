@@ -125,6 +125,12 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         inventory: new fields.HTMLField({ required: false, blank: true, initial: "" }),
         companions: new fields.HTMLField({ required: false, blank: true, initial: "" }),
         biography: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        goals: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        family: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        history: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        personality: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        group: new fields.HTMLField({ required: false, blank: true, initial: "" }),
+        advancement: new fields.HTMLField({ required: false, blank: true, initial: "" }),
         journal: new fields.HTMLField({ required: false, blank: true, initial: "" })
       }),
       points: new fields.SchemaField({

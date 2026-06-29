@@ -17,6 +17,10 @@ When an item is created on an actor:
 
 The workflow also refreshes the point ledger and validation notes after owned item create, update, and delete events.
 
+## Added Follow-Up
+
+- The Character Folio now exposes starting level, starting XP, source budget, validation status, and apply buttons connected to the shared point helper.
+
 ## Next
 
-Add explicit sheet controls for starting level, starting XP, recommended discretionary points, and preview-before-apply for Species and Class items.
+Add preview-before-apply behaviour for Species and Class items.

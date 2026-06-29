@@ -6,12 +6,23 @@
 
   <nav class="sheet-tabs tabs" data-group="primary" aria-label="Character Folio Sections">
     {{#each tabs as |tab|}}
-      <a class="item{{#if tab.active}} active{{/if}}" data-tab="{{tab.id}}" data-group="primary">{{tab.label}}</a>
+      <a class="item{{#if tab.active}} active{{/if}}" data-tab="{{tab.id}}" data-group="primary" aria-controls="folio-tab-{{tab.id}}" aria-selected="{{#if tab.active}}true{{else}}false{{/if}}">
+        <span>{{tab.shortLabel}}</span>
+        <small>Folio {{tab.folioPages}}</small>
+      </a>
     {{/each}}
   </nav>
 
   <section class="sheet-body folio-tab-body">
-    <section class="tab folio-tab{{#if activeTabs.overview}} active{{/if}}" data-group="primary" data-tab="overview">
+    <section id="folio-tab-overview" class="tab folio-tab{{#if activeTabs.overview}} active{{/if}}" data-group="primary" data-tab="overview">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.overview.folioPages}} / PDF p. {{folioPages.overview.pdfPages}}</span>
+          <h2>{{folioPages.overview.label}}</h2>
+        </div>
+        <p>{{folioPages.overview.summary}}</p>
+      </header>
+
       <section class="ability-banner-grid" aria-label='{{localize "ANIME5E.Labels.Abilities"}}'>
         {{#each abilities as |ability|}}
           <article class="ability-banner">
@@ -128,6 +139,45 @@
             </div>
           </section>
 
+          <section class="paint-panel creation-panel">
+            <h2>Creation Setup</h2>
+            <div class="creation-grid">
+              <label>
+                Starting Level
+                <input type="number" name="system.creation.startingLevel" value="{{creation.startingLevel}}" min="1" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Starting XP
+                <input type="number" name="system.creation.startingExperience" value="{{creation.startingExperience}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Ability Points
+                <input type="text" name="system.creation.abilityPointMode" value="{{creation.abilityPointMode}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Source Budget
+                <input type="number" value="{{creation.recommendedDiscretionaryPoints}}" readonly>
+              </label>
+              <label>
+                XP Benchmark
+                <input type="number" value="{{#if creation.hasRecommendedExperience}}{{creation.recommendedExperience}}{{else}}{{creation.startingExperience}}{{/if}}" readonly>
+              </label>
+              <label>
+                Status
+                <input type="text" value="{{creation.validationLabel}}" readonly>
+              </label>
+            </div>
+            {{#if editable}}
+              <div class="creation-actions">
+                <button type="button" data-action="apply-creation-start"><i class="fas fa-level-up-alt"></i><span>Apply Start</span></button>
+                <button type="button" data-action="apply-point-budget"><i class="fas fa-coins"></i><span>Set Budget</span></button>
+              </div>
+            {{/if}}
+            {{#if creation.validationNotes}}
+              <pre class="creation-validation">{{creation.validationNotes}}</pre>
+            {{/if}}
+          </section>
+
           <section class="paint-panel point-summary-panel">
             <h2>Point Summary</h2>
             <div class="point-summary-grid">
@@ -150,6 +200,10 @@
               <label>
                 Attributes
                 <input type="number" value="{{pointSummary.attributeCost}}" readonly>
+              </label>
+              <label>
+                Equipment
+                <input type="number" value="{{pointSummary.equipmentCost}}" readonly>
               </label>
               <label>
                 Other Spent
@@ -221,10 +275,18 @@
       </section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.combat}} active{{/if}}" data-group="primary" data-tab="combat">
+    <section id="folio-tab-combat" class="tab folio-tab{{#if activeTabs.combat}} active{{/if}}" data-group="primary" data-tab="combat">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.combat.folioPages}} / PDF p. {{folioPages.combat.pdfPages}}</span>
+          <h2>{{folioPages.combat.label}}</h2>
+        </div>
+        <p>{{folioPages.combat.summary}}</p>
+      </header>
+
       <section class="folio-grid two-column">
         <section class="paint-panel combat-panel">
-          <h2>Combat Core</h2>
+          <h2>Common Attacks</h2>
           <div class="inline-fields">
             <label>
               Initiative
@@ -346,7 +408,7 @@
 
         <section class="ledger-section item-drop-panel" data-drop-target="items">
           <header class="ledger-heading">
-            <h2>Combat Gear, Techniques, Defenses</h2>
+            <h2>Weapons, Techniques, Defenses</h2>
             {{#if editable}}
               <div class="ledger-actions">
                 <button type="button" data-action="create-item" data-item-type="weapon" title="Create Weapon"><i class="fas fa-plus"></i><span>Weapon</span></button>
@@ -380,7 +442,15 @@
       <section class="notes-box"><h2>Combat Notes, Defenses, Conditions</h2><textarea name="system.notes.combat" {{#unless editable}}disabled{{/unless}}>{{system.notes.combat}}</textarea></section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.attributes}} active{{/if}}" data-group="primary" data-tab="attributes">
+    <section id="folio-tab-attributes" class="tab folio-tab{{#if activeTabs.attributes}} active{{/if}}" data-group="primary" data-tab="attributes">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.attributes.folioPages}} / PDF p. {{folioPages.attributes.pdfPages}}</span>
+          <h2>{{folioPages.attributes.label}}</h2>
+        </div>
+        <p>{{folioPages.attributes.summary}}</p>
+      </header>
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
           <h2>Anime 5E Attributes, Enhancements, Limiters</h2>
@@ -415,7 +485,15 @@
       <section class="notes-box"><h2>Activation, Range, Duration, Targets, Energy Costs</h2><textarea name="system.notes.attributes" {{#unless editable}}disabled{{/unless}}>{{system.notes.attributes}}</textarea></section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.defects}} active{{/if}}" data-group="primary" data-tab="defects">
+    <section id="folio-tab-defects" class="tab folio-tab{{#if activeTabs.defects}} active{{/if}}" data-group="primary" data-tab="defects">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.defects.folioPages}} / PDF p. {{folioPages.defects.pdfPages}}</span>
+          <h2>{{folioPages.defects.label}}</h2>
+        </div>
+        <p>{{folioPages.defects.summary}}</p>
+      </header>
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
           <h2>Defects</h2>
@@ -448,7 +526,15 @@
       <section class="notes-box"><h2>Mechanical Effects, Triggers, Limitations, Roleplaying Guidance</h2><textarea name="system.notes.defects" {{#unless editable}}disabled{{/unless}}>{{system.notes.defects}}</textarea></section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.skills}} active{{/if}}" data-group="primary" data-tab="skills">
+    <section id="folio-tab-skills" class="tab folio-tab{{#if activeTabs.skills}} active{{/if}}" data-group="primary" data-tab="skills">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.skills.folioPages}} / PDF p. {{folioPages.skills.pdfPages}}</span>
+          <h2>{{folioPages.skills.label}}</h2>
+        </div>
+        <p>{{folioPages.skills.summary}}</p>
+      </header>
+
       <section class="folio-grid two-column">
         <section class="notes-box save-roll-panel">
           <h2>Saving Throws, Proficiencies, Languages, Movement, Senses</h2>
@@ -495,10 +581,18 @@
       <section class="notes-box"><h2>Trained Capability Notes</h2><textarea name="system.notes.skills" {{#unless editable}}disabled{{/unless}}>{{system.notes.skills}}</textarea></section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.powers}} active{{/if}}" data-group="primary" data-tab="powers">
+    <section id="folio-tab-powers" class="tab folio-tab{{#if activeTabs.powers}} active{{/if}}" data-group="primary" data-tab="powers">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.powers.folioPages}} / PDF p. {{folioPages.powers.pdfPages}}</span>
+          <h2>{{folioPages.powers.label}}</h2>
+        </div>
+        <p>{{folioPages.powers.summary}}</p>
+      </header>
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
-          <h2>Dynamic Powers, Spell-Like Abilities, Spells, Techniques</h2>
+          <h2>Magic, Psionics, Powers, Spells, Techniques</h2>
           {{#if editable}}
             <div class="ledger-actions">
               <button type="button" data-action="create-item" data-item-type="power" title="Create Power"><i class="fas fa-plus"></i><span>Power</span></button>
@@ -530,7 +624,15 @@
       <section class="notes-box"><h2>Energy Costs, Activation Rules, Prepared Or Known Powers</h2><textarea name="system.notes.powers" {{#unless editable}}disabled{{/unless}}>{{system.notes.powers}}</textarea></section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.inventory}} active{{/if}}" data-group="primary" data-tab="inventory">
+    <section id="folio-tab-inventory" class="tab folio-tab{{#if activeTabs.inventory}} active{{/if}}" data-group="primary" data-tab="inventory">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.inventory.folioPages}} / PDF p. {{folioPages.inventory.pdfPages}}</span>
+          <h2>{{folioPages.inventory.label}}</h2>
+        </div>
+        <p>{{folioPages.inventory.summary}}</p>
+      </header>
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
           <h2>Gear, Items Of Power, Weapons, Armour, Money</h2>
@@ -565,10 +667,18 @@
       <section class="notes-box"><h2>Carried, Worn, Stored, Money, Item-Based Attributes</h2><textarea name="system.notes.inventory" {{#unless editable}}disabled{{/unless}}>{{system.notes.inventory}}</textarea></section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.companions}} active{{/if}}" data-group="primary" data-tab="companions">
+    <section id="folio-tab-companions" class="tab folio-tab{{#if activeTabs.companions}} active{{/if}}" data-group="primary" data-tab="companions">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.companions.folioPages}} / PDF p. {{folioPages.companions.pdfPages}}</span>
+          <h2>{{folioPages.companions.label}}</h2>
+        </div>
+        <p>{{folioPages.companions.summary}}</p>
+      </header>
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
-          <h2>Companions, Vehicles, Mecha, Mounts</h2>
+          <h2>Vehicles, Mecha, Mounts, Companions</h2>
           {{#if editable}}
             <div class="ledger-actions">
               <button type="button" data-action="create-item" data-item-type="mount" title="Create Mount"><i class="fas fa-plus"></i><span>Mount</span></button>
@@ -602,17 +712,41 @@
       <section class="notes-box"><h2>Linked Stat Summary</h2><textarea name="system.statBlock" {{#unless editable}}disabled{{/unless}}>{{system.statBlock}}</textarea></section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.biography}} active{{/if}}" data-group="primary" data-tab="biography">
+    <section id="folio-tab-biography" class="tab folio-tab{{#if activeTabs.biography}} active{{/if}}" data-group="primary" data-tab="biography">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.biography.folioPages}} / PDF p. {{folioPages.biography.pdfPages}}</span>
+          <h2>{{folioPages.biography.label}}</h2>
+        </div>
+        <p>{{folioPages.biography.summary}}</p>
+      </header>
+
       <section class="folio-grid two-column">
-        <section class="notes-box"><h2>Appearance, Personality, Background, History</h2><textarea name="system.biography" {{#unless editable}}disabled{{/unless}}>{{system.biography}}</textarea></section>
-        <section class="notes-box"><h2>Family, Allies, Enemies, Homeland, Goals, Secrets</h2><textarea name="system.notes.biography" {{#unless editable}}disabled{{/unless}}>{{system.notes.biography}}</textarea></section>
+        <section class="notes-box"><h2>Appearance And Background</h2><textarea name="system.biography" {{#unless editable}}disabled{{/unless}}>{{system.biography}}</textarea></section>
+        <section class="notes-box"><h2>Personality</h2><textarea name="system.notes.personality" {{#unless editable}}disabled{{/unless}}>{{system.notes.personality}}</textarea></section>
+        <section class="notes-box"><h2>History</h2><textarea name="system.notes.history" {{#unless editable}}disabled{{/unless}}>{{system.notes.history}}</textarea></section>
+        <section class="notes-box"><h2>Family, Allies, Enemies</h2><textarea name="system.notes.family" {{#unless editable}}disabled{{/unless}}>{{system.notes.family}}</textarea></section>
+        <section class="notes-box"><h2>Goals And Secrets</h2><textarea name="system.notes.goals" {{#unless editable}}disabled{{/unless}}>{{system.notes.goals}}</textarea></section>
+        <section class="notes-box"><h2>Character Group</h2><textarea name="system.notes.group" {{#unless editable}}disabled{{/unless}}>{{system.notes.group}}</textarea></section>
+        <section class="notes-box"><h2>Other Biography Notes</h2><textarea name="system.notes.biography" {{#unless editable}}disabled{{/unless}}>{{system.notes.biography}}</textarea></section>
       </section>
       <section class="notes-box"><h2>Campaign Role</h2><textarea name="system.identity.actorRole" {{#unless editable}}disabled{{/unless}}>{{system.identity.actorRole}}</textarea></section>
     </section>
 
-    <section class="tab folio-tab{{#if activeTabs.journal}} active{{/if}}" data-group="primary" data-tab="journal">
-      <section class="notes-box journal-notes"><h2>Session Notes, Adventure Log, Advancement, Rewards, Downtime</h2><textarea name="system.notes.journal" {{#unless editable}}disabled{{/unless}}>{{system.notes.journal}}</textarea></section>
-      <section class="notes-box"><h2>Folio Notes</h2><textarea name="system.notes.overview" {{#unless editable}}disabled{{/unless}}>{{system.notes.overview}}</textarea></section>
+    <section id="folio-tab-journal" class="tab folio-tab{{#if activeTabs.journal}} active{{/if}}" data-group="primary" data-tab="journal">
+      <header class="folio-page-heading">
+        <div>
+          <span>Folio p. {{folioPages.journal.folioPages}} / PDF p. {{folioPages.journal.pdfPages}}</span>
+          <h2>{{folioPages.journal.label}}</h2>
+        </div>
+        <p>{{folioPages.journal.summary}}</p>
+      </header>
+
+      <section class="folio-grid two-column">
+        <section class="notes-box journal-notes"><h2>Session Notes And Adventure Log</h2><textarea name="system.notes.journal" {{#unless editable}}disabled{{/unless}}>{{system.notes.journal}}</textarea></section>
+        <section class="notes-box"><h2>Levelling Advancement</h2><textarea name="system.notes.advancement" {{#unless editable}}disabled{{/unless}}>{{system.notes.advancement}}</textarea></section>
+        <section class="notes-box"><h2>Rewards, Downtime, Story Events</h2><textarea name="system.notes.overview" {{#unless editable}}disabled{{/unless}}>{{system.notes.overview}}</textarea></section>
+      </section>
     </section>
   </section>
 

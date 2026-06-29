@@ -12,7 +12,7 @@ Actor data is reserved for values that belong to the actor even when no owned It
 - Character progression summary: level, experience, and class summary rows for quick sheet editing.
 - Point bookkeeping inputs and derived summary: starting Discretionary Points, Engagement Bonus Points, other non-levelling points, manual spent points, refunded points, Ability Score cost, total spent, available points, remaining points, and optional total points.
 - Core ability/resource state: ability scores and modifiers, Hit Points, Energy Points, Armour Class, movement speed, proficiency bonus, initiative, and quick attack rows.
-- Folio notes: overview, combat, attributes, defects, skills, powers, inventory, companions, biography, and journal notes.
+- Folio notes: overview, combat, attributes, defects, skills, powers, inventory, companions, biography, personality, history, family, goals, group, advancement, and journal notes.
 - Rich text summaries: biography and linked stat block notes for non-character actors or companion-style records.
 
 These fields live in `module/documents/actor-data.mjs` because they are actor state, not reusable source documents.
@@ -39,6 +39,18 @@ This keeps source-backed compendium entries reusable, draggable, and editable wi
 - Folio groups such as `itemGroups.characterOptions`, `itemGroups.combat`, `itemGroups.attributes`, `itemGroups.inventory`, and `itemGroups.companions`.
 
 The template can render exact type groups for future detailed sections while keeping broad Folio sections usable now.
+
+The Character Folio tab labels and page headings follow the local `Anime_5E_Character_Folio.PDF` source:
+
+- Folio p. 4 / PDF p. 6: Basic Information.
+- Folio p. 5 / PDF p. 7: Attributes.
+- Folio p. 6 / PDF p. 8: Proficiencies and Defects.
+- Folio p. 7 / PDF p. 9: Magic, Psionics, and Spellcasting.
+- Folio pp. 8-10 and 14 / PDF pp. 10-12 and 16: Items, vehicles, and possessions.
+- Folio p. 11 / PDF p. 13: Weapon Attribute and common attacks.
+- Folio pp. 12-13 / PDF pp. 14-15: Companions.
+- Folio pp. 15-19 / PDF pp. 17-21: Goals, family, history, personality, group, and biography.
+- Folio pp. 20-24 / PDF pp. 22-26: Advancement and journal.
 
 The point summary also folds owned Items into the displayed totals:
 

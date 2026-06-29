@@ -14,6 +14,7 @@ const requiredFiles = [
   "module/sheets/actor-sheet.mjs",
   "module/sheets/item-sheet.mjs",
   "templates/actor-sheet.hbs",
+  "templates/basic-actor-sheet.hbs",
   "templates/item-sheet.hbs",
   "styles/anime5e.css"
 ];

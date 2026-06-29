@@ -322,6 +322,63 @@
   gap: 10px;
 }
 
+.anime5e .creation-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.anime5e .creation-panel h2 {
+  font-size: 0.92rem;
+  letter-spacing: 0;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.anime5e .creation-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(88px, 1fr));
+}
+
+.anime5e .creation-panel label {
+  font-size: 0.78rem;
+  gap: 4px;
+}
+
+.anime5e .creation-panel input {
+  border: 0;
+  border-bottom: 2px solid var(--anime5e-ink);
+  font-size: 1rem;
+  font-weight: 800;
+  min-width: 0;
+  text-align: center;
+}
+
+.anime5e .creation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.anime5e .creation-actions button {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+  min-height: 30px;
+}
+
+.anime5e .creation-validation {
+  background: #fff0d8;
+  border: 1px solid #c78f3a;
+  font-family: inherit;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  margin: 0;
+  padding: 6px 8px;
+  white-space: pre-wrap;
+}
+
 .anime5e .point-summary-grid {
   display: grid;
   gap: 10px;
@@ -513,6 +570,42 @@
   grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
 }
 
+.anime5e .basic-actor-form {
+  gap: 14px;
+}
+
+.anime5e .basic-actor-form .identity textarea {
+  min-height: 76px;
+}
+
+.anime5e .basic-ability-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(6, minmax(72px, 1fr));
+}
+
+.anime5e .basic-ability-grid label {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  padding: 8px;
+  text-align: center;
+}
+
+.anime5e .basic-ability-grid span {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.anime5e .basic-ability-grid input {
+  max-width: 64px;
+  text-align: center;
+}
+
 .anime5e .detail-fields {
   display: grid;
   gap: 10px;
@@ -624,8 +717,10 @@
   border-radius: 4px 4px 0 0;
   color: #2f2f2f;
   cursor: pointer;
+  display: grid;
   font-size: 0.78rem;
   font-weight: 800;
+  gap: 2px;
   line-height: 1.1;
   min-height: 30px;
   padding: 8px 10px 7px;
@@ -633,11 +728,22 @@
   text-transform: uppercase;
 }
 
+.anime5e .sheet-tabs .item small {
+  color: #686868;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .anime5e .sheet-tabs .item.active {
   background: #fff;
   color: #17364a;
   margin-bottom: -2px;
   padding-bottom: 9px;
+}
+
+.anime5e .sheet-tabs .item.active small {
+  color: #426173;
 }
 
 .anime5e .folio-tab-body {
@@ -654,6 +760,40 @@
 .anime5e .folio-tab {
   display: grid;
   gap: 16px;
+}
+
+.anime5e .folio-page-heading {
+  align-items: end;
+  background: #fff;
+  border: 1px solid var(--anime5e-border);
+  border-left: 6px solid var(--anime5e-dark);
+  display: grid;
+  gap: 8px 16px;
+  grid-template-columns: minmax(220px, max-content) 1fr;
+  padding: 10px 12px;
+}
+
+.anime5e .folio-page-heading h2 {
+  background: transparent;
+  color: var(--anime5e-ink);
+  font-size: 1.05rem;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.anime5e .folio-page-heading span {
+  color: #616161;
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 900;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.anime5e .folio-page-heading p {
+  font-size: 0.82rem;
+  margin: 0;
 }
 
 .anime5e .folio-grid {
@@ -931,6 +1071,7 @@
   .anime5e .action-table,
   .anime5e .damage-controls,
   .anime5e .energy-controls,
+  .anime5e .folio-page-heading,
   .anime5e .quick-roll-controls,
   .anime5e .ledger-heading,
   .anime5e .folio-item-list .item-row {

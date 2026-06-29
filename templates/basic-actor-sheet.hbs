@@ -1,0 +1,118 @@
+<form class="anime5e-form basic-actor-form" autocomplete="off">
+  <header class="sheet-header">
+    <div class="portrait">
+      <img src="{{actor.img}}" alt="{{actor.name}}">
+      <label>
+        Image
+        <input type="text" name="img" value="{{actor.img}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+    </div>
+    <div class="identity">
+      <label>
+        {{localize "ANIME5E.Labels.Name"}}
+        <input type="text" name="name" value="{{actor.name}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <div class="inline-fields">
+        <label>
+          {{localize "ANIME5E.Labels.Type"}}
+          <input type="text" value="{{actor.type}}" disabled>
+        </label>
+        <label>
+          {{localize "ANIME5E.Labels.Level"}}
+          <input type="number" name="system.level" value="{{system.level}}" min="1" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Challenge
+          <input type="text" name="system.identity.challengeRating" value="{{system.identity.challengeRating}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+      </div>
+      <textarea name="system.identity.description" {{#unless editable}}disabled{{/unless}}>{{system.identity.description}}</textarea>
+    </div>
+  </header>
+
+  <section class="panel basic-stat-panel">
+    <h2>{{localize "ANIME5E.Labels.Abilities"}}</h2>
+    <div class="basic-ability-grid">
+      {{#each abilities as |ability|}}
+        <label>
+          <span>{{ability.label}}</span>
+          <input type="number" name="system.abilities.{{ability.key}}.value" value="{{ability.data.value}}" {{#unless ../editable}}disabled{{/unless}}>
+          <strong>{{ability.data.modifier}}</strong>
+        </label>
+      {{/each}}
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>{{localize "ANIME5E.Labels.Combat"}}</h2>
+    <div class="inline-fields">
+      <label>
+        Armour Class
+        <input type="number" name="system.combat.armourClass" value="{{system.combat.baseArmourClass}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Hit Points
+        <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Max HP
+        <input type="number" name="system.combat.hitPoints.max" value="{{system.combat.hitPoints.baseMax}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Energy
+        <input type="number" name="system.combat.energy.value" value="{{system.combat.energy.value}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Max Energy
+        <input type="number" name="system.combat.energy.max" value="{{system.combat.energy.baseMax}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Movement
+        <input type="number" name="system.combat.movementSpeed" value="{{system.combat.movementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Proficiency
+        <input type="number" name="system.combat.proficiencyBonus" value="{{system.combat.proficiencyBonus}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Initiative
+        <input type="number" name="system.combat.initiative" value="{{system.combat.initiative}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <button type="button" class="roll-action" data-action="roll-initiative"><i class="fas fa-dice-d20"></i> Initiative</button>
+    </div>
+  </section>
+
+  <section class="panel item-drop-panel" data-drop-target="items">
+    <h2>Owned Items</h2>
+    <ol class="item-list folio-item-list">
+      {{#each itemGroups.all as |item|}}
+        <li class="item-row" data-item-id="{{item.id}}">
+          <img src="{{item.img}}" alt="{{item.name}}">
+          <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+          <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+          <div class="item-actions">
+            {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+            {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+            {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
+            {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+            {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
+            {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+          </div>
+        </li>
+      {{else}}
+        <li class="item-row empty"><span></span><span>No owned items.</span><small></small></li>
+      {{/each}}
+    </ol>
+  </section>
+
+  <section class="folio-grid two-column">
+    <section class="notes-box"><h2>Notes</h2><textarea name="system.notes.overview" {{#unless editable}}disabled{{/unless}}>{{system.notes.overview}}</textarea></section>
+    <section class="notes-box"><h2>Stat Block</h2><textarea name="system.statBlock" {{#unless editable}}disabled{{/unless}}>{{system.statBlock}}</textarea></section>
+  </section>
+
+  {{#if editable}}
+    <footer class="sheet-footer">
+      <button type="submit">{{localize "ANIME5E.Labels.Save"}}</button>
+    </footer>
+  {{/if}}
+</form>

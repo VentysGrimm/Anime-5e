@@ -1,5 +1,30 @@
 const ABILITY_KEYS = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
 
+export const LEVEL_XP_THRESHOLDS = Object.freeze({
+  1: 0,
+  2: 300,
+  3: 900,
+  4: 2700,
+  5: 6500,
+  6: 14000,
+  7: 23000,
+  8: 34000,
+  9: 48000,
+  10: 64000,
+  11: 85000,
+  12: 100000,
+  13: 120000,
+  14: 140000,
+  15: 165000,
+  16: 195000,
+  17: 225000,
+  18: 265000,
+  19: 305000,
+  20: 355000
+});
+
+export const DEFAULT_STARTING_DISCRETIONARY_POINTS = 80;
+
 const SPENDING_ITEM_TYPES = new Set([
   "attribute",
   "itemAttribute",
@@ -19,6 +44,18 @@ export function numberOrZero(value) {
 
 export function positiveNumber(value) {
   return Math.max(0, numberOrZero(value));
+}
+
+export function normalizeCharacterLevel(value) {
+  return Math.max(1, Math.trunc(numberOrZero(value)) || 1);
+}
+
+export function calculateStartingExperience(level) {
+  return LEVEL_XP_THRESHOLDS[normalizeCharacterLevel(level)] ?? null;
+}
+
+export function calculateRecommendedDiscretionaryPoints(level) {
+  return DEFAULT_STARTING_DISCRETIONARY_POINTS + Math.max(0, normalizeCharacterLevel(level) - 1);
 }
 
 export function calculateAbilityScoreCost(abilities = {}) {

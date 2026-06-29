@@ -17,6 +17,9 @@ This milestone starts the Anime 5e character creation build path.
   - Manual spent/refunded adjustments
   - Available, total spent, total refunded, and remaining points
 - Exposed helpers as `game.anime5e.points` for sheets, macros, importers, and future module packs.
+- Connected the Character Folio point summary to the shared point helper used by actor derived data and creation hooks.
+- Added Folio creation controls for starting level, starting XP, ability point mode, source budget, XP benchmark, and validation status.
+- Added Folio actions to apply source-backed starting level/XP and the Core Rules starting Discretionary Point budget.
 
 ## Current validation warnings
 
@@ -32,4 +35,4 @@ The point helper can warn when:
 
 ## Next build step
 
-Wire the sheet point summary directly to `game.anime5e.points.calculatePointSummary(...)`, then add drag/drop application behaviour for Species and Class items.
+Add preview-before-apply behaviour for Species and Class items, then expand class-derived HP, hit dice, and proficiency automation.

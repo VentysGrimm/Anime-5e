@@ -1,22 +1,96 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
 import { buildCoreAttributeEffectContext } from "../rules/attribute-effects.mjs";
+import { calculatePointSummary, calculateRecommendedDiscretionaryPoints, calculateStartingExperience, normalizeCharacterLevel } from "../rules/points.mjs";
 import { applyEnergyChange, applyHitPointChange } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 
 const FOLIO_TABS = [
-  { id: "overview", label: "Overview" },
-  { id: "combat", label: "Combat" },
-  { id: "attributes", label: "Attributes" },
-  { id: "defects", label: "Defects" },
-  { id: "skills", label: "Skills & Proficiencies" },
-  { id: "powers", label: "Powers & Spells" },
-  { id: "inventory", label: "Inventory" },
-  { id: "companions", label: "Companions & Vehicles" },
-  { id: "biography", label: "Biography" },
-  { id: "journal", label: "Journal" }
+  {
+    id: "overview",
+    label: "Basic Information",
+    shortLabel: "Basic",
+    folioPages: "4",
+    pdfPages: "6",
+    summary: "Identity, ability scores, resources, class rows, common attacks, and physical notes."
+  },
+  {
+    id: "attributes",
+    label: "Attributes",
+    shortLabel: "Attributes",
+    folioPages: "5",
+    pdfPages: "7",
+    summary: "Attributes with ranks, enhancements, limiters, costs, and active derived effects."
+  },
+  {
+    id: "skills",
+    label: "Proficiencies",
+    shortLabel: "Proficiencies",
+    folioPages: "6",
+    pdfPages: "8",
+    summary: "Saving throws, armour, shields, weapons, tools, languages, skills, senses, and movement notes."
+  },
+  {
+    id: "defects",
+    label: "Defects",
+    shortLabel: "Defects",
+    folioPages: "6",
+    pdfPages: "8",
+    summary: "Defects with rank, point return, triggers, limitations, notes, and roleplaying guidance."
+  },
+  {
+    id: "powers",
+    label: "Magic, Psionics, and Spellcasting",
+    shortLabel: "Magic",
+    folioPages: "7",
+    pdfPages: "9",
+    summary: "Spells, powers, psionics, casting details, Energy costs, and activation notes."
+  },
+  {
+    id: "inventory",
+    label: "Items of Power and Gear",
+    shortLabel: "Items",
+    folioPages: "8-9, 14",
+    pdfPages: "10-11, 16",
+    summary: "Items of Power, equipment, treasure, gear, locations, and important possessions."
+  },
+  {
+    id: "combat",
+    label: "Weapons and Common Attacks",
+    shortLabel: "Weapons",
+    folioPages: "4, 11",
+    pdfPages: "6, 13",
+    summary: "Common attacks, Weapon Attribute entries, damage, attack controls, and combat actions."
+  },
+  {
+    id: "companions",
+    label: "Vehicles and Companions",
+    shortLabel: "Companions",
+    folioPages: "10, 12-13",
+    pdfPages: "12, 14-15",
+    summary: "Vehicles, mecha, mounts, companions, linked stat summaries, and owned equipment notes."
+  },
+  {
+    id: "biography",
+    label: "Goals and Biography",
+    shortLabel: "Biography",
+    folioPages: "15-19",
+    pdfPages: "17-21",
+    summary: "Goals, family, history, personality, allies, group role, and campaign identity."
+  },
+  {
+    id: "journal",
+    label: "Advancement and Journal",
+    shortLabel: "Journal",
+    folioPages: "20-24",
+    pdfPages: "22-26",
+    summary: "Levelling and advancement notes, session journal, rewards, downtime, and story events."
+  }
 ];
+
+const DEFAULT_FOLIO_TAB = FOLIO_TABS[0].id;
+const FOLIO_TAB_IDS = new Set(FOLIO_TABS.map((tab) => tab.id));
 
 const ABILITY_LABELS = {
   strength: "Strength",
@@ -189,7 +263,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       {
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
-        initial: "overview"
+        initial: DEFAULT_FOLIO_TAB
       }
     ]
   };
@@ -211,14 +285,17 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
     context.pointSummary = this.constructor._preparePointSummary(system, items);
+    context.creation = this.constructor._prepareCreationContext(system, context.pointSummary);
     context.attributeEffects = buildCoreAttributeEffectContext({
       system: this.actor._source?.system ?? system,
       items
     });
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
-    context.activeTab = this.tabGroups?.primary ?? "overview";
+    const activeTab = FOLIO_TAB_IDS.has(this.tabGroups?.primary) ? this.tabGroups.primary : DEFAULT_FOLIO_TAB;
+    context.activeTab = activeTab;
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
     context.tabs = FOLIO_TABS.map((tab) => ({ ...tab, active: tab.id === context.activeTab }));
+    context.folioPages = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab]));
     context.abilities = Object.entries(ABILITY_LABELS).map(([key, label]) => ({
       key,
       label,
@@ -370,36 +447,36 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   static _preparePointSummary(system, items = []) {
-    const points = system.points ?? {};
-    const ownedPointTotals = this._prepareOwnedPointTotals(items);
-    const available = numberOrZero(points.available) + ownedPointTotals.defectRefund;
-    const totalSpent = numberOrZero(points.totalSpent)
-      + ownedPointTotals.speciesCost
-      + ownedPointTotals.classCost
-      + ownedPointTotals.attributeCost;
-    const remaining = available - totalSpent;
-    const warnings = [];
-    const actorLevel = numberOrZero(system.level);
+    const summary = calculatePointSummary(system, items);
+    return {
+      ...summary,
+      spent: summary.manualSpent,
+      refunded: summary.manualRefund
+    };
+  }
 
-    if (remaining < 0) warnings.push("Point spending exceeds available points.");
-    if (ownedPointTotals.speciesCount > 1) warnings.push("Multiple species items are owned; verify this is intentional.");
-    if (ownedPointTotals.classLevelItems > 0 && ownedPointTotals.classLevelTotal !== actorLevel) {
-      warnings.push(`Owned class item levels total ${ownedPointTotals.classLevelTotal}, but actor level is ${actorLevel}.`);
-    }
+  static _prepareCreationContext(system, pointSummary) {
+    const creation = system.creation ?? {};
+    const startingLevel = normalizeCharacterLevel(creation.startingLevel ?? system.level);
+    const startingExperience = numberOrZero(creation.startingExperience ?? system.experience);
+    const recommendedExperience = calculateStartingExperience(startingLevel);
+    const validationStatus = creation.validationStatus || (pointSummary.warnings.length ? "warning" : "valid");
+    const validationNotes = hasText(creation.validationNotes)
+      ? creation.validationNotes
+      : pointSummary.warnings.join("\n");
 
     return {
-      available,
-      spent: numberOrZero(points.spent),
-      refunded: numberOrZero(points.refunded),
-      abilityScoreCost: numberOrZero(points.abilityScoreCost),
-      speciesCost: ownedPointTotals.speciesCost,
-      classCost: ownedPointTotals.classCost,
-      attributeCost: ownedPointTotals.attributeCost,
-      defectRefund: ownedPointTotals.defectRefund,
-      totalRefunded: numberOrZero(points.refunded) + ownedPointTotals.defectRefund,
-      totalSpent,
-      remaining,
-      warnings
+      startingLevel,
+      startingExperience,
+      abilityPointMode: creation.abilityPointMode ?? "Score equals Point cost",
+      speciesApplied: creation.speciesApplied ?? "",
+      classApplied: creation.classApplied ?? "",
+      recommendedDiscretionaryPoints: calculateRecommendedDiscretionaryPoints(startingLevel),
+      recommendedExperience,
+      hasRecommendedExperience: recommendedExperience !== null,
+      validationStatus,
+      validationLabel: validationStatus.replace(/^./, (character) => character.toUpperCase()),
+      validationNotes
     };
   }
 
@@ -454,6 +531,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!element) return;
 
     this._activateAutoSaveListeners(element);
+    this._activateFolioTabs(element);
 
     element.querySelectorAll("[data-action='roll-ability']").forEach((button) => {
       button.addEventListener("click", this._onRollAbility.bind(this));
@@ -506,6 +584,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='toggle-equipped']").forEach((button) => {
       button.addEventListener("click", this._onToggleItemEquipped.bind(this));
     });
+    element.querySelectorAll("[data-action='apply-creation-start']").forEach((button) => {
+      button.addEventListener("click", this._onApplyCreationStart.bind(this));
+    });
+    element.querySelectorAll("[data-action='apply-point-budget']").forEach((button) => {
+      button.addEventListener("click", this._onApplyPointBudget.bind(this));
+    });
     element.querySelectorAll("[data-item-id]").forEach((row) => {
       row.draggable = true;
       row.addEventListener("dragstart", this._onDragStart.bind(this));
@@ -514,6 +598,37 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       target.addEventListener("dragover", (event) => event.preventDefault());
       target.addEventListener("drop", this._onDrop.bind(this));
     });
+  }
+
+  _activateFolioTabs(element) {
+    const navItems = Array.from(element.querySelectorAll(".sheet-tabs [data-tab]"));
+    const pages = Array.from(element.querySelectorAll(".folio-tab[data-tab]"));
+    if (!navItems.length || !pages.length) return;
+
+    const activate = (tabId) => {
+      const nextTab = FOLIO_TAB_IDS.has(tabId) ? tabId : DEFAULT_FOLIO_TAB;
+      this.tabGroups ??= {};
+      this.tabGroups.primary = nextTab;
+
+      for (const item of navItems) {
+        const active = item.dataset.tab === nextTab;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-selected", String(active));
+      }
+
+      for (const page of pages) {
+        page.classList.toggle("active", page.dataset.tab === nextTab);
+      }
+    };
+
+    for (const item of navItems) {
+      item.addEventListener("click", (event) => {
+        event.preventDefault();
+        activate(event.currentTarget.dataset.tab);
+      });
+    }
+
+    activate(this.tabGroups?.primary);
   }
 
   _activateAutoSaveListeners(element) {
@@ -859,6 +974,41 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await item.update({ "system.equipped": !item.system?.equipped });
   }
 
+  async _onApplyCreationStart(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const form = event.currentTarget.closest("form");
+    const startingLevel = normalizeCharacterLevel(form?.elements["system.creation.startingLevel"]?.value ?? this.actor.system?.creation?.startingLevel);
+    const enteredExperience = Math.max(0, Math.trunc(numberOrZero(form?.elements["system.creation.startingExperience"]?.value ?? this.actor.system?.creation?.startingExperience)));
+    const recommendedExperience = calculateStartingExperience(startingLevel);
+    const startingExperience = recommendedExperience ?? enteredExperience;
+    const update = {
+      "system.level": startingLevel,
+      "system.experience": startingExperience,
+      "system.creation.startingLevel": startingLevel,
+      "system.creation.startingExperience": startingExperience
+    };
+
+    if (recommendedExperience === null) {
+      ui.notifications?.info("No Anime 5e XP benchmark is defined above 20th level; using the entered starting XP.");
+    }
+
+    await this.actor.update(update);
+  }
+
+  async _onApplyPointBudget(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const form = event.currentTarget.closest("form");
+    const startingLevel = normalizeCharacterLevel(form?.elements["system.creation.startingLevel"]?.value ?? this.actor.system?.creation?.startingLevel);
+    await this.actor.update({
+      "system.creation.startingLevel": startingLevel,
+      "system.identity.startingDiscretionaryPoints": calculateRecommendedDiscretionaryPoints(startingLevel)
+    });
+  }
+
   _onDragStart(event) {
     const item = this.actor.items.get(event.currentTarget.dataset.itemId);
     if (!item) return;
@@ -890,6 +1040,12 @@ export class Anime5eBasicActorSheet extends Anime5eActorSheet {
     position: {
       width: 780,
       height: 720
+    }
+  };
+
+  static PARTS = {
+    form: {
+      template: "systems/anime5e/templates/basic-actor-sheet.hbs"
     }
   };
 }
