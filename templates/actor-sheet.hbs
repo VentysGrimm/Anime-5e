@@ -173,6 +173,19 @@
                 <button type="button" data-action="apply-point-budget"><i class="fas fa-coins"></i><span>Set Budget</span></button>
               </div>
             {{/if}}
+            <section class="benchmark-panel" aria-label="Character Benchmark Guidance">
+              <header>
+                <span>Benchmark</span>
+                <strong>{{creation.benchmark.label}} ({{creation.benchmark.levelRange}})</strong>
+              </header>
+              <div class="benchmark-grid">
+                <span>Ability Scores <strong>{{creation.benchmarkSummary.abilityScores}}</strong></span>
+                <span>Attribute Rank <strong>{{creation.benchmarkSummary.attributeRank}}</strong></span>
+                <span>Proficiency <strong>{{creation.benchmarkSummary.proficiencyBonus}}</strong></span>
+                <span>Armour Class <strong>{{creation.benchmarkSummary.armourClass}}</strong></span>
+                <span>Normal Damage <strong>{{creation.benchmarkSummary.normalDamage}}</strong></span>
+              </div>
+            </section>
             {{#if creation.validationNotes}}
               <pre class="creation-validation">{{creation.validationNotes}}</pre>
             {{/if}}

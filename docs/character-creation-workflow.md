@@ -20,6 +20,7 @@ This milestone starts the Anime 5e character creation build path.
 - Connected the Character Folio point summary to the shared point helper used by actor derived data and creation hooks.
 - Added Folio creation controls for starting level, starting XP, ability point mode, source budget, XP benchmark, and validation status.
 - Added Folio actions to apply source-backed starting level/XP and the Core Rules starting Discretionary Point budget.
+- Added Core Rules Table 01 character benchmark data and Folio warnings for ability scores, Attribute ranks, proficiency bonus, and Armour Class.
 
 ## Current validation warnings
 
@@ -32,6 +33,7 @@ The point helper can warn when:
 - owned class item levels do not match actor level;
 - ranked Attributes have no cost;
 - ranked Defects have no point return.
+- a character exceeds the optional Table 01 benchmark limits for their level band.
 
 ## Next build step
 

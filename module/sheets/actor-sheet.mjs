@@ -474,6 +474,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       recommendedDiscretionaryPoints: calculateRecommendedDiscretionaryPoints(startingLevel),
       recommendedExperience,
       hasRecommendedExperience: recommendedExperience !== null,
+      benchmark: pointSummary.benchmark,
+      benchmarkSummary: pointSummary.benchmarkSummary,
       validationStatus,
       validationLabel: validationStatus.replace(/^./, (character) => character.toUpperCase()),
       validationNotes

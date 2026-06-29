@@ -379,6 +379,44 @@
   white-space: pre-wrap;
 }
 
+.anime5e .benchmark-panel {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 8px;
+  padding: 8px;
+}
+
+.anime5e .benchmark-panel header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.anime5e .benchmark-panel header span,
+.anime5e .benchmark-grid span {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.anime5e .benchmark-grid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+}
+
+.anime5e .benchmark-grid span {
+  display: grid;
+  gap: 2px;
+}
+
+.anime5e .benchmark-grid strong {
+  font-size: 0.9rem;
+}
+
 .anime5e .point-summary-grid {
   display: grid;
   gap: 10px;

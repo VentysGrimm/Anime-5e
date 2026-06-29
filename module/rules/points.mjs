@@ -25,6 +25,81 @@ export const LEVEL_XP_THRESHOLDS = Object.freeze({
 
 export const DEFAULT_STARTING_DISCRETIONARY_POINTS = 80;
 
+export const CHARACTER_BENCHMARKS = Object.freeze([
+  {
+    key: "novice",
+    label: "Novice",
+    levelRange: "1st Level",
+    minLevel: 1,
+    maxLevel: 1,
+    maxAbilityScores: [18, 17],
+    maxAttributeRank: 4,
+    maxProficiencyBonus: 3,
+    maxArmourClass: 20,
+    maxNormalDamage: 25
+  },
+  {
+    key: "capable",
+    label: "Capable",
+    levelRange: "2nd-4th Level",
+    minLevel: 2,
+    maxLevel: 4,
+    maxAbilityScores: [19, 18],
+    maxAttributeRank: 5,
+    maxProficiencyBonus: 4,
+    maxArmourClass: 22,
+    maxNormalDamage: 40
+  },
+  {
+    key: "seasoned",
+    label: "Seasoned",
+    levelRange: "5th-10th Level",
+    minLevel: 5,
+    maxLevel: 10,
+    maxAbilityScores: [20, 19],
+    maxAttributeRank: 6,
+    maxProficiencyBonus: 5,
+    maxArmourClass: 24,
+    maxNormalDamage: 60
+  },
+  {
+    key: "veteran",
+    label: "Veteran",
+    levelRange: "11th-16th Level",
+    minLevel: 11,
+    maxLevel: 16,
+    maxAbilityScores: [22, 20],
+    maxAttributeRank: 8,
+    maxProficiencyBonus: 7,
+    maxArmourClass: 26,
+    maxNormalDamage: 100
+  },
+  {
+    key: "mythical",
+    label: "Mythical",
+    levelRange: "17th-20th Level",
+    minLevel: 17,
+    maxLevel: 20,
+    maxAbilityScores: [24, 22],
+    maxAttributeRank: 10,
+    maxProficiencyBonus: 10,
+    maxArmourClass: 30,
+    maxNormalDamage: 200
+  },
+  {
+    key: "epic",
+    label: "Epic",
+    levelRange: "Above 20th Level",
+    minLevel: 21,
+    maxLevel: Infinity,
+    maxAbilityScores: null,
+    maxAttributeRank: null,
+    maxProficiencyBonus: null,
+    maxArmourClass: null,
+    maxNormalDamage: null
+  }
+]);
+
 const SPENDING_ITEM_TYPES = new Set([
   "attribute",
   "itemAttribute",
@@ -56,6 +131,72 @@ export function calculateStartingExperience(level) {
 
 export function calculateRecommendedDiscretionaryPoints(level) {
   return DEFAULT_STARTING_DISCRETIONARY_POINTS + Math.max(0, normalizeCharacterLevel(level) - 1);
+}
+
+export function getCharacterBenchmark(level) {
+  const characterLevel = normalizeCharacterLevel(level);
+  return CHARACTER_BENCHMARKS.find((benchmark) => characterLevel >= benchmark.minLevel && characterLevel <= benchmark.maxLevel)
+    ?? CHARACTER_BENCHMARKS[CHARACTER_BENCHMARKS.length - 1];
+}
+
+export function summarizeCharacterBenchmark(benchmark) {
+  if (!benchmark || benchmark.key === "epic") {
+    return {
+      abilityScores: "No maximums",
+      attributeRank: "No maximum",
+      proficiencyBonus: "No maximum",
+      armourClass: "No maximum",
+      normalDamage: "No maximum"
+    };
+  }
+
+  return {
+    abilityScores: `1 @ ${benchmark.maxAbilityScores[0]} | 1 @ ${benchmark.maxAbilityScores[1]}`,
+    attributeRank: String(benchmark.maxAttributeRank),
+    proficiencyBonus: `+${benchmark.maxProficiencyBonus}`,
+    armourClass: String(benchmark.maxArmourClass),
+    normalDamage: String(benchmark.maxNormalDamage)
+  };
+}
+
+export function calculateBenchmarkWarnings(system = {}, items = []) {
+  const level = normalizeCharacterLevel(system.level);
+  const benchmark = getCharacterBenchmark(level);
+  if (!benchmark || benchmark.key === "epic") return [];
+
+  const warnings = [];
+  const abilityScores = ABILITY_KEYS
+    .map((key) => positiveNumber(system.abilities?.[key]?.effectiveValue ?? system.abilities?.[key]?.value))
+    .sort((a, b) => b - a);
+  const [highestScore = 0, secondHighestScore = 0] = abilityScores;
+  const [highestLimit, secondHighestLimit] = benchmark.maxAbilityScores;
+
+  if (highestScore > highestLimit) {
+    warnings.push(`${benchmark.label} benchmark: highest Ability Score ${highestScore} exceeds ${highestLimit}.`);
+  }
+  if (secondHighestScore > secondHighestLimit) {
+    warnings.push(`${benchmark.label} benchmark: second-highest Ability Score ${secondHighestScore} exceeds ${secondHighestLimit}.`);
+  }
+
+  const maxOwnedAttributeRank = (items ?? []).reduce((maxRank, item) => {
+    if (!["attribute", "itemAttribute"].includes(item?.type)) return maxRank;
+    return Math.max(maxRank, positiveNumber(item.system?.effectiveRank ?? item.system?.rank));
+  }, 0);
+  if (maxOwnedAttributeRank > benchmark.maxAttributeRank) {
+    warnings.push(`${benchmark.label} benchmark: owned Attribute Rank ${maxOwnedAttributeRank} exceeds ${benchmark.maxAttributeRank}.`);
+  }
+
+  const proficiencyBonus = positiveNumber(system.combat?.proficiencyBonus);
+  if (proficiencyBonus > benchmark.maxProficiencyBonus) {
+    warnings.push(`${benchmark.label} benchmark: Proficiency Bonus +${proficiencyBonus} exceeds +${benchmark.maxProficiencyBonus}.`);
+  }
+
+  const armourClass = positiveNumber(system.combat?.armourClass);
+  if (armourClass > benchmark.maxArmourClass) {
+    warnings.push(`${benchmark.label} benchmark: Armour Class ${armourClass} exceeds ${benchmark.maxArmourClass}.`);
+  }
+
+  return warnings;
 }
 
 export function calculateAbilityScoreCost(abilities = {}) {
@@ -159,6 +300,9 @@ export function calculateAvailablePoints(system = {}) {
 
 export function calculatePointSummary(system = {}, items = []) {
   const owned = calculateOwnedPointTotals(items);
+  const benchmark = getCharacterBenchmark(system.level);
+  const benchmarkSummary = summarizeCharacterBenchmark(benchmark);
+  const benchmarkWarnings = calculateBenchmarkWarnings(system, items);
   const abilityScoreCost = calculateAbilityScoreCost(system.abilities);
   const manualSpent = positiveNumber(system.points?.spent);
   const manualRefund = positiveNumber(system.points?.refunded);
@@ -171,7 +315,7 @@ export function calculatePointSummary(system = {}, items = []) {
     + owned.equipmentCost;
   const remaining = available - totalSpent;
   const actorLevel = positiveNumber(system.level);
-  const warnings = [...owned.warningItems];
+  const warnings = [...owned.warningItems, ...benchmarkWarnings];
 
   if (remaining < 0) warnings.push("Point spending exceeds available points.");
   if (owned.speciesCount === 0) warnings.push("No Species/Race item is attached yet.");
@@ -195,6 +339,9 @@ export function calculatePointSummary(system = {}, items = []) {
     totalSpent,
     remaining,
     warnings,
+    benchmark,
+    benchmarkSummary,
+    benchmarkWarnings,
     owned
   };
 }
