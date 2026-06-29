@@ -40,6 +40,12 @@ This keeps source-backed compendium entries reusable, draggable, and editable wi
 
 The template can render exact type groups for future detailed sections while keeping broad Folio sections usable now.
 
+The point summary also folds owned Items into the displayed totals:
+
+- Attribute points are calculated from owned Attribute rank multiplied by per-rank cost.
+- Defect refunds are calculated from owned Defect rank multiplied by per-rank points returned.
+- These owned-item totals are displayed separately from manual point adjustments so later automation can replace or refine individual sources without changing the player-facing summary shape.
+
 ## Deferred Automation
 
 Full application/removal automation is intentionally deferred for focused slices. Species traits, class progression, Attribute effects, Defect refunds, item construction, Dynamic Powers, and vehicle/mecha automation should use owned Item data as inputs and write only derived summaries or actor-owned state that must persist on the actor.

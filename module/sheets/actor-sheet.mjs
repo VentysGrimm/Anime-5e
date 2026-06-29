@@ -205,7 +205,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.items = items.map((item) => this.constructor._prepareItemContext(item));
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
-    context.pointSummary = this.constructor._preparePointSummary(system);
+    context.pointSummary = this.constructor._preparePointSummary(system, items);
     context.activeTab = this.tabGroups?.primary ?? "overview";
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
     context.tabs = FOLIO_TABS.map((tab) => ({ ...tab, active: tab.id === context.activeTab }));
@@ -338,19 +338,40 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     };
   }
 
-  static _preparePointSummary(system) {
+  static _preparePointSummary(system, items = []) {
     const points = system.points ?? {};
-    const remaining = numberOrZero(points.remaining);
+    const ownedPointTotals = this._prepareOwnedPointTotals(items);
+    const available = numberOrZero(points.available) + ownedPointTotals.defectRefund;
+    const totalSpent = numberOrZero(points.totalSpent) + ownedPointTotals.attributeCost;
+    const remaining = available - totalSpent;
 
     return {
-      available: numberOrZero(points.available),
+      available,
       spent: numberOrZero(points.spent),
       refunded: numberOrZero(points.refunded),
       abilityScoreCost: numberOrZero(points.abilityScoreCost),
-      totalSpent: numberOrZero(points.totalSpent),
+      attributeCost: ownedPointTotals.attributeCost,
+      defectRefund: ownedPointTotals.defectRefund,
+      totalRefunded: numberOrZero(points.refunded) + ownedPointTotals.defectRefund,
+      totalSpent,
       remaining,
       warning: remaining < 0 ? "Point spending exceeds available points." : ""
     };
+  }
+
+  static _prepareOwnedPointTotals(items) {
+    return items.reduce((totals, item) => {
+      const system = item.system ?? {};
+      const rank = Math.max(0, Number(system.rank) || 0);
+
+      if (item.type === "attribute") {
+        totals.attributeCost += rank * Math.max(0, Number(system.cost) || 0);
+      } else if (item.type === "defect") {
+        totals.defectRefund += rank * Math.max(0, Number(system.pointsReturned) || 0);
+      }
+
+      return totals;
+    }, { attributeCost: 0, defectRefund: 0 });
   }
 
   static _calculateArmourClass(item, dexterityModifier) {
