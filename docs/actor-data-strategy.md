@@ -44,6 +44,8 @@ The point summary also folds owned Items into the displayed totals:
 
 - Attribute points are calculated from owned Attribute rank multiplied by per-rank cost.
 - Defect refunds are calculated from owned Defect rank multiplied by per-rank points returned.
+- Species points are calculated from owned Species point cost.
+- Class points use optional owned Class cost/base/level point fields when present.
 - These owned-item totals are displayed separately from manual point adjustments so later automation can replace or refine individual sources without changing the player-facing summary shape.
 
 ## Deferred Automation

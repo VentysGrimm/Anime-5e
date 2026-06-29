@@ -117,6 +117,14 @@
                 <input type="number" value="{{pointSummary.abilityScoreCost}}" readonly>
               </label>
               <label>
+                Species
+                <input type="number" value="{{pointSummary.speciesCost}}" readonly>
+              </label>
+              <label>
+                Classes
+                <input type="number" value="{{pointSummary.classCost}}" readonly>
+              </label>
+              <label>
                 Attributes
                 <input type="number" value="{{pointSummary.attributeCost}}" readonly>
               </label>
@@ -145,9 +153,9 @@
                 <input type="number" value="{{pointSummary.remaining}}" readonly>
               </label>
             </div>
-            {{#if pointSummary.warning}}
-              <p class="sheet-warning">{{pointSummary.warning}}</p>
-            {{/if}}
+            {{#each pointSummary.warnings as |warning|}}
+              <p class="sheet-warning">{{warning}}</p>
+            {{/each}}
           </section>
 
           <section class="notes-box compact-notes">

@@ -120,6 +120,9 @@ export class Anime5eClassData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      level: numberField(0, { min: 0 }),
+      basePoints: numberField(0, { min: 0 }),
+      pointsPerLevel: numberField(0, { min: 0 }),
       hitDice: textField(),
       primaryAbility: textField(),
       savingThrows: textField()

@@ -342,20 +342,33 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const points = system.points ?? {};
     const ownedPointTotals = this._prepareOwnedPointTotals(items);
     const available = numberOrZero(points.available) + ownedPointTotals.defectRefund;
-    const totalSpent = numberOrZero(points.totalSpent) + ownedPointTotals.attributeCost;
+    const totalSpent = numberOrZero(points.totalSpent)
+      + ownedPointTotals.speciesCost
+      + ownedPointTotals.classCost
+      + ownedPointTotals.attributeCost;
     const remaining = available - totalSpent;
+    const warnings = [];
+    const actorLevel = numberOrZero(system.level);
+
+    if (remaining < 0) warnings.push("Point spending exceeds available points.");
+    if (ownedPointTotals.speciesCount > 1) warnings.push("Multiple species items are owned; verify this is intentional.");
+    if (ownedPointTotals.classLevelItems > 0 && ownedPointTotals.classLevelTotal !== actorLevel) {
+      warnings.push(`Owned class item levels total ${ownedPointTotals.classLevelTotal}, but actor level is ${actorLevel}.`);
+    }
 
     return {
       available,
       spent: numberOrZero(points.spent),
       refunded: numberOrZero(points.refunded),
       abilityScoreCost: numberOrZero(points.abilityScoreCost),
+      speciesCost: ownedPointTotals.speciesCost,
+      classCost: ownedPointTotals.classCost,
       attributeCost: ownedPointTotals.attributeCost,
       defectRefund: ownedPointTotals.defectRefund,
       totalRefunded: numberOrZero(points.refunded) + ownedPointTotals.defectRefund,
       totalSpent,
       remaining,
-      warning: remaining < 0 ? "Point spending exceeds available points." : ""
+      warnings
     };
   }
 
@@ -368,10 +381,30 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         totals.attributeCost += rank * Math.max(0, Number(system.cost) || 0);
       } else if (item.type === "defect") {
         totals.defectRefund += rank * Math.max(0, Number(system.pointsReturned) || 0);
+      } else if (item.type === "species") {
+        totals.speciesCost += Math.max(0, Number(system.points ?? system.cost) || 0);
+        totals.speciesCount += 1;
+      } else if (item.type === "class") {
+        const level = Math.max(0, Number(system.level) || 0);
+        totals.classCost += Math.max(0, Number(system.cost) || 0)
+          + Math.max(0, Number(system.basePoints) || 0)
+          + (level * Math.max(0, Number(system.pointsPerLevel) || 0));
+        if (level > 0) {
+          totals.classLevelItems += 1;
+          totals.classLevelTotal += level;
+        }
       }
 
       return totals;
-    }, { attributeCost: 0, defectRefund: 0 });
+    }, {
+      attributeCost: 0,
+      classCost: 0,
+      classLevelItems: 0,
+      classLevelTotal: 0,
+      defectRefund: 0,
+      speciesCost: 0,
+      speciesCount: 0
+    });
   }
 
   static _calculateArmourClass(item, dexterityModifier) {
