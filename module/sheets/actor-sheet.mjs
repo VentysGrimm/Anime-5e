@@ -52,6 +52,12 @@ const ROLL_MODES = {
   }
 };
 
+const D20_ROLL_MODES = [
+  { key: "normal", label: "Normal" },
+  { key: "advantage", label: "Advantage" },
+  { key: "disadvantage", label: "Disadvantage" }
+];
+
 const ITEM_GROUP_TYPES = {
   characterOptions: ["species", "class", "background", "sizeTemplate", "lifepath", "feature", "trait"],
   combat: ["weapon", "armor", "shield", "technique", "attribute"],
@@ -208,6 +214,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       data: system.abilities[key]
     }));
     context.rollModes = Object.entries(ROLL_MODES).map(([key, mode]) => ({ key, label: mode.label }));
+    context.d20Modes = D20_ROLL_MODES;
     context.identityRows = [
       { label: "Character Name", name: "name", value: this.actor.name },
       { label: "Alias", name: "system.identity.alias", value: system.identity.alias },
@@ -269,6 +276,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       equippable: EQUIPPABLE_ITEM_TYPES.has(item.type),
       canUse: true,
       canRoll: hasText(system.roll),
+      canSkillCheck: ["skill", "proficiency", "tool"].includes(item.type),
       canAttack: item.type === "weapon" || Number.isFinite(Number(system.attackModifier)),
       canDamage: hasText(system.damage)
     };
@@ -426,6 +434,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='roll-quick']").forEach((button) => {
       button.addEventListener("click", this._onRollQuick.bind(this));
     });
+    element.querySelectorAll("[data-action='roll-saving-throw']").forEach((button) => {
+      button.addEventListener("click", this._onRollSavingThrow.bind(this));
+    });
     element.querySelectorAll("[data-action='roll-attack']").forEach((button) => {
       button.addEventListener("click", this._onRollAttack.bind(this));
     });
@@ -440,6 +451,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='roll-item']").forEach((button) => {
       button.addEventListener("click", this._onRollItem.bind(this));
+    });
+    element.querySelectorAll("[data-action='roll-skill-item']").forEach((button) => {
+      button.addEventListener("click", this._onRollSkillItem.bind(this));
     });
     element.querySelectorAll("[data-action='roll-item-attack']").forEach((button) => {
       button.addEventListener("click", this._onRollItemAttack.bind(this));
@@ -526,6 +540,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const panel = event.currentTarget.closest(".quick-roll-panel");
     const abilityKey = panel?.querySelector("[data-roll-input='ability']")?.value ?? "strength";
     const modeKey = panel?.querySelector("[data-roll-input='mode']")?.value ?? "ability";
+    const rollMode = panel?.querySelector("[data-roll-input='d20Mode']")?.value ?? "normal";
+    const dc = Number(panel?.querySelector("[data-roll-input='dc']")?.value) || 0;
     const situationalBonus = Number(panel?.querySelector("[data-roll-input='bonus']")?.value) || 0;
     const ability = this.actor.system.abilities?.[abilityKey];
     const mode = ROLL_MODES[modeKey] ?? ROLL_MODES.ability;
@@ -536,8 +552,19 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (situationalBonus) modifiers.push(situationalBonus);
 
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+    const dcLabel = dc > 0 ? ` vs DC ${dc}` : "";
     // Anime 5E Core Rules pp. 153-156 define checks, saving throws, initiative, and attacks as d20 plus the relevant modifiers.
-    await this._rollFormula(buildD20Formula(modifiers), `${mode.label}: ${abilityLabel}`);
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${mode.label}: ${abilityLabel}${dcLabel}`, { mode: rollMode });
+  }
+
+  async _onRollSavingThrow(event) {
+    event.preventDefault();
+    const abilityKey = event.currentTarget.dataset.ability;
+    const ability = this.actor.system.abilities?.[abilityKey];
+    if (!ability) return;
+
+    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+    await this._rollFormula(buildD20Formula([ability.modifier]), `${abilityLabel} Saving Throw`);
   }
 
   async _onRollAttack(event) {
@@ -583,6 +610,23 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await this._rollFormula(formula, `${item.name} Roll`);
   }
 
+  async _onRollSkillItem(event) {
+    event.preventDefault();
+    const item = this._getEmbeddedItem(event);
+    if (!item) return;
+
+    const abilityKey = this.constructor._normalizeAbilityKey(item.system?.ability);
+    const ability = this.actor.system.abilities?.[abilityKey];
+    if (!ability) {
+      ui.notifications?.warn(`Set a valid ability for ${item.name} before rolling it.`);
+      return;
+    }
+
+    const modifiers = [ability.modifier, this.actor.system.combat?.proficiencyBonus ?? 0];
+    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+    await this._rollFormula(buildD20Formula(modifiers), `${item.name} Check (${abilityLabel})`);
+  }
+
   async _onRollItemAttack(event) {
     event.preventDefault();
     const item = this._getEmbeddedItem(event);
@@ -605,9 +649,17 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await this._rollFormula(formula, `${item.name} Damage${damageType}`);
   }
 
-  async _rollFormula(formula, label) {
+  static _normalizeAbilityKey(value) {
+    const normalized = String(value ?? "").trim().toLowerCase();
+    if (!normalized) return null;
+    if (ABILITY_LABELS[normalized]) return normalized;
+
+    return Object.entries(ABILITY_LABELS).find(([, label]) => label.toLowerCase() === normalized)?.[0] ?? null;
+  }
+
+  async _rollFormula(formula, label, options = {}) {
     try {
-      return rollAnime5eFormula({ actor: this.actor, formula, label });
+      return rollAnime5eFormula({ actor: this.actor, formula, label, mode: options.mode });
     } catch (error) {
       console.error("anime5e | Failed to roll formula", formula, error);
       ui.notifications?.error(`Anime 5e could not roll "${formula}". Check the formula and try again.`);

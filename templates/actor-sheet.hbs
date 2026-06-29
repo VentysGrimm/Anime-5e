@@ -233,6 +233,18 @@
                 </select>
               </label>
               <label>
+                Roll
+                <select data-roll-input="d20Mode">
+                  {{#each d20Modes as |mode|}}
+                    <option value="{{mode.key}}">{{mode.label}}</option>
+                  {{/each}}
+                </select>
+              </label>
+              <label>
+                DC
+                <input type="number" data-roll-input="dc" value="0" min="0">
+              </label>
+              <label>
                 Bonus
                 <input type="number" data-roll-input="bonus" value="0">
               </label>
@@ -404,7 +416,15 @@
 
     <section class="tab folio-tab{{#if activeTabs.skills}} active{{/if}}" data-group="primary" data-tab="skills">
       <section class="folio-grid two-column">
-        <section class="notes-box"><h2>Saving Throws, Proficiencies, Languages, Movement, Senses</h2><textarea name="system.identity.proficiencies" {{#unless editable}}disabled{{/unless}}>{{system.identity.proficiencies}}</textarea></section>
+        <section class="notes-box save-roll-panel">
+          <h2>Saving Throws, Proficiencies, Languages, Movement, Senses</h2>
+          <div class="save-roll-buttons">
+            {{#each abilities as |ability|}}
+              <button type="button" data-action="roll-saving-throw" data-ability="{{ability.key}}" title="Roll {{ability.label}} Saving Throw"><i class="fas fa-dice-d20"></i><span>{{ability.label}}</span></button>
+            {{/each}}
+          </div>
+          <textarea name="system.identity.proficiencies" {{#unless editable}}disabled{{/unless}}>{{system.identity.proficiencies}}</textarea>
+        </section>
         <section class="ledger-section item-drop-panel" data-drop-target="items">
           <header class="ledger-heading">
             <h2>Skills And Proficiencies</h2>
@@ -424,6 +444,7 @@
                 <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
                 <div class="item-actions">
                   {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                  {{#if item.canSkillCheck}}<button type="button" data-action="roll-skill-item" title="Skill Check"><i class="fas fa-dice-d20"></i></button>{{/if}}
                   {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                   {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                   {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}

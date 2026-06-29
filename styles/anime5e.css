@@ -637,7 +637,7 @@
   align-items: end;
   display: grid;
   gap: 8px;
-  grid-template-columns: repeat(3, minmax(90px, 1fr)) auto;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
 }
 
 .anime5e .quick-roll-controls label {
@@ -709,6 +709,24 @@
 
 .anime5e .damage-controls input {
   min-width: 0;
+}
+
+.anime5e .save-roll-panel {
+  display: grid;
+}
+
+.anime5e .save-roll-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+}
+
+.anime5e .save-roll-buttons button {
+  align-items: center;
+  display: inline-flex;
+  gap: 5px;
+  min-height: 28px;
 }
 
 .anime5e .equipped-summary {
