@@ -137,6 +137,27 @@
                 <input type="text" name="system.progression.classes.{{classRow.key}}.hitDice" value="{{classRow.data.hitDice}}" {{#unless ../editable}}disabled{{/unless}}>
               {{/each}}
             </div>
+            <div class="level-progress-summary">
+              <span>Current Level <strong>{{creation.levelProgress.currentLevel}}</strong></span>
+              <span>Current XP <strong>{{creation.levelProgress.currentExperience}}</strong></span>
+              <span>Next Level <strong>{{creation.levelProgress.nextLevelLabel}}</strong></span>
+              <span>XP Needed <strong>{{creation.levelProgress.xpToNextLabel}}</strong></span>
+              <span>Next Threshold <strong>{{creation.levelProgress.nextThresholdLabel}}</strong></span>
+              <span>Progress <strong>{{creation.levelProgress.progressLabel}}</strong></span>
+            </div>
+            <div class="class-level-summary {{creation.classLevel.status}}">
+              <span>Owned Class Levels <strong>{{creation.classLevel.classLevelTotal}}</strong></span>
+              <span>Class Items <strong>{{creation.classLevel.classLevelItems}}</strong></span>
+              <span>Actor Level <strong>{{creation.classLevel.actorLevel}}</strong></span>
+              <span>Status <strong>{{creation.classLevel.statusLabel}}</strong></span>
+            </div>
+            {{#if creation.classLevel.hasClassLevels}}
+              <ol class="class-level-list">
+                {{#each creation.classLevel.classes as |classItem|}}
+                  <li><span>{{classItem.name}}</span><strong>{{classItem.level}}</strong></li>
+                {{/each}}
+              </ol>
+            {{/if}}
           </section>
 
           <section class="paint-panel creation-panel">

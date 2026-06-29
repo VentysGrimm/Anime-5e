@@ -129,8 +129,67 @@ export function calculateStartingExperience(level) {
   return LEVEL_XP_THRESHOLDS[normalizeCharacterLevel(level)] ?? null;
 }
 
+export function getLevelProgress(level, experience) {
+  const currentLevel = normalizeCharacterLevel(level);
+  const currentExperience = Math.max(0, Math.trunc(numberOrZero(experience)));
+  const currentThreshold = LEVEL_XP_THRESHOLDS[currentLevel] ?? null;
+  const nextLevel = currentLevel + 1;
+  const nextThreshold = LEVEL_XP_THRESHOLDS[nextLevel] ?? null;
+  const hasNextThreshold = nextThreshold !== null;
+  const levelSpan = currentThreshold !== null && hasNextThreshold
+    ? Math.max(0, nextThreshold - currentThreshold)
+    : null;
+  const xpIntoLevel = currentThreshold !== null
+    ? Math.max(0, currentExperience - currentThreshold)
+    : null;
+
+  return {
+    currentLevel,
+    currentExperience,
+    currentThreshold,
+    nextLevel: hasNextThreshold ? nextLevel : null,
+    nextThreshold,
+    hasNextThreshold,
+    xpIntoLevel,
+    xpForLevel: levelSpan,
+    xpToNext: hasNextThreshold ? Math.max(0, nextThreshold - currentExperience) : null,
+    progressLabel: levelSpan !== null ? `${Math.min(xpIntoLevel, levelSpan)} / ${levelSpan}` : "Untracked",
+    nextLevelLabel: hasNextThreshold ? `Level ${nextLevel}` : "Beyond 20",
+    nextThresholdLabel: hasNextThreshold ? String(nextThreshold) : "Untracked",
+    xpToNextLabel: hasNextThreshold ? String(Math.max(0, nextThreshold - currentExperience)) : "Untracked"
+  };
+}
+
 export function calculateRecommendedDiscretionaryPoints(level) {
   return DEFAULT_STARTING_DISCRETIONARY_POINTS + Math.max(0, normalizeCharacterLevel(level) - 1);
+}
+
+export function summarizeClassLevelState(items = [], actorLevel = 1) {
+  const normalizedActorLevel = normalizeCharacterLevel(actorLevel);
+  const classes = (items ?? [])
+    .filter((item) => item?.type === "class")
+    .map((item) => ({
+      id: item.id,
+      name: item.name ?? "Unnamed Class",
+      level: positiveNumber(item.system?.level)
+    }));
+  const classLevelItems = classes.filter((item) => item.level > 0).length;
+  const classLevelTotal = classes.reduce((total, item) => total + item.level, 0);
+  const hasClassLevels = classLevelItems > 0;
+  const matchesActorLevel = hasClassLevels && classLevelTotal === normalizedActorLevel;
+  const mismatch = hasClassLevels && classLevelTotal !== normalizedActorLevel;
+
+  return {
+    actorLevel: normalizedActorLevel,
+    classLevelTotal,
+    classLevelItems,
+    classes,
+    hasClassLevels,
+    matchesActorLevel,
+    mismatch,
+    status: matchesActorLevel ? "valid" : "warning",
+    statusLabel: matchesActorLevel ? "Matches" : hasClassLevels ? "Mismatch" : "No class levels"
+  };
 }
 
 export function getCharacterBenchmark(level) {

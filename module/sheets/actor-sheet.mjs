@@ -1,6 +1,13 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
 import { buildCoreAttributeEffectContext } from "../rules/attribute-effects.mjs";
-import { calculatePointSummary, calculateRecommendedDiscretionaryPoints, calculateStartingExperience, normalizeCharacterLevel } from "../rules/points.mjs";
+import {
+  calculatePointSummary,
+  calculateRecommendedDiscretionaryPoints,
+  calculateStartingExperience,
+  getLevelProgress,
+  normalizeCharacterLevel,
+  summarizeClassLevelState
+} from "../rules/points.mjs";
 import { applyEnergyChange, applyHitPointChange } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -285,7 +292,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
     context.pointSummary = this.constructor._preparePointSummary(system, items);
-    context.creation = this.constructor._prepareCreationContext(system, context.pointSummary);
+    context.creation = this.constructor._prepareCreationContext(system, context.pointSummary, items);
     context.attributeEffects = buildCoreAttributeEffectContext({
       system: this.actor._source?.system ?? system,
       items
@@ -455,11 +462,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     };
   }
 
-  static _prepareCreationContext(system, pointSummary) {
+  static _prepareCreationContext(system, pointSummary, items = []) {
     const creation = system.creation ?? {};
     const startingLevel = normalizeCharacterLevel(creation.startingLevel ?? system.level);
     const startingExperience = numberOrZero(creation.startingExperience ?? system.experience);
     const recommendedExperience = calculateStartingExperience(startingLevel);
+    const levelProgress = getLevelProgress(system.level, system.experience);
+    const classLevel = summarizeClassLevelState(items, system.level);
     const validationStatus = creation.validationStatus || (pointSummary.warnings.length ? "warning" : "valid");
     const validationNotes = hasText(creation.validationNotes)
       ? creation.validationNotes
@@ -474,6 +483,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       recommendedDiscretionaryPoints: calculateRecommendedDiscretionaryPoints(startingLevel),
       recommendedExperience,
       hasRecommendedExperience: recommendedExperience !== null,
+      levelProgress,
+      classLevel,
       benchmark: pointSummary.benchmark,
       benchmarkSummary: pointSummary.benchmarkSummary,
       validationStatus,
