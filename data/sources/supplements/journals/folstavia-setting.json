@@ -1,0 +1,36 @@
+{
+  "pack": "anime5e.supplemental-journals",
+  "documentType": "JournalEntry",
+  "folders": [
+    {
+      "name": "Folstavia - Setting",
+      "color": "#5b6f90"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Folstavia: The Infinite Crossroads Overview",
+      "folder": "Folstavia - Setting",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF pp. 14, 256.</p><p>Folstavia is the official Anime 5E fantasy setting, known as the Infinite Crossroads because anomalies in space and time have connected it to other realities for millennia.</p><p>The setting supports a wide range of fantasy campaigns across its lands and planes, with new Species, Classes, Attributes, equipment, monsters, neomorphs, pantheons, factions, and regional adventure hooks intended for later source-backed expansion.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.infinite-crossroads-overview",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 14,
+            "importId": "folstavia.journal.infinite-crossroads-overview"
+          }
+        }
+      }
+    }
+  ]
+}

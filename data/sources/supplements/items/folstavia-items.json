@@ -1,0 +1,15 @@
+{
+  "pack": "anime5e.supplemental-items",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Items - Folstavia",
+      "color": "#8c7a4f"
+    },
+    {
+      "name": "Vehicles - Folstavia",
+      "color": "#7f657d"
+    }
+  ],
+  "documents": []
+}

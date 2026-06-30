@@ -1,0 +1,15 @@
+{
+  "pack": "anime5e.supplemental-character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Attributes - Folstavia",
+      "color": "#6f7f90"
+    },
+    {
+      "name": "Techniques - Folstavia",
+      "color": "#7f6a52"
+    }
+  ],
+  "documents": []
+}
