@@ -1039,6 +1039,26 @@
         <p>{{folioPages.companions.summary}}</p>
       </header>
 
+      {{#if linkedActors.active}}
+        <section class="ledger-section linked-actor-panel">
+          <header class="ledger-heading">
+            <h2>Linked Actors</h2>
+          </header>
+          <ol class="item-list folio-item-list">
+            {{#each linkedActors.entries as |entry|}}
+              <li class="item-row{{#if entry.missing}} missing-link{{/if}}" data-item-id="{{entry.itemId}}">
+                <span></span>
+                <div class="item-main"><strong>{{entry.actorName}}</strong><small>{{entry.itemName}}</small></div>
+                <div class="item-tags">{{#each entry.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+                <div class="item-actions">
+                  <button type="button" data-action="open-linked-actor" data-linked-uuid="{{entry.uuid}}" title="Open linked actor"><i class="fas fa-external-link-alt"></i></button>
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        </section>
+      {{/if}}
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
           <h2>Vehicles, Mecha, Mounts, Companions</h2>
@@ -1062,6 +1082,7 @@
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.canLinkActor}}<button type="button" data-action="create-linked-actor" title="{{item.linkActorTitle}}"><i class="fas {{item.linkActorIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
               </div>

@@ -161,6 +161,7 @@ const FIELD_LABELS = {
   movementModes: "Movement Modes",
   movementModifier: "Movement Modifier",
   overrideNotes: "Override Notes",
+  owner: "Owner",
   parentAttribute: "Parent Attribute",
   pointImpact: "Point Impact",
   pointModifier: "Point Modifier",

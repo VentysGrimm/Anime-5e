@@ -135,6 +135,9 @@
           Linked Actor UUID
           <input type="text" name="system.transport.linkedActorUuid" value="{{system.transport.linkedActorUuid}}" {{#unless editable}}disabled{{/unless}}>
         </label>
+        {{#if transportProfile.hasLinkedActor}}
+          <button type="button" class="roll-action" data-action="open-linked-actor" data-linked-uuid="{{system.transport.linkedActorUuid}}"><i class="fas fa-external-link-alt"></i> Linked Actor</button>
+        {{/if}}
       </div>
       <label class="full-width">
         Cargo / Notes

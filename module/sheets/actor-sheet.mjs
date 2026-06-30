@@ -202,6 +202,7 @@ const DEFAULT_ITEM_TYPES = [
 ];
 
 const EQUIPPABLE_ITEM_TYPES = new Set(["weapon", "armor", "shield"]);
+const LINKABLE_ACTOR_ITEM_TYPES = new Set(["mount", "vehicle", "mecha", "monsterVariant"]);
 const CREATURE_ACTOR_TYPES = new Set(["companion", "monster", "npc"]);
 const TRANSPORT_ACTOR_TYPES = new Set(["itemConstruct", "mecha", "vehicle"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
@@ -343,6 +344,12 @@ function isSpellLikeAttributeItem(item) {
   return item.type === "attribute" && sourceIdForItem(item) === "core.attribute.spell-like-ability";
 }
 
+function linkedActorTypeForItem(item) {
+  if (item.type === "vehicle") return "vehicle";
+  if (item.type === "mecha") return "mecha";
+  return "companion";
+}
+
 function followerPointBudgetForItem(item) {
   const sourceId = sourceIdForItem(item);
   const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
@@ -450,6 +457,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.system = system;
     context.items = items.map((item) => this.constructor._prepareItemContext(item));
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
+    context.linkedActors = await this.constructor._prepareLinkedActorContext(items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
     context.speciesWorkflow = this.constructor._prepareSpeciesWorkflowContext(system, items, context.items);
     context.sizeTemplateWorkflow = this.constructor._prepareSizeTemplateWorkflowContext(system, items, context.items);
@@ -550,7 +558,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       system.damage,
       system.damageType,
       system.armourClass !== undefined ? `AC ${system.armourClass}` : null,
-      system.speed
+      system.speed,
+      hasText(system.pilot) ? `Pilot: ${system.pilot}` : null,
+      hasText(system.occupants) ? `Occupants: ${system.occupants}` : null,
+      hasText(system.passengers) ? `Passengers: ${system.passengers}` : null,
+      hasText(system.crew) ? `Crew: ${system.crew}` : null,
+      hasText(system.linkedActorUuid) ? "Actor linked" : null
     ].filter(Boolean);
 
     return {
@@ -565,6 +578,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       description: system.description,
       equipped: !!system.equipped,
       equippable: EQUIPPABLE_ITEM_TYPES.has(item.type),
+      canLinkActor: LINKABLE_ACTOR_ITEM_TYPES.has(item.type),
+      linkActorIcon: hasText(system.linkedActorUuid) ? "fa-external-link-alt" : "fa-link",
+      linkActorTitle: hasText(system.linkedActorUuid) ? "Open linked actor" : "Create linked actor",
       canUse: true,
       canRoll: hasText(system.roll),
       canSkillCheck: item.type === "skill"
@@ -628,10 +644,45 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   static _prepareTransportProfileContext(actor, system) {
+    const transport = system.transport ?? {};
     return {
       active: TRANSPORT_ACTOR_TYPES.has(actor.type),
       actorType: localizedType("Actor", actor.type),
-      transport: system.transport ?? {}
+      transport,
+      hasLinkedActor: hasText(transport.linkedActorUuid)
+    };
+  }
+
+  static async _prepareLinkedActorContext(items = []) {
+    const linkedItems = items.filter((item) => hasText(item.system?.linkedActorUuid));
+    const entries = await Promise.all(linkedItems.map(async (item) => {
+      const uuid = item.system.linkedActorUuid.trim();
+      const actor = await this._resolveLinkedDocument(uuid, "Actor");
+      const actorType = actor ? localizedType("Actor", actor.type) : "Missing Actor";
+      const pointBudget = numberOrZero(item.system?.totalPoints ?? item.system?.points ?? item.system?.cost);
+      const tags = [
+        localizedType("Item", item.type),
+        actorType,
+        pointBudget ? `${pointBudget} Points` : null,
+        hasText(item.system?.pilot) ? `Pilot: ${item.system.pilot}` : null,
+        hasText(item.system?.occupants) ? `Occupants: ${item.system.occupants}` : null,
+        hasText(item.system?.passengers) ? `Passengers: ${item.system.passengers}` : null
+      ].filter(Boolean);
+
+      return {
+        itemId: item.id,
+        itemName: item.name,
+        actorName: actor?.name ?? uuid,
+        actorType,
+        uuid,
+        missing: !actor,
+        tags
+      };
+    }));
+
+    return {
+      active: entries.length > 0,
+      entries
     };
   }
 
@@ -1169,6 +1220,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='create-linked-follower']").forEach((button) => {
       button.addEventListener("click", this._onCreateLinkedFollower.bind(this));
+    });
+    element.querySelectorAll("[data-action='create-linked-actor']").forEach((button) => {
+      button.addEventListener("click", this._onCreateLinkedActor.bind(this));
+    });
+    element.querySelectorAll("[data-action='open-linked-actor']").forEach((button) => {
+      button.addEventListener("click", this._onOpenLinkedActor.bind(this));
     });
     element.querySelectorAll("[data-action='create-linked-spell']").forEach((button) => {
       button.addEventListener("click", this._onCreateLinkedSpell.bind(this));
@@ -1829,6 +1886,96 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       "system.linkedActorUuid": actor.uuid,
       "system.trackingNotes": this.constructor._appendTrackingNote(item.system?.trackingNotes, `Linked actor: ${actor.name} (${actor.uuid}).`)
     });
+    actor.sheet?.render(true);
+  }
+
+  async _onCreateLinkedActor(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || !LINKABLE_ACTOR_ITEM_TYPES.has(item.type)) return;
+
+    const linkedActor = await this.constructor._resolveLinkedActor(item);
+    if (linkedActor) {
+      linkedActor.sheet?.render(true);
+      return;
+    }
+
+    const actorType = linkedActorTypeForItem(item);
+    const pointBudget = numberOrZero(item.system?.totalPoints ?? item.system?.points ?? item.system?.cost);
+    const sourceLine = [item.system?.source, item.system?.sourcePage ? `p. ${item.system.sourcePage}` : null].filter(Boolean).join(", ");
+    const details = [
+      `<p>Created from <strong>${escapeHtml(item.name)}</strong> on ${escapeHtml(this.actor.name)}.</p>`,
+      pointBudget ? `<p><strong>Item Points:</strong> ${pointBudget}.</p>` : "",
+      sourceLine ? `<p><small>${escapeHtml(sourceLine)}</small></p>` : ""
+    ].join("");
+    const actorSystem = {
+      identity: {
+        actorRole: localizedType("Item", item.type),
+        totalPoints: pointBudget
+      },
+      combat: {
+        armourClass: numberOrZero(item.system?.armourClass) || 10,
+        movementSpeed: numberOrZero(item.system?.movementSpeed)
+      },
+      source: {
+        book: item.system?.source ?? "",
+        page: item.system?.sourcePage ?? null,
+        sourceId: item.system?.sourceId ?? "",
+        importId: item.system?.importId ?? ""
+      },
+      notes: {
+        overview: details,
+        companions: details
+      }
+    };
+
+    if (actorType === "vehicle" || actorType === "mecha") {
+      actorSystem.transport = {
+        pilot: item.system?.pilot || this.actor.name,
+        occupants: item.system?.occupants || item.system?.passengers || "",
+        capacity: item.system?.passengers || "",
+        crew: item.system?.crew || "",
+        cargo: item.system?.cargo || "",
+        linkedActorUuid: this.actor.uuid,
+        itemBuildPoints: pointBudget
+      };
+    }
+
+    const actor = await Actor.create({
+      name: item.name,
+      type: actorType,
+      img: item.img,
+      system: actorSystem
+    });
+
+    if (!actor) return;
+
+    const update = {
+      "system.linkedActorUuid": actor.uuid
+    };
+    if (item.type === "vehicle" || item.type === "mecha") {
+      update["system.pilot"] = item.system?.pilot || this.actor.name;
+    } else if (item.type === "mount") {
+      update["system.rider"] = item.system?.rider || this.actor.name;
+    }
+    if ("owner" in (item.system ?? {})) update["system.owner"] = item.system?.owner || this.actor.name;
+
+    await item.update(update);
+    actor.sheet?.render(true);
+  }
+
+  async _onOpenLinkedActor(event) {
+    event.preventDefault();
+
+    const uuid = event.currentTarget.dataset.linkedUuid || this._getEmbeddedItem(event)?.system?.linkedActorUuid;
+    const actor = await this.constructor._resolveLinkedDocument(uuid, "Actor");
+    if (!actor) {
+      ui.notifications?.warn("Anime 5e could not resolve that linked actor.");
+      return;
+    }
+
     actor.sheet?.render(true);
   }
 

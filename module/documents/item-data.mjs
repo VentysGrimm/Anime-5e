@@ -437,6 +437,9 @@ export class Anime5eMountData extends Anime5eEquipmentData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      owner: textField(),
+      rider: textField(),
+      linkedActorUuid: textField(),
       creatureType: textField(),
       size: textField(),
       challengeRating: textField(),
@@ -455,6 +458,10 @@ export class Anime5eVehicleData extends Anime5eEquipmentData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      owner: textField(),
+      pilot: textField(),
+      occupants: textField(),
+      linkedActorUuid: textField(),
       armourClass: numberField(10, { min: 0 }),
       speed: textField(),
       crew: textField(),
@@ -543,6 +550,8 @@ export class Anime5eMonsterVariantData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      owner: textField(),
+      linkedActorUuid: textField(),
       baseCreature: textField(),
       sizeAndType: textField(),
       challengeRating: textField(),
