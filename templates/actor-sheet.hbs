@@ -576,6 +576,30 @@
           {{/each}}
         </ol>
       </section>
+      <section class="ledger-section complex-attribute-panel">
+        <header class="ledger-heading">
+          <h2>Complex Attribute Tracking</h2>
+        </header>
+        <ol class="item-list folio-item-list">
+          {{#each complexAttributes.items as |item|}}
+            <li class="item-row" data-item-id="{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.name}}">
+              <div class="item-main">
+                <strong>{{item.name}}</strong>
+                <small>{{item.trackingSummary}}</small>
+                {{#if item.trackingNotes}}<small>{{item.trackingNotes}}</small>{{/if}}
+              </div>
+              <div class="item-tags">{{#each item.trackingTags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+              <div class="item-actions">
+                {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+              </div>
+            </li>
+          {{else}}
+            <li class="item-row empty"><span></span><span>No complex Attributes to track.</span><small></small></li>
+          {{/each}}
+        </ol>
+      </section>
       <section class="notes-box"><h2>Activation, Range, Duration, Targets, Energy Costs</h2><textarea name="system.notes.attributes" {{#unless editable}}disabled{{/unless}}>{{system.notes.attributes}}</textarea></section>
     </section>
 

@@ -98,8 +98,17 @@ export class Anime5eAttributeData extends Anime5eBaseItemData {
       damage: textField(),
       damageType: textField(),
       range: textField(),
+      scope: textField(),
+      duration: textField(),
+      targetCount: textField(),
+      energyCost: textField(),
+      trackingMode: textField(),
+      linkedActorUuid: textField(),
+      linkedItemUuid: textField(),
+      linkedDocumentUuid: textField(),
       movementModes: textField(),
       weaponNotes: textField(),
+      trackingNotes: textField(),
       progression: textField()
     };
   }

@@ -187,6 +187,22 @@ const DEFAULT_ITEM_TYPES = [
 
 const EQUIPPABLE_ITEM_TYPES = new Set(["weapon", "armor", "shield"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
+const COMPLEX_ATTRIBUTE_SOURCE_IDS = new Set([
+  "core.attribute.companion",
+  "core.attribute.dynamic-powers",
+  "core.attribute.dynamic-powers-lesser",
+  "core.attribute.mimic",
+  "core.attribute.mind-control",
+  "core.attribute.mind-control-lesser",
+  "core.attribute.minions",
+  "core.attribute.minions-greater",
+  "core.attribute.nullify",
+  "core.attribute.pocket-dimension",
+  "core.attribute.portal",
+  "core.attribute.telepathy",
+  "core.attribute.telepathy-lesser",
+  "core.attribute.transfer"
+]);
 
 const REQUIRED_NUMBER_DEFAULTS = {
   "system.level": 1,
@@ -243,6 +259,10 @@ function isWeaponAttributeItem(item) {
   if (sourceIdForItem(item) === WEAPON_ATTRIBUTE_SOURCE_ID) return true;
 
   return String(item.name ?? "").trim().toLowerCase() === "weapon";
+}
+
+function isComplexAttributeItem(item) {
+  return item.type === "attribute" && COMPLEX_ATTRIBUTE_SOURCE_IDS.has(sourceIdForItem(item));
 }
 
 function weaponAttributeDamageFormula(item) {
@@ -321,6 +341,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
     context.attributeOffense = this.constructor._prepareAttributeOffenseContext(items, context.items);
+    context.complexAttributes = this.constructor._prepareComplexAttributeContext(items, context.items);
     context.pointSummary = this.constructor._preparePointSummary(system, items);
     context.creation = this.constructor._prepareCreationContext(system, context.pointSummary, items);
     context.attributeEffects = buildCoreAttributeEffectContext({
@@ -498,6 +519,40 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       .filter(Boolean);
 
     return { weapons };
+  }
+
+  static _prepareComplexAttributeContext(rawItems, preparedItems) {
+    const preparedById = new Map(preparedItems.map((item) => [item.id, item]));
+    const items = rawItems
+      .filter((item) => isComplexAttributeItem(item))
+      .map((item) => {
+        const prepared = preparedById.get(item.id);
+        if (!prepared) return null;
+
+        const system = item.system ?? {};
+        const trackingTags = [
+          `Rank ${numberOrZero(system.rank)}`,
+          hasText(system.scope) ? `Scope: ${system.scope}` : null,
+          hasText(system.duration) ? `Duration: ${system.duration}` : null,
+          hasText(system.targetCount) ? `Targets: ${system.targetCount}` : null,
+          hasText(system.energyCost) ? `Energy: ${system.energyCost}` : null
+        ].filter(Boolean);
+        const linkTags = [
+          hasText(system.linkedActorUuid) ? "Actor linked" : null,
+          hasText(system.linkedItemUuid) ? "Item linked" : null,
+          hasText(system.linkedDocumentUuid) ? "Document linked" : null
+        ].filter(Boolean);
+
+        return {
+          ...prepared,
+          trackingTags: [...trackingTags, ...linkTags],
+          trackingSummary: system.trackingMode || system.progression || system.category || "Manual tracking",
+          trackingNotes: system.trackingNotes
+        };
+      })
+      .filter(Boolean);
+
+    return { items };
   }
 
   static _formatAbilityEffectText(ability) {

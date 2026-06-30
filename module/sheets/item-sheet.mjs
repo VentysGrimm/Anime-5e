@@ -4,7 +4,7 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
-const MULTILINE_FIELDS = new Set(["constructionNotes", "movementModes", "progressionNotes", "result", "statBlock", "weaponNotes"]);
+const MULTILINE_FIELDS = new Set(["constructionNotes", "movementModes", "progressionNotes", "result", "statBlock", "trackingNotes", "weaponNotes"]);
 const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
 const NUMBER_FIELDS = new Set([
@@ -49,6 +49,8 @@ const FIELD_LABELS = {
   damageType: "Damage Type",
   damageModifier: "Damage Modifier",
   dexterityRule: "Dexterity Rule",
+  duration: "Duration",
+  energyCost: "Energy Cost",
   equipped: "Equipped",
   effectiveRank: "Effective Rank",
   enhancements: "Enhancements",
@@ -59,6 +61,9 @@ const FIELD_LABELS = {
   itemCategory: "Item Category",
   limiters: "Limiters",
   linkedDocumentType: "Linked Document Type",
+  linkedDocumentUuid: "Linked Document UUID",
+  linkedActorUuid: "Linked Actor UUID",
+  linkedItemUuid: "Linked Item UUID",
   linkedSourceId: "Linked Source ID",
   material: "Material",
   movementModes: "Movement Modes",
@@ -79,7 +84,10 @@ const FIELD_LABELS = {
   stealth: "Stealth",
   strengthRequirement: "Strength Requirement",
   strengthModifier: "Strength Modifier",
+  targetCount: "Target Count",
   totalPoints: "Total Points",
+  trackingMode: "Tracking Workflow",
+  trackingNotes: "Tracking Notes",
   value: "Value",
   weight: "Weight",
   weaponNotes: "Weapon Notes",
