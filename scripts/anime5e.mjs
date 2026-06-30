@@ -114,9 +114,9 @@ Hooks.once("init", () => {
   CONFIG.ANIME5E = ANIME5E;
 
   game.settings.registerMenu(ANIME5E.id, "coreCompendiumImport", {
-    name: "Anime 5e Core Compendiums",
+    name: "Anime 5e Source Compendiums",
     label: "Import / Update",
-    hint: "Import or update source-backed starter content into the declared Anime 5e compendium packs.",
+    hint: "Import or update source-backed core and supplemental content into the declared Anime 5e compendium packs.",
     icon: "fa-solid fa-file-import",
     type: Anime5eCompendiumImportDialog,
     restricted: true

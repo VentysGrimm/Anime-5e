@@ -1,0 +1,36 @@
+{
+  "pack": "anime5e.supplemental-journals",
+  "documentType": "JournalEntry",
+  "folders": [
+    {
+      "name": "Supplemental Journals - Import Tests",
+      "color": "#5b6f90"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Supplemental Journal Import Test",
+      "folder": "Supplemental Journals - Import Tests",
+      "pages": [
+        {
+          "name": "Supplemental Journal Import",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Supplemental Pack Structure.</p><p>Minimal source-backed JournalEntry proving that supplemental setting, adventure, release-note, and source-guide journals can import separately from core rules references.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "supplements.structure.journals.import-test",
+          "source": {
+            "book": "Anime 5E Supplemental Pack Structure",
+            "page": null,
+            "importId": "supplements.structure.journals.import-test"
+          }
+        }
+      }
+    }
+  ]
+}

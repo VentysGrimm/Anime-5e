@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e.supplements",
+  "label": "Anime 5e Supplemental Compendium Sources",
+  "includes": [
+    "data/sources/supplements/index.json"
+  ]
+}

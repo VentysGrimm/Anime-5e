@@ -1,0 +1,37 @@
+{
+  "pack": "anime5e.supplemental-character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Supplemental Character Options - Import Tests",
+      "color": "#6d8f72"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Supplemental Character Option Import Test",
+      "type": "feature",
+      "folder": "Supplemental Character Options - Import Tests",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Supplemental Pack Structure.</p><p>Minimal source-backed Item proving that supplemental character-option packs import separately from core character options. Replace this with species, classes, lifepaths, backgrounds, proficiencies, powers, or similar entries in later supplement slices.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Supplemental Pack Structure",
+        "sourceId": "supplements.structure.character-options.import-test",
+        "sourcePage": null,
+        "importId": "supplements.structure.character-options.import-test"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "supplements.structure.character-options.import-test",
+          "source": {
+            "book": "Anime 5E Supplemental Pack Structure",
+            "page": null,
+            "importId": "supplements.structure.character-options.import-test"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -451,6 +451,46 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "supplemental-character-options",
+      "label": "Supplemental Character Options",
+      "path": "packs/supplemental-character-options",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "supplemental-items",
+      "label": "Supplemental Items",
+      "path": "packs/supplemental-items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "supplemental-creatures",
+      "label": "Supplemental Creatures",
+      "path": "packs/supplemental-creatures",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "supplemental-journals",
+      "label": "Supplemental Journals",
+      "path": "packs/supplemental-journals",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "primaryTokenAttribute": "combat.hitPoints",

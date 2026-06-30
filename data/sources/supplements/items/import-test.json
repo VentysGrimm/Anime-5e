@@ -1,0 +1,37 @@
+{
+  "pack": "anime5e.supplemental-items",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Supplemental Items - Import Tests",
+      "color": "#8c7a4f"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Supplemental Item Import Test",
+      "type": "equipment",
+      "folder": "Supplemental Items - Import Tests",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Supplemental Pack Structure.</p><p>Minimal source-backed Item proving that supplemental equipment, weapons, armour, shields, materials, vehicles, mecha, and Items of Power can import into their own pack without polluting core equipment.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Supplemental Pack Structure",
+        "sourceId": "supplements.structure.items.import-test",
+        "sourcePage": null,
+        "importId": "supplements.structure.items.import-test"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "supplements.structure.items.import-test",
+          "source": {
+            "book": "Anime 5E Supplemental Pack Structure",
+            "page": null,
+            "importId": "supplements.structure.items.import-test"
+          }
+        }
+      }
+    }
+  ]
+}

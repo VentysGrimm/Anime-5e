@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e.supplements.index",
+  "label": "Supplemental Source Index",
+  "includes": [
+    "data/sources/supplements/character-options/import-test.json",
+    "data/sources/supplements/items/import-test.json",
+    "data/sources/supplements/creatures/import-test.json",
+    "data/sources/supplements/journals/import-test.json"
+  ]
+}

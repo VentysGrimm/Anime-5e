@@ -1,0 +1,56 @@
+{
+  "pack": "anime5e.supplemental-creatures",
+  "documentType": "Actor",
+  "folders": [
+    {
+      "name": "Supplemental Creatures - Import Tests",
+      "color": "#7f657d"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Supplemental Creature Import Test",
+      "type": "npc",
+      "folder": "Supplemental Creatures - Import Tests",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Minimal source-backed Actor proving that supplemental creatures import separately from core monsters, NPCs, and neomorphs.",
+          "speciesAndSize": "Supplement Test",
+          "actorRole": "Import Test",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Supplemental source tree",
+          "communities": "Future supplement packs",
+          "alignment": "Unspecified"
+        },
+        "source": {
+          "book": "Anime 5E Supplemental Pack Structure",
+          "page": null,
+          "sourceId": "supplements.structure.creatures.import-test",
+          "importId": "supplements.structure.creatures.import-test"
+        },
+        "combat": {
+          "armourNotes": "Not a combat stat block",
+          "defenseSummary": "Replace with supplement creature defenses in later slices.",
+          "offenseSummary": "Replace with supplement creature attacks in later slices."
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Supplemental Pack Structure.</p><p>Minimal source-backed actor for validating supplemental creature import paths.</p>",
+        "notes": {
+          "overview": "<p>Use this pack for Folstavia, Beyonder Worlds, Monstrum Libri, Mounts and Monsters, and adventure-specific creatures when those slices expand the data.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "supplements.structure.creatures.import-test",
+          "source": {
+            "book": "Anime 5E Supplemental Pack Structure",
+            "page": null,
+            "importId": "supplements.structure.creatures.import-test"
+          }
+        }
+      }
+    }
+  ]
+}

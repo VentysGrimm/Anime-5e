@@ -20,7 +20,8 @@ Then create a world using the `Anime 5e` game system.
 - `module/documents/` contains v14 `TypeDataModel` classes for Actor and Item subtypes.
 - `module/data/compendiums.mjs` imports starter compendium data into declared packs.
 - `module/sheets/` contains v14 sheet classes registered through `DocumentSheetConfig`.
-- `data/sources/core/` contains foldered source JSON for compendium seeding.
+- `data/sources/core/` contains foldered Core Rules source JSON for compendium seeding.
+- `data/sources/supplements/` contains separated supplement source JSON for non-core books and import-test entries.
 - `templates/` contains editable Handlebars sheets.
 - `styles/anime5e.css` contains system sheet styles.
 - `tools/validate-package.mjs` performs a lightweight local sanity check.
@@ -32,9 +33,12 @@ Then create a world using the `Anime 5e` game system.
 The manifest declares Item compendium packs under `packs/`, but the LevelDB pack
 directories are not committed. A GM creates or updates those packs in Foundry via
 the **Anime 5e Core Compendiums** settings menu, which imports the source-backed
-JSON from `data/sources/core/`.
+JSON from `data/sources/core/` and `data/sources/supplements/`.
 
 `tools/validate-package.mjs` checks every declared pack path. A missing physical
 pack directory is accepted only when the pack has a matching source manifest in
 `data/core-compendiums.json`; otherwise validation fails with the missing path.
+
+Supplement source naming and folder conventions are documented in
+`docs/supplemental-source-conventions.md`.
 
