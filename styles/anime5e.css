@@ -1346,6 +1346,24 @@
   text-transform: uppercase;
 }
 
+.anime5e.encounter-threat-dialog {
+  display: grid;
+  gap: 10px;
+}
+
+.anime5e .encounter-threat-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+}
+
+.anime5e .encounter-threat-grid label {
+  display: grid;
+  font-weight: 800;
+  gap: 3px;
+  text-transform: uppercase;
+}
+
 .anime5e .quick-roll-controls input,
 .anime5e .quick-roll-controls select {
   min-width: 0;

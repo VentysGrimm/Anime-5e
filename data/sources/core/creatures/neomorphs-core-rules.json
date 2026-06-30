@@ -15,7 +15,7 @@
       "img": "icons/svg/mystery-man.svg",
       "system": {
         "identity": {
-          "description": "Tiny cat-bunny neomorph used as the first source-backed neomorph pack seed.",
+          "description": "Tiny cat-bunny neomorph with strong agility, empathy, hearing, and smell.",
           "speciesAndSize": "Tiny neomorph",
           "actorRole": "Neomorph Companion",
           "challengeRating": "1/8",
@@ -31,6 +31,26 @@
           "sourceId": "core.neomorph.cabbit",
           "importId": "core.neomorph.cabbit"
         },
+        "abilities": {
+          "strength": {
+            "value": 3
+          },
+          "dexterity": {
+            "value": 15
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 5
+          },
+          "wisdom": {
+            "value": 12
+          },
+          "charisma": {
+            "value": 9
+          }
+        },
         "combat": {
           "armourClass": 16,
           "hitPoints": {
@@ -38,14 +58,19 @@
             "max": 3
           },
           "movementSpeed": 30,
+          "proficiencyBonus": 1,
           "armourNotes": "Armour Class 16",
-          "defenseSummary": "AC 16; HP 3 (1d6); Tiny neomorph.",
-          "offenseSummary": "Pet and battle form attacks are reserved for the full neomorph creature-content slice.",
-          "proficiencyBonus": 1
+          "defenseSummary": "AC 16; HP 3 (1d6); Tiny size defenses and small-size drawbacks.",
+          "offenseSummary": "Pet form has no listed Weapon attack.",
+          "attacks": {
+            "primary": {},
+            "secondary": {},
+            "tertiary": {}
+          }
         },
-        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 230.</p><p><strong>Starter entry:</strong> Minimal source-backed actor for proving neomorph pack import. Full Cabbit pet and battle forms are reserved for the creature-content slice.</p>",
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 230.</p><p><strong>Attributes:</strong> AC Bonus 4; Combat Mastery 4; Heightened Senses 2; Unique Attribute 2.</p><p><strong>Defects:</strong> Degraded 4; Easily Distracted 1 (Sadness); Limited Damage 4; Obstacle 4; Susceptible 4.</p><p><strong>Points:</strong> -1 Attribute/Defect subtotal + 5 Base + 54 Abilities = 58.</p>",
         "notes": {
-          "overview": "<p>Cabbits combine domestic cat and bunny traits, making them agile and empathetic pets.</p>"
+          "overview": ""
         }
       },
       "flags": {
@@ -55,6 +80,894 @@
             "book": "Anime 5E Fifth Edition Core Rules",
             "page": 230,
             "importId": "core.neomorph.cabbit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Cabbit - Battle",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Arena-bred Cabbit with enhanced jumping, speedburst movement, and Sonic Meow.",
+          "speciesAndSize": "Tiny neomorph",
+          "actorRole": "Battle Neomorph",
+          "challengeRating": "1/4",
+          "experienceValue": 100,
+          "totalPoints": 76,
+          "homelandHabitat": "Organised play arenas or trainer teams",
+          "communities": "Trainer-raised battle neomorphs",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 230,
+          "sourceId": "core.neomorph.cabbit-battle",
+          "importId": "core.neomorph.cabbit-battle"
+        },
+        "abilities": {
+          "strength": {
+            "value": 3
+          },
+          "dexterity": {
+            "value": 15
+          },
+          "constitution": {
+            "value": 12
+          },
+          "intelligence": {
+            "value": 7
+          },
+          "wisdom": {
+            "value": 12
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 9,
+            "max": 9
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Armour Class 16",
+          "defenseSummary": "AC 16; HP 9 (2d6+2); Tiny size defenses and small-size drawbacks.",
+          "offenseSummary": "Sonic Meow deals 1d6 force with Wisdom drain, Penetrating, Range 10 ft, and Spreading 2 targets.",
+          "attacks": {
+            "primary": {
+              "weapon": "Sonic Meow",
+              "modifier": "Effect",
+              "damage": "1d6",
+              "damageType": "Force"
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 230.</p><p><strong>Attributes:</strong> AC Bonus 4; Combat Mastery 4; Heightened Senses 2; Jumping 1; Special Movement 1; Unique Attribute 2; Weapon 6.</p><p><strong>Defects:</strong> Degraded 4; Easily Distracted 1; Limited Damage 4; Obstacle 4; Susceptible 4.</p><p><strong>Points:</strong> 7 Attribute/Defect subtotal + 10 Base + 59 Abilities = 76.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.cabbit-battle",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 230,
+            "importId": "core.neomorph.cabbit-battle"
+          }
+        }
+      }
+    },
+    {
+      "name": "Elephox",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Small elephant-fox neomorph with thick fur, toughness, and a playful nature.",
+          "speciesAndSize": "Small neomorph",
+          "actorRole": "Neomorph Companion",
+          "challengeRating": "1/8",
+          "experienceValue": 25,
+          "totalPoints": 56,
+          "homelandHabitat": "Domestic or trainer-raised habitats",
+          "communities": "Pets, companions, or trainer-raised arena creatures",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 231,
+          "sourceId": "core.neomorph.elephox",
+          "importId": "core.neomorph.elephox"
+        },
+        "abilities": {
+          "strength": {
+            "value": 12
+          },
+          "dexterity": {
+            "value": 7
+          },
+          "constitution": {
+            "value": 12
+          },
+          "intelligence": {
+            "value": 7
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 8
+          }
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 6,
+            "max": 6
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 1,
+          "armourNotes": "Armour Class 10",
+          "defenseSummary": "AC 10; HP 6 (1d8+2); Small-size drawbacks.",
+          "offenseSummary": "Pet form has no listed Weapon attack.",
+          "attacks": {
+            "primary": {},
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 231.</p><p><strong>Attributes:</strong> AC Bonus 2; Combat Mastery 2; Heightened Senses 1; Unique Attribute 1.</p><p><strong>Defects:</strong> Limited Damage 2; Obstacle 4; Slow 1; Susceptible 2.</p><p><strong>Points:</strong> -3 Attribute/Defect subtotal + 6 Base + 53 Abilities = 56.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.elephox",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 231,
+            "importId": "core.neomorph.elephox"
+          }
+        }
+      }
+    },
+    {
+      "name": "Elephox - Battle",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Battle Elephox with armoured skin and a Scamper Trample area attack.",
+          "speciesAndSize": "Small neomorph",
+          "actorRole": "Battle Neomorph",
+          "challengeRating": "1/4",
+          "experienceValue": 50,
+          "totalPoints": 72,
+          "homelandHabitat": "Organised play arenas or trainer teams",
+          "communities": "Trainer-raised battle neomorphs",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 231,
+          "sourceId": "core.neomorph.elephox-battle",
+          "importId": "core.neomorph.elephox-battle"
+        },
+        "abilities": {
+          "strength": {
+            "value": 14
+          },
+          "dexterity": {
+            "value": 7
+          },
+          "constitution": {
+            "value": 13
+          },
+          "intelligence": {
+            "value": 8
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 8
+          }
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 11,
+            "max": 11
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 2,
+          "armourNotes": "Armour Class 10",
+          "defenseSummary": "AC 10; HP 11 (2d8+2); Small-size drawbacks.",
+          "offenseSummary": "Scamper Trample deals 2d6 damage with Spreading 4 targets.",
+          "attacks": {
+            "primary": {
+              "weapon": "Scamper Trample",
+              "modifier": "Effect",
+              "damage": "2d6",
+              "damageType": "Bludgeoning"
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 231.</p><p><strong>Attributes:</strong> AC Bonus 2; Combat Mastery 2; Heightened Senses 1; Unique Attribute 1; Weapon 6.</p><p><strong>Defects:</strong> Limited Damage 2; Obstacle 4; Slow 1; Susceptible 2.</p><p><strong>Points:</strong> 3 Attribute/Defect subtotal + 12 Base + 57 Abilities = 72.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.elephox-battle",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 231,
+            "importId": "core.neomorph.elephox-battle"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gryphon",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Small lion-eagle neomorph with flight, mimic sound, sharp talons, and heightened senses.",
+          "speciesAndSize": "Small neomorph",
+          "actorRole": "Neomorph Companion",
+          "challengeRating": "1/4",
+          "experienceValue": 50,
+          "totalPoints": 68,
+          "homelandHabitat": "Domestic or trainer-raised habitats",
+          "communities": "Pets, companions, or trainer-raised arena creatures",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 232,
+          "sourceId": "core.neomorph.gryphon",
+          "importId": "core.neomorph.gryphon"
+        },
+        "abilities": {
+          "strength": {
+            "value": 7
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 11
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 8
+          }
+        },
+        "combat": {
+          "armourClass": 13,
+          "hitPoints": {
+            "value": 7,
+            "max": 7
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 1,
+          "armourNotes": "Armour Class 13",
+          "defenseSummary": "AC 13; HP 7 (2d6); Small-size drawbacks.",
+          "offenseSummary": "Talons/Beak +4 for 1d6-4 piercing.",
+          "attacks": {
+            "primary": {
+              "weapon": "Talons/Beak",
+              "modifier": "+4",
+              "damage": "1d6-4",
+              "damageType": "Piercing"
+            },
+            "secondary": {},
+            "tertiary": {}
+          },
+          "flightSpeed": "30 feet/round"
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 232.</p><p><strong>Attributes:</strong> AC Bonus 2; Combat Mastery 2; Features 1; Flight 1; Heightened Senses 2; Unique Attribute 1; Weapon 2.</p><p><strong>Defects:</strong> Limited Damage 2; Obstacle 4; Slow 1; Susceptible 2.</p><p><strong>Points:</strong> 2 Attribute/Defect subtotal + 8 Base + 58 Abilities = 68.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.gryphon",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 232,
+            "importId": "core.neomorph.gryphon"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gryphon - Battle",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Battle Gryphon with fast flight, natural talons, and Wing Buffet.",
+          "speciesAndSize": "Small neomorph",
+          "actorRole": "Battle Neomorph",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 90,
+          "homelandHabitat": "Organised play arenas or trainer teams",
+          "communities": "Trainer-raised battle neomorphs",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 232,
+          "sourceId": "core.neomorph.gryphon-battle",
+          "importId": "core.neomorph.gryphon-battle"
+        },
+        "abilities": {
+          "strength": {
+            "value": 9
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 12
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 8
+          }
+        },
+        "combat": {
+          "armourClass": 13,
+          "hitPoints": {
+            "value": 10,
+            "max": 10
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 2,
+          "armourNotes": "Armour Class 13",
+          "defenseSummary": "AC 13; HP 10 (3d6); Small-size drawbacks.",
+          "offenseSummary": "Talons/Beak +5 for 1d6-3 piercing; Wing Buffet +5 for 2d4+1 bludgeoning with Range 30 ft and Spreading 4 targets.",
+          "attacks": {
+            "primary": {
+              "weapon": "Talons/Beak",
+              "modifier": "+5",
+              "damage": "1d6-3",
+              "damageType": "Piercing"
+            },
+            "secondary": {
+              "weapon": "Wing Buffet",
+              "modifier": "+5",
+              "damage": "2d4+1",
+              "damageType": "Bludgeoning"
+            },
+            "tertiary": {}
+          },
+          "flightSpeed": "90 feet/round"
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 232.</p><p><strong>Attributes:</strong> AC Bonus 2; Combat Mastery 2; Features 1; Flight 2; Heightened Senses 2; Unique Attribute 1; Weapon 2; Weapon 8.</p><p><strong>Defects:</strong> Limited Damage 2; Obstacle 4; Slow 1; Susceptible 2.</p><p><strong>Points:</strong> 15 Attribute/Defect subtotal + 13 Base + 62 Abilities = 90.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.gryphon-battle",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 232,
+            "importId": "core.neomorph.gryphon-battle"
+          }
+        }
+      }
+    },
+    {
+      "name": "Jackalope",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Tiny jackrabbit-antelope neomorph with jumping, wall-bouncing, and vibration detection.",
+          "speciesAndSize": "Tiny neomorph",
+          "actorRole": "Neomorph Companion",
+          "challengeRating": "1/8",
+          "experienceValue": 25,
+          "totalPoints": 56,
+          "homelandHabitat": "Domestic or trainer-raised habitats",
+          "communities": "Pets, companions, or trainer-raised arena creatures",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 233,
+          "sourceId": "core.neomorph.jackalope",
+          "importId": "core.neomorph.jackalope"
+        },
+        "abilities": {
+          "strength": {
+            "value": 5
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 8
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 8
+          }
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 2,
+            "max": 2
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 1,
+          "armourNotes": "Armour Class 15",
+          "defenseSummary": "AC 15; HP 2 (1d6-2); Tiny size defenses and small-size drawbacks.",
+          "offenseSummary": "Pet form has no listed Weapon attack.",
+          "attacks": {
+            "primary": {},
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 233.</p><p><strong>Attributes:</strong> AC Bonus 4; Combat Mastery 4; Jumping 1; Special Movement 1; Supersense 1; Unique Attribute 2.</p><p><strong>Defects:</strong> Degraded 4; Limited Damage 4; Obstacle 4; Susceptible 4.</p><p><strong>Points:</strong> 1 Attribute/Defect subtotal + 5 Base + 50 Abilities = 56.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.jackalope",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 233,
+            "importId": "core.neomorph.jackalope"
+          }
+        }
+      }
+    },
+    {
+      "name": "Jackalope - Battle",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Battle Jackalope with strong initiative tools, large leaps, and Antler Slap.",
+          "speciesAndSize": "Tiny neomorph",
+          "actorRole": "Battle Neomorph",
+          "challengeRating": "1/4",
+          "experienceValue": 100,
+          "totalPoints": 76,
+          "homelandHabitat": "Organised play arenas or trainer teams",
+          "communities": "Trainer-raised battle neomorphs",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 233,
+          "sourceId": "core.neomorph.jackalope-battle",
+          "importId": "core.neomorph.jackalope-battle"
+        },
+        "abilities": {
+          "strength": {
+            "value": 6
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 8
+          },
+          "intelligence": {
+            "value": 12
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 8
+          }
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 5,
+            "max": 5
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Armour Class 16",
+          "defenseSummary": "AC 16; HP 5 (2d6-2); Tiny size defenses and small-size drawbacks.",
+          "offenseSummary": "Antler Slap +8 for 1d10-6 bludgeoning; jumping reaches 60 ft forward and 10 ft up.",
+          "attacks": {
+            "primary": {
+              "weapon": "Antler Slap",
+              "modifier": "+8",
+              "damage": "1d10-6",
+              "damageType": "Bludgeoning"
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 233.</p><p><strong>Attributes:</strong> AC Bonus 4; Combat Mastery 4; Extra Actions 1; Jumping 2; Special Movement 3; Supersense 1; Unique Attribute 2; Weapon 3.</p><p><strong>Defects:</strong> Degraded 4; Limited Damage 4; Obstacle 4; Susceptible 4.</p><p><strong>Points:</strong> 11 Attribute/Defect subtotal + 10 Base + 55 Abilities = 76.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.jackalope-battle",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 233,
+            "importId": "core.neomorph.jackalope-battle"
+          }
+        }
+      }
+    },
+    {
+      "name": "Nue",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Tiny hybrid neomorph with humanoid cleverness and wall-crawling movement.",
+          "speciesAndSize": "Tiny neomorph",
+          "actorRole": "Neomorph Companion",
+          "challengeRating": "1/8",
+          "experienceValue": 25,
+          "totalPoints": 60,
+          "homelandHabitat": "Domestic or trainer-raised habitats",
+          "communities": "Pets, companions, or trainer-raised arena creatures",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 234,
+          "sourceId": "core.neomorph.nue",
+          "importId": "core.neomorph.nue"
+        },
+        "abilities": {
+          "strength": {
+            "value": 7
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 9
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 7
+          }
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 5,
+            "max": 5
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 1,
+          "armourNotes": "Armour Class 15",
+          "defenseSummary": "AC 15; HP 5 (2d6-2); Tiny size defenses and small-size drawbacks.",
+          "offenseSummary": "Pet form has no listed Weapon attack.",
+          "attacks": {
+            "primary": {},
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 234.</p><p><strong>Attributes:</strong> AC Bonus 4; Combat Mastery 4; Special Movement 2; Unique Attribute 2.</p><p><strong>Defects:</strong> Degraded 4; Limited Damage 4; Obstacle 4; Susceptible 4.</p><p><strong>Points:</strong> 0 Attribute/Defect subtotal + 8 Base + 52 Abilities = 60.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.nue",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 234,
+            "importId": "core.neomorph.nue"
+          }
+        }
+      }
+    },
+    {
+      "name": "Nue - Battle",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Battle Nue with light-footed wall-crawling and a vampiric poison tail sting.",
+          "speciesAndSize": "Tiny neomorph",
+          "actorRole": "Battle Neomorph",
+          "challengeRating": "1/4",
+          "experienceValue": 100,
+          "totalPoints": 80,
+          "homelandHabitat": "Organised play arenas or trainer teams",
+          "communities": "Trainer-raised battle neomorphs",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 234,
+          "sourceId": "core.neomorph.nue-battle",
+          "importId": "core.neomorph.nue-battle"
+        },
+        "abilities": {
+          "strength": {
+            "value": 9
+          },
+          "dexterity": {
+            "value": 17
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 7
+          }
+        },
+        "combat": {
+          "armourClass": 17,
+          "hitPoints": {
+            "value": 7,
+            "max": 7
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Armour Class 17",
+          "defenseSummary": "AC 17; HP 7 (2d6); Tiny size defenses and small-size drawbacks.",
+          "offenseSummary": "Tail Sting +9 for 3d6-5 piercing with Blight, Continuing, Vampiric, Non-Penetrating, and Toxic modifiers.",
+          "attacks": {
+            "primary": {
+              "weapon": "Tail Sting",
+              "modifier": "+9",
+              "damage": "3d6-5",
+              "damageType": "Piercing/Poison"
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 234.</p><p><strong>Attributes:</strong> AC Bonus 4; Combat Mastery 4; Special Movement 3; Unique Attribute 2; Weapon 9.</p><p><strong>Defects:</strong> Degraded 4; Limited Damage 4; Obstacle 4; Susceptible 4.</p><p><strong>Points:</strong> 10 Attribute/Defect subtotal + 10 Base + 60 Abilities = 80.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.nue-battle",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 234,
+            "importId": "core.neomorph.nue-battle"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wolverpotamus",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Tiny wolverine-hippopotamus neomorph with thick skin, claws, fangs, scent glands, and keen senses.",
+          "speciesAndSize": "Tiny neomorph",
+          "actorRole": "Neomorph Companion",
+          "challengeRating": "1/4",
+          "experienceValue": 50,
+          "totalPoints": 66,
+          "homelandHabitat": "Domestic or trainer-raised habitats",
+          "communities": "Pets, companions, or trainer-raised arena creatures",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 235,
+          "sourceId": "core.neomorph.wolverpotamus",
+          "importId": "core.neomorph.wolverpotamus"
+        },
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 6
+          },
+          "constitution": {
+            "value": 13
+          },
+          "intelligence": {
+            "value": 7
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 7,
+            "max": 7
+          },
+          "movementSpeed": 8,
+          "proficiencyBonus": 1,
+          "armourNotes": "Armour Class 12",
+          "defenseSummary": "AC 12; HP 7 (2d4+2); Tiny size defenses, slow speed, and small-size drawbacks.",
+          "offenseSummary": "Fangs/Claws +5 for 1d4-4 piercing.",
+          "attacks": {
+            "primary": {
+              "weapon": "Fangs/Claws",
+              "modifier": "+5",
+              "damage": "1d4-4",
+              "damageType": "Piercing"
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 235.</p><p><strong>Attributes:</strong> AC Bonus 4; Combat Mastery 4; Features 2; Heightened Senses 2; Unique Attribute 2; Weapon 1.</p><p><strong>Defects:</strong> Degraded 4; Limited Damage 4; Obstacle 4; Slow 2; Susceptible 4.</p><p><strong>Points:</strong> 1 Attribute/Defect subtotal + 6 Base + 59 Abilities = 66.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.wolverpotamus",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 235,
+            "importId": "core.neomorph.wolverpotamus"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wolverpotamus - Battle",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Battle Wolverpotamus with claw/fang attacks and exhausting Musk Spray.",
+          "speciesAndSize": "Tiny neomorph",
+          "actorRole": "Battle Neomorph",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 84,
+          "homelandHabitat": "Organised play arenas or trainer teams",
+          "communities": "Trainer-raised battle neomorphs",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 235,
+          "sourceId": "core.neomorph.wolverpotamus-battle",
+          "importId": "core.neomorph.wolverpotamus-battle"
+        },
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 6
+          },
+          "constitution": {
+            "value": 15
+          },
+          "intelligence": {
+            "value": 8
+          },
+          "wisdom": {
+            "value": 8
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 13,
+            "max": 13
+          },
+          "movementSpeed": 8,
+          "proficiencyBonus": 2,
+          "armourNotes": "Armour Class 12",
+          "defenseSummary": "AC 12; HP 13 (3d4+6); Tiny size defenses, slow speed, and small-size drawbacks.",
+          "offenseSummary": "Fangs/Claws +6 for 1d6-4 piercing; Musk Spray deals 2d8 poison with Blight, Constitution drain, Irritant, Spreading 3 targets, Range 10 ft, and Toxic.",
+          "attacks": {
+            "primary": {
+              "weapon": "Fangs/Claws",
+              "modifier": "+6",
+              "damage": "1d6-4",
+              "damageType": "Piercing"
+            },
+            "secondary": {
+              "weapon": "Musk Spray",
+              "modifier": "Effect",
+              "damage": "2d8",
+              "damageType": "Poison"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 235.</p><p><strong>Attributes:</strong> AC Bonus 4; Combat Mastery 4; Features 2; Heightened Senses 2; Unique Attribute 2; Weapon 2; Weapon 9.</p><p><strong>Defects:</strong> Degraded 4; Limited Damage 4; Obstacle 4; Slow 2; Susceptible 4.</p><p><strong>Points:</strong> 11 Attribute/Defect subtotal + 10 Base + 63 Abilities = 84.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.wolverpotamus-battle",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 235,
+            "importId": "core.neomorph.wolverpotamus-battle"
           }
         }
       }

@@ -32,12 +32,24 @@
           "importId": "core.monster.kobold"
         },
         "abilities": {
-          "strength": { "value": 7 },
-          "dexterity": { "value": 15 },
-          "constitution": { "value": 9 },
-          "intelligence": { "value": 8 },
-          "wisdom": { "value": 7 },
-          "charisma": { "value": 8 }
+          "strength": {
+            "value": 7
+          },
+          "dexterity": {
+            "value": 15
+          },
+          "constitution": {
+            "value": 9
+          },
+          "intelligence": {
+            "value": 8
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 8
+          }
         },
         "combat": {
           "armourClass": 14,
@@ -105,12 +117,24 @@
           "importId": "core.monster.goblin"
         },
         "abilities": {
-          "strength": { "value": 8 },
-          "dexterity": { "value": 14 },
-          "constitution": { "value": 11 },
-          "intelligence": { "value": 11 },
-          "wisdom": { "value": 8 },
-          "charisma": { "value": 8 }
+          "strength": {
+            "value": 8
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 11
+          },
+          "intelligence": {
+            "value": 11
+          },
+          "wisdom": {
+            "value": 8
+          },
+          "charisma": {
+            "value": 8
+          }
         },
         "combat": {
           "armourClass": 17,
@@ -178,12 +202,24 @@
           "importId": "core.monster.orc"
         },
         "abilities": {
-          "strength": { "value": 16 },
-          "dexterity": { "value": 13 },
-          "constitution": { "value": 16 },
-          "intelligence": { "value": 7 },
-          "wisdom": { "value": 11 },
-          "charisma": { "value": 10 }
+          "strength": {
+            "value": 16
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 16
+          },
+          "intelligence": {
+            "value": 7
+          },
+          "wisdom": {
+            "value": 11
+          },
+          "charisma": {
+            "value": 10
+          }
         },
         "combat": {
           "armourClass": 13,
@@ -251,12 +287,24 @@
           "importId": "core.monster.ogre"
         },
         "abilities": {
-          "strength": { "value": 19 },
-          "dexterity": { "value": 8 },
-          "constitution": { "value": 16 },
-          "intelligence": { "value": 5 },
-          "wisdom": { "value": 7 },
-          "charisma": { "value": 7 }
+          "strength": {
+            "value": 19
+          },
+          "dexterity": {
+            "value": 8
+          },
+          "constitution": {
+            "value": 16
+          },
+          "intelligence": {
+            "value": 5
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 7
+          }
         },
         "combat": {
           "armourClass": 9,
@@ -324,12 +372,24 @@
           "importId": "core.monster.troll"
         },
         "abilities": {
-          "strength": { "value": 18 },
-          "dexterity": { "value": 13 },
-          "constitution": { "value": 20 },
-          "intelligence": { "value": 7 },
-          "wisdom": { "value": 9 },
-          "charisma": { "value": 7 }
+          "strength": {
+            "value": 18
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 20
+          },
+          "intelligence": {
+            "value": 7
+          },
+          "wisdom": {
+            "value": 9
+          },
+          "charisma": {
+            "value": 7
+          }
         },
         "combat": {
           "armourClass": 13,
@@ -369,6 +429,806 @@
             "book": "Anime 5E Fifth Edition Core Rules",
             "page": 223,
             "importId": "core.monster.troll"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bugbear",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium goblinoid ambushers with stealth training and brutal surprise damage.",
+          "speciesAndSize": "Medium humanoid mammalian",
+          "actorRole": "Monster",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": 110,
+          "homelandHabitat": "Underground caves and dense forests",
+          "communities": "Small clans and as goblinoid leaders",
+          "alignment": "Chaotic Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 219,
+          "sourceId": "core.monster.bugbear",
+          "importId": "core.monster.bugbear"
+        },
+        "abilities": {
+          "strength": {
+            "value": 15
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 13
+          },
+          "intelligence": {
+            "value": 8
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 8
+          }
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 27,
+            "max": 27
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Hide; shield; Armour Class 16",
+          "defenseSummary": "AC 16; HP 27 (5d8+5); hide and shield.",
+          "offenseSummary": "Morningstar Flail +4 for 2d8+2 piercing; Javelin +4 for 1d6+2 piercing at Range 2 (30 ft). Surprise Attack and Brute add damage in the listed circumstances.",
+          "attacks": {
+            "primary": {
+              "weapon": "Morningstar Flail",
+              "modifier": "+4",
+              "damage": "2d8+2",
+              "damageType": "Piercing"
+            },
+            "secondary": {
+              "weapon": "Javelin",
+              "modifier": "+4",
+              "damage": "1d6+2",
+              "damageType": "Piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 219.</p><p><strong>Attributes:</strong> Armour Proficiency 3; Features 1; Language 1; Massive Damage - Lesser 6 (Surprise Attack); Massive Damage - Lesser 4 (Brute); Skill Proficiency 2; Weapon Proficiency 1.</p><p><strong>Points:</strong> 18 Attribute subtotal + 24 Base + 68 Abilities = 110.</p>",
+        "notes": {
+          "overview": "<p>Arctic bugbears have increased Constitution, Lesser Immunity to cold Rank 3, and Light-Footed Special Movement.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.bugbear",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 219,
+            "importId": "core.monster.bugbear"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hell Hound",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Fiendish canine hunters with pack tactics, fire immunity, and a fiery breath weapon.",
+          "speciesAndSize": "Medium canine quadruped fiend",
+          "actorRole": "Monster",
+          "challengeRating": "3",
+          "experienceValue": 700,
+          "totalPoints": 122,
+          "homelandHabitat": "Lower planes; summoned locations",
+          "communities": "Medium packs, or solitary when summoned",
+          "alignment": "Lawful Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 221,
+          "sourceId": "core.monster.hell-hound",
+          "importId": "core.monster.hell-hound"
+        },
+        "abilities": {
+          "strength": {
+            "value": 17
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 14
+          },
+          "intelligence": {
+            "value": 6
+          },
+          "wisdom": {
+            "value": 13
+          },
+          "charisma": {
+            "value": 6
+          }
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 45,
+            "max": 45
+          },
+          "movementSpeed": 60,
+          "proficiencyBonus": 2,
+          "armourNotes": "Armour Class 15",
+          "defenseSummary": "AC 15; HP 45 (7d8+14); Fire Immunity and keen senses.",
+          "offenseSummary": "Bite +5 for 1d8+3 piercing plus 2d6 fire; Fire Breath deals 6d6 fire in a short spreading attack with Dexterity save DC 12.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "+5",
+              "damage": "1d8+3 + 2d6 fire",
+              "damageType": "Piercing/Fire"
+            },
+            "secondary": {
+              "weapon": "Fire Breath",
+              "modifier": "DC 12",
+              "damage": "6d6",
+              "damageType": "Fire"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 221.</p><p><strong>Attributes:</strong> AC Bonus 4; Edge 2 (Pack Tactics); Features 1; Fast 1; Heightened Senses 2; Immunity 3 (Fire); Language (Infernal); Skill Proficiency 1; Weapon 5 (Bite); Weapon 9 (Fire Breath).</p><p><strong>Defects:</strong> Impaired Manipulation 2; Impaired Speech 2.</p><p><strong>Points:</strong> 22 Attribute/Defect subtotal + 32 Base + 68 Abilities = 122.</p>",
+        "notes": {
+          "overview": "<p>Hell toms are feline variants that swap fire for acid or noxious gas and the matching Immunity.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.hell-hound",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 221,
+            "importId": "core.monster.hell-hound"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mummy",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Undead tomb guardians with poison immunity, fear magic, and necrotic touch attacks.",
+          "speciesAndSize": "Medium humanoid undead",
+          "actorRole": "Monster",
+          "challengeRating": "4",
+          "experienceValue": 1100,
+          "totalPoints": 140,
+          "homelandHabitat": "Tombs and crypts",
+          "communities": "Solitary",
+          "alignment": "Lawful Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 222,
+          "sourceId": "core.monster.mummy",
+          "importId": "core.monster.mummy"
+        },
+        "abilities": {
+          "strength": {
+            "value": 16
+          },
+          "dexterity": {
+            "value": 8
+          },
+          "constitution": {
+            "value": 15
+          },
+          "intelligence": {
+            "value": 6
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 12
+          }
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 58,
+            "max": 58
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 2,
+          "armourNotes": "Armour Class 11",
+          "defenseSummary": "AC 11; HP 58 (9d8+18); Poison Immunity, non-magical weapon resistance, and Resilient against disease, exhaustion, fear, and paralysis.",
+          "offenseSummary": "Rotting Fist +5 for 2d6+3 bludgeoning plus 3d6 necrotic; Necrotic Rot is linked and uses Constitution save DC 12.",
+          "attacks": {
+            "primary": {
+              "weapon": "Rotting Fist",
+              "modifier": "+5",
+              "damage": "2d6+3 + 3d6 necrotic",
+              "damageType": "Bludgeoning/Necrotic"
+            },
+            "secondary": {
+              "weapon": "Necrotic Rot",
+              "modifier": "DC 12",
+              "damage": "3d6",
+              "damageType": "Necrotic"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 222.</p><p><strong>Attributes:</strong> AC Bonus 2; Extra Actions - Lesser 1; Features 1; Immunity 2 (Poison); Immunity - Lesser 5; Language 1; Mind Control 1; Resilient 4; Saving Throw Proficiency 1; Weapon 7; Weapon 5.</p><p><strong>Defects:</strong> Slow 1; Vulnerability 2 (Fire).</p><p><strong>Points:</strong> 33 Attribute/Defect subtotal + 40 Base + 67 Abilities = 140.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.mummy",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 222,
+            "importId": "core.monster.mummy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wyvern",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Large draconic aerial predator with bite, claw, stinger, and poison attacks.",
+          "speciesAndSize": "Large winged biped draconic",
+          "actorRole": "Monster",
+          "challengeRating": "8",
+          "experienceValue": 3900,
+          "totalPoints": 174,
+          "homelandHabitat": "Rocky mountains",
+          "communities": "Solitary, or family units",
+          "alignment": "Unaligned"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 224,
+          "sourceId": "core.monster.wyvern",
+          "importId": "core.monster.wyvern"
+        },
+        "abilities": {
+          "strength": {
+            "value": 19
+          },
+          "dexterity": {
+            "value": 10
+          },
+          "constitution": {
+            "value": 16
+          },
+          "intelligence": {
+            "value": 5
+          },
+          "wisdom": {
+            "value": 12
+          },
+          "charisma": {
+            "value": 6
+          }
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 110,
+            "max": 110
+          },
+          "movementSpeed": 25,
+          "proficiencyBonus": 3,
+          "armourNotes": "Armour Class 11",
+          "defenseSummary": "AC 11; HP 110 (13d10+39); Protected 2 and Large-size drawbacks.",
+          "offenseSummary": "Bite +5 for 2d6+6 piercing; Claw +5 for 2d8+6 slashing; Tail Stinger +5 for 2d6+6 piercing plus poison save DC 18.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "+5",
+              "damage": "2d6+6",
+              "damageType": "Piercing"
+            },
+            "secondary": {
+              "weapon": "Claw",
+              "modifier": "+5",
+              "damage": "2d8+6",
+              "damageType": "Slashing"
+            },
+            "tertiary": {
+              "weapon": "Tail Stinger",
+              "modifier": "+5",
+              "damage": "2d6+6 + poison",
+              "damageType": "Piercing/Poison"
+            }
+          },
+          "flightSpeed": "90 feet/round"
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 224.</p><p><strong>Attributes:</strong> AC Bonus 1; Edge 4; Extra Actions 1; Features 1; Flight 2; Language (Draconic); Massive Damage 2; Protected 2; Skill Proficiency 1; Weapon 3; Weapon 4; Weapon 3; Weapon 9 (Tail Stinger Poison).</p><p><strong>Defects:</strong> Impaired Manipulation 2; Inept Attack 2; Unique Defect 1.</p><p><strong>Points:</strong> 35 Attribute/Defect subtotal + 71 Base + 68 Abilities = 174.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.wyvern",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 224,
+            "importId": "core.monster.wyvern"
+          }
+        }
+      }
+    },
+    {
+      "name": "Stone Giant",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Huge subterranean giant with powerful thrown rocks, stone camouflage, and great strength.",
+          "speciesAndSize": "Huge humanoid giant",
+          "actorRole": "Monster",
+          "challengeRating": "10",
+          "experienceValue": 5900,
+          "totalPoints": 192,
+          "homelandHabitat": "Subterranean caverns; mountains",
+          "communities": "Small clans",
+          "alignment": "Neutral"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 225,
+          "sourceId": "core.monster.stone-giant",
+          "importId": "core.monster.stone-giant"
+        },
+        "abilities": {
+          "strength": {
+            "value": 23
+          },
+          "dexterity": {
+            "value": 15
+          },
+          "constitution": {
+            "value": 20
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 12
+          },
+          "charisma": {
+            "value": 9
+          }
+        },
+        "combat": {
+          "armourClass": 13,
+          "hitPoints": {
+            "value": 126,
+            "max": 126
+          },
+          "movementSpeed": 120,
+          "proficiencyBonus": 4,
+          "armourNotes": "Armour Class 13",
+          "defenseSummary": "AC 13; HP 126 (11d12+55); Protected 4, saving throw proficiencies, and rock-catching defensive utility.",
+          "offenseSummary": "Huge one-handed greatclub +6 for 2d8+10 bludgeoning; Large rock +2 for 6d4+6 bludgeoning at Range 2 (30 ft) with Massive Damage.",
+          "attacks": {
+            "primary": {
+              "weapon": "Greatclub, Huge (One-Handed)",
+              "modifier": "+6",
+              "damage": "2d8+10",
+              "damageType": "Bludgeoning"
+            },
+            "secondary": {
+              "weapon": "Rock, Large",
+              "modifier": "+2",
+              "damage": "6d4+6",
+              "damageType": "Bludgeoning"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 225.</p><p><strong>Attributes:</strong> AC Bonus 1; Augmented 4; Edge 1 (Stone Camouflage); Edge 4; Extra Actions 1; Fast 2; Features 1; Language 1; Massive Damage - Lesser 4; Protected 4; Saving Throw Proficiency 3; Skill Proficiency 2; Tool Proficiency 1; Unique Attribute 2; Unique Attribute 2 (Catch rocks).</p><p><strong>Defects:</strong> Inept Attack 4; Unique Defect 2.</p><p><strong>Points:</strong> 29 Attribute/Defect subtotal + 74 Base + 89 Abilities = 192.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.stone-giant",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 225,
+            "importId": "core.monster.stone-giant"
+          }
+        }
+      }
+    },
+    {
+      "name": "Succubus",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Fiendish manipulator with shapechanging, charm, telepathic bond, portal travel, and draining kiss.",
+          "speciesAndSize": "Medium humanoid fiend",
+          "actorRole": "Monster",
+          "challengeRating": "11",
+          "experienceValue": 7200,
+          "totalPoints": 220,
+          "homelandHabitat": "Lower planes; various humanoid civilisations",
+          "communities": "Solitary, or family units",
+          "alignment": "Neutral Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 226,
+          "sourceId": "core.monster.succubus",
+          "importId": "core.monster.succubus"
+        },
+        "abilities": {
+          "strength": {
+            "value": 8
+          },
+          "dexterity": {
+            "value": 17
+          },
+          "constitution": {
+            "value": 13
+          },
+          "intelligence": {
+            "value": 15
+          },
+          "wisdom": {
+            "value": 13
+          },
+          "charisma": {
+            "value": 20
+          }
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 66,
+            "max": 66
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 4,
+          "armourNotes": "Armour Class 15",
+          "defenseSummary": "AC 15; HP 66 (12d8+12); Lesser Immunity to cold, fire, lightning, poison, and non-magical weapons.",
+          "offenseSummary": "Claw +7 for 1d10-1 slashing; Draining Kiss deals 6d10 psychic with Constitution Magic save DC 14 and depends on Mind Control.",
+          "attacks": {
+            "primary": {
+              "weapon": "Claw",
+              "modifier": "+7",
+              "damage": "1d10-1",
+              "damageType": "Slashing"
+            },
+            "secondary": {
+              "weapon": "Draining Kiss",
+              "modifier": "DC 14",
+              "damage": "6d10",
+              "damageType": "Psychic"
+            },
+            "tertiary": {}
+          },
+          "flightSpeed": "90 feet/round"
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 226.</p><p><strong>Attributes:</strong> AC Bonus 2; Alternate Identity 1; Features 1; Flight 2; Immunity - Lesser 6; Language 2; Mind Control 6; Portal 2; Skill Proficiency 5; Telepathy 5; Weapon 3; Weapon 9.</p><p><strong>Points:</strong> 78 Attribute subtotal + 56 Base + 86 Abilities = 220.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.succubus",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 226,
+            "importId": "core.monster.succubus"
+          }
+        }
+      }
+    },
+    {
+      "name": "Young White Dragon",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Large arctic dragon with cold immunity, flight, water movement, bite, claw, and cold breath.",
+          "speciesAndSize": "Large winged quadruped draconic",
+          "actorRole": "Monster",
+          "challengeRating": "12",
+          "experienceValue": 8400,
+          "totalPoints": 235,
+          "homelandHabitat": "Arctic mountain caverns",
+          "communities": "Solitary, or paired while mating",
+          "alignment": "Chaotic Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 227,
+          "sourceId": "core.monster.young-white-dragon",
+          "importId": "core.monster.young-white-dragon"
+        },
+        "abilities": {
+          "strength": {
+            "value": 18
+          },
+          "dexterity": {
+            "value": 10
+          },
+          "constitution": {
+            "value": 18
+          },
+          "intelligence": {
+            "value": 6
+          },
+          "wisdom": {
+            "value": 11
+          },
+          "charisma": {
+            "value": 12
+          }
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 133,
+            "max": 133
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 4,
+          "armourNotes": "Armour Class 15",
+          "defenseSummary": "AC 15; HP 133 (14d10+56); Cold Immunity, Protected 2, and broad saving throw proficiencies.",
+          "offenseSummary": "Bite +6 for 2d10+6 piercing plus 1d8 cold; Claw +6 for 2d6+6 slashing; Cold Breath deals 10d8 cold with Dexterity save DC 14.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "+6",
+              "damage": "2d10+6 + 1d8 cold",
+              "damageType": "Piercing/Cold"
+            },
+            "secondary": {
+              "weapon": "Claw",
+              "modifier": "+6",
+              "damage": "2d6+6",
+              "damageType": "Slashing"
+            },
+            "tertiary": {
+              "weapon": "Cold Breath",
+              "modifier": "DC 14",
+              "damage": "10d8",
+              "damageType": "Cold"
+            }
+          },
+          "flightSpeed": "90 feet/round",
+          "waterSpeed": "30 feet/round"
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 227.</p><p><strong>Attributes:</strong> AC Bonus 5; Edge 4; Extra Actions 2; Features 3; Flight 2; Immunity 3 (Cold); Language 1; Massive Damage - Lesser 2; Protected 2; Saving Throw Proficiency 4; Skill Proficiency 2; Special Movement 1; Tunnelling 3; Water Speed 1; Weapon 7; Weapon 3; Weapon 20.</p><p><strong>Defects:</strong> Inept Attack 2; Unique Defect 1.</p><p><strong>Points:</strong> 82 Attribute/Defect subtotal + 78 Base + 75 Abilities = 235.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.young-white-dragon",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 227,
+            "importId": "core.monster.young-white-dragon"
+          }
+        }
+      }
+    },
+    {
+      "name": "Purple Worm",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Gargantuan subterranean worm with massive bite, swallowing, stomach acid, tail stinger, and poison.",
+          "speciesAndSize": "Gargantuan invertebrate worm",
+          "actorRole": "Monster",
+          "challengeRating": "15",
+          "experienceValue": 13000,
+          "totalPoints": 292,
+          "homelandHabitat": "Subterranean",
+          "communities": "Solitary, or in small pods",
+          "alignment": "Unaligned"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 228,
+          "sourceId": "core.monster.purple-worm",
+          "importId": "core.monster.purple-worm"
+        },
+        "abilities": {
+          "strength": {
+            "value": 28
+          },
+          "dexterity": {
+            "value": 7
+          },
+          "constitution": {
+            "value": 22
+          },
+          "intelligence": {
+            "value": 1
+          },
+          "wisdom": {
+            "value": 8
+          },
+          "charisma": {
+            "value": 4
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 247,
+            "max": 247
+          },
+          "movementSpeed": 120,
+          "proficiencyBonus": 5,
+          "armourNotes": "Armour Class 12",
+          "defenseSummary": "AC 12; HP 247 (15d20+90); Protected 6 and massive Gargantuan body.",
+          "offenseSummary": "Bite +8 for 3d8+15 piercing and swallow effect; Tail Stinger +8 for 3d6+15 piercing plus poison save DC 20.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "+8",
+              "damage": "3d8+15 + swallow",
+              "damageType": "Piercing"
+            },
+            "secondary": {
+              "weapon": "Tail Stinger",
+              "modifier": "+8",
+              "damage": "3d6+15 + poison",
+              "damageType": "Piercing/Poison"
+            },
+            "tertiary": {
+              "weapon": "Stomach Acid",
+              "modifier": "Internal",
+              "damage": "6d6",
+              "damageType": "Acid"
+            }
+          },
+          "specialMovement": "Tunnelling 30 feet/round"
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 228.</p><p><strong>Attributes:</strong> AC Bonus 4; Augmented 8; Edge 4; Extra Actions 1; Fast 2; Features 1; Massive Damage - Lesser 6; Protected 6; Saving Throw Proficiency 2; Supersense 1; Tunnelling 4; Weapon 10; Weapon 12; Weapon 4; Weapon 17.</p><p><strong>Defects:</strong> Impaired Manipulation 3; Impaired Speech 2; Inept Attack 6; Unique Defect 3.</p><p><strong>Points:</strong> 52 Attribute/Defect subtotal + 170 Base + 70 Abilities = 292.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.purple-worm",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 228,
+            "importId": "core.monster.purple-worm"
+          }
+        }
+      }
+    },
+    {
+      "name": "Adult Red Dragon",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Huge red dragon tyrant with fire immunity, legendary resistance, frightful presence, breath weapon, and multiple natural attacks.",
+          "speciesAndSize": "Huge winged quadruped draconic",
+          "actorRole": "Monster",
+          "challengeRating": "19",
+          "experienceValue": 22000,
+          "totalPoints": 364,
+          "homelandHabitat": "Rocky mountains and mines; volcanic caves",
+          "communities": "Solitary, or paired while mating",
+          "alignment": "Chaotic Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 229,
+          "sourceId": "core.monster.adult-red-dragon",
+          "importId": "core.monster.adult-red-dragon"
+        },
+        "abilities": {
+          "strength": {
+            "value": 27
+          },
+          "dexterity": {
+            "value": 10
+          },
+          "constitution": {
+            "value": 25
+          },
+          "intelligence": {
+            "value": 16
+          },
+          "wisdom": {
+            "value": 13
+          },
+          "charisma": {
+            "value": 21
+          }
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 256,
+            "max": 256
+          },
+          "movementSpeed": 60,
+          "proficiencyBonus": 6,
+          "armourNotes": "Armour Class 15",
+          "defenseSummary": "AC 15; HP 256 (19d12+133); Fire Immunity, Protected 4, saving throw proficiencies, and Legendary Resistance 3/day.",
+          "offenseSummary": "Bite +10 for 2d10+12 piercing plus 2d6 fire; Claw +10 for 2d6+12 slashing; Tail +10 for 2d8+12 blunt; Fire Breath deals 18d6 fire with Dexterity save DC 21.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "+10",
+              "damage": "2d10+12 + 2d6 fire",
+              "damageType": "Piercing/Fire"
+            },
+            "secondary": {
+              "weapon": "Claw",
+              "modifier": "+10",
+              "damage": "2d6+12",
+              "damageType": "Slashing"
+            },
+            "tertiary": {
+              "weapon": "Fire Breath",
+              "modifier": "DC 21",
+              "damage": "18d6",
+              "damageType": "Fire"
+            }
+          },
+          "flightSpeed": "90 feet/round"
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 229.</p><p><strong>Attributes:</strong> AC Bonus 5; Augmented 4; Edge 4; Extra Actions 3; Extra Actions - Lesser 1; Fast 1; Features 4; Flight 2; Immunity 3 (Fire); Language 1; Massive Damage - Lesser 4; Mind Control 6; Protected 4; Saving Throw Proficiency 4; Skill Proficiency 2; Unique Attribute 3; Weapon 8; Weapon 3; Weapon 31; Weapon 4; Weapon 3.</p><p><strong>Defects:</strong> Inept Attack 4; Unique Defect 2.</p><p><strong>Points:</strong> 126 Attribute/Defect subtotal + 126 Base + 112 Abilities = 364.</p>",
+        "notes": {
+          "overview": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.adult-red-dragon",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 229,
+            "importId": "core.monster.adult-red-dragon"
           }
         }
       }

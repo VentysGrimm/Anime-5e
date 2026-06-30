@@ -51,6 +51,50 @@
           }
         }
       }
+    },
+    {
+      "name": "Allies and Enemies Table Placeholder",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Source-backed placeholder for the Chapter 11 Allies and Enemies table and future encounter reference workflow.",
+          "speciesAndSize": "Reference",
+          "actorRole": "Encounter Reference",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "NPC allies, rivals, enemies, and organisations",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 236,
+          "sourceId": "core.npc.allies-and-enemies-placeholder",
+          "importId": "core.npc.allies-and-enemies-placeholder"
+        },
+        "combat": {
+          "armourNotes": "Not a combat stat block",
+          "defenseSummary": "Encounter table data remains a future reference/import slice.",
+          "offenseSummary": "Use this placeholder as the expansion point for generated ally, rival, and enemy entries."
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 236.</p><p><strong>Placeholder:</strong> The Allies and Enemies table is reserved as a future reference table or journal entry. This actor marks the source location and keeps the creature compendium import path ready without claiming automated encounter math.</p>",
+        "notes": {
+          "overview": "<p>Future encounter tooling can replace this placeholder with table data, journal guidance, or generated NPC references.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.allies-and-enemies-placeholder",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 236,
+            "importId": "core.npc.allies-and-enemies-placeholder"
+          }
+        }
+      }
     }
   ]
 }

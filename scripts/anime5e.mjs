@@ -42,6 +42,10 @@ import {
   Anime5eCompendiumImportDialog,
   showCoreCompendiumImportDialog
 } from "../module/apps/compendium-import-dialog.mjs";
+import {
+  Anime5eEncounterThreatDialog,
+  showEncounterThreatDialog
+} from "../module/apps/encounter-threat-dialog.mjs";
 import { importCoreCompendiumData } from "../module/data/compendiums.mjs";
 import { registerCreationWorkflowHooks } from "../module/rules/creation-workflow.mjs";
 import * as Anime5ePoints from "../module/rules/points.mjs";
@@ -99,6 +103,7 @@ Hooks.once("init", () => {
     points: Anime5ePoints,
     resources: Anime5eResources,
     rolls: Anime5eRolls,
+    showEncounterThreatDialog,
     showCoreCompendiumImportDialog
   };
 
@@ -110,6 +115,15 @@ Hooks.once("init", () => {
     hint: "Import or update source-backed starter content into the declared Anime 5e compendium packs.",
     icon: "fa-solid fa-file-import",
     type: Anime5eCompendiumImportDialog,
+    restricted: true
+  });
+
+  game.settings.registerMenu(ANIME5E.id, "encounterThreatTool", {
+    name: "Anime 5e Encounter Threat",
+    label: "Open",
+    hint: "Open the placeholder Challenge Rating and Encounter Threat tool shell.",
+    icon: "fa-solid fa-scale-balanced",
+    type: Anime5eEncounterThreatDialog,
     restricted: true
   });
 
