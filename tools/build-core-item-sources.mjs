@@ -461,24 +461,48 @@ function limiterDocument([name, page, summary, assignments = "1-3"], category = 
 
 function buildAttributes() {
   const source = readJson("data/sources/core/attributes/index.json");
-  const baseDocuments = existingDocuments(source, "attribute");
-  const documents = [
-    ...baseDocuments,
-    ...generalEnhancements.map(enhancementDocument),
-    ...generalLimiters.map((entry) => limiterDocument([...entry, "1-3"])),
-    ...weaponEnhancements.map(([name, page, summary, assignments]) => enhancementDocument([name, page, summary, "Weapon Enhancement", "Weapon", assignments])),
-    ...weaponLimiters.map((entry) => limiterDocument(entry, "Weapon Limiter", "Weapon"))
-  ];
 
   writeJson("data/sources/core/attributes/index.json", {
     pack: "anime5e.attributes",
     documentType: "Item",
     sourceBook: SOURCE_BOOK,
     folders: [
-      { name: "Attributes", color: "#7c8fa8" },
+      { name: "Attributes", color: "#7c8fa8" }
+    ],
+    documents: existingDocuments(source, "attribute")
+  });
+}
+
+function buildEnhancements() {
+  const documents = [
+    ...generalEnhancements.map(enhancementDocument),
+    ...weaponEnhancements.map(([name, page, summary, assignments]) => enhancementDocument([name, page, summary, "Weapon Enhancement", "Weapon", assignments]))
+  ];
+
+  writeJson("data/sources/core/enhancements/index.json", {
+    pack: "anime5e.enhancements",
+    documentType: "Item",
+    sourceBook: SOURCE_BOOK,
+    folders: [
       { name: "Attribute Enhancement", color: "#6f9a7f" },
+      { name: "Weapon Enhancement", color: "#8c6fa0" }
+    ],
+    documents
+  });
+}
+
+function buildLimiters() {
+  const documents = [
+    ...generalLimiters.map((entry) => limiterDocument([...entry, "1-3"])),
+    ...weaponLimiters.map((entry) => limiterDocument(entry, "Weapon Limiter", "Weapon"))
+  ];
+
+  writeJson("data/sources/core/limiters/index.json", {
+    pack: "anime5e.limiters",
+    documentType: "Item",
+    sourceBook: SOURCE_BOOK,
+    folders: [
       { name: "Attribute Limiter", color: "#9a7f6f" },
-      { name: "Weapon Enhancement", color: "#8c6fa0" },
       { name: "Weapon Limiter", color: "#a06f6f" }
     ],
     documents
@@ -757,6 +781,8 @@ function buildEquipment() {
 }
 
 buildAttributes();
+buildEnhancements();
+buildLimiters();
 buildDefects();
 buildTechniques();
 buildPowers();

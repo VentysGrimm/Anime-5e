@@ -350,6 +350,26 @@
       }
     },
     {
+      "name": "enhancements",
+      "label": "Core Enhancements",
+      "path": "packs/enhancements",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "limiters",
+      "label": "Core Limiters",
+      "path": "packs/limiters",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
       "name": "powers",
       "label": "Core Powers",
       "path": "packs/powers",

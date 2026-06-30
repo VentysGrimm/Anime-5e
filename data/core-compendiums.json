@@ -6,6 +6,8 @@
     "data/sources/core/character-options/index.json",
     "data/sources/core/attributes/index.json",
     "data/sources/core/defects/index.json",
+    "data/sources/core/enhancements/index.json",
+    "data/sources/core/limiters/index.json",
     "data/sources/core/powers/index.json",
     "data/sources/core/techniques/index.json",
     "data/sources/core/equipment/index.json"

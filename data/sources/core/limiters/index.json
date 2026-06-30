@@ -1,0 +1,854 @@
+{
+  "pack": "anime5e.limiters",
+  "documentType": "Item",
+  "sourceBook": "Anime 5E Fifth Edition Core Rules",
+  "folders": [
+    {
+      "name": "Attribute Limiter",
+      "color": "#9a7f6f"
+    },
+    {
+      "name": "Weapon Limiter",
+      "color": "#a06f6f"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Activation",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 145.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires preparation before the Attribute can be used, ranging from one round to one hour.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.activation",
+        "sourcePage": 145,
+        "importId": "core.limiter.activation",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.activation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 145,
+            "importId": "core.limiter.activation"
+          }
+        }
+      }
+    },
+    {
+      "name": "Assisted",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 145.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires one or more special assistants to be present for the Attribute to activate or continue.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.assisted",
+        "sourcePage": 145,
+        "importId": "core.limiter.assisted",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.assisted",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 145,
+            "importId": "core.limiter.assisted"
+          }
+        }
+      }
+    },
+    {
+      "name": "Backlash",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 145.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Creates a harmful side effect when the Attribute fails or misses by the specified margin.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.backlash",
+        "sourcePage": 145,
+        "importId": "core.limiter.backlash",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.backlash",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 145,
+            "importId": "core.limiter.backlash"
+          }
+        }
+      }
+    },
+    {
+      "name": "Charges",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 145.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Limits the Attribute to a small number of uses each day or session.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.charges",
+        "sourcePage": 145,
+        "importId": "core.limiter.charges",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.charges",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 145,
+            "importId": "core.limiter.charges"
+          }
+        }
+      }
+    },
+    {
+      "name": "Concentration",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires ongoing focus to keep a non-instant Attribute active.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.concentration",
+        "sourcePage": 146,
+        "importId": "core.limiter.concentration",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.concentration",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.concentration"
+          }
+        }
+      }
+    },
+    {
+      "name": "Consumable",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Consumes a special focus, reagent, or offering whenever the Attribute is used.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.consumable",
+        "sourcePage": 146,
+        "importId": "core.limiter.consumable",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.consumable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.consumable"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dependent",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Prevents the Attribute from taking effect until one or more other Attributes are active.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.dependent",
+        "sourcePage": 146,
+        "importId": "core.limiter.dependent",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.dependent",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.dependent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deplete",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Spends Energy to activate or maintain the Attribute when optional Energy rules are used.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.deplete",
+        "sourcePage": 146,
+        "importId": "core.limiter.deplete",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.deplete",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.deplete"
+          }
+        }
+      }
+    },
+    {
+      "name": "Detectable",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Makes the Attribute&#39;s use noticeable or traceable by specified detection methods.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.detectable",
+        "sourcePage": 146,
+        "importId": "core.limiter.detectable",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.detectable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.detectable"
+          }
+        }
+      }
+    },
+    {
+      "name": "Emotional",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 146.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Restricts use to moments of significant, strong, or extreme emotional investment.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.emotional",
+        "sourcePage": 146,
+        "importId": "core.limiter.emotional",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.emotional",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 146,
+            "importId": "core.limiter.emotional"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 147.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Limits the Attribute to a specific setting, condition, or situational trigger.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.environmental",
+        "sourcePage": 147,
+        "importId": "core.limiter.environmental",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.environmental",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 147,
+            "importId": "core.limiter.environmental"
+          }
+        }
+      }
+    },
+    {
+      "name": "Equipment",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 147.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires tools, furnishings, materials, or accessories that aid the Attribute without embodying it.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.equipment",
+        "sourcePage": 147,
+        "importId": "core.limiter.equipment",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.equipment",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 147,
+            "importId": "core.limiter.equipment"
+          }
+        }
+      }
+    },
+    {
+      "name": "Imbue",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 147.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Lets the character grant the Attribute&#39;s use to others for a dramatic scene, usually with Charges.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.imbue",
+        "sourcePage": 147,
+        "importId": "core.limiter.imbue",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.imbue",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 147,
+            "importId": "core.limiter.imbue"
+          }
+        }
+      }
+    },
+    {
+      "name": "Irreversible",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 147.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Makes transformation-style Attributes difficult or slow to undo.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.irreversible",
+        "sourcePage": 147,
+        "importId": "core.limiter.irreversible",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.irreversible",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 147,
+            "importId": "core.limiter.irreversible"
+          }
+        }
+      }
+    },
+    {
+      "name": "Maximum",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Forces the Attribute to function at maximum effective strength instead of allowing lower output.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.maximum",
+        "sourcePage": 148,
+        "importId": "core.limiter.maximum",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.maximum",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.maximum"
+          }
+        }
+      }
+    },
+    {
+      "name": "Object",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Limits an Item-contained Attribute so it benefits the object more than its user.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.object",
+        "sourcePage": 148,
+        "importId": "core.limiter.object",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.object",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.object"
+          }
+        }
+      }
+    },
+    {
+      "name": "Permanent",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Keeps the Attribute always active when that constancy is inconvenient.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.permanent",
+        "sourcePage": 148,
+        "importId": "core.limiter.permanent",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.permanent",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.permanent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Recovery",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires a rest period after using an ongoing Attribute before it can function again.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.recovery",
+        "sourcePage": 148,
+        "importId": "core.limiter.recovery",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.recovery",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.recovery"
+          }
+        }
+      }
+    },
+    {
+      "name": "Semi-Permanent",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Keeps the Attribute normally active but allows temporary suppression by spending Energy.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.semi-permanent",
+        "sourcePage": 148,
+        "importId": "core.limiter.semi-permanent",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.semi-permanent",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.semi-permanent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unique Limiter",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Covers custom restrictions not otherwise listed, with severity set by player and DM agreement.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.unique-limiter",
+        "sourcePage": 148,
+        "importId": "core.limiter.unique-limiter",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.unique-limiter",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.unique-limiter"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unpredictable",
+      "type": "limiter",
+      "folder": "Attribute Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 148.</p><p><strong>Category:</strong> Attribute Limiter. <strong>Applies To:</strong> Attribute. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Requires an Ability check or creates unreliable results when the Attribute is used.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.limiter.unpredictable",
+        "sourcePage": 148,
+        "importId": "core.limiter.unpredictable",
+        "appliesTo": "Attribute",
+        "category": "Attribute Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.limiter.unpredictable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 148,
+            "importId": "core.limiter.unpredictable"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ammo",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 129.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Limits the Weapon to a small amount of carried ammunition before it must be replenished.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.ammo",
+        "sourcePage": 129,
+        "importId": "core.weapon-limiter.ammo",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.ammo",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 129,
+            "importId": "core.weapon-limiter.ammo"
+          }
+        }
+      }
+    },
+    {
+      "name": "Exclusive",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1-3.</p><p><strong>Rules Summary:</strong> Restricts the Weapon to a specified category, group, or individual target.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.exclusive",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.exclusive",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.exclusive",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.exclusive"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hands",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Requires two appropriately sized hands or appendages to use the Weapon properly.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.hands",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.hands",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.hands",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.hands"
+          }
+        }
+      }
+    },
+    {
+      "name": "Inaccurate",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Imposes disadvantage on attack rolls with the Weapon.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.inaccurate",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.inaccurate",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.inaccurate",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.inaccurate"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ingest",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Requires the Weapon&#39;s substance to be swallowed before it affects the target.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.ingest",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.ingest",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.ingest",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.ingest"
+          }
+        }
+      }
+    },
+    {
+      "name": "Non-Penetrating",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Makes the Weapon poor against armour or heavy clothing, increasing the defender&#39;s AC.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.non-penetrating",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.non-penetrating",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.non-penetrating",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.non-penetrating"
+          }
+        }
+      }
+    },
+    {
+      "name": "Save",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 2 or 4.</p><p><strong>Rules Summary:</strong> Replaces the attack roll with a target Constitution or Dexterity save.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.save",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.save",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.save",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.save"
+          }
+        }
+      }
+    },
+    {
+      "name": "Toxic",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Only damages living targets and can sometimes be countered by simple precautions.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.toxic",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.toxic",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.toxic",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.toxic"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unique",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1+.</p><p><strong>Rules Summary:</strong> Covers a custom Weapon restriction approved and priced by the DM.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.unique",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.unique",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.unique",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.unique"
+          }
+        }
+      }
+    },
+    {
+      "name": "Unreliable",
+      "type": "limiter",
+      "folder": "Weapon Limiter",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 130.</p><p><strong>Category:</strong> Weapon Limiter. <strong>Applies To:</strong> Weapon. <strong>Assignments:</strong> 1.</p><p><strong>Rules Summary:</strong> Makes the Weapon fail or malfunction on a natural 1 until a condition is met.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.weapon-limiter.unreliable",
+        "sourcePage": 130,
+        "importId": "core.weapon-limiter.unreliable",
+        "appliesTo": "Weapon",
+        "category": "Weapon Limiter"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.weapon-limiter.unreliable",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 130,
+            "importId": "core.weapon-limiter.unreliable"
+          }
+        }
+      }
+    }
+  ]
+}
