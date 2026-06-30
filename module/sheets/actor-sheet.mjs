@@ -196,6 +196,7 @@ const COMPLEX_ATTRIBUTE_SOURCE_IDS = new Set([
   "core.attribute.mind-control-lesser",
   "core.attribute.minions",
   "core.attribute.minions-greater",
+  "core.attribute.monster-training",
   "core.attribute.nullify",
   "core.attribute.pocket-dimension",
   "core.attribute.portal",
@@ -575,10 +576,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
         const system = item.system ?? {};
         const isFollower = isFollowerAttributeItem(item);
+        const isMonsterTraining = sourceIdForItem(item) === "core.attribute.monster-training";
         const followerBudget = isFollower ? followerPointBudgetForItem(item) : null;
         const minionCount = isFollower ? minionCountForItem(item) : "";
         const trackingTags = [
           `Rank ${numberOrZero(system.rank)}`,
+          isMonsterTraining ? `Techniques: ${numberOrZero(system.rank)}` : null,
+          hasText(system.activeTrainingTechnique) ? `Technique: ${system.activeTrainingTechnique}` : null,
+          hasText(system.trainingBenefit) ? `Benefit: ${system.trainingBenefit}` : null,
           Number.isFinite(followerBudget) ? `Budget: ${followerBudget} Points` : null,
           hasText(minionCount) ? `Count: ${minionCount}` : null,
           hasText(system.scope) ? `Scope: ${system.scope}` : null,

@@ -4,7 +4,7 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
-const MULTILINE_FIELDS = new Set(["constructionNotes", "movementModes", "progressionNotes", "result", "statBlock", "trackingNotes", "weaponNotes"]);
+const MULTILINE_FIELDS = new Set(["constructionNotes", "movementModes", "progressionNotes", "result", "statBlock", "trackingNotes", "trainingTechniques", "weaponNotes"]);
 const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
 const NUMBER_FIELDS = new Set([
@@ -28,6 +28,7 @@ const NUMBER_FIELDS = new Set([
 
 const FIELD_LABELS = {
   appliesTo: "Applies To",
+  activeTrainingTechnique: "Active Training Technique",
   ability: "Ability Target",
   armour: "Armour",
   armourClass: "Armour Class",
@@ -85,6 +86,8 @@ const FIELD_LABELS = {
   strengthRequirement: "Strength Requirement",
   strengthModifier: "Strength Modifier",
   targetCount: "Target Count",
+  trainingBenefit: "Training Benefit",
+  trainingTechniques: "Training Techniques",
   totalPoints: "Total Points",
   trackingMode: "Tracking Workflow",
   trackingNotes: "Tracking Notes",
