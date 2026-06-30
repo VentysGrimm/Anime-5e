@@ -4,7 +4,18 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
-const MULTILINE_FIELDS = new Set(["constructionNotes", "movementModes", "progressionNotes", "result", "statBlock", "trackingNotes", "trainingTechniques", "weaponNotes"]);
+const MULTILINE_FIELDS = new Set([
+  "constructionNotes",
+  "movementModes",
+  "progressionNotes",
+  "result",
+  "spellEffect",
+  "spellPrerequisites",
+  "statBlock",
+  "trackingNotes",
+  "trainingTechniques",
+  "weaponNotes"
+]);
 const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
 const NUMBER_FIELDS = new Set([
@@ -80,6 +91,12 @@ const FIELD_LABELS = {
   shieldSize: "Shield Size",
   sizeAndType: "Size and Type",
   sizeCategory: "Size Category",
+  spellEffect: "Spell Effect",
+  spellEnergyCost: "Spell Energy Cost",
+  spellLevel: "Spell Level",
+  spellName: "Spell Name",
+  spellPrerequisites: "Spell Prerequisites",
+  spellUsage: "Spell Usage",
   sourceTable: "Source Table",
   statBlock: "Stat Block",
   stealth: "Stealth",

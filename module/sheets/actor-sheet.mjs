@@ -200,6 +200,7 @@ const COMPLEX_ATTRIBUTE_SOURCE_IDS = new Set([
   "core.attribute.nullify",
   "core.attribute.pocket-dimension",
   "core.attribute.portal",
+  "core.attribute.spell-like-ability",
   "core.attribute.telepathy",
   "core.attribute.telepathy-lesser",
   "core.attribute.transfer"
@@ -282,6 +283,10 @@ function isComplexAttributeItem(item) {
 
 function isFollowerAttributeItem(item) {
   return item.type === "attribute" && FOLLOWER_ATTRIBUTE_SOURCE_IDS.has(sourceIdForItem(item));
+}
+
+function isSpellLikeAttributeItem(item) {
+  return item.type === "attribute" && sourceIdForItem(item) === "core.attribute.spell-like-ability";
 }
 
 function followerPointBudgetForItem(item) {
@@ -577,19 +582,27 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         const system = item.system ?? {};
         const isFollower = isFollowerAttributeItem(item);
         const isMonsterTraining = sourceIdForItem(item) === "core.attribute.monster-training";
+        const isSpellLike = isSpellLikeAttributeItem(item);
         const followerBudget = isFollower ? followerPointBudgetForItem(item) : null;
         const minionCount = isFollower ? minionCountForItem(item) : "";
+        const spellEnergyCost = isSpellLike && hasText(system.spellEnergyCost) && system.spellEnergyCost !== "Rank squared Energy"
+          ? system.spellEnergyCost
+          : isSpellLike
+            ? `${numberOrZero(system.rank) ** 2} Energy`
+            : "";
         const trackingTags = [
           `Rank ${numberOrZero(system.rank)}`,
           isMonsterTraining ? `Techniques: ${numberOrZero(system.rank)}` : null,
           hasText(system.activeTrainingTechnique) ? `Technique: ${system.activeTrainingTechnique}` : null,
           hasText(system.trainingBenefit) ? `Benefit: ${system.trainingBenefit}` : null,
+          hasText(system.spellName) ? `Spell: ${system.spellName}` : null,
+          hasText(system.spellLevel) ? `Spell Level: ${system.spellLevel}` : null,
           Number.isFinite(followerBudget) ? `Budget: ${followerBudget} Points` : null,
           hasText(minionCount) ? `Count: ${minionCount}` : null,
           hasText(system.scope) ? `Scope: ${system.scope}` : null,
           hasText(system.duration) ? `Duration: ${system.duration}` : null,
           hasText(system.targetCount) ? `Targets: ${system.targetCount}` : null,
-          hasText(system.energyCost) ? `Energy: ${system.energyCost}` : null
+          hasText(spellEnergyCost) ? `Energy: ${spellEnergyCost}` : hasText(system.energyCost) ? `Energy: ${system.energyCost}` : null
         ].filter(Boolean);
         const linkTags = [
           hasText(system.linkedActorUuid) ? "Actor linked" : null,
@@ -604,7 +617,10 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           trackingNotes: system.trackingNotes,
           canLinkFollower: isFollower,
           linkFollowerIcon: hasText(system.linkedActorUuid) ? "fa-external-link-alt" : "fa-user-plus",
-          linkFollowerTitle: hasText(system.linkedActorUuid) ? "Open linked actor" : "Create linked follower actor"
+          linkFollowerTitle: hasText(system.linkedActorUuid) ? "Open linked actor" : "Create linked follower actor",
+          canLinkSpell: isSpellLike,
+          linkSpellIcon: hasText(system.linkedDocumentUuid) ? "fa-external-link-alt" : "fa-book-medical",
+          linkSpellTitle: hasText(system.linkedDocumentUuid) ? "Open linked spell" : "Create linked spell item"
         };
       })
       .filter(Boolean);
@@ -783,6 +799,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='create-linked-follower']").forEach((button) => {
       button.addEventListener("click", this._onCreateLinkedFollower.bind(this));
+    });
+    element.querySelectorAll("[data-action='create-linked-spell']").forEach((button) => {
+      button.addEventListener("click", this._onCreateLinkedSpell.bind(this));
     });
     element.querySelectorAll("[data-item-id]").forEach((row) => {
       row.draggable = true;
@@ -1229,15 +1248,78 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     actor.sheet?.render(true);
   }
 
+  async _onCreateLinkedSpell(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || !isSpellLikeAttributeItem(item)) return;
+
+    const linkedDocument = await this.constructor._resolveLinkedDocument(item.system?.linkedDocumentUuid, "Item");
+    if (linkedDocument) {
+      linkedDocument.sheet?.render(true);
+      return;
+    }
+
+    const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+    const spellName = item.system?.spellName?.trim() || `${item.name} Effect`;
+    const spellLevel = Math.max(0, Math.trunc(Number(item.system?.spellLevel) || Math.max(0, rank - 1)));
+    const storedEnergyCost = item.system?.spellEnergyCost?.trim();
+    const spellEnergyCost = hasText(storedEnergyCost) && storedEnergyCost !== "Rank squared Energy" ? storedEnergyCost : `${rank ** 2} Energy`;
+    const spellEffect = item.system?.spellEffect?.trim() || item.system?.description || "";
+    const sourceLine = [item.system?.source, item.system?.sourcePage ? `p. ${item.system.sourcePage}` : null].filter(Boolean).join(", ");
+    const description = [
+      `<p>Linked from <strong>${escapeHtml(item.name)}</strong> on ${escapeHtml(this.actor.name)}.</p>`,
+      `<p><strong>Spell-Like Rank:</strong> ${rank}. <strong>Energy Cost:</strong> ${escapeHtml(spellEnergyCost)}.</p>`,
+      hasText(item.system?.spellUsage) ? `<p><strong>Usage:</strong> ${escapeHtml(item.system.spellUsage)}</p>` : "",
+      hasText(item.system?.spellPrerequisites) ? `<p><strong>Prerequisites:</strong> ${escapeHtml(item.system.spellPrerequisites)}</p>` : "",
+      hasText(spellEffect) ? `<p>${escapeHtml(spellEffect)}</p>` : "",
+      sourceLine ? `<p><small>${escapeHtml(sourceLine)}</small></p>` : ""
+    ].join("");
+    const [spell] = await this.actor.createEmbeddedDocuments("Item", [
+      {
+        name: spellName,
+        type: "spell",
+        img: "icons/svg/magic-swirl.svg",
+        system: {
+          description,
+          rank,
+          level: spellLevel,
+          source: item.system?.source ?? "",
+          sourcePage: item.system?.sourcePage ?? null,
+          sourceId: item.system?.sourceId ?? "",
+          importId: item.system?.importId ?? ""
+        }
+      }
+    ]);
+
+    if (!spell) return;
+
+    await item.update({
+      "system.linkedDocumentUuid": spell.uuid,
+      "system.spellName": spellName,
+      "system.spellLevel": String(spellLevel),
+      "system.spellEnergyCost": spellEnergyCost,
+      "system.trackingNotes": this.constructor._appendTrackingNote(item.system?.trackingNotes, `Linked spell: ${spell.name} (${spell.uuid}).`)
+    });
+    spell.sheet?.render(true);
+  }
+
   static async _resolveLinkedActor(item) {
     const uuid = item.system?.linkedActorUuid?.trim();
     if (!uuid) return null;
 
+    return this._resolveLinkedDocument(uuid, "Actor");
+  }
+
+  static async _resolveLinkedDocument(uuid, documentName = null) {
+    if (!hasText(uuid)) return null;
+
     try {
       const document = await fromUuid(uuid);
-      return document?.documentName === "Actor" ? document : null;
+      return !documentName || document?.documentName === documentName ? document : null;
     } catch (error) {
-      console.warn("anime5e | Unable to resolve linked follower actor", uuid, error);
+      console.warn("anime5e | Unable to resolve linked document", uuid, error);
       return null;
     }
   }
