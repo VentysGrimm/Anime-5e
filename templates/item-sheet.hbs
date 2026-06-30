@@ -38,6 +38,9 @@
       {{#if itemActions.canRoll}}
         <button type="button" class="roll-action" data-action="roll-item"><i class="fas fa-dice-d20"></i> Roll</button>
       {{/if}}
+      {{#if itemActions.canPowerCheck}}
+        <button type="button" class="roll-action" data-action="roll-power-check"><i class="fas fa-wand-magic-sparkles"></i> Power Check</button>
+      {{/if}}
       {{#if itemActions.canAttack}}
         <button type="button" class="roll-action" data-action="roll-item-attack"><i class="fas fa-crosshairs"></i> Attack</button>
       {{/if}}

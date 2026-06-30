@@ -21,7 +21,13 @@
         "sourceId": "core.power.dynamic-powers",
         "sourcePage": 99,
         "importId": "core.power.dynamic-powers",
-        "category": "Dynamic Powers"
+        "category": "Dynamic Powers",
+        "ability": "Situationally Variable",
+        "energyCost": "DM-approved Energy cost by expressed effect Rank",
+        "effect": "<p>Record the approved major concept, natural force, or sphere of influence for the current expression.</p>",
+        "repeatedEffects": "<p>Track each approved repeated effect, its effect Rank, targets, duration, and Energy paid before repeating or changing the expression.</p>",
+        "activationLimits": "<p>Each expression requires DM approval and should stay within the purchased Dynamic Powers theme.</p>",
+        "trackingNotes": "<p>Use as a manual helper for flexible effects rather than a fixed spell list.</p>"
       },
       "flags": {
         "anime5e": {
@@ -47,7 +53,13 @@
         "sourceId": "core.power.dynamic-power-lesser",
         "sourcePage": 99,
         "importId": "core.power.dynamic-power-lesser",
-        "category": "Dynamic Powers"
+        "category": "Dynamic Powers",
+        "ability": "Situationally Variable",
+        "energyCost": "DM-approved Energy cost by expressed effect Rank",
+        "effect": "<p>Record the approved limited concept, element, minor aspect, or narrow sphere for the current expression.</p>",
+        "repeatedEffects": "<p>Track repeated effects, their effect Rank, targets, duration, and Energy paid before reuse.</p>",
+        "activationLimits": "<p>Each expression requires DM approval and must stay within the narrower Lesser Dynamic Powers theme.</p>",
+        "trackingNotes": "<p>Use as a manual helper for flexible lesser effects rather than a fixed spell list.</p>"
       },
       "flags": {
         "anime5e": {

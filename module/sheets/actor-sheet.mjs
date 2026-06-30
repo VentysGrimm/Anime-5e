@@ -20,7 +20,7 @@ import {
   normalizeCharacterLevel,
   summarizeClassLevelState
 } from "../rules/points.mjs";
-import { applyEnergyChange, applyHitPointChange } from "../rules/resources.mjs";
+import { ENERGY_USAGE_MODES, applyEnergyChange, applyHitPointChange, getEnergyUsageMode } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -205,6 +205,10 @@ const EQUIPPABLE_ITEM_TYPES = new Set(["weapon", "armor", "shield"]);
 const CREATURE_ACTOR_TYPES = new Set(["companion", "monster", "npc"]);
 const TRANSPORT_ACTOR_TYPES = new Set(["itemConstruct", "mecha", "vehicle"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
+const DYNAMIC_POWER_SOURCE_IDS = new Set([
+  "core.attribute.dynamic-powers",
+  "core.attribute.dynamic-powers-lesser"
+]);
 const COMPLEX_ATTRIBUTE_SOURCE_IDS = new Set([
   "core.attribute.companion",
   "core.attribute.dynamic-powers",
@@ -284,6 +288,10 @@ function numberOrNull(value) {
   return Number.isFinite(number) ? number : null;
 }
 
+function hasNumericEntry(value) {
+  return value !== undefined && value !== null && value !== "" && Number.isFinite(Number(value));
+}
+
 function formatSigned(value) {
   return value > 0 ? `+${value}` : String(value);
 }
@@ -317,6 +325,10 @@ function isWeaponAttributeItem(item) {
   if (sourceIdForItem(item) === WEAPON_ATTRIBUTE_SOURCE_ID) return true;
 
   return String(item.name ?? "").trim().toLowerCase() === "weapon";
+}
+
+function isPowerCheckItem(item) {
+  return item.type === "power" || DYNAMIC_POWER_SOURCE_IDS.has(sourceIdForItem(item));
 }
 
 function isComplexAttributeItem(item) {
@@ -451,6 +463,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       items
     });
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
+    context.energyMode = this.constructor._prepareEnergyModeContext();
     context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system, context.pointSummary);
     context.transportProfile = this.constructor._prepareTransportProfileContext(this.actor, system);
     context.economy = this.constructor._prepareEconomyContext(system);
@@ -516,7 +529,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       || effectUsage.targetCount
       || !effectUsage.effectActive
     );
-    const hasAttackModifier = Number.isFinite(Number(system.attackModifier));
+    const hasAttackModifier = hasNumericEntry(system.attackModifier) || hasNumericEntry(system.attackBonus);
     const damageFormula = weaponAttributeDamageFormula(item);
     const tags = [
       system.rank !== undefined ? `Rank ${system.rank}` : null,
@@ -557,6 +570,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       canSkillCheck: item.type === "skill"
         || item.type === "tool"
         || (item.type === "proficiency" && !!this._normalizeAbilityKey(system.ability)),
+      canPowerCheck: isPowerCheckItem(item),
       canAttack: item.type === "weapon" || isWeaponAttribute || (item.type !== "attribute" && hasAttackModifier),
       canDamage: hasText(damageFormula),
       canToggleEffect,
@@ -618,6 +632,24 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       active: TRANSPORT_ACTOR_TYPES.has(actor.type),
       actorType: localizedType("Actor", actor.type),
       transport: system.transport ?? {}
+    };
+  }
+
+  static _prepareEnergyModeContext() {
+    const mode = getEnergyUsageMode();
+    const labels = {
+      [ENERGY_USAGE_MODES.tracked]: "Tracked Energy",
+      [ENERGY_USAGE_MODES.manual]: "Manual Energy",
+      [ENERGY_USAGE_MODES.disabled]: "Energy Disabled"
+    };
+
+    return {
+      mode,
+      label: labels[mode] ?? labels[ENERGY_USAGE_MODES.tracked],
+      enabled: mode !== ENERGY_USAGE_MODES.disabled,
+      tracked: mode === ENERGY_USAGE_MODES.tracked,
+      manual: mode === ENERGY_USAGE_MODES.manual,
+      disabled: mode === ENERGY_USAGE_MODES.disabled
     };
   }
 
@@ -1093,6 +1125,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='roll-skill-item']").forEach((button) => {
       button.addEventListener("click", this._onRollSkillItem.bind(this));
     });
+    element.querySelectorAll("[data-action='roll-power-check']").forEach((button) => {
+      button.addEventListener("click", this._onRollPowerCheck.bind(this));
+    });
     element.querySelectorAll("[data-action='roll-item-attack']").forEach((button) => {
       button.addEventListener("click", this._onRollItemAttack.bind(this));
     });
@@ -1370,12 +1405,41 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${item.name} Check (${abilityLabel})`, { mode: rollMode });
   }
 
+  async _onRollPowerCheck(event) {
+    event.preventDefault();
+    const item = this._getEmbeddedItem(event);
+    if (!item) return;
+
+    const abilityKey = this.constructor._normalizeAbilityKey(item.system?.ability);
+    const ability = this.actor.system.abilities?.[abilityKey];
+    if (!ability) {
+      ui.notifications?.warn(`Set a valid ability for ${item.name} before rolling it.`);
+      return;
+    }
+
+    const bonus = numberOrZero(item.system?.checkBonus);
+    const modifiers = [ability.modifier];
+    if (bonus) modifiers.push(bonus);
+    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+    const details = [
+      { label: "Category", value: item.system?.category },
+      { label: "Energy", value: item.system?.energyCost },
+      { label: "Limits", value: item.system?.activationLimits ? "See item notes" : "" }
+    ];
+
+    await this._rollFormula(buildD20Formula(modifiers), `${item.name} Power Check (${abilityLabel})`, {
+      details,
+      targetNumber: numberOrNull(item.system?.dc),
+      showMargin: settingEnabled("showMarginOfSuccess")
+    });
+  }
+
   async _onRollItemAttack(event) {
     event.preventDefault();
     const item = this._getEmbeddedItem(event);
     if (!item) return;
 
-    const modifier = Number(item.system?.attackModifier) || 0;
+    const modifier = Number(item.system?.attackModifier ?? item.system?.attackBonus) || 0;
     const details = [
       { label: "Category", value: item.system?.category },
       { label: "Range", value: item.system?.range }
@@ -1489,6 +1553,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
   async _applyEnergyChange(amount, mode) {
     const change = await applyEnergyChange(this.actor, amount, mode);
+    if (change.disabled) {
+      ui.notifications?.warn("Energy tracking is disabled for this world.");
+      return null;
+    }
+
     const verb = mode === "restore" ? "restores" : "spends";
 
     return ChatMessage.create({
@@ -1512,8 +1581,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (item.type === "attribute") {
       const energyCost = resolveCoreAttributeEnergyCost(item);
       const update = {};
+      const energyMode = getEnergyUsageMode();
 
-      if (energyCost.amount > 0) {
+      if (energyCost.requiresPayment && energyMode === ENERGY_USAGE_MODES.disabled) {
+        energyLine = `<p><strong>Energy:</strong> tracking is disabled for this world.</p>`;
+      } else if (energyCost.requiresPayment && energyMode === ENERGY_USAGE_MODES.manual) {
+        energyLine = `<p><strong>Energy:</strong> ${escapeHtml(energyCost.label)} requires manual payment tracking.</p>`;
+        update["system.effectActive"] = true;
+      } else if (energyCost.amount > 0) {
         const currentEnergy = Math.max(0, Number(this.actor.system?.combat?.energy?.value) || 0);
         if (currentEnergy < energyCost.amount) {
           ui.notifications?.warn(`${item.name} needs ${energyCost.amount} Energy, but ${this.actor.name} only has ${currentEnergy}.`);

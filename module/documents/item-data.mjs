@@ -305,7 +305,16 @@ export class Anime5ePowerData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
-      category: textField()
+      category: textField(),
+      ability: textField(),
+      checkBonus: numberField(0),
+      dc: optionalNumberField(),
+      energyCost: textField(),
+      roll: textField(),
+      effect: htmlField(),
+      repeatedEffects: htmlField(),
+      activationLimits: htmlField(),
+      trackingNotes: htmlField()
     };
   }
 }
@@ -343,7 +352,20 @@ export class Anime5eSpellData extends Anime5eBaseItemData {
     return {
       ...super.defineSchema(),
       level: numberField(0, { min: 0 }),
-      school: textField()
+      school: textField(),
+      castTime: textField(),
+      range: textField(),
+      components: textField(),
+      duration: textField(),
+      saveDC: optionalNumberField(),
+      attackBonus: optionalNumberField(),
+      spellcastingAbility: textField(),
+      energyCost: textField(),
+      roll: textField(),
+      damage: textField(),
+      damageType: textField(),
+      effect: htmlField(),
+      psionicsNotes: htmlField()
     };
   }
 }

@@ -132,6 +132,20 @@ Hooks.once("init", () => {
     restricted: true
   });
 
+  game.settings.register(ANIME5E.id, "energyUsageMode", {
+    name: "Energy Usage Mode",
+    hint: "Choose whether Attribute use spends Energy automatically, leaves Energy costs as manual notes, or disables Energy bookkeeping.",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      tracked: "Tracked",
+      manual: "Manual",
+      disabled: "Disabled"
+    },
+    default: "tracked"
+  });
+
   game.settings.register(ANIME5E.id, "applyRangePenalties", {
     name: "Apply Range Penalties",
     hint: "Subtract configured common-attack range penalties from attack rolls.",

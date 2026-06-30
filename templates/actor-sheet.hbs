@@ -73,6 +73,7 @@
 
         <div class="resource-stat torn-paper">
           <h2>Energy Points</h2>
+          <small class="derived-stat-note">{{energyMode.label}}</small>
           <label>
             Maximum
             <input type="number" name="system.combat.energy.max" value="{{system.combat.energy.baseMax}}" min="0" {{#unless editable}}disabled{{/unless}}>
@@ -441,6 +442,7 @@
                 {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
                 {{#if ../editable}}{{#if item.canToggleEffect}}<button type="button" data-action="toggle-attribute-effect" title="{{item.effectToggleTitle}}"><i class="fas {{item.effectToggleIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if item.canPowerCheck}}<button type="button" data-action="roll-power-check" title="Power Check"><i class="fas fa-wand-magic-sparkles"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
                 {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}
@@ -627,6 +629,8 @@
           </section>
           <section class="energy-panel" aria-label="Energy Spending And Recovery">
             <h3>Energy Changes</h3>
+            <p class="sheet-warning">{{energyMode.label}}</p>
+            {{#if energyMode.enabled}}
             <div class="energy-controls">
               <label>
                 Amount
@@ -635,6 +639,7 @@
               <button type="button" class="roll-action" data-action="spend-energy"><i class="fas fa-bolt"></i> Spend</button>
               <button type="button" class="roll-action" data-action="restore-energy"><i class="fas fa-plus"></i> Restore</button>
             </div>
+            {{/if}}
           </section>
           <section class="equipped-summary" aria-label="Equipped Combat Gear">
             <h3>Equipped Gear</h3>
@@ -758,6 +763,7 @@
               <div class="item-actions">
                 {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
                 {{#if ../editable}}{{#if item.canToggleEffect}}<button type="button" data-action="toggle-attribute-effect" title="{{item.effectToggleTitle}}"><i class="fas {{item.effectToggleIcon}}"></i></button>{{/if}}{{/if}}
+                {{#if item.canPowerCheck}}<button type="button" data-action="roll-power-check" title="Power Check"><i class="fas fa-wand-magic-sparkles"></i></button>{{/if}}
                 {{#if ../editable}}{{#if item.canLinkFollower}}<button type="button" data-action="create-linked-follower" title="{{item.linkFollowerTitle}}"><i class="fas {{item.linkFollowerIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}{{#if item.canLinkSpell}}<button type="button" data-action="create-linked-spell" title="{{item.linkSpellTitle}}"><i class="fas {{item.linkSpellIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
@@ -925,6 +931,7 @@
               <div class="item-actions">
                 {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if item.canPowerCheck}}<button type="button" data-action="roll-power-check" title="Power Check"><i class="fas fa-wand-magic-sparkles"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
                 {{#if ../editable}}{{#if item.equippable}}<button type="button" data-action="toggle-equipped" title="{{#if item.equipped}}Unequip{{else}}Equip{{/if}}"><i class="fas {{#if item.equipped}}fa-toggle-on{{else}}fa-toggle-off{{/if}}"></i></button>{{/if}}{{/if}}

@@ -2,6 +2,21 @@ function safeAmount(amount) {
   return Math.max(0, Math.trunc(Number(amount) || 0));
 }
 
+export const ENERGY_USAGE_MODES = {
+  tracked: "tracked",
+  manual: "manual",
+  disabled: "disabled"
+};
+
+export function getEnergyUsageMode() {
+  try {
+    const mode = game.settings.get("anime5e", "energyUsageMode");
+    return Object.values(ENERGY_USAGE_MODES).includes(mode) ? mode : ENERGY_USAGE_MODES.tracked;
+  } catch {
+    return ENERGY_USAGE_MODES.tracked;
+  }
+}
+
 export async function applyHitPointChange(actor, amount, mode = "damage") {
   const hitPoints = actor.system.combat.hitPoints;
   const current = Number(hitPoints.value) || 0;
@@ -30,6 +45,13 @@ export async function applyHitPointChange(actor, amount, mode = "damage") {
 }
 
 export async function applyEnergyChange(actor, amount, mode = "spend") {
+  if (getEnergyUsageMode() === ENERGY_USAGE_MODES.disabled) {
+    const energy = actor.system.combat.energy;
+    const current = Math.max(0, Number(energy.value) || 0);
+    const max = Math.max(0, Number(energy.max) || 0);
+    return { amount: 0, current, max, next: current, disabled: true };
+  }
+
   const energy = actor.system.combat.energy;
   const current = Math.max(0, Number(energy.value) || 0);
   const max = Math.max(0, Number(energy.max) || 0);

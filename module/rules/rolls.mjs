@@ -90,7 +90,8 @@ export async function rollAnime5eFormula({
   const rollMode = normalizeD20Mode(mode);
   const roll = await evaluateAnime5eFormula(formula);
   const resolvedDetails = [...details];
-  const target = Number(targetNumber);
+  const hasTarget = targetNumber !== null && targetNumber !== undefined && targetNumber !== "";
+  const target = hasTarget ? Number(targetNumber) : NaN;
   if (Number.isFinite(target)) {
     resolvedDetails.push({ label: "Target", value: target });
     if (showMargin) resolvedDetails.push({ label: "Margin", value: formatSignedValue(roll.total - target) });

@@ -2,7 +2,7 @@ import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
 import { buildCoreAttributeUsageContext, resolveCoreAttributeEnergyCost } from "../rules/attribute-effects.mjs";
 import { buildAdventuringRiskChatContent } from "../rules/adventuring-risks.mjs";
 import { calculateAttributeCustomization, calculateEquipmentPointCost } from "../rules/points.mjs";
-import { applyEnergyChange } from "../rules/resources.mjs";
+import { ENERGY_USAGE_MODES, applyEnergyChange, getEnergyUsageMode } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -24,10 +24,14 @@ const MULTILINE_FIELDS = new Set([
   "constructionNotes",
   "overrideNotes",
   "effectTargets",
+  "activationLimits",
+  "effect",
   "materials",
   "movementModes",
+  "psionicsNotes",
   "projectNotes",
   "progressionNotes",
+  "repeatedEffects",
   "result",
   "riskNotes",
   "rulesNotes",
@@ -61,9 +65,11 @@ const NUMBER_FIELDS = new Set([
   "armourClassModifier",
   "assignmentCount",
   "attackModifier",
+  "attackBonus",
   "basePoints",
   "bonusPoints",
   "charges",
+  "checkBonus",
   "costAdjustment",
   "costModifier",
   "dc",
@@ -84,6 +90,7 @@ const NUMBER_FIELDS = new Set([
   "rank",
   "requiredProgress",
   "sourcePage",
+  "saveDC",
   "totalPoints"
 ]);
 
@@ -99,6 +106,7 @@ const FIELD_LABELS = {
   assignmentRange: "Assignment Range",
   ammo: "Ammo",
   attackModifier: "Attack Modifier",
+  attackBonus: "Attack Bonus",
   attributeSummary: "Attribute Summary",
   attunement: "Attunement",
   basePoints: "Base Points",
@@ -108,6 +116,8 @@ const FIELD_LABELS = {
   communities: "Communities",
   costAdjustment: "Cost Adjustment",
   costModifier: "Cost Modifier",
+  castTime: "Cast Time",
+  checkBonus: "Check Bonus",
   constructionNotes: "Construction Notes",
   constructionStatus: "Construction Status",
   containedAttributes: "Contained Attributes",
@@ -122,6 +132,7 @@ const FIELD_LABELS = {
   duration: "Duration",
   durationRemaining: "Duration Remaining",
   effectActive: "Apply Derived Effect",
+  effect: "Effect",
   effectTargets: "Effect Targets",
   embeddedAttributePoints: "Contained Attribute Points",
   embeddedDefectPoints: "Contained Defect Refunds",
@@ -157,6 +168,7 @@ const FIELD_LABELS = {
   primaryAbility: "Primary Ability",
   projectNotes: "Project Notes",
   progressionNotes: "Progression Notes",
+  psionicsNotes: "Psionics Notes",
   progress: "Progress",
   proficiencyGroup: "Proficiency Group",
   proficiencyRequirement: "Proficiency Requirement",
@@ -167,11 +179,13 @@ const FIELD_LABELS = {
   riskNotes: "Risk Notes",
   rulesNotes: "Rules Notes",
   savingThrows: "Saving Throws",
+  saveDC: "Save DC",
   shieldSize: "Shield Size",
   sizeAndType: "Size and Type",
   sizeCategory: "Size Category",
   spellEffect: "Spell Effect",
   spellEnergyCost: "Spell Energy Cost",
+  spellcastingAbility: "Spellcasting Ability",
   spellLevel: "Spell Level",
   spellName: "Spell Name",
   spellPrerequisites: "Spell Prerequisites",
@@ -188,6 +202,8 @@ const FIELD_LABELS = {
   totalPoints: "Total Points",
   trackingMode: "Tracking Workflow",
   trackingNotes: "Tracking Notes",
+  repeatedEffects: "Repeated Effects",
+  activationLimits: "Activation Limits",
   value: "Value",
   weight: "Weight",
   weaponNotes: "Weapon Notes",
@@ -202,6 +218,10 @@ function humanizeFieldName(fieldName) {
 
 function hasText(value) {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function hasNumericEntry(value) {
+  return value !== undefined && value !== null && value !== "" && Number.isFinite(Number(value));
 }
 
 function sourceIdForItem(item, systemData = item.system ?? {}) {
@@ -219,6 +239,13 @@ function isWeaponAttributeItem(item, systemData = item.system ?? {}) {
   if (sourceIdForItem(item, systemData) === WEAPON_ATTRIBUTE_SOURCE_ID) return true;
 
   return String(item.name ?? "").trim().toLowerCase() === "weapon";
+}
+
+function isPowerCheckItem(item, systemData = item.system ?? {}) {
+  const sourceId = sourceIdForItem(item, systemData);
+  return item.type === "power"
+    || sourceId === "core.attribute.dynamic-powers"
+    || sourceId === "core.attribute.dynamic-powers-lesser";
 }
 
 function weaponAttributeDamageFormula(item, systemData = item.system ?? {}) {
@@ -519,12 +546,13 @@ async function resolveAttributeModifierReference(reference, type) {
 
 function buildItemActions(item, systemData) {
   const isWeaponAttribute = isWeaponAttributeItem(item, systemData);
-  const hasAttackModifier = Number.isFinite(Number(systemData.attackModifier));
+  const hasAttackModifier = hasNumericEntry(systemData.attackModifier) || hasNumericEntry(systemData.attackBonus);
   const damageFormula = weaponAttributeDamageFormula(item, systemData);
 
   return {
     canUse: true,
     canRoll: hasText(systemData.roll),
+    canPowerCheck: isPowerCheckItem(item, systemData),
     canAttack: item.type === "weapon" || isWeaponAttribute || (item.type !== "attribute" && hasAttackModifier),
     canDamage: hasText(damageFormula)
   };
@@ -637,6 +665,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
     element.querySelector("[data-action='use-item']")?.addEventListener("click", this._onUseItem.bind(this));
     element.querySelector("[data-action='roll-item']")?.addEventListener("click", this._onRollItem.bind(this));
+    element.querySelector("[data-action='roll-power-check']")?.addEventListener("click", this._onRollPowerCheck.bind(this));
     element.querySelector("[data-action='roll-item-attack']")?.addEventListener("click", this._onRollAttack.bind(this));
     element.querySelector("[data-action='roll-item-damage']")?.addEventListener("click", this._onRollDamage.bind(this));
     element.querySelectorAll("[data-action='add-attribute-modifier']").forEach((button) => {
@@ -663,9 +692,38 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     await this._rollFormula(formula, `${this.item.name} Roll`);
   }
 
+  async _onRollPowerCheck(event) {
+    event.preventDefault();
+    const actor = getItemActor(this.item);
+    if (!actor) {
+      ui.notifications?.warn("Add this power to an actor before rolling a Dynamic Powers check.");
+      return;
+    }
+
+    const abilityKey = this.constructor._normalizeAbilityKey(this.item.system?.ability);
+    const ability = actor.system.abilities?.[abilityKey];
+    if (!ability) {
+      ui.notifications?.warn(`Set a valid ability for ${this.item.name} before rolling it.`);
+      return;
+    }
+
+    const bonus = Number(this.item.system?.checkBonus) || 0;
+    const modifiers = [ability.modifier];
+    if (bonus) modifiers.push(bonus);
+    const abilityLabel = abilityKey.replace(/^./, (character) => character.toUpperCase());
+    await this._rollFormula(buildD20Formula(modifiers), `${this.item.name} Power Check (${abilityLabel})`, {
+      actor,
+      targetNumber: hasNumericEntry(this.item.system?.dc) ? this.item.system.dc : null,
+      details: [
+        { label: "Category", value: this.item.system?.category },
+        { label: "Energy", value: this.item.system?.energyCost }
+      ]
+    });
+  }
+
   async _onRollAttack(event) {
     event.preventDefault();
-    const modifier = Number(this.item.system?.attackModifier) || 0;
+    const modifier = Number(this.item.system?.attackModifier ?? this.item.system?.attackBonus) || 0;
     await this._rollFormula(buildD20Formula([modifier]), `${this.item.name} Attack`);
   }
 
@@ -719,9 +777,31 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     await this.item.update({ [`system.${config.field}`]: references });
   }
 
-  async _rollFormula(formula, label) {
+  static _normalizeAbilityKey(value) {
+    const normalized = String(value ?? "").trim().toLowerCase();
+    const labels = {
+      strength: "Strength",
+      dexterity: "Dexterity",
+      constitution: "Constitution",
+      intelligence: "Intelligence",
+      wisdom: "Wisdom",
+      charisma: "Charisma"
+    };
+    if (!normalized) return null;
+    if (labels[normalized]) return normalized;
+
+    return Object.entries(labels).find(([, label]) => label.toLowerCase() === normalized)?.[0] ?? null;
+  }
+
+  async _rollFormula(formula, label, options = {}) {
     try {
-      return rollAnime5eFormula({ actor: getItemActor(this.item), formula, label });
+      return rollAnime5eFormula({
+        actor: options.actor ?? getItemActor(this.item),
+        formula,
+        label,
+        details: options.details,
+        targetNumber: options.targetNumber
+      });
     } catch (error) {
       console.error("anime5e | Failed to roll item formula", formula, error);
       ui.notifications?.error(`Anime 5e could not roll "${formula}". Check the formula and try again.`);
@@ -745,8 +825,14 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     if (item.type === "attribute" && actor) {
       const energyCost = resolveCoreAttributeEnergyCost(item);
       const update = {};
+      const energyMode = getEnergyUsageMode();
 
-      if (energyCost.amount > 0) {
+      if (energyCost.requiresPayment && energyMode === ENERGY_USAGE_MODES.disabled) {
+        energyLine = `<p><strong>Energy:</strong> tracking is disabled for this world.</p>`;
+      } else if (energyCost.requiresPayment && energyMode === ENERGY_USAGE_MODES.manual) {
+        energyLine = `<p><strong>Energy:</strong> ${escapeHtml(energyCost.label)} requires manual payment tracking.</p>`;
+        update["system.effectActive"] = true;
+      } else if (energyCost.amount > 0) {
         const currentEnergy = Math.max(0, Number(actor.system?.combat?.energy?.value) || 0);
         if (currentEnergy < energyCost.amount) {
           ui.notifications?.warn(`${item.name} needs ${energyCost.amount} Energy, but ${actor.name} only has ${currentEnergy}.`);

@@ -293,7 +293,11 @@
       },
       "power": {
         "htmlFields": [
-          "description"
+          "description",
+          "effect",
+          "repeatedEffects",
+          "activationLimits",
+          "trackingNotes"
         ]
       },
       "proficiency": {
@@ -323,7 +327,9 @@
       },
       "spell": {
         "htmlFields": [
-          "description"
+          "description",
+          "effect",
+          "psionicsNotes"
         ]
       },
       "technique": {

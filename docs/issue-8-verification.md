@@ -92,6 +92,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Weapon item sheets now expose proficiency requirement, range rank, ammo, charges, Enhancements, Limiters, equipped state, attack, and damage fields. Armour and shield sheets expose proficiency requirements and equipped AC fields.
 - Items of Power now expose contained Attribute/Defect bookkeeping fields and a calculated construction point summary.
 - Monster, NPC, and companion basic actor sheets now expose source-backed challenge, XP, movement, combat, and point summaries; they can roll ability checks, quick checks, contests, saving throws, skill items, common attacks, and damage. The Encounter Threat settings dialog now compares party and encounter threat with manual threat and XP budget overrides.
+- Energy now supports tracked, manual, and disabled world modes. Actor sheets expose Energy mode/status and controls where applicable; Attribute use honours the mode. Dynamic Powers and Spell items now carry helper fields for ability checks, Energy costs, repeated effects, activation limits, spell casting metadata, saves, attacks, psionics notes, and manual flexible-power tracking.
 
 ## Missing Files Required For Load
 
