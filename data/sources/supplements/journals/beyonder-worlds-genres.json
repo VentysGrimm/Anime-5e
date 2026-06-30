@@ -1,0 +1,132 @@
+{
+  "pack": "anime5e.supplemental-journals",
+  "documentType": "JournalEntry",
+  "folders": [
+    {
+      "name": "Beyonder Worlds - Genre Guides",
+      "color": "#5b6f90"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Beyonder Worlds: Science Fiction",
+      "folder": "Beyonder Worlds - Genre Guides",
+      "pages": [
+        {
+          "name": "Science Fiction",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF pp. 40, 48-49.</p><p>Science fiction support centers on advanced technology, spacefaring societies, alien Species, new Classes such as Gadgeteer, and gear ranging from blasters to starships and personal computers.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.journal.science-fiction",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 40,
+            "importId": "beyonder-worlds.journal.science-fiction"
+          }
+        }
+      }
+    },
+    {
+      "name": "Beyonder Worlds: Mecha Fantasy",
+      "folder": "Beyonder Worlds - Genre Guides",
+      "pages": [
+        {
+          "name": "Mecha Fantasy",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF pp. 66, 78-79.</p><p>Mecha fantasy adds Sentai Rangers, Mecha Knights, giant robots, fighter craft, combining vehicles, and campaign tools for both real-mecha and super-mecha styles.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.journal.mecha-fantasy",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 66,
+            "importId": "beyonder-worlds.journal.mecha-fantasy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Beyonder Worlds: Urban Fantasy",
+      "folder": "Beyonder Worlds - Genre Guides",
+      "pages": [
+        {
+          "name": "Urban Fantasy",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 94.</p><p>Urban fantasy brings magical action into modern spaces, where hidden supernatural factions, Technomancers, secret societies, monsters, and city-scale mysteries can coexist with contemporary life.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.journal.urban-fantasy",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 94,
+            "importId": "beyonder-worlds.journal.urban-fantasy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Beyonder Worlds: Cyberpunk",
+      "folder": "Beyonder Worlds - Genre Guides",
+      "pages": [
+        {
+          "name": "Cyberpunk",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF pp. 118, 128-129.</p><p>Cyberpunk emphasizes body upgrades, corporate violence, post-apocalyptic travel, high-risk gear, armed vehicles, and hard-edged classes such as Cyberpunk.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.journal.cyberpunk",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 118,
+            "importId": "beyonder-worlds.journal.cyberpunk"
+          }
+        }
+      }
+    },
+    {
+      "name": "Beyonder Worlds: Modern Earth",
+      "folder": "Beyonder Worlds - Genre Guides",
+      "pages": [
+        {
+          "name": "Modern Earth",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF pp. 142, 144-148.</p><p>Modern Earth material supports contemporary action, spy stories, modern weapons and armour, specialised spy tech, and vehicles that bridge everyday reality with Anime 5E-scale adventure.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.journal.modern-earth",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 142,
+            "importId": "beyonder-worlds.journal.modern-earth"
+          }
+        }
+      }
+    }
+  ]
+}

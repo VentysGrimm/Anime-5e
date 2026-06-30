@@ -1,0 +1,82 @@
+{
+  "pack": "anime5e.supplemental-items",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Items - Beyonder Worlds",
+      "color": "#8c7a4f"
+    },
+    {
+      "name": "Mecha - Beyonder Worlds",
+      "color": "#7f657d"
+    },
+    {
+      "name": "Vehicles - Beyonder Worlds",
+      "color": "#5b6f90"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Virtual Tablet (V-Tab)",
+      "type": "equipment",
+      "folder": "Items - Beyonder Worlds",
+      "img": "icons/tools/navigation/map-chart-tan.webp",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 49.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4.</p><p><strong>Rules Summary:</strong> Wrist-worn holographic tablet that provides computer systems, data recording and backup, GPS, network access, and virtual projection features for interstellar campaigns.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.item.v-tab",
+        "sourcePage": 49,
+        "importId": "beyonder-worlds.item.v-tab",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Science Fiction Gear",
+        "properties": "Features: Computer System, Data Recording and Backup, GPS, Network Access, Virtual Projection"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.item.v-tab",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 49,
+            "importId": "beyonder-worlds.item.v-tab"
+          }
+        }
+      }
+    },
+    {
+      "name": "MARStar Armour",
+      "type": "mecha",
+      "folder": "Mecha - Beyonder Worlds",
+      "img": "icons/commodities/tech/metal-cogs.webp",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF pp. 78-79.</p><p><strong>Item Rank:</strong> 13. <strong>Point Cost:</strong> 52.</p><p><strong>Rules Summary:</strong> Gargantuan Myriad Alliance combat robot for Mecha Knights, balancing speed, protection, space resilience, and radiant weapon systems. It is suitable for Level 13 Mecha Knights and uses Helming checks for many piloting actions.</p>",
+        "rank": 13,
+        "cost": 52,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.mecha.marstar-armour",
+        "sourcePage": 79,
+        "importId": "beyonder-worlds.mecha.marstar-armour",
+        "size": "Gargantuan Item (50 ft.)",
+        "armourClass": 14,
+        "hitPoints": "100",
+        "speed": "Flight 300 ft./round; Ground Speed 300 ft./round; Spaceflight",
+        "properties": "AC Bonus, Augmented Strength/Dexterity, Protected, Resilient, Tough, Radiant Beam, Radiant Sword, Conditional Ownership, Special Requirement",
+        "operator": "Mecha Knight pilot; Helming skill for piloting actions"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.mecha.marstar-armour",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 79,
+            "importId": "beyonder-worlds.mecha.marstar-armour"
+          }
+        }
+      }
+    }
+  ]
+}

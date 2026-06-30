@@ -1,0 +1,15 @@
+{
+  "pack": "anime5e.supplemental-character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Attributes - Beyonder Worlds",
+      "color": "#6f7f90"
+    },
+    {
+      "name": "Defects - Beyonder Worlds",
+      "color": "#7f657d"
+    }
+  ],
+  "documents": []
+}

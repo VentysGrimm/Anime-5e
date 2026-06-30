@@ -1,0 +1,19 @@
+{
+  "pack": "anime5e.supplemental-creatures",
+  "documentType": "Actor",
+  "folders": [
+    {
+      "name": "Threats - Beyonder Worlds",
+      "color": "#7f657d"
+    },
+    {
+      "name": "Robots - Beyonder Worlds",
+      "color": "#5b6f90"
+    },
+    {
+      "name": "Monsters - Beyonder Worlds",
+      "color": "#8c7a4f"
+    }
+  ],
+  "documents": []
+}
