@@ -1,0 +1,99 @@
+{
+  "pack": "anime5e.supplemental-creatures",
+  "documentType": "Actor",
+  "folders": [
+    {
+      "name": "Monstrum Libri Vol. 2 - Aquatic and Desertic",
+      "color": "#5b6f90"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Axolotilte",
+      "type": "monster",
+      "folder": "Monstrum Libri Vol. 2 - Aquatic and Desertic",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Tiny amphibious lake and river creature with a constant appetite, cheerful emotional energy form, and a dangerous hulking alternate form when denied food.",
+          "speciesAndSize": "Diminutive (9-11 in.) quadruped salamander",
+          "actorRole": "Monster",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 84,
+          "homelandHabitat": "Lakes and rivers",
+          "communities": "Small colonies",
+          "alignment": ""
+        },
+        "source": {
+          "book": "Anime 5E Monstrum Libri Volume 2: Aquatic and Desertic",
+          "page": 18,
+          "sourceId": "monstrum-libri-vol2.creature.axolotilte",
+          "importId": "monstrum-libri-vol2.creature.axolotilte"
+        },
+        "abilities": {
+          "strength": {
+            "value": 3
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 12
+          },
+          "intelligence": {
+            "value": 4
+          },
+          "wisdom": {
+            "value": 7
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 18,
+          "hitPoints": {
+            "value": 13,
+            "max": 13
+          },
+          "movementSpeed": 4,
+          "waterSpeed": "90 feet/round",
+          "proficiencyBonus": 3,
+          "armourNotes": "Armour Class 18",
+          "defenseSummary": "AC 18; HP 13 (5d2+5); Diminutive body, AC Bonus, Resilient (Atmosphere), Water Speed, and substantial susceptibility to standard damage.",
+          "offenseSummary": "Claws +5 for negligible slashing damage in normal form; Alternate Form can become a Hulking Hangry Axol with extra HP, Huge size, and stronger claws.",
+          "attacks": {
+            "primary": {
+              "weapon": "Claws",
+              "modifier": "+5",
+              "damageType": "Slashing",
+              "damage": "0 (1d4-10)"
+            },
+            "secondary": {
+              "weapon": "Hulking Hangry Axol Claws",
+              "modifier": "Alternate Form",
+              "damageType": "Slashing",
+              "damage": "+1d12"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Monstrum Libri Volume 2: Aquatic and Desertic, PDF p. 18.</p><p><strong>Attributes:</strong> AC Bonus 6; Alternate Form 7 (Hulking Hangry Axol); Change State 1 (positive emotion, 3/day); Combat Mastery 6; Resilient 1 (Atmosphere); Unique Attribute 3 (Small, light, and unobtrusive); Water Speed 2; Weapon 1 (Claws).</p><p><strong>Defects:</strong> Easily Distracted 2 (Food); Degraded 8 (Strength); Impaired Manipulation 2; Impaired Speech 2; Limited Damage 6; Obstacle 4 (Strength dice rolls); Slow 3; Susceptible 6.</p><p><strong>Points:</strong> 17 Attribute/Defect subtotal + 11 Base + 56 Abilities = 84.</p>",
+        "notes": {
+          "overview": "<p>Sorrow axolotilte become negative emotions rather than positive ones and can be identified by fewer tines on their six pseudo-horns.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "monstrum-libri-vol2.creature.axolotilte",
+          "source": {
+            "book": "Anime 5E Monstrum Libri Volume 2: Aquatic and Desertic",
+            "page": 18,
+            "importId": "monstrum-libri-vol2.creature.axolotilte"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -39,6 +39,7 @@ Examples:
 - `beyonder-worlds.journal.science-fiction`
 - `adventuring-accessories.item.arcane-lodestone`
 - `mounts-and-monsters.mount.fae-war-corgi`
-- `monstrum-libri-vol1.creature.bolegom`
+- `monstrum-libri-vol1.creature.adlet`
+- `monstrum-libri-vol2.creature.axolotilte`
 
 When a source belongs to a later standalone Foundry module, keep its JSON under `data/sources/supplements/` until that module has its own manifest/import path. Do not add local PDFs, extracted caches, art, maps, or sound files to release artifacts unless a later issue explicitly scopes them in.
