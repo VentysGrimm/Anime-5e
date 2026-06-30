@@ -67,6 +67,7 @@
     "Actor": {
       "character": "Character",
       "companion": "Companion",
+      "itemConstruct": "Item Construct",
       "mecha": "Mecha",
       "monster": "Monster",
       "npc": "NPC",

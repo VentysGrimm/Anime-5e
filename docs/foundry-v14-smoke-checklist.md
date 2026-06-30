@@ -22,7 +22,7 @@ The folder name must match the package id in `system.json`: `anime5e`.
 
 ## Basic Document Smoke
 
-1. Create one Actor for each declared Actor subtype: Character, NPC, Monster, Companion, Vehicle, and Mecha.
+1. Create one Actor for each declared Actor subtype: Character, NPC, Monster, Companion, Item Construct, Vehicle, and Mecha.
 2. Create one Item for representative core subtypes: Attribute, Defect, Enhancement, Limiter, Species, Size Template, Class, Weapon, Armour, Shield, Gear, Item of Power, Skill, Tool, Language, Feature, Power, Spell, Technique, Mount, Monster Variant, and Mecha.
 3. Open and close each created sheet.
 4. Edit a simple text or numeric field on each representative sheet, close it, reopen it, and confirm the value persists.

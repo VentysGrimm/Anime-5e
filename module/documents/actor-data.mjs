@@ -276,6 +276,8 @@ export class Anime5eMonsterData extends Anime5eBaseActorData {}
 
 export class Anime5eCompanionData extends Anime5eBaseActorData {}
 
+export class Anime5eItemConstructData extends Anime5eBaseActorData {}
+
 export class Anime5eVehicleData extends Anime5eBaseActorData {}
 
 export class Anime5eMechaData extends Anime5eBaseActorData {}

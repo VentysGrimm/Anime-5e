@@ -73,6 +73,28 @@
           "notes.journal"
         ]
       },
+      "itemConstruct": {
+        "htmlFields": [
+          "biography",
+          "statBlock",
+          "notes.overview",
+          "notes.combat",
+          "notes.attributes",
+          "notes.defects",
+          "notes.skills",
+          "notes.powers",
+          "notes.inventory",
+          "notes.companions",
+          "notes.biography",
+          "notes.goals",
+          "notes.family",
+          "notes.history",
+          "notes.personality",
+          "notes.group",
+          "notes.advancement",
+          "notes.journal"
+        ]
+      },
       "mecha": {
         "htmlFields": [
           "biography",

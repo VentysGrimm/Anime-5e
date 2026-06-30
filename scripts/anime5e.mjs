@@ -1,6 +1,7 @@
 import {
   Anime5eCharacterData,
   Anime5eCompanionData,
+  Anime5eItemConstructData,
   Anime5eMechaData as Anime5eMechaActorData,
   Anime5eMonsterData,
   Anime5eNpcData,
@@ -60,8 +61,8 @@ export const ANIME5E = {
   id: "anime5e",
   title: "Anime 5e",
   characterActorTypes: ["character"],
-  basicActorTypes: ["companion", "mecha", "monster", "npc", "vehicle"],
-  actorTypes: ["character", "companion", "mecha", "monster", "npc", "vehicle"],
+  basicActorTypes: ["companion", "itemConstruct", "mecha", "monster", "npc", "vehicle"],
+  actorTypes: ["character", "companion", "itemConstruct", "mecha", "monster", "npc", "vehicle"],
   itemTypes: [
     "adventuringRisk",
     "armor",
@@ -134,6 +135,7 @@ Hooks.once("init", () => {
   Object.assign(CONFIG.Actor.dataModels, {
     character: Anime5eCharacterData,
     companion: Anime5eCompanionData,
+    itemConstruct: Anime5eItemConstructData,
     mecha: Anime5eMechaActorData,
     monster: Anime5eMonsterData,
     npc: Anime5eNpcData,
