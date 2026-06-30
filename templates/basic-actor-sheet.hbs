@@ -198,6 +198,40 @@
     </div>
   </section>
 
+  <section class="panel">
+    <h2>Common Attacks</h2>
+    <div class="folio-table attack-table action-table">
+      <div class="table-header">Weapon</div>
+      <div class="table-header">Mod</div>
+      <div class="table-header">Kind</div>
+      <div class="table-header">Range</div>
+      <div class="table-header">Roll</div>
+      <div class="table-header">AC</div>
+      <div class="table-header">Penalty</div>
+      <div class="table-header">Dmg Type</div>
+      <div class="table-header">Damage</div>
+      <div class="table-header">Attack</div>
+      <div class="table-header">Damage</div>
+      {{#each attackRows as |attackRow|}}
+        <input type="text" name="system.combat.attacks.{{attackRow.key}}.weapon" value="{{attackRow.data.weapon}}" {{#unless ../editable}}disabled{{/unless}}>
+        <input type="text" name="system.combat.attacks.{{attackRow.key}}.modifier" value="{{attackRow.data.modifier}}" {{#unless ../editable}}disabled{{/unless}}>
+        <input type="text" name="system.combat.attacks.{{attackRow.key}}.attackType" value="{{attackRow.data.attackType}}" {{#unless ../editable}}disabled{{/unless}}>
+        <input type="text" name="system.combat.attacks.{{attackRow.key}}.range" value="{{attackRow.data.range}}" {{#unless ../editable}}disabled{{/unless}}>
+        <select name="system.combat.attacks.{{attackRow.key}}.d20Mode" {{#unless ../editable}}disabled{{/unless}}>
+          {{#each attackRow.d20Modes as |mode|}}
+            <option value="{{mode.key}}" {{#if mode.selected}}selected{{/if}}>{{mode.label}}</option>
+          {{/each}}
+        </select>
+        <input type="number" name="system.combat.attacks.{{attackRow.key}}.targetArmourClass" value="{{attackRow.data.targetArmourClass}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
+        <input type="number" name="system.combat.attacks.{{attackRow.key}}.rangePenalty" value="{{attackRow.data.rangePenalty}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
+        <input type="text" name="system.combat.attacks.{{attackRow.key}}.damageType" value="{{attackRow.data.damageType}}" {{#unless ../editable}}disabled{{/unless}}>
+        <input type="text" name="system.combat.attacks.{{attackRow.key}}.damage" value="{{attackRow.data.damage}}" {{#unless ../editable}}disabled{{/unless}}>
+        <button type="button" class="icon-button" data-action="roll-attack" data-attack="{{attackRow.key}}" title="Roll attack"><i class="fas fa-dice-d20"></i></button>
+        <button type="button" class="icon-button" data-action="roll-damage" data-attack="{{attackRow.key}}" title="Roll damage"><i class="fas fa-bolt"></i></button>
+      {{/each}}
+    </div>
+  </section>
+
   <section class="panel item-drop-panel" data-drop-target="items">
     <h2>Owned Items</h2>
     <ol class="item-list folio-item-list">
