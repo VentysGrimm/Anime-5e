@@ -29,7 +29,7 @@ function classSlotForItem(actor, item) {
   return firstEmptyClassSlot(actor);
 }
 
-function summarizePointState(actor) {
+export function summarizePointState(actor) {
   const summary = game.anime5e?.points?.calculatePointSummary?.(actor.system, actor.items?.contents ?? []);
   if (!summary) return {};
 
@@ -50,12 +50,29 @@ function summarizePointState(actor) {
   };
 }
 
-async function applySpecies(actor, item) {
+export async function applySpeciesItem(actor, item) {
   const update = {
     "system.identity.race": item.name,
     "system.creation.speciesApplied": item.uuid ?? item.id,
     ...summarizePointState(actor)
   };
+
+  return actor.update(update);
+}
+
+export async function removeSpeciesItem(actor, item) {
+  const applied = String(actor.system?.creation?.speciesApplied ?? "");
+  const identityRace = String(actor.system?.identity?.race ?? "");
+  const itemRefs = new Set([item?.uuid, item?.id].filter(Boolean).map(String));
+  const shouldClear = !item || itemRefs.has(applied) || identityRace === item.name;
+  const update = {
+    ...summarizePointState(actor)
+  };
+
+  if (shouldClear) {
+    update["system.identity.race"] = "";
+    update["system.creation.speciesApplied"] = "";
+  }
 
   return actor.update(update);
 }
@@ -86,7 +103,7 @@ async function applyClass(actor, item) {
   return actor.update(update);
 }
 
-async function refreshCreationValidation(actor) {
+export async function refreshCreationValidation(actor) {
   if (!actor?.isOwner) return;
   const update = summarizePointState(actor);
   if (Object.keys(update).length) await actor.update(update);
@@ -98,7 +115,7 @@ export function registerCreationWorkflowHooks() {
     const actor = embeddedActorForItem(item);
     if (!actor) return;
 
-    if (SPECIES_TYPES.has(item.type)) return applySpecies(actor, item);
+    if (SPECIES_TYPES.has(item.type)) return applySpeciesItem(actor, item);
     if (SIZE_TEMPLATE_TYPES.has(item.type)) return applySizeTemplate(actor, item);
     if (CLASS_TYPES.has(item.type)) return applyClass(actor, item);
     return refreshCreationValidation(actor);
@@ -108,6 +125,10 @@ export function registerCreationWorkflowHooks() {
     if (userId !== game.user.id) return;
     const actor = embeddedActorForItem(item);
     if (!actor) return;
+    if (SPECIES_TYPES.has(item.type)) {
+      const applied = String(actor.system?.creation?.speciesApplied ?? "");
+      if (applied === item.uuid || applied === item.id) return applySpeciesItem(actor, item);
+    }
     await refreshCreationValidation(actor);
   });
 
@@ -115,6 +136,7 @@ export function registerCreationWorkflowHooks() {
     if (userId !== game.user.id) return;
     const actor = embeddedActorForItem(item);
     if (!actor) return;
+    if (SPECIES_TYPES.has(item.type)) return removeSpeciesItem(actor, item);
     await refreshCreationValidation(actor);
   });
 }

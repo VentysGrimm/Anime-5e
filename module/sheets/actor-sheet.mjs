@@ -1,4 +1,5 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
+import { applySpeciesItem, removeSpeciesItem } from "../rules/creation-workflow.mjs";
 import {
   buildCoreAttributeEffectContext,
   buildCoreAttributeUsageContext,
@@ -338,6 +339,13 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
+function stripHtml(value) {
+  return String(value ?? "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function localizedType(documentName, type) {
   const key = `TYPES.${documentName}.${type}`;
   const localized = game.i18n.localize(key);
@@ -395,6 +403,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.items = items.map((item) => this.constructor._prepareItemContext(item));
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
+    context.speciesWorkflow = this.constructor._prepareSpeciesWorkflowContext(system, items, context.items);
     context.attributeOffense = this.constructor._prepareAttributeOffenseContext(items, context.items);
     context.complexAttributes = this.constructor._prepareComplexAttributeContext(items, context.items);
     context.pointSummary = this.constructor._preparePointSummary(system, items);
@@ -559,6 +568,51 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         .filter((item) => item.type === "weapon")
         .map((item) => preparedById.get(item.id))
         .filter(Boolean)
+    };
+  }
+
+  static _prepareSpeciesWorkflowContext(system, rawItems, preparedItems) {
+    const preparedById = new Map(preparedItems.map((item) => [item.id, item]));
+    const appliedRef = String(system.creation?.speciesApplied ?? "");
+    const identityRace = String(system.identity?.race ?? "").trim();
+    const species = rawItems
+      .filter((item) => item.type === "species")
+      .map((item) => {
+        const prepared = preparedById.get(item.id);
+        const sourceLabel = [item.system?.source, item.system?.sourcePage ? `p. ${item.system.sourcePage}` : null].filter(Boolean).join(", ");
+        const pointCost = Math.max(0, Number(item.system?.points ?? item.system?.cost) || 0);
+        const isApplied = appliedRef === item.uuid || appliedRef === item.id || (!!identityRace && identityRace === item.name);
+        const summary = stripHtml(item.system?.description);
+
+        return {
+          ...(prepared ?? {}),
+          id: item.id,
+          name: item.name,
+          img: item.img,
+          sourceLabel,
+          pointCost,
+          pointCostLabel: `${pointCost} Point${pointCost === 1 ? "" : "s"}`,
+          isApplied,
+          summary: summary.length > 220 ? `${summary.slice(0, 217)}...` : summary
+        };
+      });
+
+    const appliedSpecies = species.find((item) => item.isApplied) ?? null;
+    const warnings = [];
+    if (!species.length) warnings.push("No Species/Race item is attached yet.");
+    if (species.length > 1) warnings.push("Multiple Species/Race items are attached; choose the applied species or confirm this is intentional.");
+    if (appliedRef && !appliedSpecies) warnings.push("Applied Species/Race reference no longer matches an owned species item.");
+
+    return {
+      active: species.length > 0 || warnings.length > 0,
+      species,
+      count: species.length,
+      hasSpecies: species.length > 0,
+      hasApplied: !!appliedSpecies,
+      appliedName: appliedSpecies?.name ?? identityRace,
+      appliedSource: appliedSpecies?.sourceLabel ?? "",
+      totalCost: species.reduce((total, item) => total + item.pointCost, 0),
+      warnings
     };
   }
 
@@ -821,6 +875,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='toggle-attribute-effect']").forEach((button) => {
       button.addEventListener("click", this._onToggleAttributeEffect.bind(this));
+    });
+    element.querySelectorAll("[data-action='apply-species']").forEach((button) => {
+      button.addEventListener("click", this._onApplySpecies.bind(this));
+    });
+    element.querySelectorAll("[data-action='remove-species']").forEach((button) => {
+      button.addEventListener("click", this._onRemoveSpecies.bind(this));
     });
     element.querySelectorAll("[data-action='apply-creation-start']").forEach((button) => {
       button.addEventListener("click", this._onApplyCreationStart.bind(this));
@@ -1228,6 +1288,26 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!nextActive && item.type === "attribute") update["system.energyPaid"] = false;
 
     await item.update(update);
+  }
+
+  async _onApplySpecies(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || item.type !== "species") return;
+
+    await applySpeciesItem(this.actor, item);
+  }
+
+  async _onRemoveSpecies(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || item.type !== "species") return;
+
+    await removeSpeciesItem(this.actor, item);
   }
 
   async _onApplyCreationStart(event) {

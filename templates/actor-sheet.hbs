@@ -316,6 +316,42 @@
         </section>
       </section>
 
+      {{#if speciesWorkflow.active}}
+        <section class="paint-panel species-workflow-panel">
+          <h2>Species Workflow</h2>
+          <div class="species-workflow-summary">
+            <span>Owned Species <strong>{{speciesWorkflow.count}}</strong></span>
+            <span>Applied Species <strong>{{#if speciesWorkflow.hasApplied}}{{speciesWorkflow.appliedName}}{{else}}None{{/if}}</strong></span>
+            <span>Species Points <strong>{{speciesWorkflow.totalCost}}</strong></span>
+          </div>
+          {{#each speciesWorkflow.warnings as |warning|}}
+            <p class="sheet-warning">{{warning}}</p>
+          {{/each}}
+          <ol class="species-workflow-list">
+            {{#each speciesWorkflow.species as |species|}}
+              <li class="{{#if species.isApplied}}applied{{/if}}" data-item-id="{{species.id}}">
+                <img src="{{species.img}}" alt="{{species.name}}">
+                <div class="species-main">
+                  <strong>{{species.name}}</strong>
+                  <small>{{species.pointCostLabel}}{{#if species.sourceLabel}} | {{species.sourceLabel}}{{/if}}</small>
+                  {{#if species.summary}}<p>{{species.summary}}</p>{{/if}}
+                </div>
+                <div class="item-actions">
+                  {{#if ../editable}}
+                    {{#if species.isApplied}}
+                      <button type="button" data-action="remove-species" title="Remove applied species"><i class="fas fa-times-circle"></i></button>
+                    {{else}}
+                      <button type="button" data-action="apply-species" title="Apply species"><i class="fas fa-check-circle"></i></button>
+                    {{/if}}
+                  {{/if}}
+                  {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button>{{/if}}
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        </section>
+      {{/if}}
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
           <h2>Character Options</h2>
