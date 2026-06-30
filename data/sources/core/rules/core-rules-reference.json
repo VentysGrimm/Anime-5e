@@ -31,6 +31,102 @@
           }
         }
       }
+    },
+    {
+      "name": "Character Creation Overview",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Build Flow",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF p. 20.</p><ol><li>Agree on campaign tone, party needs, and starting level with the DM.</li><li>Record starting XP from the level benchmark and apply all skipped level benefits if beginning above 1st level.</li><li>Set the starting Discretionary Point budget, then pay for Ability Scores and Species/Race choices.</li><li>Choose a Class, then add Attributes, Defects, proficiencies, resources, equipment, and notes on the character sheet.</li><li>Use the sheet point summary as the working audit trail: it should show available points, spent points, refunds, and remaining points.</li></ol>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.character-creation-overview",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 20,
+            "importId": "core.rules.character-creation-overview"
+          }
+        }
+      }
+    },
+    {
+      "name": "Point Accounting Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Point Ledger",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF p. 22; Character Folio PDF p. 6.</p><p>Start with the DM-approved Discretionary Point budget. The system's point summary treats Ability Scores, Species/Race, Size Templates, Classes, Attributes, powers, techniques, Items of Power, and manual spending as costs. Defects, manual refunds, class-derived Bonus Points, Engagement Bonus Points, and other non-levelling awards increase available points.</p><p>Negative remaining points mean the build is overspent. Resolve that by lowering costs, adding approved Defect refunds, adding awarded points, or marking the build as a deliberate manual exception in notes.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.point-accounting",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 22,
+            "importId": "core.rules.point-accounting"
+          }
+        }
+      }
+    },
+    {
+      "name": "Species Classes Attributes and Defects Workflow",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Character Options",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 28, 50, 92, 133.</p><p>Species/Race entries spend or return points through their trait package and may add ability modifiers, languages, movement, Attributes, or Defects. Size Templates are tracked as character-option items so their modifiers remain visible.</p><p>Class items carry level, hit die, proficiencies, level progression, and class-derived Bonus Points. Multiclass builds should be reviewed manually until duplicate benefit reallocation is fully automated.</p><p>Attributes, powers, and techniques spend points by rank and can be modified by Enhancements or Limiters. Defects return points by rank and should describe the limitation clearly enough for the DM to apply it in play.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.character-option-workflow",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.rules.character-option-workflow"
+          }
+        }
+      }
+    },
+    {
+      "name": "Advancement and XP Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Advancement",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 52, 183-184.</p><p>Track current XP, current level, next threshold, and XP-to-next-level on the character sheet. Table 08 gives the level thresholds and proficiency bonus progression through 20th level.</p><p>XP can come from overcoming conflict, completing meaningful tasks, learning from failure, or other campaign events. Engagement Bonus Points and other non-levelling awards can be recorded separately from XP when the reward should improve the character without changing level immediately.</p><p>When a character crosses the next XP threshold, add the new Class level, update benefits, and review unspent Bonus Points or saved allocation notes before the next session.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.advancement-xp",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 183,
+            "importId": "core.rules.advancement-xp"
+          }
+        }
+      }
     }
   ]
 }
