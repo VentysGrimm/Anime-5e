@@ -125,7 +125,7 @@ Hooks.once("init", () => {
   game.settings.registerMenu(ANIME5E.id, "encounterThreatTool", {
     name: "Anime 5e Encounter Threat",
     label: "Open",
-    hint: "Open the placeholder Challenge Rating and Encounter Threat tool shell.",
+    hint: "Open the manual Challenge Rating and Encounter Threat calculator shell.",
     icon: "fa-solid fa-scale-balanced",
     type: Anime5eEncounterThreatDialog,
     restricted: true
