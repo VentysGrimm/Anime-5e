@@ -801,7 +801,8 @@
   grid-template-columns: 1.35fr 0.75fr 0.75fr 0.95fr;
 }
 
-.anime5e .folio-table input {
+.anime5e .folio-table input,
+.anime5e .folio-table select {
   background: transparent;
   border: 0;
   border-bottom: 2px solid var(--anime5e-ink);
@@ -1408,7 +1409,8 @@
   gap: 14px;
 }
 
-.anime5e .quick-roll-panel {
+.anime5e .quick-roll-panel,
+.anime5e .movement-mode-panel {
   background: rgba(255, 255, 255, 0.64);
   border: 1px solid var(--anime5e-border);
   display: grid;
@@ -1416,7 +1418,8 @@
   padding: 10px;
 }
 
-.anime5e .quick-roll-panel h3 {
+.anime5e .quick-roll-panel h3,
+.anime5e .movement-mode-panel h3 {
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0;
@@ -1424,14 +1427,16 @@
   text-transform: uppercase;
 }
 
-.anime5e .quick-roll-controls {
+.anime5e .quick-roll-controls,
+.anime5e .movement-mode-grid {
   align-items: end;
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
 }
 
-.anime5e .quick-roll-controls label {
+.anime5e .quick-roll-controls label,
+.anime5e .movement-mode-grid label {
   display: grid;
   font-size: 0.78rem;
   font-weight: 800;
@@ -1522,7 +1527,7 @@
 }
 
 .anime5e .action-table {
-  grid-template-columns: 1.35fr 0.65fr 0.8fr 0.95fr 44px 44px;
+  grid-template-columns: minmax(104px, 1.4fr) 48px 64px 70px 82px 48px 58px 74px minmax(86px, 1fr) 36px 36px;
 }
 
 .anime5e .damage-panel,
@@ -1774,6 +1779,7 @@
   .anime5e .encounter-threat-result-grid,
   .anime5e .folio-page-heading,
   .anime5e .quick-roll-controls,
+  .anime5e .movement-mode-grid,
   .anime5e .save-roll-controls,
   .anime5e .ledger-heading,
   .anime5e .skill-roll-controls,

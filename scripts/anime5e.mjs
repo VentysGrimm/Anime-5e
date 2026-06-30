@@ -132,6 +132,33 @@ Hooks.once("init", () => {
     restricted: true
   });
 
+  game.settings.register(ANIME5E.id, "applyRangePenalties", {
+    name: "Apply Range Penalties",
+    hint: "Subtract configured common-attack range penalties from attack rolls.",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
+
+  game.settings.register(ANIME5E.id, "showMarginOfSuccess", {
+    name: "Show Margin of Success",
+    hint: "Display the difference between attack roll totals and entered target Armour Class values.",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
+
+  game.settings.register(ANIME5E.id, "showCriticalRollNotes", {
+    name: "Show Critical Roll Notes",
+    hint: "Annotate d20 attack rolls that keep a natural 20 or natural 1.",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
+
   Object.assign(CONFIG.Actor.dataModels, {
     character: Anime5eCharacterData,
     companion: Anime5eCompanionData,

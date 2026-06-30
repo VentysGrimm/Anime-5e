@@ -252,6 +252,7 @@ const REQUIRED_NUMBER_DEFAULTS = {
   "system.economy.currency.copper": 0,
   "system.combat.hitPoints.max": 0,
   "system.combat.hitPoints.value": 0,
+  "system.combat.hitPoints.temporary": 0,
   "system.combat.energy.max": 0,
   "system.combat.energy.value": 0,
   "system.combat.armourClass": 10,
@@ -267,9 +268,20 @@ for (const ability of ["strength", "dexterity", "constitution", "intelligence", 
   REQUIRED_NUMBER_DEFAULTS[`system.abilities.${ability}.value`] = 10;
 }
 
+for (const attack of ["primary", "secondary", "tertiary"]) {
+  REQUIRED_NUMBER_DEFAULTS[`system.combat.attacks.${attack}.rangePenalty`] = 0;
+  REQUIRED_NUMBER_DEFAULTS[`system.combat.attacks.${attack}.situationalModifier`] = 0;
+}
+
 function numberOrZero(value) {
   const number = Number(value);
   return Number.isFinite(number) ? number : 0;
+}
+
+function numberOrNull(value) {
+  if (value === "" || value === null || value === undefined) return null;
+  const number = Number(value);
+  return Number.isFinite(number) ? number : null;
 }
 
 function formatSigned(value) {
@@ -278,6 +290,14 @@ function formatSigned(value) {
 
 function hasText(value) {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function settingEnabled(key) {
+  try {
+    return !!game.settings.get("anime5e", key);
+  } catch {
+    return false;
+  }
 }
 
 function sourceIdForItem(item) {
@@ -472,7 +492,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { key: "primary", data: system.combat.attacks.primary },
       { key: "secondary", data: system.combat.attacks.secondary },
       { key: "tertiary", data: system.combat.attacks.tertiary }
-    ];
+    ].map((row) => ({
+      ...row,
+      d20Modes: D20_ROLL_MODES.map((mode) => ({
+        ...mode,
+        selected: mode.key === (row.data.d20Mode || "normal")
+      }))
+    }));
 
     return context;
   }
@@ -1231,7 +1257,28 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!attack) return;
 
     const modifier = Number(attack.modifier) || 0;
-    await this._rollFormula(buildD20Formula([modifier]), `${attack.weapon || "Attack"} Roll`);
+    const situationalModifier = numberOrZero(attack.situationalModifier);
+    const shouldApplyRangePenalty = settingEnabled("applyRangePenalties");
+    const rangePenalty = shouldApplyRangePenalty ? numberOrZero(attack.rangePenalty) : 0;
+    const modifiers = [modifier];
+    if (situationalModifier) modifiers.push(situationalModifier);
+    if (rangePenalty) modifiers.push(-rangePenalty);
+
+    const rollMode = attack.d20Mode || "normal";
+    const details = [
+      { label: "Attack Type", value: attack.attackType },
+      { label: "Range", value: attack.range },
+      situationalModifier ? { label: "Situational", value: formatSigned(situationalModifier) } : null,
+      rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null
+    ].filter(Boolean);
+
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${attack.weapon || "Attack"} Roll`, {
+      mode: rollMode,
+      details,
+      targetNumber: numberOrNull(attack.targetArmourClass),
+      showMargin: settingEnabled("showMarginOfSuccess"),
+      showCritical: settingEnabled("showCriticalRollNotes")
+    });
   }
 
   async _onRollDamage(event) {
@@ -1294,7 +1341,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!item) return;
 
     const modifier = Number(item.system?.attackModifier) || 0;
-    await this._rollFormula(buildD20Formula([modifier]), `${item.name} Attack`);
+    const details = [
+      { label: "Category", value: item.system?.category },
+      { label: "Range", value: item.system?.range }
+    ];
+    await this._rollFormula(buildD20Formula([modifier]), `${item.name} Attack`, {
+      details,
+      showCritical: settingEnabled("showCriticalRollNotes")
+    });
   }
 
   async _onRollItemDamage(event) {
@@ -1337,7 +1391,16 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
   async _rollFormula(formula, label, options = {}) {
     try {
-      return rollAnime5eFormula({ actor: this.actor, formula, label, mode: options.mode });
+      return rollAnime5eFormula({
+        actor: this.actor,
+        formula,
+        label,
+        mode: options.mode,
+        details: options.details,
+        targetNumber: options.targetNumber,
+        showMargin: options.showMargin,
+        showCritical: options.showCritical
+      });
     } catch (error) {
       console.error("anime5e | Failed to roll formula", formula, error);
       ui.notifications?.error(`Anime 5e could not roll "${formula}". Check the formula and try again.`);
@@ -1365,10 +1428,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const label = mode === "healing" ? "heals" : "takes";
     const typedAmount = mode === "damage" && damageType ? `${change.amount} ${escapeHtml(damageType)}` : change.amount;
     const noun = mode === "healing" ? "HP" : "damage";
+    const tempLine = mode === "damage" && change.absorbed
+      ? ` ${change.absorbed} absorbed by temporary HP (${change.temporary} &rarr; ${change.nextTemporary}).`
+      : "";
 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.</p>`
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.${tempLine}</p>`
     });
   }
 

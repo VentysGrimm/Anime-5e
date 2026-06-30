@@ -150,6 +150,10 @@
         <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" {{#unless editable}}disabled{{/unless}}>
       </label>
       <label>
+        Temp HP
+        <input type="number" name="system.combat.hitPoints.temporary" value="{{system.combat.hitPoints.temporary}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
         Max HP
         <input type="number" name="system.combat.hitPoints.max" value="{{system.combat.hitPoints.baseMax}}" min="0" {{#unless editable}}disabled{{/unless}}>
       </label>
@@ -165,6 +169,22 @@
         Movement
         <input type="number" name="system.combat.movementSpeed" value="{{system.combat.baseMovementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
         {{#if combatEffects.movement}}<small class="derived-stat-note">{{combatEffects.movement}}</small>{{/if}}
+      </label>
+      <label>
+        Fly
+        <input type="text" name="system.combat.flightSpeed" value="{{system.combat.flightSpeed}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Water/Swim
+        <input type="text" name="system.combat.waterSpeed" value="{{system.combat.waterSpeed}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Climb
+        <input type="text" name="system.combat.climbSpeed" value="{{system.combat.climbSpeed}}" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
+        Burrow
+        <input type="text" name="system.combat.burrowSpeed" value="{{system.combat.burrowSpeed}}" {{#unless editable}}disabled{{/unless}}>
       </label>
       <label>
         Proficiency

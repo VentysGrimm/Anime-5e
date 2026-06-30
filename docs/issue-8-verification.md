@@ -69,6 +69,10 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Core character data is visible and editable.
 - Characters can roll ability checks, proficient checks, saving throws, proficient saves, initiative, attacks, and attack damage from the sheet.
 - Characters can apply damage or healing to their own Hit Points from the combat panel.
+- Temporary Hit Points are tracked separately and absorb incoming damage before current Hit Points are reduced.
+- Combat movement now tracks ground, fly, water/swim, climb, burrow, and custom movement entries alongside derived Attribute movement summaries.
+- Common attack rows track attack type, range, d20 mode, target Armour Class, optional range penalty, damage type, and damage formula.
+- Optional combat settings control range-penalty application, Margin of Success display, and critical roll annotations.
 - Characters can use/share embedded items to chat, roll item formulas when present, make item attack rolls, and roll item damage for weapons or other items with damage formulas.
 - Item sheets expose the same use, formula roll, attack, and damage actions for weapons, Attributes, Defects, powers, techniques, spells, and other item documents.
 - Source-backed starter content can be imported into compendiums by a GM through the Configure Settings menu or the runtime importer.

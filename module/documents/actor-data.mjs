@@ -26,6 +26,10 @@ function numberOrFallback(value, fallback = 0) {
   return Number.isFinite(number) ? number : fallback;
 }
 
+function textOrFallback(value, fallback = "") {
+  return String(value ?? fallback ?? "");
+}
+
 function optionalNumberField(initial = null, options = {}) {
   return new fields.NumberField({
     required: false,
@@ -57,6 +61,18 @@ function resourceField(initial = 10, options = {}) {
   });
 }
 
+function hitPointResourceField(initial = 10, options = {}) {
+  const valueOptions = options.allowNegative ? {} : { min: 0 };
+
+  return new fields.SchemaField({
+    value: numberField(initial, valueOptions),
+    max: numberField(initial, { min: 0 }),
+    baseMax: numberField(initial, { min: 0 }),
+    effectBonus: numberField(0),
+    temporary: numberField(0, { min: 0 })
+  });
+}
+
 function classEntryField() {
   return new fields.SchemaField({
     name: textField(),
@@ -69,6 +85,12 @@ function attackEntryField() {
   return new fields.SchemaField({
     weapon: textField(),
     modifier: textField(),
+    attackType: textField("Melee"),
+    range: textField(),
+    d20Mode: textField("normal"),
+    targetArmourClass: optionalNumberField(),
+    rangePenalty: numberField(0, { min: 0 }),
+    situationalModifier: numberField(0),
     damageType: textField(),
     damage: textField()
   });
@@ -193,7 +215,7 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         charisma: abilityField()
       }),
       combat: new fields.SchemaField({
-        hitPoints: resourceField(20, { allowNegative: true }),
+        hitPoints: hitPointResourceField(20, { allowNegative: true }),
         energy: resourceField(10),
         armourClass: numberField(10),
         baseArmourClass: numberField(10),
@@ -203,6 +225,9 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         movementSpeedMultiplier: textField("x1"),
         flightSpeed: textField(),
         waterSpeed: textField(),
+        climbSpeed: textField(),
+        burrowSpeed: textField(),
+        customMovement: textField(),
         specialMovement: textField(),
         movementSummary: textField(),
         armourNotes: textField(),
@@ -258,6 +283,7 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
     hitPoints.value = numberOrFallback(sourceSystem.combat?.hitPoints?.value, hitPoints.value);
     hitPoints.value = Math.min(hitPoints.value, hitPoints.max);
     hitPoints.value = Math.max(-hitPoints.max, hitPoints.value);
+    hitPoints.temporary = Math.max(0, numberOrFallback(sourceSystem.combat?.hitPoints?.temporary, hitPoints.temporary));
 
     const energy = this.combat.energy;
     const baseEnergyMax = Math.max(0, numberOrFallback(sourceSystem.combat?.energy?.max, numberOrFallback(energy.max, 10)));
@@ -269,13 +295,27 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
     const movement = attributeEffects.movement;
     const baseMovementSpeed = Math.max(0, numberOrFallback(sourceSystem.combat?.movementSpeed, numberOrFallback(this.combat.movementSpeed, 30)));
     movement.baseGroundSpeed = baseMovementSpeed;
+    const specialModes = movement.specialModes.map((mode) => String(mode));
+    const specialModeText = specialModes.join(", ");
     this.combat.baseMovementSpeed = baseMovementSpeed;
     this.combat.movementSpeed = movement.groundSpeed;
     this.combat.movementSpeedMultiplier = movement.multiplierLabel;
-    this.combat.flightSpeed = movement.flightSpeed;
-    this.combat.waterSpeed = movement.waterSpeed;
-    this.combat.specialMovement = movement.specialModes.join(", ");
-    this.combat.movementSummary = movement.summary.join("; ");
+    this.combat.flightSpeed = movement.flightSpeed || textOrFallback(sourceSystem.combat?.flightSpeed, this.combat.flightSpeed);
+    this.combat.waterSpeed = movement.waterSpeed || textOrFallback(sourceSystem.combat?.waterSpeed, this.combat.waterSpeed);
+    this.combat.climbSpeed = textOrFallback(sourceSystem.combat?.climbSpeed, this.combat.climbSpeed);
+    this.combat.burrowSpeed = textOrFallback(sourceSystem.combat?.burrowSpeed, this.combat.burrowSpeed);
+    this.combat.customMovement = textOrFallback(sourceSystem.combat?.customMovement, this.combat.customMovement);
+    this.combat.specialMovement = specialModeText || textOrFallback(sourceSystem.combat?.specialMovement, this.combat.specialMovement);
+
+    if (!this.combat.climbSpeed && specialModes.some((mode) => /climb/i.test(mode))) this.combat.climbSpeed = "Special Movement";
+    if (!this.combat.burrowSpeed && specialModes.some((mode) => /burrow/i.test(mode))) this.combat.burrowSpeed = "Special Movement";
+
+    const manualMovement = [
+      this.combat.climbSpeed ? `Climb ${this.combat.climbSpeed}` : "",
+      this.combat.burrowSpeed ? `Burrow ${this.combat.burrowSpeed}` : "",
+      this.combat.customMovement ? `Custom ${this.combat.customMovement}` : ""
+    ].filter(Boolean);
+    this.combat.movementSummary = [...movement.summary, ...manualMovement].join("; ");
 
     this.creation.startingLevel = Math.max(1, Number(this.creation.startingLevel) || Number(this.level) || 1);
     this.creation.startingExperience = Math.max(0, Number(this.creation.startingExperience) || Number(this.experience) || 0);

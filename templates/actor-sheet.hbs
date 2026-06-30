@@ -59,6 +59,10 @@
             Current
             <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" min="0" {{#unless editable}}disabled{{/unless}}>
           </label>
+          <label>
+            Temporary
+            <input type="number" name="system.combat.hitPoints.temporary" value="{{system.combat.hitPoints.temporary}}" min="0" {{#unless editable}}disabled{{/unless}}>
+          </label>
         </div>
 
         <label class="shield-stat">
@@ -520,16 +524,59 @@
               <button type="button" class="roll-action" data-action="roll-contest"><i class="fas fa-user-friends"></i> Contest</button>
             </div>
           </section>
+          <section class="movement-mode-panel" aria-label="Movement Modes">
+            <h3>Movement Modes</h3>
+            <div class="movement-mode-grid">
+              <label>
+                Ground
+                <input type="number" name="system.combat.movementSpeed" value="{{system.combat.baseMovementSpeed}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Fly
+                <input type="text" name="system.combat.flightSpeed" value="{{system.combat.flightSpeed}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Water/Swim
+                <input type="text" name="system.combat.waterSpeed" value="{{system.combat.waterSpeed}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Climb
+                <input type="text" name="system.combat.climbSpeed" value="{{system.combat.climbSpeed}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Burrow
+                <input type="text" name="system.combat.burrowSpeed" value="{{system.combat.burrowSpeed}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Custom
+                <input type="text" name="system.combat.customMovement" value="{{system.combat.customMovement}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+            </div>
+          </section>
           <div class="folio-table attack-table action-table">
             <div class="table-header">Weapon</div>
-            <div class="table-header">Modifier</div>
-            <div class="table-header">Type</div>
+            <div class="table-header">Mod</div>
+            <div class="table-header">Kind</div>
+            <div class="table-header">Range</div>
+            <div class="table-header">Roll</div>
+            <div class="table-header">AC</div>
+            <div class="table-header">Penalty</div>
+            <div class="table-header">Dmg Type</div>
             <div class="table-header">Damage</div>
             <div class="table-header">Attack</div>
             <div class="table-header">Damage</div>
             {{#each attackRows as |attackRow|}}
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.weapon" value="{{attackRow.data.weapon}}" {{#unless ../editable}}disabled{{/unless}}>
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.modifier" value="{{attackRow.data.modifier}}" {{#unless ../editable}}disabled{{/unless}}>
+              <input type="text" name="system.combat.attacks.{{attackRow.key}}.attackType" value="{{attackRow.data.attackType}}" {{#unless ../editable}}disabled{{/unless}}>
+              <input type="text" name="system.combat.attacks.{{attackRow.key}}.range" value="{{attackRow.data.range}}" {{#unless ../editable}}disabled{{/unless}}>
+              <select name="system.combat.attacks.{{attackRow.key}}.d20Mode" {{#unless ../editable}}disabled{{/unless}}>
+                {{#each attackRow.d20Modes as |mode|}}
+                  <option value="{{mode.key}}" {{#if mode.selected}}selected{{/if}}>{{mode.label}}</option>
+                {{/each}}
+              </select>
+              <input type="number" name="system.combat.attacks.{{attackRow.key}}.targetArmourClass" value="{{attackRow.data.targetArmourClass}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
+              <input type="number" name="system.combat.attacks.{{attackRow.key}}.rangePenalty" value="{{attackRow.data.rangePenalty}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.damageType" value="{{attackRow.data.damageType}}" {{#unless ../editable}}disabled{{/unless}}>
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.damage" value="{{attackRow.data.damage}}" {{#unless ../editable}}disabled{{/unless}}>
               <button type="button" class="icon-button" data-action="roll-attack" data-attack="{{attackRow.key}}" title="Roll attack"><i class="fas fa-dice-d20"></i></button>
