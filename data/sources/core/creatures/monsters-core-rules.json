@@ -15,7 +15,7 @@
       "img": "icons/svg/mystery-man.svg",
       "system": {
         "identity": {
-          "description": "Small reptilian dungeon-dwellers used as the first source-backed monster pack seed.",
+          "description": "Small reptilian dungeon-dwellers that favour traps, ambushes, and pack tactics.",
           "speciesAndSize": "Small humanoid reptilian",
           "actorRole": "Monster",
           "challengeRating": "1/8",
@@ -31,6 +31,14 @@
           "sourceId": "core.monster.kobold",
           "importId": "core.monster.kobold"
         },
+        "abilities": {
+          "strength": { "value": 7 },
+          "dexterity": { "value": 15 },
+          "constitution": { "value": 9 },
+          "intelligence": { "value": 8 },
+          "wisdom": { "value": 7 },
+          "charisma": { "value": 8 }
+        },
         "combat": {
           "armourClass": 14,
           "hitPoints": {
@@ -38,14 +46,28 @@
             "max": 5
           },
           "movementSpeed": 15,
+          "proficiencyBonus": 2,
           "armourNotes": "Armour Class 14",
-          "defenseSummary": "AC 14; HP 5 (2d6-2); Small humanoid reptilian.",
-          "offenseSummary": "Dagger attack and trap tactics are reserved for the full stat-block slice.",
-          "proficiencyBonus": 2
+          "defenseSummary": "AC 14; HP 5 (2d6-2); Small target with AC Bonus and standard small-size drawbacks.",
+          "offenseSummary": "Dagger +6 for 1d4+2 piercing; Sling +6 for 1d4+2 bludgeoning at Range 2 (30 ft). Pack Tactics grants attack Edge when allies are nearby.",
+          "attacks": {
+            "primary": {
+              "weapon": "Dagger (Dexterity)",
+              "modifier": "+6",
+              "damageType": "Piercing",
+              "damage": "1d4+2"
+            },
+            "secondary": {
+              "weapon": "Sling",
+              "modifier": "+6",
+              "damageType": "Bludgeoning",
+              "damage": "1d4+2"
+            }
+          }
         },
-        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 216.</p><p><strong>Starter entry:</strong> Minimal source-backed actor for proving monster pack import. Full Kobold stat block entry is reserved for the core monster starter-set slice.</p>",
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 216.</p><p><strong>Attributes:</strong> AC Bonus 2; Combat Mastery 2; Edge 2 (Pack Tactics); Features 1 (Darkvision 60 ft); Language 1 (Common, Draconic); Unique Attribute 1 (Small, light, and unobtrusive); Weapon Proficiency 1 (Shortsword).</p><p><strong>Defects:</strong> Limited Damage 2; Obstacle 2 (Sunlight Sensitivity); Obstacle 4 (Strength dice rolls); Slow 1; Susceptible 2; Unique Defect 1 (Thrown weapon distance divided by 2).</p><p><strong>Points:</strong> -2 Attribute/Defect subtotal + 10 Base + 54 Abilities = 62.</p>",
         "notes": {
-          "overview": "<p>Kobolds form large tribal colonies and favour traps, ambushes, and underground lairs.</p>"
+          "overview": "<p>Winged kobolds are a sturdier subrace with increased Strength and Constitution, plus Flight Rank 1.</p>"
         }
       },
       "flags": {
@@ -55,6 +77,298 @@
             "book": "Anime 5E Fifth Edition Core Rules",
             "page": 216,
             "importId": "core.monster.kobold"
+          }
+        }
+      }
+    },
+    {
+      "name": "Goblin",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Small goblinoid raiders with Nimble Escape, light armour, and ranged or melee ambush options.",
+          "speciesAndSize": "Small humanoid mammalian",
+          "actorRole": "Monster",
+          "challengeRating": "1/4",
+          "experienceValue": 50,
+          "totalPoints": 72,
+          "homelandHabitat": "Shallow caves and deep mines",
+          "communities": "Medium to large tribal colonies",
+          "alignment": "Neutral Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 217,
+          "sourceId": "core.monster.goblin",
+          "importId": "core.monster.goblin"
+        },
+        "abilities": {
+          "strength": { "value": 8 },
+          "dexterity": { "value": 14 },
+          "constitution": { "value": 11 },
+          "intelligence": { "value": 11 },
+          "wisdom": { "value": 8 },
+          "charisma": { "value": 8 }
+        },
+        "combat": {
+          "armourClass": 17,
+          "hitPoints": {
+            "value": 7,
+            "max": 7
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 2,
+          "armourNotes": "Leather; shield; Armour Class 17",
+          "defenseSummary": "AC 17; HP 7 (2d6); light armour and shield with small-size defensive modifiers.",
+          "offenseSummary": "Scimitar +6 for 1d6+2 slashing; Shortbow +6 for 1d6+2 piercing at Range 3 (100 ft). Nimble Escape grants limited bonus action mobility.",
+          "attacks": {
+            "primary": {
+              "weapon": "Scimitar (Dexterity)",
+              "modifier": "+6",
+              "damageType": "Slashing",
+              "damage": "1d6+2"
+            },
+            "secondary": {
+              "weapon": "Shortbow",
+              "modifier": "+6",
+              "damageType": "Piercing",
+              "damage": "1d6+2"
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 217.</p><p><strong>Attributes:</strong> AC Bonus 2; Armour Proficiency 2 (Light armour, shields); Combat Mastery 2; Extra Actions - Lesser 2 (Nimble Escape: Disengage, Hide); Features 1 (Darkvision 60 ft); Language 1 (Common, Goblin); Unique Attribute 1 (Small, light, and unobtrusive); Weapon Proficiency 1 (Scimitar).</p><p><strong>Defects:</strong> Limited Damage 2; Obstacle 4 (Strength dice rolls); Slow 1; Susceptible 2; Unique Defect 1 (Thrown weapon distance divided by 2).</p><p><strong>Points:</strong> 2 Attribute/Defect subtotal + 10 Base + 60 Abilities = 72.</p>",
+        "notes": {
+          "overview": "<p>Swamp goblins have increased Wisdom and Water Speed Rank 1.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.goblin",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 217,
+            "importId": "core.monster.goblin"
+          }
+        }
+      }
+    },
+    {
+      "name": "Orc",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium humanoid raiders with strong melee pressure, darkvision, and intimidation training.",
+          "speciesAndSize": "Medium humanoid mammalian",
+          "actorRole": "Monster",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 92,
+          "homelandHabitat": "Ranges across all non-aquatic lands",
+          "communities": "Small to medium tribes",
+          "alignment": "Chaotic Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 218,
+          "sourceId": "core.monster.orc",
+          "importId": "core.monster.orc"
+        },
+        "abilities": {
+          "strength": { "value": 16 },
+          "dexterity": { "value": 13 },
+          "constitution": { "value": 16 },
+          "intelligence": { "value": 7 },
+          "wisdom": { "value": 11 },
+          "charisma": { "value": 10 }
+        },
+        "combat": {
+          "armourClass": 13,
+          "hitPoints": {
+            "value": 15,
+            "max": 15
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Hide; Armour Class 13",
+          "defenseSummary": "AC 13; HP 15 (2d8+6); medium humanoid with hide armour.",
+          "offenseSummary": "Greataxe +5 for 1d12+3 slashing; Javelin +3 for 1d6+1 piercing at Range 2 (30 ft). Aggressive movement is represented as Extra Actions - Lesser.",
+          "attacks": {
+            "primary": {
+              "weapon": "Greataxe",
+              "modifier": "+5",
+              "damageType": "Slashing",
+              "damage": "1d12+3"
+            },
+            "secondary": {
+              "weapon": "Javelin",
+              "modifier": "+3",
+              "damageType": "Piercing",
+              "damage": "1d6+1"
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 218.</p><p><strong>Attributes:</strong> Armour Proficiency 2 (Light and medium armour); Extra Actions - Lesser 1 (Aggressive: move towards seen enemy); Features 1 (Darkvision 60 ft); Language 1 (Common, Orc); Skill Proficiency 1 (Intimidation); Weapon Proficiency 1 (Greataxe).</p><p><strong>Points:</strong> 7 Attribute/Defect subtotal + 13 Base + 72 Abilities = 92.</p>",
+        "notes": {
+          "overview": "<p>Orog are powered-up orcs with increased Strength, Constitution, Intelligence, and Charisma, plus enhanced combat talents.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.orc",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 218,
+            "importId": "core.monster.orc"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ogre",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Large giant-blooded brute with powerful Strength, low accuracy, and heavy thrown-weapon limitations.",
+          "speciesAndSize": "Large humanoid giant",
+          "actorRole": "Monster",
+          "challengeRating": "2",
+          "experienceValue": 450,
+          "totalPoints": 112,
+          "homelandHabitat": "Caves and abandoned ruins or farmholds",
+          "communities": "Solitary, or family units",
+          "alignment": "Chaotic Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 220,
+          "sourceId": "core.monster.ogre",
+          "importId": "core.monster.ogre"
+        },
+        "abilities": {
+          "strength": { "value": 19 },
+          "dexterity": { "value": 8 },
+          "constitution": { "value": 16 },
+          "intelligence": { "value": 5 },
+          "wisdom": { "value": 7 },
+          "charisma": { "value": 7 }
+        },
+        "combat": {
+          "armourClass": 9,
+          "hitPoints": {
+            "value": 59,
+            "max": 59
+          },
+          "movementSpeed": 60,
+          "proficiencyBonus": 2,
+          "armourNotes": "Hide; Armour Class 9",
+          "defenseSummary": "AC 9; HP 59 (7d10+21); Large body with Protected 2 and AC Penalty 2.",
+          "offenseSummary": "Large one-handed greatclub +4 for 2d8+6 bludgeoning; Large javelin -1 for 2d6+1 piercing at Range 2 (30 ft).",
+          "attacks": {
+            "primary": {
+              "weapon": "Greatclub, Large (One-Handed)",
+              "modifier": "+4",
+              "damageType": "Bludgeoning",
+              "damage": "2d8+6"
+            },
+            "secondary": {
+              "weapon": "Javelin, Large",
+              "modifier": "-1",
+              "damageType": "Piercing",
+              "damage": "2d6+1"
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 220.</p><p><strong>Attributes:</strong> Armour Proficiency 2 (Light and medium armour); Edge 4 (Strength dice rolls); Fast 1; Features 1 (Darkvision 60 ft); Language 1 (Common, Giant); Massive Damage 2; Protected 2; Unique Attribute 1 (x2 Thrown weapon distance).</p><p><strong>Defects:</strong> AC Penalty 2; Blind Fury 1 (Extreme injury or taunting); Inept Attack 2; Unique Defect 1 (Big, heavy, and obvious).</p><p><strong>Points:</strong> 11 Attribute/Defect subtotal + 39 Base + 62 Abilities = 112.</p>",
+        "notes": {
+          "overview": "<p>Sun ogres are thinner desert or tropical variants with higher Dexterity and average Intelligence.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.ogre",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 220,
+            "importId": "core.monster.ogre"
+          }
+        }
+      }
+    },
+    {
+      "name": "Troll",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Large giant-kin with fast regeneration, bite and claw attacks, and a weakness window after acid or fire damage.",
+          "speciesAndSize": "Large humanoid giant",
+          "actorRole": "Monster",
+          "challengeRating": "6",
+          "experienceValue": 2300,
+          "totalPoints": 156,
+          "homelandHabitat": "Swamps, forest, and subterranean caves",
+          "communities": "Small clans",
+          "alignment": "Chaotic Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 223,
+          "sourceId": "core.monster.troll",
+          "importId": "core.monster.troll"
+        },
+        "abilities": {
+          "strength": { "value": 18 },
+          "dexterity": { "value": 13 },
+          "constitution": { "value": 20 },
+          "intelligence": { "value": 7 },
+          "wisdom": { "value": 9 },
+          "charisma": { "value": 7 }
+        },
+        "combat": {
+          "armourClass": 13,
+          "hitPoints": {
+            "value": 84,
+            "max": 84
+          },
+          "movementSpeed": 60,
+          "proficiencyBonus": 3,
+          "armourNotes": "Armour Class 13",
+          "defenseSummary": "AC 13; HP 84 (8d10+40); Protected 2; Regeneration 8 restores 10 HP/round except for one round after acid or fire damage.",
+          "offenseSummary": "Bite +5 for 1d6+6 piercing; Claw +5 for 2d4+6 slashing. Extra Actions 2 grants two bonus actions per round.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "+5",
+              "damageType": "Piercing",
+              "damage": "1d6+6"
+            },
+            "secondary": {
+              "weapon": "Claw",
+              "modifier": "+5",
+              "damageType": "Slashing",
+              "damage": "2d4+6"
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 223.</p><p><strong>Attributes:</strong> AC Bonus 2; Edge 4 (Strength dice rolls); Extra Actions 2; Fast 1; Features 1 (Darkvision 60 ft); Heightened Senses 1 (Keen Smell); Language (Giant); Massive Damage 2; Protected 2; Regeneration 8 (10 HP/round with acid/fire limiter); Skill Proficiency 1 (Perception); Unique Attribute 1 (x2 Thrown weapon distance); Weapon 2 (Bite); Weapon 2 (Claw).</p><p><strong>Defects:</strong> Inept Attack 2; Unique Defect 1 (Big, heavy, and obvious).</p><p><strong>Points:</strong> 36 Attribute/Defect subtotal + 46 Base + 74 Abilities = 156.</p>",
+        "notes": {
+          "overview": "<p>Snow trolls have reduced Regeneration Rank 4 that is not affected by acid and fire, and full Immunity to cold Rank 3.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.troll",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 223,
+            "importId": "core.monster.troll"
           }
         }
       }
