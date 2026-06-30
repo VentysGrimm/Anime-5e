@@ -158,6 +158,7 @@ const ITEM_GROUP_TYPES = {
   characterOptions: ["species", "class", "background", "sizeTemplate", "lifepath", "feature", "trait"],
   combat: ["weapon", "armor", "shield", "technique", "attribute"],
   attributes: ["attribute", "enhancement", "limiter", "itemAttribute"],
+  craftingProjects: ["craftingProject"],
   defects: ["defect"],
   skills: ["skill", "proficiency", "tool", "language", "trait", "background", "feature"],
   powers: ["power", "spell", "technique"],
@@ -171,6 +172,7 @@ const DEFAULT_ITEM_TYPES = [
   "attribute",
   "background",
   "class",
+  "craftingProject",
   "defect",
   "enhancement",
   "equipment",
@@ -243,6 +245,10 @@ const REQUIRED_NUMBER_DEFAULTS = {
   "system.identity.otherNonLevellingPoints": 0,
   "system.points.spent": 0,
   "system.points.refunded": 0,
+  "system.economy.currency.platinum": 0,
+  "system.economy.currency.gold": 0,
+  "system.economy.currency.silver": 0,
+  "system.economy.currency.copper": 0,
   "system.combat.hitPoints.max": 0,
   "system.combat.hitPoints.value": 0,
   "system.combat.energy.max": 0,
@@ -425,6 +431,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
     context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system);
+    context.economy = this.constructor._prepareEconomyContext(system);
     const activeTab = FOLIO_TAB_IDS.has(this.tabGroups?.primary) ? this.tabGroups.primary : DEFAULT_FOLIO_TAB;
     context.activeTab = activeTab;
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
@@ -495,6 +502,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       system.equipped ? "Equipped" : null,
       system.category,
       system.status,
+      hasText(system.targetItem) ? `Target: ${system.targetItem}` : null,
+      system.progress !== undefined || system.requiredProgress !== undefined ? `Progress ${numberOrZero(system.progress)} / ${numberOrZero(system.requiredProgress)}` : null,
       system.dc !== undefined && system.dc !== null ? `DC ${system.dc}` : null,
       system.interval,
       system.damage,
@@ -536,6 +545,20 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       actorType: localizedType("Actor", actor.type),
       sourceLabel,
       hasSource: hasText(sourceLabel)
+    };
+  }
+
+  static _prepareEconomyContext(system) {
+    const currency = system.economy?.currency ?? {};
+
+    return {
+      walletNotes: system.economy?.walletNotes ?? "",
+      currencyRows: [
+        { key: "platinum", label: "Platinum", value: numberOrZero(currency.platinum) },
+        { key: "gold", label: "Gold", value: numberOrZero(currency.gold) },
+        { key: "silver", label: "Silver", value: numberOrZero(currency.silver) },
+        { key: "copper", label: "Copper", value: numberOrZero(currency.copper) }
+      ]
     };
   }
 

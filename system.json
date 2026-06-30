@@ -189,6 +189,13 @@
           "description"
         ]
       },
+      "craftingProject": {
+        "htmlFields": [
+          "description",
+          "materials",
+          "projectNotes"
+        ]
+      },
       "defect": {
         "htmlFields": [
           "description"

@@ -764,6 +764,26 @@
   min-height: 190px;
 }
 
+.anime5e .wallet-panel {
+  display: grid;
+  gap: 8px;
+}
+
+.anime5e .wallet-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, minmax(76px, 1fr));
+}
+
+.anime5e .wallet-notes {
+  display: grid;
+  gap: 4px;
+}
+
+.anime5e .crafting-project-panel {
+  min-height: 190px;
+}
+
 .anime5e .attack-table {
   grid-template-columns: 1.35fr 0.75fr 0.75fr 0.95fr;
 }
@@ -1672,6 +1692,10 @@
   .anime5e .size-template-workflow-summary,
   .anime5e .folio-item-list .item-row {
     grid-template-columns: 1fr;
+  }
+
+  .anime5e .wallet-grid {
+    grid-template-columns: repeat(2, minmax(96px, 1fr));
   }
 
   .anime5e .ledger-actions {

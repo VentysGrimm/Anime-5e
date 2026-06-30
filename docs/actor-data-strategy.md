@@ -11,6 +11,7 @@ Actor data is reserved for values that belong to the actor even when no owned It
 - Identity and campaign bookkeeping: alias, player name, race/species text, size template text, alignment, campaign title, GM, creation/retirement dates, and character role.
 - Character progression summary: level, experience, and class summary rows for quick sheet editing.
 - Point bookkeeping inputs and derived summary: starting Discretionary Points, Engagement Bonus Points, other non-levelling points, manual spent points, refunded points, Ability Score cost, total spent, available points, remaining points, and optional total points.
+- Campaign economy bookkeeping: wallet currency totals and short wallet notes.
 - Core ability/resource state: ability scores and modifiers, Hit Points, Energy Points, Armour Class, movement speed, proficiency bonus, initiative, and quick attack rows.
 - Folio notes: overview, combat, attributes, defects, skills, powers, inventory, companions, biography, personality, history, family, goals, group, advancement, and journal notes.
 - Rich text summaries: biography and linked stat block notes for non-character actors or companion-style records.
@@ -27,6 +28,7 @@ Use Items for:
 - Character mechanics: Attributes, Defects, Enhancements, Limiters, powers, spells, techniques, skills, proficiencies, tools, and languages.
 - Equipment: weapons, armour, shields, equipment, loot, materials, Item Attributes, Items of Power, mounts, vehicles, and mecha.
 - Future GM-facing data: monster variants, mount stat blocks, vehicle records, and other source-backed entries.
+- Campaign trackers: adventuring risks and crafting projects that need their own status, DC, progress, materials, or reminder notes.
 
 This keeps source-backed compendium entries reusable, draggable, and editable without duplicating the same mechanics directly onto every actor.
 

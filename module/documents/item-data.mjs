@@ -210,6 +210,23 @@ export class Anime5eAdventuringRiskData extends Anime5eBaseItemData {
   }
 }
 
+export class Anime5eCraftingProjectData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      targetItem: textField(),
+      status: textField("Planning"),
+      materialCost: textField(),
+      progress: numberField(0, { min: 0 }),
+      requiredProgress: numberField(0, { min: 0 }),
+      dc: optionalNumberField(),
+      linkedItemUuid: textField(),
+      materials: htmlField(),
+      projectNotes: htmlField()
+    };
+  }
+}
+
 export class Anime5eEquipmentData extends Anime5eBaseItemData {
   static defineSchema() {
     return {

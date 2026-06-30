@@ -855,6 +855,22 @@
         <p>{{folioPages.inventory.summary}}</p>
       </header>
 
+      <section class="paint-panel wallet-panel">
+        <h2>Wallet</h2>
+        <div class="wallet-grid">
+          {{#each economy.currencyRows as |currency|}}
+            <label>
+              {{currency.label}}
+              <input type="number" name="system.economy.currency.{{currency.key}}" value="{{currency.value}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
+            </label>
+          {{/each}}
+        </div>
+        <label class="wallet-notes">
+          Currency Notes
+          <input type="text" name="system.economy.walletNotes" value="{{economy.walletNotes}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+      </section>
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
           <h2>Gear, Items Of Power, Weapons, Armour, Money</h2>
@@ -883,6 +899,31 @@
             </li>
           {{else}}
             <li class="item-row empty"><span></span><span>Drop inventory items here.</span><small></small></li>
+          {{/each}}
+        </ol>
+      </section>
+      <section class="ledger-section item-drop-panel crafting-project-panel" data-drop-target="items">
+        <header class="ledger-heading">
+          <h2>Crafting Projects</h2>
+          {{#if editable}}
+            <div class="ledger-actions">
+              <button type="button" data-action="create-item" data-item-type="craftingProject" title="Create Crafting Project"><i class="fas fa-plus"></i><span>Project</span></button>
+            </div>
+          {{/if}}
+        </header>
+        <ol class="item-list folio-item-list">
+          {{#each itemGroups.craftingProjects as |item|}}
+            <li class="item-row" data-item-id="{{item.id}}">
+              <img src="{{item.img}}" alt="{{item.name}}">
+              <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+              <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+              <div class="item-actions">
+                {{#if item.canUse}}<button type="button" data-action="use-item" title="Post Project Notes"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+              </div>
+            </li>
+          {{else}}
+            <li class="item-row empty"><span></span><span>Track crafting projects, materials, costs, progress, and DC notes here.</span><small></small></li>
           {{/each}}
         </ol>
       </section>

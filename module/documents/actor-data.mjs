@@ -151,6 +151,15 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         available: numberField(0),
         remaining: numberField(0)
       }),
+      economy: new fields.SchemaField({
+        currency: new fields.SchemaField({
+          platinum: numberField(0, { min: 0 }),
+          gold: numberField(0, { min: 0 }),
+          silver: numberField(0, { min: 0 }),
+          copper: numberField(0, { min: 0 })
+        }),
+        walletNotes: textField()
+      }),
       source: new fields.SchemaField({
         book: textField(),
         page: optionalNumberField(),
