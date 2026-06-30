@@ -10,6 +10,7 @@
     "data/sources/core/limiters/index.json",
     "data/sources/core/powers/index.json",
     "data/sources/core/techniques/index.json",
-    "data/sources/core/equipment/index.json"
+    "data/sources/core/equipment/index.json",
+    "data/sources/core/creatures/index.json"
   ]
 }

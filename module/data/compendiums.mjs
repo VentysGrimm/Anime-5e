@@ -170,6 +170,20 @@ function getSourceDocuments(source) {
   return [...documents, ...entries];
 }
 
+function sourceIdForDocument(document) {
+  return document.flags?.[SYSTEM_ID]?.sourceId
+    ?? document.system?.sourceId
+    ?? document.system?.source?.sourceId;
+}
+
+function sourceForDocument(document) {
+  return document.flags?.[SYSTEM_ID]?.source ?? {
+    book: document.system?.source?.book ?? document.system?.source ?? "",
+    page: document.system?.source?.page ?? document.system?.sourcePage ?? null,
+    importId: document.system?.source?.importId ?? document.system?.importId ?? sourceIdForDocument(document)
+  };
+}
+
 async function withUnlockedPack(pack, operation) {
   const wasLocked = pack.locked;
   if (wasLocked) await pack.configure({ locked: false });
@@ -223,7 +237,8 @@ function prepareDocument(sourceDocument, foldersByName) {
 
   document.flags ??= {};
   document.flags[SYSTEM_ID] ??= {};
-  document.flags[SYSTEM_ID].sourceId ??= document.system?.sourceId;
+  document.flags[SYSTEM_ID].sourceId ??= sourceIdForDocument(document);
+  document.flags[SYSTEM_ID].source ??= sourceForDocument(document);
 
   return document;
 }

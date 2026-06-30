@@ -1,0 +1,58 @@
+{
+  "pack": "anime5e.monsters",
+  "documentType": "Actor",
+  "folders": [
+    {
+      "name": "Monsters - Core Rules",
+      "color": "#7a4d4d"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Kobold",
+      "type": "monster",
+      "folder": "Monsters - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Small reptilian dungeon-dwellers used as the first source-backed monster pack seed.",
+          "speciesAndSize": "Small humanoid reptilian",
+          "actorRole": "Monster",
+          "challengeRating": "1/8",
+          "totalPoints": 62,
+          "homelandHabitat": "Underground dungeons and crypts",
+          "alignment": "Lawful Evil"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 216,
+          "sourceId": "core.monster.kobold",
+          "importId": "core.monster.kobold"
+        },
+        "combat": {
+          "armourClass": 14,
+          "hitPoints": {
+            "value": 5,
+            "max": 5
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 2
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 216.</p><p><strong>Starter entry:</strong> Minimal source-backed actor for proving monster pack import. Full Kobold stat block entry is reserved for the core monster starter-set slice.</p>",
+        "notes": {
+          "overview": "<p>Kobolds form large tribal colonies and favour traps, ambushes, and underground lairs.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.monster.kobold",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 216,
+            "importId": "core.monster.kobold"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "pack": "anime5e.npcs",
+  "documentType": "Actor",
+  "folders": [
+    {
+      "name": "NPCs - Core Rules",
+      "color": "#6f7890"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Classless NPC Template",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Source-backed template for weaker background NPCs built directly from Points instead of class levels.",
+          "speciesAndSize": "Varies",
+          "actorRole": "Classless NPC",
+          "challengeRating": "",
+          "totalPoints": null,
+          "homelandHabitat": "Varies",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 50,
+          "sourceId": "core.npc.classless-template",
+          "importId": "core.npc.classless-template"
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 50.</p><p><strong>Starter entry:</strong> Minimal source-backed actor for proving NPC pack import. Classed and named NPCs can expand from this actor structure.</p>",
+        "notes": {
+          "overview": "<p>Classless NPCs assign game stats individually with Points rather than advancing through character classes.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.classless-template",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 50,
+            "importId": "core.npc.classless-template"
+          }
+        }
+      }
+    }
+  ]
+}

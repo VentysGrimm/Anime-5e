@@ -104,6 +104,7 @@ for (const pack of manifest.packs ?? []) {
 }
 
 const packsById = new Map((manifest.packs ?? []).map((pack) => [`${manifest.id}.${pack.name}`, pack]));
+const manifestActorTypes = new Set(Object.keys(manifest.documentTypes?.Actor ?? {}));
 const manifestItemTypes = new Set(Object.keys(manifest.documentTypes?.Item ?? {}));
 const seenSourceIds = new Set();
 
@@ -180,6 +181,20 @@ function getSourceDocuments(source) {
   ];
 }
 
+function documentSourceId(document) {
+  return document.system?.sourceId
+    ?? document.system?.source?.sourceId;
+}
+
+function documentImportId(document) {
+  return document.system?.importId
+    ?? document.system?.source?.importId;
+}
+
+function documentFlagImportId(document) {
+  return document.flags?.[manifest.id]?.source?.importId;
+}
+
 function validateCompendiumSource(relativePath, seen = new Set()) {
   if (seen.has(relativePath)) return { jsonFiles: 0, sourceDocuments: 0 };
   seen.add(relativePath);
@@ -215,6 +230,12 @@ function validateCompendiumSource(relativePath, seen = new Set()) {
       throw new Error(`${relativePath} contains a document without name/type.`);
     }
 
+    if (pack.type === "Actor") {
+      if (!manifestActorTypes.has(document.type)) {
+        throw new Error(`${document.name} uses actor type ${document.type}, but system.json documentTypes does not declare it.`);
+      }
+    }
+
     if (pack.type === "Item") {
       if (!manifestItemTypes.has(document.type)) {
         throw new Error(`${document.name} uses item type ${document.type}, but system.json documentTypes does not declare it.`);
@@ -226,9 +247,9 @@ function validateCompendiumSource(relativePath, seen = new Set()) {
     }
 
     const sourceId = document.flags?.[manifest.id]?.sourceId;
-    const systemSourceId = document.system?.sourceId;
-    const importId = document.system?.importId;
-    const flagImportId = document.flags?.[manifest.id]?.source?.importId;
+    const systemSourceId = documentSourceId(document);
+    const importId = documentImportId(document);
+    const flagImportId = documentFlagImportId(document);
 
     if (!sourceId || !systemSourceId || !importId || !flagImportId) {
       throw new Error(`${document.name} is missing sourceId/importId metadata.`);

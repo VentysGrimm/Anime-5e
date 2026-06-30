@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e.core.creatures",
+  "label": "Anime 5e Core Creature Sources",
+  "includes": [
+    "data/sources/core/creatures/monsters-core-rules.json",
+    "data/sources/core/creatures/npcs-core-rules.json",
+    "data/sources/core/creatures/neomorphs-core-rules.json"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "pack": "anime5e.neomorphs",
+  "documentType": "Actor",
+  "folders": [
+    {
+      "name": "Neomorphs - Core Rules",
+      "color": "#7c6aa6"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Cabbit",
+      "type": "companion",
+      "folder": "Neomorphs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Tiny cat-bunny neomorph used as the first source-backed neomorph pack seed.",
+          "speciesAndSize": "Tiny neomorph",
+          "actorRole": "Neomorph Companion",
+          "challengeRating": "1/8",
+          "totalPoints": 58,
+          "homelandHabitat": "Domestic or trainer-raised habitats",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 230,
+          "sourceId": "core.neomorph.cabbit",
+          "importId": "core.neomorph.cabbit"
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 3,
+            "max": 3
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 1
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 230.</p><p><strong>Starter entry:</strong> Minimal source-backed actor for proving neomorph pack import. Full Cabbit pet and battle forms are reserved for the creature-content slice.</p>",
+        "notes": {
+          "overview": "<p>Cabbits combine domestic cat and bunny traits, making them agile and empathetic pets.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.neomorph.cabbit",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 230,
+            "importId": "core.neomorph.cabbit"
+          }
+        }
+      }
+    }
+  ]
+}
