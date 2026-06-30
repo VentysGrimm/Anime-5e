@@ -949,6 +949,85 @@
   padding: 5px 6px;
 }
 
+.anime5e .species-trait-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.anime5e .species-trait-summary {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+}
+
+.anime5e .species-trait-summary span,
+.anime5e .species-trait-tags span {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid var(--anime5e-border);
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 6px 8px;
+  text-transform: uppercase;
+}
+
+.anime5e .species-trait-summary span {
+  display: grid;
+  gap: 3px;
+}
+
+.anime5e .species-trait-section {
+  display: grid;
+  gap: 6px;
+}
+
+.anime5e .species-trait-section h3 {
+  border-bottom: 1px solid var(--anime5e-border);
+  font-size: 0.86rem;
+  font-weight: 900;
+  margin: 0;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.anime5e .species-trait-grid {
+  display: grid;
+  gap: 4px 6px;
+}
+
+.anime5e .ability-bonus-grid {
+  grid-template-columns: minmax(120px, 1fr) 64px 72px minmax(140px, 1.4fr);
+}
+
+.anime5e .trait-entry-grid {
+  grid-template-columns: minmax(120px, 1fr) 72px 72px minmax(160px, 1.3fr) minmax(120px, 1fr);
+}
+
+.anime5e .movement-grid {
+  grid-template-columns: minmax(120px, 1fr) minmax(120px, 1fr) minmax(160px, 1.4fr);
+}
+
+.anime5e .species-trait-grid > span {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  font-size: 0.78rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: 5px 6px;
+}
+
+.anime5e .species-trait-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.anime5e .species-trait-notes {
+  background: rgba(232, 238, 242, 0.8);
+  border-left: 3px solid #5f7580;
+  margin: 0;
+  padding: 8px 10px;
+}
+
 .anime5e .checkbox-field {
   align-items: center;
   display: flex;
@@ -1386,6 +1465,8 @@
   .anime5e .ledger-heading,
   .anime5e .species-workflow-list li,
   .anime5e .species-workflow-summary,
+  .anime5e .species-trait-grid,
+  .anime5e .species-trait-summary,
   .anime5e .size-template-workflow-list li,
   .anime5e .size-template-workflow-summary,
   .anime5e .folio-item-list .item-row {

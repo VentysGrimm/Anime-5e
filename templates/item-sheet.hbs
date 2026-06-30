@@ -81,6 +81,106 @@
     </section>
   {{/if}}
 
+  {{#if speciesTraits}}
+    <section class="panel species-trait-panel">
+      <h2>Species Traits</h2>
+      <div class="species-trait-summary">
+        {{#each speciesTraits.summary as |summary|}}
+          <span>{{summary.label}} <strong>{{summary.value}}</strong></span>
+        {{/each}}
+      </div>
+
+      {{#if speciesTraits.abilityBonuses}}
+        <div class="species-trait-section">
+          <h3>Ability Bonuses</h3>
+          <div class="species-trait-grid ability-bonus-grid">
+            <div class="table-header">Ability</div>
+            <div class="table-header">Bonus</div>
+            <div class="table-header">Points</div>
+            <div class="table-header">Notes</div>
+            {{#each speciesTraits.abilityBonuses as |bonus|}}
+              <span>{{bonus.ability}}</span>
+              <span>{{bonus.modifierLabel}}</span>
+              <span>{{bonus.pointsLabel}}</span>
+              <span>{{bonus.notes}}</span>
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if speciesTraits.attributes}}
+        <div class="species-trait-section">
+          <h3>Attributes</h3>
+          <div class="species-trait-grid trait-entry-grid">
+            <div class="table-header">Trait</div>
+            <div class="table-header">Rank</div>
+            <div class="table-header">Points</div>
+            <div class="table-header">Detail</div>
+            <div class="table-header">Notes</div>
+            {{#each speciesTraits.attributes as |trait|}}
+              <span>{{trait.name}}</span>
+              <span>{{trait.rankLabel}}</span>
+              <span>{{trait.pointsLabel}}</span>
+              <span>{{trait.detail}}</span>
+              <span>{{trait.notes}}</span>
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if speciesTraits.defects}}
+        <div class="species-trait-section">
+          <h3>Defects</h3>
+          <div class="species-trait-grid trait-entry-grid">
+            <div class="table-header">Trait</div>
+            <div class="table-header">Rank</div>
+            <div class="table-header">Points</div>
+            <div class="table-header">Detail</div>
+            <div class="table-header">Notes</div>
+            {{#each speciesTraits.defects as |trait|}}
+              <span>{{trait.name}}</span>
+              <span>{{trait.rankLabel}}</span>
+              <span>{{trait.pointsLabel}}</span>
+              <span>{{trait.detail}}</span>
+              <span>{{trait.notes}}</span>
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if speciesTraits.languages}}
+        <div class="species-trait-section">
+          <h3>Languages</h3>
+          <div class="species-trait-tags">
+            {{#each speciesTraits.languages as |language|}}
+              <span>{{language}}</span>
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if speciesTraits.movement}}
+        <div class="species-trait-section">
+          <h3>Movement</h3>
+          <div class="species-trait-grid movement-grid">
+            <div class="table-header">Mode</div>
+            <div class="table-header">Speed</div>
+            <div class="table-header">Notes</div>
+            {{#each speciesTraits.movement as |movement|}}
+              <span>{{movement.mode}}</span>
+              <span>{{movement.speed}}</span>
+              <span>{{movement.notes}}</span>
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if speciesTraits.traitNotes}}
+        <p class="species-trait-notes">{{speciesTraits.traitNotes}}</p>
+      {{/if}}
+    </section>
+  {{/if}}
+
   {{#if classProgression}}
     <section class="panel class-progression-panel">
       <h2>Class Progression</h2>

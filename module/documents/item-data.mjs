@@ -72,6 +72,33 @@ function classProgressionEntryField() {
   });
 }
 
+function speciesAbilityBonusField() {
+  return new fields.SchemaField({
+    ability: textField(),
+    modifier: numberField(0),
+    points: numberField(0),
+    notes: textField()
+  });
+}
+
+function speciesTraitField() {
+  return new fields.SchemaField({
+    name: textField(),
+    rank: optionalNumberField(),
+    points: numberField(0),
+    detail: textField(),
+    notes: textField()
+  });
+}
+
+function speciesMovementField() {
+  return new fields.SchemaField({
+    mode: textField(),
+    speed: textField(),
+    notes: textField()
+  });
+}
+
 class Anime5eBaseItemData extends foundry.abstract.TypeDataModel {
   static LOCALIZATION_PREFIXES = ["ANIME5E.Item"];
 
@@ -171,7 +198,14 @@ export class Anime5eSpeciesData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
-      points: numberField(0, { min: 0 })
+      points: numberField(0, { min: 0 }),
+      speciesSize: textField(),
+      abilityBonuses: arrayField(speciesAbilityBonusField()),
+      attributes: arrayField(speciesTraitField()),
+      defects: arrayField(speciesTraitField()),
+      languages: arrayField(textField()),
+      movement: arrayField(speciesMovementField()),
+      traitNotes: htmlField()
     };
   }
 }

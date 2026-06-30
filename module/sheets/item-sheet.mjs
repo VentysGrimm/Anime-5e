@@ -6,6 +6,15 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
+const SPECIES_TRAIT_FIELDS = new Set([
+  "speciesSize",
+  "abilityBonuses",
+  "attributes",
+  "defects",
+  "languages",
+  "movement",
+  "traitNotes"
+]);
 const MULTILINE_FIELDS = new Set([
   "constructionNotes",
   "effectTargets",
@@ -172,9 +181,15 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
-function buildDetailFields(systemData) {
+function excludedDetailFieldsForItem(item) {
+  if (item.type !== "species") return BASE_FIELDS;
+  return new Set([...BASE_FIELDS, ...SPECIES_TRAIT_FIELDS]);
+}
+
+function buildDetailFields(item, systemData) {
+  const excludedFields = excludedDetailFieldsForItem(item);
   return Object.entries(systemData)
-    .filter(([fieldName]) => !BASE_FIELDS.has(fieldName))
+    .filter(([fieldName]) => !excludedFields.has(fieldName))
     .filter(([, value]) => value === null || ["boolean", "number", "string"].includes(typeof value))
     .map(([fieldName, value]) => ({
       fieldName,
@@ -186,6 +201,96 @@ function buildDetailFields(systemData) {
       isNumber: NUMBER_FIELDS.has(fieldName) || typeof value === "number",
       isMultiline: MULTILINE_FIELDS.has(fieldName)
     }));
+}
+
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function formatSignedNumber(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "";
+  if (number > 0) return `+${number}`;
+  return `${number}`;
+}
+
+function formatPoints(value) {
+  const points = Number(value);
+  if (!Number.isFinite(points) || points === 0) return "";
+  const suffix = Math.abs(points) === 1 ? "pt" : "pts";
+  return `${formatSignedNumber(points)} ${suffix}`;
+}
+
+function formatRank(value) {
+  const rank = Number(value);
+  return Number.isFinite(rank) && rank > 0 ? `Rank ${rank}` : "";
+}
+
+function buildSpeciesTraitEntries(entries) {
+  return asArray(entries)
+    .filter((entry) => hasText(entry?.name) || hasText(entry?.detail) || hasText(entry?.notes))
+    .map((entry) => ({
+      name: entry.name ?? "",
+      rankLabel: formatRank(entry.rank),
+      pointsLabel: formatPoints(entry.points),
+      detail: entry.detail ?? "",
+      notes: entry.notes ?? ""
+    }));
+}
+
+function buildSpeciesTraits(item, systemData) {
+  if (item.type !== "species") return null;
+
+  const abilityBonuses = asArray(systemData.abilityBonuses)
+    .filter((entry) => hasText(entry?.ability) || Number.isFinite(Number(entry?.modifier)) || hasText(entry?.notes))
+    .map((entry) => ({
+      ability: entry.ability ?? "",
+      modifierLabel: formatSignedNumber(entry.modifier),
+      pointsLabel: formatPoints(entry.points),
+      notes: entry.notes ?? ""
+    }));
+  const attributes = buildSpeciesTraitEntries(systemData.attributes);
+  const defects = buildSpeciesTraitEntries(systemData.defects);
+  const languages = asArray(systemData.languages).filter(hasText);
+  const movement = asArray(systemData.movement)
+    .filter((entry) => hasText(entry?.mode) || hasText(entry?.speed) || hasText(entry?.notes))
+    .map((entry) => ({
+      mode: entry.mode ?? "",
+      speed: entry.speed ?? "",
+      notes: entry.notes ?? ""
+    }));
+  const traitNotes = systemData.traitNotes ?? "";
+
+  const hasStructuredTraits = Boolean(
+    abilityBonuses.length
+      || attributes.length
+      || defects.length
+      || languages.length
+      || movement.length
+      || hasText(traitNotes)
+      || hasText(systemData.speciesSize)
+  );
+  if (!hasStructuredTraits) return null;
+
+  const summary = [
+    hasText(systemData.speciesSize) ? { label: "Size", value: systemData.speciesSize } : null,
+    Number.isFinite(Number(systemData.points)) ? { label: "Point Cost", value: systemData.points } : null,
+    abilityBonuses.length ? { label: "Ability Bonuses", value: abilityBonuses.length } : null,
+    attributes.length ? { label: "Attributes", value: attributes.length } : null,
+    defects.length ? { label: "Defects", value: defects.length } : null,
+    languages.length ? { label: "Languages", value: languages.length } : null,
+    movement.length ? { label: "Movement", value: movement.length } : null
+  ].filter(Boolean);
+
+  return {
+    summary,
+    abilityBonuses,
+    attributes,
+    defects,
+    languages,
+    movement,
+    traitNotes
+  };
 }
 
 function buildItemActions(item, systemData) {
@@ -273,10 +378,11 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
     context.item = this.item;
     context.system = this.item.system;
-    context.detailFields = buildDetailFields(systemData);
+    context.detailFields = buildDetailFields(this.item, systemData);
     context.itemActions = buildItemActions(this.item, systemData);
     context.constructionPlaceholder = buildConstructionPlaceholder(this.item);
     context.classProgression = buildClassProgression(this.item, systemData);
+    context.speciesTraits = buildSpeciesTraits(this.item, systemData);
     return context;
   }
 

@@ -51,7 +51,77 @@
         "sourceId": "core.species.asrai",
         "sourcePage": 31,
         "importId": "core.species.asrai",
-        "points": 11
+        "points": 11,
+        "speciesSize": "Medium",
+        "abilityBonuses": [
+          {
+            "ability": "Dexterity",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          },
+          {
+            "ability": "Intelligence",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          },
+          {
+            "ability": "Charisma",
+            "modifier": 2,
+            "points": 2,
+            "notes": ""
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Flight",
+            "rank": 1,
+            "points": 3,
+            "detail": "30 feet/round",
+            "notes": "Small agile wings need little room to manoeuvre."
+          },
+          {
+            "name": "Language",
+            "rank": 2,
+            "points": 2,
+            "detail": "Common, Elvish, Sylvan",
+            "notes": ""
+          },
+          {
+            "name": "Sixth Sense",
+            "rank": 1,
+            "points": 1,
+            "detail": "Danger",
+            "notes": "Wings vibrate near harmful creatures, conditions, or environments."
+          },
+          {
+            "name": "Special Movement",
+            "rank": 1,
+            "points": 1,
+            "detail": "Zen Direction",
+            "notes": "The land guides their movement when they are open to receiving guidance."
+          }
+        ],
+        "defects": [],
+        "languages": [
+          "Common",
+          "Elvish",
+          "Sylvan"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "30 feet/round",
+            "notes": "Base speed."
+          },
+          {
+            "mode": "Flight",
+            "speed": "30 feet/round",
+            "notes": "Base flying speed from the Flight trait."
+          }
+        ],
+        "traitNotes": "Blessed Asrai subrace variation adds Dynamic Power (Nature) Rank 1."
       },
       "flags": {
         "anime5e": {
@@ -207,7 +277,67 @@
         "sourceId": "core.species.half-troll",
         "sourcePage": 37,
         "importId": "core.species.half-troll",
-        "points": 9
+        "points": 9,
+        "speciesSize": "Medium",
+        "abilityBonuses": [
+          {
+            "ability": "Wisdom",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          },
+          {
+            "ability": "Constitution",
+            "modifier": -1,
+            "points": -1,
+            "notes": "Constitution drawback from the race cost table."
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Features",
+            "rank": 1,
+            "points": 1,
+            "detail": "Darkvision 60 ft",
+            "notes": ""
+          },
+          {
+            "name": "Heightened Senses",
+            "rank": 1,
+            "points": 1,
+            "detail": "Smell",
+            "notes": "Enhanced smell range and precision."
+          },
+          {
+            "name": "Language",
+            "rank": 3,
+            "points": 3,
+            "detail": "Common, Draconic, Goblin, Orc",
+            "notes": ""
+          },
+          {
+            "name": "Regeneration",
+            "rank": 4,
+            "points": 4,
+            "detail": "4 HP/round",
+            "notes": "Regenerates bodily trauma normally, including severe injuries over several days."
+          }
+        ],
+        "defects": [],
+        "languages": [
+          "Common",
+          "Draconic",
+          "Goblin",
+          "Orc"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "30 feet/round",
+            "notes": "Base speed."
+          }
+        ],
+        "traitNotes": "Water Half-Troll subrace variation trades darkvision for Heightened Senses (Taste), adds Resilient (Underwater) Rank 1, and gains Water Speed Rank 2 (90 feet/round)."
       },
       "flags": {
         "anime5e": {
