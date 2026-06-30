@@ -94,7 +94,12 @@ export class Anime5eAttributeData extends Anime5eBaseItemData {
       ...super.defineSchema(),
       ability: textField(),
       category: textField(),
+      attackModifier: numberField(0),
+      damage: textField(),
+      damageType: textField(),
+      range: textField(),
       movementModes: textField(),
+      weaponNotes: textField(),
       progression: textField()
     };
   }

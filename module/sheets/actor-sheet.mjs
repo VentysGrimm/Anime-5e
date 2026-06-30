@@ -186,6 +186,7 @@ const DEFAULT_ITEM_TYPES = [
 ];
 
 const EQUIPPABLE_ITEM_TYPES = new Set(["weapon", "armor", "shield"]);
+const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
 
 const REQUIRED_NUMBER_DEFAULTS = {
   "system.level": 1,
@@ -223,6 +224,34 @@ function formatSigned(value) {
 
 function hasText(value) {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function sourceIdForItem(item) {
+  const system = item.system ?? {};
+
+  return String(
+    system.sourceId
+      ?? system.importId
+      ?? item.flags?.anime5e?.sourceId
+      ?? item.flags?.anime5e?.source?.importId
+      ?? ""
+  ).trim().toLowerCase();
+}
+
+function isWeaponAttributeItem(item) {
+  if (item.type !== "attribute") return false;
+  if (sourceIdForItem(item) === WEAPON_ATTRIBUTE_SOURCE_ID) return true;
+
+  return String(item.name ?? "").trim().toLowerCase() === "weapon";
+}
+
+function weaponAttributeDamageFormula(item) {
+  const explicitDamage = item.system?.damage?.trim();
+  if (explicitDamage) return explicitDamage;
+  if (!isWeaponAttributeItem(item)) return "";
+
+  const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+  return rank > 0 ? `${rank}d4` : "";
 }
 
 function escapeHtml(value) {
@@ -291,6 +320,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.items = items.map((item) => this.constructor._prepareItemContext(item));
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
+    context.attributeOffense = this.constructor._prepareAttributeOffenseContext(items, context.items);
     context.pointSummary = this.constructor._preparePointSummary(system, items);
     context.creation = this.constructor._prepareCreationContext(system, context.pointSummary, items);
     context.attributeEffects = buildCoreAttributeEffectContext({
@@ -345,6 +375,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
   static _prepareItemContext(item) {
     const system = item.system ?? {};
+    const isWeaponAttribute = isWeaponAttributeItem(item);
+    const hasAttackModifier = Number.isFinite(Number(system.attackModifier));
+    const damageFormula = weaponAttributeDamageFormula(item);
     const tags = [
       system.rank !== undefined ? `Rank ${system.rank}` : null,
       system.cost !== undefined ? `Cost ${system.cost}` : null,
@@ -373,8 +406,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       canUse: true,
       canRoll: hasText(system.roll),
       canSkillCheck: ["skill", "proficiency", "tool"].includes(item.type),
-      canAttack: item.type === "weapon" || Number.isFinite(Number(system.attackModifier)),
-      canDamage: hasText(system.damage)
+      canAttack: item.type === "weapon" || isWeaponAttribute || (item.type !== "attribute" && hasAttackModifier),
+      canDamage: hasText(damageFormula)
     };
   }
 
@@ -433,6 +466,38 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         .map((item) => preparedById.get(item.id))
         .filter(Boolean)
     };
+  }
+
+  static _prepareAttributeOffenseContext(rawItems, preparedItems) {
+    const preparedById = new Map(preparedItems.map((item) => [item.id, item]));
+    const weapons = rawItems
+      .filter((item) => isWeaponAttributeItem(item))
+      .map((item) => {
+        const prepared = preparedById.get(item.id);
+        if (!prepared) return null;
+
+        const damageFormula = weaponAttributeDamageFormula(item);
+        const damageType = item.system?.damageType?.trim();
+        const range = item.system?.range?.trim();
+        const weaponNotes = item.system?.weaponNotes?.trim();
+        const attackModifier = numberOrZero(item.system?.attackModifier);
+        const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+
+        return {
+          ...prepared,
+          canAttack: true,
+          canDamage: hasText(damageFormula),
+          rankLabel: `Rank ${rank}`,
+          attackModifierLabel: `Attack ${formatSigned(attackModifier)}`,
+          damageLabel: damageFormula || "No damage formula",
+          damageTypeLabel: damageType || "Damage type unset",
+          rangeLabel: range || "Melee",
+          weaponNotes
+        };
+      })
+      .filter(Boolean);
+
+    return { weapons };
   }
 
   static _formatAbilityEffectText(ability) {
@@ -794,7 +859,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   async _onRollItemDamage(event) {
     event.preventDefault();
     const item = this._getEmbeddedItem(event);
-    const formula = item?.system?.damage?.trim();
+    const formula = item ? weaponAttributeDamageFormula(item) : "";
     if (!formula) {
       ui.notifications?.warn("Enter a damage formula before rolling this item.");
       return;

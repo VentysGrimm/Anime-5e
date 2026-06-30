@@ -1189,6 +1189,10 @@
   grid-template-columns: 28px minmax(120px, 1fr) minmax(76px, auto);
 }
 
+.anime5e .attribute-offense-list .item-row {
+  grid-template-columns: 28px minmax(104px, 1fr) minmax(112px, auto) minmax(76px, auto);
+}
+
 .anime5e .item-drop-panel {
   min-height: 170px;
 }

@@ -419,6 +419,33 @@
               <button type="button" class="icon-button" data-action="roll-damage" data-attack="{{attackRow.key}}" title="Roll damage"><i class="fas fa-bolt"></i></button>
             {{/each}}
           </div>
+          <section class="equipped-summary" aria-label="Weapon Attribute Offense">
+            <h3>Weapon Attribute Offense</h3>
+            <ol class="item-list compact-equipped-list attribute-offense-list">
+              {{#each attributeOffense.weapons as |item|}}
+                <li class="item-row" data-item-id="{{item.id}}">
+                  <img src="{{item.img}}" alt="{{item.name}}">
+                  <div class="item-main">
+                    <strong>{{item.name}}</strong>
+                    <small>{{item.rankLabel}} | {{item.rangeLabel}}</small>
+                    {{#if item.weaponNotes}}<small>{{item.weaponNotes}}</small>{{/if}}
+                  </div>
+                  <div class="item-tags">
+                    <span>{{item.attackModifierLabel}}</span>
+                    <span>{{item.damageLabel}}</span>
+                    <span>{{item.damageTypeLabel}}</span>
+                  </div>
+                  <div class="item-actions">
+                    <button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>
+                    {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
+                    {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+                  </div>
+                </li>
+              {{else}}
+                <li class="item-row empty"><span></span><span>No Weapon Attribute attacks.</span><small></small></li>
+              {{/each}}
+            </ol>
+          </section>
           <section class="damage-panel" aria-label="Hit Point Damage And Healing">
             <h3>Hit Point Changes</h3>
             <div class="damage-controls">

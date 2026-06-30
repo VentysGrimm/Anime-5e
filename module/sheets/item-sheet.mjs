@@ -4,8 +4,9 @@ const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
-const MULTILINE_FIELDS = new Set(["constructionNotes", "movementModes", "progressionNotes", "result", "statBlock"]);
+const MULTILINE_FIELDS = new Set(["constructionNotes", "movementModes", "progressionNotes", "result", "statBlock", "weaponNotes"]);
 const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
+const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
 const NUMBER_FIELDS = new Set([
   "armourClass",
   "armourClassModifier",
@@ -44,6 +45,8 @@ const FIELD_LABELS = {
   constructionStatus: "Construction Status",
   creatureType: "Creature Type",
   currency: "Currency",
+  damage: "Damage",
+  damageType: "Damage Type",
   damageModifier: "Damage Modifier",
   dexterityRule: "Dexterity Rule",
   equipped: "Equipped",
@@ -79,6 +82,7 @@ const FIELD_LABELS = {
   totalPoints: "Total Points",
   value: "Value",
   weight: "Weight",
+  weaponNotes: "Weapon Notes",
   xp: "XP"
 };
 
@@ -90,6 +94,32 @@ function humanizeFieldName(fieldName) {
 
 function hasText(value) {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function sourceIdForItem(item, systemData = item.system ?? {}) {
+  return String(
+    systemData.sourceId
+      ?? systemData.importId
+      ?? item.flags?.anime5e?.sourceId
+      ?? item.flags?.anime5e?.source?.importId
+      ?? ""
+  ).trim().toLowerCase();
+}
+
+function isWeaponAttributeItem(item, systemData = item.system ?? {}) {
+  if (item.type !== "attribute") return false;
+  if (sourceIdForItem(item, systemData) === WEAPON_ATTRIBUTE_SOURCE_ID) return true;
+
+  return String(item.name ?? "").trim().toLowerCase() === "weapon";
+}
+
+function weaponAttributeDamageFormula(item, systemData = item.system ?? {}) {
+  const explicitDamage = systemData.damage?.trim();
+  if (explicitDamage) return explicitDamage;
+  if (!isWeaponAttributeItem(item, systemData)) return "";
+
+  const rank = Math.max(0, Math.trunc(Number(systemData.rank) || 0));
+  return rank > 0 ? `${rank}d4` : "";
 }
 
 function getItemActor(item) {
@@ -122,11 +152,15 @@ function buildDetailFields(systemData) {
 }
 
 function buildItemActions(item, systemData) {
+  const isWeaponAttribute = isWeaponAttributeItem(item, systemData);
+  const hasAttackModifier = Number.isFinite(Number(systemData.attackModifier));
+  const damageFormula = weaponAttributeDamageFormula(item, systemData);
+
   return {
     canUse: true,
     canRoll: hasText(systemData.roll),
-    canAttack: item.type === "weapon" || Number.isFinite(Number(systemData.attackModifier)),
-    canDamage: hasText(systemData.damage)
+    canAttack: item.type === "weapon" || isWeaponAttribute || (item.type !== "attribute" && hasAttackModifier),
+    canDamage: hasText(damageFormula)
   };
 }
 
@@ -245,7 +279,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   async _onRollDamage(event) {
     event.preventDefault();
-    const formula = this.item.system?.damage?.trim();
+    const formula = weaponAttributeDamageFormula(this.item);
     if (!formula) {
       ui.notifications?.warn("Enter a damage formula before rolling this item.");
       return;

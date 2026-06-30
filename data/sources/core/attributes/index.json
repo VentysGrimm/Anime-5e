@@ -1955,6 +1955,10 @@
         "sourcePage": 124,
         "importId": "core.attribute.weapon",
         "category": "Combat",
+        "attackModifier": 0,
+        "range": "Melee",
+        "damageType": "",
+        "weaponNotes": "Base damage is 1d4 per Rank before Enhancements or Limiters.",
         "progression": "+1d4 Damage/Rank or Special"
       },
       "name": "Weapon",
