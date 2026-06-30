@@ -19,8 +19,10 @@
           "speciesAndSize": "Small humanoid reptilian",
           "actorRole": "Monster",
           "challengeRating": "1/8",
+          "experienceValue": 25,
           "totalPoints": 62,
           "homelandHabitat": "Underground dungeons and crypts",
+          "communities": "Large tribal colonies",
           "alignment": "Lawful Evil"
         },
         "source": {
@@ -36,6 +38,9 @@
             "max": 5
           },
           "movementSpeed": 15,
+          "armourNotes": "Armour Class 14",
+          "defenseSummary": "AC 14; HP 5 (2d6-2); Small humanoid reptilian.",
+          "offenseSummary": "Dagger attack and trap tactics are reserved for the full stat-block slice.",
           "proficiencyBonus": 2
         },
         "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 216.</p><p><strong>Starter entry:</strong> Minimal source-backed actor for proving monster pack import. Full Kobold stat block entry is reserved for the core monster starter-set slice.</p>",

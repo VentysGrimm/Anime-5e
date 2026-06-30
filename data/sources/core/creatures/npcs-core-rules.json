@@ -19,8 +19,10 @@
           "speciesAndSize": "Varies",
           "actorRole": "Classless NPC",
           "challengeRating": "",
+          "experienceValue": null,
           "totalPoints": null,
           "homelandHabitat": "Varies",
+          "communities": "Varies by role, settlement, or faction",
           "alignment": "Varies"
         },
         "source": {
@@ -28,6 +30,11 @@
           "page": 50,
           "sourceId": "core.npc.classless-template",
           "importId": "core.npc.classless-template"
+        },
+        "combat": {
+          "armourNotes": "By role or equipment",
+          "defenseSummary": "Assign AC, HP, saves, and defensive traits from the NPC's point-built concept.",
+          "offenseSummary": "Assign attacks, proficiencies, Attributes, and Defects from the NPC's point-built concept."
         },
         "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 50.</p><p><strong>Starter entry:</strong> Minimal source-backed actor for proving NPC pack import. Classed and named NPCs can expand from this actor structure.</p>",
         "notes": {

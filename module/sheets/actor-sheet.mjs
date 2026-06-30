@@ -197,6 +197,7 @@ const DEFAULT_ITEM_TYPES = [
 ];
 
 const EQUIPPABLE_ITEM_TYPES = new Set(["weapon", "armor", "shield"]);
+const CREATURE_ACTOR_TYPES = new Set(["companion", "monster", "npc"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
 const COMPLEX_ATTRIBUTE_SOURCE_IDS = new Set([
   "core.attribute.companion",
@@ -419,6 +420,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       items
     });
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
+    context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system);
     const activeTab = FOLIO_TAB_IDS.has(this.tabGroups?.primary) ? this.tabGroups.primary : DEFAULT_FOLIO_TAB;
     context.activeTab = activeTab;
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
@@ -517,6 +519,18 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       effectActive: effectUsage?.effectActive ?? true,
       effectToggleIcon: effectUsage?.effectActive === false ? "fa-toggle-off" : "fa-toggle-on",
       effectToggleTitle: effectUsage?.effectActive === false ? "Apply derived effect" : "Suspend derived effect"
+    };
+  }
+
+  static _prepareCreatureProfileContext(actor, system) {
+    const source = system.source ?? {};
+    const sourceLabel = [source.book, source.page ? `p. ${source.page}` : null].filter(Boolean).join(", ");
+
+    return {
+      active: CREATURE_ACTOR_TYPES.has(actor.type),
+      actorType: localizedType("Actor", actor.type),
+      sourceLabel,
+      hasSource: hasText(sourceLabel)
     };
   }
 

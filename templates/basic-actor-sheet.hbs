@@ -25,10 +25,65 @@
           Challenge
           <input type="text" name="system.identity.challengeRating" value="{{system.identity.challengeRating}}" {{#unless editable}}disabled{{/unless}}>
         </label>
+        <label>
+          XP
+          <input type="number" name="system.identity.experienceValue" value="{{system.identity.experienceValue}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Points
+          <input type="number" name="system.identity.totalPoints" value="{{system.identity.totalPoints}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        </label>
       </div>
       <textarea name="system.identity.description" {{#unless editable}}disabled{{/unless}}>{{system.identity.description}}</textarea>
     </div>
   </header>
+
+  {{#if creatureProfile.active}}
+    <section class="panel creature-profile-panel">
+      <h2>Creature Profile</h2>
+      <div class="inline-fields">
+        <label>
+          Size / Type
+          <input type="text" name="system.identity.speciesAndSize" value="{{system.identity.speciesAndSize}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Habitat
+          <input type="text" name="system.identity.homelandHabitat" value="{{system.identity.homelandHabitat}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Communities
+          <input type="text" name="system.identity.communities" value="{{system.identity.communities}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Alignment
+          <input type="text" name="system.identity.alignment" value="{{system.identity.alignment}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Armour
+          <input type="text" name="system.combat.armourNotes" value="{{system.combat.armourNotes}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Source
+          <input type="text" name="system.source.book" value="{{system.source.book}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Page
+          <input type="number" name="system.source.page" value="{{system.source.page}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        </label>
+      </div>
+    </section>
+
+    <section class="folio-grid two-column creature-summary-grid">
+      <section class="notes-box compact-notes">
+        <h2>Defense Summary</h2>
+        <textarea name="system.combat.defenseSummary" {{#unless editable}}disabled{{/unless}}>{{system.combat.defenseSummary}}</textarea>
+      </section>
+      <section class="notes-box compact-notes">
+        <h2>Offense Summary</h2>
+        <textarea name="system.combat.offenseSummary" {{#unless editable}}disabled{{/unless}}>{{system.combat.offenseSummary}}</textarea>
+      </section>
+    </section>
+  {{/if}}
 
   <section class="panel basic-stat-panel">
     <h2>{{localize "ANIME5E.Labels.Abilities"}}</h2>

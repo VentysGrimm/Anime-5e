@@ -887,6 +887,14 @@
   min-height: 76px;
 }
 
+.anime5e .creature-profile-panel .inline-fields {
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+}
+
+.anime5e .creature-summary-grid textarea {
+  min-height: 92px;
+}
+
 .anime5e .basic-ability-grid {
   display: grid;
   gap: 8px;

@@ -19,8 +19,10 @@
           "speciesAndSize": "Tiny neomorph",
           "actorRole": "Neomorph Companion",
           "challengeRating": "1/8",
+          "experienceValue": 25,
           "totalPoints": 58,
           "homelandHabitat": "Domestic or trainer-raised habitats",
+          "communities": "Pets, companions, or trainer-raised arena creatures",
           "alignment": "Varies"
         },
         "source": {
@@ -36,6 +38,9 @@
             "max": 3
           },
           "movementSpeed": 30,
+          "armourNotes": "Armour Class 16",
+          "defenseSummary": "AC 16; HP 3 (1d6); Tiny neomorph.",
+          "offenseSummary": "Pet and battle form attacks are reserved for the full neomorph creature-content slice.",
           "proficiencyBonus": 1
         },
         "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 230.</p><p><strong>Starter entry:</strong> Minimal source-backed actor for proving neomorph pack import. Full Cabbit pet and battle forms are reserved for the creature-content slice.</p>",
