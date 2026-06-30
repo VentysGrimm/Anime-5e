@@ -109,6 +109,7 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         startingExperience: numberField(0, { min: 0 }),
         abilityPointMode: textField("Score equals Point cost"),
         speciesApplied: textField(),
+        sizeTemplateApplied: textField(),
         classApplied: textField(),
         validationStatus: textField("draft"),
         validationNotes: textField()

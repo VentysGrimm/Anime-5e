@@ -226,6 +226,8 @@ export class Anime5eSizeTemplateData extends Anime5eBaseItemData {
       damageModifier: textField(),
       strengthModifier: textField(),
       movementModifier: textField(),
+      liftCarryModifier: textField(),
+      receivedDamageModifier: textField(),
       space: textField(),
       reach: textField()
     };

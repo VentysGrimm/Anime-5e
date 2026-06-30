@@ -1,5 +1,10 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
-import { applySpeciesItem, removeSpeciesItem } from "../rules/creation-workflow.mjs";
+import {
+  applySizeTemplateItem,
+  applySpeciesItem,
+  removeSizeTemplateItem,
+  removeSpeciesItem
+} from "../rules/creation-workflow.mjs";
 import {
   buildCoreAttributeEffectContext,
   buildCoreAttributeUsageContext,
@@ -404,6 +409,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
     context.speciesWorkflow = this.constructor._prepareSpeciesWorkflowContext(system, items, context.items);
+    context.sizeTemplateWorkflow = this.constructor._prepareSizeTemplateWorkflowContext(system, items, context.items);
     context.attributeOffense = this.constructor._prepareAttributeOffenseContext(items, context.items);
     context.complexAttributes = this.constructor._prepareComplexAttributeContext(items, context.items);
     context.pointSummary = this.constructor._preparePointSummary(system, items);
@@ -612,6 +618,67 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       appliedName: appliedSpecies?.name ?? identityRace,
       appliedSource: appliedSpecies?.sourceLabel ?? "",
       totalCost: species.reduce((total, item) => total + item.pointCost, 0),
+      warnings
+    };
+  }
+
+  static _prepareSizeTemplateWorkflowContext(system, rawItems, preparedItems) {
+    const preparedById = new Map(preparedItems.map((item) => [item.id, item]));
+    const appliedRef = String(system.creation?.sizeTemplateApplied ?? "");
+    const identitySizeTemplate = String(system.identity?.sizeTemplate ?? "").trim();
+    const templates = rawItems
+      .filter((item) => item.type === "sizeTemplate")
+      .map((item) => {
+        const prepared = preparedById.get(item.id);
+        const sourceLabel = [item.system?.source, item.system?.sourcePage ? `p. ${item.system.sourcePage}` : null].filter(Boolean).join(", ");
+        const pointCost = Math.max(0, Number(item.system?.points ?? item.system?.cost) || 0);
+        const isApplied = appliedRef === item.uuid || appliedRef === item.id || (!!identitySizeTemplate && identitySizeTemplate === item.name);
+        const modifiers = [
+          hasText(item.system?.sizeCategory) ? { label: "Category", value: item.system.sizeCategory } : null,
+          Number(item.system?.armourClassModifier) ? { label: "AC", value: formatSigned(Number(item.system.armourClassModifier)) } : null,
+          Number(item.system?.attackModifier) ? { label: "Offense Roll", value: formatSigned(Number(item.system.attackModifier)) } : null,
+          hasText(item.system?.damageModifier) ? { label: "Damage", value: item.system.damageModifier } : null,
+          hasText(item.system?.movementModifier) ? { label: "Movement", value: item.system.movementModifier } : null,
+          hasText(item.system?.liftCarryModifier) ? { label: "Lift/Carry", value: item.system.liftCarryModifier } : null,
+          hasText(item.system?.receivedDamageModifier) ? { label: "Received Damage", value: item.system.receivedDamageModifier } : null,
+          hasText(item.system?.space) ? { label: "Space", value: item.system.space } : null,
+          hasText(item.system?.reach) ? { label: "Reach", value: item.system.reach } : null
+        ].filter(Boolean);
+        const modifierTags = modifiers.map((modifier) => `${modifier.label}: ${modifier.value}`);
+        const summary = stripHtml(item.system?.description);
+
+        return {
+          ...(prepared ?? {}),
+          id: item.id,
+          name: item.name,
+          img: item.img,
+          sourceLabel,
+          pointCost,
+          pointCostLabel: `${pointCost} Point${pointCost === 1 ? "" : "s"}`,
+          isApplied,
+          modifiers,
+          modifierTags,
+          hasModifiers: modifiers.length > 0,
+          summary: summary.length > 180 ? `${summary.slice(0, 177)}...` : summary
+        };
+      });
+
+    const appliedTemplate = templates.find((item) => item.isApplied) ?? null;
+    const warnings = [];
+    if (identitySizeTemplate && !appliedTemplate) warnings.push("Selected Size Template does not match an owned size-template item.");
+    if (templates.length > 1 && !appliedTemplate) warnings.push("Multiple Size Template items are attached; choose the active size template.");
+
+    return {
+      active: templates.length > 0 || warnings.length > 0,
+      templates,
+      count: templates.length,
+      hasTemplates: templates.length > 0,
+      hasApplied: !!appliedTemplate,
+      appliedName: appliedTemplate?.name ?? identitySizeTemplate,
+      appliedSource: appliedTemplate?.sourceLabel ?? "",
+      appliedModifiers: appliedTemplate?.modifiers ?? [],
+      appliedModifierTags: appliedTemplate?.modifierTags ?? [],
+      totalCost: templates.reduce((total, item) => total + item.pointCost, 0),
       warnings
     };
   }
@@ -881,6 +948,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='remove-species']").forEach((button) => {
       button.addEventListener("click", this._onRemoveSpecies.bind(this));
+    });
+    element.querySelectorAll("[data-action='apply-size-template']").forEach((button) => {
+      button.addEventListener("click", this._onApplySizeTemplate.bind(this));
+    });
+    element.querySelectorAll("[data-action='remove-size-template']").forEach((button) => {
+      button.addEventListener("click", this._onRemoveSizeTemplate.bind(this));
     });
     element.querySelectorAll("[data-action='apply-creation-start']").forEach((button) => {
       button.addEventListener("click", this._onApplyCreationStart.bind(this));
@@ -1308,6 +1381,26 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!item || item.type !== "species") return;
 
     await removeSpeciesItem(this.actor, item);
+  }
+
+  async _onApplySizeTemplate(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || item.type !== "sizeTemplate") return;
+
+    await applySizeTemplateItem(this.actor, item);
+  }
+
+  async _onRemoveSizeTemplate(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || item.type !== "sizeTemplate") return;
+
+    await removeSizeTemplateItem(this.actor, item);
   }
 
   async _onApplyCreationStart(event) {

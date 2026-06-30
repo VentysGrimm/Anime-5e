@@ -352,6 +352,52 @@
         </section>
       {{/if}}
 
+      {{#if sizeTemplateWorkflow.active}}
+        <section class="paint-panel size-template-workflow-panel">
+          <h2>Size Template Modifiers</h2>
+          <div class="size-template-workflow-summary">
+            <span>Owned Templates <strong>{{sizeTemplateWorkflow.count}}</strong></span>
+            <span>Selected Template <strong>{{#if sizeTemplateWorkflow.hasApplied}}{{sizeTemplateWorkflow.appliedName}}{{else}}None{{/if}}</strong></span>
+            <span>Template Points <strong>{{sizeTemplateWorkflow.totalCost}}</strong></span>
+          </div>
+          {{#if sizeTemplateWorkflow.appliedModifierTags}}
+            <div class="size-template-modifier-tags">
+              {{#each sizeTemplateWorkflow.appliedModifierTags as |modifier|}}<span>{{modifier}}</span>{{/each}}
+            </div>
+          {{/if}}
+          {{#each sizeTemplateWorkflow.warnings as |warning|}}
+            <p class="sheet-warning">{{warning}}</p>
+          {{/each}}
+          <ol class="size-template-workflow-list">
+            {{#each sizeTemplateWorkflow.templates as |template|}}
+              <li class="{{#if template.isApplied}}applied{{/if}}" data-item-id="{{template.id}}">
+                <img src="{{template.img}}" alt="{{template.name}}">
+                <div class="size-template-main">
+                  <strong>{{template.name}}</strong>
+                  <small>{{template.pointCostLabel}}{{#if template.sourceLabel}} | {{template.sourceLabel}}{{/if}}</small>
+                  {{#if template.modifierTags}}
+                    <div class="size-template-modifier-tags">
+                      {{#each template.modifierTags as |modifier|}}<span>{{modifier}}</span>{{/each}}
+                    </div>
+                  {{/if}}
+                  {{#if template.summary}}<p>{{template.summary}}</p>{{/if}}
+                </div>
+                <div class="item-actions">
+                  {{#if ../editable}}
+                    {{#if template.isApplied}}
+                      <button type="button" data-action="remove-size-template" title="Remove selected size template"><i class="fas fa-times-circle"></i></button>
+                    {{else}}
+                      <button type="button" data-action="apply-size-template" title="Apply size template"><i class="fas fa-check-circle"></i></button>
+                    {{/if}}
+                  {{/if}}
+                  {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button>{{/if}}
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        </section>
+      {{/if}}
+
       <section class="ledger-section item-drop-panel" data-drop-target="items">
         <header class="ledger-heading">
           <h2>Character Options</h2>

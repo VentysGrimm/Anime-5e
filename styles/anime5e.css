@@ -447,13 +447,15 @@
   gap: 10px;
 }
 
-.anime5e .species-workflow-summary {
+.anime5e .species-workflow-summary,
+.anime5e .size-template-workflow-summary {
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(3, minmax(92px, 1fr));
 }
 
-.anime5e .species-workflow-summary span {
+.anime5e .species-workflow-summary span,
+.anime5e .size-template-workflow-summary span {
   background: rgba(255, 255, 255, 0.64);
   border: 1px solid var(--anime5e-border);
   display: grid;
@@ -465,7 +467,8 @@
   text-transform: uppercase;
 }
 
-.anime5e .species-workflow-list {
+.anime5e .species-workflow-list,
+.anime5e .size-template-workflow-list {
   display: grid;
   gap: 6px;
   list-style: none;
@@ -473,7 +476,8 @@
   padding: 0;
 }
 
-.anime5e .species-workflow-list li {
+.anime5e .species-workflow-list li,
+.anime5e .size-template-workflow-list li {
   align-items: start;
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid var(--anime5e-border);
@@ -483,19 +487,22 @@
   padding: 6px 8px;
 }
 
-.anime5e .species-workflow-list li.applied {
+.anime5e .species-workflow-list li.applied,
+.anime5e .size-template-workflow-list li.applied {
   border-color: #5f8c62;
   box-shadow: inset 4px 0 0 #5f8c62;
 }
 
-.anime5e .species-workflow-list img {
+.anime5e .species-workflow-list img,
+.anime5e .size-template-workflow-list img {
   border: 0;
   height: 32px;
   object-fit: cover;
   width: 32px;
 }
 
-.anime5e .species-main {
+.anime5e .species-main,
+.anime5e .size-template-main {
   display: grid;
   gap: 3px;
   min-width: 0;
@@ -503,14 +510,38 @@
 
 .anime5e .species-main strong,
 .anime5e .species-main small,
-.anime5e .species-main p {
+.anime5e .species-main p,
+.anime5e .size-template-main strong,
+.anime5e .size-template-main small,
+.anime5e .size-template-main p {
   min-width: 0;
 }
 
-.anime5e .species-main p {
+.anime5e .species-main p,
+.anime5e .size-template-main p {
   font-size: 0.78rem;
   line-height: 1.25;
   margin: 0;
+}
+
+.anime5e .size-template-workflow-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.anime5e .size-template-modifier-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.anime5e .size-template-modifier-tags span {
+  background: #eef3e7;
+  border: 1px solid #c5d4b8;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  line-height: 1;
+  padding: 4px 6px;
 }
 
 .anime5e .folio-table {
@@ -1355,6 +1386,8 @@
   .anime5e .ledger-heading,
   .anime5e .species-workflow-list li,
   .anime5e .species-workflow-summary,
+  .anime5e .size-template-workflow-list li,
+  .anime5e .size-template-workflow-summary,
   .anime5e .folio-item-list .item-row {
     grid-template-columns: 1fr;
   }

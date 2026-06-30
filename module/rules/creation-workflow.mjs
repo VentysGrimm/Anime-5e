@@ -77,11 +77,29 @@ export async function removeSpeciesItem(actor, item) {
   return actor.update(update);
 }
 
-async function applySizeTemplate(actor, item) {
+export async function applySizeTemplateItem(actor, item) {
   const update = {
     "system.identity.sizeTemplate": item.name,
+    "system.creation.sizeTemplateApplied": item.uuid ?? item.id,
     ...summarizePointState(actor)
   };
+
+  return actor.update(update);
+}
+
+export async function removeSizeTemplateItem(actor, item) {
+  const applied = String(actor.system?.creation?.sizeTemplateApplied ?? "");
+  const identitySizeTemplate = String(actor.system?.identity?.sizeTemplate ?? "");
+  const itemRefs = new Set([item?.uuid, item?.id].filter(Boolean).map(String));
+  const shouldClear = !item || itemRefs.has(applied) || identitySizeTemplate === item.name;
+  const update = {
+    ...summarizePointState(actor)
+  };
+
+  if (shouldClear) {
+    update["system.identity.sizeTemplate"] = "";
+    update["system.creation.sizeTemplateApplied"] = "";
+  }
 
   return actor.update(update);
 }
@@ -116,7 +134,7 @@ export function registerCreationWorkflowHooks() {
     if (!actor) return;
 
     if (SPECIES_TYPES.has(item.type)) return applySpeciesItem(actor, item);
-    if (SIZE_TEMPLATE_TYPES.has(item.type)) return applySizeTemplate(actor, item);
+    if (SIZE_TEMPLATE_TYPES.has(item.type)) return applySizeTemplateItem(actor, item);
     if (CLASS_TYPES.has(item.type)) return applyClass(actor, item);
     return refreshCreationValidation(actor);
   });
@@ -129,6 +147,10 @@ export function registerCreationWorkflowHooks() {
       const applied = String(actor.system?.creation?.speciesApplied ?? "");
       if (applied === item.uuid || applied === item.id) return applySpeciesItem(actor, item);
     }
+    if (SIZE_TEMPLATE_TYPES.has(item.type)) {
+      const applied = String(actor.system?.creation?.sizeTemplateApplied ?? "");
+      if (applied === item.uuid || applied === item.id) return applySizeTemplateItem(actor, item);
+    }
     await refreshCreationValidation(actor);
   });
 
@@ -137,6 +159,7 @@ export function registerCreationWorkflowHooks() {
     const actor = embeddedActorForItem(item);
     if (!actor) return;
     if (SPECIES_TYPES.has(item.type)) return removeSpeciesItem(actor, item);
+    if (SIZE_TEMPLATE_TYPES.has(item.type)) return removeSizeTemplateItem(actor, item);
     await refreshCreationValidation(actor);
   });
 }
