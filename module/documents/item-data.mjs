@@ -99,6 +99,17 @@ function speciesMovementField() {
   });
 }
 
+function modifierCustomizationFields(pointModifierInitial) {
+  return {
+    appliesTo: textField(),
+    category: textField(),
+    pointModifier: numberField(pointModifierInitial),
+    assignmentRange: textField(),
+    allowedAttributes: textField(),
+    rulesNotes: htmlField()
+  };
+}
+
 class Anime5eBaseItemData extends foundry.abstract.TypeDataModel {
   static LOCALIZATION_PREFIXES = ["ANIME5E.Item"];
 
@@ -282,8 +293,7 @@ export class Anime5eEnhancementData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
-      appliesTo: textField(),
-      category: textField()
+      ...modifierCustomizationFields(1)
     };
   }
 }
@@ -292,8 +302,7 @@ export class Anime5eLimiterData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
-      appliesTo: textField(),
-      category: textField()
+      ...modifierCustomizationFields(-1)
     };
   }
 }

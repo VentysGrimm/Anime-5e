@@ -91,6 +91,10 @@ function makeDocument({
   };
 }
 
+function allowedAttributesForModifier(appliesTo) {
+  return appliesTo === "Attribute" ? "Any compatible Attribute" : "";
+}
+
 function buildSourceId(prefix, name) {
   return `${prefix}.${slugify(name)}`;
 }
@@ -433,7 +437,11 @@ function enhancementDocument([name, page, summary, category, appliesTo, assignme
     summary,
     system: {
       appliesTo,
-      category
+      category,
+      pointModifier: 1,
+      assignmentRange: assignments,
+      allowedAttributes: allowedAttributesForModifier(appliesTo),
+      rulesNotes: summary
     }
   });
 }
@@ -454,7 +462,11 @@ function limiterDocument([name, page, summary, assignments = "1-3"], category = 
     summary,
     system: {
       appliesTo,
-      category
+      category,
+      pointModifier: -1,
+      assignmentRange: assignments,
+      allowedAttributes: allowedAttributesForModifier(appliesTo),
+      rulesNotes: summary
     }
   });
 }

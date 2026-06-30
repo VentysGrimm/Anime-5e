@@ -27,7 +27,11 @@
         "sourcePage": 145,
         "importId": "core.limiter.activation",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Requires preparation before the Attribute can be used, ranging from one round to one hour."
       },
       "flags": {
         "anime5e": {
@@ -54,7 +58,11 @@
         "sourcePage": 145,
         "importId": "core.limiter.assisted",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Requires one or more special assistants to be present for the Attribute to activate or continue."
       },
       "flags": {
         "anime5e": {
@@ -81,7 +89,11 @@
         "sourcePage": 145,
         "importId": "core.limiter.backlash",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Creates a harmful side effect when the Attribute fails or misses by the specified margin."
       },
       "flags": {
         "anime5e": {
@@ -108,7 +120,11 @@
         "sourcePage": 145,
         "importId": "core.limiter.charges",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Limits the Attribute to a small number of uses each day or session."
       },
       "flags": {
         "anime5e": {
@@ -135,7 +151,11 @@
         "sourcePage": 146,
         "importId": "core.limiter.concentration",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Requires ongoing focus to keep a non-instant Attribute active."
       },
       "flags": {
         "anime5e": {
@@ -162,7 +182,11 @@
         "sourcePage": 146,
         "importId": "core.limiter.consumable",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Consumes a special focus, reagent, or offering whenever the Attribute is used."
       },
       "flags": {
         "anime5e": {
@@ -189,7 +213,11 @@
         "sourcePage": 146,
         "importId": "core.limiter.dependent",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Prevents the Attribute from taking effect until one or more other Attributes are active."
       },
       "flags": {
         "anime5e": {
@@ -216,7 +244,11 @@
         "sourcePage": 146,
         "importId": "core.limiter.deplete",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Spends Energy to activate or maintain the Attribute when optional Energy rules are used."
       },
       "flags": {
         "anime5e": {
@@ -243,7 +275,11 @@
         "sourcePage": 146,
         "importId": "core.limiter.detectable",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Makes the Attribute's use noticeable or traceable by specified detection methods."
       },
       "flags": {
         "anime5e": {
@@ -270,7 +306,11 @@
         "sourcePage": 146,
         "importId": "core.limiter.emotional",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Restricts use to moments of significant, strong, or extreme emotional investment."
       },
       "flags": {
         "anime5e": {
@@ -297,7 +337,11 @@
         "sourcePage": 147,
         "importId": "core.limiter.environmental",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Limits the Attribute to a specific setting, condition, or situational trigger."
       },
       "flags": {
         "anime5e": {
@@ -324,7 +368,11 @@
         "sourcePage": 147,
         "importId": "core.limiter.equipment",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Requires tools, furnishings, materials, or accessories that aid the Attribute without embodying it."
       },
       "flags": {
         "anime5e": {
@@ -351,7 +399,11 @@
         "sourcePage": 147,
         "importId": "core.limiter.imbue",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Lets the character grant the Attribute's use to others for a dramatic scene, usually with Charges."
       },
       "flags": {
         "anime5e": {
@@ -378,7 +430,11 @@
         "sourcePage": 147,
         "importId": "core.limiter.irreversible",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Makes transformation-style Attributes difficult or slow to undo."
       },
       "flags": {
         "anime5e": {
@@ -405,7 +461,11 @@
         "sourcePage": 148,
         "importId": "core.limiter.maximum",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Forces the Attribute to function at maximum effective strength instead of allowing lower output."
       },
       "flags": {
         "anime5e": {
@@ -432,7 +492,11 @@
         "sourcePage": 148,
         "importId": "core.limiter.object",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Limits an Item-contained Attribute so it benefits the object more than its user."
       },
       "flags": {
         "anime5e": {
@@ -459,7 +523,11 @@
         "sourcePage": 148,
         "importId": "core.limiter.permanent",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Keeps the Attribute always active when that constancy is inconvenient."
       },
       "flags": {
         "anime5e": {
@@ -486,7 +554,11 @@
         "sourcePage": 148,
         "importId": "core.limiter.recovery",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Requires a rest period after using an ongoing Attribute before it can function again."
       },
       "flags": {
         "anime5e": {
@@ -513,7 +585,11 @@
         "sourcePage": 148,
         "importId": "core.limiter.semi-permanent",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Keeps the Attribute normally active but allows temporary suppression by spending Energy."
       },
       "flags": {
         "anime5e": {
@@ -540,7 +616,11 @@
         "sourcePage": 148,
         "importId": "core.limiter.unique-limiter",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Covers custom restrictions not otherwise listed, with severity set by player and DM agreement."
       },
       "flags": {
         "anime5e": {
@@ -567,7 +647,11 @@
         "sourcePage": 148,
         "importId": "core.limiter.unpredictable",
         "appliesTo": "Attribute",
-        "category": "Attribute Limiter"
+        "category": "Attribute Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Requires an Ability check or creates unreliable results when the Attribute is used."
       },
       "flags": {
         "anime5e": {
@@ -594,7 +678,11 @@
         "sourcePage": 129,
         "importId": "core.weapon-limiter.ammo",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Limits the Weapon to a small amount of carried ammunition before it must be replenished."
       },
       "flags": {
         "anime5e": {
@@ -621,7 +709,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.exclusive",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Restricts the Weapon to a specified category, group, or individual target."
       },
       "flags": {
         "anime5e": {
@@ -648,7 +740,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.hands",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Requires two appropriately sized hands or appendages to use the Weapon properly."
       },
       "flags": {
         "anime5e": {
@@ -675,7 +771,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.inaccurate",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Imposes disadvantage on attack rolls with the Weapon."
       },
       "flags": {
         "anime5e": {
@@ -702,7 +802,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.ingest",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Requires the Weapon's substance to be swallowed before it affects the target."
       },
       "flags": {
         "anime5e": {
@@ -729,7 +833,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.non-penetrating",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Makes the Weapon poor against armour or heavy clothing, increasing the defender's AC."
       },
       "flags": {
         "anime5e": {
@@ -756,7 +864,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.save",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "2 or 4",
+        "allowedAttributes": "",
+        "rulesNotes": "Replaces the attack roll with a target Constitution or Dexterity save."
       },
       "flags": {
         "anime5e": {
@@ -783,7 +895,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.toxic",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Only damages living targets and can sometimes be countered by simple precautions."
       },
       "flags": {
         "anime5e": {
@@ -810,7 +926,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.unique",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1+",
+        "allowedAttributes": "",
+        "rulesNotes": "Covers a custom Weapon restriction approved and priced by the DM."
       },
       "flags": {
         "anime5e": {
@@ -837,7 +957,11 @@
         "sourcePage": 130,
         "importId": "core.weapon-limiter.unreliable",
         "appliesTo": "Weapon",
-        "category": "Weapon Limiter"
+        "category": "Weapon Limiter",
+        "pointModifier": -1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Makes the Weapon fail or malfunction on a natural 1 until a condition is met."
       },
       "flags": {
         "anime5e": {

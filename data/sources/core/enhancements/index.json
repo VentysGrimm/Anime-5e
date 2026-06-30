@@ -27,7 +27,11 @@
         "sourcePage": 143,
         "importId": "core.enhancement.area",
         "appliesTo": "Attribute",
-        "category": "Attribute Enhancement"
+        "category": "Attribute Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "0-6 assignments",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Expands an Attribute into a radius of effect, with larger areas requiring more assignments."
       },
       "flags": {
         "anime5e": {
@@ -54,7 +58,11 @@
         "sourcePage": 143,
         "importId": "core.enhancement.duration",
         "appliesTo": "Attribute",
-        "category": "Attribute Enhancement"
+        "category": "Attribute Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "0-10 assignments",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Extends how long an Attribute's effect remains active after use, from minutes up to permanent effects with DM approval."
       },
       "flags": {
         "anime5e": {
@@ -81,7 +89,11 @@
         "sourcePage": 143,
         "importId": "core.enhancement.potent",
         "appliesTo": "Attribute",
-        "category": "Attribute Enhancement"
+        "category": "Attribute Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "0-3 assignments",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Lets a Rank 1 Attribute keep a lower effective Rank after Limiters would otherwise raise its effect too far."
       },
       "flags": {
         "anime5e": {
@@ -108,7 +120,11 @@
         "sourcePage": 143,
         "importId": "core.enhancement.range",
         "appliesTo": "Attribute",
-        "category": "Attribute Enhancement"
+        "category": "Attribute Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "0-6 assignments",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Lets an Attribute originate away from the character, from touch range to city-scale distances."
       },
       "flags": {
         "anime5e": {
@@ -135,7 +151,11 @@
         "sourcePage": 143,
         "importId": "core.enhancement.targets",
         "appliesTo": "Attribute",
-        "category": "Attribute Enhancement"
+        "category": "Attribute Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "0-6 assignments",
+        "allowedAttributes": "Any compatible Attribute",
+        "rulesNotes": "Allows an Attribute to affect multiple people or objects at the same time."
       },
       "flags": {
         "anime5e": {
@@ -162,7 +182,11 @@
         "sourcePage": 125,
         "importId": "core.weapon-enhancement.accurate",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Grants advantage on attack rolls with the Weapon."
       },
       "flags": {
         "anime5e": {
@@ -189,7 +213,11 @@
         "sourcePage": 125,
         "importId": "core.weapon-enhancement.area",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-4",
+        "allowedAttributes": "",
+        "rulesNotes": "Turns the Weapon into an area attack with larger radii at higher assignments."
       },
       "flags": {
         "anime5e": {
@@ -216,7 +244,11 @@
         "sourcePage": 125,
         "importId": "core.weapon-enhancement.aura",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Automatically affects creatures that touch the user rather than requiring a normal attack action."
       },
       "flags": {
         "anime5e": {
@@ -243,7 +275,11 @@
         "sourcePage": 125,
         "importId": "core.weapon-enhancement.blight",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Can greatly increase or reduce damage based on a Constitution save."
       },
       "flags": {
         "anime5e": {
@@ -270,7 +306,11 @@
         "sourcePage": 125,
         "importId": "core.weapon-enhancement.contact",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-2",
+        "allowedAttributes": "",
+        "rulesNotes": "Lets the Weapon deliver its effect through skin contact."
       },
       "flags": {
         "anime5e": {
@@ -297,7 +337,11 @@
         "sourcePage": 126,
         "importId": "core.weapon-enhancement.contagious",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Passes the Weapon's damage or effects to others who touch the affected target unless resisted."
       },
       "flags": {
         "anime5e": {
@@ -324,7 +368,11 @@
         "sourcePage": 126,
         "importId": "core.weapon-enhancement.continuing",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1+",
+        "allowedAttributes": "",
+        "rulesNotes": "Adds lingering damage over rounds, hours, or days after the initial successful attack."
       },
       "flags": {
         "anime5e": {
@@ -351,7 +399,11 @@
         "sourcePage": 126,
         "importId": "core.weapon-enhancement.drain",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Reduces a specified Ability Score in addition to any damage."
       },
       "flags": {
         "anime5e": {
@@ -378,7 +430,11 @@
         "sourcePage": 126,
         "importId": "core.weapon-enhancement.enervation",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1+",
+        "allowedAttributes": "",
+        "rulesNotes": "Drains Energy from the target in addition to any damage."
       },
       "flags": {
         "anime5e": {
@@ -405,7 +461,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.flare",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Overloads a sense, such as sight or hearing, unless the target resists."
       },
       "flags": {
         "anime5e": {
@@ -432,7 +492,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.flexible",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Allows a whip-like or extendible attack to trip or disarm instead of dealing damage."
       },
       "flags": {
         "anime5e": {
@@ -459,7 +523,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.homing",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Lets a narrowly missed projectile or burst return for one more attempt next round."
       },
       "flags": {
         "anime5e": {
@@ -486,7 +554,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.incapacitating",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "2 or 4",
+        "allowedAttributes": "",
+        "rulesNotes": "Can immobilise a target with effects such as sleep, paralysis, or petrification."
       },
       "flags": {
         "anime5e": {
@@ -513,7 +585,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.inconspicuous",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "3",
+        "allowedAttributes": "",
+        "rulesNotes": "Hides the attack's visible origin and may enable surprise."
       },
       "flags": {
         "anime5e": {
@@ -540,7 +616,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.incurable",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Makes wounds harder or impossible to heal until special conditions are met."
       },
       "flags": {
         "anime5e": {
@@ -567,7 +647,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.indirect",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Allows ranged attacks to arc over cover when the target's location is known."
       },
       "flags": {
         "anime5e": {
@@ -594,7 +678,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.irritant",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Distracts or partially blinds the target, imposing disadvantage if they fail to resist."
       },
       "flags": {
         "anime5e": {
@@ -621,7 +709,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.linked",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Attaches this Weapon to a master Weapon so it hits automatically when the master attack succeeds."
       },
       "flags": {
         "anime5e": {
@@ -648,7 +740,11 @@
         "sourcePage": 127,
         "importId": "core.weapon-enhancement.multidimensional",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Allows the Weapon to affect targets across dimensional or incorporeal boundaries."
       },
       "flags": {
         "anime5e": {
@@ -675,7 +771,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.penetrating",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-2",
+        "allowedAttributes": "",
+        "rulesNotes": "Reduces the Armour Class benefit of physical armour or hide."
       },
       "flags": {
         "anime5e": {
@@ -702,7 +802,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.quake",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Creates a linear ground fissure or shock wave under a target."
       },
       "flags": {
         "anime5e": {
@@ -729,7 +833,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.range",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-4",
+        "allowedAttributes": "",
+        "rulesNotes": "Extends a Weapon beyond melee reach, from 10 feet to 1,000 feet."
       },
       "flags": {
         "anime5e": {
@@ -756,7 +864,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.reach",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Extends melee reach and can let the wielder strike first against shorter melee weapons."
       },
       "flags": {
         "anime5e": {
@@ -783,7 +895,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.selective",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1",
+        "allowedAttributes": "",
+        "rulesNotes": "Lets an Area, Aura, or Spreading Weapon choose who is affected."
       },
       "flags": {
         "anime5e": {
@@ -810,7 +926,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.spreading",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1+",
+        "allowedAttributes": "",
+        "rulesNotes": "Lets the attack spread to additional nearby targets in a line, cone, or spray."
       },
       "flags": {
         "anime5e": {
@@ -837,7 +957,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.tangle",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1+",
+        "allowedAttributes": "",
+        "rulesNotes": "Restrains targets in physical entanglements that must be damaged or broken."
       },
       "flags": {
         "anime5e": {
@@ -864,7 +988,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.targetted",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Doubles damage and selected effects against a chosen individual, group, or common category."
       },
       "flags": {
         "anime5e": {
@@ -891,7 +1019,11 @@
         "sourcePage": 128,
         "importId": "core.weapon-enhancement.trap",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1-3",
+        "allowedAttributes": "",
+        "rulesNotes": "Places the Weapon as a waiting trap that triggers later."
       },
       "flags": {
         "anime5e": {
@@ -918,7 +1050,11 @@
         "sourcePage": 129,
         "importId": "core.weapon-enhancement.unique",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "1+",
+        "allowedAttributes": "",
+        "rulesNotes": "Covers a custom Weapon benefit approved and priced by the DM."
       },
       "flags": {
         "anime5e": {
@@ -945,7 +1081,11 @@
         "sourcePage": 129,
         "importId": "core.weapon-enhancement.vampiric",
         "appliesTo": "Weapon",
-        "category": "Weapon Enhancement"
+        "category": "Weapon Enhancement",
+        "pointModifier": 1,
+        "assignmentRange": "2 or 4",
+        "allowedAttributes": "",
+        "rulesNotes": "Transfers lost Hit Points, Energy, or Ability values to the attacker for a short time."
       },
       "flags": {
         "anime5e": {
