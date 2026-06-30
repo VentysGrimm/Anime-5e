@@ -528,7 +528,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       equippable: EQUIPPABLE_ITEM_TYPES.has(item.type),
       canUse: true,
       canRoll: hasText(system.roll),
-      canSkillCheck: ["skill", "proficiency", "tool"].includes(item.type),
+      canSkillCheck: item.type === "skill"
+        || item.type === "tool"
+        || (item.type === "proficiency" && !!this._normalizeAbilityKey(system.ability)),
       canAttack: item.type === "weapon" || isWeaponAttribute || (item.type !== "attribute" && hasAttackModifier),
       canDamage: hasText(damageFormula),
       canToggleEffect,
@@ -1003,6 +1005,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='roll-quick']").forEach((button) => {
       button.addEventListener("click", this._onRollQuick.bind(this));
     });
+    element.querySelectorAll("[data-action='roll-contest']").forEach((button) => {
+      button.addEventListener("click", this._onRollContest.bind(this));
+    });
     element.querySelectorAll("[data-action='roll-saving-throw']").forEach((button) => {
       button.addEventListener("click", this._onRollSavingThrow.bind(this));
     });
@@ -1131,10 +1136,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   async _onRollInitiative(event) {
     event.preventDefault();
     const initiative = this.actor.system.combat?.initiative ?? 0;
-    const formula = buildD20Formula([initiative]);
+    const panel = event.currentTarget.closest(".combat-panel");
+    const rollMode = panel?.querySelector("[data-roll-input='initiativeD20Mode']")?.value ?? "normal";
+    const formula = buildD20Formula([initiative], { mode: rollMode });
     const combatant = this._getActiveCombatant();
     if (!combatant) {
-      await this._rollFormula(formula, "Initiative");
+      await this._rollFormula(formula, "Initiative", { mode: rollMode });
       return;
     }
 
@@ -1149,7 +1156,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           label: "Initiative",
           formula,
           result: roll.total,
-          mode: "normal"
+          mode: rollMode
         })
       });
     } catch (error) {
@@ -1180,14 +1187,41 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${mode.label}: ${abilityLabel}${dcLabel}`, { mode: rollMode });
   }
 
+  async _onRollContest(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".quick-roll-panel");
+    const abilityKey = panel?.querySelector("[data-roll-input='ability']")?.value ?? "strength";
+    const modeKey = panel?.querySelector("[data-roll-input='mode']")?.value ?? "ability";
+    const rollMode = panel?.querySelector("[data-roll-input='d20Mode']")?.value ?? "normal";
+    const situationalBonus = Number(panel?.querySelector("[data-roll-input='bonus']")?.value) || 0;
+    const ability = this.actor.system.abilities?.[abilityKey];
+    const mode = ROLL_MODES[modeKey] ?? ROLL_MODES.ability;
+    if (!ability) return;
+
+    const modifiers = [ability.modifier];
+    if (mode.includeProficiency) modifiers.push(this.actor.system.combat?.proficiencyBonus ?? 0);
+    if (situationalBonus) modifiers.push(situationalBonus);
+
+    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${mode.label} Contest: ${abilityLabel}`, { mode: rollMode });
+  }
+
   async _onRollSavingThrow(event) {
     event.preventDefault();
     const abilityKey = event.currentTarget.dataset.ability;
     const ability = this.actor.system.abilities?.[abilityKey];
     if (!ability) return;
 
+    const panel = event.currentTarget.closest(".save-roll-panel");
+    const rollMode = panel?.querySelector("[data-roll-input='saveD20Mode']")?.value ?? "normal";
+    const includeProficiency = !!panel?.querySelector("[data-roll-input='saveProficiency']")?.checked
+      || this.constructor._hasSavingThrowProficiency(this.actor, abilityKey);
+    const modifiers = [ability.modifier];
+    if (includeProficiency) modifiers.push(this.actor.system.combat?.proficiencyBonus ?? 0);
+
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
-    await this._rollFormula(buildD20Formula([ability.modifier]), `${abilityLabel} Saving Throw`);
+    const proficiencyLabel = includeProficiency ? "Proficient " : "";
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${abilityLabel} ${proficiencyLabel}Saving Throw`, { mode: rollMode });
   }
 
   async _onRollAttack(event) {
@@ -1245,9 +1279,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       return;
     }
 
+    const panel = event.currentTarget.closest(".folio-tab");
+    const rollMode = panel?.querySelector("[data-roll-input='skillD20Mode']")?.value ?? "normal";
+    const situationalBonus = Number(panel?.querySelector("[data-roll-input='skillBonus']")?.value) || 0;
     const modifiers = [ability.modifier, this.actor.system.combat?.proficiencyBonus ?? 0];
+    if (situationalBonus) modifiers.push(situationalBonus);
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
-    await this._rollFormula(buildD20Formula(modifiers), `${item.name} Check (${abilityLabel})`);
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${item.name} Check (${abilityLabel})`, { mode: rollMode });
   }
 
   async _onRollItemAttack(event) {
@@ -1278,6 +1316,23 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (ABILITY_LABELS[normalized]) return normalized;
 
     return Object.entries(ABILITY_LABELS).find(([, label]) => label.toLowerCase() === normalized)?.[0] ?? null;
+  }
+
+  static _hasSavingThrowProficiency(actor, abilityKey) {
+    const abilityLabel = ABILITY_LABELS[abilityKey]?.toLowerCase();
+    if (!abilityLabel) return false;
+
+    return actor.items?.some((item) => {
+      if (item.type !== "proficiency") return false;
+      const category = String(item.system?.category ?? "").toLowerCase();
+      const itemName = String(item.name ?? "").toLowerCase();
+      if (!category.includes("saving") && !itemName.includes("saving throw")) return false;
+
+      const itemAbility = this._normalizeAbilityKey(item.system?.ability);
+      return itemAbility === abilityKey
+        || itemName.includes(`${abilityLabel} saving throw`)
+        || itemName.includes(`${abilityKey} saving throw`);
+    }) ?? false;
   }
 
   async _rollFormula(formula, label, options = {}) {

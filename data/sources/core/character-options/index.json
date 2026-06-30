@@ -1,6 +1,7 @@
 {
   "includes": [
     "data/sources/core/character-options/classes-core-rules.json",
-    "data/sources/core/character-options/species-core-rules.json"
+    "data/sources/core/character-options/species-core-rules.json",
+    "data/sources/core/character-options/proficiencies-core-rules.json"
   ]
 }

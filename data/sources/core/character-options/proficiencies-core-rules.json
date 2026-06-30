@@ -1,0 +1,1295 @@
+{
+  "pack": "anime5e.character-options",
+  "documentType": "Item",
+  "sourceBook": "Anime 5E Fifth Edition Core Rules",
+  "folders": [
+    {
+      "name": "Skills - Core Rules",
+      "color": "#6f8fa8"
+    },
+    {
+      "name": "Saving Throws - Core Rules",
+      "color": "#8f6fa8"
+    },
+    {
+      "name": "Armour Proficiencies - Core Rules",
+      "color": "#6d7884"
+    },
+    {
+      "name": "Weapon Proficiencies - Core Rules",
+      "color": "#8f5b5b"
+    },
+    {
+      "name": "Tool Proficiencies - Core Rules",
+      "color": "#7a805a"
+    },
+    {
+      "name": "Languages - Core Rules",
+      "color": "#6f9186"
+    }
+  ],
+  "entries": [
+    {
+      "name": "Academia",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.academia",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Acrobatics",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.acrobatics",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Agriculture",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.agriculture",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Alchemy",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.alchemy",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Animal Handling",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.animal-handling",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Arcana",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.arcana",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Architecture",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.architecture",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Area Knowledge",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.area-knowledge",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Artisan",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.artisan",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Athletics",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.athletics",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Strength.",
+      "system": {
+        "category": "Skill",
+        "ability": "Strength"
+      }
+    },
+    {
+      "name": "Business",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.business",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Climbing",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.climbing",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Controlled Breathing",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.controlled-breathing",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Constitution.",
+      "system": {
+        "category": "Skill",
+        "ability": "Constitution"
+      }
+    },
+    {
+      "name": "Culture",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.culture",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Deception",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.deception",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Disguise",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.disguise",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Domestic Arts",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.domestic-arts",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Empathy",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.empathy",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Engineering",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.engineering",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Etiquette",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.etiquette",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Focus",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.focus",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Forgery",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.forgery",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Gaming",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.gaming",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Helming",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.helming",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "History",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.history",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Insight",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.insight",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Interrogation",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.interrogation",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Intimidation",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.intimidation",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Investigation",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.investigation",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Law",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.law",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Leadership",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.leadership",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Medicine",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.medicine",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Mining",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.mining",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Nature",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.nature",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Navigation",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.navigation",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Perception",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.perception",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Performance",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.performance",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Persuasion",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.persuasion",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Physics",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.physics",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Religion",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.religion",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Intelligence.",
+      "system": {
+        "category": "Skill",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Riding",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.riding",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Seduction",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.seduction",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Sleight of Hand",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.sleight-of-hand",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Stealth",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.stealth",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Street Sense",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.street-sense",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Charisma.",
+      "system": {
+        "category": "Skill",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Survival",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.survival",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Swimming",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.swimming",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Constitution.",
+      "system": {
+        "category": "Skill",
+        "ability": "Constitution"
+      }
+    },
+    {
+      "name": "Traps",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.traps",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Dexterity.",
+      "system": {
+        "category": "Skill",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Visual Arts",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.visual-arts",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Warfare",
+      "type": "skill",
+      "folder": "Skills - Core Rules",
+      "img": "icons/svg/d20-grey.svg",
+      "sourceId": "core.skill.warfare",
+      "sourcePage": 113,
+      "cost": 1,
+      "summary": "Table 13 Skill Proficiency associated with Wisdom.",
+      "system": {
+        "category": "Skill",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Strength Saving Throw",
+      "type": "proficiency",
+      "folder": "Saving Throws - Core Rules",
+      "img": "icons/svg/d20-black.svg",
+      "sourceId": "core.proficiency.saving-throw-strength",
+      "sourcePage": 112,
+      "cost": 2,
+      "summary": "Saving Throw Proficiency for Strength saving throws.",
+      "system": {
+        "category": "Saving Throw",
+        "ability": "Strength"
+      }
+    },
+    {
+      "name": "Dexterity Saving Throw",
+      "type": "proficiency",
+      "folder": "Saving Throws - Core Rules",
+      "img": "icons/svg/d20-black.svg",
+      "sourceId": "core.proficiency.saving-throw-dexterity",
+      "sourcePage": 112,
+      "cost": 2,
+      "summary": "Saving Throw Proficiency for Dexterity saving throws.",
+      "system": {
+        "category": "Saving Throw",
+        "ability": "Dexterity"
+      }
+    },
+    {
+      "name": "Constitution Saving Throw",
+      "type": "proficiency",
+      "folder": "Saving Throws - Core Rules",
+      "img": "icons/svg/d20-black.svg",
+      "sourceId": "core.proficiency.saving-throw-constitution",
+      "sourcePage": 112,
+      "cost": 2,
+      "summary": "Saving Throw Proficiency for Constitution saving throws.",
+      "system": {
+        "category": "Saving Throw",
+        "ability": "Constitution"
+      }
+    },
+    {
+      "name": "Intelligence Saving Throw",
+      "type": "proficiency",
+      "folder": "Saving Throws - Core Rules",
+      "img": "icons/svg/d20-black.svg",
+      "sourceId": "core.proficiency.saving-throw-intelligence",
+      "sourcePage": 112,
+      "cost": 2,
+      "summary": "Saving Throw Proficiency for Intelligence saving throws.",
+      "system": {
+        "category": "Saving Throw",
+        "ability": "Intelligence"
+      }
+    },
+    {
+      "name": "Wisdom Saving Throw",
+      "type": "proficiency",
+      "folder": "Saving Throws - Core Rules",
+      "img": "icons/svg/d20-black.svg",
+      "sourceId": "core.proficiency.saving-throw-wisdom",
+      "sourcePage": 112,
+      "cost": 2,
+      "summary": "Saving Throw Proficiency for Wisdom saving throws.",
+      "system": {
+        "category": "Saving Throw",
+        "ability": "Wisdom"
+      }
+    },
+    {
+      "name": "Charisma Saving Throw",
+      "type": "proficiency",
+      "folder": "Saving Throws - Core Rules",
+      "img": "icons/svg/d20-black.svg",
+      "sourceId": "core.proficiency.saving-throw-charisma",
+      "sourcePage": 112,
+      "cost": 2,
+      "summary": "Saving Throw Proficiency for Charisma saving throws.",
+      "system": {
+        "category": "Saving Throw",
+        "ability": "Charisma"
+      }
+    },
+    {
+      "name": "Shields",
+      "type": "proficiency",
+      "folder": "Armour Proficiencies - Core Rules",
+      "img": "icons/svg/shield.svg",
+      "sourceId": "core.proficiency.armour-shields",
+      "sourcePage": 92,
+      "cost": 1,
+      "summary": "Armour Proficiency category for shields.",
+      "system": {
+        "category": "Armour"
+      }
+    },
+    {
+      "name": "Light Armour",
+      "type": "proficiency",
+      "folder": "Armour Proficiencies - Core Rules",
+      "img": "icons/svg/shield.svg",
+      "sourceId": "core.proficiency.armour-light",
+      "sourcePage": 92,
+      "cost": 1,
+      "summary": "Armour Proficiency category for light armour.",
+      "system": {
+        "category": "Armour"
+      }
+    },
+    {
+      "name": "Medium Armour",
+      "type": "proficiency",
+      "folder": "Armour Proficiencies - Core Rules",
+      "img": "icons/svg/shield.svg",
+      "sourceId": "core.proficiency.armour-medium",
+      "sourcePage": 92,
+      "cost": 1,
+      "summary": "Armour Proficiency category for medium armour; light armour proficiency is the normal prerequisite.",
+      "system": {
+        "category": "Armour"
+      }
+    },
+    {
+      "name": "Heavy Armour",
+      "type": "proficiency",
+      "folder": "Armour Proficiencies - Core Rules",
+      "img": "icons/svg/shield.svg",
+      "sourceId": "core.proficiency.armour-heavy",
+      "sourcePage": 92,
+      "cost": 1,
+      "summary": "Armour Proficiency category for heavy armour; medium armour proficiency is the normal prerequisite.",
+      "system": {
+        "category": "Armour"
+      }
+    },
+    {
+      "name": "Simple Melee Weapons",
+      "type": "proficiency",
+      "folder": "Weapon Proficiencies - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "sourceId": "core.proficiency.weapon-simple-melee",
+      "sourcePage": 191,
+      "cost": 1,
+      "summary": "Weapon Proficiency group used by the Core Rules melee weapon table.",
+      "system": {
+        "category": "Weapon"
+      }
+    },
+    {
+      "name": "Martial Melee Weapons",
+      "type": "proficiency",
+      "folder": "Weapon Proficiencies - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "sourceId": "core.proficiency.weapon-martial-melee",
+      "sourcePage": 191,
+      "cost": 1,
+      "summary": "Weapon Proficiency group used by the Core Rules melee weapon table.",
+      "system": {
+        "category": "Weapon"
+      }
+    },
+    {
+      "name": "Simple Ranged Weapons",
+      "type": "proficiency",
+      "folder": "Weapon Proficiencies - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "sourceId": "core.proficiency.weapon-simple-ranged",
+      "sourcePage": 191,
+      "cost": 1,
+      "summary": "Weapon Proficiency group used by the Core Rules ranged weapon table.",
+      "system": {
+        "category": "Weapon"
+      }
+    },
+    {
+      "name": "Martial Ranged Weapons",
+      "type": "proficiency",
+      "folder": "Weapon Proficiencies - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "sourceId": "core.proficiency.weapon-martial-ranged",
+      "sourcePage": 192,
+      "cost": 1,
+      "summary": "Weapon Proficiency group used by the Core Rules ranged weapon table.",
+      "system": {
+        "category": "Weapon"
+      }
+    },
+    {
+      "name": "Simple Splash Weapons",
+      "type": "proficiency",
+      "folder": "Weapon Proficiencies - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "sourceId": "core.proficiency.weapon-simple-splash",
+      "sourcePage": 192,
+      "cost": 1,
+      "summary": "Weapon Proficiency group used by the Core Rules splash weapon table.",
+      "system": {
+        "category": "Weapon"
+      }
+    },
+    {
+      "name": "Martial Siege Weapons",
+      "type": "proficiency",
+      "folder": "Weapon Proficiencies - Core Rules",
+      "img": "icons/svg/sword.svg",
+      "sourceId": "core.proficiency.weapon-martial-siege",
+      "sourcePage": 192,
+      "cost": 1,
+      "summary": "Weapon Proficiency group used by the Core Rules siege weapon table.",
+      "system": {
+        "category": "Weapon"
+      }
+    },
+    {
+      "name": "Artisan Equipment",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.artisan-equipment",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example covering craft equipment such as alchemy, brewing, carpentry, cooking, painting, smithing, tattooing, weaving, and similar tools.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Disguise Kit",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.disguise-kit",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example for disguise kit checks.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Forgery Kit",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.forgery-kit",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example for forgery kit checks.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Gaming Set",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.gaming-set",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example for games and gaming equipment.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Herbalism Kit",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.herbalism-kit",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example for herbalism kit checks.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Musical Instruments",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.musical-instruments",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example; talent with multiple instruments can count as a single tool proficiency.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Navigation Equipment",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.navigation-equipment",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example for navigation equipment checks.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Poisoners' Kit",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.poisoners-kit",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example for poisoners' kit checks.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Thieving Tools",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.thieving-tools",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example for thieving tools checks.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Vehicle or Boat",
+      "type": "tool",
+      "folder": "Tool Proficiencies - Core Rules",
+      "img": "icons/svg/toolbox.svg",
+      "sourceId": "core.tool.vehicle-or-boat",
+      "sourcePage": 119,
+      "cost": 1,
+      "summary": "Tool Proficiency example for vehicle or boat checks.",
+      "system": {
+        "category": "Tool",
+        "ability": "Variable"
+      }
+    },
+    {
+      "name": "Common",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.common",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Near-universal language known by default unless a Defect or DM decision says otherwise.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Abyssal",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.abyssal",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with creature origins.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Celestial",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.celestial",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with creature origins.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Deep Speech",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.deep-speech",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with creature origins.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Draconic",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.draconic",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with race or origin.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Dwarvish",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.dwarvish",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with race.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Elvish",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.elvish",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with race.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Giant",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.giant",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with race.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Goblin",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.goblin",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with race.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Gnomish",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.gnomish",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with race.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Halfling",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.halfling",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with race.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Infernal",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.infernal",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with creature origins.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Orc",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.orc",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with race.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Primordial",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.primordial",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with creature origins.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Sylvan",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.sylvan",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with creature origins.",
+      "system": {
+        "script": ""
+      }
+    },
+    {
+      "name": "Undercommon",
+      "type": "language",
+      "folder": "Languages - Core Rules",
+      "img": "icons/svg/book.svg",
+      "sourceId": "core.language.undercommon",
+      "sourcePage": 105,
+      "cost": 1,
+      "summary": "Language example associated with creature origins.",
+      "system": {
+        "script": ""
+      }
+    }
+  ]
+}

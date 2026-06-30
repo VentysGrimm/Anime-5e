@@ -1494,7 +1494,11 @@
 }
 
 .anime5e .quick-roll-controls input,
-.anime5e .quick-roll-controls select {
+.anime5e .quick-roll-controls select,
+.anime5e .save-roll-controls input,
+.anime5e .save-roll-controls select,
+.anime5e .skill-roll-controls input,
+.anime5e .skill-roll-controls select {
   min-width: 0;
 }
 
@@ -1567,6 +1571,30 @@
 
 .anime5e .save-roll-panel {
   display: grid;
+  gap: 8px;
+}
+
+.anime5e .save-roll-controls,
+.anime5e .skill-roll-controls {
+  align-items: end;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+
+.anime5e .save-roll-controls label,
+.anime5e .skill-roll-controls label {
+  display: grid;
+  font-size: 0.78rem;
+  font-weight: 800;
+  gap: 3px;
+  text-transform: uppercase;
+}
+
+.anime5e .save-roll-controls .checkbox-field {
+  align-items: center;
+  display: flex;
+  gap: 6px;
 }
 
 .anime5e .save-roll-buttons {
@@ -1746,7 +1774,9 @@
   .anime5e .encounter-threat-result-grid,
   .anime5e .folio-page-heading,
   .anime5e .quick-roll-controls,
+  .anime5e .save-roll-controls,
   .anime5e .ledger-heading,
+  .anime5e .skill-roll-controls,
   .anime5e .species-workflow-list li,
   .anime5e .species-workflow-paths,
   .anime5e .species-workflow-summary,

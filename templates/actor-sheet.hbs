@@ -467,6 +467,14 @@
               Initiative
               <input type="number" name="system.combat.initiative" value="{{system.combat.initiative}}" {{#unless editable}}disabled{{/unless}}>
             </label>
+            <label>
+              Roll
+              <select data-roll-input="initiativeD20Mode">
+                {{#each d20Modes as |mode|}}
+                  <option value="{{mode.key}}">{{mode.label}}</option>
+                {{/each}}
+              </select>
+            </label>
             <button type="button" class="roll-action" data-action="roll-initiative"><i class="fas fa-dice-d20"></i> Initiative</button>
             <label>
               Saving Throws
@@ -509,6 +517,7 @@
                 <input type="number" data-roll-input="bonus" value="0">
               </label>
               <button type="button" class="roll-action" data-action="roll-quick"><i class="fas fa-dice-d20"></i> Roll</button>
+              <button type="button" class="roll-action" data-action="roll-contest"><i class="fas fa-user-friends"></i> Contest</button>
             </div>
           </section>
           <div class="folio-table attack-table action-table">
@@ -769,6 +778,20 @@
       <section class="folio-grid two-column">
         <section class="notes-box save-roll-panel">
           <h2>Saving Throws, Proficiencies, Languages, Movement, Senses</h2>
+          <div class="save-roll-controls">
+            <label>
+              Roll
+              <select data-roll-input="saveD20Mode">
+                {{#each d20Modes as |mode|}}
+                  <option value="{{mode.key}}">{{mode.label}}</option>
+                {{/each}}
+              </select>
+            </label>
+            <label class="checkbox-field">
+              <input type="checkbox" data-roll-input="saveProficiency">
+              Proficiency
+            </label>
+          </div>
           <div class="save-roll-buttons">
             {{#each abilities as |ability|}}
               <button type="button" data-action="roll-saving-throw" data-ability="{{ability.key}}" title="Roll {{ability.label}} Saving Throw"><i class="fas fa-dice-d20"></i><span>{{ability.label}}</span></button>
@@ -787,6 +810,20 @@
               </div>
             {{/if}}
           </header>
+          <div class="skill-roll-controls">
+            <label>
+              Roll
+              <select data-roll-input="skillD20Mode">
+                {{#each d20Modes as |mode|}}
+                  <option value="{{mode.key}}">{{mode.label}}</option>
+                {{/each}}
+              </select>
+            </label>
+            <label>
+              Bonus
+              <input type="number" data-roll-input="skillBonus" value="0">
+            </label>
+          </div>
           <ol class="item-list folio-item-list">
             {{#each itemGroups.skills as |item|}}
               <li class="item-row" data-item-id="{{item.id}}">

@@ -35,6 +35,9 @@ The source-material directory is intentionally ignored for GitHub publishing; th
   - Saving throw: d20 plus relevant ability modifier, with a proficient save option that adds proficiency bonus.
   - Initiative: d20 plus initiative modifier.
   - Attack roll: d20 plus the configured attack modifier, with quick-roll options for proficient and non-proficient ability-based attacks.
+- Source-backed Core Rules skill and proficiency items:
+  - Table 13 skills are imported with their associated abilities.
+  - Saving throw, armour, weapon, tool, and language proficiency records are carried as character-option Items.
 - Source-backed compendium import from foldered JSON into declared Item packs.
 
 ## Partially Defined Or Deferred
