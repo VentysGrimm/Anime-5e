@@ -110,6 +110,17 @@ function modifierCustomizationFields(pointModifierInitial) {
   };
 }
 
+function modifierReferenceField(pointModifierInitial) {
+  return new fields.SchemaField({
+    name: textField(),
+    sourceId: textField(),
+    uuid: textField(),
+    pointModifier: numberField(pointModifierInitial),
+    assignmentCount: numberField(1, { min: 0 }),
+    notes: textField()
+  });
+}
+
 class Anime5eBaseItemData extends foundry.abstract.TypeDataModel {
   static LOCALIZATION_PREFIXES = ["ANIME5E.Item"];
 
@@ -160,7 +171,9 @@ export class Anime5eAttributeData extends Anime5eBaseItemData {
       movementModes: textField(),
       weaponNotes: textField(),
       trackingNotes: textField(),
-      progression: textField()
+      progression: textField(),
+      enhancementReferences: arrayField(modifierReferenceField(1)),
+      limiterReferences: arrayField(modifierReferenceField(-1))
     };
   }
 }

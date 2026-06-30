@@ -81,6 +81,57 @@
     </section>
   {{/if}}
 
+  {{#if attributeModifiers}}
+    <section class="panel attribute-modifier-panel">
+      <h2>Attribute Customization</h2>
+      <div class="attribute-modifier-summary">
+        {{#each attributeModifiers.summary as |summary|}}
+          <span>{{summary.label}} <strong>{{summary.value}}</strong></span>
+        {{/each}}
+      </div>
+
+      {{#each attributeModifiers.groups as |group|}}
+        <div class="attribute-modifier-group">
+          <h3>{{group.label}}</h3>
+          <div class="attribute-modifier-add">
+            <input type="text" data-modifier-input="{{group.type}}" {{#unless ../editable}}disabled{{/unless}}>
+            <button type="button" data-action="add-attribute-modifier" data-modifier-type="{{group.type}}" {{#unless ../editable}}disabled{{/unless}}>
+              <i class="fas fa-plus"></i>
+              <span>Add</span>
+            </button>
+          </div>
+
+          {{#if group.entries}}
+            <div class="attribute-modifier-list">
+              <div class="table-header">Name</div>
+              <div class="table-header">Reference</div>
+              <div class="table-header">Each</div>
+              <div class="table-header">Assignments</div>
+              <div class="table-header">Total</div>
+              <div class="table-header">Notes</div>
+              <div class="table-header">Remove</div>
+              {{#each group.entries as |entry|}}
+                <span>{{entry.name}}</span>
+                <span>{{entry.referenceLabel}}</span>
+                <span>{{entry.pointModifierLabel}}</span>
+                <span>
+                  <input type="number" name="system.{{../field}}.{{entry.index}}.assignmentCount" value="{{entry.assignmentCount}}" min="0" {{#unless ../../editable}}disabled{{/unless}}>
+                </span>
+                <span>{{entry.totalLabel}}</span>
+                <span>{{entry.notes}}</span>
+                <span>
+                  <button type="button" class="icon-button" data-action="remove-attribute-modifier" data-modifier-type="{{../type}}" data-index="{{entry.index}}" title="Remove {{entry.name}}" {{#unless ../../editable}}disabled{{/unless}}>
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </span>
+              {{/each}}
+            </div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </section>
+  {{/if}}
+
   {{#if speciesTraits}}
     <section class="panel species-trait-panel">
       <h2>Species Traits</h2>

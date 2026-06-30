@@ -32,9 +32,26 @@ const MULTILINE_FIELDS = new Set([
 ]);
 const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
+const ATTRIBUTE_MODIFIER_CONFIG = {
+  enhancement: {
+    field: "enhancementReferences",
+    label: "Enhancements",
+    pack: "anime5e.enhancements",
+    pointModifier: 1,
+    singular: "enhancement"
+  },
+  limiter: {
+    field: "limiterReferences",
+    label: "Limiters",
+    pack: "anime5e.limiters",
+    pointModifier: -1,
+    singular: "limiter"
+  }
+};
 const NUMBER_FIELDS = new Set([
   "armourClass",
   "armourClassModifier",
+  "assignmentCount",
   "attackModifier",
   "basePoints",
   "bonusPoints",
@@ -60,6 +77,7 @@ const FIELD_LABELS = {
   armour: "Armour",
   armourClass: "Armour Class",
   armourClassModifier: "Armour Class Modifier",
+  assignmentCount: "Assignments",
   assignmentRange: "Assignment Range",
   attackModifier: "Attack Modifier",
   attributeSummary: "Attribute Summary",
@@ -300,6 +318,156 @@ function buildSpeciesTraits(item, systemData) {
   };
 }
 
+function buildModifierEntries(references) {
+  return asArray(references).map((reference, index) => {
+    const assignmentCount = Math.max(0, Math.trunc(Number(reference.assignmentCount) || 0));
+    const pointModifier = Number(reference.pointModifier) || 0;
+    const total = pointModifier * assignmentCount;
+    const sourceId = reference.sourceId ?? "";
+    const uuid = reference.uuid ?? "";
+
+    return {
+      index,
+      name: reference.name || sourceId || uuid || "Unresolved Reference",
+      sourceId,
+      uuid,
+      referenceLabel: sourceId || uuid,
+      pointModifier,
+      pointModifierLabel: formatSignedNumber(pointModifier),
+      assignmentCount,
+      total,
+      totalLabel: formatSignedNumber(total),
+      notes: reference.notes ?? ""
+    };
+  });
+}
+
+function buildAttributeModifiers(item, systemData) {
+  if (item.type !== "attribute") return null;
+
+  const groups = Object.entries(ATTRIBUTE_MODIFIER_CONFIG).map(([type, config]) => {
+    const entries = buildModifierEntries(systemData[config.field]);
+    const subtotal = entries.reduce((sum, entry) => sum + entry.total, 0);
+
+    return {
+      type,
+      field: config.field,
+      label: config.label,
+      entries,
+      subtotal,
+      subtotalLabel: formatSignedNumber(subtotal)
+    };
+  });
+  const rawSubtotal = groups.reduce((sum, group) => sum + group.subtotal, 0);
+
+  return {
+    summary: [
+      { label: "Enhancements", value: groups[0]?.entries.length ?? 0 },
+      { label: "Limiters", value: groups[1]?.entries.length ?? 0 },
+      { label: "Raw Modifier", value: formatSignedNumber(rawSubtotal) }
+    ],
+    groups,
+    rawSubtotal,
+    rawSubtotalLabel: formatSignedNumber(rawSubtotal)
+  };
+}
+
+function cloneModifierReferences(references) {
+  return asArray(references).map((entry) => entry?.toObject?.() ?? { ...entry });
+}
+
+function modifierReferenceFromDocument(document, type) {
+  const config = ATTRIBUTE_MODIFIER_CONFIG[type];
+  const system = document.system?.toObject?.() ?? document.system ?? {};
+  const sourceId = String(system.sourceId ?? document.flags?.anime5e?.sourceId ?? "").trim();
+  const assignmentRange = String(system.assignmentRange ?? "").trim();
+
+  return {
+    name: document.name ?? sourceId,
+    sourceId,
+    uuid: document.uuid ?? "",
+    pointModifier: Number(system.pointModifier) || config.pointModifier,
+    assignmentCount: 1,
+    notes: assignmentRange ? `Assignments: ${assignmentRange}` : ""
+  };
+}
+
+async function resolveModifierByUuid(reference, type) {
+  if (typeof fromUuid !== "function") return null;
+
+  try {
+    const document = await fromUuid(reference);
+    if (!document || document.type !== type) return null;
+    return modifierReferenceFromDocument(document, type);
+  } catch (error) {
+    return null;
+  }
+}
+
+function modifierSourceId(document) {
+  return String(document.system?.sourceId ?? document.flags?.anime5e?.sourceId ?? "").trim().toLowerCase();
+}
+
+function resolveWorldModifierBySourceId(sourceId, type) {
+  const normalized = sourceId.toLowerCase();
+  for (const item of game.items ?? []) {
+    if (item.type === type && modifierSourceId(item) === normalized) {
+      return modifierReferenceFromDocument(item, type);
+    }
+  }
+
+  return null;
+}
+
+async function resolvePackModifierBySourceId(sourceId, type) {
+  const config = ATTRIBUTE_MODIFIER_CONFIG[type];
+  const pack = game.packs.get(config.pack);
+  if (!pack) return null;
+
+  const normalized = sourceId.toLowerCase();
+  const index = Array.from(await pack.getIndex({
+    fields: ["type", "system.sourceId", "flags.anime5e.sourceId"]
+  }));
+  const match = index.find((entry) => {
+    if (entry.type !== type) return false;
+    const entrySourceId = String(
+      foundry.utils.getProperty(entry, "system.sourceId")
+        ?? foundry.utils.getProperty(entry, "flags.anime5e.sourceId")
+        ?? ""
+    ).trim().toLowerCase();
+    return entrySourceId === normalized;
+  });
+  if (!match) return null;
+
+  const document = await pack.getDocument(match._id);
+  return document ? modifierReferenceFromDocument(document, type) : null;
+}
+
+async function resolveAttributeModifierReference(reference, type) {
+  const config = ATTRIBUTE_MODIFIER_CONFIG[type];
+  const trimmed = String(reference ?? "").trim();
+  if (!trimmed) return null;
+
+  const byUuid = await resolveModifierByUuid(trimmed, type);
+  if (byUuid) return byUuid;
+
+  const byWorldSourceId = resolveWorldModifierBySourceId(trimmed, type);
+  if (byWorldSourceId) return byWorldSourceId;
+
+  const byPackSourceId = await resolvePackModifierBySourceId(trimmed, type);
+  if (byPackSourceId) return byPackSourceId;
+
+  const isUuidLike = trimmed.startsWith("Item.") || trimmed.startsWith("Compendium.");
+  return {
+    name: trimmed,
+    sourceId: isUuidLike ? "" : trimmed,
+    uuid: isUuidLike ? trimmed : "",
+    pointModifier: config.pointModifier,
+    assignmentCount: 1,
+    notes: "Unresolved reference"
+  };
+}
+
 function buildItemActions(item, systemData) {
   const isWeaponAttribute = isWeaponAttributeItem(item, systemData);
   const hasAttackModifier = Number.isFinite(Number(systemData.attackModifier));
@@ -390,6 +558,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.constructionPlaceholder = buildConstructionPlaceholder(this.item);
     context.classProgression = buildClassProgression(this.item, systemData);
     context.speciesTraits = buildSpeciesTraits(this.item, systemData);
+    context.attributeModifiers = buildAttributeModifiers(this.item, systemData);
     return context;
   }
 
@@ -403,6 +572,12 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     element.querySelector("[data-action='roll-item']")?.addEventListener("click", this._onRollItem.bind(this));
     element.querySelector("[data-action='roll-item-attack']")?.addEventListener("click", this._onRollAttack.bind(this));
     element.querySelector("[data-action='roll-item-damage']")?.addEventListener("click", this._onRollDamage.bind(this));
+    element.querySelectorAll("[data-action='add-attribute-modifier']").forEach((button) => {
+      button.addEventListener("click", this._onAddAttributeModifier.bind(this));
+    });
+    element.querySelectorAll("[data-action='remove-attribute-modifier']").forEach((button) => {
+      button.addEventListener("click", this._onRemoveAttributeModifier.bind(this));
+    });
   }
 
   async _onUseItem(event) {
@@ -437,6 +612,44 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
     const damageType = this.item.system?.damageType ? ` (${this.item.system.damageType})` : "";
     await this._rollFormula(formula, `${this.item.name} Damage${damageType}`);
+  }
+
+  async _onAddAttributeModifier(event) {
+    event.preventDefault();
+    const type = event.currentTarget?.dataset?.modifierType;
+    const config = ATTRIBUTE_MODIFIER_CONFIG[type];
+    if (!config) return;
+
+    const root = event.currentTarget.closest(".anime5e-form");
+    const input = root?.querySelector(`[data-modifier-input="${type}"]`);
+    const value = input?.value?.trim();
+    if (!value) {
+      ui.notifications?.warn(`Enter a ${config.singular} sourceId or UUID first.`);
+      return;
+    }
+
+    const reference = await resolveAttributeModifierReference(value, type);
+    if (!reference) return;
+
+    const references = cloneModifierReferences(this.item.system?.[config.field]);
+    references.push(reference);
+    await this.item.update({ [`system.${config.field}`]: references });
+  }
+
+  async _onRemoveAttributeModifier(event) {
+    event.preventDefault();
+    const type = event.currentTarget?.dataset?.modifierType;
+    const config = ATTRIBUTE_MODIFIER_CONFIG[type];
+    if (!config) return;
+
+    const index = Number(event.currentTarget?.dataset?.index);
+    if (!Number.isInteger(index) || index < 0) return;
+
+    const references = cloneModifierReferences(this.item.system?.[config.field]);
+    if (index >= references.length) return;
+
+    references.splice(index, 1);
+    await this.item.update({ [`system.${config.field}`]: references });
   }
 
   async _rollFormula(formula, label) {
