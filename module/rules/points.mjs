@@ -394,7 +394,7 @@ function modifierReferenceName(reference, fallback) {
   return reference?.name || reference?.sourceId || reference?.uuid || fallback;
 }
 
-function calculateModifierSubtotal(references = [], fallbackLabel = "Modifier") {
+function calculateModifierSubtotal(references = [], fallbackLabel = "Modifier", targetLabel = "Attribute") {
   return references.reduce((result, reference) => {
     const name = modifierReferenceName(reference, fallbackLabel);
     const assignmentCount = positiveNumber(reference?.assignmentCount);
@@ -408,8 +408,8 @@ function calculateModifierSubtotal(references = [], fallbackLabel = "Modifier") 
     if (isUnresolved) result.warnings.push(`${name} reference is unresolved; verify its sourceId or UUID.`);
     if (assignmentCount <= 0) result.warnings.push(`${name} has zero assignments.`);
     if (pointModifier === 0) result.warnings.push(`${name} has a zero point modifier.`);
-    if (appliesTo && appliesTo.toLowerCase() !== "attribute") {
-      result.warnings.push(`${name} is marked for ${appliesTo}, not Attributes.`);
+    if (appliesTo && !appliesTo.toLowerCase().includes(targetLabel.toLowerCase())) {
+      result.warnings.push(`${name} is marked for ${appliesTo}, not ${targetLabel}s.`);
     }
 
     return result;
@@ -418,14 +418,21 @@ function calculateModifierSubtotal(references = [], fallbackLabel = "Modifier") 
 
 export function calculateAttributeCustomization(item) {
   const system = item?.system ?? item ?? {};
+  const actualRank = positiveNumber(system.rank);
   const rank = positiveNumber(system.effectiveRank ?? system.rank);
   const baseCost = positiveNumber(system.cost);
   const costAdjustment = numberOrZero(system.costAdjustment);
-  const enhancementResult = calculateModifierSubtotal(modifierReferences(system, "enhancementReferences"), "Enhancement");
-  const limiterResult = calculateModifierSubtotal(modifierReferences(system, "limiterReferences"), "Limiter");
+  const targetLabel = item?.type === "weapon" ? "Weapon" : "Attribute";
+  const enhancementResult = calculateModifierSubtotal(modifierReferences(system, "enhancementReferences"), "Enhancement", targetLabel);
+  const limiterResult = calculateModifierSubtotal(modifierReferences(system, "limiterReferences"), "Limiter", targetLabel);
   const modifierSubtotal = enhancementResult.subtotal + limiterResult.subtotal;
   const unclampedCostPerRank = baseCost + costAdjustment + modifierSubtotal;
   const effectiveCostPerRank = Math.max(0, unclampedCostPerRank);
+  const finalCostOverride = system.finalCostOverride === null || system.finalCostOverride === undefined || system.finalCostOverride === ""
+    ? null
+    : positiveNumber(system.finalCostOverride);
+  const overrideNotes = typeof system.overrideNotes === "string" ? system.overrideNotes.trim() : "";
+  const calculatedCost = rank * effectiveCostPerRank;
   const hasModifiers = Boolean(
     modifierReferences(system, "enhancementReferences").length
       || modifierReferences(system, "limiterReferences").length
@@ -433,10 +440,14 @@ export function calculateAttributeCustomization(item) {
   const warnings = [...enhancementResult.warnings, ...limiterResult.warnings];
 
   if (hasModifiers && unclampedCostPerRank <= 0) {
-    warnings.push(`Effective Attribute cost per Rank is ${unclampedCostPerRank}; using 0 for point totals.`);
+    warnings.push(`Effective ${targetLabel} cost per Rank is ${unclampedCostPerRank}; using 0 for point totals.`);
+  }
+  if (finalCostOverride !== null && !overrideNotes) {
+    warnings.push("Final cost override is present without override notes.");
   }
 
   return {
+    actualRank,
     rank,
     effectiveRank: rank,
     baseCost,
@@ -444,7 +455,9 @@ export function calculateAttributeCustomization(item) {
     modifierSubtotal,
     unclampedCostPerRank,
     effectiveCostPerRank,
-    totalCost: rank * effectiveCostPerRank,
+    calculatedCost,
+    finalCostOverride,
+    totalCost: finalCostOverride ?? calculatedCost,
     hasModifiers,
     warnings
   };
@@ -497,12 +510,12 @@ export function calculateOwnedPointTotals(items = []) {
     const type = item?.type;
     const system = item?.system ?? {};
 
-    if (type === "attribute" || type === "itemAttribute" || type === "power" || type === "technique") {
+    if (type === "attribute" || type === "itemAttribute" || type === "power" || type === "technique" || type === "weapon") {
       const customization = calculateAttributeCustomization(item);
       totals.attributeCost += customization.totalCost;
-      totals.warningItems.push(...customization.warnings.map((warning) => `${item.name ?? "Unnamed Attribute"}: ${warning}`));
+      totals.warningItems.push(...customization.warnings.map((warning) => `${item.name ?? "Unnamed"}: ${warning}`));
       if (positiveNumber(system.rank) > 0 && customization.effectiveCostPerRank === 0) {
-        totals.warningItems.push(`${item.name ?? "Unnamed Attribute"} has a Rank but no cost.`);
+        totals.warningItems.push(`${item.name ?? "Unnamed"} has a Rank but no cost.`);
       }
     } else if (DEFECT_TYPES.has(type)) {
       const refund = calculateDefectRefund(item);

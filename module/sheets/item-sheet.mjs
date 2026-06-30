@@ -20,6 +20,7 @@ const SPECIES_TRAIT_FIELDS = new Set([
 const MULTILINE_FIELDS = new Set([
   "allowedAttributes",
   "constructionNotes",
+  "overrideNotes",
   "effectTargets",
   "materials",
   "movementModes",
@@ -60,9 +61,11 @@ const NUMBER_FIELDS = new Set([
   "attackModifier",
   "basePoints",
   "bonusPoints",
+  "costAdjustment",
   "costModifier",
   "dc",
   "finalClassPoints",
+  "finalCostOverride",
   "levellingPoints",
   "level",
   "pointImpact",
@@ -95,6 +98,7 @@ const FIELD_LABELS = {
   carryingCapacity: "Carrying Capacity",
   challengeRating: "Challenge Rating",
   communities: "Communities",
+  costAdjustment: "Cost Adjustment",
   costModifier: "Cost Modifier",
   constructionNotes: "Construction Notes",
   constructionStatus: "Construction Status",
@@ -114,6 +118,7 @@ const FIELD_LABELS = {
   equipped: "Equipped",
   effectiveRank: "Effective Rank",
   enhancements: "Enhancements",
+  finalCostOverride: "Final Cost Override",
   freeHands: "Free Hands",
   habitat: "Habitat",
   hitDice: "Hit Dice",
@@ -131,6 +136,7 @@ const FIELD_LABELS = {
   materials: "Required Materials",
   movementModes: "Movement Modes",
   movementModifier: "Movement Modifier",
+  overrideNotes: "Override Notes",
   parentAttribute: "Parent Attribute",
   pointImpact: "Point Impact",
   pointModifier: "Point Modifier",
@@ -359,7 +365,7 @@ function buildModifierEntries(references) {
 }
 
 function buildAttributeModifiers(item, systemData) {
-  if (item.type !== "attribute") return null;
+  if (!["attribute", "weapon"].includes(item.type)) return null;
 
   const customization = calculateAttributeCustomization({ type: item.type, name: item.name, system: systemData });
   const groups = Object.entries(ATTRIBUTE_MODIFIER_CONFIG).map(([type, config]) => {
@@ -378,12 +384,15 @@ function buildAttributeModifiers(item, systemData) {
   const rawSubtotal = groups.reduce((sum, group) => sum + group.subtotal, 0);
 
   return {
+    heading: item.type === "weapon" ? "Weapon Customization" : "Attribute Customization",
     summary: [
+      { label: "Actual Rank", value: customization.actualRank },
+      { label: "Effective Rank", value: customization.effectiveRank },
       { label: "Enhancements", value: groups[0]?.entries.length ?? 0 },
       { label: "Limiters", value: groups[1]?.entries.length ?? 0 },
       { label: "Raw Modifier", value: formatSignedNumber(customization.modifierSubtotal) },
       { label: "Cost/Rank", value: customization.effectiveCostPerRank },
-      { label: "Total Cost", value: customization.totalCost }
+      { label: customization.finalCostOverride === null ? "Final Cost" : "Override Cost", value: customization.totalCost }
     ],
     groups,
     rawSubtotal,

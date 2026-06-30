@@ -144,6 +144,10 @@ export class Anime5eAttributeData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      effectiveRank: optionalNumberField(),
+      costAdjustment: numberField(0),
+      finalCostOverride: optionalNumberField(),
+      overrideNotes: textField(),
       ability: textField(),
       category: textField(),
       effectActive: booleanField(true),
@@ -457,6 +461,11 @@ export class Anime5eWeaponData extends Anime5eBaseItemData {
       weight: textField(),
       sourceTable: textField(),
       effectiveRank: optionalNumberField(),
+      costAdjustment: numberField(0),
+      finalCostOverride: optionalNumberField(),
+      overrideNotes: textField(),
+      enhancementReferences: arrayField(modifierReferenceField(1)),
+      limiterReferences: arrayField(modifierReferenceField(-1)),
       enhancements: textField(),
       limiters: textField(),
       damage: textField(),
