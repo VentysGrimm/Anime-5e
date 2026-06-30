@@ -1,0 +1,231 @@
+{
+  "pack": "anime5e-adventuring-accessories.items",
+  "documentType": "Item",
+  "sourceBook": "Anime 5E Adventuring Accessories",
+  "sourceAbbreviation": "AA",
+  "sourceModuleId": "anime5e-adventuring-accessories",
+  "contentCategory": "mecha",
+  "folders": [
+    {
+      "name": "Mecha - Adventuring Accessories",
+      "color": "#6f7f91"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Guardian Alpha",
+      "type": "mecha",
+      "folder": "Mecha - Adventuring Accessories",
+      "img": "icons/svg/robot.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Adventuring Accessories, PDF p. 3.</p><p><strong>Rules Summary:</strong> Large 10-foot steel humanoid Guardian mecha with high Strength, speed, fire resistance, armour, a katana, and merger capacity for Protector Guardian V.</p>",
+        "rank": 8,
+        "cost": 32,
+        "source": "Anime 5E Adventuring Accessories",
+        "sourceId": "adventuring-accessories.mecha.guardian-alpha",
+        "sourcePage": 3,
+        "sourceAbbreviation": "AA",
+        "sourceModuleId": "anime5e-adventuring-accessories",
+        "sourceCategory": "mecha",
+        "importId": "adventuring-accessories.mecha.guardian-alpha",
+        "equipped": false,
+        "owner": "",
+        "pilot": "",
+        "occupants": "",
+        "armourClass": 14,
+        "speed": "AC 14; HP 50; speed 90 ft/round",
+        "crew": "",
+        "passengers": "See source capacity notes",
+        "cargo": "",
+        "height": "",
+        "material": "",
+        "points": 40
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "adventuring-accessories.mecha.guardian-alpha",
+          "source": {
+            "book": "Anime 5E Adventuring Accessories",
+            "page": 3,
+            "abbreviation": "AA",
+            "moduleId": "anime5e-adventuring-accessories",
+            "category": "mecha",
+            "importId": "adventuring-accessories.mecha.guardian-alpha"
+          }
+        }
+      }
+    },
+    {
+      "name": "Exosuit",
+      "type": "mecha",
+      "folder": "Mecha - Adventuring Accessories",
+      "img": "icons/svg/robot.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Adventuring Accessories, PDF p. 3.</p><p><strong>Rules Summary:</strong> Medium hardsuit that functions like enhanced armour, improving AC, Strength, Dexterity, reflexes, speed, camouflage, and protection.</p>",
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Adventuring Accessories",
+        "sourceId": "adventuring-accessories.mecha.exosuit",
+        "sourcePage": 3,
+        "sourceAbbreviation": "AA",
+        "sourceModuleId": "anime5e-adventuring-accessories",
+        "sourceCategory": "mecha",
+        "importId": "adventuring-accessories.mecha.exosuit",
+        "equipped": false,
+        "owner": "",
+        "pilot": "",
+        "occupants": "",
+        "armourClass": 10,
+        "speed": "AC bonus +6; speed x2; protected shell",
+        "crew": "",
+        "passengers": "See source capacity notes",
+        "cargo": "",
+        "height": "",
+        "material": "",
+        "points": 15
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "adventuring-accessories.mecha.exosuit",
+          "source": {
+            "book": "Anime 5E Adventuring Accessories",
+            "page": 3,
+            "abbreviation": "AA",
+            "moduleId": "anime5e-adventuring-accessories",
+            "category": "mecha",
+            "importId": "adventuring-accessories.mecha.exosuit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mermech",
+      "type": "mecha",
+      "folder": "Mecha - Adventuring Accessories",
+      "img": "icons/svg/robot.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Adventuring Accessories, PDF p. 4.</p><p><strong>Rules Summary:</strong> Large quadruped shark mecha for land and water travel with crew capacity, underwater resilience, silvered frame, and Aquajet weapon.</p>",
+        "rank": 6,
+        "cost": 24,
+        "source": "Anime 5E Adventuring Accessories",
+        "sourceId": "adventuring-accessories.mecha.mermech",
+        "sourcePage": 4,
+        "sourceAbbreviation": "AA",
+        "sourceModuleId": "anime5e-adventuring-accessories",
+        "sourceCategory": "mecha",
+        "importId": "adventuring-accessories.mecha.mermech",
+        "equipped": false,
+        "owner": "",
+        "pilot": "",
+        "occupants": "",
+        "armourClass": 8,
+        "speed": "AC 8; HP 40; land 30 ft/round; water 300 ft/round",
+        "crew": "",
+        "passengers": "See source capacity notes",
+        "cargo": "",
+        "height": "",
+        "material": "",
+        "points": 30
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "adventuring-accessories.mecha.mermech",
+          "source": {
+            "book": "Anime 5E Adventuring Accessories",
+            "page": 4,
+            "abbreviation": "AA",
+            "moduleId": "anime5e-adventuring-accessories",
+            "category": "mecha",
+            "importId": "adventuring-accessories.mecha.mermech"
+          }
+        }
+      }
+    },
+    {
+      "name": "Nekogantaur",
+      "type": "mecha",
+      "folder": "Mecha - Adventuring Accessories",
+      "img": "icons/svg/robot.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Adventuring Accessories, PDF p. 4.</p><p><strong>Rules Summary:</strong> Gargantuan metal cat-shaped mecha with eight-person capacity, extreme Strength and Dexterity, huge speed, senses, regeneration, and multiple attack forms.</p>",
+        "rank": 25,
+        "cost": 100,
+        "source": "Anime 5E Adventuring Accessories",
+        "sourceId": "adventuring-accessories.mecha.nekogantaur",
+        "sourcePage": 4,
+        "sourceAbbreviation": "AA",
+        "sourceModuleId": "anime5e-adventuring-accessories",
+        "sourceCategory": "mecha",
+        "importId": "adventuring-accessories.mecha.nekogantaur",
+        "equipped": false,
+        "owner": "",
+        "pilot": "",
+        "occupants": "",
+        "armourClass": 4,
+        "speed": "AC 4; HP 140; speed 300 mph; vulnerable to water attacks",
+        "crew": "",
+        "passengers": "See source capacity notes",
+        "cargo": "",
+        "height": "",
+        "material": "",
+        "points": 125
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "adventuring-accessories.mecha.nekogantaur",
+          "source": {
+            "book": "Anime 5E Adventuring Accessories",
+            "page": 4,
+            "abbreviation": "AA",
+            "moduleId": "anime5e-adventuring-accessories",
+            "category": "mecha",
+            "importId": "adventuring-accessories.mecha.nekogantaur"
+          }
+        }
+      }
+    },
+    {
+      "name": "Protector Guardian V",
+      "type": "mecha",
+      "folder": "Mecha - Adventuring Accessories",
+      "img": "icons/svg/robot.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Adventuring Accessories, PDF p. 5.</p><p><strong>Rules Summary:</strong> Huge combined Guardian mecha with six-person cockpit, flight, speed, environmental resilience, heavy protection, and blade/ballista weapons.</p>",
+        "rank": 20,
+        "cost": 80,
+        "source": "Anime 5E Adventuring Accessories",
+        "sourceId": "adventuring-accessories.mecha.protector-guardian-v",
+        "sourcePage": 5,
+        "sourceAbbreviation": "AA",
+        "sourceModuleId": "anime5e-adventuring-accessories",
+        "sourceCategory": "mecha",
+        "importId": "adventuring-accessories.mecha.protector-guardian-v",
+        "equipped": false,
+        "owner": "",
+        "pilot": "",
+        "occupants": "",
+        "armourClass": 6,
+        "speed": "AC 6; HP 100; land 100 mph; flight 300 ft/round",
+        "crew": "",
+        "passengers": "See source capacity notes",
+        "cargo": "",
+        "height": "",
+        "material": "",
+        "points": 100
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "adventuring-accessories.mecha.protector-guardian-v",
+          "source": {
+            "book": "Anime 5E Adventuring Accessories",
+            "page": 5,
+            "abbreviation": "AA",
+            "moduleId": "anime5e-adventuring-accessories",
+            "category": "mecha",
+            "importId": "adventuring-accessories.mecha.protector-guardian-v"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "pack": "anime5e-game-screen-adventure.creatures",
+  "documentType": "Actor",
+  "sourceBook": "Anime 5E Game Screen and Adventure",
+  "sourceAbbreviation": "GSA",
+  "sourceModuleId": "anime5e-game-screen-adventure",
+  "contentCategory": "npc",
+  "folders": [
+    {
+      "name": "Adventure NPCs",
+      "color": "#8f6f5f"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Max Devries",
+      "type": "npc",
+      "folder": "Adventure NPCs",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Entitled young noble whose behaviour pulls the party into the adventure's political and family conflict.",
+          "actorRole": "Major NPC",
+          "communities": "Talloth and Wraithport",
+          "alignment": "Campaign-specific"
+        },
+        "source": {
+          "book": "Anime 5E Game Screen and Adventure",
+          "page": 8,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "npc",
+          "sourceId": "game-screen-adventure.npc.max-devries",
+          "importId": "game-screen-adventure.npc.max-devries"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.npc.max-devries",
+          "source": {
+            "book": "Anime 5E Game Screen and Adventure",
+            "page": 8,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "npc",
+            "importId": "game-screen-adventure.npc.max-devries"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tal",
+      "type": "npc",
+      "folder": "Adventure NPCs",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Bodyguard assigned to Max Devries and an early pressure point for the party's investigation.",
+          "actorRole": "Major NPC",
+          "communities": "Max Devries retinue",
+          "alignment": "Campaign-specific"
+        },
+        "source": {
+          "book": "Anime 5E Game Screen and Adventure",
+          "page": 9,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "npc",
+          "sourceId": "game-screen-adventure.npc.tal",
+          "importId": "game-screen-adventure.npc.tal"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.npc.tal",
+          "source": {
+            "book": "Anime 5E Game Screen and Adventure",
+            "page": 9,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "npc",
+            "importId": "game-screen-adventure.npc.tal"
+          }
+        }
+      }
+    },
+    {
+      "name": "Palus",
+      "type": "npc",
+      "folder": "Adventure NPCs",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Wraithport veteran and local authority figure tied to the town's King Guard presence.",
+          "actorRole": "Wraithport NPC",
+          "communities": "Wraithport",
+          "alignment": "Campaign-specific"
+        },
+        "source": {
+          "book": "Anime 5E Game Screen and Adventure",
+          "page": 10,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "npc",
+          "sourceId": "game-screen-adventure.npc.palus",
+          "importId": "game-screen-adventure.npc.palus"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.npc.palus",
+          "source": {
+            "book": "Anime 5E Game Screen and Adventure",
+            "page": 10,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "npc",
+            "importId": "game-screen-adventure.npc.palus"
+          }
+        }
+      }
+    }
+  ]
+}

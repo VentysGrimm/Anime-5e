@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-game-screen-adventure.sources",
+  "label": "Anime 5e Game Screen Adventure Sources",
+  "sourceBook": "Anime 5E Game Screen and Adventure",
+  "sourceAbbreviation": "GSA",
+  "sourceModuleId": "anime5e-game-screen-adventure",
+  "contentCategory": "module",
+  "includes": [
+    "data/sources/adventure-journals.json",
+    "data/sources/pregen-characters.json",
+    "data/sources/adventure-npcs.json"
+  ]
+}

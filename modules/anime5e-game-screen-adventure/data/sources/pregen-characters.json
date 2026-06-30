@@ -1,0 +1,442 @@
+{
+  "pack": "anime5e-game-screen-adventure.creatures",
+  "documentType": "Actor",
+  "sourceBook": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+  "sourceAbbreviation": "GSA",
+  "sourceModuleId": "anime5e-game-screen-adventure",
+  "contentCategory": "pregen",
+  "folders": [
+    {
+      "name": "Pregenerated Characters",
+      "color": "#7f6a9a"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Kitavia Shadowsbane",
+      "type": "character",
+      "folder": "Pregenerated Characters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium Asrai Ninja 2 pre-generated character for Carry on Wayward Son.",
+          "speciesAndSize": "Medium Asrai",
+          "actorRole": "Pregenerated Character",
+          "totalPoints": 113
+        },
+        "level": 2,
+        "experience": 300,
+        "abilities": {
+          "strength": {
+            "value": 13
+          },
+          "dexterity": {
+            "value": 16
+          },
+          "constitution": {
+            "value": 13
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 11
+          },
+          "charisma": {
+            "value": 12
+          }
+        },
+        "combat": {
+          "armourClass": 14,
+          "hitPoints": {
+            "value": 15,
+            "max": 15
+          },
+          "energy": {
+            "value": 20,
+            "max": 20
+          },
+          "proficiencyBonus": 2,
+          "movementSpeed": 30
+        },
+        "source": {
+          "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+          "page": 2,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "pregen",
+          "sourceId": "game-screen-adventure.pregen.kitavia-shadowsbane",
+          "importId": "game-screen-adventure.pregen.kitavia-shadowsbane"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.pregen.kitavia-shadowsbane",
+          "source": {
+            "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+            "page": 2,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "pregen",
+            "importId": "game-screen-adventure.pregen.kitavia-shadowsbane"
+          }
+        }
+      }
+    },
+    {
+      "name": "Robin Smythe",
+      "type": "character",
+      "folder": "Pregenerated Characters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium Half-Troll Isekai Student 2 pre-generated character for Carry on Wayward Son.",
+          "speciesAndSize": "Medium Half-Troll",
+          "actorRole": "Pregenerated Character",
+          "totalPoints": 107
+        },
+        "level": 2,
+        "experience": 300,
+        "abilities": {
+          "strength": {
+            "value": 12
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 8
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 16
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 5,
+            "max": 5
+          },
+          "energy": {
+            "value": 20,
+            "max": 20
+          },
+          "proficiencyBonus": 2,
+          "movementSpeed": 30
+        },
+        "source": {
+          "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+          "page": 2,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "pregen",
+          "sourceId": "game-screen-adventure.pregen.robin-smythe",
+          "importId": "game-screen-adventure.pregen.robin-smythe"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.pregen.robin-smythe",
+          "source": {
+            "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+            "page": 2,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "pregen",
+            "importId": "game-screen-adventure.pregen.robin-smythe"
+          }
+        }
+      }
+    },
+    {
+      "name": "Earthrender Allain",
+      "type": "character",
+      "folder": "Pregenerated Characters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium Human Bender 2 pre-generated character for Carry on Wayward Son.",
+          "speciesAndSize": "Medium Human",
+          "actorRole": "Pregenerated Character",
+          "totalPoints": 111
+        },
+        "level": 2,
+        "experience": 300,
+        "abilities": {
+          "strength": {
+            "value": 15
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 12
+          },
+          "intelligence": {
+            "value": 18
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 12
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 15,
+            "max": 15
+          },
+          "energy": {
+            "value": 20,
+            "max": 20
+          },
+          "proficiencyBonus": 2,
+          "movementSpeed": 30
+        },
+        "source": {
+          "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+          "page": 3,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "pregen",
+          "sourceId": "game-screen-adventure.pregen.earthrender-allain",
+          "importId": "game-screen-adventure.pregen.earthrender-allain"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.pregen.earthrender-allain",
+          "source": {
+            "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+            "page": 3,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "pregen",
+            "importId": "game-screen-adventure.pregen.earthrender-allain"
+          }
+        }
+      }
+    },
+    {
+      "name": "Boeyo the Inker",
+      "type": "character",
+      "folder": "Pregenerated Characters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium Human Warder 2 pre-generated character for Carry on Wayward Son.",
+          "speciesAndSize": "Medium Human",
+          "actorRole": "Pregenerated Character",
+          "totalPoints": 108
+        },
+        "level": 2,
+        "experience": 300,
+        "abilities": {
+          "strength": {
+            "value": 17
+          },
+          "dexterity": {
+            "value": 17
+          },
+          "constitution": {
+            "value": 16
+          },
+          "intelligence": {
+            "value": 9
+          },
+          "wisdom": {
+            "value": 11
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 16,
+            "max": 16
+          },
+          "energy": {
+            "value": 20,
+            "max": 20
+          },
+          "proficiencyBonus": 2,
+          "movementSpeed": 30
+        },
+        "source": {
+          "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+          "page": 3,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "pregen",
+          "sourceId": "game-screen-adventure.pregen.boeyo-the-inker",
+          "importId": "game-screen-adventure.pregen.boeyo-the-inker"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.pregen.boeyo-the-inker",
+          "source": {
+            "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+            "page": 3,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "pregen",
+            "importId": "game-screen-adventure.pregen.boeyo-the-inker"
+          }
+        }
+      }
+    },
+    {
+      "name": "Frensheatha",
+      "type": "character",
+      "folder": "Pregenerated Characters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium Nekojin Broker 2 pre-generated character for Carry on Wayward Son.",
+          "speciesAndSize": "Medium Nekojin",
+          "actorRole": "Pregenerated Character",
+          "totalPoints": 109
+        },
+        "level": 2,
+        "experience": 300,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 13
+          },
+          "wisdom": {
+            "value": 16
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 10,
+            "max": 10
+          },
+          "energy": {
+            "value": 20,
+            "max": 20
+          },
+          "proficiencyBonus": 2,
+          "movementSpeed": 30
+        },
+        "source": {
+          "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+          "page": 4,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "pregen",
+          "sourceId": "game-screen-adventure.pregen.frensheatha",
+          "importId": "game-screen-adventure.pregen.frensheatha"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.pregen.frensheatha",
+          "source": {
+            "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+            "page": 4,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "pregen",
+            "importId": "game-screen-adventure.pregen.frensheatha"
+          }
+        }
+      }
+    },
+    {
+      "name": "Defender Bright (Jae)",
+      "type": "character",
+      "folder": "Pregenerated Characters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium Wood Elf Magical Girl 2 pre-generated character for Carry on Wayward Son.",
+          "speciesAndSize": "Medium Wood Elf",
+          "actorRole": "Pregenerated Character",
+          "totalPoints": 0
+        },
+        "level": 2,
+        "experience": 300,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 15
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 12
+          },
+          "wisdom": {
+            "value": 13
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 13,
+            "max": 13
+          },
+          "energy": {
+            "value": 20,
+            "max": 20
+          },
+          "proficiencyBonus": 2,
+          "movementSpeed": 30
+        },
+        "source": {
+          "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+          "page": 4,
+          "abbreviation": "GSA",
+          "moduleId": "anime5e-game-screen-adventure",
+          "category": "pregen",
+          "sourceId": "game-screen-adventure.pregen.defender-bright-jae",
+          "importId": "game-screen-adventure.pregen.defender-bright-jae"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.pregen.defender-bright-jae",
+          "source": {
+            "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
+            "page": 4,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "pregen",
+            "importId": "game-screen-adventure.pregen.defender-bright-jae"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "pack": "anime5e-adventuring-accessories.items",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Items - Adventuring Accessories",
+      "color": "#8c7a4f"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Arcane Lodestone",
+      "type": "itemOfPower",
+      "folder": "Items - Adventuring Accessories",
+      "img": "icons/magic/symbols/rune-sigil-black-pink.webp",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Adventuring Accessories, PDF p. 2.</p><p><strong>Item Rank:</strong> 4. <strong>Point Cost:</strong> 16.</p><p><strong>Rules Summary:</strong> Smooth ebony magical stone that expands the wielder's Energy reserve, protects against magical damage and bodily alteration, and grants an extra action while the user's personal Energy is below half of its adjusted maximum.</p><p><strong>Attribute Notes:</strong> Energised +60 Energy; Extra Actions with environmental Energy condition; Immunity - Lesser against magic damage; Immutable check bonus against bodily effects.</p>",
+        "rank": 4,
+        "cost": 16,
+        "source": "Anime 5E Adventuring Accessories",
+        "sourceId": "adventuring-accessories.item.arcane-lodestone",
+        "sourcePage": 2,
+        "importId": "adventuring-accessories.item.arcane-lodestone",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Magical Artefact",
+        "properties": "Rank 4 Item; 20 construction Points; Energy, action, immunity, and resistance effects",
+        "sourceAbbreviation": "AA",
+        "sourceModuleId": "anime5e-adventuring-accessories",
+        "sourceCategory": "item"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "adventuring-accessories.item.arcane-lodestone",
+          "source": {
+            "book": "Anime 5E Adventuring Accessories",
+            "page": 2,
+            "abbreviation": "AA",
+            "moduleId": "anime5e-adventuring-accessories",
+            "category": "item",
+            "importId": "adventuring-accessories.item.arcane-lodestone"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wondrous Machine of Eternal Wealth",
+      "type": "itemOfPower",
+      "folder": "Items - Adventuring Accessories",
+      "img": "icons/commodities/tech/cog-brass.webp",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Adventuring Accessories, PDF p. 3.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4.</p><p><strong>Rules Summary:</strong> Magical device that repeatedly creates, destroys, converts, or alters a single low-value coin, serving as a modest recurring-income artefact.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Adventuring Accessories",
+        "sourceId": "adventuring-accessories.item.wondrous-machine-of-eternal-wealth",
+        "sourcePage": 3,
+        "sourceAbbreviation": "AA",
+        "sourceModuleId": "anime5e-adventuring-accessories",
+        "sourceCategory": "item",
+        "importId": "adventuring-accessories.item.wondrous-machine-of-eternal-wealth",
+        "equipped": false,
+        "quantity": 1,
+        "itemCategory": "Magical Artefact",
+        "points": 5,
+        "attributeSummary": "Dynamic Powers - Lesser (Coinage) with charges and narrow object scope.",
+        "constructionStatus": "Manual bookkeeping",
+        "constructionNotes": "<p>Source table lists 5 construction Points, producing a Rank 1 Item worth 4 character Points.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "adventuring-accessories.item.wondrous-machine-of-eternal-wealth",
+          "source": {
+            "book": "Anime 5E Adventuring Accessories",
+            "page": 3,
+            "abbreviation": "AA",
+            "moduleId": "anime5e-adventuring-accessories",
+            "category": "item",
+            "importId": "adventuring-accessories.item.wondrous-machine-of-eternal-wealth"
+          }
+        }
+      }
+    }
+  ],
+  "sourceBook": "Anime 5E Adventuring Accessories",
+  "sourceAbbreviation": "AA",
+  "sourceModuleId": "anime5e-adventuring-accessories",
+  "contentCategory": "item"
+}

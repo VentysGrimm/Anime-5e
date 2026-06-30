@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-adventuring-accessories.sources",
+  "label": "Anime 5e Adventuring Accessories Sources",
+  "sourceBook": "Anime 5E Adventuring Accessories",
+  "sourceAbbreviation": "AA",
+  "sourceModuleId": "anime5e-adventuring-accessories",
+  "contentCategory": "module",
+  "includes": [
+    "data/sources/items-adventuring-accessories.json",
+    "data/sources/mecha-adventuring-accessories.json"
+  ]
+}

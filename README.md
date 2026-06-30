@@ -58,4 +58,6 @@ Current standalone module packages:
 
 - `modules/anime5e-hybrid-species`
 - `modules/anime5e-bonus-character-options`
+- `modules/anime5e-adventuring-accessories`
+- `modules/anime5e-game-screen-adventure`
 

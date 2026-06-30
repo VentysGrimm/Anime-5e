@@ -1,0 +1,115 @@
+{
+  "pack": "anime5e-game-screen-adventure.journals",
+  "documentType": "JournalEntry",
+  "sourceBook": "Anime 5E Game Screen and Adventure",
+  "sourceAbbreviation": "GSA",
+  "sourceModuleId": "anime5e-game-screen-adventure",
+  "contentCategory": "journal",
+  "folders": [
+    {
+      "name": "Carry on Wayward Son",
+      "color": "#6f7890"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Carry on Wayward Son Overview",
+      "folder": "Carry on Wayward Son",
+      "pages": [
+        {
+          "name": "Adventure Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Game Screen and Adventure, p. 1.</p><p>Introductory multi-session adventure for 3-5 capable characters around 2nd Level, mixing combat, politics, family drama, and social investigation in Craigstad.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.journal.overview",
+          "source": {
+            "book": "Anime 5E Game Screen and Adventure",
+            "page": 1,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "journal",
+            "importId": "game-screen-adventure.journal.overview"
+          },
+          "relatedSourceIds": [
+            "game-screen-adventure.pregen.kitavia-shadowsbane",
+            "game-screen-adventure.pregen.robin-smythe",
+            "game-screen-adventure.pregen.earthrender-allain",
+            "game-screen-adventure.pregen.boeyo-the-inker",
+            "game-screen-adventure.pregen.frensheatha",
+            "game-screen-adventure.pregen.defender-bright-jae"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Running Carry on Wayward Son",
+      "folder": "Carry on Wayward Son",
+      "pages": [
+        {
+          "name": "Running Notes",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Game Screen and Adventure, p. 2.</p><p>DM-facing summary: read each section first, track the major NPC motivations, and be ready to improvise around tavern, estate, council, and city set pieces as the party shifts between combat and social play.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.journal.running-notes",
+          "source": {
+            "book": "Anime 5E Game Screen and Adventure",
+            "page": 2,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "journal",
+            "importId": "game-screen-adventure.journal.running-notes"
+          },
+          "relatedSourceIds": [
+            "game-screen-adventure.npc.max-devries",
+            "game-screen-adventure.npc.tal",
+            "game-screen-adventure.npc.palus"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wraithport and Talloth Reference",
+      "folder": "Carry on Wayward Son",
+      "pages": [
+        {
+          "name": "Setting Reference",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Game Screen and Adventure, pp. 2-6.</p><p>Wraithport is a trade and airship waypoint built from an old border fort. Talloth is the larger council-run city where later parts of the adventure place political pressure on the party.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "game-screen-adventure.journal.wraithport-talloth",
+          "source": {
+            "book": "Anime 5E Game Screen and Adventure",
+            "page": 2,
+            "abbreviation": "GSA",
+            "moduleId": "anime5e-game-screen-adventure",
+            "category": "journal",
+            "importId": "game-screen-adventure.journal.wraithport-talloth"
+          },
+          "relatedSourceIds": [
+            "game-screen-adventure.npc.max-devries",
+            "game-screen-adventure.npc.tal",
+            "game-screen-adventure.npc.palus"
+          ]
+        }
+      }
+    }
+  ]
+}

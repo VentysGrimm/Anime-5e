@@ -1,0 +1,85 @@
+{
+  "id": "anime5e-game-screen-adventure",
+  "title": "Anime 5e Game Screen Adventure",
+  "description": "Source-backed Carry on Wayward Son adventure and pregen module for Anime 5e.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Your Name"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "anime5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "0.2.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/module.mjs"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "character-options",
+      "label": "Game Screen Adventure Character Options",
+      "path": "packs/character-options",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "items",
+      "label": "Game Screen Adventure Items",
+      "path": "packs/items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "creatures",
+      "label": "Game Screen Adventure Actors",
+      "path": "packs/creatures",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "journals",
+      "label": "Game Screen Adventure Journals",
+      "path": "packs/journals",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "flags": {
+    "anime5e": {
+      "sourceModuleId": "anime5e-game-screen-adventure",
+      "sourceAbbreviation": "GSA",
+      "sourceCategory": "module"
+    }
+  }
+}
