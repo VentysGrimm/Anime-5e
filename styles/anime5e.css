@@ -798,7 +798,19 @@
 }
 
 .anime5e .attack-table {
-  grid-template-columns: 1.35fr 0.75fr 0.75fr 0.95fr;
+  grid-template-columns:
+    minmax(112px, 1.35fr)
+    minmax(48px, 0.45fr)
+    minmax(72px, 0.75fr)
+    minmax(72px, 0.75fr)
+    minmax(82px, 0.85fr)
+    minmax(52px, 0.45fr)
+    minmax(64px, 0.55fr)
+    minmax(82px, 0.85fr)
+    minmax(104px, 1fr)
+    minmax(42px, 0.35fr)
+    minmax(42px, 0.35fr);
+  overflow-x: auto;
 }
 
 .anime5e .folio-table input,
@@ -972,6 +984,22 @@
   grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
 }
 
+.anime5e .creature-summary-list {
+  display: grid;
+  gap: 6px 10px;
+  grid-template-columns: minmax(112px, 0.8fr) minmax(96px, 1fr);
+}
+
+.anime5e .creature-summary-list span {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.anime5e .creature-summary-list strong {
+  min-width: 0;
+}
+
 .anime5e .transport-profile-panel .inline-fields {
   grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
 }
@@ -1015,6 +1043,11 @@
 .anime5e .basic-ability-grid input {
   max-width: 64px;
   text-align: center;
+}
+
+.anime5e .basic-ability-grid button {
+  min-height: 26px;
+  width: 30px;
 }
 
 .anime5e .detail-fields {

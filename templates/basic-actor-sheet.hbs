@@ -74,6 +74,24 @@
     </section>
 
     <section class="folio-grid two-column creature-summary-grid">
+      <section class="panel creature-challenge-panel">
+        <h2>Challenge Summary</h2>
+        <div class="creature-summary-list">
+          {{#each creatureProfile.challengeRows as |row|}}
+            <span>{{row.label}}</span>
+            <strong>{{row.value}}</strong>
+          {{/each}}
+        </div>
+      </section>
+      <section class="panel creature-point-panel">
+        <h2>Point Summary</h2>
+        <div class="creature-summary-list">
+          {{#each creatureProfile.pointRows as |row|}}
+            <span>{{row.label}}</span>
+            <strong>{{row.value}}</strong>
+          {{/each}}
+        </div>
+      </section>
       <section class="notes-box compact-notes">
         <h2>Defense Summary</h2>
         <textarea name="system.combat.defenseSummary" {{#unless editable}}disabled{{/unless}}>{{system.combat.defenseSummary}}</textarea>
@@ -133,7 +151,72 @@
           <span>{{ability.label}}</span>
           <input type="number" name="system.abilities.{{ability.key}}.value" value="{{ability.data.value}}" {{#unless ../editable}}disabled{{/unless}}>
           <strong>{{ability.data.modifier}}</strong>
+          <button type="button" class="icon-button roll-button" data-action="roll-ability" data-ability="{{ability.key}}" data-label="{{ability.label}} Check" title="Roll {{ability.label}}">
+            <i class="fas fa-dice-d20"></i>
+          </button>
         </label>
+      {{/each}}
+    </div>
+  </section>
+
+  <section class="panel save-roll-panel">
+    <h2>Checks and Saves</h2>
+    <section class="quick-roll-panel" aria-label="Quick Rolls">
+      <h3>Quick Rolls</h3>
+      <div class="quick-roll-controls">
+        <label>
+          Ability
+          <select data-roll-input="ability">
+            {{#each abilities as |ability|}}
+              <option value="{{ability.key}}">{{ability.label}}</option>
+            {{/each}}
+          </select>
+        </label>
+        <label>
+          Mode
+          <select data-roll-input="mode">
+            {{#each rollModes as |mode|}}
+              <option value="{{mode.key}}">{{mode.label}}</option>
+            {{/each}}
+          </select>
+        </label>
+        <label>
+          Roll
+          <select data-roll-input="d20Mode">
+            {{#each d20Modes as |mode|}}
+              <option value="{{mode.key}}">{{mode.label}}</option>
+            {{/each}}
+          </select>
+        </label>
+        <label>
+          DC
+          <input type="number" data-roll-input="dc" value="0" min="0">
+        </label>
+        <label>
+          Bonus
+          <input type="number" data-roll-input="bonus" value="0">
+        </label>
+        <button type="button" class="roll-action" data-action="roll-quick"><i class="fas fa-dice-d20"></i> Roll</button>
+        <button type="button" class="roll-action" data-action="roll-contest"><i class="fas fa-user-friends"></i> Contest</button>
+      </div>
+    </section>
+    <div class="save-roll-controls">
+      <label>
+        Save Roll
+        <select data-roll-input="saveD20Mode">
+          {{#each d20Modes as |mode|}}
+            <option value="{{mode.key}}">{{mode.label}}</option>
+          {{/each}}
+        </select>
+      </label>
+      <label class="checkbox-field">
+        <input type="checkbox" data-roll-input="saveProficiency">
+        Proficiency
+      </label>
+    </div>
+    <div class="save-roll-buttons">
+      {{#each abilities as |ability|}}
+        <button type="button" data-action="roll-saving-throw" data-ability="{{ability.key}}" title="Roll {{ability.label}} Saving Throw"><i class="fas fa-dice-d20"></i><span>{{ability.label}}</span></button>
       {{/each}}
     </div>
   </section>
@@ -232,8 +315,22 @@
     </div>
   </section>
 
-  <section class="panel item-drop-panel" data-drop-target="items">
+  <section class="panel item-drop-panel skill-roll-panel" data-drop-target="items">
     <h2>Owned Items</h2>
+    <div class="skill-roll-controls">
+      <label>
+        Skill Roll
+        <select data-roll-input="skillD20Mode">
+          {{#each d20Modes as |mode|}}
+            <option value="{{mode.key}}">{{mode.label}}</option>
+          {{/each}}
+        </select>
+      </label>
+      <label>
+        Bonus
+        <input type="number" data-roll-input="skillBonus" value="0">
+      </label>
+    </div>
     <ol class="item-list folio-item-list">
       {{#each itemGroups.all as |item|}}
         <li class="item-row" data-item-id="{{item.id}}">
@@ -242,6 +339,7 @@
           <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
           <div class="item-actions">
             {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+            {{#if item.canSkillCheck}}<button type="button" data-action="roll-skill-item" title="Skill Check"><i class="fas fa-dice-d20"></i></button>{{/if}}
             {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
             {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
             {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}

@@ -451,7 +451,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       items
     });
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
-    context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system);
+    context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system, context.pointSummary);
     context.transportProfile = this.constructor._prepareTransportProfileContext(this.actor, system);
     context.economy = this.constructor._prepareEconomyContext(system);
     const activeTab = FOLIO_TAB_IDS.has(this.tabGroups?.primary) ? this.tabGroups.primary : DEFAULT_FOLIO_TAB;
@@ -566,15 +566,50 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     };
   }
 
-  static _prepareCreatureProfileContext(actor, system) {
+  static _prepareCreatureProfileContext(actor, system, pointSummary = {}) {
     const source = system.source ?? {};
     const sourceLabel = [source.book, source.page ? `p. ${source.page}` : null].filter(Boolean).join(", ");
+    const identity = system.identity ?? {};
+    const combat = system.combat ?? {};
+    const hitPoints = combat.hitPoints ?? {};
+    const listedPointBudget = numberOrZero(identity.totalPoints);
+    const totalSpent = numberOrZero(pointSummary.totalSpent);
+    const totalRefunded = numberOrZero(pointSummary.totalRefunded);
+    const remainingFromListedBudget = listedPointBudget + totalRefunded - totalSpent;
+    const speedValues = [
+      numberOrZero(combat.baseMovementSpeed || combat.movementSpeed) ? `Ground ${numberOrZero(combat.baseMovementSpeed || combat.movementSpeed)}` : null,
+      hasText(combat.flightSpeed) ? `Fly ${combat.flightSpeed}` : null,
+      hasText(combat.waterSpeed) ? `Water ${combat.waterSpeed}` : null,
+      hasText(combat.climbSpeed) ? `Climb ${combat.climbSpeed}` : null,
+      hasText(combat.burrowSpeed) ? `Burrow ${combat.burrowSpeed}` : null,
+      hasText(combat.customMovement) ? combat.customMovement : null
+    ].filter(Boolean).join(", ");
 
     return {
       active: CREATURE_ACTOR_TYPES.has(actor.type),
       actorType: localizedType("Actor", actor.type),
       sourceLabel,
-      hasSource: hasText(sourceLabel)
+      hasSource: hasText(sourceLabel),
+      challengeRows: [
+        { label: "Actor Type", value: localizedType("Actor", actor.type) },
+        { label: "Role", value: identity.actorRole },
+        { label: "Size / Type", value: identity.speciesAndSize },
+        { label: "Challenge", value: identity.challengeRating },
+        { label: "XP", value: identity.experienceValue },
+        { label: "AC", value: combat.armourClass },
+        { label: "HP", value: `${numberOrZero(hitPoints.value)} / ${numberOrZero(hitPoints.max)}` },
+        { label: "Speed", value: speedValues },
+        { label: "Proficiency", value: combat.proficiencyBonus },
+        { label: "Source", value: sourceLabel }
+      ].filter((row) => row.value !== undefined && row.value !== null && row.value !== ""),
+      pointRows: [
+        { label: "Listed Point Budget", value: listedPointBudget },
+        { label: "Owned/Manual Spending", value: totalSpent },
+        { label: "Refunds", value: totalRefunded },
+        { label: "Remaining From Listed Budget", value: remainingFromListedBudget },
+        { label: "Attribute Cost", value: numberOrZero(pointSummary.attributeCost) },
+        { label: "Equipment Cost", value: numberOrZero(pointSummary.equipmentCost) }
+      ]
     };
   }
 
@@ -1326,7 +1361,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       return;
     }
 
-    const panel = event.currentTarget.closest(".folio-tab");
+    const panel = event.currentTarget.closest(".skill-roll-panel, .folio-tab");
     const rollMode = panel?.querySelector("[data-roll-input='skillD20Mode']")?.value ?? "normal";
     const situationalBonus = Number(panel?.querySelector("[data-roll-input='skillBonus']")?.value) || 0;
     const modifiers = [ability.modifier, this.actor.system.combat?.proficiencyBonus ?? 0];

@@ -91,6 +91,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Core equipment documents now include weapons, armour, shields, item-only Attributes, named adventuring gear, daily devices, Items of Power, protective devices, and armaments. Weapons, armour, and shields support an equipped state; the character combat tab computes an effective AC summary from equipped armour/shields and exposes equipped weapons for attack and damage rolls.
 - Weapon item sheets now expose proficiency requirement, range rank, ammo, charges, Enhancements, Limiters, equipped state, attack, and damage fields. Armour and shield sheets expose proficiency requirements and equipped AC fields.
 - Items of Power now expose contained Attribute/Defect bookkeeping fields and a calculated construction point summary.
+- Monster, NPC, and companion basic actor sheets now expose source-backed challenge, XP, movement, combat, and point summaries; they can roll ability checks, quick checks, contests, saving throws, skill items, common attacks, and damage. The Encounter Threat settings dialog now compares party and encounter threat with manual threat and XP budget overrides.
 
 ## Missing Files Required For Load
 
