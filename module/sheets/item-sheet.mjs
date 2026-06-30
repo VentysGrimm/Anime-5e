@@ -1,5 +1,6 @@
 import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
 import { buildCoreAttributeUsageContext, resolveCoreAttributeEnergyCost } from "../rules/attribute-effects.mjs";
+import { buildAdventuringRiskChatContent } from "../rules/adventuring-risks.mjs";
 import { calculateAttributeCustomization } from "../rules/points.mjs";
 import { applyEnergyChange } from "../rules/resources.mjs";
 
@@ -23,6 +24,7 @@ const MULTILINE_FIELDS = new Set([
   "movementModes",
   "progressionNotes",
   "result",
+  "riskNotes",
   "rulesNotes",
   "spellEffect",
   "spellPrerequisites",
@@ -57,6 +59,7 @@ const NUMBER_FIELDS = new Set([
   "basePoints",
   "bonusPoints",
   "costModifier",
+  "dc",
   "finalClassPoints",
   "levellingPoints",
   "level",
@@ -95,6 +98,7 @@ const FIELD_LABELS = {
   currency: "Currency",
   damage: "Damage",
   damageType: "Damage Type",
+  dc: "DC",
   damageModifier: "Damage Modifier",
   dexterityRule: "Dexterity Rule",
   duration: "Duration",
@@ -130,6 +134,7 @@ const FIELD_LABELS = {
   proficiencyGroup: "Proficiency Group",
   range: "Range",
   receivedDamageModifier: "Received Damage Modifier",
+  riskNotes: "Risk Notes",
   rulesNotes: "Rules Notes",
   savingThrows: "Saving Throws",
   shieldSize: "Shield Size",
@@ -678,6 +683,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     const source = [system.source, system.sourcePage ? `p. ${system.sourcePage}` : null].filter(Boolean).join(", ");
     const description = hasText(system.description) ? `<p>${escapeHtml(system.description)}</p>` : "";
     const sourceLine = source ? `<p><small>${escapeHtml(source)}</small></p>` : "";
+    const riskContent = item.type === "adventuringRisk" ? buildAdventuringRiskChatContent(item) : "";
     const usage = item.type === "attribute" ? buildCoreAttributeUsageContext(item) : null;
     const usageLine = usage?.summary?.length
       ? `<p><strong>Usage:</strong> ${escapeHtml(usage.summary.join(" | "))}</p>`
@@ -710,7 +716,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor }),
-      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(item.type)}</strong></p>${usageLine}${energyLine}${description}${sourceLine}</article>`
+      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(item.type)}</strong></p>${usageLine}${energyLine}${riskContent || `${description}${sourceLine}`}</article>`
     });
   }
 }

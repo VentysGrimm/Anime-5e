@@ -1006,6 +1006,31 @@
             <textarea name="system.notes.advancement" {{#unless editable}}disabled{{/unless}}>{{system.notes.advancement}}</textarea>
           </label>
         </section>
+        <section class="ledger-section item-drop-panel adventuring-risk-panel" data-drop-target="items">
+          <header class="ledger-heading">
+            <h2>Adventuring Risks</h2>
+            {{#if editable}}
+              <div class="ledger-actions">
+                <button type="button" data-action="create-item" data-item-type="adventuringRisk" title="Create Adventuring Risk"><i class="fas fa-plus"></i><span>Risk</span></button>
+              </div>
+            {{/if}}
+          </header>
+          <ol class="item-list folio-item-list">
+            {{#each itemGroups.adventuringRisks as |item|}}
+              <li class="item-row" data-item-id="{{item.id}}">
+                <img src="{{item.img}}" alt="{{item.name}}">
+                <div class="item-main"><strong>{{item.name}}</strong><small>{{item.typeLabel}}</small></div>
+                <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
+                <div class="item-actions">
+                  {{#if item.canUse}}<button type="button" data-action="use-item" title="Post Reminder"><i class="fas fa-comment"></i></button>{{/if}}
+                  {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
+                </div>
+              </li>
+            {{else}}
+              <li class="item-row empty"><span></span><span>Track poison, disease, hazards, or deprivation here.</span><small></small></li>
+            {{/each}}
+          </ol>
+        </section>
         <section class="notes-box journal-notes"><h2>Session Notes And Adventure Log</h2><textarea name="system.notes.journal" {{#unless editable}}disabled{{/unless}}>{{system.notes.journal}}</textarea></section>
         <section class="notes-box"><h2>Rewards, Downtime, Story Events</h2><textarea name="system.notes.overview" {{#unless editable}}disabled{{/unless}}>{{system.notes.overview}}</textarea></section>
       </section>

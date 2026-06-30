@@ -760,6 +760,10 @@
   min-height: 110px;
 }
 
+.anime5e .adventuring-risk-panel {
+  min-height: 190px;
+}
+
 .anime5e .attack-table {
   grid-template-columns: 1.35fr 0.75fr 0.75fr 0.95fr;
 }
@@ -1625,6 +1629,21 @@
 }
 
 .anime5e.chat-card .roll-summary dd {
+  margin: 0;
+}
+
+.anime5e.chat-card .risk-reminder-summary {
+  display: grid;
+  gap: 3px 8px;
+  grid-template-columns: max-content 1fr;
+  margin: 0;
+}
+
+.anime5e.chat-card .risk-reminder-summary dt {
+  font-weight: 700;
+}
+
+.anime5e.chat-card .risk-reminder-summary dd {
   margin: 0;
 }
 

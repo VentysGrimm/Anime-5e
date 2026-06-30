@@ -163,6 +163,12 @@
       }
     },
     "Item": {
+      "adventuringRisk": {
+        "htmlFields": [
+          "description",
+          "riskNotes"
+        ]
+      },
       "armor": {
         "htmlFields": [
           "description"

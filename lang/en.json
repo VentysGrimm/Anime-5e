@@ -73,6 +73,7 @@
       "vehicle": "Vehicle"
     },
     "Item": {
+      "adventuringRisk": "Adventuring Risk",
       "armor": "Armour",
       "attribute": "Attribute",
       "background": "Background",

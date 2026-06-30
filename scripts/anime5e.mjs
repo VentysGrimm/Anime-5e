@@ -7,6 +7,7 @@ import {
   Anime5eVehicleData as Anime5eVehicleActorData
 } from "../module/documents/actor-data.mjs";
 import {
+  Anime5eAdventuringRiskData,
   Anime5eArmorData,
   Anime5eAttributeData,
   Anime5eBackgroundData,
@@ -61,6 +62,7 @@ export const ANIME5E = {
   basicActorTypes: ["companion", "mecha", "monster", "npc", "vehicle"],
   actorTypes: ["character", "companion", "mecha", "monster", "npc", "vehicle"],
   itemTypes: [
+    "adventuringRisk",
     "armor",
     "attribute",
     "background",
@@ -137,6 +139,7 @@ Hooks.once("init", () => {
   });
 
   Object.assign(CONFIG.Item.dataModels, {
+    adventuringRisk: Anime5eAdventuringRiskData,
     armor: Anime5eArmorData,
     attribute: Anime5eAttributeData,
     background: Anime5eBackgroundData,

@@ -192,6 +192,24 @@ export class Anime5eDefectData extends Anime5eBaseItemData {
   }
 }
 
+export class Anime5eAdventuringRiskData extends Anime5eBaseItemData {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      category: textField("Hazard"),
+      status: textField("Active"),
+      dc: optionalNumberField(),
+      save: textField(),
+      interval: textField(),
+      onset: textField(),
+      duration: textField(),
+      damage: textField(),
+      effect: textField(),
+      riskNotes: htmlField()
+    };
+  }
+}
+
 export class Anime5eEquipmentData extends Anime5eBaseItemData {
   static defineSchema() {
     return {

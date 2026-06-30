@@ -11,6 +11,7 @@ import {
   getCoreAttributeEffectKey,
   resolveCoreAttributeEnergyCost
 } from "../rules/attribute-effects.mjs";
+import { buildAdventuringRiskChatContent } from "../rules/adventuring-risks.mjs";
 import {
   calculatePointSummary,
   calculateRecommendedDiscretionaryPoints,
@@ -153,6 +154,7 @@ const D20_ROLL_MODES = [
 ];
 
 const ITEM_GROUP_TYPES = {
+  adventuringRisks: ["adventuringRisk"],
   characterOptions: ["species", "class", "background", "sizeTemplate", "lifepath", "feature", "trait"],
   combat: ["weapon", "armor", "shield", "technique", "attribute"],
   attributes: ["attribute", "enhancement", "limiter", "itemAttribute"],
@@ -164,6 +166,7 @@ const ITEM_GROUP_TYPES = {
 };
 
 const DEFAULT_ITEM_TYPES = [
+  "adventuringRisk",
   "armor",
   "attribute",
   "background",
@@ -491,6 +494,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       system.quantity !== undefined ? `Qty ${system.quantity}` : null,
       system.equipped ? "Equipped" : null,
       system.category,
+      system.status,
+      system.dc !== undefined && system.dc !== null ? `DC ${system.dc}` : null,
+      system.interval,
       system.damage,
       system.damageType,
       system.armourClass !== undefined ? `AC ${system.armourClass}` : null,
@@ -1299,6 +1305,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const source = [system.source, system.sourcePage ? `p. ${system.sourcePage}` : null].filter(Boolean).join(", ");
     const description = hasText(system.description) ? `<p>${escapeHtml(system.description)}</p>` : "";
     const sourceLine = source ? `<p><small>${escapeHtml(source)}</small></p>` : "";
+    const riskContent = item.type === "adventuringRisk" ? buildAdventuringRiskChatContent(item) : "";
     const usage = item.type === "attribute" ? buildCoreAttributeUsageContext(item) : null;
     const usageLine = usage?.summary?.length
       ? `<p><strong>Usage:</strong> ${escapeHtml(usage.summary.join(" | "))}</p>`
@@ -1331,7 +1338,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(localizedType("Item", item.type))}</strong></p>${usageLine}${energyLine}${description}${sourceLine}</article>`
+      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(localizedType("Item", item.type))}</strong></p>${usageLine}${energyLine}${riskContent || `${description}${sourceLine}`}</article>`
     });
   }
 
