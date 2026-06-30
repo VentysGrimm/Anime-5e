@@ -107,6 +107,42 @@ const packsById = new Map((manifest.packs ?? []).map((pack) => [`${manifest.id}.
 const manifestActorTypes = new Set(Object.keys(manifest.documentTypes?.Actor ?? {}));
 const manifestItemTypes = new Set(Object.keys(manifest.documentTypes?.Item ?? {}));
 const seenSourceIds = new Set();
+const coreSourceCoverage = new Map();
+const coreSourceBook = "Anime 5E Fifth Edition Core Rules";
+const coreSourceRoot = "data/sources/core/";
+
+const coreIssue98Requirements = [
+  { label: "Core Attributes", packs: ["anime5e.attributes"], types: ["attribute"] },
+  { label: "Core Defects", packs: ["anime5e.defects"], types: ["defect"] },
+  { label: "Core Enhancements", packs: ["anime5e.enhancements"], types: ["enhancement"] },
+  { label: "Core Limiters", packs: ["anime5e.limiters"], types: ["limiter"] },
+  {
+    label: "Core Race/Species",
+    packs: ["anime5e.character-options"],
+    types: ["species"],
+    folders: ["Species - Core Rules", "Species - DnD"]
+  },
+  { label: "Core Classes", packs: ["anime5e.character-options"], types: ["class"], folders: ["Classes - Core Rules"] },
+  { label: "Core Skills", packs: ["anime5e.character-options"], types: ["skill"], folders: ["Skills - Core Rules"] },
+  { label: "Core Weapons", packs: ["anime5e.equipment"], types: ["weapon"], folders: ["Weapons"] },
+  {
+    label: "Core Armour and Shields",
+    packs: ["anime5e.equipment"],
+    types: ["armor", "shield"],
+    folders: ["Armour", "Shields"]
+  },
+  {
+    label: "Core Gear",
+    packs: ["anime5e.equipment"],
+    folders: ["Adventuring Gear", "Daily Devices", "Item Attributes"]
+  },
+  {
+    label: "Core Items of Power",
+    packs: ["anime5e.equipment"],
+    folders: ["Items of Power", "Protective Devices", "Armaments"]
+  },
+  { label: "Core Monsters/NPCs", packs: ["anime5e.monsters", "anime5e.npcs"], types: ["monster", "npc"] }
+];
 
 function slugifySourceSegment(value) {
   return value
@@ -195,6 +231,82 @@ function documentFlagImportId(document) {
   return document.flags?.[manifest.id]?.source?.importId;
 }
 
+function documentSourceMetadata(document) {
+  const flagSource = document.flags?.[manifest.id]?.source ?? {};
+  const systemSource = document.system?.source;
+  const systemSourceObject = systemSource && typeof systemSource === "object" ? systemSource : {};
+  const systemSourceBook = typeof systemSource === "string" ? systemSource : null;
+
+  return {
+    book: flagSource.book ?? systemSourceObject.book ?? systemSourceBook ?? "",
+    page: flagSource.page ?? systemSourceObject.page ?? document.system?.sourcePage ?? null,
+    importId: flagSource.importId ?? systemSourceObject.importId ?? document.system?.importId ?? null
+  };
+}
+
+function sourcePathIsCore(relativePath) {
+  return relativePath.startsWith(coreSourceRoot);
+}
+
+function getCoreCoverage(packId) {
+  if (!coreSourceCoverage.has(packId)) {
+    coreSourceCoverage.set(packId, {
+      documents: 0,
+      folders: new Set(),
+      types: new Set()
+    });
+  }
+
+  return coreSourceCoverage.get(packId);
+}
+
+function noteCoreSourceCoverage(relativePath, source, documents) {
+  if (!sourcePathIsCore(relativePath) || !source.pack) return;
+
+  const coverage = getCoreCoverage(source.pack);
+  for (const folder of source.folders ?? []) {
+    coverage.folders.add(folder.name);
+  }
+
+  for (const document of documents) {
+    coverage.documents += 1;
+    if (document.type) coverage.types.add(document.type);
+    if (document.folder) coverage.folders.add(document.folder);
+
+    const metadata = documentSourceMetadata(document);
+    if (metadata.book !== coreSourceBook) {
+      throw new Error(`${relativePath} -> ${document.name} is not tagged as ${coreSourceBook}.`);
+    }
+
+    if (metadata.page === null || metadata.page === undefined || metadata.page === "") {
+      throw new Error(`${relativePath} -> ${document.name} is missing Core Rules source page metadata.`);
+    }
+  }
+}
+
+function validateCoreIssue98Coverage() {
+  for (const requirement of coreIssue98Requirements) {
+    const coverages = requirement.packs.map((packId) => coreSourceCoverage.get(packId));
+    const totalDocuments = coverages.reduce((sum, coverage) => sum + (coverage?.documents ?? 0), 0);
+
+    if (!totalDocuments) {
+      throw new Error(`${requirement.label} has no Core Rules source-backed documents.`);
+    }
+
+    for (const type of requirement.types ?? []) {
+      if (!coverages.some((coverage) => coverage?.types.has(type))) {
+        throw new Error(`${requirement.label} is missing Core Rules document type ${type}.`);
+      }
+    }
+
+    for (const folder of requirement.folders ?? []) {
+      if (!coverages.some((coverage) => coverage?.folders.has(folder))) {
+        throw new Error(`${requirement.label} is missing Core Rules folder ${folder}.`);
+      }
+    }
+  }
+}
+
 function validateCompendiumSource(relativePath, seen = new Set()) {
   if (seen.has(relativePath)) return { jsonFiles: 0, sourceDocuments: 0 };
   seen.add(relativePath);
@@ -223,7 +335,10 @@ function validateCompendiumSource(relativePath, seen = new Set()) {
 
   const folderNames = new Set((source.folders ?? []).map((folder) => folder.name));
 
-  for (const document of getSourceDocuments(source)) {
+  const documents = getSourceDocuments(source);
+  noteCoreSourceCoverage(relativePath, source, documents);
+
+  for (const document of documents) {
     sourceDocuments += 1;
 
     if (!document.name) {
@@ -277,6 +392,7 @@ function validateCompendiumSource(relativePath, seen = new Set()) {
 }
 
 const compendiumStats = validateCompendiumSource("data/core-compendiums.json");
+validateCoreIssue98Coverage();
 
 console.log(
   `Validated ${manifest.title} ${manifest.version}: ` +
