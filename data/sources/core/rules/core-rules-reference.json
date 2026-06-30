@@ -1,0 +1,36 @@
+{
+  "pack": "anime5e.rules-reference",
+  "documentType": "JournalEntry",
+  "folders": [
+    {
+      "name": "Core Rules Reference",
+      "color": "#5b6f90"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Core Rules Reference - Import Test",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Source-Backed Journal Import",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source-backed journal smoke test.</strong></p><p>This entry proves the Anime 5e core rules reference pack can be populated through the same source manifest/import workflow as Items and Actors. Full rules references are added in later #34 slices.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.reference-import-test",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 6,
+            "importId": "core.rules.reference-import-test"
+          }
+        }
+      }
+    }
+  ]
+}

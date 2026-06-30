@@ -226,8 +226,12 @@ function validateCompendiumSource(relativePath, seen = new Set()) {
   for (const document of getSourceDocuments(source)) {
     sourceDocuments += 1;
 
-    if (!document.name || !document.type) {
-      throw new Error(`${relativePath} contains a document without name/type.`);
+    if (!document.name) {
+      throw new Error(`${relativePath} contains a document without a name.`);
+    }
+
+    if ((pack.type === "Actor" || pack.type === "Item") && !document.type) {
+      throw new Error(`${relativePath} contains a ${pack.type} document without a type.`);
     }
 
     if (pack.type === "Actor") {
@@ -246,16 +250,20 @@ function validateCompendiumSource(relativePath, seen = new Set()) {
       throw new Error(`${document.name} references missing folder ${document.folder}.`);
     }
 
-    const sourceId = document.flags?.[manifest.id]?.sourceId;
+    const sourceId = document.flags?.[manifest.id]?.sourceId ?? documentSourceId(document);
     const systemSourceId = documentSourceId(document);
-    const importId = documentImportId(document);
+    const importId = documentImportId(document) ?? documentFlagImportId(document);
     const flagImportId = documentFlagImportId(document);
 
-    if (!sourceId || !systemSourceId || !importId || !flagImportId) {
+    if (!sourceId || !importId || !flagImportId) {
       throw new Error(`${document.name} is missing sourceId/importId metadata.`);
     }
 
-    if (sourceId !== systemSourceId || sourceId !== importId || sourceId !== flagImportId) {
+    if ((pack.type === "Actor" || pack.type === "Item") && sourceId !== systemSourceId) {
+      throw new Error(`${document.name} has mismatched sourceId/importId metadata.`);
+    }
+
+    if (sourceId !== importId || sourceId !== flagImportId) {
       throw new Error(`${document.name} has mismatched sourceId/importId metadata.`);
     }
 

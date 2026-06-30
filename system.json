@@ -441,6 +441,16 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "rules-reference",
+      "label": "Core Rules Reference",
+      "path": "packs/rules-reference",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "primaryTokenAttribute": "combat.hitPoints",

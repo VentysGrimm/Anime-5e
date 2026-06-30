@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e.core.rules",
+  "label": "Core Rules Reference Sources",
+  "includes": [
+    "data/sources/core/rules/core-rules-reference.json"
+  ]
+}
