@@ -958,6 +958,19 @@
   grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
 }
 
+.anime5e .transport-profile-panel .inline-fields {
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+}
+
+.anime5e .basic-actor-form .full-width {
+  display: grid;
+  gap: 4px;
+}
+
+.anime5e .transport-profile-panel textarea {
+  min-height: 72px;
+}
+
 .anime5e .creature-summary-grid textarea {
   min-height: 92px;
 }

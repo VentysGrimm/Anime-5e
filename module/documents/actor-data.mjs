@@ -160,6 +160,16 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         }),
         walletNotes: textField()
       }),
+      transport: new fields.SchemaField({
+        pilot: textField(),
+        occupants: textField(),
+        capacity: textField(),
+        crew: textField(),
+        cargo: textField(),
+        linkedActorUuid: textField(),
+        actorBuildPoints: optionalNumberField(),
+        itemBuildPoints: optionalNumberField()
+      }),
       source: new fields.SchemaField({
         book: textField(),
         page: optionalNumberField(),

@@ -203,6 +203,7 @@ const DEFAULT_ITEM_TYPES = [
 
 const EQUIPPABLE_ITEM_TYPES = new Set(["weapon", "armor", "shield"]);
 const CREATURE_ACTOR_TYPES = new Set(["companion", "monster", "npc"]);
+const TRANSPORT_ACTOR_TYPES = new Set(["itemConstruct", "mecha", "vehicle"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
 const COMPLEX_ATTRIBUTE_SOURCE_IDS = new Set([
   "core.attribute.companion",
@@ -431,6 +432,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
     context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system);
+    context.transportProfile = this.constructor._prepareTransportProfileContext(this.actor, system);
     context.economy = this.constructor._prepareEconomyContext(system);
     const activeTab = FOLIO_TAB_IDS.has(this.tabGroups?.primary) ? this.tabGroups.primary : DEFAULT_FOLIO_TAB;
     context.activeTab = activeTab;
@@ -545,6 +547,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       actorType: localizedType("Actor", actor.type),
       sourceLabel,
       hasSource: hasText(sourceLabel)
+    };
+  }
+
+  static _prepareTransportProfileContext(actor, system) {
+    return {
+      active: TRANSPORT_ACTOR_TYPES.has(actor.type),
+      actorType: localizedType("Actor", actor.type),
+      transport: system.transport ?? {}
     };
   }
 

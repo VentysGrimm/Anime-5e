@@ -85,6 +85,46 @@
     </section>
   {{/if}}
 
+  {{#if transportProfile.active}}
+    <section class="panel transport-profile-panel">
+      <h2>{{transportProfile.actorType}} Profile</h2>
+      <div class="inline-fields">
+        <label>
+          Pilot / Controller
+          <input type="text" name="system.transport.pilot" value="{{system.transport.pilot}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Occupants
+          <input type="text" name="system.transport.occupants" value="{{system.transport.occupants}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Capacity
+          <input type="text" name="system.transport.capacity" value="{{system.transport.capacity}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Crew
+          <input type="text" name="system.transport.crew" value="{{system.transport.crew}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Actor Build Points
+          <input type="number" name="system.transport.actorBuildPoints" value="{{system.transport.actorBuildPoints}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Item Build Points
+          <input type="number" name="system.transport.itemBuildPoints" value="{{system.transport.itemBuildPoints}}" min="0" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Linked Actor UUID
+          <input type="text" name="system.transport.linkedActorUuid" value="{{system.transport.linkedActorUuid}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+      </div>
+      <label class="full-width">
+        Cargo / Notes
+        <textarea name="system.transport.cargo" {{#unless editable}}disabled{{/unless}}>{{system.transport.cargo}}</textarea>
+      </label>
+    </section>
+  {{/if}}
+
   <section class="panel basic-stat-panel">
     <h2>{{localize "ANIME5E.Labels.Abilities"}}</h2>
     <div class="basic-ability-grid">
