@@ -1,5 +1,6 @@
 import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
 import { buildCoreAttributeUsageContext, resolveCoreAttributeEnergyCost } from "../rules/attribute-effects.mjs";
+import { calculateAttributeCustomization } from "../rules/points.mjs";
 import { applyEnergyChange } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -345,6 +346,7 @@ function buildModifierEntries(references) {
 function buildAttributeModifiers(item, systemData) {
   if (item.type !== "attribute") return null;
 
+  const customization = calculateAttributeCustomization({ type: item.type, name: item.name, system: systemData });
   const groups = Object.entries(ATTRIBUTE_MODIFIER_CONFIG).map(([type, config]) => {
     const entries = buildModifierEntries(systemData[config.field]);
     const subtotal = entries.reduce((sum, entry) => sum + entry.total, 0);
@@ -364,11 +366,16 @@ function buildAttributeModifiers(item, systemData) {
     summary: [
       { label: "Enhancements", value: groups[0]?.entries.length ?? 0 },
       { label: "Limiters", value: groups[1]?.entries.length ?? 0 },
-      { label: "Raw Modifier", value: formatSignedNumber(rawSubtotal) }
+      { label: "Raw Modifier", value: formatSignedNumber(customization.modifierSubtotal) },
+      { label: "Cost/Rank", value: customization.effectiveCostPerRank },
+      { label: "Total Cost", value: customization.totalCost }
     ],
     groups,
     rawSubtotal,
-    rawSubtotalLabel: formatSignedNumber(rawSubtotal)
+    rawSubtotalLabel: formatSignedNumber(rawSubtotal),
+    effectiveCostPerRank: customization.effectiveCostPerRank,
+    totalCost: customization.totalCost,
+    warnings: customization.warnings
   };
 }
 
@@ -386,6 +393,9 @@ function modifierReferenceFromDocument(document, type) {
     name: document.name ?? sourceId,
     sourceId,
     uuid: document.uuid ?? "",
+    appliesTo: system.appliesTo ?? "",
+    category: system.category ?? "",
+    allowedAttributes: system.allowedAttributes ?? "",
     pointModifier: Number(system.pointModifier) || config.pointModifier,
     assignmentCount: 1,
     notes: assignmentRange ? `Assignments: ${assignmentRange}` : ""

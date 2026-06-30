@@ -115,6 +115,9 @@ function modifierReferenceField(pointModifierInitial) {
     name: textField(),
     sourceId: textField(),
     uuid: textField(),
+    appliesTo: textField(),
+    category: textField(),
+    allowedAttributes: textField(),
     pointModifier: numberField(pointModifierInitial),
     assignmentCount: numberField(1, { min: 0 }),
     notes: textField()

@@ -382,12 +382,72 @@ export function calculateAbilityScoreCost(abilities = {}) {
   }, 0);
 }
 
-export function calculateAttributeCost(item) {
+function modifierReferences(system = {}, field) {
+  return Array.isArray(system[field]) ? system[field] : [];
+}
+
+function modifierReferenceName(reference, fallback) {
+  return reference?.name || reference?.sourceId || reference?.uuid || fallback;
+}
+
+function calculateModifierSubtotal(references = [], fallbackLabel = "Modifier") {
+  return references.reduce((result, reference) => {
+    const name = modifierReferenceName(reference, fallbackLabel);
+    const assignmentCount = positiveNumber(reference?.assignmentCount);
+    const pointModifier = numberOrZero(reference?.pointModifier);
+    const appliesTo = String(reference?.appliesTo ?? "").trim();
+    const isUnresolved = String(reference?.notes ?? "").toLowerCase().includes("unresolved")
+      || (!reference?.sourceId && !reference?.uuid);
+
+    result.subtotal += assignmentCount * pointModifier;
+
+    if (isUnresolved) result.warnings.push(`${name} reference is unresolved; verify its sourceId or UUID.`);
+    if (assignmentCount <= 0) result.warnings.push(`${name} has zero assignments.`);
+    if (pointModifier === 0) result.warnings.push(`${name} has a zero point modifier.`);
+    if (appliesTo && appliesTo.toLowerCase() !== "attribute") {
+      result.warnings.push(`${name} is marked for ${appliesTo}, not Attributes.`);
+    }
+
+    return result;
+  }, { subtotal: 0, warnings: [] });
+}
+
+export function calculateAttributeCustomization(item) {
   const system = item?.system ?? item ?? {};
   const rank = positiveNumber(system.effectiveRank ?? system.rank);
   const baseCost = positiveNumber(system.cost);
   const costAdjustment = numberOrZero(system.costAdjustment);
-  return Math.max(0, rank * Math.max(0, baseCost + costAdjustment));
+  const enhancementResult = calculateModifierSubtotal(modifierReferences(system, "enhancementReferences"), "Enhancement");
+  const limiterResult = calculateModifierSubtotal(modifierReferences(system, "limiterReferences"), "Limiter");
+  const modifierSubtotal = enhancementResult.subtotal + limiterResult.subtotal;
+  const unclampedCostPerRank = baseCost + costAdjustment + modifierSubtotal;
+  const effectiveCostPerRank = Math.max(0, unclampedCostPerRank);
+  const hasModifiers = Boolean(
+    modifierReferences(system, "enhancementReferences").length
+      || modifierReferences(system, "limiterReferences").length
+  );
+  const warnings = [...enhancementResult.warnings, ...limiterResult.warnings];
+
+  if (hasModifiers && unclampedCostPerRank <= 0) {
+    warnings.push(`Effective Attribute cost per Rank is ${unclampedCostPerRank}; using 0 for point totals.`);
+  }
+
+  return {
+    rank,
+    effectiveRank: rank,
+    baseCost,
+    costAdjustment,
+    modifierSubtotal,
+    unclampedCostPerRank,
+    effectiveCostPerRank,
+    totalCost: rank * effectiveCostPerRank,
+    hasModifiers,
+    warnings
+  };
+}
+
+export function calculateAttributeCost(item) {
+  return calculateAttributeCustomization(item).totalCost;
 }
 
 export function calculateDefectRefund(item) {
@@ -434,9 +494,10 @@ export function calculateOwnedPointTotals(items = []) {
     const system = item?.system ?? {};
 
     if (type === "attribute" || type === "itemAttribute" || type === "power" || type === "technique") {
-      const cost = calculateAttributeCost(item);
-      totals.attributeCost += cost;
-      if (positiveNumber(system.rank) > 0 && positiveNumber(system.cost) === 0) {
+      const customization = calculateAttributeCustomization(item);
+      totals.attributeCost += customization.totalCost;
+      totals.warningItems.push(...customization.warnings.map((warning) => `${item.name ?? "Unnamed Attribute"}: ${warning}`));
+      if (positiveNumber(system.rank) > 0 && customization.effectiveCostPerRank === 0) {
         totals.warningItems.push(`${item.name ?? "Unnamed Attribute"} has a Rank but no cost.`);
       }
     } else if (DEFECT_TYPES.has(type)) {

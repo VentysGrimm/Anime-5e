@@ -89,6 +89,9 @@
           <span>{{summary.label}} <strong>{{summary.value}}</strong></span>
         {{/each}}
       </div>
+      {{#each attributeModifiers.warnings as |warning|}}
+        <p class="sheet-warning">{{warning}}</p>
+      {{/each}}
 
       {{#each attributeModifiers.groups as |group|}}
         <div class="attribute-modifier-group">
