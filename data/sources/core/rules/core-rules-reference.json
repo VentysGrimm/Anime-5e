@@ -223,6 +223,246 @@
           }
         }
       }
+    },
+    {
+      "name": "GM Guidance Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "GM Guidance",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 250-253.</p><p>The DM adjudicates rules questions, table tone, pacing, and unusual applications of Anime 5E's open-ended point framework. When a rule is unclear, make a temporary call, keep play moving, and revisit the ruling after the session if the table needs a lasting precedent.</p><ul><li><strong>Rules questions:</strong> use Ability or Skill checks for most uncertain situations, and skip rolls when the outcome is obvious or the story is better served by a direct ruling.</li><li><strong>House rules:</strong> record changes, discuss them with players before they matter at the table, and watch for Point-balance side effects.</li><li><strong>Damage control:</strong> correct mistakes openly, address player conflict out of character, and redirect scenes without making player time feel wasted.</li><li><strong>Power abuse:</strong> ask for redesigns or table limits when an interpretation breaks the campaign tone or overwhelms other characters.</li><li><strong>DM craft:</strong> use strong names, recurring locations, visible options, safe boundaries, meaningful spotlight moments, and consistent rulings.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.gm-guidance",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 250,
+            "importId": "core.rules.gm-guidance"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sample Setting - Aradia",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Aradia",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF p. 257.</p><p>Aradia is a romantic-fantasy living world: a beautiful, mostly pastoral planet whose people interpret the planet's will through signs in weather and sky. It supports angelic Asrai, speaking animal companions, rescued Fairies, emissary traditions, and a military host formed after demonic incursion.</p><p>Use Aradia for campaigns about guardianship, healing other worlds, lost celestial heirs, emissary missions, corruption contained but not cured, and moral fantasy that still leaves room for danger.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.sample-setting-aradia",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 257,
+            "importId": "core.rules.sample-setting-aradia"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sample Setting - Bazaroth",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Bazaroth",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 258-259.</p><p>Bazaroth is a horror-fantasy dying world locked between a burning dayside and frozen darkside. Hellspawn societies, demonic aristocracies, volcanic underworlds, mutation jungles, ghost-haunted borderlands, and brutal rites of passage make it a setting for survival, corruption, infernal politics, and monstrous expeditions.</p><p>Use Bazaroth when the campaign needs harsh environmental threats, demon lineages, dark bargains, volcanic fortresses, psychic predation, or parties trying to escape or change a world that punishes mercy.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.sample-setting-bazaroth",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 258,
+            "importId": "core.rules.sample-setting-bazaroth"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sample Setting - Ikaris",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Ikaris",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 259-261.</p><p>Ikaris is a high-fantasy sword-and-sorcery world built around a vast supercontinent, mage-ruled successor states, magical vows, border monsters, nomad steppes, ruined underground realms, and the coastal Land of Seven Stars.</p><p>Use Ikaris for traditional fantasy campaigns with Anime 5E's point-based character options: feuding magical nobles, oath-breaking warlocks, monster-haunted marches, guild politics, martial orders, and celestial or demonic legends under active political pressure.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.sample-setting-ikaris",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 259,
+            "importId": "core.rules.sample-setting-ikaris"
+          }
+        }
+      }
+    },
+    {
+      "name": "Appendix A - Gedanken Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Gedanken",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF p. 262.</p><p>Gedanken is an optional thought experiment for groups that want Ability Scores to be expressed on a cleaner positive-number scale instead of relying on legacy 3-18 values and derived modifiers.</p><ul><li>Convert an old Ability Score by subtracting 10, dividing by 2, rounding toward zero when negative, then adding 6.</li><li>Because the new values run higher than traditional modifiers, raise Difficulty Classes by about 5 when using the revised scale.</li><li>Adjust related assumptions carefully: Ability Score point costs, base Armour Class, attack damage modifiers, and any rule that expects the old score/modifier split.</li><li>Use this only as a deliberate campaign mode; do not mix it casually with the default character sheet math.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.appendix-gedanken",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 262,
+            "importId": "core.rules.appendix-gedanken"
+          }
+        }
+      }
+    },
+    {
+      "name": "Appendix B - Conversion Notes Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Conversion Notes",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF p. 263.</p><p>Anime 5E can share a table with traditional Fifth Edition material, but conversions should preserve the character concept while watching for Point balance, action economy, and option scope.</p><ul><li><strong>Races and species:</strong> Anime 5E traits can usually become features; imported Fifth Edition traits can map to Attributes, Defects, or Unique Attributes.</li><li><strong>Classes:</strong> imported classes may need Bonus Points from the class deconstruction guidance to stay comparable with point-built Anime 5E characters.</li><li><strong>Attributes:</strong> Dynamic Powers, Enhanced Proficiency, Extra Actions, and Skill Proficiency need special scrutiny because they may not fit the tighter assumptions of standard Fifth Edition.</li><li><strong>Rules modules:</strong> called shots, tactical actions, grid movement, encumbrance, and monster CR can be adopted selectively if the table agrees on the mode.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.appendix-conversions",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 263,
+            "importId": "core.rules.appendix-conversions"
+          }
+        }
+      }
+    },
+    {
+      "name": "Character Sheet Help - Overview and Creation",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Overview and Creation",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF p. 272; Anime 5e Character Folio sheet.</p><p>Use the Overview tab as the character's front page: Ability Scores, modifiers, HP, Energy, Armour Class, Proficiency Bonus, movement, identity, level, XP, and class rows all live there.</p><ul><li>Enter starting level and starting XP in Creation Setup, then use the Apply Start action to sync the character's level and XP benchmark.</li><li>Use Source Budget and XP Benchmark as quick checks against the Core Rules starting assumptions.</li><li>Watch the point summary and validation notes before play; negative remaining points or warnings usually mean an owned Item, Species, Class, Attribute, Defect, or manual award needs review.</li><li>Use the roll buttons beside abilities when the table needs a basic d20 check from the sheet.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.sheet-help-overview-creation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 272,
+            "importId": "core.rules.sheet-help-overview-creation"
+          }
+        }
+      }
+    },
+    {
+      "name": "Character Sheet Help - Build Options",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Build Options",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 272-273; Anime 5e Character Folio sheet.</p><p>The build tabs collect owned Items that define what the character is: Species, Size Templates, Classes, Attributes, Defects, Skills, tools, languages, powers, spells, psionics, and techniques.</p><ul><li>Drop source-backed Items onto the actor or create new Items from the tab actions.</li><li>Attributes and Defects should carry ranks, Point costs or refunds, source notes, and any Enhancement or Limiter references needed for point accounting.</li><li>Class and Species Items should stay on the actor so derived benefits, warnings, and point totals remain visible.</li><li>Use notes areas for activation rules, ranges, targets, Energy costs, preparation limits, and table rulings that are too specific for a short Item name.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.sheet-help-build-options",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 272,
+            "importId": "core.rules.sheet-help-build-options"
+          }
+        }
+      }
+    },
+    {
+      "name": "Character Sheet Help - Combat Powers and Inventory",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Combat Powers and Inventory",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 272-273; Anime 5e Character Folio sheet.</p><p>Use the Combat, Powers, and Inventory areas during play. Combat summarizes attacks, damage, defenses, movement, and active effects; Powers holds Energy-using and special abilities; Inventory holds gear, wallet values, Items of Power, weapons, armour, shields, loot, materials, and crafting projects.</p><ul><li>Use item action icons to post notes, roll checks, roll attacks, roll damage, equip gear, edit Items, or delete Items.</li><li>Record explicit Energy costs and activation notes on powers when the source text or table ruling matters.</li><li>Equip weapons, armour, shields, and gear that should affect derived totals or table-facing state.</li><li>Use crafting projects to track target Item, status, material costs, progress, required progress, DC, linked Item UUID, and DM notes.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.sheet-help-combat-powers-inventory",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 272,
+            "importId": "core.rules.sheet-help-combat-powers-inventory"
+          }
+        }
+      }
+    },
+    {
+      "name": "Character Sheet Help - Biography Journal and Advancement",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Biography Journal and Advancement",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 272-273; Anime 5e Character Folio sheet.</p><p>Use the Biography and Journal tabs for the parts of play that are not just numbers: appearance, personality, history, allies, enemies, goals, secrets, campaign role, session notes, rewards, downtime, and story events.</p><ul><li>Advancement Bookkeeping shows current level, current XP, XP to next level, next threshold, Engagement Bonus Points, other non-levelling awards, and point-summary rows.</li><li>Record poisons, diseases, hazards, deprivation, and similar ongoing problems as Adventuring Risk Items so they can be posted to chat when they matter.</li><li>Keep advancement notes and reward notes separate from biography notes; it makes later audits of XP, Bonus Points, and story awards much easier.</li><li>Use Companions for vehicles, mecha, mounts, linked creatures, and owned equipment summaries that are too large for ordinary inventory rows.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.sheet-help-biography-journal",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 273,
+            "importId": "core.rules.sheet-help-biography-journal"
+          }
+        }
+      }
     }
   ]
 }
