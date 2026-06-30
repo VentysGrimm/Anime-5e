@@ -1,0 +1,84 @@
+{
+  "pack": "anime5e-bonus-character-options.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Classes - Bonus Character Options",
+      "color": "#6d8f72"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Mindmancer",
+      "type": "class",
+      "folder": "Classes - Bonus Character Options",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Bonus Character Options, p. 4.</p><p><strong>Also Found In:</strong> Anime 5E Folstavia, p. 52.</p><p><strong>Hit Die:</strong> d4. <strong>Primary Ability:</strong> Intelligence. <strong>Saving Throws:</strong> Intelligence, Wisdom.</p><p><strong>Rules Summary:</strong> Focused psychic controller who develops Mind Control, Telepathy, mental defences, supernatural senses, and knowledge gained through mental intrusion.</p><p><strong>Proficiencies:</strong> Simple weapons; two tools of choice; four skills of choice.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Bonus Character Options",
+        "sourceId": "bonus-character-options.class.mindmancer",
+        "sourcePage": 4,
+        "importId": "bonus-character-options.class.mindmancer",
+        "hitDice": "d4",
+        "primaryAbility": "Intelligence",
+        "savingThrows": "Intelligence, Wisdom",
+        "sourceAbbreviation": "BCO",
+        "sourceModuleId": "anime5e-bonus-character-options",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "bonus-character-options.class.mindmancer",
+          "source": {
+            "book": "Anime 5E Bonus Character Options",
+            "page": 4,
+            "abbreviation": "BCO",
+            "moduleId": "anime5e-bonus-character-options",
+            "category": "class",
+            "importId": "bonus-character-options.class.mindmancer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Simulake",
+      "type": "class",
+      "folder": "Classes - Bonus Character Options",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Bonus Character Options, p. 6.</p><p><strong>Also Found In:</strong> Anime 5E Folstavia, p. 56.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Constitution. <strong>Saving Throws:</strong> Constitution, Charisma.</p><p><strong>Rules Summary:</strong> Adaptive mimic and power dampener who copies capabilities, later suppresses hostile abilities, and grows into a flexible support or counter-power role.</p><p><strong>Proficiencies:</strong> All armour and shields; simple and martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Bonus Character Options",
+        "sourceId": "bonus-character-options.class.simulake",
+        "sourcePage": 6,
+        "importId": "bonus-character-options.class.simulake",
+        "hitDice": "d8",
+        "primaryAbility": "Constitution",
+        "savingThrows": "Constitution, Charisma",
+        "sourceAbbreviation": "BCO",
+        "sourceModuleId": "anime5e-bonus-character-options",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "bonus-character-options.class.simulake",
+          "source": {
+            "book": "Anime 5E Bonus Character Options",
+            "page": 6,
+            "abbreviation": "BCO",
+            "moduleId": "anime5e-bonus-character-options",
+            "category": "class",
+            "importId": "bonus-character-options.class.simulake"
+          }
+        }
+      }
+    }
+  ],
+  "sourceBook": "Anime 5E Bonus Character Options",
+  "sourceAbbreviation": "BCO",
+  "sourceModuleId": "anime5e-bonus-character-options",
+  "contentCategory": "class"
+}

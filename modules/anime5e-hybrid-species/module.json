@@ -1,0 +1,85 @@
+{
+  "id": "anime5e-hybrid-species",
+  "title": "Anime 5e Hybrid Species",
+  "description": "Source-backed Hybrid Species expansion module for Anime 5e.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Your Name"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "anime5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "0.2.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/module.mjs"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "character-options",
+      "label": "Hybrid Species Character Options",
+      "path": "packs/character-options",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "items",
+      "label": "Hybrid Species Items",
+      "path": "packs/items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "creatures",
+      "label": "Hybrid Species Creatures",
+      "path": "packs/creatures",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "journals",
+      "label": "Hybrid Species Journals",
+      "path": "packs/journals",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "flags": {
+    "anime5e": {
+      "sourceModuleId": "anime5e-hybrid-species",
+      "sourceAbbreviation": "HS",
+      "sourceCategory": "module"
+    }
+  }
+}

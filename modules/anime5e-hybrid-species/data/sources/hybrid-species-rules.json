@@ -1,0 +1,43 @@
+{
+  "pack": "anime5e-hybrid-species.journals",
+  "documentType": "JournalEntry",
+  "sourceBook": "Anime 5E Hybrid Species Digital Expansion",
+  "sourceAbbreviation": "HS",
+  "sourceModuleId": "anime5e-hybrid-species",
+  "contentCategory": "journal",
+  "folders": [
+    {
+      "name": "Hybrid Species Guidance",
+      "color": "#8f7394"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Hybrid Species Design Guidance",
+      "folder": "Hybrid Species Guidance",
+      "pages": [
+        {
+          "name": "Design Guidance",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Hybrid Species Digital Expansion, p. 2.</p><p>Hybrid Species are built with Anime 5E's point framework. Use the parent Species as design references, then keep the final template affordable for starting characters by balancing inherited advantages with appropriate Defects and table-facing limits.</p><p>The source recommends treating 15-20 Points as the usual upper range for a Hybrid Species template. The examples in this module are ready-to-drop Species Items; DMs can use them as patterns for other mixed-ancestry concepts.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "hybrid-species.journal.design-guidance",
+          "source": {
+            "book": "Anime 5E Hybrid Species Digital Expansion",
+            "page": 2,
+            "abbreviation": "HS",
+            "moduleId": "anime5e-hybrid-species",
+            "category": "journal",
+            "importId": "hybrid-species.journal.design-guidance"
+          }
+        }
+      }
+    }
+  ]
+}

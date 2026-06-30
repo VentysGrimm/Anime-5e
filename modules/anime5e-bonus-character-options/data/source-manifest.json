@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-bonus-character-options.sources",
+  "label": "Anime 5e Bonus Character Options Sources",
+  "sourceBook": "Anime 5E Bonus Character Options",
+  "sourceAbbreviation": "BCO",
+  "sourceModuleId": "anime5e-bonus-character-options",
+  "contentCategory": "module",
+  "includes": [
+    "data/sources/species-bonus-character-options.json",
+    "data/sources/classes-bonus-character-options.json"
+  ]
+}

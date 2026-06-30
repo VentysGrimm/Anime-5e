@@ -1,0 +1,176 @@
+{
+  "pack": "anime5e-hybrid-species.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Species - Hybrid Species",
+      "color": "#8f7394"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Asrai-Dawn Elf Hybrid",
+      "type": "species",
+      "folder": "Species - Hybrid Species",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Hybrid Species Digital Expansion, p. 2.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 14.</p><p><strong>Rules Summary:</strong> Hybrid template combining Asrai and Dawn Elf gifts: broad ability bonuses, flight, darkvision, heightened senses, languages, ageing/sleep resilience, charm-save edge, and light utility magic.</p>",
+        "rank": 1,
+        "cost": 14,
+        "source": "Anime 5E Hybrid Species Digital Expansion",
+        "sourceId": "hybrid-species.species.asrai-dawn-elf-hybrid",
+        "sourcePage": 2,
+        "importId": "hybrid-species.species.asrai-dawn-elf-hybrid",
+        "points": 14,
+        "sourceAbbreviation": "HS",
+        "sourceModuleId": "anime5e-hybrid-species",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "hybrid-species.species.asrai-dawn-elf-hybrid",
+          "source": {
+            "book": "Anime 5E Hybrid Species Digital Expansion",
+            "page": 2,
+            "abbreviation": "HS",
+            "moduleId": "anime5e-hybrid-species",
+            "category": "species",
+            "importId": "hybrid-species.species.asrai-dawn-elf-hybrid"
+          }
+        }
+      }
+    },
+    {
+      "name": "Arbolan-Blinkbeast Hybrid",
+      "type": "species",
+      "folder": "Species - Hybrid Species",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Hybrid Species Digital Expansion, p. 2.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 14.</p><p><strong>Rules Summary:</strong> Nature-focused hybrid with Constitution/Wisdom, human alternate identity, Dynamic Powers (Nature), photosynthesis, Common/Sylvan language, and a Dexterity drawback.</p>",
+        "rank": 1,
+        "cost": 14,
+        "source": "Anime 5E Hybrid Species Digital Expansion",
+        "sourceId": "hybrid-species.species.arbolan-blinkbeast-hybrid",
+        "sourcePage": 2,
+        "importId": "hybrid-species.species.arbolan-blinkbeast-hybrid",
+        "points": 14,
+        "sourceAbbreviation": "HS",
+        "sourceModuleId": "anime5e-hybrid-species",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "hybrid-species.species.arbolan-blinkbeast-hybrid",
+          "source": {
+            "book": "Anime 5E Hybrid Species Digital Expansion",
+            "page": 2,
+            "abbreviation": "HS",
+            "moduleId": "anime5e-hybrid-species",
+            "category": "species",
+            "importId": "hybrid-species.species.arbolan-blinkbeast-hybrid"
+          }
+        }
+      }
+    },
+    {
+      "name": "Grey-Karaki Hybrid",
+      "type": "species",
+      "folder": "Species - Hybrid Species",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Hybrid Species Digital Expansion, p. 3.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 13.</p><p><strong>Rules Summary:</strong> Aquatic and alien hybrid with Constitution/Intelligence, water-enhanced AC and senses, extra arms and body features, healing magic, underwater resilience, water speed, and social drawbacks.</p>",
+        "rank": 1,
+        "cost": 13,
+        "source": "Anime 5E Hybrid Species Digital Expansion",
+        "sourceId": "hybrid-species.species.grey-karaki-hybrid",
+        "sourcePage": 3,
+        "importId": "hybrid-species.species.grey-karaki-hybrid",
+        "points": 13,
+        "sourceAbbreviation": "HS",
+        "sourceModuleId": "anime5e-hybrid-species",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "hybrid-species.species.grey-karaki-hybrid",
+          "source": {
+            "book": "Anime 5E Hybrid Species Digital Expansion",
+            "page": 3,
+            "abbreviation": "HS",
+            "moduleId": "anime5e-hybrid-species",
+            "category": "species",
+            "importId": "hybrid-species.species.grey-karaki-hybrid"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dhamphyr-Nekojin Hybrid",
+      "type": "species",
+      "folder": "Species - Hybrid Species",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Hybrid Species Digital Expansion, p. 3.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 9.</p><p><strong>Rules Summary:</strong> Vampire-cat hybrid with Strength/Dexterity, fast movement, darkvision, hearing, limited rerolls, regeneration, ageing/disease/lack-of-air resilience, and Cursed/feline-instinct drawbacks.</p>",
+        "rank": 1,
+        "cost": 9,
+        "source": "Anime 5E Hybrid Species Digital Expansion",
+        "sourceId": "hybrid-species.species.dhamphyr-nekojin-hybrid",
+        "sourcePage": 3,
+        "importId": "hybrid-species.species.dhamphyr-nekojin-hybrid",
+        "points": 9,
+        "sourceAbbreviation": "HS",
+        "sourceModuleId": "anime5e-hybrid-species",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "hybrid-species.species.dhamphyr-nekojin-hybrid",
+          "source": {
+            "book": "Anime 5E Hybrid Species Digital Expansion",
+            "page": 3,
+            "abbreviation": "HS",
+            "moduleId": "anime5e-hybrid-species",
+            "category": "species",
+            "importId": "hybrid-species.species.dhamphyr-nekojin-hybrid"
+          }
+        }
+      }
+    },
+    {
+      "name": "Effigy-Haud-Slime Hybrid",
+      "type": "species",
+      "folder": "Species - Hybrid Species",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Hybrid Species Digital Expansion, p. 3.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 15.</p><p><strong>Rules Summary:</strong> Three-parent hybrid with Effigy protection, Haud biological resilience, Slime mobility and healing traits, and cold/slime-trail style limitations.</p>",
+        "rank": 1,
+        "cost": 15,
+        "source": "Anime 5E Hybrid Species Digital Expansion",
+        "sourceId": "hybrid-species.species.effigy-haud-slime-hybrid",
+        "sourcePage": 3,
+        "importId": "hybrid-species.species.effigy-haud-slime-hybrid",
+        "points": 15,
+        "sourceAbbreviation": "HS",
+        "sourceModuleId": "anime5e-hybrid-species",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "hybrid-species.species.effigy-haud-slime-hybrid",
+          "source": {
+            "book": "Anime 5E Hybrid Species Digital Expansion",
+            "page": 3,
+            "abbreviation": "HS",
+            "moduleId": "anime5e-hybrid-species",
+            "category": "species",
+            "importId": "hybrid-species.species.effigy-haud-slime-hybrid"
+          }
+        }
+      }
+    }
+  ],
+  "sourceBook": "Anime 5E Hybrid Species Digital Expansion",
+  "sourceAbbreviation": "HS",
+  "sourceModuleId": "anime5e-hybrid-species",
+  "contentCategory": "species"
+}

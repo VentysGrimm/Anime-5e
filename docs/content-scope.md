@@ -30,7 +30,7 @@ Optional books and setting lines should not be mixed into the core source tree. 
 | Monstrum Libri Vol. 2 | Aquatic and desertic creatures plus any aquatic, desert, movement, or hazard traits needed to run them. |
 | Beyonder Worlds | Genre support for science fiction, mecha fantasy, urban fantasy, cyberpunk, and modern Earth, including equipment, vehicles, mecha, threats, and genre notes. |
 
-When a standalone module is created, move its source data out of `data/sources/supplements/` into that module's own source manifest and keep the same source IDs where possible.
+When a standalone module is created, move its source data out of `data/sources/supplements/` into that module's own source manifest and keep the same source IDs where possible. The first standalone module packages live under `modules/anime5e-hybrid-species/` and `modules/anime5e-bonus-character-options/`.
 
 ## Source Tagging
 
