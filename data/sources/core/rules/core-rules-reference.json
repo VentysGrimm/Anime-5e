@@ -127,6 +127,102 @@
           }
         }
       }
+    },
+    {
+      "name": "Rolls and DC Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Rolls and DCs",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 152-155.</p><p>Roll only when the result is uncertain and the outcome matters. Most checks use d20 + the relevant Ability modifier, plus Proficiency Bonus when a Skill, tool, Saving Throw, weapon, or other proficiency applies.</p><ul><li><strong>Difficulty Class:</strong> compare the check total to the DM-set DC; DC 15 is the normal medium benchmark and the default Attribute activation DC unless the DM changes it.</li><li><strong>Contest:</strong> opposing characters roll against one another; the higher check total wins and a tie usually leaves the situation unchanged.</li><li><strong>Advantage or disadvantage:</strong> roll two d20s and keep the higher or lower die. Multiple advantages or disadvantages do not add extra dice, and mixed advantage/disadvantage cancels out.</li><li><strong>Passive checks:</strong> with DM approval, use 10 instead of rolling; use 15 with advantage or 5 with disadvantage.</li><li><strong>Common roll types:</strong> Ability checks, Skill checks, Saving Throws, Initiative rolls, attack rolls, and damage rolls.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.rolls-dc",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 152,
+            "importId": "core.rules.rolls-dc"
+          }
+        }
+      }
+    },
+    {
+      "name": "Action and Combat Flow Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Action Flow",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 159-162, 171.</p><p>Combat starts by rolling Initiative once for the scene unless the table uses the dynamic Initiative option. Initiative is a Dexterity check, then turns resolve from highest total to lowest each round.</p><ol><li>On a turn, take one main action; Extra Actions and certain class features can add Bonus Actions.</li><li>Choose an attack action, tactical action, or general action. Attack actions resolve attacks, tactical actions support later attacks or defense, and general actions cover everything else the DM adjudicates.</li><li>For an attack, declare the method, target, weapon or special attack, and any unusual intent before rolling.</li><li>Attack roll = d20 + the relevant Ability modifier + Proficiency Bonus when proficient. Meet or beat the target's Armour Class to hit.</li><li>Apply situational advantages, disadvantages, range penalties, cover, flanking, total defence, called shots, and similar modifiers before resolving damage.</li></ol><p>Use the actor sheet's HP, Energy, weapons, armour, and owned Items as the table-facing state while the DM adjudicates unusual actions.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.action-combat-flow",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 159,
+            "importId": "core.rules.action-combat-flow"
+          }
+        }
+      }
+    },
+    {
+      "name": "Damage Recovery and Energy Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Damage and Recovery",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 174-178.</p><p>Successful attacks, hazards, and special effects subtract damage from current Hit Points. Weapon damage normally uses the listed damage dice plus the same Ability modifier used for the attack roll; size modifiers and Attribute effects may also apply.</p><ul><li><strong>Damage types:</strong> damage labels such as acid, fire, force, piercing, poison, psychic, slashing, standard, and thunder mainly matter when another rule refers to resistance, vulnerability, protection, or a specific effect.</li><li><strong>Zero HP:</strong> a character at 0 HP or below is unconscious from a severe wound. Optional death Saving Throws can track whether they stabilize or die.</li><li><strong>Wound pressure:</strong> the DM may impose disadvantage on d20 rolls when a character is at one-quarter maximum HP or lower.</li><li><strong>Short rest:</strong> after at least one hour of light activity, spend Hit Dice to recover HP.</li><li><strong>Long rest:</strong> after at least eight hours, recover all HP and regain spent Hit Dice up to half the character's total.</li><li><strong>Energy:</strong> optional resource for Dynamic Powers, Spell-Like Ability, Deplete effects, fatigue, dramatic feats, and player retcons. Characters recover 1d8 Energy after a short rest and all Energy after a long rest.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.damage-recovery-energy",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 174,
+            "importId": "core.rules.damage-recovery-energy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Items and Equipment Construction Overview",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Items and Equipment",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 192-205.</p><p>Anime 5E treats important custom gear as effect-built Items. If two effects create equivalent combat or story impact, they should usually cost the same number of Points even when one is a physical object and the other is an innate power.</p><ul><li><strong>Item Attribute:</strong> grants 5 construction Points per Rank while costing 4 Points per Rank because Items can be lost, stolen, broken, or restricted by circumstances.</li><li><strong>Mundane items:</strong> common gear, weapons, armour, lodging, and adventuring supplies can be free when the DM treats them as ordinary equipment. Spending Points on an otherwise mundane Item can make it conceptually protected.</li><li><strong>Point protection:</strong> Point-costed Items are part of the character concept and should usually be restored or replaced soon when lost, unless doing so would break the story.</li><li><strong>Weapons:</strong> use the weapon tables as examples or templates. Adjust Rank, Enhancements, Limiters, damage type, range, and point cost to model custom attacks.</li><li><strong>Armour and shields:</strong> record armour category, proficiency expectations, AC formula, Strength or Stealth limits, shield size, hands used, and weight.</li><li><strong>Crafting projects:</strong> track target Item, status, materials, Point cost, progress, required progress, DC, linked Item UUID, and notes until the DM resolves completion.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.items-equipment-construction",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 192,
+            "importId": "core.rules.items-equipment-construction"
+          }
+        }
+      }
     }
   ]
 }
