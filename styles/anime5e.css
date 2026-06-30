@@ -245,6 +245,11 @@
   min-width: 0;
 }
 
+.anime5e .unapplied-effect-list li {
+  background: #fff0d8;
+  border-color: #c78f3a;
+}
+
 .anime5e .folio-main-grid {
   display: grid;
   gap: 28px;

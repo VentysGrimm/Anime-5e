@@ -1,5 +1,10 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
-import { buildCoreAttributeEffectContext } from "../rules/attribute-effects.mjs";
+import {
+  buildCoreAttributeEffectContext,
+  buildCoreAttributeUsageContext,
+  getCoreAttributeEffectKey,
+  resolveCoreAttributeEnergyCost
+} from "../rules/attribute-effects.mjs";
 import {
   calculatePointSummary,
   calculateRecommendedDiscretionaryPoints,
@@ -447,12 +452,26 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   static _prepareItemContext(item) {
     const system = item.system ?? {};
     const isWeaponAttribute = isWeaponAttributeItem(item);
+    const effectKey = getCoreAttributeEffectKey(item);
+    const canToggleEffect = item.type === "attribute" || !!effectKey;
+    const effectUsage = canToggleEffect ? buildCoreAttributeUsageContext(item, { effectKey }) : null;
+    const hasUsageLimits = !!effectUsage && (
+      effectUsage.energy.label
+      || effectUsage.scope
+      || effectUsage.duration
+      || effectUsage.targetCount
+      || !effectUsage.effectActive
+    );
     const hasAttackModifier = Number.isFinite(Number(system.attackModifier));
     const damageFormula = weaponAttributeDamageFormula(item);
     const tags = [
       system.rank !== undefined ? `Rank ${system.rank}` : null,
       system.cost !== undefined ? `Cost ${system.cost}` : null,
       system.pointsReturned !== undefined ? `Points ${system.pointsReturned}` : null,
+      hasUsageLimits ? effectUsage.statusLabel : null,
+      effectUsage?.energy?.label ? `Energy: ${effectUsage.energy.label}` : null,
+      effectUsage?.durationRemaining ? `Remaining: ${effectUsage.durationRemaining}` : null,
+      effectUsage?.targets ? `Affected: ${effectUsage.targets}` : null,
       system.quantity !== undefined ? `Qty ${system.quantity}` : null,
       system.equipped ? "Equipped" : null,
       system.category,
@@ -478,7 +497,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       canRoll: hasText(system.roll),
       canSkillCheck: ["skill", "proficiency", "tool"].includes(item.type),
       canAttack: item.type === "weapon" || isWeaponAttribute || (item.type !== "attribute" && hasAttackModifier),
-      canDamage: hasText(damageFormula)
+      canDamage: hasText(damageFormula),
+      canToggleEffect,
+      effectActive: effectUsage?.effectActive ?? true,
+      effectToggleIcon: effectUsage?.effectActive === false ? "fa-toggle-off" : "fa-toggle-on",
+      effectToggleTitle: effectUsage?.effectActive === false ? "Apply derived effect" : "Suspend derived effect"
     };
   }
 
@@ -583,6 +606,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         const isFollower = isFollowerAttributeItem(item);
         const isMonsterTraining = sourceIdForItem(item) === "core.attribute.monster-training";
         const isSpellLike = isSpellLikeAttributeItem(item);
+        const usage = buildCoreAttributeUsageContext(item, { rank: numberOrZero(system.rank) });
         const followerBudget = isFollower ? followerPointBudgetForItem(item) : null;
         const minionCount = isFollower ? minionCountForItem(item) : "";
         const spellEnergyCost = isSpellLike && hasText(system.spellEnergyCost) && system.spellEnergyCost !== "Rank squared Energy"
@@ -599,9 +623,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           hasText(system.spellLevel) ? `Spell Level: ${system.spellLevel}` : null,
           Number.isFinite(followerBudget) ? `Budget: ${followerBudget} Points` : null,
           hasText(minionCount) ? `Count: ${minionCount}` : null,
+          usage.statusLabel,
           hasText(system.scope) ? `Scope: ${system.scope}` : null,
           hasText(system.duration) ? `Duration: ${system.duration}` : null,
+          hasText(system.durationRemaining) ? `Remaining: ${system.durationRemaining}` : null,
           hasText(system.targetCount) ? `Targets: ${system.targetCount}` : null,
+          hasText(system.effectTargets) ? `Affected: ${system.effectTargets}` : null,
+          usage.energyPaid ? "Energy paid" : null,
           hasText(spellEnergyCost) ? `Energy: ${spellEnergyCost}` : hasText(system.energyCost) ? `Energy: ${system.energyCost}` : null
         ].filter(Boolean);
         const linkTags = [
@@ -790,6 +818,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='toggle-equipped']").forEach((button) => {
       button.addEventListener("click", this._onToggleItemEquipped.bind(this));
+    });
+    element.querySelectorAll("[data-action='toggle-attribute-effect']").forEach((button) => {
+      button.addEventListener("click", this._onToggleAttributeEffect.bind(this));
     });
     element.querySelectorAll("[data-action='apply-creation-start']").forEach((button) => {
       button.addEventListener("click", this._onApplyCreationStart.bind(this));
@@ -1077,10 +1108,39 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const source = [system.source, system.sourcePage ? `p. ${system.sourcePage}` : null].filter(Boolean).join(", ");
     const description = hasText(system.description) ? `<p>${escapeHtml(system.description)}</p>` : "";
     const sourceLine = source ? `<p><small>${escapeHtml(source)}</small></p>` : "";
+    const usage = item.type === "attribute" ? buildCoreAttributeUsageContext(item) : null;
+    const usageLine = usage?.summary?.length
+      ? `<p><strong>Usage:</strong> ${escapeHtml(usage.summary.join(" | "))}</p>`
+      : "";
+    let energyLine = "";
+
+    if (item.type === "attribute") {
+      const energyCost = resolveCoreAttributeEnergyCost(item);
+      const update = {};
+
+      if (energyCost.amount > 0) {
+        const currentEnergy = Math.max(0, Number(this.actor.system?.combat?.energy?.value) || 0);
+        if (currentEnergy < energyCost.amount) {
+          ui.notifications?.warn(`${item.name} needs ${energyCost.amount} Energy, but ${this.actor.name} only has ${currentEnergy}.`);
+          energyLine = `<p><strong>Energy:</strong> ${escapeHtml(this.actor.name)} has ${currentEnergy}/${energyCost.amount} required. Cost not paid.</p>`;
+        } else {
+          const change = await applyEnergyChange(this.actor, energyCost.amount, "spend");
+          update["system.effectActive"] = true;
+          update["system.energyPaid"] = true;
+          energyLine = `<p><strong>Energy:</strong> spent ${change.amount}. EP ${change.current} &rarr; ${change.next} / ${change.max}.</p>`;
+        }
+      } else if (energyCost.requiresPayment) {
+        energyLine = `<p><strong>Energy:</strong> ${escapeHtml(energyCost.label)} requires manual payment tracking.</p>`;
+      } else {
+        update["system.effectActive"] = true;
+      }
+
+      if (Object.keys(update).length) await item.update(update);
+    }
 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(localizedType("Item", item.type))}</strong></p>${description}${sourceLine}</article>`
+      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(localizedType("Item", item.type))}</strong></p>${usageLine}${energyLine}${description}${sourceLine}</article>`
     });
   }
 
@@ -1154,6 +1214,20 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!item || !EQUIPPABLE_ITEM_TYPES.has(item.type)) return;
 
     await item.update({ "system.equipped": !item.system?.equipped });
+  }
+
+  async _onToggleAttributeEffect(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || (item.type !== "attribute" && !getCoreAttributeEffectKey(item))) return;
+
+    const nextActive = item.system?.effectActive === false;
+    const update = { "system.effectActive": nextActive };
+    if (!nextActive && item.type === "attribute") update["system.energyPaid"] = false;
+
+    await item.update(update);
   }
 
   async _onApplyCreationStart(event) {

@@ -94,6 +94,10 @@ export class Anime5eAttributeData extends Anime5eBaseItemData {
       ...super.defineSchema(),
       ability: textField(),
       category: textField(),
+      effectActive: booleanField(true),
+      energyPaid: booleanField(false),
+      durationRemaining: textField(),
+      effectTargets: textField(),
       attackModifier: numberField(0),
       damage: textField(),
       damageType: textField(),
@@ -128,6 +132,7 @@ export class Anime5eDefectData extends Anime5eBaseItemData {
     return {
       ...super.defineSchema(),
       ability: textField(),
+      effectActive: booleanField(true),
       pointsReturned: numberField(0, { min: 0 })
     };
   }

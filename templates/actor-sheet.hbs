@@ -97,9 +97,16 @@
           {{/if}}
           <ol class="attribute-effect-list">
             {{#each attributeEffects.effects as |effect|}}
-              <li><strong>{{effect.label}}</strong><span>{{effect.detail}}</span><small>{{effect.source}}</small></li>
+              <li><strong>{{effect.label}}</strong><span>{{effect.detail}}</span><small>{{effect.source}}{{#if effect.usageLabel}} | {{effect.usageLabel}}{{/if}}</small></li>
             {{/each}}
           </ol>
+          {{#if attributeEffects.hasUnapplied}}
+            <ol class="attribute-effect-list unapplied-effect-list">
+              {{#each attributeEffects.unapplied as |effect|}}
+                <li><strong>{{effect.source}}</strong><span>{{effect.usage.statusLabel}}</span><small>{{effect.usage.label}}</small></li>
+              {{/each}}
+            </ol>
+          {{/if}}
           {{#each attributeEffects.warnings as |warning|}}
             <p class="sheet-warning">{{warning}}</p>
           {{/each}}
@@ -328,6 +335,7 @@
               <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
               <div class="item-actions">
                 {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.canToggleEffect}}<button type="button" data-action="toggle-attribute-effect" title="{{item.effectToggleTitle}}"><i class="fas {{item.effectToggleIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
@@ -564,6 +572,7 @@
               <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
               <div class="item-actions">
                 {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.canToggleEffect}}<button type="button" data-action="toggle-attribute-effect" title="{{item.effectToggleTitle}}"><i class="fas {{item.effectToggleIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}
@@ -592,6 +601,7 @@
               <div class="item-tags">{{#each item.trackingTags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
               <div class="item-actions">
                 {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.canToggleEffect}}<button type="button" data-action="toggle-attribute-effect" title="{{item.effectToggleTitle}}"><i class="fas {{item.effectToggleIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}{{#if item.canLinkFollower}}<button type="button" data-action="create-linked-follower" title="{{item.linkFollowerTitle}}"><i class="fas {{item.linkFollowerIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}{{#if item.canLinkSpell}}<button type="button" data-action="create-linked-spell" title="{{item.linkSpellTitle}}"><i class="fas {{item.linkSpellIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
@@ -631,6 +641,7 @@
               <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
               <div class="item-actions">
                 {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.canToggleEffect}}<button type="button" data-action="toggle-attribute-effect" title="{{item.effectToggleTitle}}"><i class="fas {{item.effectToggleIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if item.canRoll}}<button type="button" data-action="roll-item" title="Roll"><i class="fas fa-dice-d20"></i></button>{{/if}}
                 {{#if item.canAttack}}<button type="button" data-action="roll-item-attack" title="Attack"><i class="fas fa-crosshairs"></i></button>{{/if}}
                 {{#if item.canDamage}}<button type="button" data-action="roll-item-damage" title="Damage"><i class="fas fa-bolt"></i></button>{{/if}}

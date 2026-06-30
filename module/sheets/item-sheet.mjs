@@ -1,4 +1,6 @@
 import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
+import { buildCoreAttributeUsageContext, resolveCoreAttributeEnergyCost } from "../rules/attribute-effects.mjs";
+import { applyEnergyChange } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -6,6 +8,7 @@ const { ItemSheetV2 } = foundry.applications.sheets;
 const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
 const MULTILINE_FIELDS = new Set([
   "constructionNotes",
+  "effectTargets",
   "movementModes",
   "progressionNotes",
   "result",
@@ -62,7 +65,11 @@ const FIELD_LABELS = {
   damageModifier: "Damage Modifier",
   dexterityRule: "Dexterity Rule",
   duration: "Duration",
+  durationRemaining: "Duration Remaining",
+  effectActive: "Apply Derived Effect",
+  effectTargets: "Effect Targets",
   energyCost: "Energy Cost",
+  energyPaid: "Energy Paid",
   equipped: "Equipped",
   effectiveRank: "Effective Rank",
   enhancements: "Enhancements",
@@ -329,13 +336,43 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   async _postItemUse(item) {
     const system = item.system ?? {};
+    const actor = getItemActor(item);
     const source = [system.source, system.sourcePage ? `p. ${system.sourcePage}` : null].filter(Boolean).join(", ");
     const description = hasText(system.description) ? `<p>${escapeHtml(system.description)}</p>` : "";
     const sourceLine = source ? `<p><small>${escapeHtml(source)}</small></p>` : "";
+    const usage = item.type === "attribute" ? buildCoreAttributeUsageContext(item) : null;
+    const usageLine = usage?.summary?.length
+      ? `<p><strong>Usage:</strong> ${escapeHtml(usage.summary.join(" | "))}</p>`
+      : "";
+    let energyLine = "";
+
+    if (item.type === "attribute" && actor) {
+      const energyCost = resolveCoreAttributeEnergyCost(item);
+      const update = {};
+
+      if (energyCost.amount > 0) {
+        const currentEnergy = Math.max(0, Number(actor.system?.combat?.energy?.value) || 0);
+        if (currentEnergy < energyCost.amount) {
+          ui.notifications?.warn(`${item.name} needs ${energyCost.amount} Energy, but ${actor.name} only has ${currentEnergy}.`);
+          energyLine = `<p><strong>Energy:</strong> ${escapeHtml(actor.name)} has ${currentEnergy}/${energyCost.amount} required. Cost not paid.</p>`;
+        } else {
+          const change = await applyEnergyChange(actor, energyCost.amount, "spend");
+          update["system.effectActive"] = true;
+          update["system.energyPaid"] = true;
+          energyLine = `<p><strong>Energy:</strong> spent ${change.amount}. EP ${change.current} &rarr; ${change.next} / ${change.max}.</p>`;
+        }
+      } else if (energyCost.requiresPayment) {
+        energyLine = `<p><strong>Energy:</strong> ${escapeHtml(energyCost.label)} requires manual payment tracking.</p>`;
+      } else {
+        update["system.effectActive"] = true;
+      }
+
+      if (Object.keys(update).length) await item.update(update);
+    }
 
     return ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: getItemActor(item) }),
-      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(item.type)}</strong></p>${description}${sourceLine}</article>`
+      speaker: ChatMessage.getSpeaker({ actor }),
+      content: `<article class="anime5e chat-card"><h3>${escapeHtml(item.name)}</h3><p><strong>${escapeHtml(item.type)}</strong></p>${usageLine}${energyLine}${description}${sourceLine}</article>`
     });
   }
 }

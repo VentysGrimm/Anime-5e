@@ -75,6 +75,14 @@ function numberOrFallback(value, fallback = 0) {
   return Number.isFinite(number) ? number : fallback;
 }
 
+function hasText(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
+function textValue(value) {
+  return String(value ?? "").trim();
+}
+
 function rankForItem(item) {
   return Math.max(0, Math.trunc(numberOrZero(item?.system?.rank)));
 }
@@ -108,6 +116,132 @@ function effectKeyForItem(item) {
 
   return Object.entries(EFFECTS_BY_NAME)
     .find(([name]) => normalizedName.startsWith(`${name} `))?.[1];
+}
+
+export function getCoreAttributeEffectKey(item) {
+  return effectKeyForItem(item);
+}
+
+function spellLikeLevelForItem(item, rank) {
+  const rawValue = textValue(item?.system?.spellLevel);
+  if (!rawValue) return Math.max(0, rank - 1);
+
+  const value = Number(rawValue);
+  if (Number.isFinite(value)) return Math.max(0, Math.trunc(value));
+  return Math.max(0, rank - 1);
+}
+
+function energyCostLabelForItem(item, rank) {
+  const system = item?.system ?? {};
+  const sourceId = sourceIdForItem(item);
+
+  if (sourceId === "core.attribute.spell-like-ability") {
+    const spellEnergyCost = textValue(system.spellEnergyCost);
+    if (spellEnergyCost) return spellEnergyCost;
+  }
+
+  const energyCost = textValue(system.energyCost);
+  if (energyCost) return energyCost;
+  return "";
+}
+
+export function resolveCoreAttributeEnergyCost(item, rank = rankForItem(item)) {
+  const label = energyCostLabelForItem(item, rank);
+  if (!label) return { label: "", amount: 0, requiresPayment: false };
+
+  const sourceId = sourceIdForItem(item);
+  const isSpellLikeCantrip = sourceId === "core.attribute.spell-like-ability" && spellLikeLevelForItem(item, rank) === 0;
+  if (isSpellLikeCantrip) {
+    const cantripLabel = /cantrip|at will/i.test(label) ? label : `${label}; cantrip at will`;
+    return { label: cantripLabel, amount: 0, requiresPayment: false };
+  }
+
+  if (/at will|no energy|none|free/i.test(label)) {
+    return { label, amount: 0, requiresPayment: false };
+  }
+
+  let amount = 0;
+  if (/rank\s*(?:squared|\^2)/i.test(label)) {
+    amount = rank ** 2;
+  } else if (/\brank\b/i.test(label) && /\b(?:energy|ep)\b/i.test(label)) {
+    amount = rank;
+  } else {
+    const match = label.match(/(\d+)\s*(?:energy|ep)\b/i) ?? label.match(/\b(?:energy|ep)\s*(\d+)/i);
+    amount = match ? Number(match[1]) : 0;
+  }
+
+  return {
+    label,
+    amount: Number.isFinite(amount) ? Math.max(0, Math.trunc(amount)) : 0,
+    requiresPayment: amount > 0 || /\b(?:energy|ep)\b/i.test(label)
+  };
+}
+
+function durationNeedsTracking(duration) {
+  if (!hasText(duration)) return false;
+  return !/\b(permanent|ongoing|continuous|constant|instant|at will)\b/i.test(duration);
+}
+
+function targetNeedsTracking(targetCount, scope) {
+  const targetText = textValue(targetCount);
+  const scopeText = textValue(scope);
+  const targetCountNeedsTracking = hasText(targetText) && !/\b(self|none|no target|0)\b/i.test(targetText);
+  const scopeNeedsTracking = hasText(scopeText)
+    && /\b(touch|target|external|area|radius|range|cone|line|zone)\b/i.test(scopeText)
+    && !/\bself\b/i.test(scopeText);
+
+  return targetCountNeedsTracking || scopeNeedsTracking;
+}
+
+export function buildCoreAttributeUsageContext(item, options = {}) {
+  const system = item?.system ?? {};
+  const rank = Math.max(0, Math.trunc(numberOrZero(options.rank ?? rankForItem(item))));
+  const effectKey = options.effectKey ?? effectKeyForItem(item);
+  const energy = resolveCoreAttributeEnergyCost(item, rank);
+  const scope = textValue(system.scope);
+  const duration = textValue(system.duration);
+  const targetCount = textValue(system.targetCount);
+  const durationRemaining = textValue(system.durationRemaining);
+  const targets = textValue(system.effectTargets);
+  const linkedTarget = textValue(system.linkedActorUuid) || textValue(system.linkedItemUuid) || textValue(system.linkedDocumentUuid);
+  const effectActive = system.effectActive !== false;
+  const energyPaid = system.energyPaid === true;
+  const blockers = [];
+
+  if (!effectActive) blockers.push("not marked active");
+  if (energy.requiresPayment && !energyPaid) blockers.push(`Energy cost ${energy.label} is not marked paid`);
+  if (durationNeedsTracking(duration) && !durationRemaining) blockers.push(`duration ${duration} needs remaining time`);
+  if (targetNeedsTracking(targetCount, scope) && !targets && !linkedTarget) blockers.push("scope or target count needs tracked targets");
+
+  const summary = [
+    `Rank ${rank}`,
+    energy.label ? `Energy: ${energy.label}${energy.amount ? ` (${energy.amount})` : ""}` : null,
+    scope ? `Scope: ${scope}` : null,
+    duration ? `Duration: ${duration}` : null,
+    durationRemaining ? `Remaining: ${durationRemaining}` : null,
+    targetCount ? `Targets: ${targetCount}` : null,
+    targets ? `Affected: ${targets}` : null,
+    !targets && linkedTarget ? "Linked target" : null
+  ].filter(Boolean);
+
+  return {
+    effectKey,
+    rank,
+    active: blockers.length === 0,
+    effectActive,
+    energy,
+    energyPaid,
+    scope,
+    duration,
+    targetCount,
+    durationRemaining,
+    targets,
+    linkedTarget,
+    blockers,
+    summary,
+    label: summary.join(" | "),
+    statusLabel: blockers.length ? "Not Applied" : "Applied"
+  };
 }
 
 function normalizeAbilityKey(value) {
@@ -170,12 +304,12 @@ function effectSource(item, fallbackLabel) {
   return String(item?.name ?? fallbackLabel);
 }
 
-function addAbilityBonus(result, item, effectKey, rank, sign) {
+function addAbilityBonus(result, item, effectKey, rank, sign, usage) {
   const target = abilityTargetForItem(item);
   const source = effectSource(item, effectKey);
   if (!target) {
     result.warnings.push(`${source}: set an Ability target before this effect can be applied.`);
-    result.unapplied.push({ key: effectKey, source, rank });
+    result.unapplied.push({ key: effectKey, source, rank, usage });
     return;
   }
 
@@ -187,7 +321,11 @@ function addAbilityBonus(result, item, effectKey, rank, sign) {
     target,
     label: effectKey === "augmented" ? "Augmented" : "Degraded",
     detail: `${ABILITY_LABELS[target]} ${signedNumber(amount)}`,
-    amount
+    amount,
+    rank,
+    usage,
+    usageSummary: usage?.summary ?? [],
+    usageLabel: usage?.label ?? ""
   });
 }
 
@@ -232,51 +370,58 @@ export function calculateCoreAttributeEffects({ system = {}, items = [] } = {}) 
     const rank = rankForItem(item);
     if (!rank) continue;
     const source = effectSource(item, effectKey);
+    const usage = buildCoreAttributeUsageContext(item, { effectKey, rank });
+
+    if (!usage.active) {
+      result.unapplied.push({ key: effectKey, source, rank, usage });
+      result.warnings.push(`${source}: ${usage.blockers.join("; ")}. Derived effect not applied.`);
+      continue;
+    }
 
     if (effectKey === "acBonus") {
       result.armourClassBonus += rank;
-      result.effects.push({ key: effectKey, source, label: "AC Bonus", detail: `Armour Class +${rank}`, amount: rank });
+      result.effects.push({ key: effectKey, source, label: "AC Bonus", detail: `Armour Class +${rank}`, amount: rank, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
     } else if (effectKey === "augmented") {
-      addAbilityBonus(result, item, effectKey, rank, 1);
+      addAbilityBonus(result, item, effectKey, rank, 1, usage);
     } else if (effectKey === "energised") {
       const amount = rank * 10;
       result.energyMaxBonus += amount;
-      result.effects.push({ key: effectKey, source, label: "Energised", detail: `Energy max +${amount}`, amount });
+      result.effects.push({ key: effectKey, source, label: "Energised", detail: `Energy max +${amount}`, amount, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
     } else if (effectKey === "tough") {
       const amount = rank * 10;
       result.hitPointPercentBonus += amount;
-      result.effects.push({ key: effectKey, source, label: "Tough", detail: `Hit Point max +${amount}%`, amount });
+      result.effects.push({ key: effectKey, source, label: "Tough", detail: `Hit Point max +${amount}%`, amount, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
     } else if (effectKey === "fast") {
       result.movement.fastRanks += rank;
       const multiplier = movementMultiplierLabel(rank, FAST_MULTIPLIERS);
-      result.effects.push({ key: effectKey, source, label: "Fast", detail: `Ground speed x${multiplier}`, amount: rank });
+      result.effects.push({ key: effectKey, source, label: "Fast", detail: `Ground speed x${multiplier}`, amount: rank, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
       if (rank >= FAST_MULTIPLIERS.length) result.warnings.push(`${source}: Fast Rank ${rank} exceeds the encoded Rank 6 speed table; displaying Rank 6 movement.`);
     } else if (effectKey === "flight") {
       result.movement.flightRank = Math.max(result.movement.flightRank, rank);
       const speed = descriptiveSpeedLabel(rank);
-      result.effects.push({ key: effectKey, source, label: "Flight", detail: speed ? `Flight up to ${speed}` : `Flight Rank ${rank}`, amount: rank });
+      result.effects.push({ key: effectKey, source, label: "Flight", detail: speed ? `Flight up to ${speed}` : `Flight Rank ${rank}`, amount: rank, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
       if (rank >= DESCRIPTIVE_SPEED_LABELS.length) result.warnings.push(`${source}: Flight Rank ${rank} exceeds the encoded Rank 6 speed table; displaying Rank 6 movement.`);
     } else if (effectKey === "specialMovement") {
       const modes = movementModesForItem(item);
       result.movement.specialModes.push(...modes);
       const detail = modes.length ? `Special Movement: ${modes.join(", ")}` : `Special Movement: ${rank} mode${rank === 1 ? "" : "s"} to define`;
-      result.effects.push({ key: effectKey, source, label: "Special Movement", detail, amount: rank });
+      result.effects.push({ key: effectKey, source, label: "Special Movement", detail, amount: rank, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
       if (!modes.length) result.warnings.push(`${source}: enter selected movement modes on the item sheet.`);
     } else if (effectKey === "waterSpeed") {
       result.movement.waterSpeedRank = Math.max(result.movement.waterSpeedRank, rank);
       const speed = descriptiveSpeedLabel(rank);
-      result.effects.push({ key: effectKey, source, label: "Water Speed", detail: speed ? `Water speed up to ${speed}` : `Water Speed Rank ${rank}`, amount: rank });
+      result.effects.push({ key: effectKey, source, label: "Water Speed", detail: speed ? `Water speed up to ${speed}` : `Water Speed Rank ${rank}`, amount: rank, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
       if (rank >= DESCRIPTIVE_SPEED_LABELS.length) result.warnings.push(`${source}: Water Speed Rank ${rank} exceeds the encoded Rank 6 speed table; displaying Rank 6 movement.`);
     } else if (effectKey === "degraded") {
-      addAbilityBonus(result, item, effectKey, rank, -1);
+      addAbilityBonus(result, item, effectKey, rank, -1, usage);
     } else if (effectKey === "fragile") {
       const amount = rank * -10;
       result.hitPointPercentBonus += amount;
-      result.effects.push({ key: effectKey, source, label: "Fragile", detail: `Hit Point max ${amount}%`, amount });
+      result.effects.push({ key: effectKey, source, label: "Fragile", detail: `Hit Point max ${amount}%`, amount, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
     } else if (effectKey === "slow") {
       result.movement.slowRanks += rank;
       const divisor = movementMultiplierLabel(rank, SLOW_DIVISORS);
-      result.effects.push({ key: effectKey, source, label: "Slow", detail: `Ground speed /${divisor}`, amount: rank });
+      result.effects.push({ key: effectKey, source, label: "Slow", detail: `Ground speed /${divisor}`, amount: rank, rank, usage, usageSummary: usage.summary, usageLabel: usage.label });
       if (rank >= SLOW_DIVISORS.length) result.warnings.push(`${source}: Slow Rank ${rank} exceeds the encoded -3 Point speed table; displaying Rank 3 movement.`);
     }
   }
@@ -318,10 +463,12 @@ export function buildCoreAttributeEffectContext({ system = {}, items = [] } = {}
   totals.push(...effects.movement.summary);
 
   return {
-    active: effects.effects.length > 0 || effects.warnings.length > 0,
+    active: effects.effects.length > 0 || effects.warnings.length > 0 || effects.unapplied.length > 0,
     effects: effects.effects,
+    unapplied: effects.unapplied,
     movement: effects.movement,
     warnings: effects.warnings,
+    hasUnapplied: effects.unapplied.length > 0,
     hasTotals: totals.length > 0,
     totals
   };
