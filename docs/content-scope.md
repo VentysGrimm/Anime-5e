@@ -39,6 +39,7 @@ Every source-backed entry must identify:
 - Source book or product title.
 - PDF viewer page number when available.
 - Module or source abbreviation.
+- Module id when the content lives in or is staged for a standalone Foundry module.
 - Content category such as species, class, attribute, defect, item, creature, journal, adventure, or setting.
 - Stable source ID and import ID.
 
@@ -49,6 +50,8 @@ Use the source-ID pattern documented in `docs/supplemental-source-conventions.md
 ```
 
 Core entries use the same principle but stay under the Core Rules source manifests.
+
+Standalone module setup and validation are documented in `docs/module-creation-workflow.md`.
 
 ## Text Policy
 

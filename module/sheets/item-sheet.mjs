@@ -7,7 +7,18 @@ import { ENERGY_USAGE_MODES, applyEnergyChange, getEnergyUsageMode } from "../ru
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 
-const BASE_FIELDS = new Set(["description", "rank", "cost", "source", "sourceId", "sourcePage", "importId"]);
+const BASE_FIELDS = new Set([
+  "description",
+  "rank",
+  "cost",
+  "source",
+  "sourceId",
+  "sourcePage",
+  "sourceAbbreviation",
+  "sourceModuleId",
+  "sourceCategory",
+  "importId"
+]);
 const SPECIES_TRAIT_FIELDS = new Set([
   "speciesSize",
   "abilityBonuses",
@@ -184,6 +195,9 @@ const FIELD_LABELS = {
   shieldSize: "Shield Size",
   sizeAndType: "Size and Type",
   sizeCategory: "Size Category",
+  sourceAbbreviation: "Source Abbreviation",
+  sourceCategory: "Source Category",
+  sourceModuleId: "Source Module ID",
   spellEffect: "Spell Effect",
   spellEnergyCost: "Spell Energy Cost",
   spellcastingAbility: "Spellcasting Ability",

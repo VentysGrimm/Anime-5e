@@ -57,7 +57,10 @@
       "Rank": "Rank",
       "Save": "Save",
       "Source": "Source",
+      "SourceAbbreviation": "Source Abbreviation",
+      "SourceCategory": "Source Category",
       "SourceId": "Source ID",
+      "SourceModuleId": "Source Module ID",
       "SourcePage": "Source Page",
       "Type": "Type",
       "Value": "Value"

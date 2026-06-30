@@ -201,6 +201,9 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
       source: new fields.SchemaField({
         book: textField(),
         page: optionalNumberField(),
+        abbreviation: textField(),
+        moduleId: textField(),
+        category: textField(),
         sourceId: textField(),
         importId: textField()
       }),

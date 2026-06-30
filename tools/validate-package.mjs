@@ -177,6 +177,9 @@ function buildDocumentFromEntry(source, entry) {
   system.source = entry.source ?? source.sourceBook ?? system.source ?? "";
   system.sourceId = sourceId;
   system.sourcePage = entry.sourcePage ?? system.sourcePage ?? null;
+  system.sourceAbbreviation = entry.sourceAbbreviation ?? source.sourceAbbreviation ?? system.sourceAbbreviation ?? "";
+  system.sourceModuleId = entry.sourceModuleId ?? source.sourceModuleId ?? system.sourceModuleId ?? "";
+  system.sourceCategory = entry.sourceCategory ?? source.contentCategory ?? system.sourceCategory ?? type ?? "";
   system.importId = entry.importId ?? sourceId;
 
   if (type === "attribute") {
@@ -203,6 +206,9 @@ function buildDocumentFromEntry(source, entry) {
         source: {
           book: system.source,
           page: system.sourcePage,
+          abbreviation: system.sourceAbbreviation,
+          moduleId: system.sourceModuleId,
+          category: system.sourceCategory,
           importId: system.importId
         }
       }
@@ -240,6 +246,9 @@ function documentSourceMetadata(document) {
   return {
     book: flagSource.book ?? systemSourceObject.book ?? systemSourceBook ?? "",
     page: flagSource.page ?? systemSourceObject.page ?? document.system?.sourcePage ?? null,
+    abbreviation: flagSource.abbreviation ?? systemSourceObject.abbreviation ?? document.system?.sourceAbbreviation ?? "",
+    moduleId: flagSource.moduleId ?? systemSourceObject.moduleId ?? document.system?.sourceModuleId ?? "",
+    category: flagSource.category ?? systemSourceObject.category ?? document.system?.sourceCategory ?? document.type ?? "",
     importId: flagSource.importId ?? systemSourceObject.importId ?? document.system?.importId ?? null
   };
 }

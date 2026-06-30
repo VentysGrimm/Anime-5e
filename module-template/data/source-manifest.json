@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-example-expansion.sources",
+  "label": "Anime 5e Example Expansion Sources",
+  "sourceBook": "Anime 5e Example Expansion",
+  "sourceAbbreviation": "EXAMPLE",
+  "sourceModuleId": "anime5e-example-expansion",
+  "contentCategory": "template",
+  "includes": [
+    "data/sources/example-character-options.json"
+  ]
+}

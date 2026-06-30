@@ -70,6 +70,18 @@
           Page
           <input type="number" name="system.source.page" value="{{system.source.page}}" min="0" {{#unless editable}}disabled{{/unless}}>
         </label>
+        <label>
+          Source Abbrev.
+          <input type="text" name="system.source.abbreviation" value="{{system.source.abbreviation}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Source Module
+          <input type="text" name="system.source.moduleId" value="{{system.source.moduleId}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
+        <label>
+          Source Category
+          <input type="text" name="system.source.category" value="{{system.source.category}}" {{#unless editable}}disabled{{/unless}}>
+        </label>
       </div>
     </section>
 

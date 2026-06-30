@@ -138,6 +138,9 @@ function buildDocumentFromEntry(source, entry) {
   system.source = entry.source ?? source.sourceBook ?? system.source ?? "";
   system.sourceId = sourceId;
   system.sourcePage = entry.sourcePage ?? system.sourcePage ?? null;
+  system.sourceAbbreviation = entry.sourceAbbreviation ?? source.sourceAbbreviation ?? system.sourceAbbreviation ?? "";
+  system.sourceModuleId = entry.sourceModuleId ?? source.sourceModuleId ?? system.sourceModuleId ?? "";
+  system.sourceCategory = entry.sourceCategory ?? source.contentCategory ?? system.sourceCategory ?? type ?? "";
   system.importId = entry.importId ?? sourceId;
 
   if (type === "attribute") {
@@ -157,6 +160,9 @@ function buildDocumentFromEntry(source, entry) {
     source: {
       book: system.source,
       page: system.sourcePage,
+      abbreviation: system.sourceAbbreviation,
+      moduleId: system.sourceModuleId,
+      category: system.sourceCategory,
       importId: system.importId
     }
   };
@@ -176,10 +182,13 @@ function sourceIdForDocument(document) {
     ?? document.system?.source?.sourceId;
 }
 
-function sourceForDocument(document) {
+function sourceForDocument(document, source = {}) {
   return document.flags?.[SYSTEM_ID]?.source ?? {
-    book: document.system?.source?.book ?? document.system?.source ?? "",
-    page: document.system?.source?.page ?? document.system?.sourcePage ?? null,
+    book: document.system?.source?.book ?? document.system?.source ?? source.sourceBook ?? "",
+    page: document.system?.source?.page ?? document.system?.sourcePage ?? source.sourcePage ?? null,
+    abbreviation: document.system?.source?.abbreviation ?? document.system?.sourceAbbreviation ?? source.sourceAbbreviation ?? "",
+    moduleId: document.system?.source?.moduleId ?? document.system?.sourceModuleId ?? source.sourceModuleId ?? "",
+    category: document.system?.source?.category ?? document.system?.sourceCategory ?? source.contentCategory ?? document.type ?? "",
     importId: document.system?.source?.importId ?? document.system?.importId ?? sourceIdForDocument(document)
   };
 }
@@ -224,7 +233,7 @@ async function ensurePackFolders(pack, folderDefinitions, documentType) {
   return foldersByName;
 }
 
-function prepareDocument(sourceDocument, foldersByName) {
+function prepareDocument(sourceDocument, foldersByName, source = {}) {
   const document = foundry.utils.deepClone(sourceDocument);
   const logicalFolder = document.folder;
   const folder = logicalFolder ? foldersByName.get(logicalFolder) : null;
@@ -235,10 +244,27 @@ function prepareDocument(sourceDocument, foldersByName) {
 
   if (folder) document.folder = folder.id;
 
+  if (document.system) {
+    if (source.sourceAbbreviation && !document.system.sourceAbbreviation) {
+      document.system.sourceAbbreviation = source.sourceAbbreviation;
+    }
+    if (source.sourceModuleId && !document.system.sourceModuleId) {
+      document.system.sourceModuleId = source.sourceModuleId;
+    }
+    if (source.contentCategory && !document.system.sourceCategory) {
+      document.system.sourceCategory = source.contentCategory;
+    }
+    if (document.system.source && typeof document.system.source === "object") {
+      document.system.source.abbreviation ??= source.sourceAbbreviation ?? "";
+      document.system.source.moduleId ??= source.sourceModuleId ?? "";
+      document.system.source.category ??= source.contentCategory ?? document.type ?? "";
+    }
+  }
+
   document.flags ??= {};
   document.flags[SYSTEM_ID] ??= {};
   document.flags[SYSTEM_ID].sourceId ??= sourceIdForDocument(document);
-  document.flags[SYSTEM_ID].source ??= sourceForDocument(document);
+  document.flags[SYSTEM_ID].source ??= sourceForDocument(document, source);
 
   return document;
 }
@@ -267,7 +293,7 @@ async function importSourceIntoPack(source) {
       fields: ["name", "type", "folder", `flags.${SYSTEM_ID}.sourceId`]
     }));
 
-    const documents = getSourceDocuments(source).map((document) => prepareDocument(document, foldersByName));
+    const documents = getSourceDocuments(source).map((document) => prepareDocument(document, foldersByName, source));
     const toCreate = [];
     const toUpdate = [];
 

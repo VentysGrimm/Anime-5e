@@ -26,9 +26,12 @@ Then create a world using the `Anime 5e` game system.
 - `styles/anime5e.css` contains system sheet styles.
 - `packs/` is a tracked shell for Foundry compendium databases created at runtime.
 - `tools/validate-package.mjs` performs a lightweight local sanity check.
+- `tools/validate-content-module.mjs` validates standalone Anime 5e content modules created from `module-template/`.
+- `module-template/` contains a reusable Foundry module scaffold for source-backed Anime 5e expansions.
 - `docs/issue-8-verification.md` records the first-pass source review and playable-system verification scope.
 - `docs/actor-data-strategy.md` records the Character Folio actor-vs-owned-Item data strategy.
 - `docs/content-scope.md` defines base-system and supplemental-module content boundaries.
+- `docs/module-creation-workflow.md` explains how to create and validate standalone content modules.
 - `docs/foundry-v14-smoke-checklist.md` records the manual runtime checks needed before closing Foundry-load verification work.
 
 ## Compendium Packs
@@ -46,4 +49,7 @@ pack directory is accepted only when the pack has a matching source manifest in
 Supplement source naming and folder conventions are documented in
 `docs/supplemental-source-conventions.md`. Broader base-system and optional
 module boundaries are documented in `docs/content-scope.md`.
+
+New standalone expansion modules should start from `module-template/` and be
+checked with `node tools\validate-content-module.mjs <module-root>`.
 

@@ -135,6 +135,9 @@ class Anime5eBaseItemData extends foundry.abstract.TypeDataModel {
       source: textField(),
       sourceId: textField(),
       sourcePage: optionalNumberField(),
+      sourceAbbreviation: textField(),
+      sourceModuleId: textField(),
+      sourceCategory: textField(),
       importId: textField()
     };
   }

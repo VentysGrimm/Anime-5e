@@ -1,0 +1,35 @@
+{
+  "pack": "anime5e-example-expansion.character-options",
+  "documentType": "Item",
+  "sourceBook": "Anime 5e Example Expansion",
+  "sourceAbbreviation": "EXAMPLE",
+  "sourceModuleId": "anime5e-example-expansion",
+  "contentCategory": "attribute",
+  "folders": [
+    {
+      "name": "Example Attributes",
+      "color": "#5b7f95"
+    }
+  ],
+  "entries": [
+    {
+      "name": "Example Attribute",
+      "type": "attribute",
+      "folder": "Example Attributes",
+      "img": "icons/svg/aura.svg",
+      "sourceId": "example.attribute.example-attribute",
+      "importId": "example.attribute.example-attribute",
+      "sourcePage": 1,
+      "rank": 1,
+      "cost": 1,
+      "summary": "Template Attribute entry showing required Anime 5e source tags.",
+      "system": {
+        "sourceAbbreviation": "EXAMPLE",
+        "sourceModuleId": "anime5e-example-expansion",
+        "sourceCategory": "attribute",
+        "category": "Template",
+        "progression": "Replace this with source-backed progression notes."
+      }
+    }
+  ]
+}
