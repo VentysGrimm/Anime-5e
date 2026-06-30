@@ -1,0 +1,43 @@
+{
+  "pack": "anime5e.supplemental-items",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Items - Adventuring Accessories",
+      "color": "#8c7a4f"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Arcane Lodestone",
+      "type": "itemOfPower",
+      "folder": "Items - Adventuring Accessories",
+      "img": "icons/magic/symbols/rune-sigil-black-pink.webp",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Adventuring Accessories, PDF p. 2.</p><p><strong>Item Rank:</strong> 4. <strong>Point Cost:</strong> 16.</p><p><strong>Rules Summary:</strong> Smooth ebony magical stone that expands the wielder's Energy reserve, protects against magical damage and bodily alteration, and grants an extra action while the user's personal Energy is below half of its adjusted maximum.</p><p><strong>Attribute Notes:</strong> Energised +60 Energy; Extra Actions with environmental Energy condition; Immunity - Lesser against magic damage; Immutable check bonus against bodily effects.</p>",
+        "rank": 4,
+        "cost": 16,
+        "source": "Anime 5E Adventuring Accessories",
+        "sourceId": "adventuring-accessories.item.arcane-lodestone",
+        "sourcePage": 2,
+        "importId": "adventuring-accessories.item.arcane-lodestone",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Magical Artefact",
+        "properties": "Rank 4 Item; 20 construction Points; Energy, action, immunity, and resistance effects"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "adventuring-accessories.item.arcane-lodestone",
+          "source": {
+            "book": "Anime 5E Adventuring Accessories",
+            "page": 2,
+            "importId": "adventuring-accessories.item.arcane-lodestone"
+          }
+        }
+      }
+    }
+  ]
+}

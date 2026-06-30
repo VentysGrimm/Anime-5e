@@ -7,7 +7,9 @@
     "data/sources/supplements/character-options/species-bonus-character-options.json",
     "data/sources/supplements/character-options/species-hybrid-species.json",
     "data/sources/supplements/character-options/import-test.json",
+    "data/sources/supplements/items/adventuring-accessories.json",
     "data/sources/supplements/items/import-test.json",
+    "data/sources/supplements/items/mounts-and-monsters.json",
     "data/sources/supplements/creatures/import-test.json",
     "data/sources/supplements/journals/import-test.json"
   ]

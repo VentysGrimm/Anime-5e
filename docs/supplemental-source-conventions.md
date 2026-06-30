@@ -11,8 +11,8 @@ Use these generated packs unless a later slice deliberately creates a dedicated 
 | Source category | Pack |
 | --- | --- |
 | Species, classes, backgrounds, lifepaths, proficiencies, powers, spells, techniques | `anime5e.supplemental-character-options` |
-| Equipment, weapons, armour, shields, materials, vehicles, mecha, Items of Power | `anime5e.supplemental-items` |
-| Monsters, NPCs, neomorphs, mounts, companions, threats | `anime5e.supplemental-creatures` |
+| Equipment, weapons, armour, shields, materials, vehicles, mecha, mounts, Items of Power | `anime5e.supplemental-items` |
+| Monsters, NPCs, neomorphs, companions, threats | `anime5e.supplemental-creatures` |
 | Settings, adventures, source guides, conversion notes, GM/player references | `anime5e.supplemental-journals` |
 
 Every supplemental source entry must include:
@@ -32,7 +32,7 @@ Examples:
 - `bonus-character-options.class.mindmancer`
 - `hybrid-species.species.asrai-dawn-elf-hybrid`
 - `adventuring-accessories.item.arcane-lodestone`
-- `mounts-and-monsters.creature.phase-griffon`
+- `mounts-and-monsters.mount.fae-war-corgi`
 - `monstrum-libri-vol1.creature.bolegom`
 - `folstavia.journal.infinite-crossroads`
 - `beyonder-worlds.item.pulse-rifle`
