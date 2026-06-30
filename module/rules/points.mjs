@@ -164,6 +164,11 @@ export function calculateRecommendedDiscretionaryPoints(level) {
   return DEFAULT_STARTING_DISCRETIONARY_POINTS + Math.max(0, normalizeCharacterLevel(level) - 1);
 }
 
+export function proficiencyBonusForLevel(level) {
+  const normalizedLevel = normalizeCharacterLevel(level);
+  return 2 + Math.floor((Math.min(normalizedLevel, 20) - 1) / 4);
+}
+
 export function summarizeClassLevelState(items = [], actorLevel = 1) {
   const normalizedActorLevel = normalizeCharacterLevel(actorLevel);
   const classes = (items ?? [])
@@ -186,9 +191,7 @@ export function summarizeClassLevelState(items = [], actorLevel = 1) {
   if (classItemCount && !hasClassLevels) warnings.push("No Class item with a level is attached yet.");
   if (incompleteClassNames.length) warnings.push(`Class items without a level: ${incompleteClassNames.join(", ")}.`);
   if (mismatch) warnings.push(`Owned class item levels total ${classLevelTotal}, but actor level is ${normalizedActorLevel}.`);
-  if (classItemCount > 1) {
-    warnings.push("Multiclass support is summary-only; review duplicate class-granted proficiencies, Attribute Ranks, and point reallocations manually.");
-  }
+  if (classItemCount > 1) warnings.push("Multiclass support is active; review duplicate class-granted proficiencies, Attribute Ranks, and point reallocations manually.");
 
   const statusLabel = !classItemCount
     ? "No class items"
@@ -240,71 +243,72 @@ export function summarizeSingleClassBenefits(items = [], actorLevel = 1) {
     };
   }
 
-  if (classItems.length > 1) {
-    warnings.push("Multiple Class items are attached; class-derived bonus points and benefits are not auto-applied in this slice.");
+  const classSummaries = classItems.map((classItem) => {
+    const system = classItem.system ?? {};
+    const explicitClassLevel = positiveNumber(system.level);
+    const className = classItem.name ?? "Class";
+    if (!explicitClassLevel) warnings.push(`${className} has no class level; class-derived benefits are not applied until the Class item level is set.`);
+
+    const classLevel = Math.min(20, explicitClassLevel);
+    const progression = Array.isArray(system.progression) ? system.progression : [];
+    if (explicitClassLevel && !progression.length) warnings.push(`${className} has no structured progression data.`);
+
+    const rows = progression
+      .filter((row) => positiveNumber(row.level) > 0 && positiveNumber(row.level) <= classLevel)
+      .sort((a, b) => positiveNumber(a.level) - positiveNumber(b.level));
+    const hitDice = system.hitDice ?? "";
+    const savingThrows = system.savingThrows ?? "";
+    const proficiencies = rows
+      .map((row) => row.proficiencies)
+      .filter((value) => typeof value === "string" && value.trim().length)
+      .map((value) => `${className}: ${value}`)
+      .join("; ");
+    const benefits = rows.flatMap((row) => {
+      const rowBenefits = Array.isArray(row.benefits) ? row.benefits : [];
+      return rowBenefits.map((benefit) => ({
+        level: positiveNumber(row.level),
+        className,
+        label: `${className} L${positiveNumber(row.level)}: ${formatGrantedBenefit(benefit)}`,
+        points: positiveNumber(benefit.points),
+        notes: benefit.notes ?? ""
+      }));
+    });
+
     return {
-      active: false,
-      classCount: classItems.length,
-      warnings,
-      bonusPoints: 0,
-      benefits: []
+      className,
+      classLevel,
+      hitDice,
+      hitDicePool: hitDice && classLevel ? `${classLevel}${hitDice}` : "",
+      savingThrows,
+      proficiencies,
+      bonusPoints: rows.reduce((total, row) => total + positiveNumber(row.points), 0),
+      benefits
     };
-  }
-
-  const classItem = classItems[0];
-  const system = classItem.system ?? {};
-  const explicitClassLevel = positiveNumber(system.level);
-  if (!explicitClassLevel) {
-    warnings.push(`${classItem.name ?? "Class"} has no class level; class-derived benefits are not applied until the Class item level is set.`);
-    return {
-      active: false,
-      classCount: classItems.length,
-      className: classItem.name ?? "Class",
-      warnings,
-      bonusPoints: 0,
-      benefits: []
-    };
-  }
-
-  const classLevel = Math.min(20, explicitClassLevel || normalizeCharacterLevel(actorLevel));
-  const progression = Array.isArray(system.progression) ? system.progression : [];
-  if (!progression.length) {
-    warnings.push(`${classItem.name ?? "Class"} has no structured progression data.`);
-  }
-
-  const rows = progression
-    .filter((row) => positiveNumber(row.level) > 0 && positiveNumber(row.level) <= classLevel)
-    .sort((a, b) => positiveNumber(a.level) - positiveNumber(b.level));
-  const lastRow = rows[rows.length - 1] ?? null;
-  const bonusPoints = rows.reduce((total, row) => total + positiveNumber(row.points), 0);
-  const hitDice = system.hitDice ?? "";
-  const savingThrows = system.savingThrows ?? "";
-  const proficiencies = rows
-    .map((row) => row.proficiencies)
-    .filter((value) => typeof value === "string" && value.trim().length)
-    .join("; ");
-  const benefits = rows.flatMap((row) => {
-    const rowBenefits = Array.isArray(row.benefits) ? row.benefits : [];
-    return rowBenefits.map((benefit) => ({
-      level: positiveNumber(row.level),
-      label: formatGrantedBenefit(benefit),
-      points: positiveNumber(benefit.points),
-      notes: benefit.notes ?? ""
-    }));
   });
 
+  if (classItems.length > 1) warnings.push("Multiple Class items are attached; review duplicate proficiencies, duplicate benefits, and multiclass reallocations manually.");
+
+  const activeClasses = classSummaries.filter((entry) => entry.classLevel > 0);
+  const totalClassLevel = activeClasses.reduce((total, entry) => total + entry.classLevel, 0);
+  const benefits = activeClasses.flatMap((entry) => entry.benefits);
+  const bonusPoints = activeClasses.reduce((total, entry) => total + entry.bonusPoints, 0);
+
   return {
-    active: true,
+    active: activeClasses.length > 0,
     classCount: classItems.length,
-    className: classItem.name ?? "Class",
-    classLevel,
-    hitDice,
-    hitDicePool: hitDice ? `${classLevel}${hitDice}` : "",
-    proficiencyBonus: positiveNumber(lastRow?.proficiencyBonus),
-    savingThrows,
-    proficiencies,
+    className: classItems.length > 1 ? "Multiple Classes" : activeClasses[0]?.className ?? classItems[0]?.name ?? "Class",
+    classLevel: totalClassLevel || normalizeCharacterLevel(actorLevel),
+    hitDice: activeClasses.map((entry) => entry.hitDice).filter(Boolean).join(", "),
+    hitDicePool: activeClasses.map((entry) => entry.hitDicePool).filter(Boolean).join(", "),
+    proficiencyBonus: proficiencyBonusForLevel(totalClassLevel || actorLevel),
+    savingThrows: activeClasses
+      .filter((entry) => typeof entry.savingThrows === "string" && entry.savingThrows.trim())
+      .map((entry) => `${entry.className}: ${entry.savingThrows}`)
+      .join("; "),
+    proficiencies: activeClasses.map((entry) => entry.proficiencies).filter(Boolean).join("; "),
     bonusPoints,
     benefits,
+    classes: classSummaries,
     warnings
   };
 }

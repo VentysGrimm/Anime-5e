@@ -1,3 +1,5 @@
+import { proficiencyBonusForLevel } from "./points.mjs";
+
 const SPECIES_TYPES = new Set(["species"]);
 const SIZE_TEMPLATE_TYPES = new Set(["sizeTemplate"]);
 const CLASS_TYPES = new Set(["class"]);
@@ -52,6 +54,40 @@ function classSlotForItem(actor, item) {
     if (classes[key]?.name === itemName) return key;
   }
   return firstEmptyClassSlot(actor);
+}
+
+function classItemsForActor(actor, pendingItem = null) {
+  const items = [...(actor?.items?.contents ?? [])].filter((item) => item?.type === "class");
+  if (pendingItem?.type === "class" && !items.some((item) => item.id === pendingItem.id || item.uuid === pendingItem.uuid)) {
+    items.push(pendingItem);
+  }
+  return items;
+}
+
+function classProgressionUpdate(actor, pendingItem = null) {
+  const classItems = classItemsForActor(actor, pendingItem);
+  const classRows = classItems.map((item) => ({
+    name: item.name ?? "",
+    level: Math.max(0, numberOrZero(item.system?.level)),
+    hitDice: item.system?.hitDice ?? ""
+  }));
+  const totalLevel = classRows.reduce((total, row) => total + row.level, 0);
+  const update = {};
+  const slots = ["primary", "secondary", "tertiary"];
+
+  for (const [index, slot] of slots.entries()) {
+    const row = classRows[index] ?? { name: "", level: 0, hitDice: "" };
+    update[`system.progression.classes.${slot}.name`] = row.name;
+    update[`system.progression.classes.${slot}.level`] = row.level;
+    update[`system.progression.classes.${slot}.hitDice`] = row.hitDice;
+  }
+
+  if (totalLevel > 0) {
+    update["system.level"] = totalLevel;
+    update["system.combat.proficiencyBonus"] = proficiencyBonusForLevel(totalLevel);
+  }
+
+  return update;
 }
 
 export function summarizePointState(actor) {
@@ -148,16 +184,15 @@ export async function removeSizeTemplateItem(actor, item) {
 async function applyClass(actor, item) {
   const slot = classSlotForItem(actor, item);
   const level = Math.max(1, numberOrZero(item.system?.level));
+  if (numberOrZero(item.system?.level) < 1) await item.update({ "system.level": level });
   const update = {
     [`system.progression.classes.${slot}.name`]: item.name,
     [`system.progression.classes.${slot}.level`]: level,
     [`system.progression.classes.${slot}.hitDice`]: item.system?.hitDice ?? "",
+    ...classProgressionUpdate(actor, item),
     "system.creation.classApplied": item.uuid ?? item.id,
     ...summarizePointState(actor)
   };
-
-  const currentLevel = numberOrZero(actor.system?.level);
-  if (currentLevel < level) update["system.level"] = level;
 
   return actor.update(update);
 }
@@ -192,6 +227,12 @@ export function registerCreationWorkflowHooks() {
       const applied = String(actor.system?.creation?.sizeTemplateApplied ?? "");
       if (applied === item.uuid || applied === item.id) return applySizeTemplateItem(actor, item);
     }
+    if (CLASS_TYPES.has(item.type)) {
+      return actor.update({
+        ...classProgressionUpdate(actor, item),
+        ...summarizePointState(actor)
+      });
+    }
     await refreshCreationValidation(actor);
   });
 
@@ -201,6 +242,12 @@ export function registerCreationWorkflowHooks() {
     if (!actor) return;
     if (SPECIES_TYPES.has(item.type)) return removeSpeciesItem(actor, item);
     if (SIZE_TEMPLATE_TYPES.has(item.type)) return removeSizeTemplateItem(actor, item);
+    if (CLASS_TYPES.has(item.type)) {
+      return actor.update({
+        ...classProgressionUpdate(actor),
+        ...summarizePointState(actor)
+      });
+    }
     await refreshCreationValidation(actor);
   });
 }
