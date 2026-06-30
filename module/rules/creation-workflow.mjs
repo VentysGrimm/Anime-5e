@@ -11,6 +11,31 @@ function numberOrZero(value) {
   return Number.isFinite(number) ? number : 0;
 }
 
+function textValue(value) {
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function sourceArmourClass(actor) {
+  return numberOrZero(
+    actor?._source?.system?.combat?.armourClass
+      ?? actor?.system?.combat?.baseArmourClass
+      ?? actor?.system?.combat?.armourClass
+      ?? 10
+  ) || 10;
+}
+
+function sizeTemplateState(item) {
+  const system = item?.system ?? {};
+
+  return {
+    armourClassModifier: numberOrZero(system.armourClassModifier),
+    attackModifier: numberOrZero(system.attackModifier),
+    damageModifier: textValue(system.damageModifier),
+    strengthModifier: textValue(system.strengthModifier),
+    movementModifier: textValue(system.movementModifier)
+  };
+}
+
 function firstEmptyClassSlot(actor) {
   const classes = actor?.system?.progression?.classes ?? {};
   for (const key of ["primary", "secondary", "tertiary"]) {
@@ -78,9 +103,18 @@ export async function removeSpeciesItem(actor, item) {
 }
 
 export async function applySizeTemplateItem(actor, item) {
+  const previousArmourClassModifier = numberOrZero(actor.system?.creation?.sizeTemplateArmourClassModifier);
+  const nextState = sizeTemplateState(item);
+  const nextArmourClass = Math.max(0, sourceArmourClass(actor) - previousArmourClassModifier + nextState.armourClassModifier);
   const update = {
     "system.identity.sizeTemplate": item.name,
     "system.creation.sizeTemplateApplied": item.uuid ?? item.id,
+    "system.creation.sizeTemplateArmourClassModifier": nextState.armourClassModifier,
+    "system.creation.sizeTemplateAttackModifier": nextState.attackModifier,
+    "system.creation.sizeTemplateDamageModifier": nextState.damageModifier,
+    "system.creation.sizeTemplateStrengthModifier": nextState.strengthModifier,
+    "system.creation.sizeTemplateMovementModifier": nextState.movementModifier,
+    "system.combat.armourClass": nextArmourClass,
     ...summarizePointState(actor)
   };
 
@@ -92,6 +126,7 @@ export async function removeSizeTemplateItem(actor, item) {
   const identitySizeTemplate = String(actor.system?.identity?.sizeTemplate ?? "");
   const itemRefs = new Set([item?.uuid, item?.id].filter(Boolean).map(String));
   const shouldClear = !item || itemRefs.has(applied) || identitySizeTemplate === item.name;
+  const previousArmourClassModifier = numberOrZero(actor.system?.creation?.sizeTemplateArmourClassModifier);
   const update = {
     ...summarizePointState(actor)
   };
@@ -99,6 +134,12 @@ export async function removeSizeTemplateItem(actor, item) {
   if (shouldClear) {
     update["system.identity.sizeTemplate"] = "";
     update["system.creation.sizeTemplateApplied"] = "";
+    update["system.creation.sizeTemplateArmourClassModifier"] = 0;
+    update["system.creation.sizeTemplateAttackModifier"] = 0;
+    update["system.creation.sizeTemplateDamageModifier"] = "";
+    update["system.creation.sizeTemplateStrengthModifier"] = "";
+    update["system.creation.sizeTemplateMovementModifier"] = "";
+    update["system.combat.armourClass"] = Math.max(0, sourceArmourClass(actor) - previousArmourClassModifier);
   }
 
   return actor.update(update);

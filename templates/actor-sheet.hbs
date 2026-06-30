@@ -373,6 +373,11 @@
             <span>Selected Template <strong>{{#if sizeTemplateWorkflow.hasApplied}}{{sizeTemplateWorkflow.appliedName}}{{else}}None{{/if}}</strong></span>
             <span>Template Points <strong>{{sizeTemplateWorkflow.totalCost}}</strong></span>
           </div>
+          {{#if creation.sizeTemplateModifiers}}
+            <div class="size-template-modifier-tags">
+              {{#each creation.sizeTemplateModifiers as |modifier|}}<span>Applied: {{modifier}}</span>{{/each}}
+            </div>
+          {{/if}}
           {{#if sizeTemplateWorkflow.appliedModifierTags}}
             <div class="size-template-modifier-tags">
               {{#each sizeTemplateWorkflow.appliedModifierTags as |modifier|}}<span>{{modifier}}</span>{{/each}}

@@ -31,6 +31,7 @@ This milestone starts the Anime 5e character creation build path.
 - Added structured trait data for all 14 Core Rules Anime 5E species, including ability bonuses, Attributes, Defects, languages, movement, and subrace notes.
 - Added `Raceless Character` as a 0-point source-backed Species item for characters that save Race Points for discretionary Attributes.
 - Added Species Workflow special-path visibility for Raceless and Hybrid Species. Hybrid Species remains a placeholder/use-prebuilt path until a full constructor is implemented.
+- Size Template application now tracks applied template modifiers and applies Armour Class modifiers to the actor while displaying other size modifiers for manual review.
 - Added Journal-tab advancement bookkeeping for level/XP progress, Engagement Bonus Points, other non-levelling point awards, remaining points, and advancement notes.
 
 ## Current validation warnings

@@ -895,7 +895,15 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       startingExperience,
       abilityPointMode: creation.abilityPointMode ?? "Score equals Point cost",
       speciesApplied: creation.speciesApplied ?? "",
+      sizeTemplateApplied: creation.sizeTemplateApplied ?? "",
       classApplied: creation.classApplied ?? "",
+      sizeTemplateModifiers: [
+        numberOrZero(creation.sizeTemplateArmourClassModifier) ? `AC ${formatSigned(numberOrZero(creation.sizeTemplateArmourClassModifier))}` : null,
+        numberOrZero(creation.sizeTemplateAttackModifier) ? `Offense Roll ${formatSigned(numberOrZero(creation.sizeTemplateAttackModifier))}` : null,
+        hasText(creation.sizeTemplateDamageModifier) ? `Damage ${creation.sizeTemplateDamageModifier}` : null,
+        hasText(creation.sizeTemplateStrengthModifier) ? `Strength ${creation.sizeTemplateStrengthModifier}` : null,
+        hasText(creation.sizeTemplateMovementModifier) ? `Movement ${creation.sizeTemplateMovementModifier}` : null
+      ].filter(Boolean),
       recommendedDiscretionaryPoints: calculateRecommendedDiscretionaryPoints(startingLevel),
       recommendedExperience,
       hasRecommendedExperience: recommendedExperience !== null,
