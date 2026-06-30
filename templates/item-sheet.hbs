@@ -264,6 +264,13 @@
     <section class="panel construction-panel">
       <h2>Item Construction</h2>
       <p>{{constructionPlaceholder.message}}</p>
+      {{#if constructionPlaceholder.rows}}
+        <div class="construction-summary">
+          {{#each constructionPlaceholder.rows as |row|}}
+            <span>{{row.label}} <strong>{{row.value}}</strong></span>
+          {{/each}}
+        </div>
+      {{/if}}
     </section>
   {{/if}}
 

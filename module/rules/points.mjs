@@ -489,7 +489,15 @@ export function calculateClassCost(item) {
 
 export function calculateEquipmentPointCost(item) {
   const system = item?.system ?? item ?? {};
-  if (item?.type === "itemOfPower" || item?.type === "mecha") return positiveNumber(system.points ?? system.cost);
+  if (item?.type === "itemOfPower") {
+    return Math.max(
+      0,
+      positiveNumber(system.points ?? system.cost)
+        + positiveNumber(system.embeddedAttributePoints)
+        - positiveNumber(system.embeddedDefectPoints)
+    );
+  }
+  if (item?.type === "mecha") return positiveNumber(system.points ?? system.cost);
   return 0;
 }
 

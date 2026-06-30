@@ -1,7 +1,7 @@
 import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
 import { buildCoreAttributeUsageContext, resolveCoreAttributeEnergyCost } from "../rules/attribute-effects.mjs";
 import { buildAdventuringRiskChatContent } from "../rules/adventuring-risks.mjs";
-import { calculateAttributeCustomization } from "../rules/points.mjs";
+import { calculateAttributeCustomization, calculateEquipmentPointCost } from "../rules/points.mjs";
 import { applyEnergyChange } from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -19,6 +19,8 @@ const SPECIES_TRAIT_FIELDS = new Set([
 ]);
 const MULTILINE_FIELDS = new Set([
   "allowedAttributes",
+  "containedAttributes",
+  "containedDefects",
   "constructionNotes",
   "overrideNotes",
   "effectTargets",
@@ -61,19 +63,24 @@ const NUMBER_FIELDS = new Set([
   "attackModifier",
   "basePoints",
   "bonusPoints",
+  "charges",
   "costAdjustment",
   "costModifier",
   "dc",
+  "embeddedAttributePoints",
+  "embeddedDefectPoints",
   "finalClassPoints",
   "finalCostOverride",
   "levellingPoints",
   "level",
+  "maxCharges",
   "pointImpact",
   "pointModifier",
   "points",
   "pointsPerLevel",
   "progress",
   "quantity",
+  "rangeRank",
   "rank",
   "requiredProgress",
   "sourcePage",
@@ -90,6 +97,7 @@ const FIELD_LABELS = {
   armourClassModifier: "Armour Class Modifier",
   assignmentCount: "Assignments",
   assignmentRange: "Assignment Range",
+  ammo: "Ammo",
   attackModifier: "Attack Modifier",
   attributeSummary: "Attribute Summary",
   attunement: "Attunement",
@@ -102,6 +110,8 @@ const FIELD_LABELS = {
   costModifier: "Cost Modifier",
   constructionNotes: "Construction Notes",
   constructionStatus: "Construction Status",
+  containedAttributes: "Contained Attributes",
+  containedDefects: "Contained Defects",
   creatureType: "Creature Type",
   currency: "Currency",
   damage: "Damage",
@@ -113,6 +123,8 @@ const FIELD_LABELS = {
   durationRemaining: "Duration Remaining",
   effectActive: "Apply Derived Effect",
   effectTargets: "Effect Targets",
+  embeddedAttributePoints: "Contained Attribute Points",
+  embeddedDefectPoints: "Contained Defect Refunds",
   energyCost: "Energy Cost",
   energyPaid: "Energy Paid",
   equipped: "Equipped",
@@ -134,6 +146,7 @@ const FIELD_LABELS = {
   material: "Material",
   materialCost: "Material Cost",
   materials: "Required Materials",
+  maxCharges: "Max Charges",
   movementModes: "Movement Modes",
   movementModifier: "Movement Modifier",
   overrideNotes: "Override Notes",
@@ -146,7 +159,9 @@ const FIELD_LABELS = {
   progressionNotes: "Progression Notes",
   progress: "Progress",
   proficiencyGroup: "Proficiency Group",
+  proficiencyRequirement: "Proficiency Requirement",
   range: "Range",
+  rangeRank: "Range Rank",
   receivedDamageModifier: "Received Damage Modifier",
   requiredProgress: "Required Progress",
   riskNotes: "Risk Notes",
@@ -515,11 +530,29 @@ function buildItemActions(item, systemData) {
   };
 }
 
-function buildConstructionPlaceholder(item) {
+function buildConstructionPlaceholder(item, systemData = item.system ?? {}) {
   if (!CONSTRUCTION_ITEM_TYPES.has(item.type)) return null;
 
+  if (item.type === "itemOfPower") {
+    const basePoints = Number(systemData.points ?? systemData.cost) || 0;
+    const attributePoints = Number(systemData.embeddedAttributePoints) || 0;
+    const defectRefunds = Number(systemData.embeddedDefectPoints) || 0;
+    const totalPoints = calculateEquipmentPointCost({ type: item.type, system: systemData });
+
+    return {
+      message: "Track contained Attributes and Defects here; use the point fields as the Item of Power construction ledger.",
+      rows: [
+        { label: "Base Item Points", value: basePoints },
+        { label: "Contained Attribute Points", value: attributePoints },
+        { label: "Contained Defect Refunds", value: defectRefunds ? `-${defectRefunds}` : 0 },
+        { label: "Total Item Cost", value: totalPoints }
+      ]
+    };
+  }
+
   return {
-    message: "Point-built item construction is not fully automated yet. Track rank, points, Attribute Summary, value, weight, attunement, and construction notes here."
+    message: "Point-built item construction is not fully automated yet. Track rank, points, Attribute Summary, value, weight, attunement, and construction notes here.",
+    rows: []
   };
 }
 
@@ -589,7 +622,7 @@ export class Anime5eItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.system = this.item.system;
     context.detailFields = buildDetailFields(this.item, systemData);
     context.itemActions = buildItemActions(this.item, systemData);
-    context.constructionPlaceholder = buildConstructionPlaceholder(this.item);
+    context.constructionPlaceholder = buildConstructionPlaceholder(this.item, systemData);
     context.classProgression = buildClassProgression(this.item, systemData);
     context.speciesTraits = buildSpeciesTraits(this.item, systemData);
     context.attributeModifiers = buildAttributeModifiers(this.item, systemData);

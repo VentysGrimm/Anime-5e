@@ -627,7 +627,12 @@ function weaponDocument([name, category, damage, damageType, rank, effectiveRank
       equipped: false,
       category,
       proficiencyGroup: category,
+      proficiencyRequirement: category,
       range,
+      rangeRank: 0,
+      ammo: /Ammo/i.test(limiters) ? "Ammo limiter applies; see Limiters and Properties." : "",
+      charges: 0,
+      maxCharges: 0,
       value: "",
       weight: "",
       sourceTable,
@@ -663,6 +668,7 @@ function armourDocument([name, folder, category, armourClass, value, acFormula, 
     system: {
       equipped: false,
       category,
+      proficiencyRequirement: category,
       armourClass,
       dexterityRule: acFormula,
       strengthRequirement: strength,
@@ -697,6 +703,7 @@ function shieldDocument([name, armourClass, value, hands, dexterity, weight]) {
     system: {
       equipped: false,
       category: "Shield",
+      proficiencyRequirement: "Shields",
       armourClass,
       armourClassModifier: armourClass,
       dexterityRule: dexterity,
@@ -759,10 +766,14 @@ function namedItemDocument([name, folder, page, rank, points, summary, attribute
       currency: "gp",
       itemCategory: folder,
       points,
+      embeddedAttributePoints: 0,
+      embeddedDefectPoints: 0,
       attunement: "",
       attributeSummary,
+      containedAttributes: `<p>${escapeHtml(attributeSummary || "Record contained Attributes here.")}</p>`,
+      containedDefects: "",
       constructionStatus: "Manual bookkeeping",
-      constructionNotes: "<p>Point-built item construction automation is not fully implemented. Use Points, Attunement, Attribute Summary, value, weight, and notes for source-backed bookkeeping.</p>"
+      constructionNotes: "<p>Use Points plus Contained Attribute/Defect fields as the source-backed construction ledger. Create separate owned Attribute or Defect Items on an actor when those effects need live automation.</p>"
     }
   });
 }

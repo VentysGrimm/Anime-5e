@@ -89,6 +89,8 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - The combat panel can roll entered attack damage formulas and apply damage or healing to the actor's current Hit Points, including negative HP tracking down to the mortal-wound threshold.
 - Actor item rows and item sheets now expose item use/share, formula roll, attack roll, and damage roll actions. This gives weapons, Attributes, Defects, powers, techniques, spells, and other source-backed item documents a direct play action while preserving later deeper automation work.
 - Core equipment documents now include weapons, armour, shields, item-only Attributes, named adventuring gear, daily devices, Items of Power, protective devices, and armaments. Weapons, armour, and shields support an equipped state; the character combat tab computes an effective AC summary from equipped armour/shields and exposes equipped weapons for attack and damage rolls.
+- Weapon item sheets now expose proficiency requirement, range rank, ammo, charges, Enhancements, Limiters, equipped state, attack, and damage fields. Armour and shield sheets expose proficiency requirements and equipped AC fields.
+- Items of Power now expose contained Attribute/Defect bookkeeping fields and a calculated construction point summary.
 
 ## Missing Files Required For Load
 

@@ -254,8 +254,12 @@ export class Anime5eItemOfPowerData extends Anime5eEquipmentData {
       ...super.defineSchema(),
       itemCategory: textField(),
       points: numberField(0, { min: 0 }),
+      embeddedAttributePoints: numberField(0, { min: 0 }),
+      embeddedDefectPoints: numberField(0, { min: 0 }),
       attunement: textField(),
-      attributeSummary: textField()
+      attributeSummary: textField(),
+      containedAttributes: htmlField(),
+      containedDefects: htmlField()
     };
   }
 }
@@ -456,7 +460,12 @@ export class Anime5eWeaponData extends Anime5eBaseItemData {
       equipped: booleanField(),
       category: textField(),
       proficiencyGroup: textField(),
+      proficiencyRequirement: textField(),
       range: textField(),
+      rangeRank: numberField(0, { min: 0 }),
+      ammo: textField(),
+      charges: numberField(0, { min: 0 }),
+      maxCharges: numberField(0, { min: 0 }),
       value: textField(),
       weight: textField(),
       sourceTable: textField(),
@@ -481,6 +490,7 @@ export class Anime5eArmorData extends Anime5eBaseItemData {
       ...super.defineSchema(),
       equipped: booleanField(),
       category: textField(),
+      proficiencyRequirement: textField(),
       armourClass: numberField(10, { min: 0 }),
       dexterityRule: textField(),
       strengthRequirement: textField(),

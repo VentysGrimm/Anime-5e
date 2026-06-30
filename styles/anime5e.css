@@ -1057,6 +1057,24 @@
   margin: 0;
 }
 
+.anime5e .construction-summary {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  margin-top: 8px;
+}
+
+.anime5e .construction-summary span {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  font-size: 0.76rem;
+  font-weight: 800;
+  gap: 3px;
+  padding: 6px 8px;
+  text-transform: uppercase;
+}
+
 .anime5e .class-progression-panel {
   display: grid;
   gap: 10px;
