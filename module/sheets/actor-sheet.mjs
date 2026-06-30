@@ -595,6 +595,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           id: item.id,
           name: item.name,
           img: item.img,
+          sourceId: item.system?.sourceId ?? "",
           sourceLabel,
           pointCost,
           pointCostLabel: `${pointCost} Point${pointCost === 1 ? "" : "s"}`,
@@ -609,9 +610,29 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (species.length > 1) warnings.push("Multiple Species/Race items are attached; choose the applied species or confirm this is intentional.");
     if (appliedRef && !appliedSpecies) warnings.push("Applied Species/Race reference no longer matches an owned species item.");
 
+    const hasRacelessOption = species.some((item) => item.sourceId === "core.species.raceless-character" || item.name === "Raceless Character");
+    const hasHybridSpecies = species.some((item) => /\bhybrid\b/i.test(`${item.name} ${item.sourceLabel}`));
+    const specialPaths = [
+      {
+        label: "Raceless",
+        status: hasRacelessOption ? "Selectable" : "Core option",
+        note: hasRacelessOption
+          ? "Apply the 0-point Raceless Character item for discretionary Race builds."
+          : "Import Raceless Character from Core Character Options for 0-point Race builds."
+      },
+      {
+        label: "Hybrid Species",
+        status: hasHybridSpecies ? "Owned" : "Placeholder",
+        note: hasHybridSpecies
+          ? "Use prebuilt Hybrid Species items; the constructor is still manual."
+          : "Prebuilt hybrids can be imported; full constructor automation is pending."
+      }
+    ];
+
     return {
       active: species.length > 0 || warnings.length > 0,
       species,
+      specialPaths,
       count: species.length,
       hasSpecies: species.length > 0,
       hasApplied: !!appliedSpecies,

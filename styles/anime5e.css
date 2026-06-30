@@ -467,6 +467,48 @@
   text-transform: uppercase;
 }
 
+.anime5e .species-workflow-paths {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.anime5e .species-workflow-paths span {
+  background: rgba(232, 238, 242, 0.72);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 7px 9px;
+}
+
+.anime5e .species-workflow-paths strong,
+.anime5e .species-workflow-paths em,
+.anime5e .species-workflow-paths small {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.anime5e .species-workflow-paths strong {
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.anime5e .species-workflow-paths em {
+  color: #4d665d;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.anime5e .species-workflow-paths small {
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
 .anime5e .species-workflow-list,
 .anime5e .size-template-workflow-list {
   display: grid;
@@ -1532,6 +1574,7 @@
   .anime5e .quick-roll-controls,
   .anime5e .ledger-heading,
   .anime5e .species-workflow-list li,
+  .anime5e .species-workflow-paths,
   .anime5e .species-workflow-summary,
   .anime5e .species-trait-grid,
   .anime5e .species-trait-summary,

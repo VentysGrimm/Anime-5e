@@ -13,6 +13,39 @@
   ],
   "documents": [
     {
+      "name": "Raceless Character",
+      "type": "species",
+      "folder": "Species - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 28.</p><p><strong>Size:</strong> Varies. <strong>Point Cost:</strong> 0.</p><p><strong>Rules Summary:</strong> A supported zero-cost build path for characters who identify with a Race but do not allocate Points to a fixed Race package.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.species.raceless-character",
+        "sourcePage": 28,
+        "importId": "core.species.raceless-character",
+        "points": 0,
+        "speciesSize": "Varies",
+        "abilityBonuses": [],
+        "attributes": [],
+        "defects": [],
+        "languages": [],
+        "movement": [],
+        "traitNotes": "Use this option when the character saves Race Points for discretionary Attributes instead of receiving a predefined Race package. The character can still identify with a Race or unique ancestry in narrative terms."
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.species.raceless-character",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 28,
+            "importId": "core.species.raceless-character"
+          }
+        }
+      }
+    },
+    {
       "name": "Archfiend",
       "type": "species",
       "folder": "Species - Core Rules",
@@ -25,7 +58,142 @@
         "sourceId": "core.species.archfiend",
         "sourcePage": 30,
         "importId": "core.species.archfiend",
-        "points": 15
+        "points": 15,
+        "speciesSize": "Huge",
+        "abilityBonuses": [
+          {
+            "ability": "Charisma",
+            "modifier": -1,
+            "points": -1,
+            "notes": "Charisma drawback from the race cost table."
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Augmented",
+            "rank": 4,
+            "points": 4,
+            "detail": "Strength",
+            "notes": ""
+          },
+          {
+            "name": "Conversion",
+            "rank": 1,
+            "points": 3,
+            "detail": "1 Point per 10 damage",
+            "notes": ""
+          },
+          {
+            "name": "Edge",
+            "rank": 4,
+            "points": 4,
+            "detail": "Strength dice rolls",
+            "notes": ""
+          },
+          {
+            "name": "Fast",
+            "rank": 2,
+            "points": 2,
+            "detail": "x4 speed; 120 feet/round",
+            "notes": ""
+          },
+          {
+            "name": "Features",
+            "rank": 2,
+            "points": 2,
+            "detail": "Darkvision 120 ft x2",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 1,
+            "points": 1,
+            "detail": "Common, Infernal",
+            "notes": ""
+          },
+          {
+            "name": "Massive Damage - Lesser",
+            "rank": 4,
+            "points": 4,
+            "detail": "+4 Strength Impacts",
+            "notes": ""
+          },
+          {
+            "name": "Mind Control - Lesser",
+            "rank": 1,
+            "points": 1,
+            "detail": "Demons",
+            "notes": ""
+          },
+          {
+            "name": "Protected",
+            "rank": 4,
+            "points": 4,
+            "detail": "-4 Standard damage",
+            "notes": ""
+          },
+          {
+            "name": "Tunnelling",
+            "rank": 1,
+            "points": 1,
+            "detail": "1 foot/round",
+            "notes": ""
+          },
+          {
+            "name": "Unique Attribute",
+            "rank": 2,
+            "points": 2,
+            "detail": "x4 Thrown Weapon Distance",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "AC Penalty",
+            "rank": 4,
+            "points": -4,
+            "detail": "-4 AC",
+            "notes": ""
+          },
+          {
+            "name": "Inept Attack",
+            "rank": 4,
+            "points": -4,
+            "detail": "-4 attack rolls",
+            "notes": ""
+          },
+          {
+            "name": "Unique Defect",
+            "rank": 2,
+            "points": -2,
+            "detail": "Big, Heavy, and Obvious",
+            "notes": ""
+          },
+          {
+            "name": "Vulnerability",
+            "rank": 1,
+            "points": -2,
+            "detail": "Lightning",
+            "notes": ""
+          }
+        ],
+        "languages": [
+          "Common",
+          "Infernal"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "120 feet/round",
+            "notes": "Final speed after Fast Rank 2."
+          },
+          {
+            "mode": "Tunnelling",
+            "speed": "1 foot/round",
+            "notes": "Crude excavation speed."
+          }
+        ],
+        "traitNotes": "Aerial Archfiends gain Flight Rank 2 (90 feet/round) and typically lose Conversion."
       },
       "flags": {
         "anime5e": {
@@ -147,7 +315,65 @@
         "sourceId": "core.species.blinkbeast",
         "sourcePage": 32,
         "importId": "core.species.blinkbeast",
-        "points": 10
+        "points": 10,
+        "speciesSize": "Medium",
+        "abilityBonuses": [
+          {
+            "ability": "Dexterity",
+            "modifier": -2,
+            "points": -2,
+            "notes": "Dexterity drawback from the race cost table."
+          },
+          {
+            "ability": "Charisma",
+            "modifier": -1,
+            "points": -1,
+            "notes": "Charisma drawback from the race cost table."
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Alternate Identity",
+            "rank": 1,
+            "points": 1,
+            "detail": "Human Form",
+            "notes": ""
+          },
+          {
+            "name": "Dynamic Powers - Lesser",
+            "rank": 1,
+            "points": 5,
+            "detail": "Vegetation; Area: 30 ft -2; Concentration +1; Unpredictable +1",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 1,
+            "points": 1,
+            "detail": "Common, Sylvan",
+            "notes": ""
+          },
+          {
+            "name": "Teleport",
+            "rank": 2,
+            "points": 6,
+            "detail": "100 ft",
+            "notes": ""
+          }
+        ],
+        "defects": [],
+        "languages": [
+          "Common",
+          "Sylvan"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "30 feet/round",
+            "notes": "Base speed."
+          }
+        ],
+        "traitNotes": "Multi Blinkbeasts have Alternate Identity Rank 6 total, representing six humanoid forms."
       },
       "flags": {
         "anime5e": {
@@ -173,7 +399,116 @@
         "sourceId": "core.species.demonaga",
         "sourcePage": 33,
         "importId": "core.species.demonaga",
-        "points": 14
+        "points": 14,
+        "speciesSize": "Large",
+        "abilityBonuses": [
+          {
+            "ability": "Wisdom",
+            "modifier": -2,
+            "points": -2,
+            "notes": "Wisdom drawback from the race cost table."
+          },
+          {
+            "ability": "Charisma",
+            "modifier": -2,
+            "points": -2,
+            "notes": "Charisma drawback from the race cost table."
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Edge",
+            "rank": 2,
+            "points": 2,
+            "detail": "Saving Throws vs. magic",
+            "notes": ""
+          },
+          {
+            "name": "Edge",
+            "rank": 4,
+            "points": 4,
+            "detail": "Strength dice rolls",
+            "notes": ""
+          },
+          {
+            "name": "Fast",
+            "rank": 1,
+            "points": 1,
+            "detail": "x2 speed; 60 feet/round",
+            "notes": ""
+          },
+          {
+            "name": "Immunity",
+            "rank": 3,
+            "points": 9,
+            "detail": "Fire",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 2,
+            "points": 2,
+            "detail": "Common, Draconic, Primordial",
+            "notes": ""
+          },
+          {
+            "name": "Massive Damage - Lesser",
+            "rank": 2,
+            "points": 2,
+            "detail": "+2 Strength Impacts",
+            "notes": ""
+          },
+          {
+            "name": "Protected",
+            "rank": 2,
+            "points": 2,
+            "detail": "-2 Standard damage",
+            "notes": ""
+          },
+          {
+            "name": "Unique Attribute",
+            "rank": 1,
+            "points": 1,
+            "detail": "x2 Thrown Weapon Distance",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "AC Penalty",
+            "rank": 2,
+            "points": -2,
+            "detail": "-2 AC",
+            "notes": ""
+          },
+          {
+            "name": "Inept Attack",
+            "rank": 2,
+            "points": -2,
+            "detail": "-2 attack rolls",
+            "notes": ""
+          },
+          {
+            "name": "Unique Defect",
+            "rank": 1,
+            "points": -1,
+            "detail": "Big, Heavy, and Obvious",
+            "notes": ""
+          }
+        ],
+        "languages": [
+          "Common",
+          "Draconic",
+          "Primordial"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "60 feet/round",
+            "notes": "Final speed after Fast Rank 1."
+          }
+        ],
+        "traitNotes": "Aqua Demonaga gain Sixth Sense (Water) Rank 1 and Water Speed Rank 3 (300 feet/round); they are mortal enemies of Fire Demonaga."
       },
       "flags": {
         "anime5e": {
@@ -199,7 +534,149 @@
         "sourceId": "core.species.fairy",
         "sourcePage": 34,
         "importId": "core.species.fairy",
-        "points": 4
+        "points": 4,
+        "speciesSize": "Diminutive",
+        "abilityBonuses": [
+          {
+            "ability": "Wisdom",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          },
+          {
+            "ability": "Charisma",
+            "modifier": 2,
+            "points": 2,
+            "notes": ""
+          }
+        ],
+        "attributes": [
+          {
+            "name": "AC Bonus",
+            "rank": 6,
+            "points": 6,
+            "detail": "+6 AC",
+            "notes": ""
+          },
+          {
+            "name": "Combat Mastery",
+            "rank": 6,
+            "points": 6,
+            "detail": "+6 attack rolls",
+            "notes": ""
+          },
+          {
+            "name": "Control Environment",
+            "rank": 1,
+            "points": 1,
+            "detail": "Lights",
+            "notes": ""
+          },
+          {
+            "name": "Features",
+            "rank": 2,
+            "points": 2,
+            "detail": "Direction Sense, Scentless",
+            "notes": ""
+          },
+          {
+            "name": "Flight",
+            "rank": 2,
+            "points": 6,
+            "detail": "90 feet/round",
+            "notes": ""
+          },
+          {
+            "name": "Heightened Senses",
+            "rank": 1,
+            "points": 1,
+            "detail": "Smell",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 2,
+            "points": 2,
+            "detail": "Common, Elvish, Sylvan",
+            "notes": ""
+          },
+          {
+            "name": "Spell-Like Ability",
+            "rank": 4,
+            "points": 4,
+            "detail": "Major Image",
+            "notes": ""
+          },
+          {
+            "name": "Unique Attribute",
+            "rank": 3,
+            "points": 3,
+            "detail": "Small, Light, and Unobtrusive",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "Degraded",
+            "rank": 8,
+            "points": -8,
+            "detail": "-8 Strength",
+            "notes": ""
+          },
+          {
+            "name": "Limited Damage",
+            "rank": 6,
+            "points": -6,
+            "detail": "-6 Strength Impacts",
+            "notes": ""
+          },
+          {
+            "name": "Obstacle",
+            "rank": 4,
+            "points": -4,
+            "detail": "Strength dice rolls",
+            "notes": ""
+          },
+          {
+            "name": "Slow",
+            "rank": 3,
+            "points": -3,
+            "detail": "divide 8 speed; 4 feet/round",
+            "notes": ""
+          },
+          {
+            "name": "Susceptible",
+            "rank": 6,
+            "points": -6,
+            "detail": "+6 Standard damage",
+            "notes": ""
+          },
+          {
+            "name": "Unique Defect",
+            "rank": 3,
+            "points": -3,
+            "detail": "Thrown Weapon Distance divide 8",
+            "notes": ""
+          }
+        ],
+        "languages": [
+          "Common",
+          "Elvish",
+          "Sylvan"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "4 feet/round",
+            "notes": "Final speed after Slow Rank 3."
+          },
+          {
+            "mode": "Flight",
+            "speed": "90 feet/round",
+            "notes": "Base flying speed from the Flight trait."
+          }
+        ],
+        "traitNotes": "Rock Fairies are Tiny instead of Diminutive and also gain Constitution +1."
       },
       "flags": {
         "anime5e": {
@@ -225,7 +702,59 @@
         "sourceId": "core.species.grey",
         "sourcePage": 35,
         "importId": "core.species.grey",
-        "points": 12
+        "points": 12,
+        "speciesSize": "Medium",
+        "abilityBonuses": [
+          {
+            "ability": "Intelligence",
+            "modifier": 2,
+            "points": 2,
+            "notes": ""
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Features",
+            "rank": 3,
+            "points": 3,
+            "detail": "Ambidexterity, Darkvision 60 ft, Ultrasonic Communication",
+            "notes": ""
+          },
+          {
+            "name": "Heightened Senses",
+            "rank": 2,
+            "points": 2,
+            "detail": "Hearing, Taste",
+            "notes": ""
+          },
+          {
+            "name": "Mind Control",
+            "rank": 1,
+            "points": 3,
+            "detail": "Basic, non-aggressive",
+            "notes": ""
+          },
+          {
+            "name": "Spell-Like Ability",
+            "rank": 2,
+            "points": 2,
+            "detail": "Cure Wounds",
+            "notes": ""
+          }
+        ],
+        "defects": [],
+        "languages": [
+          "Common",
+          "Ultrasonic Communication"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "30 feet/round",
+            "notes": "Base speed."
+          }
+        ],
+        "traitNotes": "Elite Grey have Mind Control Rank 3 with the Area Enhancement -2, affecting one target in a 30-foot radius."
       },
       "flags": {
         "anime5e": {
@@ -251,7 +780,70 @@
         "sourceId": "core.species.half-dragon",
         "sourcePage": 36,
         "importId": "core.species.half-dragon",
-        "points": 13
+        "points": 13,
+        "speciesSize": "Medium",
+        "abilityBonuses": [
+          {
+            "ability": "Strength",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          },
+          {
+            "ability": "Constitution",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Flight",
+            "rank": 1,
+            "points": 3,
+            "detail": "30 feet/round",
+            "notes": ""
+          },
+          {
+            "name": "Immunity - Lesser",
+            "rank": 3,
+            "points": 3,
+            "detail": "Fire",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 1,
+            "points": 1,
+            "detail": "Common, Draconic",
+            "notes": ""
+          },
+          {
+            "name": "Weapon",
+            "rank": 4,
+            "points": 4,
+            "detail": "Fire Breath; 2d6 damage; Continuing -1; Range: 30 ft -2; Spreading: 3 targets -2; Save +4",
+            "notes": "Listed as Rank 4 with effective Rank 3 in the source table."
+          }
+        ],
+        "defects": [],
+        "languages": [
+          "Common",
+          "Draconic"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "30 feet/round",
+            "notes": "Base speed."
+          },
+          {
+            "mode": "Flight",
+            "speed": "30 feet/round",
+            "notes": "Base flying speed from the Flight trait."
+          }
+        ],
+        "traitNotes": "Gold Half-Dragons are most common. Bronze, Copper, and Silver variants change the Lesser Immunity and breath Weapon to lightning, acid, or cold."
       },
       "flags": {
         "anime5e": {
@@ -363,7 +955,107 @@
         "sourceId": "core.species.haud",
         "sourcePage": 38,
         "importId": "core.species.haud",
-        "points": 12
+        "points": 12,
+        "speciesSize": "Medium",
+        "abilityBonuses": [
+          {
+            "ability": "Intelligence",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          },
+          {
+            "ability": "Charisma",
+            "modifier": -1,
+            "points": -1,
+            "notes": "Charisma drawback from the race cost table."
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Edge",
+            "rank": 2,
+            "points": 2,
+            "detail": "Initiative",
+            "notes": ""
+          },
+          {
+            "name": "Extra Actions",
+            "rank": 1,
+            "points": 4,
+            "detail": "1 Bonus Action/round",
+            "notes": ""
+          },
+          {
+            "name": "Features",
+            "rank": 1,
+            "points": 1,
+            "detail": "Darkvision 60 ft",
+            "notes": ""
+          },
+          {
+            "name": "Heightened Senses",
+            "rank": 2,
+            "points": 2,
+            "detail": "Taste, Vision",
+            "notes": ""
+          },
+          {
+            "name": "Immunity - Lesser",
+            "rank": 2,
+            "points": 2,
+            "detail": "Poison",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 2,
+            "points": 2,
+            "detail": "Common, Draconic, Goblin",
+            "notes": ""
+          },
+          {
+            "name": "Special Movement",
+            "rank": 2,
+            "points": 2,
+            "detail": "Wall-Crawling 2",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "Bane",
+            "rank": 1,
+            "points": -2,
+            "detail": "Cold",
+            "notes": ""
+          },
+          {
+            "name": "Obstacle",
+            "rank": 1,
+            "points": -1,
+            "detail": "Saving Throws vs. cold",
+            "notes": ""
+          }
+        ],
+        "languages": [
+          "Common",
+          "Draconic",
+          "Goblin"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "30 feet/round",
+            "notes": "Base speed."
+          },
+          {
+            "mode": "Wall-Crawling",
+            "speed": "Special Movement 2",
+            "notes": "Claws and tail allow movement along all but the smoothest vertical surfaces."
+          }
+        ],
+        "traitNotes": "Leaping Haud have Strength +2 and Jumping Rank 2, allowing jumps up to 10 times normal distance."
       },
       "flags": {
         "anime5e": {
@@ -389,7 +1081,130 @@
         "sourceId": "core.species.kodama",
         "sourcePage": 39,
         "importId": "core.species.kodama",
-        "points": 10
+        "points": 10,
+        "speciesSize": "Tiny",
+        "abilityBonuses": [
+          {
+            "ability": "Wisdom",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          }
+        ],
+        "attributes": [
+          {
+            "name": "AC Bonus",
+            "rank": 4,
+            "points": 4,
+            "detail": "+4 AC",
+            "notes": ""
+          },
+          {
+            "name": "Change State",
+            "rank": 3,
+            "points": 9,
+            "detail": "Liquid, gaseous, and incorporeal",
+            "notes": ""
+          },
+          {
+            "name": "Cognition",
+            "rank": 2,
+            "points": 2,
+            "detail": "Postcognition",
+            "notes": ""
+          },
+          {
+            "name": "Combat Mastery",
+            "rank": 4,
+            "points": 4,
+            "detail": "+4 attack rolls",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 1,
+            "points": 1,
+            "detail": "Common, Sylvan",
+            "notes": ""
+          },
+          {
+            "name": "Spell-Like Ability",
+            "rank": 5,
+            "points": 5,
+            "detail": "Banishment",
+            "notes": ""
+          },
+          {
+            "name": "Spell-Like Ability",
+            "rank": 2,
+            "points": 2,
+            "detail": "Cure Wounds",
+            "notes": ""
+          },
+          {
+            "name": "Unique Attribute",
+            "rank": 2,
+            "points": 2,
+            "detail": "Small, Light, and Unobtrusive",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "Degraded",
+            "rank": 4,
+            "points": -4,
+            "detail": "-4 Strength",
+            "notes": ""
+          },
+          {
+            "name": "Limited Damage",
+            "rank": 4,
+            "points": -4,
+            "detail": "-4 Strength Impacts",
+            "notes": ""
+          },
+          {
+            "name": "Obstacle",
+            "rank": 4,
+            "points": -4,
+            "detail": "Strength dice rolls",
+            "notes": ""
+          },
+          {
+            "name": "Slow",
+            "rank": 2,
+            "points": -2,
+            "detail": "divide 4 speed; 8 feet/round",
+            "notes": ""
+          },
+          {
+            "name": "Susceptible",
+            "rank": 4,
+            "points": -4,
+            "detail": "+4 Standard damage",
+            "notes": ""
+          },
+          {
+            "name": "Unique Defect",
+            "rank": 2,
+            "points": -2,
+            "detail": "Thrown Weapon Distance divide 4",
+            "notes": ""
+          }
+        ],
+        "languages": [
+          "Common",
+          "Sylvan"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "8 feet/round",
+            "notes": "Final speed after Slow Rank 2."
+          }
+        ],
+        "traitNotes": "Void Kodama replace Cure Wounds with Nullify Rank 2 against magic-sourced Attributes."
       },
       "flags": {
         "anime5e": {
@@ -415,7 +1230,71 @@
         "sourceId": "core.species.nekojin",
         "sourcePage": 40,
         "importId": "core.species.nekojin",
-        "points": 8
+        "points": 8,
+        "speciesSize": "Medium",
+        "abilityBonuses": [
+          {
+            "ability": "Dexterity",
+            "modifier": 2,
+            "points": 2,
+            "notes": ""
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Edge",
+            "rank": 2,
+            "points": 2,
+            "detail": "Initiative",
+            "notes": ""
+          },
+          {
+            "name": "Features",
+            "rank": 1,
+            "points": 1,
+            "detail": "Darkvision 60 ft",
+            "notes": ""
+          },
+          {
+            "name": "Heightened Senses",
+            "rank": 1,
+            "points": 1,
+            "detail": "Hearing",
+            "notes": ""
+          },
+          {
+            "name": "Mulligan",
+            "rank": 2,
+            "points": 2,
+            "detail": "4 re-rolls/session",
+            "notes": ""
+          },
+          {
+            "name": "Special Movement",
+            "rank": 1,
+            "points": 1,
+            "detail": "Cat-Like",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "Easily Distracted",
+            "rank": 1,
+            "points": -1,
+            "detail": "Things that distract cats",
+            "notes": ""
+          }
+        ],
+        "languages": [],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "30 feet/round",
+            "notes": "Base speed."
+          }
+        ],
+        "traitNotes": "Panthera gain Strength +1, Constitution +1, and Weapon: Fangs Rank 2 (1d6 + Strength Bonus damage), but do not possess Mulligan."
       },
       "flags": {
         "anime5e": {
@@ -441,7 +1320,64 @@
         "sourceId": "core.species.parasite",
         "sourcePage": 41,
         "importId": "core.species.parasite",
-        "points": 16
+        "points": 16,
+        "speciesSize": "Medium",
+        "abilityBonuses": [],
+        "attributes": [
+          {
+            "name": "Elasticity",
+            "rank": 2,
+            "points": 4,
+            "detail": "Two limbs stretch 5x; +4 grappling checks",
+            "notes": ""
+          },
+          {
+            "name": "Extra Actions - Lesser",
+            "rank": 1,
+            "points": 2,
+            "detail": "1 Bonus Action/round; not attacks",
+            "notes": ""
+          },
+          {
+            "name": "Immunity",
+            "rank": 2,
+            "points": 6,
+            "detail": "Lightning",
+            "notes": ""
+          },
+          {
+            "name": "Massive Damage - Lesser",
+            "rank": 4,
+            "points": 4,
+            "detail": "+1d8 unarmed attacks",
+            "notes": ""
+          },
+          {
+            "name": "Weapon",
+            "rank": 2,
+            "points": 2,
+            "detail": "Extending Blades; 1d8 slashing damage",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "Bane",
+            "rank": 1,
+            "points": -2,
+            "detail": "Loud Sounds",
+            "notes": ""
+          }
+        ],
+        "languages": [],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "30 feet/round",
+            "notes": "Base speed."
+          }
+        ],
+        "traitNotes": "Parasites have no subraces. Since they bond to a host body, characters often have two Races assigned, such as Parasite and Human or Parasite and Fairy."
       },
       "flags": {
         "anime5e": {
@@ -467,7 +1403,74 @@
         "sourceId": "core.species.satyr",
         "sourcePage": 42,
         "importId": "core.species.satyr",
-        "points": 7
+        "points": 7,
+        "speciesSize": "Medium",
+        "abilityBonuses": [
+          {
+            "ability": "Constitution",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          },
+          {
+            "ability": "Charisma",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          }
+        ],
+        "attributes": [
+          {
+            "name": "Extra Actions - Lesser",
+            "rank": 1,
+            "points": 2,
+            "detail": "1 Bonus Action/round; not attacks",
+            "notes": ""
+          },
+          {
+            "name": "Fast",
+            "rank": 1,
+            "points": 1,
+            "detail": "x2 speed; 60 feet/round",
+            "notes": ""
+          },
+          {
+            "name": "Jumping",
+            "rank": 1,
+            "points": 1,
+            "detail": "3x normal distance",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 2,
+            "points": 2,
+            "detail": "Common, Elvish, Sylvan",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "Easily Distracted",
+            "rank": 1,
+            "points": -1,
+            "detail": "Things that distract children",
+            "notes": ""
+          }
+        ],
+        "languages": [
+          "Common",
+          "Elvish",
+          "Sylvan"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "60 feet/round",
+            "notes": "Final speed after Fast Rank 1."
+          }
+        ],
+        "traitNotes": "Forest Satyrs gain Weapon Rank 2 horns that inflict 2d4 + Strength Bonus damage. Under Satyrs gain Features (Darkvision 60 ft) Rank 1 and Immunity - Lesser (Acid) Rank 2."
       },
       "flags": {
         "anime5e": {
@@ -493,7 +1496,134 @@
         "sourceId": "core.species.slime",
         "sourcePage": 43,
         "importId": "core.species.slime",
-        "points": 11
+        "points": 11,
+        "speciesSize": "Small",
+        "abilityBonuses": [
+          {
+            "ability": "Constitution",
+            "modifier": 1,
+            "points": 1,
+            "notes": ""
+          },
+          {
+            "ability": "Charisma",
+            "modifier": 2,
+            "points": 2,
+            "notes": ""
+          }
+        ],
+        "attributes": [
+          {
+            "name": "AC Bonus",
+            "rank": 2,
+            "points": 2,
+            "detail": "+2 AC",
+            "notes": ""
+          },
+          {
+            "name": "Elasticity",
+            "rank": 5,
+            "points": 10,
+            "detail": "Entire body stretches 5x; +10 grappling checks",
+            "notes": ""
+          },
+          {
+            "name": "Combat Mastery",
+            "rank": 2,
+            "points": 2,
+            "detail": "+2 attack rolls",
+            "notes": ""
+          },
+          {
+            "name": "Language",
+            "rank": 1,
+            "points": 1,
+            "detail": "Common, Undercommon",
+            "notes": ""
+          },
+          {
+            "name": "Regeneration",
+            "rank": 2,
+            "points": 2,
+            "detail": "2 HP/round",
+            "notes": ""
+          },
+          {
+            "name": "Special Movement",
+            "rank": 1,
+            "points": 1,
+            "detail": "Slithering",
+            "notes": ""
+          },
+          {
+            "name": "Unique Attribute",
+            "rank": 1,
+            "points": 1,
+            "detail": "Small, Light, and Unobtrusive",
+            "notes": ""
+          }
+        ],
+        "defects": [
+          {
+            "name": "Limited Damage",
+            "rank": 2,
+            "points": -2,
+            "detail": "-2 Strength Impacts",
+            "notes": ""
+          },
+          {
+            "name": "Obstacle",
+            "rank": 4,
+            "points": -4,
+            "detail": "Strength dice rolls",
+            "notes": ""
+          },
+          {
+            "name": "Unique Defect",
+            "rank": 1,
+            "points": -1,
+            "detail": "Leaves Slime Trail",
+            "notes": ""
+          },
+          {
+            "name": "Slow",
+            "rank": 1,
+            "points": -1,
+            "detail": "divide 2 speed; 15 feet/round",
+            "notes": ""
+          },
+          {
+            "name": "Susceptible",
+            "rank": 2,
+            "points": -2,
+            "detail": "+2 Standard damage",
+            "notes": ""
+          },
+          {
+            "name": "Unique Defect",
+            "rank": 1,
+            "points": -1,
+            "detail": "Thrown Weapon Distance divide 2",
+            "notes": ""
+          }
+        ],
+        "languages": [
+          "Common",
+          "Undercommon"
+        ],
+        "movement": [
+          {
+            "mode": "Ground",
+            "speed": "15 feet/round",
+            "notes": "Final speed after Slow Rank 1."
+          },
+          {
+            "mode": "Slithering",
+            "speed": "Special Movement 1",
+            "notes": "Maintains a low profile while moving across land."
+          }
+        ],
+        "traitNotes": "The table represents the common Blue Slime. Variant colours and sizes may exhibit Features, Flight, Healing, Immunity, Mimic, Mind Control, Size Change, Supersense, Telepathy, or Weapon."
       },
       "flags": {
         "anime5e": {

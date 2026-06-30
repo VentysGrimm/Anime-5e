@@ -27,6 +27,9 @@ This milestone starts the Anime 5e character creation build path.
 - Expanded structured progression data to all 14 Core Rules classes.
 - Added Folio multiclass review warnings for missing levels, actor-level mismatches, duplicate class-granted benefits, and manual reallocation notes.
 - Limited class-derived Bonus Point automation to a single levelled Class item until advanced multiclass support is implemented.
+- Added structured trait data for all 14 Core Rules Anime 5E species, including ability bonuses, Attributes, Defects, languages, movement, and subrace notes.
+- Added `Raceless Character` as a 0-point source-backed Species item for characters that save Race Points for discretionary Attributes.
+- Added Species Workflow special-path visibility for Raceless and Hybrid Species. Hybrid Species remains a placeholder/use-prebuilt path until a full constructor is implemented.
 
 ## Current validation warnings
 
@@ -44,7 +47,8 @@ The point helper can warn when:
 - ranked Defects have no point return.
 - a character exceeds the optional Table 01 benchmark limits for their level band.
 - multiple Class items are attached before advanced multiclass automation is available.
+- multiple Species/Race items are attached before hybrid construction is fully automated.
 
 ## Next build step
 
-Add preview-before-apply behaviour for Species and Class items, then expand class-derived HP, hit dice, and proficiency automation.
+Add preview-before-apply behaviour for Species and Class items, then expand class-derived HP, hit dice, proficiency automation, and full Hybrid Species construction.

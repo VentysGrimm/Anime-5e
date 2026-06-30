@@ -327,6 +327,15 @@
           {{#each speciesWorkflow.warnings as |warning|}}
             <p class="sheet-warning">{{warning}}</p>
           {{/each}}
+          <div class="species-workflow-paths">
+            {{#each speciesWorkflow.specialPaths as |path|}}
+              <span>
+                <strong>{{path.label}}</strong>
+                <em>{{path.status}}</em>
+                <small>{{path.note}}</small>
+              </span>
+            {{/each}}
+          </div>
           <ol class="species-workflow-list">
             {{#each speciesWorkflow.species as |species|}}
               <li class="{{#if species.isApplied}}applied{{/if}}" data-item-id="{{species.id}}">
