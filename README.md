@@ -24,21 +24,26 @@ Then create a world using the `Anime 5e` game system.
 - `data/sources/supplements/` contains separated supplement source JSON for non-core books and import-test entries.
 - `templates/` contains editable Handlebars sheets.
 - `styles/anime5e.css` contains system sheet styles.
+- `packs/` is a tracked shell for Foundry compendium databases created at runtime.
 - `tools/validate-package.mjs` performs a lightweight local sanity check.
 - `docs/issue-8-verification.md` records the first-pass source review and playable-system verification scope.
 - `docs/actor-data-strategy.md` records the Character Folio actor-vs-owned-Item data strategy.
+- `docs/content-scope.md` defines base-system and supplemental-module content boundaries.
+- `docs/foundry-v14-smoke-checklist.md` records the manual runtime checks needed before closing Foundry-load verification work.
 
 ## Compendium Packs
 
 The manifest declares Item compendium packs under `packs/`, but the LevelDB pack
-directories are not committed. A GM creates or updates those packs in Foundry via
-the **Anime 5e Core Compendiums** settings menu, which imports the source-backed
-JSON from `data/sources/core/` and `data/sources/supplements/`.
+directories are not committed beyond the tracked `packs/.gitkeep` shell. A GM
+creates or updates those packs in Foundry via the **Anime 5e Core Compendiums**
+settings menu, which imports the source-backed JSON from `data/sources/core/`
+and `data/sources/supplements/`.
 
 `tools/validate-package.mjs` checks every declared pack path. A missing physical
 pack directory is accepted only when the pack has a matching source manifest in
 `data/core-compendiums.json`; otherwise validation fails with the missing path.
 
 Supplement source naming and folder conventions are documented in
-`docs/supplemental-source-conventions.md`.
+`docs/supplemental-source-conventions.md`. Broader base-system and optional
+module boundaries are documented in `docs/content-scope.md`.
 
