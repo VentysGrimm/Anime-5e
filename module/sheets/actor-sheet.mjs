@@ -415,6 +415,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.complexAttributes = this.constructor._prepareComplexAttributeContext(items, context.items);
     context.pointSummary = this.constructor._preparePointSummary(system, items);
     context.creation = this.constructor._prepareCreationContext(system, context.pointSummary, items);
+    context.advancement = this.constructor._prepareAdvancementContext(system, context.pointSummary);
     context.attributeEffects = buildCoreAttributeEffectContext({
       system: this.actor._source?.system ?? system,
       items
@@ -442,8 +443,6 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { label: "Size Template", name: "system.identity.sizeTemplate", value: system.identity.sizeTemplate },
       { label: "Alignment", name: "system.identity.alignment", value: system.identity.alignment },
       { label: "Starting Discretionary Points", name: "system.identity.startingDiscretionaryPoints", value: system.identity.startingDiscretionaryPoints, type: "number" },
-      { label: "Engagement Bonus Points", name: "system.identity.engagementBonusPoints", value: system.identity.engagementBonusPoints, type: "number" },
-      { label: "Other Non-Levelling Points", name: "system.identity.otherNonLevellingPoints", value: system.identity.otherNonLevellingPoints, type: "number" },
       { label: "Age and Gender", name: "system.identity.ageAndGender", value: system.identity.ageAndGender },
       { label: "Height and Weight", name: "system.identity.heightAndWeight", value: system.identity.heightAndWeight },
       { label: "Homeland/Habitat", name: "system.identity.homelandHabitat", value: system.identity.homelandHabitat },
@@ -869,6 +868,30 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       validationStatus,
       validationLabel: validationStatus.replace(/^./, (character) => character.toUpperCase()),
       validationNotes
+    };
+  }
+
+  static _prepareAdvancementContext(system, pointSummary) {
+    const levelProgress = getLevelProgress(system.level, system.experience);
+    const engagementBonusPoints = numberOrZero(system.identity?.engagementBonusPoints);
+    const otherNonLevellingPoints = numberOrZero(system.identity?.otherNonLevellingPoints);
+    const remaining = numberOrZero(pointSummary.remaining);
+    const warnings = [];
+
+    if (remaining < 0) warnings.push("Unspent point value is negative; reduce spending or add approved non-levelling points.");
+
+    return {
+      levelProgress,
+      engagementBonusPoints,
+      otherNonLevellingPoints,
+      remaining,
+      warnings,
+      pointRows: [
+        { label: "Available Points", value: pointSummary.available },
+        { label: "Total Spent", value: pointSummary.totalSpent },
+        { label: "Total Refunds", value: pointSummary.totalRefunded },
+        { label: "Remaining Points", value: remaining }
+      ]
     };
   }
 

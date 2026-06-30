@@ -965,8 +965,48 @@
       </header>
 
       <section class="folio-grid two-column">
+        <section class="paint-panel advancement-bookkeeping-panel">
+          <h2>Advancement Bookkeeping</h2>
+          <div class="advancement-grid">
+            <label>
+              Character Level
+              <input type="number" value="{{advancement.levelProgress.currentLevel}}" readonly>
+            </label>
+            <label>
+              Current XP
+              <input type="number" value="{{advancement.levelProgress.currentExperience}}" readonly>
+            </label>
+            <label>
+              XP To Next
+              <input type="text" value="{{advancement.levelProgress.xpToNextLabel}}" readonly>
+            </label>
+            <label>
+              Next Threshold
+              <input type="text" value="{{advancement.levelProgress.nextThresholdLabel}}" readonly>
+            </label>
+            <label>
+              Engagement Bonus Points
+              <input type="number" name="system.identity.engagementBonusPoints" value="{{advancement.engagementBonusPoints}}" min="0" {{#unless editable}}disabled{{/unless}}>
+            </label>
+            <label>
+              Other Non-Levelling Points
+              <input type="number" name="system.identity.otherNonLevellingPoints" value="{{advancement.otherNonLevellingPoints}}" min="0" {{#unless editable}}disabled{{/unless}}>
+            </label>
+          </div>
+          <div class="advancement-point-summary">
+            {{#each advancement.pointRows as |row|}}
+              <span>{{row.label}} <strong>{{row.value}}</strong></span>
+            {{/each}}
+          </div>
+          {{#each advancement.warnings as |warning|}}
+            <p class="sheet-warning">{{warning}}</p>
+          {{/each}}
+          <label class="advancement-notes">
+            Advancement Notes
+            <textarea name="system.notes.advancement" {{#unless editable}}disabled{{/unless}}>{{system.notes.advancement}}</textarea>
+          </label>
+        </section>
         <section class="notes-box journal-notes"><h2>Session Notes And Adventure Log</h2><textarea name="system.notes.journal" {{#unless editable}}disabled{{/unless}}>{{system.notes.journal}}</textarea></section>
-        <section class="notes-box"><h2>Levelling Advancement</h2><textarea name="system.notes.advancement" {{#unless editable}}disabled{{/unless}}>{{system.notes.advancement}}</textarea></section>
         <section class="notes-box"><h2>Rewards, Downtime, Story Events</h2><textarea name="system.notes.overview" {{#unless editable}}disabled{{/unless}}>{{system.notes.overview}}</textarea></section>
       </section>
     </section>

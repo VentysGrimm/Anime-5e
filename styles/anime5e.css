@@ -717,6 +717,49 @@
   min-width: 0;
 }
 
+.anime5e .advancement-bookkeeping-panel {
+  align-content: start;
+  display: grid;
+  gap: 10px;
+}
+
+.anime5e .advancement-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+}
+
+.anime5e .advancement-point-summary {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  padding: 8px;
+}
+
+.anime5e .advancement-point-summary span {
+  display: grid;
+  font-size: 0.72rem;
+  font-weight: 800;
+  gap: 2px;
+  min-width: 0;
+  text-transform: uppercase;
+}
+
+.anime5e .advancement-point-summary strong {
+  font-size: 0.92rem;
+}
+
+.anime5e .advancement-notes {
+  display: grid;
+  gap: 4px;
+}
+
+.anime5e .advancement-notes textarea {
+  min-height: 110px;
+}
+
 .anime5e .attack-table {
   grid-template-columns: 1.35fr 0.75fr 0.75fr 0.95fr;
 }
@@ -1587,6 +1630,8 @@
 
 @media (max-width: 860px) {
   .anime5e .two-column,
+  .anime5e .advancement-grid,
+  .anime5e .advancement-point-summary,
   .anime5e .action-table,
   .anime5e .attribute-modifier-add,
   .anime5e .attribute-modifier-list,
