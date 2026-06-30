@@ -203,6 +203,20 @@ const COMPLEX_ATTRIBUTE_SOURCE_IDS = new Set([
   "core.attribute.telepathy-lesser",
   "core.attribute.transfer"
 ]);
+const FOLLOWER_ATTRIBUTE_SOURCE_IDS = new Set([
+  "core.attribute.companion",
+  "core.attribute.minions",
+  "core.attribute.minions-greater"
+]);
+const MINION_COUNT_BY_RANK = [
+  "",
+  "Up to 5",
+  "6-10",
+  "11-25",
+  "26-50",
+  "51-100",
+  "101-250"
+];
 
 const REQUIRED_NUMBER_DEFAULTS = {
   "system.level": 1,
@@ -263,6 +277,36 @@ function isWeaponAttributeItem(item) {
 
 function isComplexAttributeItem(item) {
   return item.type === "attribute" && COMPLEX_ATTRIBUTE_SOURCE_IDS.has(sourceIdForItem(item));
+}
+
+function isFollowerAttributeItem(item) {
+  return item.type === "attribute" && FOLLOWER_ATTRIBUTE_SOURCE_IDS.has(sourceIdForItem(item));
+}
+
+function followerPointBudgetForItem(item) {
+  const sourceId = sourceIdForItem(item);
+  const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+
+  if (sourceId === "core.attribute.companion") return 50 + (rank * 10);
+  if (sourceId === "core.attribute.minions-greater") return 70;
+  if (sourceId === "core.attribute.minions") return 40;
+  return null;
+}
+
+function minionCountForItem(item) {
+  const sourceId = sourceIdForItem(item);
+  if (!sourceId.startsWith("core.attribute.minions")) return "";
+
+  const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+  return MINION_COUNT_BY_RANK[rank] ?? "251+";
+}
+
+function followerKindForItem(item) {
+  const sourceId = sourceIdForItem(item);
+  if (sourceId === "core.attribute.companion") return "Companion";
+  if (sourceId === "core.attribute.minions-greater") return "Greater Minions";
+  if (sourceId === "core.attribute.minions") return "Minions";
+  return "Follower";
 }
 
 function weaponAttributeDamageFormula(item) {
@@ -530,8 +574,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         if (!prepared) return null;
 
         const system = item.system ?? {};
+        const isFollower = isFollowerAttributeItem(item);
+        const followerBudget = isFollower ? followerPointBudgetForItem(item) : null;
+        const minionCount = isFollower ? minionCountForItem(item) : "";
         const trackingTags = [
           `Rank ${numberOrZero(system.rank)}`,
+          Number.isFinite(followerBudget) ? `Budget: ${followerBudget} Points` : null,
+          hasText(minionCount) ? `Count: ${minionCount}` : null,
           hasText(system.scope) ? `Scope: ${system.scope}` : null,
           hasText(system.duration) ? `Duration: ${system.duration}` : null,
           hasText(system.targetCount) ? `Targets: ${system.targetCount}` : null,
@@ -547,7 +596,10 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           ...prepared,
           trackingTags: [...trackingTags, ...linkTags],
           trackingSummary: system.trackingMode || system.progression || system.category || "Manual tracking",
-          trackingNotes: system.trackingNotes
+          trackingNotes: system.trackingNotes,
+          canLinkFollower: isFollower,
+          linkFollowerIcon: hasText(system.linkedActorUuid) ? "fa-external-link-alt" : "fa-user-plus",
+          linkFollowerTitle: hasText(system.linkedActorUuid) ? "Open linked actor" : "Create linked follower actor"
         };
       })
       .filter(Boolean);
@@ -723,6 +775,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='apply-point-budget']").forEach((button) => {
       button.addEventListener("click", this._onApplyPointBudget.bind(this));
+    });
+    element.querySelectorAll("[data-action='create-linked-follower']").forEach((button) => {
+      button.addEventListener("click", this._onCreateLinkedFollower.bind(this));
     });
     element.querySelectorAll("[data-item-id]").forEach((row) => {
       row.draggable = true;
@@ -1110,6 +1165,83 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       "system.creation.startingLevel": startingLevel,
       "system.identity.startingDiscretionaryPoints": calculateRecommendedDiscretionaryPoints(startingLevel)
     });
+  }
+
+  async _onCreateLinkedFollower(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this._getEmbeddedItem(event);
+    if (!item || !isFollowerAttributeItem(item)) return;
+
+    const linkedActor = await this.constructor._resolveLinkedActor(item);
+    if (linkedActor) {
+      linkedActor.sheet?.render(true);
+      return;
+    }
+
+    const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+    const followerKind = followerKindForItem(item);
+    const pointBudget = followerPointBudgetForItem(item);
+    const minionCount = minionCountForItem(item);
+    const pointBudgetLabel = hasText(minionCount) ? "Point Budget Per Minion" : "Point Budget";
+    const sourceLine = [item.system?.source, item.system?.sourcePage ? `p. ${item.system.sourcePage}` : null].filter(Boolean).join(", ");
+    const details = [
+      `<p>Created from <strong>${escapeHtml(item.name)}</strong> on ${escapeHtml(this.actor.name)}.</p>`,
+      Number.isFinite(pointBudget) ? `<p><strong>${pointBudgetLabel}:</strong> ${pointBudget} Points.</p>` : "",
+      hasText(minionCount) ? `<p><strong>Minion Count:</strong> ${escapeHtml(minionCount)} at Rank ${rank}.</p>` : "",
+      sourceLine ? `<p><small>${escapeHtml(sourceLine)}</small></p>` : ""
+    ].join("");
+    const actor = await Actor.create({
+      name: `${this.actor.name} ${followerKind}`,
+      type: "companion",
+      img: item.img,
+      system: {
+        identity: {
+          actorRole: followerKind,
+          totalPoints: pointBudget,
+          startingDiscretionaryPoints: pointBudget
+        },
+        source: {
+          book: item.system?.source ?? "",
+          page: item.system?.sourcePage ?? null,
+          sourceId: item.system?.sourceId ?? "",
+          importId: item.system?.importId ?? ""
+        },
+        notes: {
+          overview: details,
+          companions: details
+        }
+      }
+    });
+
+    if (!actor) return;
+
+    await item.update({
+      "system.linkedActorUuid": actor.uuid,
+      "system.trackingNotes": this.constructor._appendTrackingNote(item.system?.trackingNotes, `Linked actor: ${actor.name} (${actor.uuid}).`)
+    });
+    actor.sheet?.render(true);
+  }
+
+  static async _resolveLinkedActor(item) {
+    const uuid = item.system?.linkedActorUuid?.trim();
+    if (!uuid) return null;
+
+    try {
+      const document = await fromUuid(uuid);
+      return document?.documentName === "Actor" ? document : null;
+    } catch (error) {
+      console.warn("anime5e | Unable to resolve linked follower actor", uuid, error);
+      return null;
+    }
+  }
+
+  static _appendTrackingNote(notes, note) {
+    if (!hasText(notes)) return note;
+    if (notes.includes(note)) return notes;
+
+    return `${notes}\n${note}`;
   }
 
   _onDragStart(event) {

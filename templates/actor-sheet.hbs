@@ -592,6 +592,7 @@
               <div class="item-tags">{{#each item.trackingTags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
               <div class="item-actions">
                 {{#if item.canUse}}<button type="button" data-action="use-item" title="Use"><i class="fas fa-comment"></i></button>{{/if}}
+                {{#if ../editable}}{{#if item.canLinkFollower}}<button type="button" data-action="create-linked-follower" title="{{item.linkFollowerTitle}}"><i class="fas {{item.linkFollowerIcon}}"></i></button>{{/if}}{{/if}}
                 {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
               </div>
             </li>
