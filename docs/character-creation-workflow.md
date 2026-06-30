@@ -15,6 +15,7 @@ This milestone starts the Anime 5e character creation build path.
   - Item of Power / mecha point cost
   - Defect point return
   - Manual spent/refunded adjustments
+  - Manual adjustment notes for point overrides
   - Available, total spent, total refunded, and remaining points
 - Exposed helpers as `game.anime5e.points` for sheets, macros, importers, and future module packs.
 - Connected the Character Folio point summary to the shared point helper used by actor derived data and creation hooks.
@@ -37,6 +38,7 @@ This milestone starts the Anime 5e character creation build path.
 The point helper can warn when:
 
 - point spending exceeds available points;
+- manual point adjustments are present without adjustment notes;
 - remaining/unspent points are negative in the advancement bookkeeping panel;
 - no Species/Race item is attached;
 - multiple Species/Race items are attached;

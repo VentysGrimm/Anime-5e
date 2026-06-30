@@ -545,6 +545,7 @@ export function calculatePointSummary(system = {}, items = []) {
   const abilityScoreCost = calculateAbilityScoreCost(system.abilities);
   const manualSpent = positiveNumber(system.points?.spent);
   const manualRefund = positiveNumber(system.points?.refunded);
+  const manualAdjustmentNotes = String(system.points?.adjustmentNotes ?? "").trim();
   const available = calculateAvailablePoints(system) + owned.defectRefund + classBenefits.bonusPoints;
   const totalSpent = abilityScoreCost
     + manualSpent
@@ -556,6 +557,9 @@ export function calculatePointSummary(system = {}, items = []) {
   const warnings = [...owned.warningItems, ...classLevelState.warnings, ...classBenefits.warnings, ...benchmarkWarnings];
 
   if (remaining < 0) warnings.push("Point spending exceeds available points.");
+  if ((manualSpent > 0 || manualRefund > 0) && !manualAdjustmentNotes) {
+    warnings.push("Manual point adjustments are present without adjustment notes.");
+  }
   if (owned.speciesCount === 0) warnings.push("No Species/Race item is attached yet.");
   if (owned.speciesCount > 1) warnings.push("Multiple Species/Race items are attached; verify this is intentional.");
 
@@ -563,6 +567,7 @@ export function calculatePointSummary(system = {}, items = []) {
     available,
     manualSpent,
     manualRefund,
+    manualAdjustmentNotes,
     abilityScoreCost,
     speciesCost: owned.speciesCost,
     classCost: owned.classCost,

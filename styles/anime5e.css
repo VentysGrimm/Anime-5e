@@ -433,6 +433,19 @@
   gap: 4px;
 }
 
+.anime5e .point-adjustment-notes {
+  display: grid;
+  font-size: 0.78rem;
+  font-weight: 800;
+  gap: 4px;
+  text-transform: uppercase;
+}
+
+.anime5e .point-adjustment-notes textarea {
+  min-height: 70px;
+  text-transform: none;
+}
+
 .anime5e .point-summary-panel input {
   border: 0;
   border-bottom: 2px solid var(--anime5e-ink);

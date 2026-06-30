@@ -307,6 +307,10 @@
             {{#each pointSummary.warnings as |warning|}}
               <p class="sheet-warning">{{warning}}</p>
             {{/each}}
+            <label class="point-adjustment-notes">
+              Manual Adjustment Notes
+              <textarea name="system.points.adjustmentNotes" {{#unless editable}}disabled{{/unless}}>{{system.points.adjustmentNotes}}</textarea>
+            </label>
           </section>
 
           <section class="notes-box compact-notes">
