@@ -69,7 +69,8 @@ function hitPointResourceField(initial = 10, options = {}) {
     max: numberField(initial, { min: 0 }),
     baseMax: numberField(initial, { min: 0 }),
     effectBonus: numberField(0),
-    temporary: numberField(0, { min: 0 })
+    temporary: numberField(0, { min: 0 }),
+    deprivationLoss: numberField(0, { min: 0 })
   });
 }
 
@@ -280,12 +281,14 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
 
     const hitPoints = this.combat.hitPoints;
     const baseHitPointMax = Math.max(0, numberOrFallback(sourceSystem.combat?.hitPoints?.max, numberOrFallback(hitPoints.max, 20)));
+    const deprivationLoss = Math.max(0, numberOrFallback(sourceSystem.combat?.hitPoints?.deprivationLoss, hitPoints.deprivationLoss));
     hitPoints.baseMax = baseHitPointMax;
     hitPoints.effectBonus = attributeEffects.hitPointMaxBonus;
-    hitPoints.max = Math.max(0, baseHitPointMax + attributeEffects.hitPointMaxBonus);
+    hitPoints.deprivationLoss = deprivationLoss;
+    hitPoints.max = Math.max(0, baseHitPointMax + attributeEffects.hitPointMaxBonus - deprivationLoss);
     hitPoints.value = numberOrFallback(sourceSystem.combat?.hitPoints?.value, hitPoints.value);
     hitPoints.value = Math.min(hitPoints.value, hitPoints.max);
-    hitPoints.value = Math.max(-hitPoints.max, hitPoints.value);
+    hitPoints.value = Math.max(-(baseHitPointMax + attributeEffects.hitPointMaxBonus), hitPoints.value);
     hitPoints.temporary = Math.max(0, numberOrFallback(sourceSystem.combat?.hitPoints?.temporary, hitPoints.temporary));
 
     const energy = this.combat.energy;

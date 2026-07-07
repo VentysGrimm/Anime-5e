@@ -1,0 +1,345 @@
+{
+  "pack": "anime5e.equipment",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Adventuring Risks - Core Rules",
+      "color": "#8a6f47"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Deprivation - Starvation",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Starvation causes 1 incurable Hit Point loss every 8 hours until food deprivation ends. Appropriate Features, Immunity, or Resilient may prevent this deprivation.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-starvation",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-starvation",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Every 8 hours",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until food deprivation ends.",
+        "riskNotes": "<p>Use the actor sheet Deprivation controls or this risk row to apply each elapsed interval.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-starvation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-starvation"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deprivation - Hunger",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Hunger from minimal food causes 1 incurable Hit Point loss per day until food deprivation ends.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-hunger",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-hunger",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Per day",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until food deprivation ends.",
+        "riskNotes": "<p>Use when a character has only minimal food rather than no food at all.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-hunger",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-hunger"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deprivation - Inadequate Nutrition",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Inadequate nutrition causes 1 incurable Hit Point loss per week until nutrition deprivation ends.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-inadequate-nutrition",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-inadequate-nutrition",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Per week",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until nutrition deprivation ends.",
+        "riskNotes": "<p>Use for longer-term inadequate diet or supply situations.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-inadequate-nutrition",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-inadequate-nutrition"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deprivation - Total Dehydration",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Total dehydration causes 1 incurable Hit Point loss every 2 hours until water deprivation ends.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-total-dehydration",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-total-dehydration",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Every 2 hours",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until water deprivation ends.",
+        "riskNotes": "<p>Use when a character has no meaningful water access.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-total-dehydration",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-total-dehydration"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deprivation - Partial Dehydration",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Partial dehydration causes 1 incurable Hit Point loss every 8 hours until water deprivation ends.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-partial-dehydration",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-partial-dehydration",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Every 8 hours",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until water deprivation ends.",
+        "riskNotes": "<p>Use when a character has too little water rather than no water at all.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-partial-dehydration",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-partial-dehydration"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deprivation - Overheating",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Overheating causes 1 incurable Hit Point loss every 4 hours until heat deprivation ends.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-overheating",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-overheating",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Every 4 hours",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until overheating ends.",
+        "riskNotes": "<p>Use for dangerous heat exposure where ordinary environmental damage is not the better fit.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-overheating",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-overheating"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deprivation - Freezing Cold",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Freezing cold causes 1 incurable Hit Point loss per hour until cold deprivation ends.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-freezing-cold",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-freezing-cold",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Per hour",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until cold deprivation ends.",
+        "riskNotes": "<p>Use for prolonged freezing exposure outside freezing water.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-freezing-cold",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-freezing-cold"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deprivation - Freezing Water",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Freezing water causes 1 incurable Hit Point loss per minute until the character escapes the water and the deprivation ends.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-freezing-water",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-freezing-water",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Per minute",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until freezing-water deprivation ends.",
+        "riskNotes": "<p>Use for ongoing freezing water exposure.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-freezing-water",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-freezing-water"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deprivation - Drowning",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/hazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Drowning causes 1 incurable Hit Point loss per second until air deprivation ends.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.deprivation-drowning",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.deprivation-drowning",
+        "category": "Deprivation",
+        "status": "Active",
+        "interval": "Per second",
+        "damage": "1 incurable Hit Point loss",
+        "effect": "Cannot recover this HP loss until air deprivation ends.",
+        "riskNotes": "<p>Use for drowning or equivalent air deprivation when another suffocation rule is not being used.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.deprivation-drowning",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.deprivation-drowning"
+          }
+        }
+      }
+    }
+  ]
+}

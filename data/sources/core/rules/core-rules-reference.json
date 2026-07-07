@@ -201,6 +201,30 @@
       }
     },
     {
+      "name": "Deprivation Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Deprivation",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF p. 180.</p><p>Deprivation covers lack of food, sleep, rest, shelter, water, air, and similar life-sustaining essentials. Appropriate Features, Immunity, or Resilient may prevent a specific deprivation. Otherwise, the character loses 1 Hit Point every listed interval, and that Hit Point loss is incurable until the deprivation ends.</p><table><thead><tr><th>Type</th><th>Hit Point Loss Interval</th></tr></thead><tbody><tr><td>Starvation</td><td>1 per 8 hours</td></tr><tr><td>Hunger (minimal food)</td><td>1 per day</td></tr><tr><td>Inadequate Nutrition</td><td>1 per week</td></tr><tr><td>Total Dehydration</td><td>1 per 2 hours</td></tr><tr><td>Partial Dehydration</td><td>1 per 8 hours</td></tr><tr><td>Overheating</td><td>1 per 4 hours</td></tr><tr><td>Freezing Cold</td><td>1 per hour</td></tr><tr><td>Freezing Water</td><td>1 per minute</td></tr><tr><td>Drowning</td><td>1 per second</td></tr></tbody></table><p>The Anime 5e actor sheet tracks Deprivation Loss on Hit Points. Applying deprivation reduces current HP and maximum HP; recovering deprivation removes the cap reduction but does not heal HP automatically.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.deprivation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "importId": "core.rules.deprivation"
+          }
+        }
+      }
+    },
+    {
       "name": "Items and Equipment Construction Overview",
       "folder": "Core Rules Reference",
       "pages": [

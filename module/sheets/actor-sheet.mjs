@@ -20,7 +20,13 @@ import {
   normalizeCharacterLevel,
   summarizeClassLevelState
 } from "../rules/points.mjs";
-import { ENERGY_USAGE_MODES, applyEnergyChange, applyHitPointChange, getEnergyUsageMode } from "../rules/resources.mjs";
+import {
+  ENERGY_USAGE_MODES,
+  applyDeprivationLoss,
+  applyEnergyChange,
+  applyHitPointChange,
+  getEnergyUsageMode
+} from "../rules/resources.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -565,6 +571,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       hasText(system.crew) ? `Crew: ${system.crew}` : null,
       hasText(system.linkedActorUuid) ? "Actor linked" : null
     ].filter(Boolean);
+    const canApplyDeprivation = item.type === "adventuringRisk"
+      && (/deprivation/i.test(system.category ?? "") || /deprivation/i.test(system.sourceId ?? "") || /deprivation/i.test(item.name ?? ""));
 
     return {
       id: item.id,
@@ -589,6 +597,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       canPowerCheck: isPowerCheckItem(item),
       canAttack: item.type === "weapon" || isWeaponAttribute || (item.type !== "attribute" && hasAttackModifier),
       canDamage: hasText(damageFormula),
+      canApplyDeprivation,
       canToggleEffect,
       effectActive: effectUsage?.effectActive ?? true,
       effectToggleIcon: effectUsage?.effectActive === false ? "fa-toggle-off" : "fa-toggle-on",
@@ -1164,6 +1173,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='apply-damage'], [data-action='apply-healing']").forEach((button) => {
       button.addEventListener("click", this._onApplyHitPointChange.bind(this));
     });
+    element.querySelectorAll("[data-action='apply-deprivation-loss'], [data-action='recover-deprivation-loss']").forEach((button) => {
+      button.addEventListener("click", this._onApplyDeprivationChange.bind(this));
+    });
+    element.querySelectorAll("[data-action='apply-risk-deprivation']").forEach((button) => {
+      button.addEventListener("click", this._onApplyRiskDeprivation.bind(this));
+    });
     element.querySelectorAll("[data-action='spend-energy'], [data-action='restore-energy']").forEach((button) => {
       button.addEventListener("click", this._onApplyEnergyChange.bind(this));
     });
@@ -1591,6 +1606,38 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.${tempLine}</p>`
+    });
+  }
+
+  async _onApplyDeprivationChange(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".deprivation-panel");
+    const amountInput = panel?.querySelector("[data-deprivation-input='amount']");
+    const amount = Math.max(1, Math.trunc(Number(amountInput?.value) || 1));
+    const mode = event.currentTarget.dataset.action === "recover-deprivation-loss" ? "recover" : "apply";
+    await this._applyDeprivationChange(amount, mode);
+  }
+
+  async _onApplyRiskDeprivation(event) {
+    event.preventDefault();
+    const item = this._getEmbeddedItem(event);
+    if (!item || item.type !== "adventuringRisk") return;
+
+    await this._applyDeprivationChange(1, "apply", item);
+  }
+
+  async _applyDeprivationChange(amount, mode, item = null) {
+    const change = await applyDeprivationLoss(this.actor, amount, mode);
+    const verb = mode === "recover" ? "recovers" : "suffers";
+    const source = item ? ` from ${escapeHtml(item.name)}` : "";
+    const interval = item?.system?.interval ? ` Interval: ${escapeHtml(item.system.interval)}.` : "";
+    const note = mode === "recover"
+      ? " Maximum HP is no longer reduced by that deprivation loss, but HP is not healed automatically."
+      : " Deprivation loss reduces maximum HP and cannot be healed until the deprivation ends.";
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${verb} ${change.amount} deprivation Hit Point loss${source}. HP ${change.current} &rarr; ${change.next}; deprivation loss ${change.currentLoss} &rarr; ${change.nextLoss}; maximum HP is now ${change.nextMax}.${interval}${note}</p>`
     });
   }
 

@@ -627,6 +627,21 @@
               <button type="button" class="roll-action" data-action="apply-healing"><i class="fas fa-heart"></i> Heal</button>
             </div>
           </section>
+          <section class="deprivation-panel" aria-label="Deprivation Hit Point Loss">
+            <h3>Deprivation</h3>
+            <div class="damage-controls">
+              <label>
+                Loss
+                <input type="number" name="system.combat.hitPoints.deprivationLoss" value="{{system.combat.hitPoints.deprivationLoss}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Amount
+                <input type="number" data-deprivation-input="amount" value="1" min="1">
+              </label>
+              <button type="button" class="roll-action" data-action="apply-deprivation-loss"><i class="fas fa-hourglass-half"></i> Apply</button>
+              <button type="button" class="roll-action" data-action="recover-deprivation-loss"><i class="fas fa-seedling"></i> Recover</button>
+            </div>
+          </section>
           <section class="energy-panel" aria-label="Energy Spending And Recovery">
             <h3>Energy Changes</h3>
             <p class="sheet-warning">{{energyMode.label}}</p>
@@ -1185,6 +1200,7 @@
                 <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
                 <div class="item-actions">
                   {{#if item.canUse}}<button type="button" data-action="use-item" title="Post Reminder"><i class="fas fa-comment"></i></button>{{/if}}
+                  {{#if item.canApplyDeprivation}}<button type="button" data-action="apply-risk-deprivation" title="Apply Deprivation Loss"><i class="fas fa-hourglass-half"></i></button>{{/if}}
                   {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
                 </div>
               </li>

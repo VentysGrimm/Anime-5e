@@ -248,6 +248,10 @@
         <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" {{#unless editable}}disabled{{/unless}}>
       </label>
       <label>
+        Deprivation
+        <input type="number" name="system.combat.hitPoints.deprivationLoss" value="{{system.combat.hitPoints.deprivationLoss}}" min="0" {{#unless editable}}disabled{{/unless}}>
+      </label>
+      <label>
         Temp HP
         <input type="number" name="system.combat.hitPoints.temporary" value="{{system.combat.hitPoints.temporary}}" min="0" {{#unless editable}}disabled{{/unless}}>
       </label>

@@ -101,6 +101,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Monster, NPC, and companion basic actor sheets now expose source-backed challenge, XP, movement, combat, and point summaries; they can roll ability checks, quick checks, contests, saving throws, skill items, common attacks, and damage. The Encounter Threat settings dialog now compares party and encounter threat with manual threat and XP budget overrides.
 - Energy now supports tracked, manual, and disabled world modes. Actor sheets expose Energy mode/status and controls where applicable; Attribute use honours the mode. Dynamic Powers and Spell items now carry helper fields for ability checks, Energy costs, repeated effects, activation limits, spell casting metadata, saves, attacks, psionics notes, and manual flexible-power tracking.
 - Companion, Minions, mount, vehicle, mecha, and monster-variant workflows now support persistent linked actor UUIDs. Character sheets display linked actor summaries, can open linked actors, and can create linked companion/vehicle/mecha actors from owned Attributes or Items while preserving pilot, owner, occupant, source, and point metadata.
+- Core Rules deprivation now has source-backed Adventuring Risk Items, a rules-reference Journal entry, and actor-sheet Hit Point cap tracking for incurable deprivation loss until the deprivation ends.
 
 ## Missing Files Required For Load
 
