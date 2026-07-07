@@ -106,6 +106,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Actor sheets now expose buttons for the core rules-reference Journal pack, linking character creation, character options, rolls, combat, advancement, item construction, and GM guidance references by source ID.
 - Character sheets now include a Level Up action near the class/level panel. It confirms the advance, updates actor level, XP, proficiency bonus, a single unambiguous owned Class item, point validation, and posts the level-up result to chat.
 - Level Up also raises the character's source Discretionary Point budget to the Core Rules level benchmark when needed, and the Journal advancement panel shows current source budget, benchmark budget, and remaining points for allocation.
+- Class progression now syncs class-granted Attribute benefits into managed, class-paid owned Attribute items, excludes those generated items from discretionary point spending, exposes class choice and duplicate/reallocation review rows, and lets multiclass actors advance a specific owned Class item from the Folio.
 - Actor sheets now include Core Rules combat manoeuvre controls. They can post source-backed manoeuvre reminders or roll a selected common attack with manoeuvre advantage/disadvantage guidance while preserving later damage, save, and target-state rulings for GM adjudication.
 
 ## Missing Files Required For Load

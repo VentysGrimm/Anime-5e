@@ -1,4 +1,5 @@
 import { proficiencyBonusForLevel } from "./points.mjs";
+import { syncClassGrantedBenefits } from "./class-benefits.mjs";
 
 const SPECIES_TYPES = new Set(["species"]);
 const SIZE_TEMPLATE_TYPES = new Set(["sizeTemplate"]);
@@ -118,7 +119,9 @@ export async function applySpeciesItem(actor, item) {
     ...summarizePointState(actor)
   };
 
-  return actor.update(update);
+  const result = await actor.update(update);
+  await syncClassGrantedBenefits(actor);
+  return result;
 }
 
 export async function removeSpeciesItem(actor, item) {
@@ -228,10 +231,12 @@ export function registerCreationWorkflowHooks() {
       if (applied === item.uuid || applied === item.id) return applySizeTemplateItem(actor, item);
     }
     if (CLASS_TYPES.has(item.type)) {
-      return actor.update({
+      const result = await actor.update({
         ...classProgressionUpdate(actor, item),
         ...summarizePointState(actor)
       });
+      await syncClassGrantedBenefits(actor);
+      return result;
     }
     await refreshCreationValidation(actor);
   });
@@ -243,10 +248,12 @@ export function registerCreationWorkflowHooks() {
     if (SPECIES_TYPES.has(item.type)) return removeSpeciesItem(actor, item);
     if (SIZE_TEMPLATE_TYPES.has(item.type)) return removeSizeTemplateItem(actor, item);
     if (CLASS_TYPES.has(item.type)) {
-      return actor.update({
+      const result = await actor.update({
         ...classProgressionUpdate(actor),
         ...summarizePointState(actor)
       });
+      await syncClassGrantedBenefits(actor);
+      return result;
     }
     await refreshCreationValidation(actor);
   });

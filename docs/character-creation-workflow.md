@@ -24,12 +24,14 @@ This milestone starts the Anime 5e character creation build path.
 - Added a Level 1 foundation path through Apply Start plus Set Budget, backed by the scratch-character regression fixture.
 - Added Core Rules Table 01 character benchmark data and Folio warnings for ability scores, Attribute ranks, proficiency bonus, and Armour Class.
 - Added level progress helpers for current XP, next level threshold, XP needed, and progress within the current level band.
-- Added a Folio class level summary derived from owned Class items without applying class benefits.
+- Added a Folio class level summary derived from owned Class items.
 - Added structured Class item progression data and an item-sheet progression table, seeded first with the Core Rules Adventurer 1-20 unrestricted Bonus Point progression.
 - Expanded structured progression data to all 14 Core Rules classes.
-- Added Folio multiclass review warnings for missing levels, duplicate class-granted benefits, and manual reallocation notes.
+- Added Folio multiclass review warnings for missing levels, duplicate class-granted benefits, and reallocation notes.
 - Class item changes now sync actor level and proficiency bonus from total owned Class levels, while class-derived Bonus Points and benefit summaries aggregate across multiclass builds.
-- Added a Folio Level Up action near the level/class panel that advances actor level, XP threshold, proficiency bonus, and a single unambiguous owned Class item while warning for manual multiclass review.
+- Class-granted Attribute benefits now sync to managed, zero-cost, class-paid owned Attribute items marked with `flags.anime5e.classGrant.managed`; point totals ignore those managed items while derived Attribute effects can still read their ranks.
+- Added class benefit sync, class choice, and reallocation review rows to the Folio so multiclass duplicate grants and choice benefits are auditable instead of hidden in notes.
+- Added a Folio Level Up action near the level/class panel that advances actor level, XP threshold, proficiency bonus, and a single unambiguous owned Class item; multiclass actors use per-Class advance buttons so the player chooses which Class level increases.
 - Attribute and Weapon point customization now supports effective rank, cost adjustments, Enhancement/Limiter references, final-cost overrides, and override-note warnings.
 - Added structured trait data for all 14 Core Rules Anime 5E species, including ability bonuses, Attributes, Defects, languages, movement, and subrace notes.
 - Added `Raceless Character` as a 0-point source-backed Species item for characters that save Race Points for discretionary Attributes.
@@ -51,14 +53,15 @@ The point helper can warn when:
 - no Class item with a level is attached;
 - attached Class items have incomplete levels;
 - owned class item levels do not match actor level;
-- multiple Class items require manual duplicate-benefit and reallocation review;
+- class-granted Attribute items need sync;
+- class-granted choice benefits need allocation;
+- duplicate or overlapping class grants need reallocation review;
 - ranked Attributes have no cost;
 - level-up point budgets should be reviewed when remaining points are negative after advancement;
 - ranked Defects have no point return.
 - a character exceeds the optional Table 01 benchmark limits for their level band.
-- multiple Class items are attached before advanced multiclass automation is available.
 - multiple Species/Race items are attached before hybrid construction is fully automated.
 
 ## Next build step
 
-Add preview-before-apply behaviour for Species and Class items, then expand class-derived HP, hit dice, proficiency automation, and full Hybrid Species construction.
+Add preview-before-apply behaviour for Species and Class items, then expand class-derived HP, hit dice automation, and full Hybrid Species construction.

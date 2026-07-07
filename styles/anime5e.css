@@ -653,7 +653,7 @@
   border: 1px solid var(--anime5e-border);
   display: grid;
   gap: 8px;
-  grid-template-columns: minmax(120px, 1fr) 46px;
+  grid-template-columns: minmax(120px, 1fr) 46px 30px;
   min-height: 28px;
   padding: 4px 8px;
 }
@@ -683,6 +683,21 @@
   letter-spacing: 0;
   margin: 0;
   text-transform: uppercase;
+}
+
+.anime5e .class-benefit-sync-panel header {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.anime5e .class-benefit-sync-panel header button {
+  align-items: center;
+  display: inline-flex;
+  gap: 5px;
+  min-height: 28px;
 }
 
 .anime5e .class-benefit-grid {
@@ -728,6 +743,14 @@
 .anime5e .class-benefit-list span,
 .anime5e .class-benefit-list strong {
   min-width: 0;
+}
+
+.anime5e .class-benefit-plan-list li {
+  grid-template-columns: minmax(110px, 0.8fr) minmax(160px, 1fr);
+}
+
+.anime5e .class-benefit-plan-list strong {
+  overflow-wrap: anywhere;
 }
 
 .anime5e .advancement-bookkeeping-panel {

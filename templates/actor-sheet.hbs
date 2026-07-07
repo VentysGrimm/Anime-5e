@@ -173,7 +173,15 @@
             {{#if creation.classLevel.hasClassLevels}}
               <ol class="class-level-list">
                 {{#each creation.classLevel.classes as |classItem|}}
-                  <li><span>{{classItem.name}}</span><strong>{{classItem.level}}</strong></li>
+                  <li>
+                    <span>{{classItem.name}}</span>
+                    <strong>{{classItem.level}}</strong>
+                    {{#if ../editable}}
+                      <button type="button" class="icon-button" data-action="advance-class-item" data-item-id="{{classItem.id}}" title="Advance {{classItem.name}}">
+                        <i class="fas fa-arrow-up"></i>
+                      </button>
+                    {{/if}}
+                  </li>
                 {{/each}}
               </ol>
             {{/if}}
@@ -201,7 +209,54 @@
                 </ol>
               </section>
             {{/if}}
+            {{#if creation.classBenefitPlan.hasManagedAttributes}}
+              <section class="class-benefit-panel class-benefit-sync-panel">
+                <header>
+                  <h3>Class Benefit Sync</h3>
+                  {{#if editable}}
+                    <button type="button" data-action="sync-class-benefits"><i class="fas fa-sync-alt"></i><span>Sync</span></button>
+                  {{/if}}
+                </header>
+                <ol class="class-benefit-list class-benefit-plan-list">
+                  {{#each creation.classBenefitPlan.managedAttributes as |grant|}}
+                    <li>
+                      <span>{{grant.name}}</span>
+                      <strong>Rank {{grant.rank}} - {{grant.statusLabel}}</strong>
+                    </li>
+                  {{/each}}
+                </ol>
+              </section>
+            {{/if}}
+            {{#if creation.classBenefitPlan.hasChoices}}
+              <section class="class-benefit-panel class-benefit-choice-panel">
+                <h3>Class Choices</h3>
+                <ol class="class-benefit-list class-benefit-plan-list">
+                  {{#each creation.classBenefitPlan.choices as |choice|}}
+                    <li>
+                      <span>{{choice.detail}}</span>
+                      <strong>{{choice.label}}</strong>
+                    </li>
+                  {{/each}}
+                </ol>
+              </section>
+            {{/if}}
+            {{#if creation.classBenefitPlan.hasReallocations}}
+              <section class="class-benefit-panel class-benefit-choice-panel">
+                <h3>Reallocation Review</h3>
+                <ol class="class-benefit-list class-benefit-plan-list">
+                  {{#each creation.classBenefitPlan.reallocations as |grant|}}
+                    <li>
+                      <span>{{grant.name}}</span>
+                      <strong>{{grant.statusLabel}} - {{grant.classNames}}</strong>
+                    </li>
+                  {{/each}}
+                </ol>
+              </section>
+            {{/if}}
             {{#each creation.classBenefits.warnings as |warning|}}
+              <p class="sheet-warning">{{warning}}</p>
+            {{/each}}
+            {{#each creation.classBenefitPlan.warnings as |warning|}}
               <p class="sheet-warning">{{warning}}</p>
             {{/each}}
           </section>

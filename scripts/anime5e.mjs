@@ -50,6 +50,7 @@ import {
   showEncounterThreatDialog
 } from "../module/apps/encounter-threat-dialog.mjs";
 import { importCoreCompendiumData } from "../module/data/compendiums.mjs";
+import * as Anime5eClassBenefits from "../module/rules/class-benefits.mjs";
 import * as Anime5eCombatManoeuvres from "../module/rules/combat-manoeuvres.mjs";
 import { registerCreationWorkflowHooks } from "../module/rules/creation-workflow.mjs";
 import * as Anime5eDynamicPowers from "../module/rules/dynamic-powers.mjs";
@@ -106,6 +107,7 @@ Hooks.once("init", () => {
 
   game.anime5e = {
     config: ANIME5E,
+    classBenefits: Anime5eClassBenefits,
     combatManoeuvres: Anime5eCombatManoeuvres,
     dynamicPowers: Anime5eDynamicPowers,
     importCoreCompendiumData,

@@ -31,11 +31,11 @@ The remaining-point result is guidance, not a hidden lock. If a GM grants a spec
 
 ## Species, Size, And Class
 
-Drag source-backed Species and Class Items from the compendiums whenever possible. The sheet reads those Items for point totals, species workflow summaries, class-level summaries, class-derived benefits, and validation warnings.
+Drag source-backed Species and Class Items from the compendiums whenever possible. The sheet reads those Items for point totals, species workflow summaries, class-level summaries, class-derived benefits, managed class-grant sync, and validation warnings.
 
 Use the Species Workflow to mark the applied Species. Use the Size Template workflow to mark the selected size template; applied size modifiers can update derived summaries such as Armour Class while leaving table-review notes visible.
 
-For classes, set the Class Item level. The actor compares owned Class levels with actor level and warns when they do not match. Multiclass characters are supported for bookkeeping, but duplicate proficiencies, duplicate benefits, and point reallocations still need GM review.
+For classes, set the Class Item level. The actor compares owned Class levels with actor level and warns when they do not match. Class-granted Attribute benefits sync to class-paid owned Attribute Items that do not spend discretionary points. Multiclass characters can advance one owned Class at a time; duplicate proficiencies, duplicate benefits, and point reallocations appear in the Class Benefit Sync and Reallocation Review panels for GM review.
 
 ## Attributes, Defects, And Dynamic Powers
 
@@ -70,9 +70,9 @@ The world settings control whether range penalties are applied automatically, wh
 ## Level-Up
 
 1. Increase Character Level and Experience.
-2. Use Level Up near the Class and Level panel when the character advances. If the character has one clear owned Class item, the sheet advances that Class level, actor level, XP threshold, proficiency bonus, and source Discretionary Point budget together.
-3. For multiclass characters, review or update each owned Class Item level so the owned Class Level total matches the actor level.
-4. Review Class-Derived Benefits for new Bonus Points, proficiencies, hit dice summaries, and benefit notes.
+2. Use Level Up near the Class and Level panel when the character advances. If the character has one clear owned Class item, the sheet advances that Class level, actor level, XP threshold, proficiency bonus, source Discretionary Point budget, and class-granted benefits together.
+3. For multiclass characters, use the per-Class advance buttons so the owned Class Level total matches actor level.
+4. Review Class-Derived Benefits, Class Benefit Sync, Class Choices, and Reallocation Review for new Bonus Points, class-paid Attributes, proficiencies, hit dice summaries, choice benefits, and duplicate-grant notes.
 5. Add new Attributes, powers, techniques, equipment, or other Items earned at the new level.
 6. Review the Journal tab's current source budget, level benchmark budget, and remaining points, then update Engagement Bonus Points, other non-levelling awards, and advancement notes on the Folio.
 7. Resolve Point Summary warnings before the next session.

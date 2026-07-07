@@ -12,6 +12,7 @@ import {
   removeSpeciesItem,
   summarizePointState
 } from "../rules/creation-workflow.mjs";
+import { syncClassGrantedBenefits } from "../rules/class-benefits.mjs";
 import {
   buildCoreAttributeEffectContext,
   buildCoreAttributeUsageContext,
@@ -1113,6 +1114,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       levelProgress,
       classLevel,
       classBenefits: pointSummary.classBenefits,
+      classBenefitPlan: pointSummary.classBenefitPlan,
       benchmark: pointSummary.benchmark,
       benchmarkSummary: pointSummary.benchmarkSummary,
       validationStatus,
@@ -1302,6 +1304,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='level-up']").forEach((button) => {
       button.addEventListener("click", this._onLevelUp.bind(this));
+    });
+    element.querySelectorAll("[data-action='advance-class-item']").forEach((button) => {
+      button.addEventListener("click", this._onAdvanceClassItem.bind(this));
+    });
+    element.querySelectorAll("[data-action='sync-class-benefits']").forEach((button) => {
+      button.addEventListener("click", this._onSyncClassBenefits.bind(this));
     });
     element.querySelectorAll("[data-action='create-linked-follower']").forEach((button) => {
       button.addEventListener("click", this._onCreateLinkedFollower.bind(this));
@@ -1894,6 +1902,10 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const currentExperience = Math.max(0, Math.trunc(Number(this.actor.system?.experience) || 0));
     const targetExperience = nextExperience === null ? currentExperience : Math.max(currentExperience, nextExperience);
     const classItems = (this.actor.items?.contents ?? []).filter((item) => item.type === "class");
+    if (classItems.length > 1) {
+      ui.notifications?.warn("Use the per-class advance controls for multiclass characters.");
+      return;
+    }
     const selectedClass = classItems.length === 1 ? classItems[0] : null;
     const nextClassLevel = selectedClass ? nextLevel : null;
     const confirmed = await this._confirmLevelUp({ currentLevel, nextLevel, targetExperience, selectedClass, nextClassLevel });
@@ -1925,6 +1937,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       ...update,
       ...summarizePointState(this.actor)
     });
+    await syncClassGrantedBenefits(this.actor);
 
     if (!selectedClass && classItems.length !== 1) {
       ui.notifications?.warn("Level increased, but no single owned Class item could be advanced automatically. Update class levels manually.");
@@ -1938,6 +1951,93 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       content: `<p><strong>${escapeHtml(this.actor.name)}</strong> advances from Level ${currentLevel} to Level ${nextLevel}. XP is now ${targetExperience}; Proficiency Bonus is +${proficiencyBonusForLevel(nextLevel)}.${selectedClass ? ` ${escapeHtml(selectedClass.name)} is now Class Level ${nextClassLevel}.` : " Review owned Class items manually."}${budgetLine}</p>`
     });
+  }
+
+  async _onAdvanceClassItem(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const item = this.actor.items.get(event.currentTarget.dataset.itemId);
+    if (!item || item.type !== "class") {
+      ui.notifications?.warn("Select an owned Class item to advance.");
+      return;
+    }
+
+    const classItems = (this.actor.items?.contents ?? []).filter((entry) => entry.type === "class");
+    const currentClassLevel = Math.max(0, Math.trunc(Number(item.system?.level) || 0));
+    if (currentClassLevel >= 20) {
+      ui.notifications?.warn(`${item.name} is already at Class Level 20.`);
+      return;
+    }
+
+    const currentClassTotal = classItems.reduce((total, entry) => total + Math.max(0, Math.trunc(Number(entry.system?.level) || 0)), 0);
+    const nextClassLevel = currentClassLevel + 1;
+    const nextActorLevel = Math.max(1, currentClassTotal + 1);
+    const nextExperience = calculateStartingExperience(nextActorLevel);
+    const currentExperience = Math.max(0, Math.trunc(Number(this.actor.system?.experience) || 0));
+    const targetExperience = nextExperience === null ? currentExperience : Math.max(currentExperience, nextExperience);
+    const confirmed = await this._confirmAdvanceClass({ item, currentClassLevel, nextClassLevel, nextActorLevel, targetExperience });
+    if (!confirmed) return;
+
+    await item.update({ "system.level": nextClassLevel });
+
+    const currentDiscretionaryPoints = numberOrZero(this.actor.system?.identity?.startingDiscretionaryPoints);
+    const recommendedDiscretionaryPoints = calculateRecommendedDiscretionaryPoints(nextActorLevel);
+    const slot = this.constructor._classSlotForItem(this.actor, item);
+    const update = {
+      "system.level": nextActorLevel,
+      "system.experience": targetExperience,
+      "system.combat.proficiencyBonus": proficiencyBonusForLevel(nextActorLevel),
+      [`system.progression.classes.${slot}.name`]: item.name,
+      [`system.progression.classes.${slot}.level`]: nextClassLevel,
+      [`system.progression.classes.${slot}.hitDice`]: item.system?.hitDice ?? ""
+    };
+    if (currentDiscretionaryPoints < recommendedDiscretionaryPoints) {
+      update["system.identity.startingDiscretionaryPoints"] = recommendedDiscretionaryPoints;
+    }
+
+    await this.actor.update({
+      ...update,
+      ...summarizePointState(this.actor)
+    });
+    const syncResult = await syncClassGrantedBenefits(this.actor);
+
+    const syncLine = syncResult.created || syncResult.updated || syncResult.deleted
+      ? ` Class benefits synced (${syncResult.created} created, ${syncResult.updated} updated, ${syncResult.deleted} removed).`
+      : " Class benefits are already synced.";
+    const budgetLine = currentDiscretionaryPoints < recommendedDiscretionaryPoints
+      ? ` Discretionary Point budget increases from ${currentDiscretionaryPoints} to ${recommendedDiscretionaryPoints}.`
+      : "";
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> advances <strong>${escapeHtml(item.name)}</strong> from Class Level ${currentClassLevel} to ${nextClassLevel}. Total character level is now ${nextActorLevel}; XP is ${targetExperience}; Proficiency Bonus is +${proficiencyBonusForLevel(nextActorLevel)}.${budgetLine}${syncLine}</p>`
+    });
+  }
+
+  async _confirmAdvanceClass({ item, currentClassLevel, nextClassLevel, nextActorLevel, targetExperience }) {
+    const content = `<p>Advance <strong>${escapeHtml(item.name)}</strong> from Class Level ${currentClassLevel} to ${nextClassLevel}?</p><p>Total character level will become ${nextActorLevel}; XP will be at least ${targetExperience}; Proficiency Bonus will become +${proficiencyBonusForLevel(nextActorLevel)}.</p>`;
+    const DialogV2 = foundry.applications.api.DialogV2;
+
+    if (DialogV2?.confirm) {
+      return DialogV2.confirm({
+        window: { title: "Advance Class" },
+        content,
+        yes: { label: "Advance" },
+        no: { label: "Cancel" }
+      });
+    }
+
+    return window.confirm(`Advance ${item.name} to Class Level ${nextClassLevel}?`);
+  }
+
+  async _onSyncClassBenefits(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const result = await syncClassGrantedBenefits(this.actor);
+    await this.actor.update(summarizePointState(this.actor));
+    ui.notifications?.info(`Class benefits synced: ${result.created} created, ${result.updated} updated, ${result.deleted} removed.`);
   }
 
   async _confirmLevelUp({ currentLevel, nextLevel, targetExperience, selectedClass, nextClassLevel }) {

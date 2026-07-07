@@ -1,5 +1,7 @@
 const ABILITY_KEYS = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
 
+import { buildClassBenefitPlan, isClassGrantedBenefitItem } from "./class-benefits.mjs";
+
 export const LEVEL_XP_THRESHOLDS = Object.freeze({
   1: 0,
   2: 300,
@@ -518,6 +520,8 @@ export function calculateOwnedPointTotals(items = []) {
     const type = item?.type;
     const system = item?.system ?? {};
 
+    if (isClassGrantedBenefitItem(item)) continue;
+
     if (type === "attribute" || type === "itemAttribute" || type === "power" || type === "technique" || type === "weapon") {
       const customization = calculateAttributeCustomization(item);
       totals.attributeCost += customization.totalCost;
@@ -564,6 +568,7 @@ export function calculatePointSummary(system = {}, items = []) {
   const owned = calculateOwnedPointTotals(items);
   const classLevelState = summarizeClassLevelState(items, system.level);
   const classBenefits = summarizeSingleClassBenefits(items, system.level);
+  const classBenefitPlan = buildClassBenefitPlan(items);
   const benchmark = getCharacterBenchmark(system.level);
   const benchmarkSummary = summarizeCharacterBenchmark(benchmark);
   const benchmarkWarnings = calculateBenchmarkWarnings(system, items);
@@ -579,7 +584,7 @@ export function calculatePointSummary(system = {}, items = []) {
     + owned.attributeCost
     + owned.equipmentCost;
   const remaining = available - totalSpent;
-  const warnings = [...owned.warningItems, ...classLevelState.warnings, ...classBenefits.warnings, ...benchmarkWarnings];
+  const warnings = [...owned.warningItems, ...classLevelState.warnings, ...classBenefits.warnings, ...classBenefitPlan.warnings, ...benchmarkWarnings];
 
   if (remaining < 0) warnings.push("Point spending exceeds available points.");
   if ((manualSpent > 0 || manualRefund > 0) && !manualAdjustmentNotes) {
@@ -606,6 +611,7 @@ export function calculatePointSummary(system = {}, items = []) {
     warnings,
     classLevel: classLevelState,
     classBenefits,
+    classBenefitPlan,
     benchmark,
     benchmarkSummary,
     benchmarkWarnings,
