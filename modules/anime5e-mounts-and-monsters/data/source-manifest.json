@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-mounts-and-monsters.sources",
+  "label": "Anime 5e Mounts and Monsters Sources",
+  "sourceBook": "Anime 5E Mounts and Monsters",
+  "sourceAbbreviation": "MM",
+  "sourceModuleId": "anime5e-mounts-and-monsters",
+  "contentCategory": "module",
+  "includes": [
+    "data/sources/mount-items.json",
+    "data/sources/mounts-and-monsters-actors.json"
+  ]
+}

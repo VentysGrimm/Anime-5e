@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-monstrum-libri-vol1.sources",
+  "label": "Anime 5e Monstrum Libri Vol. 1 Sources",
+  "sourceBook": "Anime 5E Monstrum Libri Volume 1: Woodlands and Mountains",
+  "sourceAbbreviation": "ML1",
+  "sourceModuleId": "anime5e-monstrum-libri-vol1",
+  "contentCategory": "module",
+  "includes": [
+    "data/sources/creatures-vol1.json"
+  ]
+}

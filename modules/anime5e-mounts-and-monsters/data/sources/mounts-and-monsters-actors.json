@@ -1,0 +1,272 @@
+{
+  "pack": "anime5e-mounts-and-monsters.creatures",
+  "documentType": "Actor",
+  "sourceBook": "Anime 5E Mounts and Monsters",
+  "sourceAbbreviation": "MM",
+  "sourceModuleId": "anime5e-mounts-and-monsters",
+  "contentCategory": "creature",
+  "folders": [
+    {
+      "name": "Mounts - Mounts and Monsters",
+      "color": "#7f657d"
+    },
+    {
+      "name": "Monsters - Mounts and Monsters",
+      "color": "#7a4d4d"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Fae War Corgi",
+      "type": "companion",
+      "folder": "Mounts - Mounts and Monsters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Tiny fae-bonded canine mount with strong defenses, speedburst movement, keen senses, and extraplanar edge.",
+          "speciesAndSize": "Tiny canine quadruped",
+          "actorRole": "Mount Companion",
+          "challengeRating": "1/8",
+          "experienceValue": 25,
+          "totalPoints": 54,
+          "homelandHabitat": "Sylvan forests",
+          "communities": "Used as mounts; otherwise small packs",
+          "alignment": ""
+        },
+        "source": {
+          "book": "Anime 5E Mounts and Monsters",
+          "page": 3,
+          "abbreviation": "MM",
+          "moduleId": "anime5e-mounts-and-monsters",
+          "category": "mount",
+          "sourceId": "mounts-and-monsters.mount.fae-war-corgi-actor",
+          "importId": "mounts-and-monsters.mount.fae-war-corgi-actor"
+        },
+        "combat": {
+          "armourClass": 17,
+          "hitPoints": {
+            "value": 7,
+            "max": 7
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 2,
+          "defenseSummary": "AC 17; HP 7.",
+          "offenseSummary": "Claws and fangs; 2d6-6 slashing/piercing.",
+          "attacks": {
+            "primary": {
+              "weapon": "Claws and fangs",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Mounts and Monsters, PDF p. 3.</p><p>Tiny fae-bonded canine mount with strong defenses, speedburst movement, keen senses, and extraplanar edge.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "mounts-and-monsters.mount.fae-war-corgi-actor",
+          "source": {
+            "book": "Anime 5E Mounts and Monsters",
+            "page": 3,
+            "abbreviation": "MM",
+            "moduleId": "anime5e-mounts-and-monsters",
+            "category": "mount",
+            "importId": "mounts-and-monsters.mount.fae-war-corgi-actor"
+          }
+        }
+      }
+    },
+    {
+      "name": "Chitinous Jump Shark",
+      "type": "companion",
+      "folder": "Mounts - Mounts and Monsters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium amphibious armoured shark used as a dangerous aquatic mount, capable of enormous jumps from the water.",
+          "speciesAndSize": "Medium amphibious shark",
+          "actorRole": "Aquatic Mount",
+          "challengeRating": "2",
+          "experienceValue": 450,
+          "totalPoints": 112,
+          "homelandHabitat": "Seas and oceans",
+          "communities": "Used as mounts; otherwise solitary",
+          "alignment": ""
+        },
+        "source": {
+          "book": "Anime 5E Mounts and Monsters",
+          "page": 2,
+          "abbreviation": "MM",
+          "moduleId": "anime5e-mounts-and-monsters",
+          "category": "mount",
+          "sourceId": "mounts-and-monsters.mount.chitinous-jump-shark",
+          "importId": "mounts-and-monsters.mount.chitinous-jump-shark"
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 51,
+            "max": 51
+          },
+          "movementSpeed": 0,
+          "proficiencyBonus": 3,
+          "defenseSummary": "AC 15; HP 51.",
+          "offenseSummary": "Bite; 2d10+5 piercing.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Mounts and Monsters, PDF p. 2.</p><p>Medium amphibious armoured shark used as a dangerous aquatic mount, capable of enormous jumps from the water.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "mounts-and-monsters.mount.chitinous-jump-shark",
+          "source": {
+            "book": "Anime 5E Mounts and Monsters",
+            "page": 2,
+            "abbreviation": "MM",
+            "moduleId": "anime5e-mounts-and-monsters",
+            "category": "mount",
+            "importId": "mounts-and-monsters.mount.chitinous-jump-shark"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ophidian",
+      "type": "companion",
+      "folder": "Mounts - Mounts and Monsters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Large desert serpent mount with fast ground movement, water speed, venomous fangs, and constricting attacks.",
+          "speciesAndSize": "Large serpent",
+          "actorRole": "Mount Companion",
+          "challengeRating": "4",
+          "experienceValue": 1100,
+          "totalPoints": 134,
+          "homelandHabitat": "Deserts and abandoned ruins",
+          "communities": "Used as mounts; otherwise small nests",
+          "alignment": ""
+        },
+        "source": {
+          "book": "Anime 5E Mounts and Monsters",
+          "page": 4,
+          "abbreviation": "MM",
+          "moduleId": "anime5e-mounts-and-monsters",
+          "category": "mount",
+          "sourceId": "mounts-and-monsters.mount.ophidian",
+          "importId": "mounts-and-monsters.mount.ophidian"
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 75,
+            "max": 75
+          },
+          "movementSpeed": 120,
+          "proficiencyBonus": 4,
+          "defenseSummary": "AC 11; HP 75.",
+          "offenseSummary": "Bite; poisonous fangs; constrict.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Mounts and Monsters, PDF p. 4.</p><p>Large desert serpent mount with fast ground movement, water speed, venomous fangs, and constricting attacks.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "mounts-and-monsters.mount.ophidian",
+          "source": {
+            "book": "Anime 5E Mounts and Monsters",
+            "page": 4,
+            "abbreviation": "MM",
+            "moduleId": "anime5e-mounts-and-monsters",
+            "category": "mount",
+            "importId": "mounts-and-monsters.mount.ophidian"
+          }
+        }
+      }
+    },
+    {
+      "name": "Basilisk",
+      "type": "monster",
+      "folder": "Monsters - Mounts and Monsters",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Medium monster whose gaze and bite make it a compact threat for ruins and caverns.",
+          "speciesAndSize": "Medium monster",
+          "actorRole": "Monster",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": 100,
+          "homelandHabitat": "Crypts and abandoned ruins",
+          "communities": "Solitary or small family",
+          "alignment": ""
+        },
+        "source": {
+          "book": "Anime 5E Mounts and Monsters",
+          "page": 10,
+          "abbreviation": "MM",
+          "moduleId": "anime5e-mounts-and-monsters",
+          "category": "creature",
+          "sourceId": "mounts-and-monsters.monster.basilisk",
+          "importId": "mounts-and-monsters.monster.basilisk"
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 52,
+            "max": 52
+          },
+          "movementSpeed": 25,
+          "proficiencyBonus": 2,
+          "defenseSummary": "AC 15; HP 52.",
+          "offenseSummary": "Bite; petrifying gaze notes in source.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Mounts and Monsters, PDF p. 10.</p><p>Medium monster whose gaze and bite make it a compact threat for ruins and caverns.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "mounts-and-monsters.monster.basilisk",
+          "source": {
+            "book": "Anime 5E Mounts and Monsters",
+            "page": 10,
+            "abbreviation": "MM",
+            "moduleId": "anime5e-mounts-and-monsters",
+            "category": "creature",
+            "importId": "mounts-and-monsters.monster.basilisk"
+          }
+        }
+      }
+    }
+  ]
+}

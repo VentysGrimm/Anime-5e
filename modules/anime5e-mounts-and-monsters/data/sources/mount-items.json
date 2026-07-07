@@ -1,0 +1,57 @@
+{
+  "pack": "anime5e-mounts-and-monsters.items",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Mounts - Mounts and Monsters",
+      "color": "#7f657d"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Fae War Corgi",
+      "type": "mount",
+      "folder": "Mounts - Mounts and Monsters",
+      "img": "icons/creatures/mammals/dog-husky-white-blue.webp",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Mounts and Monsters, PDF p. 3.</p><p><strong>Rules Summary:</strong> Tiny canine quadruped used as a bonded mount by small fae folk. It is quick, alert, socially bright, unusually effective around spirits or extraplanar beings, and uncomfortable around broad swift water.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Mounts and Monsters",
+        "sourceId": "mounts-and-monsters.mount.fae-war-corgi",
+        "sourcePage": 3,
+        "importId": "mounts-and-monsters.mount.fae-war-corgi",
+        "creatureType": "Tiny canine quadruped",
+        "size": "Tiny",
+        "challengeRating": "1/8",
+        "armourClass": 17,
+        "hitPoints": "7 (2d4+2)",
+        "speed": "15 ft.",
+        "carryingCapacity": "Fae-sized rider",
+        "habitat": "Sylvan forests",
+        "communities": "Used as mounts; otherwise small packs",
+        "statBlock": "<p><strong>CR:</strong> 1/8. <strong>XP:</strong> 25. <strong>Total Points:</strong> 54.</p><p><strong>Abilities:</strong> STR 6, DEX 8, CON 12, INT 5, WIS 7, CHA 14.</p><p><strong>Traits:</strong> AC Bonus, Combat Mastery, Edge with spirits and extraplanar beings, Heightened Senses, reduced Water Speed, and canine-style manipulation/speech limitations.</p>",
+        "sourceAbbreviation": "MM",
+        "sourceModuleId": "anime5e-mounts-and-monsters",
+        "sourceCategory": "mount"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "mounts-and-monsters.mount.fae-war-corgi",
+          "source": {
+            "book": "Anime 5E Mounts and Monsters",
+            "page": 3,
+            "abbreviation": "MM",
+            "moduleId": "anime5e-mounts-and-monsters",
+            "category": "mount",
+            "importId": "mounts-and-monsters.mount.fae-war-corgi"
+          }
+        }
+      }
+    }
+  ],
+  "sourceBook": "Anime 5E Mounts and Monsters",
+  "sourceAbbreviation": "MM",
+  "sourceModuleId": "anime5e-mounts-and-monsters",
+  "contentCategory": "mount"
+}

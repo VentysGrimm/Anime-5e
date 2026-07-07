@@ -60,4 +60,7 @@ Current standalone module packages:
 - `modules/anime5e-bonus-character-options`
 - `modules/anime5e-adventuring-accessories`
 - `modules/anime5e-game-screen-adventure`
+- `modules/anime5e-mounts-and-monsters`
+- `modules/anime5e-monstrum-libri-vol1`
+- `modules/anime5e-monstrum-libri-vol2`
 

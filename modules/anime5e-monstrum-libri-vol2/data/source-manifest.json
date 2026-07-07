@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-monstrum-libri-vol2.sources",
+  "label": "Anime 5e Monstrum Libri Vol. 2 Sources",
+  "sourceBook": "Anime 5E Monstrum Libri Volume 2: Aquatic and Desertic",
+  "sourceAbbreviation": "ML2",
+  "sourceModuleId": "anime5e-monstrum-libri-vol2",
+  "contentCategory": "module",
+  "includes": [
+    "data/sources/creatures-vol2.json"
+  ]
+}

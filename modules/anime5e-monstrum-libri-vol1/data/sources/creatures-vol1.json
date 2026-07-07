@@ -1,0 +1,108 @@
+{
+  "pack": "anime5e-monstrum-libri-vol1.creatures",
+  "documentType": "Actor",
+  "folders": [
+    {
+      "name": "Monstrum Libri Vol. 1 - Woodlands and Mountains",
+      "color": "#6d8f72"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Adlet",
+      "type": "monster",
+      "folder": "Monstrum Libri Vol. 1 - Woodlands and Mountains",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Small canine humanoids related to goblins, organised into woodland packs and clans that overrun isolated travellers through numbers and simple tactics.",
+          "speciesAndSize": "Small (3-4 ft.) canine humanoid",
+          "actorRole": "Monster",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 82,
+          "homelandHabitat": "Woodlands",
+          "communities": "Small packs to large clans",
+          "alignment": ""
+        },
+        "source": {
+          "book": "Anime 5E Monstrum Libri Volume 1: Woodlands and Mountains",
+          "page": 11,
+          "abbreviation": "ML1",
+          "moduleId": "anime5e-monstrum-libri-vol1",
+          "category": "creature",
+          "sourceId": "monstrum-libri-vol1.creature.adlet",
+          "importId": "monstrum-libri-vol1.creature.adlet"
+        },
+        "abilities": {
+          "strength": {
+            "value": 13
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 13
+          },
+          "intelligence": {
+            "value": 8
+          },
+          "wisdom": {
+            "value": 11
+          },
+          "charisma": {
+            "value": 11
+          }
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 9,
+            "max": 9
+          },
+          "movementSpeed": 15,
+          "proficiencyBonus": 2,
+          "armourNotes": "Hide; Armour Class 16",
+          "defenseSummary": "AC 16; HP 9 (2d6+2); Small body, AC Bonus, light/medium armour proficiency, and standard small-size drawbacks.",
+          "offenseSummary": "Mace +5 for 1d6-1 bludgeoning; Bite +5 for 1d4-1 piercing. Combat Mastery improves attack rolls, while Speedburst supports short aggressive movement.",
+          "attacks": {
+            "primary": {
+              "weapon": "Mace",
+              "modifier": "+5",
+              "damageType": "Bludgeoning",
+              "damage": "1d6-1"
+            },
+            "secondary": {
+              "weapon": "Bite",
+              "modifier": "+5",
+              "damageType": "Piercing",
+              "damage": "1d4-1"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Monstrum Libri Volume 1: Woodlands and Mountains, PDF p. 11.</p><p><strong>Attributes:</strong> AC Bonus 2; Armour Proficiency 2; Combat Mastery 2; Features 1 (Darkvision 60 ft.); Heightened Senses 2 (Hearing, Smell); Language 1 (Common, Goblin); Skill Proficiency 1 (Perception); Special Movement 1 (Speedburst); Unique Attribute 1 (Small, light, and unobtrusive); Weapon 1 (Bite).</p><p><strong>Defects:</strong> Limited Damage 2; Obstacle 2 (distracted by movement of small objects or creatures); Obstacle 4 (Strength dice rolls); Slow 1; Susceptible 2; Unique Defect 1 (thrown weapon distance divided by 2).</p><p><strong>Points:</strong> 2 Attribute/Defect subtotal + 10 Base + 70 Abilities = 82.</p>",
+        "notes": {
+          "overview": "<p>Bull adlets are Medium-sized aggressive variants whose Rank 2 bite inflicts 2d4 damage.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "monstrum-libri-vol1.creature.adlet",
+          "source": {
+            "book": "Anime 5E Monstrum Libri Volume 1: Woodlands and Mountains",
+            "page": 11,
+            "abbreviation": "ML1",
+            "moduleId": "anime5e-monstrum-libri-vol1",
+            "category": "creature",
+            "importId": "monstrum-libri-vol1.creature.adlet"
+          }
+        }
+      }
+    }
+  ],
+  "sourceBook": "Anime 5E Monstrum Libri Volume 1: Woodlands and Mountains",
+  "sourceAbbreviation": "ML1",
+  "sourceModuleId": "anime5e-monstrum-libri-vol1",
+  "contentCategory": "creature"
+}
