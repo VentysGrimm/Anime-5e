@@ -47,6 +47,7 @@ Anime 5e registers these world settings:
 - Apply Range Penalties: subtract configured range penalties from common attack rolls.
 - Show Margin of Success: show the difference between attack totals and target Armour Class.
 - Show Critical Roll Notes: annotate attack rolls that keep natural 20 or natural 1 results.
+- Show Critical Roll Notes also checks attack margins against the Core Rules critical hit/failure thresholds. Extreme success doubles final damage, outrageous success triples it, extreme failure suggests one Table 22 consequence, and outrageous failure suggests two. Treat the Table 22 rolls as prompts; the Core Rules still allow the GM to choose a better-fitting consequence.
 
 Use Tracked Energy when the table wants the sheet to spend and restore Energy directly. Use Manual when Energy is a chat note or table decision. Use Disabled when the campaign does not use Energy bookkeeping.
 

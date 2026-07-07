@@ -10,6 +10,20 @@ const D20_MODE_LABELS = {
   disadvantage: "Disadvantage"
 };
 
+const CRITICAL_FAILURE_TABLE = Object.freeze({
+  2: "Overextended reach causes a clothing or gear mishap.",
+  3: "Combat focus breaks; Initiative becomes 1 for the rest of the battle.",
+  4: "Overexertion strains a muscle; Strength-related rolls suffer disadvantage for 24 hours.",
+  5: "The attacker is off balance; opponents gain advantage against them until their next Initiative.",
+  6: "A twisted ankle halves movement until several hours of rest or healing.",
+  7: "The attacker drops their weapon.",
+  8: "Grip weakens; attack rolls suffer disadvantage during the next round.",
+  9: "The weapon hits a solid surface and may be damaged or broken.",
+  10: "A nearby ally is hit instead and takes half damage.",
+  11: "The attacker hits themself and takes half damage.",
+  12: "The attacker falls; opponents gain advantage and positive Dexterity AC modifiers do not apply until their next Initiative."
+});
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -35,7 +49,55 @@ function normalizeD20Mode(mode) {
 
 function firstD20Total(roll) {
   const die = roll?.dice?.find((candidate) => candidate.faces === 20);
+  const activeResults = die?.results?.filter((result) => result.active !== false).map((result) => Number(result.result));
+  if (activeResults?.length) return activeResults[0];
   return Number.isFinite(Number(die?.total)) ? Number(die.total) : null;
+}
+
+export function describeCriticalFailureTableResult(value) {
+  return CRITICAL_FAILURE_TABLE[Number(value)] ?? "";
+}
+
+export function criticalFailureConsequenceCount(total, targetNumber) {
+  const target = Number(targetNumber);
+  if (!Number.isFinite(target)) return 0;
+
+  const margin = Number(total) - target;
+  if (margin <= -15) return 2;
+  if (margin <= -11) return 1;
+  return 0;
+}
+
+export function buildCriticalRollDetails({ total, d20 = null, targetNumber = null, failureRolls = [] } = {}) {
+  const details = [];
+  const target = Number(targetNumber);
+
+  if (Number.isFinite(target)) {
+    const margin = Number(total) - target;
+    if (margin >= 15) {
+      details.push({ label: "Critical Hit", value: "Outrageous success: triple final damage after all modifiers." });
+    } else if (margin >= 11) {
+      details.push({ label: "Critical Hit", value: "Extreme success: double final damage after all modifiers." });
+    } else if (margin <= -15) {
+      details.push({ label: "Critical Failure", value: "Outrageous failure: apply two Table 22 consequences." });
+    } else if (margin <= -11) {
+      details.push({ label: "Critical Failure", value: "Extreme failure: apply one Table 22 consequence." });
+    }
+  }
+
+  for (const failureRoll of failureRolls) {
+    const description = describeCriticalFailureTableResult(failureRoll);
+    if (description) details.push({ label: `Table 22 (${failureRoll})`, value: description });
+  }
+
+  if (d20 === 20) {
+    details.push({ label: "Optional Natural 20", value: "Alternative rule: natural 20 may count as double-damage critical." });
+  }
+  if (d20 === 1) {
+    details.push({ label: "Optional Natural 1", value: "Alternative rule: natural 1 may trigger a critical failure." });
+  }
+
+  return details;
 }
 
 export function buildD20Formula(modifiers = [], options = {}) {
@@ -99,8 +161,18 @@ export async function rollAnime5eFormula({
 
   if (showCritical) {
     const d20 = firstD20Total(roll);
-    if (d20 === 20) resolvedDetails.push({ label: "Critical", value: "Natural 20" });
-    if (d20 === 1) resolvedDetails.push({ label: "Critical", value: "Natural 1" });
+    const failureCount = Number.isFinite(target) ? criticalFailureConsequenceCount(roll.total, target) : 0;
+    const failureRolls = [];
+    for (let index = 0; index < failureCount; index += 1) {
+      const failureRoll = await evaluateAnime5eFormula("2d6");
+      failureRolls.push(failureRoll.total);
+    }
+    resolvedDetails.push(...buildCriticalRollDetails({
+      total: roll.total,
+      d20,
+      targetNumber: Number.isFinite(target) ? target : null,
+      failureRolls
+    }));
   }
 
   return roll.toMessage({

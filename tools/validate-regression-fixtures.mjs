@@ -3,6 +3,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { calculateAttributeCustomization } from "../module/rules/points.mjs";
+import {
+  buildCriticalRollDetails,
+  criticalFailureConsequenceCount,
+  describeCriticalFailureTableResult
+} from "../module/rules/rolls.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const fixturePath = path.join(root, "data/validation-regression-fixtures.json");
@@ -177,6 +182,19 @@ function validateAttributeCustomizationRules() {
   if (mindControl.warnings.length) fail(`Mind Control customization emitted warnings: ${mindControl.warnings.join("; ")}`);
 }
 
+function validateCriticalRollRules() {
+  assertEqual("Extreme critical hit detail", buildCriticalRollDetails({ total: 26, targetNumber: 15 })[0]?.value, "Extreme success: double final damage after all modifiers.");
+  assertEqual("Outrageous critical hit detail", buildCriticalRollDetails({ total: 30, targetNumber: 15 })[0]?.value, "Outrageous success: triple final damage after all modifiers.");
+  assertEqual("Extreme critical failure count", criticalFailureConsequenceCount(4, 15), 1);
+  assertEqual("Outrageous critical failure count", criticalFailureConsequenceCount(0, 15), 2);
+  assertEqual("Critical failure table 10", describeCriticalFailureTableResult(10), "A nearby ally is hit instead and takes half damage.");
+
+  const failureDetails = buildCriticalRollDetails({ total: 4, targetNumber: 15, failureRolls: [10], d20: 1 });
+  if (!failureDetails.some((detail) => detail.label === "Critical Failure")) fail("Critical failure details did not include a margin-based failure note.");
+  if (!failureDetails.some((detail) => detail.label === "Table 22 (10)")) fail("Critical failure details did not include the Table 22 consequence.");
+  if (!failureDetails.some((detail) => detail.label === "Optional Natural 1")) fail("Critical failure details did not include the optional natural 1 note.");
+}
+
 function validatePregens() {
   const source = readJson(repoPath("modules/anime5e-game-screen-adventure/data/sources/pregen-characters.json"));
   const documentsBySourceId = new Map(getDocuments(source).map((document) => [sourceIdOf(document), document]));
@@ -278,6 +296,7 @@ function validatePackage() {
 
 validateScratchCharacters();
 validateAttributeCustomizationRules();
+validateCriticalRollRules();
 validatePregens();
 validateActorSources();
 validateContentModules();

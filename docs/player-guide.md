@@ -67,7 +67,7 @@ Useful controls:
 - Attack and Damage buttons roll common attack rows.
 - Owned weapon, Attribute, power, spell, and technique actions roll from their Item fields.
 
-The world settings control whether range penalties are applied automatically, whether Margin of Success is shown, and whether critical roll notes are added to attack rolls.
+The world settings control whether range penalties are applied automatically, whether Margin of Success is shown, and whether attack rolls add critical guidance. When enabled, attack chat cards note margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 failure consequences, and optional natural 20/natural 1 alternatives.
 
 ## Level-Up
 

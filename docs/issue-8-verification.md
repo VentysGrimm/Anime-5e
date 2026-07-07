@@ -109,6 +109,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Class progression now syncs class-granted Attribute benefits into managed, class-paid owned Attribute items, excludes those generated items from discretionary point spending, exposes class choice and duplicate/reallocation review rows, and lets multiclass actors advance a specific owned Class item from the Folio.
 - Applied Species now derive ability modifiers and sync species-granted Attributes/Defects into managed, species-paid owned Items. Core Rules Table 05 Size Template items now carry signed point modifiers and apply AC, attack, range/speed, lift/carry, Strength, damage inflicted, and standard damage received modifiers where the sheet can calculate them.
 - Actor sheets now include Core Rules combat manoeuvre controls. They can post source-backed manoeuvre reminders or roll a selected common attack with manoeuvre advantage/disadvantage guidance while preserving later damage, save, and target-state rulings for GM adjudication.
+- Attack roll chat cards now support Core Rules critical guidance when enabled: margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 critical failure consequences, and optional natural 20/natural 1 alternatives.
 
 ## Missing Files Required For Load
 

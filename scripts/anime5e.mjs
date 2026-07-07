@@ -174,7 +174,7 @@ Hooks.once("init", () => {
 
   game.settings.register(ANIME5E.id, "showCriticalRollNotes", {
     name: "Show Critical Roll Notes",
-    hint: "Annotate d20 attack rolls that keep a natural 20 or natural 1.",
+    hint: "Annotate attack rolls with margin-based critical hit/failure results, Table 22 critical failure suggestions, and optional natural 20/1 notes.",
     scope: "world",
     config: true,
     type: Boolean,
