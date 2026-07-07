@@ -906,7 +906,7 @@
   color: #737373;
   display: grid;
   gap: 8px;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr minmax(220px, auto) auto;
   margin-top: 6px;
   text-transform: uppercase;
 }
@@ -924,6 +924,29 @@
 
 .anime5e .folio-footer button {
   min-width: 120px;
+}
+
+.anime5e .rules-reference-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.anime5e .rules-reference-actions .icon-button {
+  min-width: 34px;
+}
+
+.anime5e .sheet-footer {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.anime5e .sheet-footer .rules-reference-actions {
+  flex: 1 1 auto;
+  justify-content: flex-start;
 }
 
 .anime5e .sheet-header {

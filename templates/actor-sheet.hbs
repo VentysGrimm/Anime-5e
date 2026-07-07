@@ -1218,6 +1218,11 @@
   <footer class="folio-footer">
     <strong>Anime 5e</strong>
     <span>Fifth Edition Fantasy Role-Playing Adventures</span>
+    <div class="rules-reference-actions" aria-label="Core Rules References">
+      {{#each rulesReferenceLinks as |link|}}
+        <button type="button" class="icon-button" data-action="open-rules-reference" data-source-id="{{link.sourceId}}" title="{{link.label}} Reference"><i class="fas {{link.icon}}"></i></button>
+      {{/each}}
+    </div>
     {{#if editable}}
       <button type="submit">{{localize "ANIME5E.Labels.Save"}}</button>
     {{/if}}

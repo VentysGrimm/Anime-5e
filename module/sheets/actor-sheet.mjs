@@ -27,6 +27,7 @@ import {
   applyHitPointChange,
   getEnergyUsageMode
 } from "../rules/resources.mjs";
+import { openCoreRulesReference } from "../rules/rules-reference.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -116,6 +117,16 @@ const FOLIO_TABS = [
 
 const DEFAULT_FOLIO_TAB = FOLIO_TABS[0].id;
 const FOLIO_TAB_IDS = new Set(FOLIO_TABS.map((tab) => tab.id));
+
+const RULES_REFERENCE_LINKS = [
+  { label: "Creation", icon: "fa-user-plus", sourceId: "core.rules.character-creation-overview" },
+  { label: "Options", icon: "fa-list-check", sourceId: "core.rules.character-option-workflow" },
+  { label: "Rolls", icon: "fa-dice-d20", sourceId: "core.rules.rolls-dc" },
+  { label: "Combat", icon: "fa-crosshairs", sourceId: "core.rules.action-combat-flow" },
+  { label: "Advancement", icon: "fa-arrow-up", sourceId: "core.rules.advancement-xp" },
+  { label: "Items", icon: "fa-toolbox", sourceId: "core.rules.items-equipment-construction" },
+  { label: "GM", icon: "fa-scale-balanced", sourceId: "core.rules.gm-guidance" }
+];
 
 const ABILITY_LABELS = {
   strength: "Strength",
@@ -481,6 +492,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system, context.pointSummary);
     context.transportProfile = this.constructor._prepareTransportProfileContext(this.actor, system);
     context.economy = this.constructor._prepareEconomyContext(system);
+    context.rulesReferenceLinks = RULES_REFERENCE_LINKS;
     const activeTab = FOLIO_TAB_IDS.has(this.tabGroups?.primary) ? this.tabGroups.primary : DEFAULT_FOLIO_TAB;
     context.activeTab = activeTab;
     context.activeTabs = Object.fromEntries(FOLIO_TABS.map((tab) => [tab.id, tab.id === context.activeTab]));
@@ -1200,6 +1212,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='roll-item-damage']").forEach((button) => {
       button.addEventListener("click", this._onRollItemDamage.bind(this));
     });
+    element.querySelectorAll("[data-action='open-rules-reference']").forEach((button) => {
+      button.addEventListener("click", this._onOpenRulesReference.bind(this));
+    });
     element.querySelectorAll("[data-action='edit-item']").forEach((button) => {
       button.addEventListener("click", this._onEditItem.bind(this));
     });
@@ -1639,6 +1654,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${verb} ${change.amount} deprivation Hit Point loss${source}. HP ${change.current} &rarr; ${change.next}; deprivation loss ${change.currentLoss} &rarr; ${change.nextLoss}; maximum HP is now ${change.nextMax}.${interval}${note}</p>`
     });
+  }
+
+  async _onOpenRulesReference(event) {
+    event.preventDefault();
+    await openCoreRulesReference(event.currentTarget.dataset.sourceId);
   }
 
   async _onApplyEnergyChange(event) {
