@@ -59,6 +59,37 @@ if (!manifest.compatibility || manifest.compatibility.minimum !== "14") {
   throw new Error("Foundry v14 minimum compatibility is not declared.");
 }
 
+function collectPackFolderNames(folders = []) {
+  const names = new Set();
+  for (const folder of folders) {
+    for (const packName of folder.packs ?? []) names.add(packName);
+    for (const nestedName of collectPackFolderNames(folder.folders ?? [])) names.add(nestedName);
+  }
+
+  return names;
+}
+
+function validatePackFolderCoverage(manifest) {
+  if (!Array.isArray(manifest.packFolders) || !manifest.packFolders.length) {
+    throw new Error("Manifest must declare book-level packFolders for compendium sidebar grouping.");
+  }
+
+  const packNames = new Set((manifest.packs ?? []).map((pack) => pack.name));
+  const folderPackNames = collectPackFolderNames(manifest.packFolders);
+
+  for (const packName of packNames) {
+    if (!folderPackNames.has(packName)) {
+      throw new Error(`Manifest pack "${packName}" is not assigned to a packFolders entry.`);
+    }
+  }
+
+  for (const packName of folderPackNames) {
+    if (!packNames.has(packName)) {
+      throw new Error(`packFolders references unknown pack "${packName}".`);
+    }
+  }
+}
+
 function collectSourceBackedPacks(relativePath, seen = new Set()) {
   if (seen.has(relativePath)) return new Set();
   seen.add(relativePath);
@@ -77,6 +108,8 @@ function collectSourceBackedPacks(relativePath, seen = new Set()) {
 
 const sourceBackedPacks = collectSourceBackedPacks("data/core-compendiums.json");
 const generatedPackPaths = [];
+
+validatePackFolderCoverage(manifest);
 
 for (const pack of manifest.packs ?? []) {
   if (!pack.name) throw new Error("Manifest pack is missing a name.");

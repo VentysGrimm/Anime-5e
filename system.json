@@ -521,6 +521,38 @@
       }
     }
   ],
+  "packFolders": [
+    {
+      "name": "Anime 5E Fifth Edition Core Rules",
+      "color": "#6f5a8d",
+      "sorting": "m",
+      "packs": [
+        "character-options",
+        "attributes",
+        "defects",
+        "enhancements",
+        "limiters",
+        "powers",
+        "techniques",
+        "equipment",
+        "monsters",
+        "npcs",
+        "neomorphs",
+        "rules-reference"
+      ]
+    },
+    {
+      "name": "Anime 5E Supplemental Sources",
+      "color": "#4e7a73",
+      "sorting": "m",
+      "packs": [
+        "supplemental-character-options",
+        "supplemental-items",
+        "supplemental-creatures",
+        "supplemental-journals"
+      ]
+    }
+  ],
   "primaryTokenAttribute": "combat.hitPoints",
   "secondaryTokenAttribute": "combat.energy",
   "socket": false

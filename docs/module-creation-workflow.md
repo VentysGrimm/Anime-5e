@@ -9,6 +9,7 @@ Use `module-template/` when a supplement should become a standalone Foundry modu
 3. Replace `EXAMPLE` with a stable source abbreviation such as `FOL`, `BWO`, or `MML1`.
 4. Update `module.json` title, description, authors, pack labels, manifest/download URLs if used, and version.
 5. Keep the Anime 5e dependency in `module.json` under `relationships.systems`.
+6. Set `module.json` `packFolders` to the source book title and include every declared pack so Foundry groups the module's compendiums by book in the sidebar.
 
 ## Source Data
 
@@ -76,7 +77,7 @@ For a real module:
 node tools\validate-content-module.mjs C:\Users\Owner\AppData\Local\FoundryVTT\Data\modules\<module-id>
 ```
 
-The helper checks required module directories, the Anime 5e dependency convention, declared pack paths, source includes, source tags, source IDs, and Item rank/cost fields.
+The helper checks required module directories, the Anime 5e dependency convention, declared pack paths, book-level `packFolders`, source includes, source tags, source IDs, and Item rank/cost fields.
 
 ## Import Flow
 

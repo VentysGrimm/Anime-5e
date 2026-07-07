@@ -75,6 +75,19 @@
       }
     }
   ],
+  "packFolders": [
+    {
+      "name": "Example Expansion",
+      "color": "#6f5a8d",
+      "sorting": "m",
+      "packs": [
+        "character-options",
+        "items",
+        "creatures",
+        "journals"
+      ]
+    }
+  ],
   "flags": {
     "anime5e": {
       "sourceModuleId": "anime5e-example-expansion",

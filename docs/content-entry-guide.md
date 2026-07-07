@@ -88,6 +88,8 @@ Base-system packs are declared in `system.json`:
 - Attributes, Defects, Enhancements, Limiters, Powers, Techniques, and Equipment each have their own core packs where applicable.
 - Creatures are split across monsters, NPCs, and neomorphs.
 - Rules reference Journals live in the rules-reference pack.
+
+Use Foundry `packFolders` in `system.json` and each standalone module manifest to group visible compendiums by source book. Core Rules packs belong under `Anime 5E Fifth Edition Core Rules`; standalone modules should use the source book title as the folder name. The staged supplemental packs stay together under `Anime 5E Supplemental Sources` until content moves into a book-specific module.
 - Optional content imports into supplemental character options, supplemental items, supplemental creatures, and supplemental journals unless it has moved into a standalone module.
 
 Standalone modules should use module-owned packs such as:
