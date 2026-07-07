@@ -1125,6 +1125,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const levelProgress = getLevelProgress(system.level, system.experience);
     const engagementBonusPoints = numberOrZero(system.identity?.engagementBonusPoints);
     const otherNonLevellingPoints = numberOrZero(system.identity?.otherNonLevellingPoints);
+    const discretionaryPoints = numberOrZero(system.identity?.startingDiscretionaryPoints);
+    const recommendedDiscretionaryPoints = calculateRecommendedDiscretionaryPoints(system.level);
     const remaining = numberOrZero(pointSummary.remaining);
     const warnings = [];
 
@@ -1140,6 +1142,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         { label: "Available Points", value: pointSummary.available },
         { label: "Total Spent", value: pointSummary.totalSpent },
         { label: "Total Refunds", value: pointSummary.totalRefunded },
+        { label: "Current Source Budget", value: discretionaryPoints },
+        { label: "Level Benchmark Budget", value: recommendedDiscretionaryPoints },
         { label: "Remaining Points", value: remaining }
       ]
     };
@@ -1899,11 +1903,16 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       await selectedClass.update({ "system.level": nextClassLevel });
     }
 
+    const currentDiscretionaryPoints = numberOrZero(this.actor.system?.identity?.startingDiscretionaryPoints);
+    const recommendedDiscretionaryPoints = calculateRecommendedDiscretionaryPoints(nextLevel);
     const update = {
       "system.level": nextLevel,
       "system.experience": targetExperience,
       "system.combat.proficiencyBonus": proficiencyBonusForLevel(nextLevel)
     };
+    if (currentDiscretionaryPoints < recommendedDiscretionaryPoints) {
+      update["system.identity.startingDiscretionaryPoints"] = recommendedDiscretionaryPoints;
+    }
 
     if (selectedClass) {
       const slot = this.constructor._classSlotForItem(this.actor, selectedClass);
@@ -1921,9 +1930,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       ui.notifications?.warn("Level increased, but no single owned Class item could be advanced automatically. Update class levels manually.");
     }
 
+    const budgetLine = currentDiscretionaryPoints < recommendedDiscretionaryPoints
+      ? ` Discretionary Point budget increases from ${currentDiscretionaryPoints} to ${recommendedDiscretionaryPoints}. Allocate unspent points from the Point Summary.`
+      : " Review remaining points in the Point Summary for any new allocation.";
+
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> advances from Level ${currentLevel} to Level ${nextLevel}. XP is now ${targetExperience}; Proficiency Bonus is +${proficiencyBonusForLevel(nextLevel)}.${selectedClass ? ` ${escapeHtml(selectedClass.name)} is now Class Level ${nextClassLevel}.` : " Review owned Class items manually."}</p>`
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> advances from Level ${currentLevel} to Level ${nextLevel}. XP is now ${targetExperience}; Proficiency Bonus is +${proficiencyBonusForLevel(nextLevel)}.${selectedClass ? ` ${escapeHtml(selectedClass.name)} is now Class Level ${nextClassLevel}.` : " Review owned Class items manually."}${budgetLine}</p>`
     });
   }
 

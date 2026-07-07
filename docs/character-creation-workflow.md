@@ -21,6 +21,7 @@ This milestone starts the Anime 5e character creation build path.
 - Connected the Character Folio point summary to the shared point helper used by actor derived data and creation hooks.
 - Added Folio creation controls for starting level, starting XP, ability point mode, source budget, XP benchmark, and validation status.
 - Added Folio actions to apply source-backed starting level/XP and the Core Rules starting Discretionary Point budget.
+- Added a Level 1 foundation path through Apply Start plus Set Budget, backed by the scratch-character regression fixture.
 - Added Core Rules Table 01 character benchmark data and Folio warnings for ability scores, Attribute ranks, proficiency bonus, and Armour Class.
 - Added level progress helpers for current XP, next level threshold, XP needed, and progress within the current level band.
 - Added a Folio class level summary derived from owned Class items without applying class benefits.
@@ -35,6 +36,7 @@ This milestone starts the Anime 5e character creation build path.
 - Added Species Workflow special-path visibility for Raceless and Hybrid Species. Hybrid Species remains a placeholder/use-prebuilt path until a full constructor is implemented.
 - Size Template application now tracks applied template modifiers and applies Armour Class modifiers to the actor while displaying other size modifiers for manual review.
 - Added Journal-tab advancement bookkeeping for level/XP progress, Engagement Bonus Points, other non-levelling point awards, remaining points, and advancement notes.
+- The Level Up action now raises the character's source Discretionary Point budget to the Core Rules level benchmark when needed and posts the new allocation target to chat.
 
 ## Current validation warnings
 
@@ -51,6 +53,7 @@ The point helper can warn when:
 - owned class item levels do not match actor level;
 - multiple Class items require manual duplicate-benefit and reallocation review;
 - ranked Attributes have no cost;
+- level-up point budgets should be reviewed when remaining points are negative after advancement;
 - ranked Defects have no point return.
 - a character exceeds the optional Table 01 benchmark limits for their level band.
 - multiple Class items are attached before advanced multiclass automation is available.
