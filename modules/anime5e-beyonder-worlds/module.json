@@ -1,0 +1,85 @@
+{
+  "id": "anime5e-beyonder-worlds",
+  "title": "Anime 5e Beyonder Worlds",
+  "description": "Source-backed Beyonder Worlds genre expansion content module for Anime 5e.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Your Name"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "anime5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "0.2.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/module.mjs"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "character-options",
+      "label": "Beyonder Worlds Character Options",
+      "path": "packs/character-options",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "items",
+      "label": "Beyonder Worlds Items and Vehicles",
+      "path": "packs/items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "creatures",
+      "label": "Beyonder Worlds Threats",
+      "path": "packs/creatures",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "journals",
+      "label": "Beyonder Worlds Journals",
+      "path": "packs/journals",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "flags": {
+    "anime5e": {
+      "sourceModuleId": "anime5e-beyonder-worlds",
+      "sourceAbbreviation": "BW",
+      "sourceCategory": "genre-expansion"
+    }
+  }
+}

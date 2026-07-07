@@ -1,0 +1,845 @@
+{
+  "pack": "anime5e-beyonder-worlds.character-options",
+  "documentType": "Item",
+  "sourceBook": "Anime 5E Beyonder Worlds",
+  "sourceAbbreviation": "BW",
+  "sourceModuleId": "anime5e-beyonder-worlds",
+  "contentCategory": "character-option",
+  "folders": [
+    {
+      "name": "Attributes - Beyonder Worlds",
+      "color": "#6f7f90"
+    },
+    {
+      "name": "Defects - Beyonder Worlds",
+      "color": "#7f657d"
+    },
+    {
+      "name": "Modern and Future Skills - Beyonder Worlds",
+      "color": "#6f8fa8"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Alternate Form",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.alternate-form",
+        "sourcePage": 8,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.alternate-form",
+        "category": "Form",
+        "progression": "1 alternate form adding +5 points per Rank",
+        "relevantAbility": "Constitution",
+        "scope": "Self only; ongoing",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 8.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank <strong>Relevant Ability:</strong> Constitution <strong>Scope:</strong> Self only; ongoing <strong>Progression:</strong> 1 alternate form adding +5 points per Rank</p><p><strong>Rules Summary:</strong> Defines a specific alternate body or identity built from a separate pool of Attributes and Defects.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.alternate-form",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 8,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.alternate-form"
+          }
+        }
+      }
+    },
+    {
+      "name": "Force Shield",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.force-shield",
+        "sourcePage": 9,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.force-shield",
+        "category": "Defense",
+        "progression": "Damage reduction of -4 per Rank",
+        "relevantAbility": "Constitution",
+        "scope": "Self only; ongoing",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 9.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank <strong>Relevant Ability:</strong> Constitution <strong>Scope:</strong> Self only; ongoing <strong>Progression:</strong> Damage reduction of -4 per Rank</p><p><strong>Rules Summary:</strong> Creates an energy barrier that can reduce many physical or energy attacks before damage reaches other protection.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.force-shield",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 9,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.force-shield"
+          }
+        }
+      }
+    },
+    {
+      "name": "Merge",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.merge",
+        "sourcePage": 12,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.merge",
+        "category": "Form",
+        "progression": "New combined form with 10 points per Item per Rank",
+        "relevantAbility": "Constitution",
+        "scope": "External objects or character group; ongoing until ended",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 12.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank <strong>Relevant Ability:</strong> Constitution <strong>Scope:</strong> External objects or character group; ongoing until ended <strong>Progression:</strong> New combined form with 10 points per Item per Rank</p><p><strong>Rules Summary:</strong> Lets multiple compatible Items, vehicles, mecha, or characters temporarily combine into a designed shared form.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.merge",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 12,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.merge"
+          }
+        }
+      }
+    },
+    {
+      "name": "Metamorphosis",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 2,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.metamorphosis",
+        "sourcePage": 12,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.metamorphosis",
+        "category": "Transformation",
+        "progression": "One template created from plus or minus 5 points per Rank",
+        "relevantAbility": "Intelligence",
+        "scope": "One target; touch; one minute",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 12.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank <strong>Relevant Ability:</strong> Intelligence <strong>Scope:</strong> One target; touch; one minute <strong>Progression:</strong> One template created from plus or minus 5 points per Rank</p><p><strong>Rules Summary:</strong> Temporarily changes a target into a defined Species or body template with its own physical traits and drawbacks.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.metamorphosis",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 12,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.metamorphosis"
+          }
+        }
+      }
+    },
+    {
+      "name": "Protected - Greater",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.protected-greater",
+        "sourcePage": 13,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.protected-greater",
+        "category": "Defense",
+        "progression": "Damage reduction of -2 per Rank against broad physical attacks",
+        "relevantAbility": "Constitution",
+        "scope": "Self or Item; ongoing",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 13.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank <strong>Relevant Ability:</strong> Constitution <strong>Scope:</strong> Self or Item; ongoing <strong>Progression:</strong> Damage reduction of -2 per Rank against broad physical attacks</p><p><strong>Rules Summary:</strong> Upgrades the standard Protected Attribute for heavier armour, hardened bodies, and advanced protective gear.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.protected-greater",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 13,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.protected-greater"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sensory Block",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.sensory-block",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.sensory-block",
+        "category": "Perception",
+        "progression": "One partially blocked sense or technique per Rank",
+        "relevantAbility": "Wisdom",
+        "scope": "10-foot radius; one minute",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank <strong>Relevant Ability:</strong> Wisdom <strong>Scope:</strong> 10-foot radius; one minute <strong>Progression:</strong> One partially blocked sense or technique per Rank</p><p><strong>Rules Summary:</strong> Blocks, jams, obscures, or scrambles a chosen sense or detection mode, including modern electronic signals.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.sensory-block",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.sensory-block"
+          }
+        }
+      }
+    },
+    {
+      "name": "Spaceflight",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.spaceflight",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.spaceflight",
+        "category": "Movement",
+        "progression": "Slow or fast interplanetary travel",
+        "relevantAbility": "Dexterity",
+        "scope": "Self or vehicle; ongoing",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank <strong>Relevant Ability:</strong> Dexterity <strong>Scope:</strong> Self or vehicle; ongoing <strong>Progression:</strong> Slow or fast interplanetary travel</p><p><strong>Rules Summary:</strong> Adds slower-than-light vacuum movement for characters, ships, mecha, and other space-capable objects.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.spaceflight",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.spaceflight"
+          }
+        }
+      }
+    },
+    {
+      "name": "Starflight",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.starflight",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.starflight",
+        "category": "Movement",
+        "progression": "Slow or fast faster-than-light travel",
+        "relevantAbility": "Dexterity",
+        "scope": "Self or vehicle; ongoing",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Attribute Cost:</strong> 1 Point/Rank <strong>Relevant Ability:</strong> Dexterity <strong>Scope:</strong> Self or vehicle; ongoing <strong>Progression:</strong> Slow or fast faster-than-light travel</p><p><strong>Rules Summary:</strong> Adds interstellar travel between solar systems and is intended for campaigns that leave a single star system.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.starflight",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.starflight"
+          }
+        }
+      }
+    },
+    {
+      "name": "Summon Animals",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 2,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.summon-animals",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.summon-animals",
+        "category": "Companion",
+        "progression": "Summoned animal scope by Rank",
+        "relevantAbility": "Wisdom",
+        "scope": "Summoned creatures; scene duration",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Attribute Cost:</strong> 2 Points/Rank <strong>Relevant Ability:</strong> Wisdom <strong>Scope:</strong> Summoned creatures; scene duration <strong>Progression:</strong> Summoned animal scope by Rank</p><p><strong>Rules Summary:</strong> Calls animals or animal-like beings as temporary support, with scope controlled by Rank and campaign context.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.summon-animals",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.summon-animals"
+          }
+        }
+      }
+    },
+    {
+      "name": "Swarm",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 3,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.swarm",
+        "sourcePage": 15,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.swarm",
+        "category": "Form",
+        "progression": "Swarm size and durability by Rank",
+        "relevantAbility": "Constitution",
+        "scope": "Self only; ongoing",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 15.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank <strong>Relevant Ability:</strong> Constitution <strong>Scope:</strong> Self only; ongoing <strong>Progression:</strong> Swarm size and durability by Rank</p><p><strong>Rules Summary:</strong> Represents a character or entity made of many smaller bodies that can spread, reform, and resist ordinary harm.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.swarm",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 15,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.swarm"
+          }
+        }
+      }
+    },
+    {
+      "name": "Telekinesis",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.telekinesis",
+        "sourcePage": 15,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.telekinesis",
+        "category": "Psychic",
+        "progression": "Lift, throw, and manipulate force by Rank",
+        "relevantAbility": "Wisdom",
+        "scope": "Remote manipulation",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 15.</p><p><strong>Attribute Cost:</strong> 4 Points/Rank <strong>Relevant Ability:</strong> Wisdom <strong>Scope:</strong> Remote manipulation <strong>Progression:</strong> Lift, throw, and manipulate force by Rank</p><p><strong>Rules Summary:</strong> Moves and manipulates targets at a distance, supporting both psychic characters and telekinetic equipment.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.telekinesis",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 15,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.telekinesis"
+          }
+        }
+      }
+    },
+    {
+      "name": "Transmute",
+      "type": "attribute",
+      "folder": "Attributes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 3,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.attribute.transmute",
+        "sourcePage": 15,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "attribute",
+        "importId": "beyonder-worlds.attribute.transmute",
+        "category": "Matter",
+        "progression": "Material conversion scope by Rank",
+        "relevantAbility": "Intelligence",
+        "scope": "Touched or enhanced targets",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 15.</p><p><strong>Attribute Cost:</strong> 3 Points/Rank <strong>Relevant Ability:</strong> Intelligence <strong>Scope:</strong> Touched or enhanced targets <strong>Progression:</strong> Material conversion scope by Rank</p><p><strong>Rules Summary:</strong> Changes one substance into another, from gadgeteer fabrication to urban-fantasy technomancy.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.attribute.transmute",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 15,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "attribute",
+            "importId": "beyonder-worlds.attribute.transmute"
+          }
+        }
+      }
+    },
+    {
+      "name": "Conditional Ownership",
+      "type": "defect",
+      "folder": "Defects - Beyonder Worlds",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.defect.conditional-ownership",
+        "sourcePage": 18,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "defect",
+        "importId": "beyonder-worlds.defect.conditional-ownership",
+        "pointsReturned": 1,
+        "category": "Lesser Defect",
+        "progression": "Mild, strict, or severe conditions",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 18.</p><p><strong>Category:</strong> Lesser Defect <strong>Points Returned:</strong> 1/Rank <strong>Progression:</strong> Mild, strict, or severe conditions</p><p><strong>Rules Summary:</strong> Applies to Companions or Items that are assigned to a character but still owned or controlled by an organisation.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.defect.conditional-ownership",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 18,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "defect",
+            "importId": "beyonder-worlds.defect.conditional-ownership"
+          }
+        }
+      }
+    },
+    {
+      "name": "Confined",
+      "type": "defect",
+      "folder": "Defects - Beyonder Worlds",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.defect.confined",
+        "sourcePage": 18,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "defect",
+        "importId": "beyonder-worlds.defect.confined",
+        "pointsReturned": 3,
+        "category": "Serious Defect",
+        "progression": "Area restriction by Rank",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 18.</p><p><strong>Category:</strong> Serious Defect <strong>Points Returned:</strong> 3/Rank <strong>Progression:</strong> Area restriction by Rank</p><p><strong>Rules Summary:</strong> Prevents a character or Item from leaving a defined area such as a country, facility, route, or single building.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.defect.confined",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 18,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "defect",
+            "importId": "beyonder-worlds.defect.confined"
+          }
+        }
+      }
+    },
+    {
+      "name": "Involuntary Change",
+      "type": "defect",
+      "folder": "Defects - Beyonder Worlds",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.defect.involuntary-change",
+        "sourcePage": 18,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "defect",
+        "importId": "beyonder-worlds.defect.involuntary-change",
+        "pointsReturned": 1,
+        "category": "Lesser Defect",
+        "progression": "Trigger ease by Rank",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 18.</p><p><strong>Category:</strong> Lesser Defect <strong>Points Returned:</strong> 1/Rank <strong>Progression:</strong> Trigger ease by Rank</p><p><strong>Rules Summary:</strong> Forces a character with Alternate Form or Alternate Identity to change forms when a defined trigger occurs.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.defect.involuntary-change",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 18,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "defect",
+            "importId": "beyonder-worlds.defect.involuntary-change"
+          }
+        }
+      }
+    },
+    {
+      "name": "No Healing",
+      "type": "defect",
+      "folder": "Defects - Beyonder Worlds",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.defect.no-healing",
+        "sourcePage": 18,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "defect",
+        "importId": "beyonder-worlds.defect.no-healing",
+        "pointsReturned": 2,
+        "category": "Greater Defect",
+        "progression": "Recovery hardship by Rank",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 18.</p><p><strong>Category:</strong> Greater Defect <strong>Points Returned:</strong> 2/Rank <strong>Progression:</strong> Recovery hardship by Rank</p><p><strong>Rules Summary:</strong> Replaces ordinary Hit Point recovery with special repair, ritual, recharge, purification, or other recovery conditions.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.defect.no-healing",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 18,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "defect",
+            "importId": "beyonder-worlds.defect.no-healing"
+          }
+        }
+      }
+    },
+    {
+      "name": "Red Tape",
+      "type": "defect",
+      "folder": "Defects - Beyonder Worlds",
+      "img": "icons/svg/downgrade.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.defect.red-tape",
+        "sourcePage": 19,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "defect",
+        "importId": "beyonder-worlds.defect.red-tape",
+        "pointsReturned": 1,
+        "category": "Lesser Defect",
+        "progression": "Bureaucratic interference by Rank",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 19.</p><p><strong>Category:</strong> Lesser Defect <strong>Points Returned:</strong> 1/Rank <strong>Progression:</strong> Bureaucratic interference by Rank</p><p><strong>Rules Summary:</strong> Adds organisational paperwork, permissions, reporting, approvals, or after-action obligations around major activity.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.defect.red-tape",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 19,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "defect",
+            "importId": "beyonder-worlds.defect.red-tape"
+          }
+        }
+      }
+    },
+    {
+      "name": "Biological Sciences",
+      "type": "skill",
+      "folder": "Modern and Future Skills - Beyonder Worlds",
+      "img": "icons/svg/d20-grey.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.skill.biological-sciences",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "skill",
+        "importId": "beyonder-worlds.skill.biological-sciences",
+        "category": "Skill",
+        "ability": "Intelligence",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Skill Ability:</strong> Intelligence <strong>Genre Use:</strong> Modern, science fiction, cyberpunk, or urban fantasy campaigns</p><p><strong>Rules Summary:</strong> Covers biology, genetics, xenobiology, mutation, medicine-adjacent life sciences, and creature analysis.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.skill.biological-sciences",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "skill",
+            "importId": "beyonder-worlds.skill.biological-sciences"
+          }
+        }
+      }
+    },
+    {
+      "name": "Computers",
+      "type": "skill",
+      "folder": "Modern and Future Skills - Beyonder Worlds",
+      "img": "icons/svg/d20-grey.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.skill.computers",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "skill",
+        "importId": "beyonder-worlds.skill.computers",
+        "category": "Skill",
+        "ability": "Intelligence",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Skill Ability:</strong> Intelligence <strong>Genre Use:</strong> Modern, science fiction, cyberpunk, or urban fantasy campaigns</p><p><strong>Rules Summary:</strong> Covers programming, data systems, networks, terminals, security software, and digital investigation.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.skill.computers",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "skill",
+            "importId": "beyonder-worlds.skill.computers"
+          }
+        }
+      }
+    },
+    {
+      "name": "Demolitions",
+      "type": "skill",
+      "folder": "Modern and Future Skills - Beyonder Worlds",
+      "img": "icons/svg/d20-grey.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.skill.demolitions",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "skill",
+        "importId": "beyonder-worlds.skill.demolitions",
+        "category": "Skill",
+        "ability": "Intelligence",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Skill Ability:</strong> Intelligence <strong>Genre Use:</strong> Modern, science fiction, cyberpunk, or urban fantasy campaigns</p><p><strong>Rules Summary:</strong> Covers explosives, breaching charges, safe disposal, shaped blasts, and sabotage planning.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.skill.demolitions",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "skill",
+            "importId": "beyonder-worlds.skill.demolitions"
+          }
+        }
+      }
+    },
+    {
+      "name": "Electronics",
+      "type": "skill",
+      "folder": "Modern and Future Skills - Beyonder Worlds",
+      "img": "icons/svg/d20-grey.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.skill.electronics",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "skill",
+        "importId": "beyonder-worlds.skill.electronics",
+        "category": "Skill",
+        "ability": "Intelligence",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Skill Ability:</strong> Intelligence <strong>Genre Use:</strong> Modern, science fiction, cyberpunk, or urban fantasy campaigns</p><p><strong>Rules Summary:</strong> Covers sensors, circuits, communications hardware, vehicle systems, robotics, and electronic repair.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.skill.electronics",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "skill",
+            "importId": "beyonder-worlds.skill.electronics"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Sciences",
+      "type": "skill",
+      "folder": "Modern and Future Skills - Beyonder Worlds",
+      "img": "icons/svg/d20-grey.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.skill.environmental-sciences",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "skill",
+        "importId": "beyonder-worlds.skill.environmental-sciences",
+        "category": "Skill",
+        "ability": "Intelligence",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Skill Ability:</strong> Intelligence <strong>Genre Use:</strong> Modern, science fiction, cyberpunk, or urban fantasy campaigns</p><p><strong>Rules Summary:</strong> Covers ecology, geology, climate, biospheres, terraforming, hazardous environments, and planetary surveys.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.skill.environmental-sciences",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "skill",
+            "importId": "beyonder-worlds.skill.environmental-sciences"
+          }
+        }
+      }
+    },
+    {
+      "name": "Police Sciences",
+      "type": "skill",
+      "folder": "Modern and Future Skills - Beyonder Worlds",
+      "img": "icons/svg/d20-grey.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.skill.police-sciences",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "skill",
+        "importId": "beyonder-worlds.skill.police-sciences",
+        "category": "Skill",
+        "ability": "Intelligence",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Skill Ability:</strong> Intelligence <strong>Genre Use:</strong> Modern, science fiction, cyberpunk, or urban fantasy campaigns</p><p><strong>Rules Summary:</strong> Covers forensics, evidence handling, legal procedure, criminal methods, and investigative practice.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.skill.police-sciences",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "skill",
+            "importId": "beyonder-worlds.skill.police-sciences"
+          }
+        }
+      }
+    },
+    {
+      "name": "Urban Tracking",
+      "type": "skill",
+      "folder": "Modern and Future Skills - Beyonder Worlds",
+      "img": "icons/svg/d20-grey.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.skill.urban-tracking",
+        "sourcePage": 14,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "skill",
+        "importId": "beyonder-worlds.skill.urban-tracking",
+        "category": "Skill",
+        "ability": "Wisdom",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 14.</p><p><strong>Skill Ability:</strong> Wisdom <strong>Genre Use:</strong> Modern, science fiction, cyberpunk, or urban fantasy campaigns</p><p><strong>Rules Summary:</strong> Covers finding people, trails, activity patterns, and subcultures inside built-up modern or future environments.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.skill.urban-tracking",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 14,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "skill",
+            "importId": "beyonder-worlds.skill.urban-tracking"
+          }
+        }
+      }
+    }
+  ]
+}

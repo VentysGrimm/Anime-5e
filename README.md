@@ -64,4 +64,5 @@ Current standalone module packages:
 - `modules/anime5e-monstrum-libri-vol1`
 - `modules/anime5e-monstrum-libri-vol2`
 - `modules/anime5e-folstavia`
+- `modules/anime5e-beyonder-worlds`
 

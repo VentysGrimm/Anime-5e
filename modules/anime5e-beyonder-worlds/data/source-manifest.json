@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-beyonder-worlds.sources",
+  "label": "Anime 5e Beyonder Worlds Sources",
+  "sourceBook": "Anime 5E Beyonder Worlds",
+  "sourceAbbreviation": "BW",
+  "sourceModuleId": "anime5e-beyonder-worlds",
+  "contentCategory": "genre-expansion",
+  "includes": [
+    "data/sources/beyonder-worlds-species.json",
+    "data/sources/beyonder-worlds-classes.json",
+    "data/sources/beyonder-worlds-character-options.json",
+    "data/sources/beyonder-worlds-items.json",
+    "data/sources/beyonder-worlds-threats.json",
+    "data/sources/beyonder-worlds-journals.json"
+  ]
+}

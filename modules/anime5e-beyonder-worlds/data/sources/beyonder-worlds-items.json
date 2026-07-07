@@ -1,0 +1,2232 @@
+{
+  "pack": "anime5e-beyonder-worlds.items",
+  "documentType": "Item",
+  "sourceBook": "Anime 5E Beyonder Worlds",
+  "sourceAbbreviation": "BW",
+  "sourceModuleId": "anime5e-beyonder-worlds",
+  "contentCategory": "item",
+  "folders": [
+    {
+      "name": "Science Fiction Gear - Beyonder Worlds",
+      "color": "#6f9186"
+    },
+    {
+      "name": "Science Fiction Weapons - Beyonder Worlds",
+      "color": "#8f5b5b"
+    },
+    {
+      "name": "Science Fiction Armour - Beyonder Worlds",
+      "color": "#6d7884"
+    },
+    {
+      "name": "Mecha Fantasy Gear - Beyonder Worlds",
+      "color": "#7f657d"
+    },
+    {
+      "name": "Cyberpunk Gear - Beyonder Worlds",
+      "color": "#5b6f90"
+    },
+    {
+      "name": "Modern Earth Gear - Beyonder Worlds",
+      "color": "#7a805a"
+    },
+    {
+      "name": "Modern Earth Weapons - Beyonder Worlds",
+      "color": "#8c624f"
+    },
+    {
+      "name": "Modern Earth Armour - Beyonder Worlds",
+      "color": "#6f788c"
+    },
+    {
+      "name": "Vehicles - Beyonder Worlds",
+      "color": "#607887"
+    },
+    {
+      "name": "Mecha - Beyonder Worlds",
+      "color": "#7f657d"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Virtual Tablet (V-Tab)",
+      "type": "equipment",
+      "folder": "Science Fiction Gear - Beyonder Worlds",
+      "img": "icons/tools/navigation/map-chart-tan.webp",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 49.</p><p><strong>Item Rank:</strong> 1. <strong>Point Cost:</strong> 4.</p><p><strong>Rules Summary:</strong> Wrist-worn holographic tablet that provides computer systems, data recording and backup, GPS, network access, and virtual projection features for interstellar campaigns.</p>",
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.item.v-tab",
+        "sourcePage": 49,
+        "importId": "beyonder-worlds.item.v-tab",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Science Fiction Gear",
+        "properties": "Features: Computer System, Data Recording and Backup, GPS, Network Access, Virtual Projection",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.item.v-tab",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 49,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.item.v-tab"
+          }
+        }
+      }
+    },
+    {
+      "name": "MARStar Armour",
+      "type": "mecha",
+      "folder": "Mecha - Beyonder Worlds",
+      "img": "icons/commodities/tech/metal-cogs.webp",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF pp. 78-79.</p><p><strong>Item Rank:</strong> 13. <strong>Point Cost:</strong> 52.</p><p><strong>Rules Summary:</strong> Gargantuan Myriad Alliance combat robot for Mecha Knights, balancing speed, protection, space resilience, and radiant weapon systems. It is suitable for Level 13 Mecha Knights and uses Helming checks for many piloting actions.</p>",
+        "rank": 13,
+        "cost": 52,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.mecha.marstar-armour",
+        "sourcePage": 79,
+        "importId": "beyonder-worlds.mecha.marstar-armour",
+        "size": "Gargantuan Item (50 ft.)",
+        "armourClass": 14,
+        "hitPoints": "100",
+        "speed": "Flight 300 ft./round; Ground Speed 300 ft./round; Spaceflight",
+        "properties": "AC Bonus, Augmented Strength/Dexterity, Protected, Resilient, Tough, Radiant Beam, Radiant Sword, Conditional Ownership, Special Requirement",
+        "operator": "Mecha Knight pilot; Helming skill for piloting actions",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "mecha"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.mecha.marstar-armour",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 79,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "mecha",
+            "importId": "beyonder-worlds.mecha.marstar-armour"
+          }
+        }
+      }
+    },
+    {
+      "name": "Energy Whip",
+      "type": "weapon",
+      "folder": "Science Fiction Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 7,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.energy-whip",
+        "sourcePage": 48,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.energy-whip",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 48.</p><p><strong>Damage:</strong> 2d8 <strong>Damage Type:</strong> Force <strong>Enhancements:</strong> Flexible, Penetrating 2 <strong>Limiters:</strong> None</p><p><strong>Rules Summary:</strong> Concealable energy lash used by pirates and agents as both weapon and dramatic restraint.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "2d8",
+        "damageType": "Force",
+        "enhancements": "Flexible, Penetrating 2",
+        "limiters": "",
+        "category": "Science Fiction Weapon",
+        "properties": "Enhancements: Flexible, Penetrating 2; Limiters: None"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.energy-whip",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 48,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.energy-whip"
+          }
+        }
+      }
+    },
+    {
+      "name": "Radiant Sword",
+      "type": "weapon",
+      "folder": "Science Fiction Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 10,
+        "cost": 5,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.radiant-sword",
+        "sourcePage": 48,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.radiant-sword",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 48.</p><p><strong>Damage:</strong> 2d10 <strong>Damage Type:</strong> Radiant <strong>Enhancements:</strong> Penetrating 5 <strong>Limiters:</strong> None</p><p><strong>Rules Summary:</strong> Iconic space-opera energy blade with strong armour and shield penetration.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "2d10",
+        "damageType": "Radiant",
+        "enhancements": "Penetrating 5",
+        "limiters": "",
+        "category": "Science Fiction Weapon",
+        "properties": "Enhancements: Penetrating 5; Limiters: None"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.radiant-sword",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 48,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.radiant-sword"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blaster Pistol",
+      "type": "weapon",
+      "folder": "Science Fiction Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 7,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.blaster-pistol",
+        "sourcePage": 48,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.blaster-pistol",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 48.</p><p><strong>Damage:</strong> 3d6 <strong>Damage Type:</strong> Force <strong>Enhancements:</strong> Range 3 <strong>Limiters:</strong> None</p><p><strong>Rules Summary:</strong> Common force-energy sidearm for interstellar adventurers, soldiers, and outlaws.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "3d6",
+        "damageType": "Force",
+        "enhancements": "Range 3",
+        "limiters": "",
+        "category": "Science Fiction Weapon",
+        "properties": "Enhancements: Range 3; Limiters: None"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.blaster-pistol",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 48,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.blaster-pistol"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blaster Rifle, High-Powered",
+      "type": "weapon",
+      "folder": "Science Fiction Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 10,
+        "cost": 7,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.blaster-rifle-high-powered",
+        "sourcePage": 48,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.blaster-rifle-high-powered",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 48.</p><p><strong>Damage:</strong> 5d6 <strong>Damage Type:</strong> Force <strong>Enhancements:</strong> Range 4 <strong>Limiters:</strong> Hands</p><p><strong>Rules Summary:</strong> Longer-range single-shot blaster rifle suited to military and frontier encounters.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "5d6",
+        "damageType": "Force",
+        "enhancements": "Range 4",
+        "limiters": "Hands",
+        "category": "Science Fiction Weapon",
+        "properties": "Enhancements: Range 4; Limiters: Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.blaster-rifle-high-powered",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 48,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.blaster-rifle-high-powered"
+          }
+        }
+      }
+    },
+    {
+      "name": "Grenade, Neural",
+      "type": "weapon",
+      "folder": "Science Fiction Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 6,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.grenade-neural",
+        "sourcePage": 48,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.grenade-neural",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 48.</p><p><strong>Damage:</strong> None <strong>Damage Type:</strong> Psychic <strong>Enhancements:</strong> Area 2, Incapacitating 4, Range 2, Selective <strong>Limiters:</strong> Ammo 3</p><p><strong>Rules Summary:</strong> Programmable neural grenade that can paralyse targets in a small area.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "",
+        "damageType": "Psychic",
+        "enhancements": "Area 2, Incapacitating 4, Range 2, Selective",
+        "limiters": "Ammo 3",
+        "category": "Science Fiction Weapon",
+        "properties": "Enhancements: Area 2, Incapacitating 4, Range 2, Selective; Limiters: Ammo 3"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.grenade-neural",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 48,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.grenade-neural"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mini-Missile Launcher",
+      "type": "weapon",
+      "folder": "Science Fiction Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 11,
+        "cost": 8,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.mini-missile-launcher",
+        "sourcePage": 48,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.mini-missile-launcher",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 48.</p><p><strong>Damage:</strong> 4d8 <strong>Damage Type:</strong> Fire/Force <strong>Enhancements:</strong> Area 2, Homing: Infrared, Range 3 <strong>Limiters:</strong> Activation, Ammo, Hands</p><p><strong>Rules Summary:</strong> Portable multi-shot launcher using small infrared homing missiles.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "4d8",
+        "damageType": "Fire/Force",
+        "enhancements": "Area 2, Homing: Infrared, Range 3",
+        "limiters": "Activation, Ammo, Hands",
+        "category": "Science Fiction Weapon",
+        "properties": "Enhancements: Area 2, Homing: Infrared, Range 3; Limiters: Activation, Ammo, Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.mini-missile-launcher",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 48,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.mini-missile-launcher"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sniper Maser",
+      "type": "weapon",
+      "folder": "Science Fiction Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 14,
+        "cost": 7,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.sniper-maser",
+        "sourcePage": 48,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.sniper-maser",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 48.</p><p><strong>Damage:</strong> 5d6 <strong>Damage Type:</strong> Radiant <strong>Enhancements:</strong> Accurate, Range 5, Inconspicuous 3 <strong>Limiters:</strong> Ammo, Hands</p><p><strong>Rules Summary:</strong> Backpack-fed invisible beam rifle for long-range precision fire.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "5d6",
+        "damageType": "Radiant",
+        "enhancements": "Accurate, Range 5, Inconspicuous 3",
+        "limiters": "Ammo, Hands",
+        "category": "Science Fiction Weapon",
+        "properties": "Enhancements: Accurate, Range 5, Inconspicuous 3; Limiters: Ammo, Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.sniper-maser",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 48,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.sniper-maser"
+          }
+        }
+      }
+    },
+    {
+      "name": "Pistol, Medium",
+      "type": "weapon",
+      "folder": "Modern Earth Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 6,
+        "cost": 3,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.pistol-medium",
+        "sourcePage": 147,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.pistol-medium",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 147.</p><p><strong>Damage:</strong> 2d6 <strong>Damage Type:</strong> Piercing <strong>Enhancements:</strong> Range 3 <strong>Limiters:</strong> None</p><p><strong>Rules Summary:</strong> Typical modern handgun such as a 9 mm or .45 calibre pistol.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "2d6",
+        "damageType": "Piercing",
+        "enhancements": "Range 3",
+        "limiters": "",
+        "category": "Modern Earth Weapon",
+        "properties": "Enhancements: Range 3; Limiters: None"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.pistol-medium",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 147,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.pistol-medium"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rifle, Assault",
+      "type": "weapon",
+      "folder": "Modern Earth Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 9,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.rifle-assault",
+        "sourcePage": 147,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.rifle-assault",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 147.</p><p><strong>Damage:</strong> 4d4 <strong>Damage Type:</strong> Piercing <strong>Enhancements:</strong> Autofire 3, Range 4 <strong>Limiters:</strong> Ammo 1, Hands</p><p><strong>Rules Summary:</strong> Modern military rifle capable of short automatic bursts.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "4d4",
+        "damageType": "Piercing",
+        "enhancements": "Autofire 3, Range 4",
+        "limiters": "Ammo 1, Hands",
+        "category": "Modern Earth Weapon",
+        "properties": "Enhancements: Autofire 3, Range 4; Limiters: Ammo 1, Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.rifle-assault",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 147,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.rifle-assault"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rifle, Sniper",
+      "type": "weapon",
+      "folder": "Modern Earth Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 10,
+        "cost": 5,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.rifle-sniper",
+        "sourcePage": 147,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.rifle-sniper",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 147.</p><p><strong>Damage:</strong> 2d10 <strong>Damage Type:</strong> Piercing <strong>Enhancements:</strong> Accurate 2, Range 4 <strong>Limiters:</strong> Hands</p><p><strong>Rules Summary:</strong> Precision high-powered rifle with calibrated sights and heavy ammunition.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "2d10",
+        "damageType": "Piercing",
+        "enhancements": "Accurate 2, Range 4",
+        "limiters": "Hands",
+        "category": "Modern Earth Weapon",
+        "properties": "Enhancements: Accurate 2, Range 4; Limiters: Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.rifle-sniper",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 147,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.rifle-sniper"
+          }
+        }
+      }
+    },
+    {
+      "name": "Taser",
+      "type": "weapon",
+      "folder": "Modern Earth Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 2,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.taser",
+        "sourcePage": 147,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.taser",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 147.</p><p><strong>Damage:</strong> None <strong>Damage Type:</strong> Lightning <strong>Enhancements:</strong> Incapacitating 4, Range 2 <strong>Limiters:</strong> Activation, Ammo 2, Inaccurate</p><p><strong>Rules Summary:</strong> Less-lethal dart weapon that incapacitates with a battery discharge.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "",
+        "damageType": "Lightning",
+        "enhancements": "Incapacitating 4, Range 2",
+        "limiters": "Activation, Ammo 2, Inaccurate",
+        "category": "Modern Earth Weapon",
+        "properties": "Enhancements: Incapacitating 4, Range 2; Limiters: Activation, Ammo 2, Inaccurate"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.taser",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 147,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.taser"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rocket Launcher",
+      "type": "weapon",
+      "folder": "Modern Earth Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 12,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.rocket-launcher",
+        "sourcePage": 147,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.rocket-launcher",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 147.</p><p><strong>Damage:</strong> 6d8 <strong>Damage Type:</strong> Fire/Force <strong>Enhancements:</strong> Area 2, Penetrating, Range 3 <strong>Limiters:</strong> Activation, Backblast, Ammo 2, Hands, Inaccurate</p><p><strong>Rules Summary:</strong> Semi-portable modern ordnance launcher for military targets.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "6d8",
+        "damageType": "Fire/Force",
+        "enhancements": "Area 2, Penetrating, Range 3",
+        "limiters": "Activation, Backblast, Ammo 2, Hands, Inaccurate",
+        "category": "Modern Earth Weapon",
+        "properties": "Enhancements: Area 2, Penetrating, Range 3; Limiters: Activation, Backblast, Ammo 2, Hands, Inaccurate"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.rocket-launcher",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 147,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.rocket-launcher"
+          }
+        }
+      }
+    },
+    {
+      "name": "Grenade, Flash-Bang",
+      "type": "weapon",
+      "folder": "Modern Earth Weapons - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 2,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.grenade-flash-bang",
+        "sourcePage": 147,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.grenade-flash-bang",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 147.</p><p><strong>Damage:</strong> None <strong>Damage Type:</strong> Radiant/Thunder <strong>Enhancements:</strong> Area 2, Flare (Hearing) 2, Flare (Sight) 2, Range 2 <strong>Limiters:</strong> Ammo 4, Toxic 2</p><p><strong>Rules Summary:</strong> Disorientation grenade that targets sight and hearing rather than lethal injury.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "",
+        "damageType": "Radiant/Thunder",
+        "enhancements": "Area 2, Flare (Hearing) 2, Flare (Sight) 2, Range 2",
+        "limiters": "Ammo 4, Toxic 2",
+        "category": "Modern Earth Weapon",
+        "properties": "Enhancements: Area 2, Flare (Hearing) 2, Flare (Sight) 2, Range 2; Limiters: Ammo 4, Toxic 2"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.grenade-flash-bang",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 147,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.grenade-flash-bang"
+          }
+        }
+      }
+    },
+    {
+      "name": "Crusher Sword",
+      "type": "weapon",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.crusher-sword",
+        "sourcePage": 129,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.crusher-sword",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 129.</p><p><strong>Damage:</strong> 2d6 slashing + 1d12 bludgeoning <strong>Damage Type:</strong> Slashing/Bludgeoning <strong>Enhancements:</strong> Weapon: Crusher Slash <strong>Limiters:</strong> Hands</p><p><strong>Rules Summary:</strong> Massive close-combat blade designed to punish targets resistant to only one physical damage type.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "2d6 slashing + 1d12 bludgeoning",
+        "damageType": "Slashing/Bludgeoning",
+        "enhancements": "Weapon: Crusher Slash",
+        "limiters": "Hands",
+        "category": "Cyberpunk Weapon",
+        "properties": "Enhancements: Weapon: Crusher Slash; Limiters: Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.crusher-sword",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 129,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.crusher-sword"
+          }
+        }
+      }
+    },
+    {
+      "name": "EMP Launcher",
+      "type": "weapon",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.emp-launcher",
+        "sourcePage": 129,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.emp-launcher",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 129.</p><p><strong>Damage:</strong> 3d6 <strong>Damage Type:</strong> Lightning <strong>Enhancements:</strong> Area, Range, Exclusive: Electric machinery <strong>Limiters:</strong> Ammo, Hands</p><p><strong>Rules Summary:</strong> Grenade launcher built to disable robots, vehicles, and electronic machines without harming organic allies.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "3d6",
+        "damageType": "Lightning",
+        "enhancements": "Area, Range, Exclusive: Electric machinery",
+        "limiters": "Ammo, Hands",
+        "category": "Cyberpunk Weapon",
+        "properties": "Enhancements: Area, Range, Exclusive: Electric machinery; Limiters: Ammo, Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.emp-launcher",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 129,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.emp-launcher"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tangleshot",
+      "type": "weapon",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.tangleshot",
+        "sourcePage": 129,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.tangleshot",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 129.</p><p><strong>Damage:</strong> 1d4 <strong>Damage Type:</strong> Bludgeoning <strong>Enhancements:</strong> Tangle 20 HP, Range <strong>Limiters:</strong> Ammo, Hands</p><p><strong>Rules Summary:</strong> Short-ranged capture launcher that binds living targets for bounty or arrest work.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "1d4",
+        "damageType": "Bludgeoning",
+        "enhancements": "Tangle 20 HP, Range",
+        "limiters": "Ammo, Hands",
+        "category": "Cyberpunk Weapon",
+        "properties": "Enhancements: Tangle 20 HP, Range; Limiters: Ammo, Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.tangleshot",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 129,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.tangleshot"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hellfire Laser",
+      "type": "weapon",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.hellfire-laser",
+        "sourcePage": 129,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.hellfire-laser",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 129.</p><p><strong>Damage:</strong> 5d6 <strong>Damage Type:</strong> Radiant <strong>Enhancements:</strong> Continuing, Range <strong>Limiters:</strong> Backlash, Hands</p><p><strong>Rules Summary:</strong> Backpack-powered experimental laser rifle with dangerous heat side effects.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "5d6",
+        "damageType": "Radiant",
+        "enhancements": "Continuing, Range",
+        "limiters": "Backlash, Hands",
+        "category": "Cyberpunk Weapon",
+        "properties": "Enhancements: Continuing, Range; Limiters: Backlash, Hands"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.hellfire-laser",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 129,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.hellfire-laser"
+          }
+        }
+      }
+    },
+    {
+      "name": "Smartgun",
+      "type": "weapon",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.weapon.smartgun",
+        "sourcePage": 129,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "weapon",
+        "importId": "beyonder-worlds.weapon.smartgun",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 129.</p><p><strong>Damage:</strong> 2d10 <strong>Damage Type:</strong> Piercing <strong>Enhancements:</strong> Accurate, Homing, Range <strong>Limiters:</strong> None</p><p><strong>Rules Summary:</strong> Heavy target-assist pistol whose bullets can correct near misses in urban combat.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "damage": "2d10",
+        "damageType": "Piercing",
+        "enhancements": "Accurate, Homing, Range",
+        "limiters": "",
+        "category": "Cyberpunk Weapon",
+        "properties": "Enhancements: Accurate, Homing, Range; Limiters: None"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.weapon.smartgun",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 129,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "weapon",
+            "importId": "beyonder-worlds.weapon.smartgun"
+          }
+        }
+      }
+    },
+    {
+      "name": "Space Suit",
+      "type": "armor",
+      "folder": "Science Fiction Armour - Beyonder Worlds",
+      "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.armor.space-suit",
+        "sourcePage": 50,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "armor",
+        "importId": "beyonder-worlds.armor.space-suit",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 50.</p><p><strong>Armour Class:</strong> 14 + Dexterity modifier (max +2) <strong>Attributes:</strong> Resilient Rank 6</p><p><strong>Rules Summary:</strong> Advanced lightweight suit for space work, hostile pressure, radiation, underwater operation, and non-breathable atmospheres.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "armourClass": "14 + Dexterity modifier (max +2)",
+        "properties": "Resilient Rank 6",
+        "category": "Science Fiction Armour"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.armor.space-suit",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 50,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "armor",
+            "importId": "beyonder-worlds.armor.space-suit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ceramic Armour",
+      "type": "armor",
+      "folder": "Science Fiction Armour - Beyonder Worlds",
+      "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.armor.ceramic-armour",
+        "sourcePage": 50,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "armor",
+        "importId": "beyonder-worlds.armor.ceramic-armour",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 50.</p><p><strong>Armour Class:</strong> 16 + Dexterity modifier (max +2) <strong>Damage:</strong> -4 Protected - Greater Rank 2</p><p><strong>Rules Summary:</strong> High-density lightweight ceramic armour that adds solid Armour Class and Greater Protected damage reduction.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "armourClass": "16 + Dexterity modifier (max +2)",
+        "damageReduction": "-4",
+        "properties": "Protected - Greater Rank 2",
+        "category": "Science Fiction Armour"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.armor.ceramic-armour",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 50,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "armor",
+            "importId": "beyonder-worlds.armor.ceramic-armour"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tactical Force Armour",
+      "type": "armor",
+      "folder": "Science Fiction Armour - Beyonder Worlds",
+      "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+      "system": {
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.armor.tactical-force-armour",
+        "sourcePage": 50,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "armor",
+        "importId": "beyonder-worlds.armor.tactical-force-armour",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 50.</p><p><strong>Armour Class:</strong> 14 + Dexterity modifier (max +2) <strong>Damage:</strong> -12 Force Shield - Greater Rank 3</p><p><strong>Rules Summary:</strong> Force-armour harness that combines Armour Class with a visible Greater Force Shield field.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "armourClass": "14 + Dexterity modifier (max +2)",
+        "damageReduction": "-12",
+        "properties": "Force Shield - Greater Rank 3; Detectable: Sight",
+        "category": "Science Fiction Armour"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.armor.tactical-force-armour",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 50,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "armor",
+            "importId": "beyonder-worlds.armor.tactical-force-armour"
+          }
+        }
+      }
+    },
+    {
+      "name": "Assault Power Armour",
+      "type": "armor",
+      "folder": "Science Fiction Armour - Beyonder Worlds",
+      "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+      "system": {
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.armor.assault-power-armour",
+        "sourcePage": 50,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "armor",
+        "importId": "beyonder-worlds.armor.assault-power-armour",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 50.</p><p><strong>Armour Class:</strong> 18 <strong>Damage:</strong> -10 Protected - Greater Rank 5</p><p><strong>Rules Summary:</strong> Heavy powered armour for urban combat with high Armour Class, Greater Protected, and strength-assist systems.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "armourClass": 18,
+        "damageReduction": "-10",
+        "properties": "Protected - Greater Rank 5; Edge (Strength rolls); Obstacle (Dexterity rolls)",
+        "category": "Science Fiction Armour"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.armor.assault-power-armour",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 50,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "armor",
+            "importId": "beyonder-worlds.armor.assault-power-armour"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tactical Force Shield",
+      "type": "shield",
+      "folder": "Science Fiction Armour - Beyonder Worlds",
+      "img": "icons/equipment/shield/heater-steel-crystal-red.webp",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.shield.tactical-force-shield",
+        "sourcePage": 50,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "shield",
+        "importId": "beyonder-worlds.shield.tactical-force-shield",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 50.</p><p><strong>Armour Class:</strong> +2 <strong>Damage:</strong> -4 Force Shield Rank 1</p><p><strong>Rules Summary:</strong> Directional energy shield with ordinary shield AC and Force Shield damage reduction.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "armourClass": "+2",
+        "damageReduction": "-4",
+        "properties": "Force Shield Rank 1; Detectable: Sight",
+        "category": "Science Fiction Shield"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.shield.tactical-force-shield",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 50,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "shield",
+            "importId": "beyonder-worlds.shield.tactical-force-shield"
+          }
+        }
+      }
+    },
+    {
+      "name": "Heavy Body Armour",
+      "type": "armor",
+      "folder": "Modern Earth Armour - Beyonder Worlds",
+      "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+      "system": {
+        "rank": 4,
+        "cost": 16,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.armor.heavy-body-armour",
+        "sourcePage": 148,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "armor",
+        "importId": "beyonder-worlds.armor.heavy-body-armour",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 148.</p><p><strong>Armour Class:</strong> 15 + Dexterity modifier (max +2) <strong>Damage:</strong> -4 Protected Rank 4</p><p><strong>Rules Summary:</strong> Modern ballistic outfit with helmet and ceramic plates for SWAT, military, and supernatural-response units.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "armourClass": "15 + Dexterity modifier (max +2)",
+        "damageReduction": "-4",
+        "properties": "Protected Rank 4; Requires Strength 13; Disadvantage (Stealth)",
+        "category": "Modern Earth Armour"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.armor.heavy-body-armour",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 148,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "armor",
+            "importId": "beyonder-worlds.armor.heavy-body-armour"
+          }
+        }
+      }
+    },
+    {
+      "name": "Composite Tower Shield",
+      "type": "shield",
+      "folder": "Modern Earth Armour - Beyonder Worlds",
+      "img": "icons/equipment/shield/heater-steel-crystal-red.webp",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.shield.composite-tower-shield",
+        "sourcePage": 148,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "shield",
+        "importId": "beyonder-worlds.shield.composite-tower-shield",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 148.</p><p><strong>Armour Class:</strong> +4 <strong>Dexterity Checks:</strong> Disadvantage</p><p><strong>Rules Summary:</strong> Large composite riot or tactical shield offering strong AC at the cost of hand use and Dexterity checks.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "armourClass": "+4",
+        "properties": "Uses one free hand; Dexterity checks at Disadvantage",
+        "category": "Modern Earth Shield"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.shield.composite-tower-shield",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 148,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "shield",
+            "importId": "beyonder-worlds.shield.composite-tower-shield"
+          }
+        }
+      }
+    },
+    {
+      "name": "Credit Dot",
+      "type": "equipment",
+      "folder": "Science Fiction Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.credit-dot",
+        "sourcePage": 50,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.credit-dot",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 50.</p><p><strong>Rules Summary:</strong> Tiny secure financial implant that grants access to a user's resources and resists common hacking methods.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Science Fiction Gear",
+        "properties": "Financial access; implant; secure identity resonance"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.credit-dot",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 50,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.credit-dot"
+          }
+        }
+      }
+    },
+    {
+      "name": "Horizon Scanner",
+      "type": "equipment",
+      "folder": "Science Fiction Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.horizon-scanner",
+        "sourcePage": 50,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.horizon-scanner",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 50.</p><p><strong>Rules Summary:</strong> Exploration scanner that sees through many barriers and analyses molecular structures for survey and toxicology work.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Science Fiction Gear",
+        "properties": "Features: Analysis Program; Supersense: Molecular Structure Detection, Ultravision"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.horizon-scanner",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 50,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.horizon-scanner"
+          }
+        }
+      }
+    },
+    {
+      "name": "Medical Rod",
+      "type": "equipment",
+      "folder": "Science Fiction Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.medical-rod",
+        "sourcePage": 50,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.medical-rod",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 50.</p><p><strong>Rules Summary:</strong> Technological medical wand that restores Hit Points, fights disease, and purges poison after a short activation.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Science Fiction Gear",
+        "properties": "Healing; Resilient: Ageing/Disease; Immunity: Poison"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.medical-rod",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 50,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.medical-rod"
+          }
+        }
+      }
+    },
+    {
+      "name": "ARI",
+      "type": "equipment",
+      "folder": "Mecha Fantasy Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.ari",
+        "sourcePage": 74,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.ari",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 74.</p><p><strong>Rules Summary:</strong> Augmented Reality Interface used as a common control, analysis, display, and communication tool in the Myriad Alliance.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Mecha Fantasy Gear",
+        "properties": "Augmented reality; heads-up display; common interface"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.ari",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 74,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.ari"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bounty-Tech",
+      "type": "equipment",
+      "folder": "Mecha Fantasy Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.bounty-tech",
+        "sourcePage": 74,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.bounty-tech",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 74.</p><p><strong>Rules Summary:</strong> Tracker and restraint technology used by bounty hunters, security forces, and adventurers seeking fugitives.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Mecha Fantasy Gear",
+        "properties": "Tracking; capture support; mission gear"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.bounty-tech",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 74,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.bounty-tech"
+          }
+        }
+      }
+    },
+    {
+      "name": "Phase Suit",
+      "type": "equipment",
+      "folder": "Mecha Fantasy Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.phase-suit",
+        "sourcePage": 75,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.phase-suit",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 75.</p><p><strong>Rules Summary:</strong> Specialised suit that supports brief ethereal-state movement, lack-of-air resilience, and dependent wall traversal.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Mecha Fantasy Gear",
+        "properties": "Change State: Ethereal; Resilient: Lack of Air; Wall-Crawling"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.phase-suit",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 75,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.phase-suit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Telekinetic Tools",
+      "type": "equipment",
+      "folder": "Mecha Fantasy Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.telekinetic-tools",
+        "sourcePage": 75,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.telekinetic-tools",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 75.</p><p><strong>Rules Summary:</strong> Engineering toolkit enhanced by telekinetic manipulation for remote repair, fabrication, and fine tool work.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Mecha Fantasy Gear",
+        "properties": "Edge: Engineering; Telekinesis; tool suite"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.telekinetic-tools",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 75,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.telekinetic-tools"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hacking Gear",
+      "type": "equipment",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.hacking-gear",
+        "sourcePage": 126,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.hacking-gear",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 126.</p><p><strong>Rules Summary:</strong> Network access and heads-up hacking kit with computer Edge, data tools, networked Mind Control, and signal masking.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Cyberpunk Gear",
+        "properties": "Edge: Computers; Features; Mind Control - Lesser; Sensory Block: Electronic transmissions"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.hacking-gear",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 126,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.hacking-gear"
+          }
+        }
+      }
+    },
+    {
+      "name": "Medplug",
+      "type": "equipment",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.medplug",
+        "sourcePage": 126,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.medplug",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 126.</p><p><strong>Rules Summary:</strong> Cyberpunk medical plug with healing, disease resilience, and medical-analysis sensing.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Cyberpunk Gear",
+        "properties": "Healing +4d8 HP; Resilient: Disease; Sixth Sense: Medical analysis"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.medplug",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 126,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.medplug"
+          }
+        }
+      }
+    },
+    {
+      "name": "Visor Assist",
+      "type": "equipment",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.visor-assist",
+        "sourcePage": 126,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.visor-assist",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 126.</p><p><strong>Rules Summary:</strong> Tactical vision visor that improves targeting, protects against intense light, and grants ultravision.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Cyberpunk Gear",
+        "properties": "Combat Mastery; Heightened Senses; Resilient: Intense Light; Supersense: Ultravision"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.visor-assist",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 126,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.visor-assist"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wired Jetpack",
+      "type": "equipment",
+      "folder": "Cyberpunk Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.wired-jetpack",
+        "sourcePage": 126,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.wired-jetpack",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 126.</p><p><strong>Rules Summary:</strong> Compact cyberpunk flight pack with eye protection, lack-of-air resilience, and noisy short-range flight.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Cyberpunk Gear",
+        "properties": "Flight 90 feet/round; Resilient: Lack of Air; Detectable: Hearing"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.wired-jetpack",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 126,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.wired-jetpack"
+          }
+        }
+      }
+    },
+    {
+      "name": "Disguise Kit",
+      "type": "equipment",
+      "folder": "Modern Earth Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.disguise-kit",
+        "sourcePage": 149,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.disguise-kit",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 149.</p><p><strong>Rules Summary:</strong> Elite spy kit with makeup, prosthetics, insignia, and security badges for blending into guarded organisations.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Spy Tech",
+        "properties": "Edge: Disguise and Stealth; Skill Proficiency: Deception, Disguise, Stealth"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.disguise-kit",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 149,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.disguise-kit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bug Jammer",
+      "type": "equipment",
+      "folder": "Modern Earth Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.bug-jammer",
+        "sourcePage": 149,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.bug-jammer",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 149.</p><p><strong>Rules Summary:</strong> Basic espionage jammer that disrupts listening devices and related technologies in its immediate area.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Spy Tech",
+        "properties": "Nullify: Technology; Environmental: Listening devices only"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.bug-jammer",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 149,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.bug-jammer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Flare Ring",
+      "type": "equipment",
+      "folder": "Modern Earth Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.flare-ring",
+        "sourcePage": 149,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.flare-ring",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 149.</p><p><strong>Rules Summary:</strong> Concealed ring gadget that emits a short-range blinding flare for sudden escapes or quiet takedowns.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Spy Tech",
+        "properties": "Forced Disadvantage to detect; Weapon: Flare Burst; Ammo 6"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.flare-ring",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 149,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.flare-ring"
+          }
+        }
+      }
+    },
+    {
+      "name": "Spy Suite",
+      "type": "equipment",
+      "folder": "Modern Earth Gear - Beyonder Worlds",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.equipment.spy-suite",
+        "sourcePage": 149,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "equipment",
+        "importId": "beyonder-worlds.equipment.spy-suite",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 149.</p><p><strong>Rules Summary:</strong> General field-agent kit with electronic unlocking, comms, recording, tracking, signal masking, infrared, and X-ray support.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "category": "Spy Tech",
+        "properties": "Dynamic Powers - Lesser: Electronic Unlocking; Features; Sensory Block; Supersense"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.equipment.spy-suite",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 149,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "equipment",
+            "importId": "beyonder-worlds.equipment.spy-suite"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hover Car",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.hover-car",
+        "sourcePage": 75,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.hover-car",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 75.</p><p><strong>Size:</strong> Huge Item (25 ft.) <strong>Armour Class:</strong> 11 <strong>Hit Points:</strong> 90</p><p><strong>Rules Summary:</strong> Huge hovering transport with ten-person capacity, vehicular controls, and high ground-hover speed.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Huge Item (25 ft.)",
+        "armourClass": 11,
+        "hitPoints": "90",
+        "speed": "Ground Speed 300 mph",
+        "passengers": "10 people",
+        "cargo": "2 tons",
+        "properties": "Capacity; Features: Vehicular Suite; Ground Speed"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.hover-car",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 75,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.hover-car"
+          }
+        }
+      }
+    },
+    {
+      "name": "Galactic Battleship",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 23,
+        "cost": 92,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.galactic-battleship",
+        "sourcePage": 76,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.galactic-battleship",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 76.</p><p><strong>Size:</strong> Colossal Item (125 ft. plus) <strong>Armour Class:</strong> 10 <strong>Hit Points:</strong> 160</p><p><strong>Rules Summary:</strong> Colossal capital ship with huge crew capacity, heavy force shielding, space/starflight, sensors, and broadside cannon banks.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Colossal Item (125 ft. plus)",
+        "armourClass": 10,
+        "hitPoints": "160",
+        "speed": "Flight 100 mph; Spaceflight x2; Starflight x2",
+        "passengers": "1,000 people",
+        "cargo": "250 tons",
+        "properties": "Capacity; Force Shield - Greater; Resilient; Supersense; Disruptor Missile; Pulse Cannon Banks"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.galactic-battleship",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 76,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.galactic-battleship"
+          }
+        }
+      }
+    },
+    {
+      "name": "Space Cruiser",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 18,
+        "cost": 72,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.space-cruiser",
+        "sourcePage": 76,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.space-cruiser",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 76.</p><p><strong>Size:</strong> Colossal Item (125 ft. plus) <strong>Armour Class:</strong> 10 <strong>Hit Points:</strong> 160</p><p><strong>Rules Summary:</strong> Fast general-purpose starship for freight, patrol, exploration, piracy, smuggling, or adventuring crews.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Colossal Item (125 ft. plus)",
+        "armourClass": 10,
+        "hitPoints": "160",
+        "speed": "Flight 300 mph; Spaceflight x2; Starflight",
+        "passengers": "250 people",
+        "cargo": "50 tons",
+        "properties": "Capacity; Force Shield; Resilient; Supersense; Teleport; Pulse Cannon Bank"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.space-cruiser",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 76,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.space-cruiser"
+          }
+        }
+      }
+    },
+    {
+      "name": "Void Fighter",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 9,
+        "cost": 36,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.void-fighter",
+        "sourcePage": 77,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.void-fighter",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 77.</p><p><strong>Size:</strong> Huge Item (25 ft. plus) <strong>Armour Class:</strong> 17 <strong>Hit Points:</strong> 110</p><p><strong>Rules Summary:</strong> Single-seat orbital superiority fighter with strong AC, light force shield, spaceflight, tachyon sensors, and pulse cannon.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Huge Item (25 ft. plus)",
+        "armourClass": 17,
+        "hitPoints": "110",
+        "speed": "Flight 300 mph; Spaceflight",
+        "passengers": "1 pilot",
+        "properties": "AC Bonus; Force Shield; Resilient; Supersense; Pulse Cannon"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.void-fighter",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 77,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.void-fighter"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mechopod",
+      "type": "mecha",
+      "folder": "Mecha - Beyonder Worlds",
+      "img": "icons/commodities/tech/metal-cogs.webp",
+      "system": {
+        "rank": 6,
+        "cost": 24,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.mecha.mechopod",
+        "sourcePage": 79,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "mecha",
+        "importId": "beyonder-worlds.mecha.mechopod",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 79.</p><p><strong>Size:</strong> Huge Item (24 ft.) <strong>Armour Class:</strong> 16 <strong>Hit Points:</strong> 140</p><p><strong>Rules Summary:</strong> Huge Sentai-style vehicle-mecha with Merge, Protected hull, Beast Claws, and Force Blast weapon systems.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Huge Item (24 ft.)",
+        "armourClass": 16,
+        "hitPoints": "140",
+        "speed": "Ground Speed 300 feet/round",
+        "properties": "Merge 2; Protected 10; Resilient: Lack of Air; Beast Claws; Force Blast",
+        "operator": "Sentai Ranger or similar pilot; combines into Titanimech"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.mecha.mechopod",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 79,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "mecha",
+            "importId": "beyonder-worlds.mecha.mechopod"
+          }
+        }
+      }
+    },
+    {
+      "name": "Titanimech",
+      "type": "mecha",
+      "folder": "Mecha - Beyonder Worlds",
+      "img": "icons/commodities/tech/metal-cogs.webp",
+      "system": {
+        "rank": 20,
+        "cost": 80,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.mecha.titanimech",
+        "sourcePage": 79,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "mecha",
+        "importId": "beyonder-worlds.mecha.titanimech",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 79.</p><p><strong>Size:</strong> Colossal Item (100 ft.) <strong>Armour Class:</strong> 12 <strong>Hit Points:</strong> 200</p><p><strong>Rules Summary:</strong> Colossal combined super-mecha with enormous Strength, flight, Protected hull, spaceflight, Force Beam, and Lightning Blade.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Colossal Item (100 ft.)",
+        "armourClass": 12,
+        "hitPoints": "200",
+        "speed": "Flight 100 mph; Ground Speed 100 mph; Spaceflight",
+        "properties": "Augmented Strength 30; Protected 15; Tough 20; Force Beam; Lightning Blade; Conditional Ownership",
+        "operator": "Merged team mecha, commonly five Mechopods"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.mecha.titanimech",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 79,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "mecha",
+            "importId": "beyonder-worlds.mecha.titanimech"
+          }
+        }
+      }
+    },
+    {
+      "name": "Stealth Cycle",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.stealth-cycle",
+        "sourcePage": 128,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.stealth-cycle",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 128.</p><p><strong>Size:</strong> Large Item (10 ft.) <strong>Armour Class:</strong> 13 <strong>Hit Points:</strong> 70</p><p><strong>Rules Summary:</strong> Large low-profile motorcycle for city and road travel with GPS, high speed, and a weak power pack drawback.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Large Item (10 ft.)",
+        "armourClass": 13,
+        "hitPoints": "70",
+        "speed": "Ground Speed 300 mph on smooth roads",
+        "passengers": "1 person",
+        "cargo": "500 lb",
+        "properties": "Capacity; Features: GPS, Vehicular Suite; Weak Point: Power pack"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.stealth-cycle",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 128,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.stealth-cycle"
+          }
+        }
+      }
+    },
+    {
+      "name": "Flying Car",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 4,
+        "cost": 16,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.flying-car",
+        "sourcePage": 128,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.flying-car",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 128.</p><p><strong>Size:</strong> Huge Item (20 ft.) <strong>Armour Class:</strong> 11 <strong>Hit Points:</strong> 90</p><p><strong>Rules Summary:</strong> Rare luxury aerial car that trades weapons for long-duration flight and safe travel between cities.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Huge Item (20 ft.)",
+        "armourClass": 11,
+        "hitPoints": "90",
+        "speed": "Flight 300 mph; Ground Speed 100 mph",
+        "passengers": "5 people",
+        "cargo": "1 ton",
+        "properties": "Capacity; Features: Navigation System, Vehicular Suite; Flight; Ground Speed"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.flying-car",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 128,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.flying-car"
+          }
+        }
+      }
+    },
+    {
+      "name": "Road Killer",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 7,
+        "cost": 28,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.road-killer",
+        "sourcePage": 128,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.road-killer",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 128.</p><p><strong>Size:</strong> Huge Item (25 ft.) <strong>Armour Class:</strong> 12 <strong>Hit Points:</strong> 100</p><p><strong>Rules Summary:</strong> Post-apocalyptic combat car with plating, oil slicks, machine gun, and rocket-propelled grenades.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Huge Item (25 ft.)",
+        "armourClass": 12,
+        "hitPoints": "100",
+        "speed": "Ground Speed 100 mph",
+        "passengers": "2 people",
+        "cargo": "1,000 lb",
+        "properties": "Capacity; Oil Slick; Protected; Machine Gun; Rocket-Propelled Grenades; frequent maintenance"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.road-killer",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 128,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.road-killer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Automobile, Passenger",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.automobile-passenger",
+        "sourcePage": 150,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.automobile-passenger",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 150.</p><p><strong>Size:</strong> Huge Item (20 ft.) <strong>Armour Class:</strong> 11 <strong>Hit Points:</strong> 90</p><p><strong>Rules Summary:</strong> Baseline 21st-century car or SUV with passenger/cargo capacity and road-dependent high speed.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Huge Item (20 ft.)",
+        "armourClass": 11,
+        "hitPoints": "90",
+        "speed": "Ground Speed 300 mph on paved roads",
+        "passengers": "10 people",
+        "cargo": "2 tons",
+        "properties": "Capacity; Vehicular Suite; common modern vehicle"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.automobile-passenger",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 150,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.automobile-passenger"
+          }
+        }
+      }
+    },
+    {
+      "name": "Military Helicopter",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 17,
+        "cost": 68,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.military-helicopter",
+        "sourcePage": 150,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.military-helicopter",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 150.</p><p><strong>Size:</strong> Gargantuan Item (60 ft.) <strong>Armour Class:</strong> 10 <strong>Hit Points:</strong> 120</p><p><strong>Rules Summary:</strong> Modern attack helicopter with sensors, infrared/radar masking, missiles, cannon, and rocket pods.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Gargantuan Item (60 ft.)",
+        "armourClass": 10,
+        "hitPoints": "120",
+        "speed": "Flight 300 mph",
+        "passengers": "2 people",
+        "cargo": "1,000 lb",
+        "properties": "Comms; Navigation; Radar Detector; Protected; Sensors; Anti-Tank Missiles; Automatic Cannon; Rocket Pods"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.military-helicopter",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 150,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.military-helicopter"
+          }
+        }
+      }
+    },
+    {
+      "name": "Jet Fighter",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 15,
+        "cost": 60,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.jet-fighter",
+        "sourcePage": 151,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.jet-fighter",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 151.</p><p><strong>Size:</strong> Gargantuan Item (60 ft.) <strong>Armour Class:</strong> 11 <strong>Hit Points:</strong> 110</p><p><strong>Rules Summary:</strong> Modern combat aircraft with extreme speed, radar, air-to-air missiles, and a 20mm Gatling gun.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Gargantuan Item (60 ft.)",
+        "armourClass": 11,
+        "hitPoints": "110",
+        "speed": "Flight 3,000 mph",
+        "passengers": "1 pilot",
+        "properties": "Ejection Seat; Radar; Resilient: Lack of Air, Low Pressure; Air-to-Air Missiles; Gatling Gun"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.jet-fighter",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 151,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.jet-fighter"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tank, Heavy",
+      "type": "vehicle",
+      "folder": "Vehicles - Beyonder Worlds",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 14,
+        "cost": 56,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.vehicle.tank-heavy",
+        "sourcePage": 151,
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "vehicle",
+        "importId": "beyonder-worlds.vehicle.tank-heavy",
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 151.</p><p><strong>Size:</strong> Huge Item (30 ft.) <strong>Armour Class:</strong> 14 <strong>Hit Points:</strong> 120</p><p><strong>Rules Summary:</strong> Modern heavy tank with reinforced steel protection, smoke systems, infrared vision, main gun, and machine guns.</p>",
+        "equipped": false,
+        "quantity": 1,
+        "value": "",
+        "weight": "",
+        "size": "Huge Item (30 ft.)",
+        "armourClass": 14,
+        "hitPoints": "120",
+        "speed": "Ground Speed 300 feet/round",
+        "passengers": "4 crew",
+        "cargo": "1 ton",
+        "properties": "Protected 12; smoke grenades; infrared; 120mm main gun; .50-calibre machine gun; coaxial machine gun"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.vehicle.tank-heavy",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 151,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "vehicle",
+            "importId": "beyonder-worlds.vehicle.tank-heavy"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1336 @@
+{
+  "pack": "anime5e-beyonder-worlds.creatures",
+  "documentType": "Actor",
+  "sourceBook": "Anime 5E Beyonder Worlds",
+  "sourceAbbreviation": "BW",
+  "sourceModuleId": "anime5e-beyonder-worlds",
+  "contentCategory": "creature",
+  "folders": [
+    {
+      "name": "Science Fiction Threats - Beyonder Worlds",
+      "color": "#527d9a"
+    },
+    {
+      "name": "Robots - Beyonder Worlds",
+      "color": "#5b6f90"
+    },
+    {
+      "name": "Mecha Fantasy Threats - Beyonder Worlds",
+      "color": "#7f657d"
+    },
+    {
+      "name": "Urban Fantasy Threats - Beyonder Worlds",
+      "color": "#6f9186"
+    },
+    {
+      "name": "Cyberpunk Threats - Beyonder Worlds",
+      "color": "#8c624f"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Malhavok Raider",
+      "type": "monster",
+      "folder": "Science Fiction Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Malhavok boarding raider with a space suit, blaster rifle, sword, pirate ties, and a Soulstar Pact bounty.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Space pirate boarding infantry",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 86,
+          "homelandHabitat": "Fringes of known space",
+          "communities": "Pirate ships and bases",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 44,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.malhavok-raider",
+          "importId": "beyonder-worlds.creature.malhavok-raider"
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 11,
+            "max": 11
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 15 from space suit; basic humanoid durability.",
+          "offenseSummary": "Longsword and assault blaster rifle.",
+          "attacks": {
+            "primary": {
+              "weapon": "Longsword",
+              "modifier": "+3",
+              "attackType": "Melee",
+              "damage": "1d8+1",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Blaster Rifle, Assault",
+              "modifier": "+3",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "3d10+1",
+              "damageType": "force"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 44.</p><p><strong>Challenge:</strong> CR 1/2; XP 100; total points 86 <strong>Movement:</strong> 30 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Malhavok boarding raider with a space suit, blaster rifle, sword, pirate ties, and a Soulstar Pact bounty.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.malhavok-raider",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 44,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.malhavok-raider"
+          }
+        }
+      }
+    },
+    {
+      "name": "Advanced Robot Soldier",
+      "type": "monster",
+      "folder": "Robots - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Autonomous chrome war machine with strong reflective armour, mental firewalls, poison immunity, and military obedience.",
+          "speciesAndSize": "Medium humanoid construct",
+          "actorRole": "Autonomous battlefield soldier",
+          "challengeRating": "3",
+          "experienceValue": 700,
+          "totalPoints": 130,
+          "homelandHabitat": "Battlefields",
+          "communities": "Small to large military units",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 45,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "robot",
+          "sourceId": "beyonder-worlds.robot.advanced-robot-soldier",
+          "importId": "beyonder-worlds.robot.advanced-robot-soldier"
+        },
+        "combat": {
+          "armourClass": 18,
+          "hitPoints": {
+            "value": 43,
+            "max": 43
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 18; protected against melee and ranged attacks; disease, fear, pain, paralysis, and poison resilience.",
+          "offenseSummary": "Radiant sword and high-powered blaster rifle.",
+          "attacks": {
+            "primary": {
+              "weapon": "Radiant Sword",
+              "modifier": "+5",
+              "attackType": "Melee",
+              "damage": "2d10+5",
+              "damageType": "radiant"
+            },
+            "secondary": {
+              "weapon": "Blaster Rifle, High-Powered",
+              "modifier": "+5",
+              "attackType": "Ranged",
+              "range": "1,000 feet",
+              "damage": "5d6+2",
+              "damageType": "force"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 45.</p><p><strong>Challenge:</strong> CR 3; XP 700; total points 130 <strong>Movement:</strong> 30 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Autonomous chrome war machine with strong reflective armour, mental firewalls, poison immunity, and military obedience.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.robot.advanced-robot-soldier",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 45,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "robot",
+            "importId": "beyonder-worlds.robot.advanced-robot-soldier"
+          }
+        }
+      }
+    },
+    {
+      "name": "Pitrudis",
+      "type": "monster",
+      "folder": "Science Fiction Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "A many-mawed tunnel predator spread by ancient war, able to breach from below and dissolve hard targets with acid.",
+          "speciesAndSize": "Huge chimeric monstrosity",
+          "actorRole": "Tunnelling ambush predator",
+          "challengeRating": "9",
+          "experienceValue": 5000,
+          "totalPoints": 188,
+          "homelandHabitat": "Large fields of soft ground",
+          "communities": "Solitary",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 46,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.pitrudis",
+          "importId": "beyonder-worlds.creature.pitrudis"
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 95,
+            "max": 95
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 15; HP 95; protected hide and regeneration.",
+          "offenseSummary": "Acid spray and razor maw.",
+          "attacks": {
+            "primary": {
+              "weapon": "Acid Spray",
+              "modifier": "DC 19 Con",
+              "attackType": "Area",
+              "range": "30 feet",
+              "damage": "6d6",
+              "damageType": "acid"
+            },
+            "secondary": {
+              "weapon": "Razor Maw",
+              "modifier": "+5",
+              "attackType": "Melee",
+              "damage": "4d8+9",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 46.</p><p><strong>Challenge:</strong> CR 9; XP 5000; total points 188 <strong>Movement:</strong> 60 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> A many-mawed tunnel predator spread by ancient war, able to breach from below and dissolve hard targets with acid.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.pitrudis",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 46,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.pitrudis"
+          }
+        }
+      }
+    },
+    {
+      "name": "Giwedrak",
+      "type": "monster",
+      "folder": "Science Fiction Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Cosmic draconic predator able to move through space, absorb stellar energies, change into tachyon energy, and attack starships.",
+          "speciesAndSize": "Gargantuan winged quadruped draconic being",
+          "actorRole": "Space dragon-scale ship threat",
+          "challengeRating": "20",
+          "experienceValue": 25000,
+          "totalPoints": 400,
+          "homelandHabitat": "Void of space",
+          "communities": "Solitary or mated pair",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 47,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.giwedrak",
+          "importId": "beyonder-worlds.creature.giwedrak"
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 210,
+            "max": 210
+          },
+          "movementSpeed": 240,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 11; HP 210; radiant/cold immunity, protected body, space resilience, and energy-state options.",
+          "offenseSummary": "Claws and radiant eruption.",
+          "attacks": {
+            "primary": {
+              "weapon": "Claws",
+              "modifier": "+6",
+              "attackType": "Melee",
+              "damage": "4d8+14",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Radiant Eruption",
+              "modifier": "DC 19 Con",
+              "attackType": "Area",
+              "range": "10 miles",
+              "damage": "7d6",
+              "damageType": "radiant"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 47.</p><p><strong>Challenge:</strong> CR 20; XP 25000; total points 400 <strong>Movement:</strong> 240 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Cosmic draconic predator able to move through space, absorb stellar energies, change into tachyon energy, and attack starships.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.giwedrak",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 47,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.giwedrak"
+          }
+        }
+      }
+    },
+    {
+      "name": "Doughboy",
+      "type": "monster",
+      "folder": "Mecha Fantasy Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Simple-minded construct soldier with strange resilience against ordinary attacks and a devastating doughy strike.",
+          "speciesAndSize": "Medium humanoid construct",
+          "actorRole": "Hive-minded shock troop",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 90,
+          "homelandHabitat": "Battlefields and lower planes",
+          "communities": "Squads or platoons",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 70,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.doughboy",
+          "importId": "beyonder-worlds.creature.doughboy"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 8,
+            "max": 8
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 10; HP 8; strong immunity to ordinary and poison effects.",
+          "offenseSummary": "Dough Blow melee impact.",
+          "attacks": {
+            "primary": {
+              "weapon": "Dough Blow",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "2d6+5",
+              "damageType": "bludgeoning"
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 70.</p><p><strong>Challenge:</strong> CR 1/2; XP 100; total points 90 <strong>Movement:</strong> 60 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Simple-minded construct soldier with strange resilience against ordinary attacks and a devastating doughy strike.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.doughboy",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 70,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.doughboy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Catacloid",
+      "type": "monster",
+      "folder": "Mecha Fantasy Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Failed fast-grown Technoid warrior with warped circuitry, berserk triggers, beam attacks, regeneration, and wall-crawling mobility.",
+          "speciesAndSize": "Medium humanoid construct",
+          "actorRole": "Rampant synthetic warrior",
+          "challengeRating": "7",
+          "experienceValue": 2900,
+          "totalPoints": 170,
+          "homelandHabitat": "Urban centres and battlefields",
+          "communities": "Solitary or small groups",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 71,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "robot",
+          "sourceId": "beyonder-worlds.robot.catacloid",
+          "importId": "beyonder-worlds.robot.catacloid"
+        },
+        "combat": {
+          "armourClass": 18,
+          "hitPoints": {
+            "value": 77,
+            "max": 77
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 18; HP 77; Protected, regeneration, and construct resilience.",
+          "offenseSummary": "Beam Burst and heavy punch or kick.",
+          "attacks": {
+            "primary": {
+              "weapon": "Beam Burst",
+              "modifier": "DC 19 Dex",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "6d6",
+              "damageType": "radiant"
+            },
+            "secondary": {
+              "weapon": "Punch or Kick",
+              "modifier": "+8",
+              "attackType": "Melee",
+              "damage": "3d6+4",
+              "damageType": "bludgeoning"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 71.</p><p><strong>Challenge:</strong> CR 7; XP 2900; total points 170 <strong>Movement:</strong> 60 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Failed fast-grown Technoid warrior with warped circuitry, berserk triggers, beam attacks, regeneration, and wall-crawling mobility.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.robot.catacloid",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 71,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "robot",
+            "importId": "beyonder-worlds.robot.catacloid"
+          }
+        }
+      }
+    },
+    {
+      "name": "Chitifiend",
+      "type": "monster",
+      "folder": "Mecha Fantasy Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Sentient beetle-tyrannosaur hybrid designed to fight combat mecha and terrorise planetary defenders.",
+          "speciesAndSize": "Gargantuan insectoid monstrosity",
+          "actorRole": "Summoned mecha-scale terror weapon",
+          "challengeRating": "14",
+          "experienceValue": 11500,
+          "totalPoints": 266,
+          "homelandHabitat": "Where summoned",
+          "communities": "Solitary",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 72,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.chitifiend",
+          "importId": "beyonder-worlds.creature.chitifiend"
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 165,
+            "max": 165
+          },
+          "movementSpeed": 240,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 12; HP 165; necrotic immunity, protected body, and heavy resilience.",
+          "offenseSummary": "Claws and fangs plus long-range necrotic blast.",
+          "attacks": {
+            "primary": {
+              "weapon": "Claws and Fangs",
+              "modifier": "+5",
+              "attackType": "Melee",
+              "damage": "3d12+13",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Necrotic Blast",
+              "modifier": "-2",
+              "attackType": "Ranged",
+              "range": "1 mile",
+              "damage": "5d8",
+              "damageType": "necrotic"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 72.</p><p><strong>Challenge:</strong> CR 14; XP 11500; total points 266 <strong>Movement:</strong> 240 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Sentient beetle-tyrannosaur hybrid designed to fight combat mecha and terrorise planetary defenders.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.chitifiend",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 72,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.chitifiend"
+          }
+        }
+      }
+    },
+    {
+      "name": "Lusutitan",
+      "type": "monster",
+      "folder": "Mecha Fantasy Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Colossal bio-mechanical weapon of mass destruction created through infernal magic and twisted science.",
+          "speciesAndSize": "Colossal humanoid construct",
+          "actorRole": "City-destroying siege construct",
+          "challengeRating": "18",
+          "experienceValue": 20000,
+          "totalPoints": 350,
+          "homelandHabitat": "Where summoned",
+          "communities": "Solitary",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 73,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "robot",
+          "sourceId": "beyonder-worlds.robot.lusutitan",
+          "importId": "beyonder-worlds.robot.lusutitan"
+        },
+        "combat": {
+          "armourClass": 7,
+          "hitPoints": {
+            "value": 315,
+            "max": 315
+          },
+          "movementSpeed": 450,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 7; HP 315; immense size, high Constitution, and construct-scale durability.",
+          "offenseSummary": "Arm-Axe and chest force beam.",
+          "attacks": {
+            "primary": {
+              "weapon": "Arm-Axe",
+              "modifier": "+8",
+              "attackType": "Melee",
+              "damage": "5d8+18",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Chest Force Beam",
+              "modifier": "-1",
+              "attackType": "Area",
+              "range": "1 mile",
+              "damage": "6d8",
+              "damageType": "force"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 73.</p><p><strong>Challenge:</strong> CR 18; XP 20000; total points 350 <strong>Movement:</strong> 450 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Colossal bio-mechanical weapon of mass destruction created through infernal magic and twisted science.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.robot.lusutitan",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 73,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "robot",
+            "importId": "beyonder-worlds.robot.lusutitan"
+          }
+        }
+      }
+    },
+    {
+      "name": "Chupacabra",
+      "type": "monster",
+      "folder": "Urban Fantasy Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Small blood-drinking cryptid that usually avoids people but becomes dangerous when cornered, starving, or magically controlled.",
+          "speciesAndSize": "Medium humanoid monstrosity",
+          "actorRole": "Cryptid predator",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 94,
+          "homelandHabitat": "Plains, forests, farms",
+          "communities": "Solitary or small packs",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 98,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.chupacabra",
+          "importId": "beyonder-worlds.creature.chupacabra"
+        },
+        "combat": {
+          "armourClass": 17,
+          "hitPoints": {
+            "value": 14,
+            "max": 14
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 17; HP 14; fast and stealthy.",
+          "offenseSummary": "Blood Bite with vampiric effect.",
+          "attacks": {
+            "primary": {
+              "weapon": "Blood Bite",
+              "modifier": "+2",
+              "attackType": "Melee",
+              "damage": "2d8",
+              "damageType": "piercing"
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 98.</p><p><strong>Challenge:</strong> CR 1/2; XP 100; total points 94 <strong>Movement:</strong> 60 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Small blood-drinking cryptid that usually avoids people but becomes dangerous when cornered, starving, or magically controlled.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.chupacabra",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 98,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.chupacabra"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sasquatch",
+      "type": "monster",
+      "folder": "Urban Fantasy Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Secretive vegetarian woodland people with environmental magic, air powers, cold resilience, and strong physical presence.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Hidden forest guardian",
+          "challengeRating": "3",
+          "experienceValue": 700,
+          "totalPoints": 126,
+          "homelandHabitat": "Forests and mountains",
+          "communities": "Solitary or small families",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 99,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.sasquatch",
+          "importId": "beyonder-worlds.creature.sasquatch"
+        },
+        "combat": {
+          "armourClass": 14,
+          "hitPoints": {
+            "value": 43,
+            "max": 43
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 14; HP 43; cold immunity and concealment magic.",
+          "offenseSummary": "Greatclub and thrown rocks.",
+          "attacks": {
+            "primary": {
+              "weapon": "Greatclub",
+              "modifier": "+7",
+              "attackType": "Melee",
+              "damage": "1d8+4",
+              "damageType": "bludgeoning"
+            },
+            "secondary": {
+              "weapon": "Rock, Small",
+              "modifier": "+7",
+              "attackType": "Ranged",
+              "range": "30 feet",
+              "damage": "2d4+4",
+              "damageType": "bludgeoning"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 99.</p><p><strong>Challenge:</strong> CR 3; XP 700; total points 126 <strong>Movement:</strong> 30 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Secretive vegetarian woodland people with environmental magic, air powers, cold resilience, and strong physical presence.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.sasquatch",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 99,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.sasquatch"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blankwalker",
+      "type": "monster",
+      "folder": "Urban Fantasy Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Tall predatory abductors that hide behind human clothing, portal through shadows, and coordinate ambushes.",
+          "speciesAndSize": "Medium humanoid aberration",
+          "actorRole": "Shadow abductor",
+          "challengeRating": "7",
+          "experienceValue": 2900,
+          "totalPoints": 170,
+          "homelandHabitat": "Shadows and underground places",
+          "communities": "Solitary or small units",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 100,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.blankwalker",
+          "importId": "beyonder-worlds.creature.blankwalker"
+        },
+        "combat": {
+          "armourClass": 19,
+          "hitPoints": {
+            "value": 59,
+            "max": 59
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 19; HP 59; portal access, resilience, wall-crawling, and stealth tools.",
+          "offenseSummary": "Medium pistol and draining crush.",
+          "attacks": {
+            "primary": {
+              "weapon": "Pistol, Medium",
+              "modifier": "+8",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "2d6+4",
+              "damageType": "piercing"
+            },
+            "secondary": {
+              "weapon": "Draining Crush",
+              "modifier": "+7",
+              "attackType": "Melee",
+              "damage": "2d8+3",
+              "damageType": "bludgeoning"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 100.</p><p><strong>Challenge:</strong> CR 7; XP 2900; total points 170 <strong>Movement:</strong> 60 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Tall predatory abductors that hide behind human clothing, portal through shadows, and coordinate ambushes.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.blankwalker",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 100,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.blankwalker"
+          }
+        }
+      }
+    },
+    {
+      "name": "Lake Serpent",
+      "type": "monster",
+      "folder": "Urban Fantasy Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Large dinosaur-like water cryptid with nullification, stealth, high water speed, crushing bite, and water blast.",
+          "speciesAndSize": "Huge serpentine beast",
+          "actorRole": "Hidden aquatic cryptid",
+          "challengeRating": "11",
+          "experienceValue": 5000,
+          "totalPoints": 206,
+          "homelandHabitat": "Lakes, rivers, seas",
+          "communities": "Solitary or mated pair",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 101,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.lake-serpent",
+          "importId": "beyonder-worlds.creature.lake-serpent"
+        },
+        "combat": {
+          "armourClass": 9,
+          "hitPoints": {
+            "value": 86,
+            "max": 86
+          },
+          "movementSpeed": 120,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 9; HP 86; protected hide, pressure resilience, and sensory disruption.",
+          "offenseSummary": "Crush and Bite plus Water Blast.",
+          "attacks": {
+            "primary": {
+              "weapon": "Crush and Bite",
+              "modifier": "+5",
+              "attackType": "Melee",
+              "damage": "6d6+9",
+              "damageType": "bludgeoning/piercing"
+            },
+            "secondary": {
+              "weapon": "Water Blast",
+              "modifier": "+5",
+              "attackType": "Area",
+              "range": "100 feet",
+              "damage": "2d10",
+              "damageType": "bludgeoning"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 101.</p><p><strong>Challenge:</strong> CR 11; XP 5000; total points 206 <strong>Movement:</strong> 120 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Large dinosaur-like water cryptid with nullification, stealth, high water speed, crushing bite, and water blast.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.lake-serpent",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 101,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.lake-serpent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Coalition Soldier",
+      "type": "monster",
+      "folder": "Cyberpunk Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Stalwart Coalition security professional with tactical power armour, implants, training, and ruthless corporate discipline.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Corporate security trooper",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": 104,
+          "homelandHabitat": "Corporate bases and urban battlegrounds",
+          "communities": "Small to large units",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 122,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.coalition-soldier",
+          "importId": "beyonder-worlds.creature.coalition-soldier"
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 26,
+            "max": 26
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 16 from tactical power armour; underwater resilience and coordinated security training.",
+          "offenseSummary": "Machete and assault rifle.",
+          "attacks": {
+            "primary": {
+              "weapon": "Machete",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "1d6+2",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Rifle, Assault",
+              "modifier": "+3",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "2d8+1",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 122.</p><p><strong>Challenge:</strong> CR 1; XP 200; total points 104 <strong>Movement:</strong> 30 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Stalwart Coalition security professional with tactical power armour, implants, training, and ruthless corporate discipline.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.coalition-soldier",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 122,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.coalition-soldier"
+          }
+        }
+      }
+    },
+    {
+      "name": "Robo-Hound",
+      "type": "monster",
+      "folder": "Cyberpunk Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Tireless synthetic guard hound with enhanced senses, claws, eye lasers, mental firewalls, and obedience protocols.",
+          "speciesAndSize": "Medium canine construct",
+          "actorRole": "Robotic tracking predator",
+          "challengeRating": "4",
+          "experienceValue": 1100,
+          "totalPoints": 134,
+          "homelandHabitat": "Corporate bases and urban battlegrounds",
+          "communities": "Solitary or small units",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 123,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "robot",
+          "sourceId": "beyonder-worlds.robot.robo-hound",
+          "importId": "beyonder-worlds.robot.robo-hound"
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 28,
+            "max": 28
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 16; HP 28; poison immunity, protected systems, and broad construct resilience.",
+          "offenseSummary": "Claws and fangs plus eye lasers.",
+          "attacks": {
+            "primary": {
+              "weapon": "Claws and Fangs",
+              "modifier": "+6",
+              "attackType": "Melee",
+              "damage": "2d10+3",
+              "damageType": "slashing/piercing"
+            },
+            "secondary": {
+              "weapon": "Eye Lasers",
+              "modifier": "+6",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "3d6",
+              "damageType": "radiant"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 123.</p><p><strong>Challenge:</strong> CR 4; XP 1100; total points 134 <strong>Movement:</strong> 60 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Tireless synthetic guard hound with enhanced senses, claws, eye lasers, mental firewalls, and obedience protocols.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.robot.robo-hound",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 123,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "robot",
+            "importId": "beyonder-worlds.robot.robo-hound"
+          }
+        }
+      }
+    },
+    {
+      "name": "Blightipede",
+      "type": "monster",
+      "folder": "Cyberpunk Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Huge centipede-like blight predator that races across badlands, tunnels, climbs, crosses water, and carries venomous bite attacks.",
+          "speciesAndSize": "Huge insectoid monstrosity",
+          "actorRole": "Wasteland apex predator",
+          "challengeRating": "6",
+          "experienceValue": 2300,
+          "totalPoints": 156,
+          "homelandHabitat": "Wastelands",
+          "communities": "Solitary",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 124,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "creature",
+          "sourceId": "beyonder-worlds.creature.blightipede",
+          "importId": "beyonder-worlds.creature.blightipede"
+        },
+        "combat": {
+          "armourClass": 9,
+          "hitPoints": {
+            "value": 92,
+            "max": 92
+          },
+          "movementSpeed": 120,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 9; HP 92; protected body and Constitution saves.",
+          "offenseSummary": "Pincers and legs plus venom bite.",
+          "attacks": {
+            "primary": {
+              "weapon": "Pincers and Legs",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "4d8+9",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Venom Bite",
+              "modifier": "DC 18 Con",
+              "attackType": "Melee",
+              "damage": "2d10",
+              "damageType": "poison"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 124.</p><p><strong>Challenge:</strong> CR 6; XP 2300; total points 156 <strong>Movement:</strong> 120 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Huge centipede-like blight predator that races across badlands, tunnels, climbs, crosses water, and carries venomous bite attacks.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.creature.blightipede",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 124,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "creature",
+            "importId": "beyonder-worlds.creature.blightipede"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rampant Cyborg",
+      "type": "monster",
+      "folder": "Cyberpunk Threats - Beyonder Worlds",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Heavily augmented survivor whose neural breakdown makes them violent, paranoid, and difficult to capture alive.",
+          "speciesAndSize": "Medium humanoid construct",
+          "actorRole": "Implant-broken cybernetic threat",
+          "challengeRating": "9",
+          "experienceValue": 5000,
+          "totalPoints": 186,
+          "homelandHabitat": "Urban sprawls and rural blights",
+          "communities": "Solitary or small packs",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "source": {
+          "book": "Anime 5E Beyonder Worlds",
+          "page": 125,
+          "abbreviation": "BW",
+          "moduleId": "anime5e-beyonder-worlds",
+          "category": "robot",
+          "sourceId": "beyonder-worlds.robot.rampant-cyborg",
+          "importId": "beyonder-worlds.robot.rampant-cyborg"
+        },
+        "combat": {
+          "armourClass": 17,
+          "hitPoints": {
+            "value": 68,
+            "max": 68
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": "",
+          "defenseSummary": "AC 17; HP 68; Greater Protected, mental shield, resilience, and infrared/radar undetectability.",
+          "offenseSummary": "Assault rifle, debris cannon, and steel punch/kick.",
+          "attacks": {
+            "primary": {
+              "weapon": "Rifle, Assault",
+              "modifier": "+7",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "2d8+3",
+              "damageType": "piercing"
+            },
+            "secondary": {
+              "weapon": "Debris Cannon",
+              "modifier": "+7",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "1d12+3",
+              "damageType": "piercing"
+            },
+            "tertiary": {
+              "weapon": "Steel Punch/Kick",
+              "modifier": "+9",
+              "attackType": "Melee",
+              "damage": "2d10+7",
+              "damageType": "bludgeoning"
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, PDF p. 125.</p><p><strong>Challenge:</strong> CR 9; XP 5000; total points 186 <strong>Movement:</strong> 60 ft. or source-noted movement modes</p><p><strong>Rules Summary:</strong> Heavily augmented survivor whose neural breakdown makes them violent, paranoid, and difficult to capture alive.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.robot.rampant-cyborg",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 125,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "robot",
+            "importId": "beyonder-worlds.robot.rampant-cyborg"
+          }
+        }
+      }
+    }
+  ]
+}

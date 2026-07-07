@@ -1,0 +1,356 @@
+{
+  "pack": "anime5e-beyonder-worlds.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Classes - Beyonder Worlds",
+      "color": "#527d9a"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Biomancer",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 26.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Constitution. <strong>Saving Throws:</strong> Strength, Constitution.</p><p><strong>Rules Summary:</strong> Organic-form specialist who transforms, heals, adapts their body, resists harm, and manipulates living matter.</p><p><strong>Proficiencies:</strong> Light and medium armour; simple weapons; select 4 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.biomancer",
+        "sourcePage": 26,
+        "importId": "beyonder-worlds.class.biomancer",
+        "hitDice": "d6",
+        "primaryAbility": "Constitution",
+        "savingThrows": "Strength, Constitution",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.biomancer",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 26,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.biomancer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Esper",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 28.</p><p><strong>Hit Die:</strong> d4. <strong>Primary Ability:</strong> Intelligence. <strong>Saving Throws:</strong> Intelligence, Wisdom.</p><p><strong>Rules Summary:</strong> Psychic prodigy with cognition, telepathy, telekinesis, force barriers, perception powers, and defensive mental talent.</p><p><strong>Proficiencies:</strong> Light armour; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.esper",
+        "sourcePage": 28,
+        "importId": "beyonder-worlds.class.esper",
+        "hitDice": "d4",
+        "primaryAbility": "Intelligence",
+        "savingThrows": "Intelligence, Wisdom",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.esper",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 28,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.esper"
+          }
+        }
+      }
+    },
+    {
+      "name": "Explorer",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 30.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity, Intelligence.</p><p><strong>Rules Summary:</strong> Broadly capable pioneer who survives unknown places through skills, features, gear, movement, luck, and adaptable competence.</p><p><strong>Proficiencies:</strong> Light armour; shields; simple weapons; select 4 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.explorer",
+        "sourcePage": 30,
+        "importId": "beyonder-worlds.class.explorer",
+        "hitDice": "d6",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity, Intelligence",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.explorer",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 30,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.explorer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mecha Knight",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 32.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity, Wisdom.</p><p><strong>Rules Summary:</strong> Mecha-linked warrior who gains combat training, personal growth, and a major vehicle or giant-robot focus through class advancement.</p><p><strong>Proficiencies:</strong> Light armour; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.mecha-knight",
+        "sourcePage": 32,
+        "importId": "beyonder-worlds.class.mecha-knight",
+        "hitDice": "d6",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity, Wisdom",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.mecha-knight",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 32,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.mecha-knight"
+          }
+        }
+      }
+    },
+    {
+      "name": "Void Champion",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 34.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Wisdom. <strong>Saving Throws:</strong> Constitution, Wisdom.</p><p><strong>Rules Summary:</strong> Psychokinetic defender who combines awareness, precision combat, mobility, barriers, telekinesis, and resilient training.</p><p><strong>Proficiencies:</strong> Light and medium armour; simple weapons; select 4 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.void-champion",
+        "sourcePage": 34,
+        "importId": "beyonder-worlds.class.void-champion",
+        "hitDice": "d8",
+        "primaryAbility": "Wisdom",
+        "savingThrows": "Constitution, Wisdom",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.void-champion",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 34,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.void-champion"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gadgeteer",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 40.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Intelligence. <strong>Saving Throws:</strong> Intelligence.</p><p><strong>Rules Summary:</strong> Science-fiction engineer who improvises gadget-tech, builds useful equipment, transmutes materials, and solves problems through devices.</p><p><strong>Proficiencies:</strong> Light and medium armour; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.gadgeteer",
+        "sourcePage": 40,
+        "importId": "beyonder-worlds.class.gadgeteer",
+        "hitDice": "d8",
+        "primaryAbility": "Intelligence",
+        "savingThrows": "Intelligence",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.gadgeteer",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 40,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.gadgeteer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Sentai Ranger",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 66.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity, Charisma.</p><p><strong>Rules Summary:</strong> Team-based transforming warrior with powered forms, martial training, protective gear, item arsenals, and cooperative mecha potential.</p><p><strong>Proficiencies:</strong> Light armour; shields; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.sentai-ranger",
+        "sourcePage": 66,
+        "importId": "beyonder-worlds.class.sentai-ranger",
+        "hitDice": "d6",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity, Charisma",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.sentai-ranger",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 66,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.sentai-ranger"
+          }
+        }
+      }
+    },
+    {
+      "name": "Technomancer",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 94.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Wisdom. <strong>Saving Throws:</strong> Wisdom.</p><p><strong>Rules Summary:</strong> Urban-fantasy specialist who blends magic and technology, manipulating devices, information, and liminal spaces between both worlds.</p><p><strong>Proficiencies:</strong> Light armour; shields; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.technomancer",
+        "sourcePage": 94,
+        "importId": "beyonder-worlds.class.technomancer",
+        "hitDice": "d6",
+        "primaryAbility": "Wisdom",
+        "savingThrows": "Wisdom",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.technomancer",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 94,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.technomancer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Cyberpunk",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 118.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity, Constitution.</p><p><strong>Rules Summary:</strong> Fast implant-driven survivor who upgrades body and gear, fights dirty, moves quickly, and adapts under pressure.</p><p><strong>Proficiencies:</strong> Light, medium, and heavy armour; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.cyberpunk",
+        "sourcePage": 118,
+        "importId": "beyonder-worlds.class.cyberpunk",
+        "hitDice": "d8",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity, Constitution",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.cyberpunk",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 118,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.cyberpunk"
+          }
+        }
+      }
+    },
+    {
+      "name": "Spy",
+      "type": "class",
+      "folder": "Classes - Beyonder Worlds",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Beyonder Worlds, p. 142.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Charisma. <strong>Saving Throws:</strong> Dexterity, Charisma.</p><p><strong>Rules Summary:</strong> Modern field agent focused on infiltration, deception, tactical gear, agency support, danger management, and mission-ready skills.</p><p><strong>Proficiencies:</strong> Light armour; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Beyonder Worlds",
+        "sourceId": "beyonder-worlds.class.spy",
+        "sourcePage": 142,
+        "importId": "beyonder-worlds.class.spy",
+        "hitDice": "d8",
+        "primaryAbility": "Charisma",
+        "savingThrows": "Dexterity, Charisma",
+        "sourceAbbreviation": "BW",
+        "sourceModuleId": "anime5e-beyonder-worlds",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "beyonder-worlds.class.spy",
+          "source": {
+            "book": "Anime 5E Beyonder Worlds",
+            "page": 142,
+            "abbreviation": "BW",
+            "moduleId": "anime5e-beyonder-worlds",
+            "category": "class",
+            "importId": "beyonder-worlds.class.spy"
+          }
+        }
+      }
+    }
+  ],
+  "sourceBook": "Anime 5E Beyonder Worlds",
+  "sourceAbbreviation": "BW",
+  "sourceModuleId": "anime5e-beyonder-worlds",
+  "contentCategory": "class"
+}
