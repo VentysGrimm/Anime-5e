@@ -3,7 +3,8 @@ import {
   applySizeTemplateItem,
   applySpeciesItem,
   removeSizeTemplateItem,
-  removeSpeciesItem
+  removeSpeciesItem,
+  summarizePointState
 } from "../rules/creation-workflow.mjs";
 import {
   buildCoreAttributeEffectContext,
@@ -18,6 +19,7 @@ import {
   calculateStartingExperience,
   getLevelProgress,
   normalizeCharacterLevel,
+  proficiencyBonusForLevel,
   summarizeClassLevelState
 } from "../rules/points.mjs";
 import {
@@ -1248,6 +1250,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='apply-point-budget']").forEach((button) => {
       button.addEventListener("click", this._onApplyPointBudget.bind(this));
     });
+    element.querySelectorAll("[data-action='level-up']").forEach((button) => {
+      button.addEventListener("click", this._onLevelUp.bind(this));
+    });
     element.querySelectorAll("[data-action='create-linked-follower']").forEach((button) => {
       button.addEventListener("click", this._onCreateLinkedFollower.bind(this));
     });
@@ -1659,6 +1664,84 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   async _onOpenRulesReference(event) {
     event.preventDefault();
     await openCoreRulesReference(event.currentTarget.dataset.sourceId);
+  }
+
+  async _onLevelUp(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const currentLevel = normalizeCharacterLevel(this.actor.system?.level);
+    const nextLevel = currentLevel + 1;
+    const nextExperience = calculateStartingExperience(nextLevel);
+    const currentExperience = Math.max(0, Math.trunc(Number(this.actor.system?.experience) || 0));
+    const targetExperience = nextExperience === null ? currentExperience : Math.max(currentExperience, nextExperience);
+    const classItems = (this.actor.items?.contents ?? []).filter((item) => item.type === "class");
+    const selectedClass = classItems.length === 1 ? classItems[0] : null;
+    const nextClassLevel = selectedClass ? nextLevel : null;
+    const confirmed = await this._confirmLevelUp({ currentLevel, nextLevel, targetExperience, selectedClass, nextClassLevel });
+    if (!confirmed) return;
+
+    if (selectedClass) {
+      await selectedClass.update({ "system.level": nextClassLevel });
+    }
+
+    const update = {
+      "system.level": nextLevel,
+      "system.experience": targetExperience,
+      "system.combat.proficiencyBonus": proficiencyBonusForLevel(nextLevel)
+    };
+
+    if (selectedClass) {
+      const slot = this.constructor._classSlotForItem(this.actor, selectedClass);
+      update[`system.progression.classes.${slot}.name`] = selectedClass.name;
+      update[`system.progression.classes.${slot}.level`] = nextClassLevel;
+      update[`system.progression.classes.${slot}.hitDice`] = selectedClass.system?.hitDice ?? "";
+    }
+
+    await this.actor.update({
+      ...update,
+      ...summarizePointState(this.actor)
+    });
+
+    if (!selectedClass && classItems.length !== 1) {
+      ui.notifications?.warn("Level increased, but no single owned Class item could be advanced automatically. Update class levels manually.");
+    }
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> advances from Level ${currentLevel} to Level ${nextLevel}. XP is now ${targetExperience}; Proficiency Bonus is +${proficiencyBonusForLevel(nextLevel)}.${selectedClass ? ` ${escapeHtml(selectedClass.name)} is now Class Level ${nextClassLevel}.` : " Review owned Class items manually."}</p>`
+    });
+  }
+
+  async _confirmLevelUp({ currentLevel, nextLevel, targetExperience, selectedClass, nextClassLevel }) {
+    const classLine = selectedClass
+      ? `<p>Advance <strong>${escapeHtml(selectedClass.name)}</strong> to Class Level ${nextClassLevel}.</p>`
+      : "<p>No single owned Class item can be advanced automatically; actor level, XP, and proficiency will still update.</p>";
+    const content = `<p>Advance <strong>${escapeHtml(this.actor.name)}</strong> from Level ${currentLevel} to Level ${nextLevel}?</p><p>XP will be at least ${targetExperience}; Proficiency Bonus will become +${proficiencyBonusForLevel(nextLevel)}.</p>${classLine}`;
+    const DialogV2 = foundry.applications.api.DialogV2;
+
+    if (DialogV2?.confirm) {
+      return DialogV2.confirm({
+        window: { title: "Level Up" },
+        content,
+        yes: { label: "Level Up" },
+        no: { label: "Cancel" }
+      });
+    }
+
+    return window.confirm(`Advance ${this.actor.name} from Level ${currentLevel} to Level ${nextLevel}?`);
+  }
+
+  static _classSlotForItem(actor, item) {
+    const classes = actor?.system?.progression?.classes ?? {};
+    const slots = ["primary", "secondary", "tertiary"];
+    for (const slot of slots) {
+      if (classes[slot]?.name === item.name) return slot;
+    }
+    for (const slot of slots) {
+      if (!String(classes[slot]?.name ?? "").trim()) return slot;
+    }
+    return "primary";
   }
 
   async _onApplyEnergyChange(event) {

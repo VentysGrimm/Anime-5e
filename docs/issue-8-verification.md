@@ -103,6 +103,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Companion, Minions, mount, vehicle, mecha, and monster-variant workflows now support persistent linked actor UUIDs. Character sheets display linked actor summaries, can open linked actors, and can create linked companion/vehicle/mecha actors from owned Attributes or Items while preserving pilot, owner, occupant, source, and point metadata.
 - Core Rules deprivation now has source-backed Adventuring Risk Items, a rules-reference Journal entry, and actor-sheet Hit Point cap tracking for incurable deprivation loss until the deprivation ends.
 - Actor sheets now expose buttons for the core rules-reference Journal pack, linking character creation, character options, rolls, combat, advancement, item construction, and GM guidance references by source ID.
+- Character sheets now include a Level Up action near the class/level panel. It confirms the advance, updates actor level, XP, proficiency bonus, a single unambiguous owned Class item, point validation, and posts the level-up result to chat.
 
 ## Missing Files Required For Load
 

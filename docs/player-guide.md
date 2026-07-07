@@ -69,11 +69,12 @@ The world settings control whether range penalties are applied automatically, wh
 ## Level-Up
 
 1. Increase Character Level and Experience.
-2. Update each owned Class Item level so the owned Class Level total matches the actor level.
-3. Review Class-Derived Benefits for new Bonus Points, proficiencies, hit dice summaries, and benefit notes.
-4. Add new Attributes, powers, techniques, equipment, or other Items earned at the new level.
-5. Update Engagement Bonus Points, other non-levelling awards, and advancement notes on the Folio.
-6. Resolve Point Summary warnings before the next session.
+2. Use Level Up near the Class and Level panel when the character advances. If the character has one clear owned Class item, the sheet advances that Class level, actor level, XP threshold, and proficiency bonus together.
+3. For multiclass characters, review or update each owned Class Item level so the owned Class Level total matches the actor level.
+4. Review Class-Derived Benefits for new Bonus Points, proficiencies, hit dice summaries, and benefit notes.
+5. Add new Attributes, powers, techniques, equipment, or other Items earned at the new level.
+6. Update Engagement Bonus Points, other non-levelling awards, and advancement notes on the Folio.
+7. Resolve Point Summary warnings before the next session.
 
 ## Minimum Character Check
 

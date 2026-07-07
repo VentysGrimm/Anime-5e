@@ -140,6 +140,11 @@
                 <input type="number" name="system.experience" value="{{system.experience}}" min="0" {{#unless editable}}disabled{{/unless}}>
               </label>
             </header>
+            {{#if editable}}
+              <div class="creation-actions level-actions">
+                <button type="button" data-action="level-up"><i class="fas fa-arrow-up"></i><span>Level Up</span></button>
+              </div>
+            {{/if}}
             <div class="folio-table compact-table">
               <div class="table-header">Class</div>
               <div class="table-header">Level</div>
