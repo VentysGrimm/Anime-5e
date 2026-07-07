@@ -36,6 +36,13 @@ Then create a world using the `Anime 5e` game system.
 - `docs/module-creation-workflow.md` explains how to create and validate standalone content modules.
 - `docs/foundry-v14-smoke-checklist.md` records the manual runtime checks needed before closing Foundry-load verification work.
 
+## Guides
+
+- `docs/player-guide.md` explains how to create and maintain a Character actor using the Character Folio, point summary, owned Items, combat rows, and level-up notes.
+- `docs/gm-guide.md` covers world setup, actor types, monsters, encounter helpers, modules, compendiums, and table-facing settings.
+- `docs/content-entry-guide.md` documents source metadata, naming, compendium organization, and module content-entry rules.
+- `docs/release-checklist.md` lists the local validators, Foundry smoke checks, compendium checks, sample character validation, module compatibility checks, and release gates.
+
 ## Compendium Packs
 
 The manifest declares Item compendium packs under `packs/`, but the LevelDB pack
