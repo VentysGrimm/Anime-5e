@@ -182,6 +182,7 @@ export class Anime5eAttributeData extends Anime5eBaseItemData {
       weaponNotes: textField(),
       trackingNotes: textField(),
       progression: textField(),
+      allowedEnhancements: textField(),
       enhancementReferences: arrayField(modifierReferenceField(1)),
       limiterReferences: arrayField(modifierReferenceField(-1))
     };

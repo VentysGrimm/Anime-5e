@@ -363,7 +363,7 @@ export function calculateBenchmarkWarnings(system = {}, items = []) {
 
   const maxOwnedAttributeRank = (items ?? []).reduce((maxRank, item) => {
     if (!["attribute", "itemAttribute"].includes(item?.type)) return maxRank;
-    return Math.max(maxRank, positiveNumber(item.system?.effectiveRank ?? item.system?.rank));
+    return Math.max(maxRank, calculateAttributeCustomization(item).effectiveRank);
   }, 0);
   if (maxOwnedAttributeRank > benchmark.maxAttributeRank) {
     warnings.push(`${benchmark.label} benchmark: owned Attribute Rank ${maxOwnedAttributeRank} exceeds ${benchmark.maxAttributeRank}.`);
@@ -397,7 +397,23 @@ function modifierReferenceName(reference, fallback) {
   return reference?.name || reference?.sourceId || reference?.uuid || fallback;
 }
 
-function calculateModifierSubtotal(references = [], fallbackLabel = "Modifier", targetLabel = "Attribute") {
+function modifierBaseName(value) {
+  const normalized = String(value ?? "")
+    .replace(/\([^)]*\)/g, "")
+    .trim()
+    .toLowerCase();
+  const segment = normalized.includes(".") ? normalized.split(".").pop() : normalized;
+  return segment.replace(/-/g, " ").trim();
+}
+
+function allowedEnhancementNames(value) {
+  return String(value ?? "")
+    .split(",")
+    .map((entry) => modifierBaseName(entry))
+    .filter(Boolean);
+}
+
+function calculateModifierSubtotal(references = [], { fallbackLabel = "Modifier", targetLabel = "Attribute", rankImpact = 0 } = {}) {
   return references.reduce((result, reference) => {
     const name = modifierReferenceName(reference, fallbackLabel);
     const assignmentCount = positiveNumber(reference?.assignmentCount);
@@ -406,7 +422,8 @@ function calculateModifierSubtotal(references = [], fallbackLabel = "Modifier", 
     const isUnresolved = String(reference?.notes ?? "").toLowerCase().includes("unresolved")
       || (!reference?.sourceId && !reference?.uuid);
 
-    result.subtotal += assignmentCount * pointModifier;
+    result.assignmentCount += assignmentCount;
+    result.rankImpact += assignmentCount * rankImpact;
 
     if (isUnresolved) result.warnings.push(`${name} reference is unresolved; verify its sourceId or UUID.`);
     if (assignmentCount <= 0) result.warnings.push(`${name} has zero assignments.`);
@@ -416,34 +433,68 @@ function calculateModifierSubtotal(references = [], fallbackLabel = "Modifier", 
     }
 
     return result;
-  }, { subtotal: 0, warnings: [] });
+  }, { assignmentCount: 0, rankImpact: 0, warnings: [] });
 }
 
 export function calculateAttributeCustomization(item) {
   const system = item?.system ?? item ?? {};
   const actualRank = positiveNumber(system.rank);
-  const rank = positiveNumber(system.effectiveRank ?? system.rank);
   const baseCost = positiveNumber(system.cost);
   const costAdjustment = numberOrZero(system.costAdjustment);
   const targetLabel = item?.type === "weapon" ? "Weapon" : "Attribute";
-  const enhancementResult = calculateModifierSubtotal(modifierReferences(system, "enhancementReferences"), "Enhancement", targetLabel);
-  const limiterResult = calculateModifierSubtotal(modifierReferences(system, "limiterReferences"), "Limiter", targetLabel);
-  const modifierSubtotal = enhancementResult.subtotal + limiterResult.subtotal;
-  const unclampedCostPerRank = baseCost + costAdjustment + modifierSubtotal;
+  const enhancementReferences = modifierReferences(system, "enhancementReferences");
+  const limiterReferences = modifierReferences(system, "limiterReferences");
+  const enhancementResult = calculateModifierSubtotal(enhancementReferences, {
+    fallbackLabel: "Enhancement",
+    targetLabel,
+    rankImpact: -1
+  });
+  const limiterResult = calculateModifierSubtotal(limiterReferences, {
+    fallbackLabel: "Limiter",
+    targetLabel,
+    rankImpact: 1
+  });
+  const modifierSubtotal = enhancementResult.rankImpact + limiterResult.rankImpact;
+  const unclampedEffectiveRank = actualRank + modifierSubtotal;
+  const minimumEffectiveRank = item?.type === "weapon" || actualRank === 0 ? 0 : 1;
+  const calculatedEffectiveRank = Math.max(minimumEffectiveRank, unclampedEffectiveRank);
+  const hasModifiers = Boolean(enhancementReferences.length || limiterReferences.length);
+  const explicitEffectiveRank = system.effectiveRank === null || system.effectiveRank === undefined || system.effectiveRank === ""
+    ? null
+    : positiveNumber(system.effectiveRank);
+  const effectiveRank = hasModifiers ? calculatedEffectiveRank : (explicitEffectiveRank ?? actualRank);
+  const unclampedCostPerRank = baseCost + costAdjustment;
   const effectiveCostPerRank = Math.max(0, unclampedCostPerRank);
   const finalCostOverride = system.finalCostOverride === null || system.finalCostOverride === undefined || system.finalCostOverride === ""
     ? null
     : positiveNumber(system.finalCostOverride);
   const overrideNotes = typeof system.overrideNotes === "string" ? system.overrideNotes.trim() : "";
-  const calculatedCost = rank * effectiveCostPerRank;
-  const hasModifiers = Boolean(
-    modifierReferences(system, "enhancementReferences").length
-      || modifierReferences(system, "limiterReferences").length
-  );
+  const calculatedCost = item?.type === "weapon"
+    ? Math.max(0, baseCost + costAdjustment)
+    : actualRank * effectiveCostPerRank;
   const warnings = [...enhancementResult.warnings, ...limiterResult.warnings];
+  const allowedEnhancements = allowedEnhancementNames(system.allowedEnhancements);
 
-  if (hasModifiers && unclampedCostPerRank <= 0) {
-    warnings.push(`Effective ${targetLabel} cost per Rank is ${unclampedCostPerRank}; using 0 for point totals.`);
+  if (hasModifiers && explicitEffectiveRank !== null && explicitEffectiveRank !== calculatedEffectiveRank) {
+    warnings.push(`Manual Effective Rank ${explicitEffectiveRank} differs from the recalculated value ${calculatedEffectiveRank}.`);
+  }
+  if (item?.type !== "weapon" && enhancementReferences.length && unclampedEffectiveRank < 1) {
+    warnings.push(`${targetLabel} Enhancements reduce effective Rank below 1; reduce Enhancement assignments or raise actual Rank.`);
+  }
+  if (item?.type !== "weapon" && enhancementReferences.length && !allowedEnhancements.length) {
+    warnings.push(`${targetLabel} is not listed in Core Rules Table 18 for standard Enhancements; confirm DM approval.`);
+  }
+  if (allowedEnhancements.length) {
+    for (const reference of enhancementReferences) {
+      const name = modifierReferenceName(reference, "Enhancement");
+      const baseName = modifierBaseName(name);
+      if (baseName && !allowedEnhancements.includes(baseName)) {
+        warnings.push(`${name} is not listed for ${item?.name ?? targetLabel} in Core Rules Table 18.`);
+      }
+    }
+  }
+  if (unclampedCostPerRank <= 0 && actualRank > 0) {
+    warnings.push(`${targetLabel} cost per Rank is ${unclampedCostPerRank}; using 0 for point totals.`);
   }
   if (finalCostOverride !== null && !overrideNotes) {
     warnings.push("Final cost override is present without override notes.");
@@ -451,11 +502,14 @@ export function calculateAttributeCustomization(item) {
 
   return {
     actualRank,
-    rank,
-    effectiveRank: rank,
+    rank: effectiveRank,
+    effectiveRank,
+    calculatedEffectiveRank,
     baseCost,
     costAdjustment,
     modifierSubtotal,
+    enhancementAssignments: enhancementResult.assignmentCount,
+    limiterAssignments: limiterResult.assignmentCount,
     unclampedCostPerRank,
     effectiveCostPerRank,
     calculatedCost,

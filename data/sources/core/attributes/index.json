@@ -22,7 +22,8 @@
         "sourcePage": 92,
         "importId": "core.attribute.ac-bonus",
         "category": "Defense",
-        "progression": "+1 Armour Class/Rank"
+        "progression": "+1 Armour Class/Rank",
+        "allowedEnhancements": ""
       },
       "name": "AC Bonus",
       "flags": {
@@ -49,7 +50,8 @@
         "sourcePage": 92,
         "importId": "core.attribute.alternate-identity",
         "category": "Identity",
-        "progression": "1 Alternate Identity/Rank"
+        "progression": "1 Alternate Identity/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Alternate Identity",
       "flags": {
@@ -76,7 +78,8 @@
         "sourcePage": 92,
         "importId": "core.attribute.armour-proficiency",
         "category": "Proficiency",
-        "progression": "+1 Armour Proficiency/Rank"
+        "progression": "+1 Armour Proficiency/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Armour Proficiency",
       "flags": {
@@ -103,7 +106,8 @@
         "sourcePage": 92,
         "importId": "core.attribute.augmented",
         "category": "Ability",
-        "progression": "+1 Ability Score/Rank"
+        "progression": "+1 Ability Score/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Augmented",
       "flags": {
@@ -130,7 +134,8 @@
         "sourcePage": 92,
         "importId": "core.attribute.change-state",
         "category": "Form",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Change State",
       "flags": {
@@ -157,7 +162,8 @@
         "sourcePage": 93,
         "importId": "core.attribute.cognition",
         "category": "Perception",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": "Area"
       },
       "name": "Cognition",
       "flags": {
@@ -184,7 +190,8 @@
         "sourcePage": 93,
         "importId": "core.attribute.combat-mastery",
         "category": "Combat",
-        "progression": "+1 Attack Bonus/Rank"
+        "progression": "+1 Attack Bonus/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Combat Mastery",
       "flags": {
@@ -211,7 +218,8 @@
         "sourcePage": 94,
         "importId": "core.attribute.combat-technique",
         "category": "Combat",
-        "progression": "1 Combat Technique/Rank"
+        "progression": "1 Combat Technique/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Combat Technique",
       "flags": {
@@ -245,7 +253,8 @@
         "trackingMode": "Track linked companion actor and point build.",
         "linkedActorUuid": "",
         "trackingNotes": "Construct the companion from additional Points by Rank.",
-        "progression": "Companions are constructed from additional Points by Rank"
+        "progression": "Companions are constructed from additional Points by Rank",
+        "allowedEnhancements": ""
       },
       "name": "Companion",
       "flags": {
@@ -272,7 +281,8 @@
         "sourcePage": 98,
         "importId": "core.attribute.connected",
         "category": "Social",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Connected",
       "flags": {
@@ -299,7 +309,8 @@
         "sourcePage": 98,
         "importId": "core.attribute.control-environment",
         "category": "Environment",
-        "progression": "1 Environment/Rank"
+        "progression": "1 Environment/Rank",
+        "allowedEnhancements": "Area (2+), Duration, Range"
       },
       "name": "Control Environment",
       "flags": {
@@ -326,7 +337,8 @@
         "sourcePage": 98,
         "importId": "core.attribute.conversion",
         "category": "Power",
-        "progression": "Temporarily gain +1 Point/Rank for every converted point source"
+        "progression": "Temporarily gain +1 Point/Rank for every converted point source",
+        "allowedEnhancements": ""
       },
       "name": "Conversion",
       "flags": {
@@ -359,7 +371,8 @@
         "energyCost": "",
         "trackingMode": "Track the active power theme, approved effect, and current limits.",
         "trackingNotes": "Broad flexible powers require DM oversight for each expressed effect.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": "Area, Duration, Range, Targets"
       },
       "name": "Dynamic Powers",
       "flags": {
@@ -392,7 +405,8 @@
         "energyCost": "",
         "trackingMode": "Track the limited theme, approved effect, and current limits.",
         "trackingNotes": "Use for a narrower expression of Dynamic Powers.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Dynamic Powers - Lesser",
       "flags": {
@@ -419,7 +433,8 @@
         "sourcePage": 100,
         "importId": "core.attribute.edge",
         "category": "Advantage",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Edge",
       "flags": {
@@ -446,7 +461,8 @@
         "sourcePage": 100,
         "importId": "core.attribute.elasticity",
         "category": "Form",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Elasticity",
       "flags": {
@@ -473,7 +489,8 @@
         "sourcePage": 101,
         "importId": "core.attribute.energised",
         "category": "Resource",
-        "progression": "+10 Energy/Rank"
+        "progression": "+10 Energy/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Energised",
       "flags": {
@@ -500,7 +517,8 @@
         "sourcePage": 101,
         "importId": "core.attribute.enhanced-proficiency",
         "category": "Proficiency",
-        "progression": "+1 Proficiency Bonus/Rank"
+        "progression": "+1 Proficiency Bonus/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Enhanced Proficiency",
       "flags": {
@@ -527,7 +545,8 @@
         "sourcePage": 101,
         "importId": "core.attribute.extra-actions",
         "category": "Action",
-        "progression": "+1 Bonus Action/Rank"
+        "progression": "+1 Bonus Action/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Extra Actions",
       "flags": {
@@ -554,7 +573,8 @@
         "sourcePage": 101,
         "importId": "core.attribute.extra-actions-lesser",
         "category": "Action",
-        "progression": "+1 limited Bonus Action/Rank"
+        "progression": "+1 limited Bonus Action/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Extra Actions - Lesser",
       "flags": {
@@ -581,7 +601,8 @@
         "sourcePage": 101,
         "importId": "core.attribute.fast",
         "category": "Movement",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Fast",
       "flags": {
@@ -608,7 +629,8 @@
         "sourcePage": 101,
         "importId": "core.attribute.features",
         "category": "Feature",
-        "progression": "1 Feature/Rank"
+        "progression": "1 Feature/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Features",
       "flags": {
@@ -635,7 +657,8 @@
         "sourcePage": 102,
         "importId": "core.attribute.flight",
         "category": "Movement",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Flight",
       "flags": {
@@ -662,7 +685,8 @@
         "sourcePage": 102,
         "importId": "core.attribute.forced-disadvantage",
         "category": "Control",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Forced Disadvantage",
       "flags": {
@@ -689,7 +713,8 @@
         "sourcePage": 102,
         "importId": "core.attribute.healing",
         "category": "Healing",
-        "progression": "Heal +1d8 Hit Points/Rank"
+        "progression": "Heal +1d8 Hit Points/Rank",
+        "allowedEnhancements": "Area, Range, Targets"
       },
       "name": "Healing",
       "flags": {
@@ -716,7 +741,8 @@
         "sourcePage": 102,
         "importId": "core.attribute.heightened-senses",
         "category": "Perception",
-        "progression": "1 Sense/Rank"
+        "progression": "1 Sense/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Heightened Senses",
       "flags": {
@@ -743,7 +769,8 @@
         "sourcePage": 103,
         "importId": "core.attribute.immunity",
         "category": "Resistance",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Immunity",
       "flags": {
@@ -770,7 +797,8 @@
         "sourcePage": 103,
         "importId": "core.attribute.immunity-lesser",
         "category": "Resistance",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Immunity - Lesser",
       "flags": {
@@ -797,7 +825,8 @@
         "sourcePage": 104,
         "importId": "core.attribute.immutable",
         "category": "Resistance",
-        "progression": "+2 Check Bonus/Rank to Resist Bodily Effects"
+        "progression": "+2 Check Bonus/Rank to Resist Bodily Effects",
+        "allowedEnhancements": ""
       },
       "name": "Immutable",
       "flags": {
@@ -824,7 +853,8 @@
         "sourcePage": 104,
         "importId": "core.attribute.inspire",
         "category": "Support",
-        "progression": "+1 Check Bonus/Rank"
+        "progression": "+1 Check Bonus/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Inspire",
       "flags": {
@@ -851,7 +881,8 @@
         "sourcePage": 104,
         "importId": "core.attribute.inspire-greater",
         "category": "Support",
-        "progression": "+1 Check Bonus/Rank"
+        "progression": "+1 Check Bonus/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Inspire - Greater",
       "flags": {
@@ -878,7 +909,8 @@
         "sourcePage": 105,
         "importId": "core.attribute.item",
         "category": "Item",
-        "progression": "Item(s) with +5 Points/Rank"
+        "progression": "Item(s) with +5 Points/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Item",
       "flags": {
@@ -905,7 +937,8 @@
         "sourcePage": 105,
         "importId": "core.attribute.jumping",
         "category": "Movement",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Jumping",
       "flags": {
@@ -932,7 +965,8 @@
         "sourcePage": 105,
         "importId": "core.attribute.language",
         "category": "Knowledge",
-        "progression": "1 Language/Rank"
+        "progression": "1 Language/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Language",
       "flags": {
@@ -959,7 +993,8 @@
         "sourcePage": 106,
         "importId": "core.attribute.massive-damage",
         "category": "Combat",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Massive Damage",
       "flags": {
@@ -986,7 +1021,8 @@
         "sourcePage": 106,
         "importId": "core.attribute.massive-damage-lesser",
         "category": "Combat",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Massive Damage - Lesser",
       "flags": {
@@ -1020,7 +1056,8 @@
         "trackingMode": "Track copied Attributes and maximum copied Rank.",
         "linkedActorUuid": "",
         "trackingNotes": "Copied Attributes remain limited by this Attribute's Rank.",
-        "progression": "Can imitate Attributes up to a maximum Rank"
+        "progression": "Can imitate Attributes up to a maximum Rank",
+        "allowedEnhancements": "Duration, Range"
       },
       "name": "Mimic",
       "flags": {
@@ -1054,7 +1091,8 @@
         "trackingMode": "Track controlled target, command, and resistance status.",
         "linkedActorUuid": "",
         "trackingNotes": "Use notes for current command, target limits, and save outcomes.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": "Area, Duration, Range, Targets"
       },
       "name": "Mind Control",
       "flags": {
@@ -1088,7 +1126,8 @@
         "trackingMode": "Track controlled target, restriction, and resistance status.",
         "linkedActorUuid": "",
         "trackingNotes": "Use notes for the lesser category or narrow effect currently allowed.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Mind Control - Lesser",
       "flags": {
@@ -1115,7 +1154,8 @@
         "sourcePage": 108,
         "importId": "core.attribute.mind-shield",
         "category": "Defense",
-        "progression": "+2 Check Bonus/Rank to Resist Mind-Affecting Effects"
+        "progression": "+2 Check Bonus/Rank to Resist Mind-Affecting Effects",
+        "allowedEnhancements": ""
       },
       "name": "Mind Shield",
       "flags": {
@@ -1149,7 +1189,8 @@
         "trackingMode": "Track linked follower actor, roster, or minion notes.",
         "linkedActorUuid": "",
         "trackingNotes": "Use for minor followers or helpers.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Minions",
       "flags": {
@@ -1183,7 +1224,8 @@
         "trackingMode": "Track linked follower actor, roster, or minion notes.",
         "linkedActorUuid": "",
         "trackingNotes": "Use for stronger or more capable minions.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Minions - Greater",
       "flags": {
@@ -1220,7 +1262,8 @@
         "trainingBenefit": "",
         "trainingTechniques": "Analyse Monster: identify species; advantage on Intelligence checks for rare/evolved monsters; judge point total, HP, and elemental association.\nBattle Motto: once per dramatic scene; enemy trainer has disadvantage on first two Initiative rolls while the trainer has advantage on their first two.\nBreed Monster: DC 15 Charisma check to produce a viable hybrid from two monsters that do not normally mate.\nFeed Monster: supervised nutrition up to half-hour per creature per day; prevents disease and doubles lost Hit Point recovery.\nInspire Monster: free action at the start of a combat round; spend 5 Energy to give +2 attack rolls, +2 Armour Class, or restore 1d8 HP for the round.\nInstil Discipline: one-hour session; trainer and monster spend 10 Energy each; lasts one session/adventuring day and grants +2 Armour Class plus controlled behaviour.\nInstil Ferocity: one-hour session; trainer and monster spend 10 Energy each; lasts one session/adventuring day and grants +2 attack rolls, or +4 against a specific trained target.\nMonster Tactics: when supervising and able to shout orders, monsters gain advantage on Initiative rolls through the battle.\nNurse Monster: under care, monster heals HP three times faster; five times faster if the trainer also has Feed Monster.\nStat Master: encyclopaedic knowledge of trainers, teams, and monster dojos; DM may require a DC 15 Intelligence check.",
         "trackingNotes": "Only characters with Companion or Minions usually assign Monster Training. Each Rank grants one training technique.",
-        "progression": "1 Training Technique/Rank"
+        "progression": "1 Training Technique/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Monster Training",
       "flags": {
@@ -1247,7 +1290,8 @@
         "sourcePage": 110,
         "importId": "core.attribute.mulligan",
         "category": "Luck",
-        "progression": "+2 Dice Re-rolls/Rank Each Session"
+        "progression": "+2 Dice Re-rolls/Rank Each Session",
+        "allowedEnhancements": ""
       },
       "name": "Mulligan",
       "flags": {
@@ -1282,7 +1326,8 @@
         "linkedActorUuid": "",
         "linkedItemUuid": "",
         "trackingNotes": "Suppressed Attributes remain limited by this Attribute's Rank.",
-        "progression": "Can nullify Attributes up to a maximum Rank"
+        "progression": "Can nullify Attributes up to a maximum Rank",
+        "allowedEnhancements": "Area, Duration, Range, Targets"
       },
       "name": "Nullify",
       "flags": {
@@ -1315,7 +1360,8 @@
         "energyCost": "",
         "trackingMode": "Track dimension access, contents, and current restrictions.",
         "trackingNotes": "Use notes for entry points, occupants, stored items, and access limits.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": "Duration"
       },
       "name": "Pocket Dimension",
       "flags": {
@@ -1348,7 +1394,8 @@
         "energyCost": "",
         "trackingMode": "Track portal endpoints, direction, and active access.",
         "trackingNotes": "Use notes for destination, origin, permissions, and open/closed state.",
-        "progression": "1 One-Way Dimensional Portal/Rank"
+        "progression": "1 One-Way Dimensional Portal/Rank",
+        "allowedEnhancements": "Area, Duration, Range, Targets"
       },
       "name": "Portal",
       "flags": {
@@ -1375,7 +1422,8 @@
         "sourcePage": 111,
         "importId": "core.attribute.protected",
         "category": "Defense",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Protected",
       "flags": {
@@ -1402,7 +1450,8 @@
         "sourcePage": 112,
         "importId": "core.attribute.regeneration",
         "category": "Healing",
-        "progression": "Regain +1 Hit Point/Rank Each Round"
+        "progression": "Regain +1 Hit Point/Rank Each Round",
+        "allowedEnhancements": ""
       },
       "name": "Regeneration",
       "flags": {
@@ -1429,7 +1478,8 @@
         "sourcePage": 112,
         "importId": "core.attribute.resilient",
         "category": "Resistance",
-        "progression": "1 Environment or Condition/Rank"
+        "progression": "1 Environment or Condition/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Resilient",
       "flags": {
@@ -1456,7 +1506,8 @@
         "sourcePage": 112,
         "importId": "core.attribute.saving-throw-proficiency",
         "category": "Proficiency",
-        "progression": "1 Saving Throw Ability Score/Rank"
+        "progression": "1 Saving Throw Ability Score/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Saving Throw Proficiency",
       "flags": {
@@ -1483,7 +1534,8 @@
         "sourcePage": 112,
         "importId": "core.attribute.sixth-sense",
         "category": "Perception",
-        "progression": "1 Sense/Rank"
+        "progression": "1 Sense/Rank",
+        "allowedEnhancements": "Area (3+)"
       },
       "name": "Sixth Sense",
       "flags": {
@@ -1510,7 +1562,8 @@
         "sourcePage": 112,
         "importId": "core.attribute.size-change",
         "category": "Form",
-        "progression": "Grow and/or Shrink by 1 Size/Rank"
+        "progression": "Grow and/or Shrink by 1 Size/Rank",
+        "allowedEnhancements": "Duration"
       },
       "name": "Size Change",
       "flags": {
@@ -1537,7 +1590,8 @@
         "sourcePage": 112,
         "importId": "core.attribute.size-change-lesser",
         "category": "Form",
-        "progression": "Grow or shrink by 1 Size/Rank"
+        "progression": "Grow or shrink by 1 Size/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Size Change - Lesser",
       "flags": {
@@ -1564,7 +1618,8 @@
         "sourcePage": 113,
         "importId": "core.attribute.skill-proficiency",
         "category": "Proficiency",
-        "progression": "1 Skill Proficiency/Rank"
+        "progression": "1 Skill Proficiency/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Skill Proficiency",
       "flags": {
@@ -1591,7 +1646,8 @@
         "sourcePage": 116,
         "importId": "core.attribute.special-movement",
         "category": "Movement",
-        "progression": "1 Movement/Rank"
+        "progression": "1 Movement/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Special Movement",
       "flags": {
@@ -1618,7 +1674,8 @@
         "sourcePage": 116,
         "importId": "core.attribute.spell-amplification",
         "category": "Spell",
-        "progression": "1 Spell Modification Each Session/Rank"
+        "progression": "1 Spell Modification Each Session/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Spell Amplification",
       "flags": {
@@ -1658,7 +1715,8 @@
         "spellPrerequisites": "Recommended character Level prerequisite equals the spell Level, twice the spell Level, or another DM-approved requirement; Race-granted Spell-Like Abilities may ignore this.",
         "spellUsage": "Once per long rest after use; cantrips can be used at will.",
         "trackingNotes": "Rank 1 is equivalent to a cantrip, Rank 2 to a 1st-Level spell, up through Rank 10 as a 9th-Level spell.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Spell-Like Ability",
       "flags": {
@@ -1685,7 +1743,8 @@
         "sourcePage": 118,
         "importId": "core.attribute.supersense",
         "category": "Perception",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Supersense",
       "flags": {
@@ -1719,7 +1778,8 @@
         "trackingMode": "Track linked mind, message/probe, and resistance status.",
         "linkedActorUuid": "",
         "trackingNotes": "Use notes for current communication, probe, memory effect, or save outcome.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": "Area (2+), Duration, Range, Targets"
       },
       "name": "Telepathy",
       "flags": {
@@ -1753,7 +1813,8 @@
         "trackingMode": "Track linked mind, lesser restriction, and resistance status.",
         "linkedActorUuid": "",
         "trackingNotes": "Use notes for the lesser target category or communication limit.",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Telepathy - Lesser",
       "flags": {
@@ -1780,7 +1841,8 @@
         "sourcePage": 119,
         "importId": "core.attribute.teleport",
         "category": "Movement",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": "Area, Range, Targets"
       },
       "name": "Teleport",
       "flags": {
@@ -1807,7 +1869,8 @@
         "sourcePage": 119,
         "importId": "core.attribute.tool-proficiency",
         "category": "Proficiency",
-        "progression": "1 Tool Proficiency/Rank"
+        "progression": "1 Tool Proficiency/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Tool Proficiency",
       "flags": {
@@ -1834,7 +1897,8 @@
         "sourcePage": 120,
         "importId": "core.attribute.tough",
         "category": "Ability",
-        "progression": "Hit Point Maximum Increased By +10%/Rank"
+        "progression": "Hit Point Maximum Increased By +10%/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Tough",
       "flags": {
@@ -1869,7 +1933,8 @@
         "linkedActorUuid": "",
         "linkedItemUuid": "",
         "trackingNotes": "Transferred Attributes remain limited by this Attribute's Rank.",
-        "progression": "Transfer Attributes at a maximum Rank"
+        "progression": "Transfer Attributes at a maximum Rank",
+        "allowedEnhancements": "Duration, Range, Targets"
       },
       "name": "Transfer",
       "flags": {
@@ -1896,7 +1961,8 @@
         "sourcePage": 120,
         "importId": "core.attribute.tunnelling",
         "category": "Movement",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Tunnelling",
       "flags": {
@@ -1923,7 +1989,8 @@
         "sourcePage": 120,
         "importId": "core.attribute.undetectable",
         "category": "Stealth",
-        "progression": "1 Sense or Technique/Rank"
+        "progression": "1 Sense or Technique/Rank",
+        "allowedEnhancements": ""
       },
       "name": "Undetectable",
       "flags": {
@@ -1950,7 +2017,8 @@
         "sourcePage": 120,
         "importId": "core.attribute.unique-attribute",
         "category": "Unique",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": "Area, Duration, Range, Targets"
       },
       "name": "Unique Attribute",
       "flags": {
@@ -1977,7 +2045,8 @@
         "sourcePage": 121,
         "importId": "core.attribute.unknown-power",
         "category": "Power",
-        "progression": "Special"
+        "progression": "Special",
+        "allowedEnhancements": "Area, Duration, Range, Targets"
       },
       "name": "Unknown Power",
       "flags": {
@@ -2004,7 +2073,8 @@
         "sourcePage": 121,
         "importId": "core.attribute.water-speed",
         "category": "Movement",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Water Speed",
       "flags": {
@@ -2031,7 +2101,8 @@
         "sourcePage": 121,
         "importId": "core.attribute.wealth",
         "category": "Resource",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Wealth",
       "flags": {
@@ -2062,7 +2133,8 @@
         "range": "Melee",
         "damageType": "",
         "weaponNotes": "Base damage is 1d4 per Rank before Enhancements or Limiters.",
-        "progression": "+1d4 Damage/Rank or Special"
+        "progression": "+1d4 Damage/Rank or Special",
+        "allowedEnhancements": ""
       },
       "name": "Weapon",
       "flags": {
@@ -2089,7 +2161,8 @@
         "sourcePage": 130,
         "importId": "core.attribute.weapon-proficiency",
         "category": "Proficiency",
-        "progression": "Descriptive"
+        "progression": "Descriptive",
+        "allowedEnhancements": ""
       },
       "name": "Weapon Proficiency",
       "flags": {

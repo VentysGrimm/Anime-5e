@@ -95,6 +95,25 @@ function allowedAttributesForModifier(appliesTo) {
   return appliesTo === "Attribute" ? "Any compatible Attribute" : "";
 }
 
+const allowedAttributeEnhancements = new Map([
+  ["Cognition", "Area"],
+  ["Control Environment", "Area (2+), Duration, Range"],
+  ["Dynamic Powers", "Area, Duration, Range, Targets"],
+  ["Healing", "Area, Range, Targets"],
+  ["Mimic", "Duration, Range"],
+  ["Mind Control", "Area, Duration, Range, Targets"],
+  ["Nullify", "Area, Duration, Range, Targets"],
+  ["Pocket Dimension", "Duration"],
+  ["Portal", "Area, Duration, Range, Targets"],
+  ["Sixth Sense", "Area (3+)"],
+  ["Size Change", "Duration"],
+  ["Telepathy", "Area (2+), Duration, Range, Targets"],
+  ["Teleport", "Area, Range, Targets"],
+  ["Transfer", "Duration, Range, Targets"],
+  ["Unique Attribute", "Area, Duration, Range, Targets"],
+  ["Unknown Power", "Area, Duration, Range, Targets"]
+]);
+
 function buildSourceId(prefix, name) {
   return `${prefix}.${slugify(name)}`;
 }
@@ -168,6 +187,19 @@ function buildDocumentFromEntry(source, entry) {
 function existingDocuments(source, type) {
   if (source.entries?.length) return source.entries.map((entry) => buildDocumentFromEntry(source, entry));
   return (source.documents ?? []).filter((document) => document.type === type);
+}
+
+function withAllowedEnhancementTableData(documents) {
+  return documents.map((document) => {
+    const allowedEnhancements = allowedAttributeEnhancements.get(document.name) ?? "";
+    return {
+      ...document,
+      system: {
+        ...document.system,
+        allowedEnhancements
+      }
+    };
+  });
 }
 
 const generalEnhancements = [
@@ -270,6 +302,25 @@ const powers = [
   ["Dynamic Powers", "Broad story-driven control over a major concept, natural force, or sphere of influence, with Energy costs by effect Rank.", 99, 10, "Dynamic Powers"],
   ["Dynamic Powers - Lesser", "Focused control over a narrower concept, classical element, minor aspect, or limited sphere of influence.", 99, 5, "Dynamic Powers"]
 ];
+
+const dynamicPowerWorkflowFields = new Map([
+  ["Dynamic Powers", {
+    ability: "Situationally Variable",
+    energyCost: "DM-approved Energy cost by expressed effect Rank",
+    effect: "<p>Record the approved major concept, natural force, or sphere of influence for the current expression.</p>",
+    repeatedEffects: "<p>Track each approved repeated effect, its effect Rank, targets, duration, and Energy paid before repeating or changing the expression.</p>",
+    activationLimits: "<p>Each expression requires DM approval and should stay within the purchased Dynamic Powers theme.</p>",
+    trackingNotes: "<p>Use as a manual helper for flexible effects rather than a fixed spell list.</p>"
+  }],
+  ["Dynamic Powers - Lesser", {
+    ability: "Situationally Variable",
+    energyCost: "DM-approved Energy cost by expressed effect Rank",
+    effect: "<p>Record the approved limited concept, element, minor aspect, or narrow sphere for the current expression.</p>",
+    repeatedEffects: "<p>Track repeated effects, their effect Rank, targets, duration, and Energy paid before reuse.</p>",
+    activationLimits: "<p>Each expression requires DM approval and must stay within the narrower Lesser Dynamic Powers theme.</p>",
+    trackingNotes: "<p>Use as a manual helper for flexible lesser effects rather than a fixed spell list.</p>"
+  }]
+]);
 
 const itemAttributes = [
   ["Capacity", 199, "Lets a vehicle or location carry additional people or cargo beyond its normal single occupant.", "Item-only Attribute", "Items, vehicles, and locations", "Rank 1 carries +1 person; Rank 6 carries +50 people or 10 tons."],
@@ -481,7 +532,7 @@ function buildAttributes() {
     folders: [
       { name: "Attributes", color: "#7c8fa8" }
     ],
-    documents: existingDocuments(source, "attribute")
+    documents: withAllowedEnhancementTableData(existingDocuments(source, "attribute"))
   });
 }
 
@@ -577,7 +628,8 @@ function buildPowers() {
     ],
     summary,
     system: {
-      category
+      category,
+      ...(dynamicPowerWorkflowFields.get(name) ?? {})
     }
   }));
 

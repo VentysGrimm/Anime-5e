@@ -30,6 +30,7 @@ const SPECIES_TRAIT_FIELDS = new Set([
 ]);
 const MULTILINE_FIELDS = new Set([
   "allowedAttributes",
+  "allowedEnhancements",
   "containedAttributes",
   "containedDefects",
   "constructionNotes",
@@ -110,6 +111,7 @@ const FIELD_LABELS = {
   activeTrainingTechnique: "Active Training Technique",
   ability: "Ability Target",
   allowedAttributes: "Allowed Attributes",
+  allowedEnhancements: "Allowed Enhancements",
   armour: "Armour",
   armourClass: "Armour Class",
   armourClassModifier: "Armour Class Modifier",
@@ -425,13 +427,24 @@ function buildModifierEntries(references) {
   });
 }
 
+function buildModifierEntriesForType(references, type) {
+  const rankImpactPerAssignment = type === "enhancement" ? -1 : 1;
+  return buildModifierEntries(references).map((entry) => ({
+    ...entry,
+    rankImpactPerAssignment,
+    rankImpactPerAssignmentLabel: formatSignedNumber(rankImpactPerAssignment),
+    rankImpact: rankImpactPerAssignment * entry.assignmentCount,
+    rankImpactLabel: formatSignedNumber(rankImpactPerAssignment * entry.assignmentCount)
+  }));
+}
+
 function buildAttributeModifiers(item, systemData) {
   if (!["attribute", "weapon"].includes(item.type)) return null;
 
   const customization = calculateAttributeCustomization({ type: item.type, name: item.name, system: systemData });
   const groups = Object.entries(ATTRIBUTE_MODIFIER_CONFIG).map(([type, config]) => {
-    const entries = buildModifierEntries(systemData[config.field]);
-    const subtotal = entries.reduce((sum, entry) => sum + entry.total, 0);
+    const entries = buildModifierEntriesForType(systemData[config.field], type);
+    const subtotal = entries.reduce((sum, entry) => sum + entry.rankImpact, 0);
 
     return {
       type,
@@ -449,10 +462,10 @@ function buildAttributeModifiers(item, systemData) {
     summary: [
       { label: "Actual Rank", value: customization.actualRank },
       { label: "Effective Rank", value: customization.effectiveRank },
-      { label: "Enhancements", value: groups[0]?.entries.length ?? 0 },
-      { label: "Limiters", value: groups[1]?.entries.length ?? 0 },
-      { label: "Raw Modifier", value: formatSignedNumber(customization.modifierSubtotal) },
-      { label: "Cost/Rank", value: customization.effectiveCostPerRank },
+      { label: "Enhancement Assignments", value: customization.enhancementAssignments },
+      { label: "Limiter Assignments", value: customization.limiterAssignments },
+      { label: "Rank Impact", value: formatSignedNumber(customization.modifierSubtotal) },
+      { label: item.type === "weapon" ? "Point Cost" : "Cost/Rank", value: item.type === "weapon" ? customization.totalCost : customization.effectiveCostPerRank },
       { label: customization.finalCostOverride === null ? "Final Cost" : "Override Cost", value: customization.totalCost }
     ],
     groups,

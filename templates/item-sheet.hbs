@@ -113,17 +113,17 @@
               <div class="table-header">Reference</div>
               <div class="table-header">Each</div>
               <div class="table-header">Assignments</div>
-              <div class="table-header">Total</div>
+              <div class="table-header">Rank Impact</div>
               <div class="table-header">Notes</div>
               <div class="table-header">Remove</div>
               {{#each group.entries as |entry|}}
                 <span>{{entry.name}}</span>
                 <span>{{entry.referenceLabel}}</span>
-                <span>{{entry.pointModifierLabel}}</span>
+                <span>{{entry.rankImpactPerAssignmentLabel}}</span>
                 <span>
                   <input type="number" name="system.{{../field}}.{{entry.index}}.assignmentCount" value="{{entry.assignmentCount}}" min="0" {{#unless ../../editable}}disabled{{/unless}}>
                 </span>
-                <span>{{entry.totalLabel}}</span>
+                <span>{{entry.rankImpactLabel}}</span>
                 <span>{{entry.notes}}</span>
                 <span>
                   <button type="button" class="icon-button" data-action="remove-attribute-modifier" data-modifier-type="{{../type}}" data-index="{{entry.index}}" title="Remove {{entry.name}}" {{#unless ../../editable}}disabled{{/unless}}>

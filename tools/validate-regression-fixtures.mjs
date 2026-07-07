@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { calculateAttributeCustomization } from "../module/rules/points.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const fixturePath = path.join(root, "data/validation-regression-fixtures.json");
@@ -74,6 +75,106 @@ function validateScratchCharacters() {
       fail(`${label}: expected at least ${expected.requiredAttackCount} attacks with damage, got ${attackCount}.`);
     }
   }
+}
+
+function validateAttributeCustomizationRules() {
+  const healingRange = calculateAttributeCustomization({
+    type: "attribute",
+    name: "Healing",
+    system: {
+      rank: 4,
+      cost: 1,
+      allowedEnhancements: "Area, Range, Targets",
+      enhancementReferences: [
+        {
+          name: "Range",
+          sourceId: "core.enhancement.range",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 1
+        }
+      ],
+      limiterReferences: []
+    }
+  });
+  assertEqual("Healing Range effective Rank", healingRange.effectiveRank, 3);
+  assertEqual("Healing Range point cost", healingRange.totalCost, 4);
+  if (healingRange.warnings.length) fail(`Healing Range customization emitted warnings: ${healingRange.warnings.join("; ")}`);
+
+  const healingAreaTargets = calculateAttributeCustomization({
+    type: "attribute",
+    name: "Healing",
+    system: {
+      rank: 5,
+      cost: 1,
+      allowedEnhancements: "Area, Range, Targets",
+      enhancementReferences: [
+        {
+          name: "Area",
+          sourceId: "core.enhancement.area",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 2
+        },
+        {
+          name: "Targets",
+          sourceId: "core.enhancement.targets",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 2
+        }
+      ],
+      limiterReferences: []
+    }
+  });
+  assertEqual("Healing Area/Targets effective Rank", healingAreaTargets.effectiveRank, 1);
+  assertEqual("Healing Area/Targets point cost", healingAreaTargets.totalCost, 5);
+  if (healingAreaTargets.warnings.length) fail(`Healing Area/Targets customization emitted warnings: ${healingAreaTargets.warnings.join("; ")}`);
+
+  const mindControl = calculateAttributeCustomization({
+    type: "attribute",
+    name: "Mind Control",
+    system: {
+      rank: 2,
+      cost: 1,
+      allowedEnhancements: "Area, Duration, Range, Targets",
+      enhancementReferences: [
+        {
+          name: "Duration",
+          sourceId: "core.enhancement.duration",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 1
+        },
+        {
+          name: "Range",
+          sourceId: "core.enhancement.range",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 1
+        }
+      ],
+      limiterReferences: [
+        {
+          name: "Backlash",
+          sourceId: "core.limiter.backlash",
+          appliesTo: "Attribute",
+          pointModifier: -1,
+          assignmentCount: 2
+        },
+        {
+          name: "Environmental",
+          sourceId: "core.limiter.environmental",
+          appliesTo: "Attribute",
+          pointModifier: -1,
+          assignmentCount: 1
+        }
+      ]
+    }
+  });
+  assertEqual("Mind Control cumulative modifier effective Rank", mindControl.effectiveRank, 3);
+  assertEqual("Mind Control cumulative modifier point cost", mindControl.totalCost, 2);
+  if (mindControl.warnings.length) fail(`Mind Control customization emitted warnings: ${mindControl.warnings.join("; ")}`);
 }
 
 function validatePregens() {
@@ -176,6 +277,7 @@ function validatePackage() {
 }
 
 validateScratchCharacters();
+validateAttributeCustomizationRules();
 validatePregens();
 validateActorSources();
 validateContentModules();

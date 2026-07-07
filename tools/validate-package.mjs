@@ -177,6 +177,50 @@ const coreIssue98Requirements = [
   { label: "Core Monsters/NPCs", packs: ["anime5e.monsters", "anime5e.npcs"], types: ["monster", "npc"] }
 ];
 
+const table18AllowedEnhancements = new Map([
+  ["Cognition", "Area"],
+  ["Control Environment", "Area (2+), Duration, Range"],
+  ["Dynamic Powers", "Area, Duration, Range, Targets"],
+  ["Healing", "Area, Range, Targets"],
+  ["Mimic", "Duration, Range"],
+  ["Mind Control", "Area, Duration, Range, Targets"],
+  ["Nullify", "Area, Duration, Range, Targets"],
+  ["Pocket Dimension", "Duration"],
+  ["Portal", "Area, Duration, Range, Targets"],
+  ["Sixth Sense", "Area (3+)"],
+  ["Size Change", "Duration"],
+  ["Telepathy", "Area (2+), Duration, Range, Targets"],
+  ["Teleport", "Area, Range, Targets"],
+  ["Transfer", "Duration, Range, Targets"],
+  ["Unique Attribute", "Area, Duration, Range, Targets"],
+  ["Unknown Power", "Area, Duration, Range, Targets"]
+]);
+
+const coreAttributeEnhancementNames = ["Area", "Duration", "Potent", "Range", "Targets"];
+const coreAttributeLimiterNames = [
+  "Activation",
+  "Assisted",
+  "Backlash",
+  "Charges",
+  "Concentration",
+  "Consumable",
+  "Dependent",
+  "Deplete",
+  "Detectable",
+  "Emotional",
+  "Environmental",
+  "Equipment",
+  "Imbue",
+  "Irreversible",
+  "Maximum",
+  "Object",
+  "Permanent",
+  "Recovery",
+  "Semi-Permanent",
+  "Unique Limiter",
+  "Unpredictable"
+];
+
 function slugifySourceSegment(value) {
   return value
     .toLowerCase()
@@ -349,6 +393,35 @@ function validateCoreIssue98Coverage() {
   }
 }
 
+function validateCoreCustomizationCoverage() {
+  const attributes = getSourceDocuments(readJson("data/sources/core/attributes/index.json"));
+  const enhancements = getSourceDocuments(readJson("data/sources/core/enhancements/index.json"));
+  const limiters = getSourceDocuments(readJson("data/sources/core/limiters/index.json"));
+  const attributesByName = new Map(attributes.map((document) => [document.name, document]));
+  const attributeEnhancementNames = new Set(enhancements
+    .filter((document) => document.type === "enhancement" && document.system?.category === "Attribute Enhancement")
+    .map((document) => document.name));
+  const attributeLimiterNames = new Set(limiters
+    .filter((document) => document.type === "limiter" && document.system?.category === "Attribute Limiter")
+    .map((document) => document.name));
+
+  for (const [name, allowedEnhancements] of table18AllowedEnhancements) {
+    const attribute = attributesByName.get(name);
+    if (!attribute) throw new Error(`Table 18 Attribute is missing from Core Attributes: ${name}.`);
+    if (attribute.system?.allowedEnhancements !== allowedEnhancements) {
+      throw new Error(`${name} Table 18 allowedEnhancements expected "${allowedEnhancements}", got "${attribute.system?.allowedEnhancements ?? ""}".`);
+    }
+  }
+
+  for (const name of coreAttributeEnhancementNames) {
+    if (!attributeEnhancementNames.has(name)) throw new Error(`Core Attribute Enhancement is missing: ${name}.`);
+  }
+
+  for (const name of coreAttributeLimiterNames) {
+    if (!attributeLimiterNames.has(name)) throw new Error(`Core Attribute Limiter is missing: ${name}.`);
+  }
+}
+
 function validateCompendiumSource(relativePath, seen = new Set()) {
   if (seen.has(relativePath)) return { jsonFiles: 0, sourceDocuments: 0 };
   seen.add(relativePath);
@@ -435,6 +508,7 @@ function validateCompendiumSource(relativePath, seen = new Set()) {
 
 const compendiumStats = validateCompendiumSource("data/core-compendiums.json");
 validateCoreIssue98Coverage();
+validateCoreCustomizationCoverage();
 
 console.log(
   `Validated ${manifest.title} ${manifest.version}: ` +
