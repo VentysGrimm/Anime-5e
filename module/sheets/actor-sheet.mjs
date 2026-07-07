@@ -186,6 +186,13 @@ const D20_ROLL_MODES = [
   { key: "disadvantage", label: "Disadvantage" }
 ];
 
+const COVER_OPTIONS = [
+  { key: "none", label: "None", armourClassBonus: 0, note: "" },
+  { key: "half", label: "Half", armourClassBonus: 2, note: "+2 AC and Dexterity saves" },
+  { key: "threeQuarters", label: "3/4", armourClassBonus: 5, note: "+5 AC and Dexterity saves" },
+  { key: "total", label: "Total", armourClassBonus: null, note: "Cannot be targeted directly by most attacks" }
+];
+
 const ITEM_GROUP_TYPES = {
   adventuringRisks: ["adventuringRisk"],
   characterOptions: ["species", "class", "background", "sizeTemplate", "lifepath", "feature", "trait"],
@@ -333,6 +340,29 @@ function hasNumericEntry(value) {
 
 function formatSigned(value) {
   return value > 0 ? `+${value}` : String(value);
+}
+
+function coverOption(key) {
+  return COVER_OPTIONS.find((option) => option.key === key) ?? COVER_OPTIONS[0];
+}
+
+function adjustedTargetArmourClass(attack) {
+  const baseArmourClass = numberOrNull(attack?.targetArmourClass);
+  const cover = coverOption(attack?.cover);
+  if (baseArmourClass === null || cover.armourClassBonus === null) return baseArmourClass;
+  return baseArmourClass + cover.armourClassBonus;
+}
+
+function coverDetails(attack) {
+  const cover = coverOption(attack?.cover);
+  if (cover.key === "none") return [];
+  const details = [{ label: "Cover", value: cover.note ? `${cover.label} (${cover.note})` : cover.label }];
+  const baseArmourClass = numberOrNull(attack?.targetArmourClass);
+  const targetArmourClass = adjustedTargetArmourClass(attack);
+  if (baseArmourClass !== null && targetArmourClass !== null && targetArmourClass !== baseArmourClass) {
+    details.push({ label: "Cover AC", value: `${baseArmourClass} -> ${targetArmourClass}` });
+  }
+  return details;
 }
 
 function hasText(value) {
@@ -564,6 +594,10 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       d20Modes: D20_ROLL_MODES.map((mode) => ({
         ...mode,
         selected: mode.key === (row.data.d20Mode || "normal")
+      })),
+      coverOptions: COVER_OPTIONS.map((cover) => ({
+        ...cover,
+        selected: cover.key === (row.data.cover || "none")
       }))
     }));
     context.combatManoeuvres = this.constructor._prepareCombatManoeuvreContext();
@@ -1530,13 +1564,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { label: "Range", value: attack.range },
       situationalModifier ? { label: "Situational", value: formatSigned(situationalModifier) } : null,
       sizeAttackModifier ? { label: "Size", value: formatSigned(sizeAttackModifier) } : null,
-      rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null
+      rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null,
+      ...coverDetails(attack)
     ].filter(Boolean);
 
     await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${attack.weapon || "Attack"} Roll`, {
       mode: rollMode,
       details,
-      targetNumber: numberOrNull(attack.targetArmourClass),
+      targetNumber: adjustedTargetArmourClass(attack),
       showMargin: settingEnabled("showMarginOfSuccess"),
       showCritical: settingEnabled("showCriticalRollNotes")
     });
@@ -1597,13 +1632,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       situationalModifier ? { label: "Situational", value: formatSigned(situationalModifier) } : null,
       sizeAttackModifier ? { label: "Size", value: formatSigned(sizeAttackModifier) } : null,
       rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null,
+      ...coverDetails(attack),
       { label: "Source", value: `Core Rules PDF p. ${manoeuvre.sourcePage}` }
     ].filter(Boolean);
 
     await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${attackName}: ${manoeuvre.label}`, {
       mode: rollMode,
       details,
-      targetNumber: numberOrNull(attack.targetArmourClass),
+      targetNumber: adjustedTargetArmourClass(attack),
       showMargin: settingEnabled("showMarginOfSuccess"),
       showCritical: settingEnabled("showCriticalRollNotes")
     });

@@ -710,6 +710,7 @@
             <div class="table-header">Range</div>
             <div class="table-header">Roll</div>
             <div class="table-header">AC</div>
+            <div class="table-header">Cover</div>
             <div class="table-header">Penalty</div>
             <div class="table-header">Dmg Type</div>
             <div class="table-header">Damage</div>
@@ -726,6 +727,11 @@
                 {{/each}}
               </select>
               <input type="number" name="system.combat.attacks.{{attackRow.key}}.targetArmourClass" value="{{attackRow.data.targetArmourClass}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
+              <select name="system.combat.attacks.{{attackRow.key}}.cover" {{#unless ../editable}}disabled{{/unless}}>
+                {{#each attackRow.coverOptions as |cover|}}
+                  <option value="{{cover.key}}" {{#if cover.selected}}selected{{/if}}>{{cover.label}}</option>
+                {{/each}}
+              </select>
               <input type="number" name="system.combat.attacks.{{attackRow.key}}.rangePenalty" value="{{attackRow.data.rangePenalty}}" min="0" {{#unless ../editable}}disabled{{/unless}}>
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.damageType" value="{{attackRow.data.damageType}}" {{#unless ../editable}}disabled{{/unless}}>
               <input type="text" name="system.combat.attacks.{{attackRow.key}}.damage" value="{{attackRow.data.damage}}" {{#unless ../editable}}disabled{{/unless}}>

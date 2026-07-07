@@ -112,6 +112,7 @@ function attackEntryField() {
     range: textField(),
     d20Mode: textField("normal"),
     targetArmourClass: optionalNumberField(),
+    cover: textField("none"),
     rangePenalty: numberField(0, { min: 0 }),
     situationalModifier: numberField(0),
     damageType: textField(),

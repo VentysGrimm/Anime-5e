@@ -71,7 +71,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Characters can apply damage or healing to their own Hit Points from the combat panel.
 - Temporary Hit Points are tracked separately and absorb incoming damage before current Hit Points are reduced.
 - Combat movement now tracks ground, fly, water/swim, climb, burrow, and custom movement entries alongside derived Attribute movement summaries.
-- Common attack rows track attack type, range, d20 mode, target Armour Class, optional range penalty, damage type, and damage formula.
+- Common attack rows track attack type, range, d20 mode, target Armour Class, cover, optional range penalty, damage type, and damage formula.
 - Optional combat settings control range-penalty application, Margin of Success display, and critical roll annotations.
 - Characters can use/share embedded items to chat, roll item formulas when present, make item attack rolls, and roll item damage for weapons or other items with damage formulas.
 - Item sheets expose the same use, formula roll, attack, and damage actions for weapons, Attributes, Defects, powers, techniques, spells, and other item documents.
@@ -110,6 +110,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Applied Species now derive ability modifiers and sync species-granted Attributes/Defects into managed, species-paid owned Items. Core Rules Table 05 Size Template items now carry signed point modifiers and apply AC, attack, range/speed, lift/carry, Strength, damage inflicted, and standard damage received modifiers where the sheet can calculate them.
 - Actor sheets now include Core Rules combat manoeuvre controls. They can post source-backed manoeuvre reminders or roll a selected common attack with manoeuvre advantage/disadvantage guidance while preserving later damage, save, and target-state rulings for GM adjudication.
 - Attack roll chat cards now support Core Rules critical guidance when enabled: margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 critical failure consequences, and optional natural 20/natural 1 alternatives.
+- Common attack rows now support Core Rules cover handling for half cover, three-quarters cover, and total cover reminders on attack and combat manoeuvre roll chat cards.
 
 ## Missing Files Required For Load
 

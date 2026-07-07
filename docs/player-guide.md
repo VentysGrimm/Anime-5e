@@ -55,7 +55,7 @@ Dynamic Powers and flexible effects store helper fields and notes for GM adjudic
 
 ## Combat And Rolls
 
-On the Combat tab, enter common attacks with weapon name, attack modifier, attack type, range, d20 mode, target Armour Class, range penalty, damage type, and damage formula.
+On the Combat tab, enter common attacks with weapon name, attack modifier, attack type, range, d20 mode, target Armour Class, cover, range penalty, damage type, and damage formula.
 
 Useful controls:
 
@@ -66,6 +66,8 @@ Useful controls:
 - Combat Manoeuvres can post Core Rules manoeuvre reminders or roll a selected common attack with the manoeuvre's advantage/disadvantage guidance.
 - Attack and Damage buttons roll common attack rows.
 - Owned weapon, Attribute, power, spell, and technique actions roll from their Item fields.
+
+Attack roll chat cards apply half cover and three-quarters cover to the target Armour Class before showing margin or critical guidance. Total cover leaves the target Armour Class unchanged and adds a reminder that the target usually cannot be attacked directly.
 
 The world settings control whether range penalties are applied automatically, whether Margin of Success is shown, and whether attack rolls add critical guidance. When enabled, attack chat cards note margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 failure consequences, and optional natural 20/natural 1 alternatives.
 

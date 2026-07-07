@@ -49,6 +49,8 @@ Anime 5e registers these world settings:
 - Show Critical Roll Notes: annotate attack rolls that keep natural 20 or natural 1 results.
 - Show Critical Roll Notes also checks attack margins against the Core Rules critical hit/failure thresholds. Extreme success doubles final damage, outrageous success triples it, extreme failure suggests one Table 22 consequence, and outrageous failure suggests two. Treat the Table 22 rolls as prompts; the Core Rules still allow the GM to choose a better-fitting consequence.
 
+Common attack rows include a cover selector. Half cover adds +2 to the target Armour Class, three-quarters cover adds +5, and total cover adds a chat-card reminder that most direct attacks cannot target the creature.
+
 Use Tracked Energy when the table wants the sheet to spend and restore Energy directly. Use Manual when Energy is a chat note or table decision. Use Disabled when the campaign does not use Energy bookkeeping.
 
 The Dynamic Power Expression panel appears when an actor owns Dynamic Powers or Dynamic Powers - Lesser. Select the owned power, choose the relevant ability, enter the approved effect Rank and Energy cost, then roll the check or post the expression to chat. In Tracked Energy mode, the posted expression spends the entered Energy and records the expression on the owned Item for repeat-effect review.
