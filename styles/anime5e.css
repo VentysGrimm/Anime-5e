@@ -1485,7 +1485,8 @@
 
 .anime5e .quick-roll-panel,
 .anime5e .movement-mode-panel,
-.anime5e .combat-manoeuvre-panel {
+.anime5e .combat-manoeuvre-panel,
+.anime5e .dynamic-power-panel {
   background: rgba(255, 255, 255, 0.64);
   border: 1px solid var(--anime5e-border);
   display: grid;
@@ -1495,7 +1496,8 @@
 
 .anime5e .quick-roll-panel h3,
 .anime5e .movement-mode-panel h3,
-.anime5e .combat-manoeuvre-panel h3 {
+.anime5e .combat-manoeuvre-panel h3,
+.anime5e .dynamic-power-panel h3 {
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0;
@@ -1505,7 +1507,8 @@
 
 .anime5e .quick-roll-controls,
 .anime5e .movement-mode-grid,
-.anime5e .combat-manoeuvre-controls {
+.anime5e .combat-manoeuvre-controls,
+.anime5e .dynamic-power-controls {
   align-items: end;
   display: grid;
   gap: 8px;
@@ -1514,12 +1517,24 @@
 
 .anime5e .quick-roll-controls label,
 .anime5e .movement-mode-grid label,
-.anime5e .combat-manoeuvre-controls label {
+.anime5e .combat-manoeuvre-controls label,
+.anime5e .dynamic-power-controls label {
   display: grid;
   font-size: 0.78rem;
   font-weight: 800;
   gap: 3px;
   text-transform: uppercase;
+}
+
+.anime5e .dynamic-power-controls .wide {
+  grid-column: span 2;
+}
+
+.anime5e .dynamic-power-actions {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .anime5e.encounter-threat-dialog {
@@ -1852,6 +1867,7 @@
   .anime5e .class-benefit-list li,
   .anime5e .class-progression-table,
   .anime5e .damage-controls,
+  .anime5e .dynamic-power-controls,
   .anime5e .energy-controls,
   .anime5e .encounter-threat-grid,
   .anime5e .encounter-threat-result-grid,
@@ -1871,6 +1887,10 @@
   .anime5e .size-template-workflow-summary,
   .anime5e .folio-item-list .item-row {
     grid-template-columns: 1fr;
+  }
+
+  .anime5e .dynamic-power-controls .wide {
+    grid-column: auto;
   }
 
   .anime5e .wallet-grid {

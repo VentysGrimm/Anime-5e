@@ -42,13 +42,13 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 
 ## Partially Defined Or Deferred
 
-- Dynamic Powers automation, including generated effects, Energy Point spending, and roll hooks.
+- Generated-effect automation for Dynamic Powers beyond the first-pass expression tracker.
 - Combat Techniques automation beyond source-backed item documents.
 - Critical hit margins, conditions, and recovery automation.
 - Full equipment automation for weapons, armor, shields, vehicles, mecha, mounts, and Items of Power.
 - Monster variant import and NPC stat-block parsing from the monster/adventure books.
 - Reputation, faction/path restrictions, law/consequence tracking, and quest/task generation hooks. These are not part of the clearly defined core package pass yet.
-- Dynamic Powers automation, Combat Techniques automation, conditions, recovery automation, and deeper item-specific automation remain the next mechanical gaps after the first item use/roll pass.
+- Generated Dynamic Powers effects, Combat Techniques automation, conditions, recovery automation, and deeper item-specific automation remain the next mechanical gaps after the first item use/roll pass.
 
 ## Foundry VTT v14 Compatibility Notes
 
@@ -99,7 +99,8 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Weapon item sheets now expose proficiency requirement, range rank, ammo, charges, Enhancements, Limiters, equipped state, attack, and damage fields. Armour and shield sheets expose proficiency requirements and equipped AC fields.
 - Items of Power now expose contained Attribute/Defect bookkeeping fields and a calculated construction point summary.
 - Monster, NPC, and companion basic actor sheets now expose source-backed challenge, XP, movement, combat, and point summaries; they can roll ability checks, quick checks, contests, saving throws, skill items, common attacks, and damage. The Encounter Threat settings dialog now compares party and encounter threat with manual threat and XP budget overrides.
-- Energy now supports tracked, manual, and disabled world modes. Actor sheets expose Energy mode/status and controls where applicable; Attribute use honours the mode. Dynamic Powers and Spell items now carry helper fields for ability checks, Energy costs, repeated effects, activation limits, spell casting metadata, saves, attacks, psionics notes, and manual flexible-power tracking.
+- Energy now supports tracked, manual, and disabled world modes. Actor sheets expose Energy mode/status and controls where applicable; Attribute use honours the mode. Dynamic Powers and Spell items now carry helper fields for ability checks, Energy costs, repeated effects, activation limits, spell casting metadata, saves, attacks, psionics notes, and flexible-power tracking.
+- Actor sheets now expose a Dynamic Power Expression panel when the actor owns Dynamic Powers or Dynamic Powers - Lesser. It posts source-backed expressions to chat, rolls selected ability checks with roll mode and bonus controls, spends approved Energy in tracked mode, and persists each expression on the owned Item's tracking notes.
 - Companion, Minions, mount, vehicle, mecha, and monster-variant workflows now support persistent linked actor UUIDs. Character sheets display linked actor summaries, can open linked actors, and can create linked companion/vehicle/mecha actors from owned Attributes or Items while preserving pilot, owner, occupant, source, and point metadata.
 - Core Rules deprivation now has source-backed Adventuring Risk Items, a rules-reference Journal entry, and actor-sheet Hit Point cap tracking for incurable deprivation loss until the deprivation ends.
 - Actor sheets now expose buttons for the core rules-reference Journal pack, linking character creation, character options, rolls, combat, advancement, item construction, and GM guidance references by source ID.

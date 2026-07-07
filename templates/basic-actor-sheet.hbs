@@ -343,6 +343,62 @@
     </div>
   </section>
 
+  {{#if dynamicPowers.active}}
+    <section class="panel dynamic-power-panel">
+      <h2>Dynamic Power Expression</h2>
+      <div class="dynamic-power-controls">
+        <label>
+          Power
+          <select data-dynamic-power-input="itemId">
+            {{#each dynamicPowers.entries as |power|}}
+              <option value="{{power.id}}">{{power.name}} (Rank {{power.rank}})</option>
+            {{/each}}
+          </select>
+        </label>
+        <label>
+          Ability
+          <select data-dynamic-power-input="ability">
+            {{#each abilities as |ability|}}
+              <option value="{{ability.key}}">{{ability.label}}</option>
+            {{/each}}
+          </select>
+        </label>
+        <label>
+          Effect Rank
+          <input type="number" data-dynamic-power-input="effectRank" value="1" min="0">
+        </label>
+        <label>
+          Energy
+          <input type="number" data-dynamic-power-input="energyCost" value="0" min="0">
+        </label>
+        <label>
+          Roll
+          <select data-dynamic-power-input="d20Mode">
+            {{#each d20Modes as |mode|}}
+              <option value="{{mode.key}}">{{mode.label}}</option>
+            {{/each}}
+          </select>
+        </label>
+        <label>
+          Bonus
+          <input type="number" data-dynamic-power-input="bonus" value="0">
+        </label>
+        <label class="wide">
+          Expression
+          <input type="text" data-dynamic-power-input="expression">
+        </label>
+        <label class="wide">
+          Notes
+          <input type="text" data-dynamic-power-input="notes">
+        </label>
+        <div class="dynamic-power-actions">
+          <button type="button" class="roll-action" data-action="roll-dynamic-power-check"><i class="fas fa-dice-d20"></i> Check</button>
+          <button type="button" class="roll-action" data-action="express-dynamic-power"><i class="fas fa-wand-magic-sparkles"></i> Express</button>
+        </div>
+      </div>
+    </section>
+  {{/if}}
+
   <section class="panel">
     <h2>Common Attacks</h2>
     <div class="folio-table attack-table action-table">

@@ -52,6 +52,7 @@ import {
 import { importCoreCompendiumData } from "../module/data/compendiums.mjs";
 import * as Anime5eCombatManoeuvres from "../module/rules/combat-manoeuvres.mjs";
 import { registerCreationWorkflowHooks } from "../module/rules/creation-workflow.mjs";
+import * as Anime5eDynamicPowers from "../module/rules/dynamic-powers.mjs";
 import * as Anime5ePoints from "../module/rules/points.mjs";
 import * as Anime5eResources from "../module/rules/resources.mjs";
 import * as Anime5eRolls from "../module/rules/rolls.mjs";
@@ -106,6 +107,7 @@ Hooks.once("init", () => {
   game.anime5e = {
     config: ANIME5E,
     combatManoeuvres: Anime5eCombatManoeuvres,
+    dynamicPowers: Anime5eDynamicPowers,
     importCoreCompendiumData,
     points: Anime5ePoints,
     resources: Anime5eResources,

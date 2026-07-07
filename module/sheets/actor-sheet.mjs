@@ -20,6 +20,12 @@ import {
 } from "../rules/attribute-effects.mjs";
 import { buildAdventuringRiskChatContent } from "../rules/adventuring-risks.mjs";
 import {
+  buildDynamicPowerExpressionChatContent,
+  buildDynamicPowerTrackingNote,
+  getDynamicPowerExpressionEntries,
+  isDynamicPowerItem
+} from "../rules/dynamic-powers.mjs";
+import {
   calculatePointSummary,
   calculateRecommendedDiscretionaryPoints,
   calculateStartingExperience,
@@ -354,7 +360,7 @@ function isWeaponAttributeItem(item) {
 }
 
 function isPowerCheckItem(item) {
-  return item.type === "power" || DYNAMIC_POWER_SOURCE_IDS.has(sourceIdForItem(item));
+  return item.type === "power" || isDynamicPowerItem(item);
 }
 
 function isComplexAttributeItem(item) {
@@ -497,6 +503,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
     context.energyMode = this.constructor._prepareEnergyModeContext();
+    context.dynamicPowers = this.constructor._prepareDynamicPowerContext(items);
     context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system, context.pointSummary);
     context.transportProfile = this.constructor._prepareTransportProfileContext(this.actor, system);
     context.economy = this.constructor._prepareEconomyContext(system);
@@ -617,13 +624,24 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         || item.type === "tool"
         || (item.type === "proficiency" && !!this._normalizeAbilityKey(system.ability)),
       canPowerCheck: isPowerCheckItem(item),
+      canDynamicPowerExpression: isDynamicPowerItem(item),
       canAttack: item.type === "weapon" || isWeaponAttribute || (item.type !== "attribute" && hasAttackModifier),
       canDamage: hasText(damageFormula),
       canApplyDeprivation,
       canToggleEffect,
       effectActive: effectUsage?.effectActive ?? true,
       effectToggleIcon: effectUsage?.effectActive === false ? "fa-toggle-off" : "fa-toggle-on",
-      effectToggleTitle: effectUsage?.effectActive === false ? "Apply derived effect" : "Suspend derived effect"
+      effectToggleTitle: effectUsage?.effectActive === false ? "Apply derived effect" : "Suspend derived effect",
+      trackingNotes: system.trackingNotes
+    };
+  }
+
+  static _prepareDynamicPowerContext(items = []) {
+    const entries = getDynamicPowerExpressionEntries(items);
+
+    return {
+      active: entries.length > 0,
+      entries
     };
   }
 
@@ -1230,6 +1248,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='roll-power-check']").forEach((button) => {
       button.addEventListener("click", this._onRollPowerCheck.bind(this));
     });
+    element.querySelectorAll("[data-action='roll-dynamic-power-check']").forEach((button) => {
+      button.addEventListener("click", this._onRollDynamicPowerCheck.bind(this));
+    });
+    element.querySelectorAll("[data-action='express-dynamic-power']").forEach((button) => {
+      button.addEventListener("click", this._onExpressDynamicPower.bind(this));
+    });
     element.querySelectorAll("[data-action='roll-item-attack']").forEach((button) => {
       button.addEventListener("click", this._onRollItemAttack.bind(this));
     });
@@ -1608,6 +1632,112 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       targetNumber: numberOrNull(item.system?.dc),
       showMargin: settingEnabled("showMarginOfSuccess")
     });
+  }
+
+  _getDynamicPowerPanelData(event) {
+    const panel = event.currentTarget.closest(".dynamic-power-panel");
+    const itemId = panel?.querySelector("[data-dynamic-power-input='itemId']")?.value ?? "";
+    const item = this.actor.items.get(itemId);
+    const effectRank = Math.max(0, Math.trunc(Number(panel?.querySelector("[data-dynamic-power-input='effectRank']")?.value) || 0));
+    const energyCost = Math.max(0, Math.trunc(Number(panel?.querySelector("[data-dynamic-power-input='energyCost']")?.value) || 0));
+
+    return {
+      panel,
+      item,
+      abilityKey: this.constructor._normalizeAbilityKey(panel?.querySelector("[data-dynamic-power-input='ability']")?.value ?? item?.system?.ability),
+      expression: panel?.querySelector("[data-dynamic-power-input='expression']")?.value ?? "",
+      notes: panel?.querySelector("[data-dynamic-power-input='notes']")?.value ?? "",
+      effectRank,
+      energyCost,
+      bonus: Number(panel?.querySelector("[data-dynamic-power-input='bonus']")?.value) || 0,
+      rollMode: panel?.querySelector("[data-dynamic-power-input='d20Mode']")?.value ?? "normal"
+    };
+  }
+
+  async _onRollDynamicPowerCheck(event) {
+    event.preventDefault();
+    const { item, abilityKey, effectRank, energyCost, expression, notes, bonus, rollMode } = this._getDynamicPowerPanelData(event);
+    if (!item || !isDynamicPowerItem(item)) {
+      ui.notifications?.warn("Select an owned Dynamic Powers item first.");
+      return;
+    }
+
+    const ability = this.actor.system.abilities?.[abilityKey];
+    if (!ability) {
+      ui.notifications?.warn(`Choose the ability used for ${item.name}.`);
+      return;
+    }
+
+    const itemBonus = numberOrZero(item.system?.checkBonus);
+    const modifiers = [ability.modifier];
+    if (itemBonus) modifiers.push(itemBonus);
+    if (bonus) modifiers.push(bonus);
+    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
+    const details = [
+      { label: "Expression", value: expression },
+      { label: "Effect Rank", value: effectRank || "" },
+      { label: "Energy", value: energyCost || item.system?.energyCost },
+      { label: "Notes", value: notes }
+    ];
+
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${item.name} Dynamic Power Check (${abilityLabel})`, {
+      details,
+      mode: rollMode,
+      targetNumber: numberOrNull(item.system?.dc),
+      showMargin: settingEnabled("showMarginOfSuccess")
+    });
+  }
+
+  async _onExpressDynamicPower(event) {
+    event.preventDefault();
+    const { item, expression, effectRank, energyCost, notes } = this._getDynamicPowerPanelData(event);
+    if (!item || !isDynamicPowerItem(item)) {
+      ui.notifications?.warn("Select an owned Dynamic Powers item first.");
+      return;
+    }
+
+    const energyLine = await this._buildDynamicPowerEnergyLine(item, energyCost);
+    if (this.isEditable) {
+      const trackingNote = buildDynamicPowerTrackingNote({ expression, effectRank, energyCost, notes });
+      await item.update({
+        "system.trackingNotes": this.constructor._appendTrackingNote(item.system?.trackingNotes, trackingNote)
+      });
+    }
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: buildDynamicPowerExpressionChatContent({
+        actor: this.actor,
+        item,
+        expression,
+        effectRank,
+        energyCost,
+        notes,
+        energyLine
+      })
+    });
+  }
+
+  async _buildDynamicPowerEnergyLine(item, amount) {
+    const guidance = item.system?.energyCost || "DM-approved Energy cost by expressed effect Rank";
+    if (!amount) return `<p><strong>Energy:</strong> ${escapeHtml(guidance)}.</p>`;
+
+    const energyMode = getEnergyUsageMode();
+    if (energyMode === ENERGY_USAGE_MODES.disabled) {
+      return `<p><strong>Energy:</strong> tracking is disabled for this world; ${amount} Energy was not spent.</p>`;
+    }
+    if (energyMode === ENERGY_USAGE_MODES.manual) {
+      return `<p><strong>Energy:</strong> ${amount} Energy approved; track payment manually.</p>`;
+    }
+
+    const currentEnergy = Math.max(0, Number(this.actor.system?.combat?.energy?.value) || 0);
+    if (currentEnergy < amount) {
+      ui.notifications?.warn(`${item.name} needs ${amount} Energy, but ${this.actor.name} only has ${currentEnergy}.`);
+      return `<p><strong>Energy:</strong> ${escapeHtml(this.actor.name)} has ${currentEnergy}/${amount} required. Cost not paid.</p>`;
+    }
+
+    const change = await applyEnergyChange(this.actor, amount, "spend");
+    return `<p><strong>Energy:</strong> spent ${change.amount}. EP ${change.current} &rarr; ${change.next} / ${change.max}.</p>`;
   }
 
   async _onRollItemAttack(event) {

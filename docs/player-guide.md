@@ -49,7 +49,7 @@ Attributes, powers, spells, techniques, weapons, and other roll-capable Items ca
 - Attack rolls the Item attack fields.
 - Damage rolls the Item damage formula.
 
-Dynamic Powers and flexible effects currently store helper fields and notes for GM adjudication. Enter Energy costs, repeated effects, activation limits, saves, attacks, and manual flexible-power notes on the Item so the action has enough context at the table.
+Dynamic Powers and flexible effects store helper fields and notes for GM adjudication. When a character owns Dynamic Powers or Dynamic Powers - Lesser, the Powers tab exposes an expression panel that records the chosen expression, effect Rank, approved Energy cost, check ability, roll mode, and notes. The Express action posts the source-backed expression to chat, spends Energy in tracked mode when an approved cost is entered, and appends the expression to the owned Item's tracking notes.
 
 ## Combat And Rolls
 
