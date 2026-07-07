@@ -1502,7 +1502,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
     const dcLabel = dc > 0 ? ` vs DC ${dc}` : "";
     // Anime 5E Core Rules pp. 153-156 define checks, saving throws, initiative, and attacks as d20 plus the relevant modifiers.
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${mode.label}: ${abilityLabel}${dcLabel}`, { mode: rollMode });
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${mode.label}: ${abilityLabel}${dcLabel}`, {
+      mode: rollMode,
+      targetNumber: dc > 0 ? dc : null,
+      showMargin: dc > 0
+    });
   }
 
   async _onRollContest(event) {

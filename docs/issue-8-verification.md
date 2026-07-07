@@ -68,6 +68,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Items can be created and opened with the generic Anime 5e item sheet.
 - Core character data is visible and editable.
 - Characters can roll ability checks, proficient checks, saving throws, proficient saves, initiative, attacks, and attack damage from the sheet.
+- Quick Rolls can compare ability or proficient checks to an entered Difficulty Class and show the target and margin in chat.
 - Characters can apply damage or healing to their own Hit Points from the combat panel.
 - Temporary Hit Points are tracked separately and absorb incoming damage before current Hit Points are reduced.
 - Combat movement now tracks ground, fly, water/swim, climb, burrow, and custom movement entries alongside derived Attribute movement summaries.

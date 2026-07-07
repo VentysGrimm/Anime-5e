@@ -60,7 +60,7 @@ On the Combat tab, enter common attacks with weapon name, attack modifier, attac
 Useful controls:
 
 - Ability buttons roll ability checks.
-- Quick Rolls roll ability checks, proficient checks, or configured checks with DC and bonus.
+- Quick Rolls roll ability checks, proficient checks, or configured checks with DC and bonus. When a DC is entered, the chat card shows the target and margin.
 - Saving throw buttons roll ability saves with optional proficiency.
 - Initiative rolls the actor's initiative value.
 - Combat Manoeuvres can post Core Rules manoeuvre reminders or roll a selected common attack with the manoeuvre's advantage/disadvantage guidance.
