@@ -95,6 +95,31 @@
       {{#each attributeModifiers.warnings as |warning|}}
         <p class="sheet-warning">{{warning}}</p>
       {{/each}}
+      {{#each attributeModifiers.mechanics.warnings as |warning|}}
+        <p class="sheet-warning">{{warning}}</p>
+      {{/each}}
+
+      {{#if attributeModifiers.mechanics.hasEntries}}
+        <div class="attribute-mechanic-tags">
+          {{#each attributeModifiers.mechanics.tags as |tag|}}
+            <span>{{tag}}</span>
+          {{/each}}
+        </div>
+        <div class="attribute-mechanic-list">
+          <div class="table-header">Type</div>
+          <div class="table-header">Modifier</div>
+          <div class="table-header">Assignments</div>
+          <div class="table-header">Automation</div>
+          <div class="table-header">Rules</div>
+          {{#each attributeModifiers.mechanics.entries as |entry|}}
+            <span>{{entry.type}}</span>
+            <span>{{entry.name}}</span>
+            <span>{{entry.assignmentLabel}}</span>
+            <span>{{entry.automation}}</span>
+            <span>{{entry.rulesNotes}}</span>
+          {{/each}}
+        </div>
+      {{/if}}
 
       {{#each attributeModifiers.groups as |group|}}
         <div class="attribute-modifier-group">

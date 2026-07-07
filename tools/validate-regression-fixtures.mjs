@@ -2,6 +2,11 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildCoreAttributeUsageContext, calculateCoreAttributeEffects } from "../module/rules/attribute-effects.mjs";
+import {
+  buildAttributeModifierMechanics,
+  calculateEffectiveAttributeRank
+} from "../module/rules/attribute-modifier-mechanics.mjs";
 import { calculateAttributeCustomization } from "../module/rules/points.mjs";
 import {
   buildCriticalRollDetails,
@@ -180,6 +185,63 @@ function validateAttributeCustomizationRules() {
   assertEqual("Mind Control cumulative modifier effective Rank", mindControl.effectiveRank, 3);
   assertEqual("Mind Control cumulative modifier point cost", mindControl.totalCost, 2);
   if (mindControl.warnings.length) fail(`Mind Control customization emitted warnings: ${mindControl.warnings.join("; ")}`);
+
+  const rangedAcBonus = {
+    type: "attribute",
+    name: "AC Bonus",
+    system: {
+      sourceId: "core.attribute.ac-bonus",
+      rank: 3,
+      cost: 1,
+      allowedEnhancements: "Range",
+      enhancementReferences: [
+        {
+          name: "Range",
+          sourceId: "core.enhancement.range",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 1,
+          rulesNotes: "Lets an Attribute originate away from the character."
+        }
+      ],
+      limiterReferences: []
+    }
+  };
+  assertEqual("AC Bonus Enhancement effective Rank", calculateEffectiveAttributeRank(rangedAcBonus), 2);
+  const rangedAcEffects = calculateCoreAttributeEffects({
+    system: { combat: { hitPoints: { max: 20 }, movementSpeed: 30 } },
+    items: [rangedAcBonus]
+  });
+  assertEqual("AC Bonus Enhancement derived AC", rangedAcEffects.armourClassBonus, 2);
+  const rangedAcMechanics = buildAttributeModifierMechanics(rangedAcBonus);
+  if (!rangedAcMechanics.tags.includes("Effective Rank 2")) fail("Ranged AC Bonus mechanics did not include effective-rank tag.");
+  if (!rangedAcMechanics.tags.includes("Range 1")) fail("Ranged AC Bonus mechanics did not include Range tag.");
+
+  const depletedTough = {
+    type: "attribute",
+    name: "Tough",
+    system: {
+      sourceId: "core.attribute.tough",
+      rank: 2,
+      cost: 1,
+      allowedEnhancements: "",
+      enhancementReferences: [],
+      limiterReferences: [
+        {
+          name: "Deplete",
+          sourceId: "core.limiter.deplete",
+          appliesTo: "Attribute",
+          pointModifier: -1,
+          assignmentCount: 1,
+          rulesNotes: "Spends Energy to activate or maintain the Attribute."
+        }
+      ]
+    }
+  };
+  assertEqual("Tough Deplete effective Rank", calculateEffectiveAttributeRank(depletedTough), 3);
+  const depletedUsage = buildCoreAttributeUsageContext(depletedTough);
+  assertEqual("Tough Deplete Energy payment required", depletedUsage.energy.requiresPayment, true);
+  if (!depletedUsage.summary.some((entry) => entry.includes("Deplete 1"))) fail("Tough Deplete usage summary did not include Deplete mechanics.");
 }
 
 function validateCriticalRollRules() {

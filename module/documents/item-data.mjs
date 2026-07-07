@@ -120,6 +120,7 @@ function modifierReferenceField(pointModifierInitial) {
     allowedAttributes: textField(),
     pointModifier: numberField(pointModifierInitial),
     assignmentCount: numberField(1, { min: 0 }),
+    rulesNotes: htmlField(),
     notes: textField()
   });
 }

@@ -1,3 +1,5 @@
+import { calculateEffectiveAttributeRank } from "./attribute-modifier-mechanics.mjs";
+
 const SOURCE_BOOK = "Anime 5E Fifth Edition Core Rules";
 
 const DYNAMIC_POWER_SOURCE_IDS = new Set([
@@ -42,6 +44,7 @@ function numberOrZero(value) {
 }
 
 function rankForItem(item) {
+  if (item?.type === "attribute") return calculateEffectiveAttributeRank(item);
   return Math.max(0, Math.trunc(numberOrZero(item?.system?.rank)));
 }
 

@@ -1259,6 +1259,39 @@
   text-transform: uppercase;
 }
 
+.anime5e .attribute-mechanic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.anime5e .attribute-mechanic-tags span {
+  background: #e7eef1;
+  border: 1px solid #b8ccd4;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 4px 6px;
+}
+
+.anime5e .attribute-mechanic-list {
+  display: grid;
+  gap: 4px 6px;
+  grid-template-columns: 86px minmax(110px, 0.75fr) 86px minmax(190px, 1.2fr) minmax(180px, 1.1fr);
+}
+
+.anime5e .attribute-mechanic-list > span {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: flex;
+  font-size: 0.78rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: 5px 6px;
+}
+
 .anime5e .attribute-modifier-group {
   display: grid;
   gap: 6px;
@@ -1931,6 +1964,7 @@
   .anime5e .advancement-point-summary,
   .anime5e .action-table,
   .anime5e .attribute-modifier-add,
+  .anime5e .attribute-mechanic-list,
   .anime5e .attribute-modifier-list,
   .anime5e .attribute-modifier-summary,
   .anime5e .class-benefit-grid,

@@ -1,3 +1,8 @@
+import {
+  buildAttributeModifierMechanics,
+  calculateEffectiveAttributeRank
+} from "./attribute-modifier-mechanics.mjs";
+
 export const ABILITY_KEYS = [
   "strength",
   "dexterity",
@@ -84,6 +89,7 @@ function textValue(value) {
 }
 
 function rankForItem(item) {
+  if (item?.type === "attribute") return calculateEffectiveAttributeRank(item);
   return Math.max(0, Math.trunc(numberOrZero(item?.system?.rank)));
 }
 
@@ -142,6 +148,10 @@ function energyCostLabelForItem(item, rank) {
 
   const energyCost = textValue(system.energyCost);
   if (energyCost) return energyCost;
+
+  const deplete = buildAttributeModifierMechanics(item).entries.find((entry) => entry.key === "core.limiter.deplete");
+  if (deplete) return `Deplete ${deplete.assignmentCount}: set Energy Cost for exact Energy amount`;
+
   return "";
 }
 
@@ -206,6 +216,7 @@ export function buildCoreAttributeUsageContext(item, options = {}) {
   const linkedTarget = textValue(system.linkedActorUuid) || textValue(system.linkedItemUuid) || textValue(system.linkedDocumentUuid);
   const effectActive = system.effectActive !== false;
   const energyPaid = system.energyPaid === true;
+  const modifierMechanics = buildAttributeModifierMechanics(item);
   const blockers = [];
 
   if (!effectActive) blockers.push("not marked active");
@@ -221,7 +232,8 @@ export function buildCoreAttributeUsageContext(item, options = {}) {
     durationRemaining ? `Remaining: ${durationRemaining}` : null,
     targetCount ? `Targets: ${targetCount}` : null,
     targets ? `Affected: ${targets}` : null,
-    !targets && linkedTarget ? "Linked target" : null
+    !targets && linkedTarget ? "Linked target" : null,
+    modifierMechanics.tags.length ? `Modifiers: ${modifierMechanics.tags.join(", ")}` : null
   ].filter(Boolean);
 
   return {
@@ -237,6 +249,7 @@ export function buildCoreAttributeUsageContext(item, options = {}) {
     durationRemaining,
     targets,
     linkedTarget,
+    modifierMechanics,
     blockers,
     summary,
     label: summary.join(" | "),

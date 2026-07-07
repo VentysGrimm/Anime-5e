@@ -43,6 +43,8 @@ For classes, set the Class Item level. The actor compares owned Class levels wit
 
 Attributes and Defects work best as owned Items. Edit the Item rank and cost or point-return fields, then check Point Summary for the result.
 
+On Attribute and Weapon item sheets, add source-backed Enhancements or Limiters by source ID or UUID in Attribute Customization. Assigned modifiers recalculate effective Rank, show mechanic rows for the incurred changes, and drive derived automation from effective Rank instead of raw Rank. Deplete Limiters require an Energy Cost entry for exact tracked spending; without one, the use card prompts manual Energy tracking.
+
 Attributes, powers, spells, techniques, weapons, and other roll-capable Items can expose sheet action buttons:
 
 - Use posts the Item summary to chat.

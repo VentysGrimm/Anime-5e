@@ -20,6 +20,10 @@ import {
   getCoreAttributeEffectKey,
   resolveCoreAttributeEnergyCost
 } from "../rules/attribute-effects.mjs";
+import {
+  buildAttributeModifierMechanics,
+  calculateEffectiveAttributeRank
+} from "../rules/attribute-modifier-mechanics.mjs";
 import { buildAdventuringRiskChatContent } from "../rules/adventuring-risks.mjs";
 import {
   buildDynamicPowerExpressionChatContent,
@@ -425,7 +429,7 @@ function linkedActorTypeForItem(item) {
 
 function followerPointBudgetForItem(item) {
   const sourceId = sourceIdForItem(item);
-  const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+  const rank = calculateEffectiveAttributeRank(item);
 
   if (sourceId === "core.attribute.companion") return 50 + (rank * 10);
   if (sourceId === "core.attribute.minions-greater") return 70;
@@ -437,7 +441,7 @@ function minionCountForItem(item) {
   const sourceId = sourceIdForItem(item);
   if (!sourceId.startsWith("core.attribute.minions")) return "";
 
-  const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+  const rank = calculateEffectiveAttributeRank(item);
   return MINION_COUNT_BY_RANK[rank] ?? "251+";
 }
 
@@ -454,7 +458,7 @@ function weaponAttributeDamageFormula(item) {
   if (explicitDamage) return explicitDamage;
   if (!isWeaponAttributeItem(item)) return "";
 
-  const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+  const rank = calculateEffectiveAttributeRank(item);
   return rank > 0 ? `${rank}d4` : "";
 }
 
@@ -611,12 +615,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const effectKey = getCoreAttributeEffectKey(item);
     const canToggleEffect = item.type === "attribute" || !!effectKey;
     const effectUsage = canToggleEffect ? buildCoreAttributeUsageContext(item, { effectKey }) : null;
+    const modifierMechanics = item.type === "attribute" || item.type === "weapon" ? buildAttributeModifierMechanics(item) : null;
     const hasUsageLimits = !!effectUsage && (
       effectUsage.energy.label
       || effectUsage.scope
       || effectUsage.duration
       || effectUsage.targetCount
       || !effectUsage.effectActive
+      || modifierMechanics?.tags?.length
     );
     const hasAttackModifier = hasNumericEntry(system.attackModifier) || hasNumericEntry(system.attackBonus);
     const damageFormula = weaponAttributeDamageFormula(item);
@@ -625,6 +631,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       system.cost !== undefined ? `Cost ${system.cost}` : null,
       system.pointsReturned !== undefined ? `Points ${system.pointsReturned}` : null,
       hasUsageLimits ? effectUsage.statusLabel : null,
+      ...(modifierMechanics?.tags ?? []),
       effectUsage?.energy?.label ? `Energy: ${effectUsage.energy.label}` : null,
       effectUsage?.durationRemaining ? `Remaining: ${effectUsage.durationRemaining}` : null,
       effectUsage?.targets ? `Affected: ${effectUsage.targets}` : null,
@@ -1030,7 +1037,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         const range = item.system?.range?.trim();
         const weaponNotes = item.system?.weaponNotes?.trim();
         const attackModifier = numberOrZero(item.system?.attackModifier);
-        const rank = Math.max(0, Math.trunc(Number(item.system?.rank) || 0));
+        const rank = calculateEffectiveAttributeRank(item);
 
         return {
           ...prepared,
@@ -1061,17 +1068,18 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         const isFollower = isFollowerAttributeItem(item);
         const isMonsterTraining = sourceIdForItem(item) === "core.attribute.monster-training";
         const isSpellLike = isSpellLikeAttributeItem(item);
-        const usage = buildCoreAttributeUsageContext(item, { rank: numberOrZero(system.rank) });
+        const rank = calculateEffectiveAttributeRank(item);
+        const usage = buildCoreAttributeUsageContext(item, { rank });
         const followerBudget = isFollower ? followerPointBudgetForItem(item) : null;
         const minionCount = isFollower ? minionCountForItem(item) : "";
         const spellEnergyCost = isSpellLike && hasText(system.spellEnergyCost) && system.spellEnergyCost !== "Rank squared Energy"
           ? system.spellEnergyCost
           : isSpellLike
-            ? `${numberOrZero(system.rank) ** 2} Energy`
+            ? `${rank ** 2} Energy`
             : "";
         const trackingTags = [
-          `Rank ${numberOrZero(system.rank)}`,
-          isMonsterTraining ? `Techniques: ${numberOrZero(system.rank)}` : null,
+          `Rank ${rank}`,
+          isMonsterTraining ? `Techniques: ${rank}` : null,
           hasText(system.activeTrainingTechnique) ? `Technique: ${system.activeTrainingTechnique}` : null,
           hasText(system.trainingBenefit) ? `Benefit: ${system.trainingBenefit}` : null,
           hasText(system.spellName) ? `Spell: ${system.spellName}` : null,

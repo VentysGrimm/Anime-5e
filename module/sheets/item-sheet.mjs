@@ -1,6 +1,10 @@
 import { buildD20Formula, rollAnime5eFormula } from "../rules/rolls.mjs";
 import { buildCoreAttributeUsageContext, resolveCoreAttributeEnergyCost } from "../rules/attribute-effects.mjs";
 import { buildAdventuringRiskChatContent } from "../rules/adventuring-risks.mjs";
+import {
+  buildAttributeModifierMechanics,
+  calculateEffectiveAttributeRank
+} from "../rules/attribute-modifier-mechanics.mjs";
 import { calculateAttributeCustomization, calculateEquipmentPointCost } from "../rules/points.mjs";
 import { ENERGY_USAGE_MODES, applyEnergyChange, getEnergyUsageMode } from "../rules/resources.mjs";
 
@@ -274,7 +278,7 @@ function weaponAttributeDamageFormula(item, systemData = item.system ?? {}) {
   if (explicitDamage) return explicitDamage;
   if (!isWeaponAttributeItem(item, systemData)) return "";
 
-  const rank = Math.max(0, Math.trunc(Number(systemData.rank) || 0));
+  const rank = calculateEffectiveAttributeRank({ type: item.type, name: item.name, system: systemData });
   return rank > 0 ? `${rank}d4` : "";
 }
 
@@ -442,6 +446,7 @@ function buildAttributeModifiers(item, systemData) {
   if (!["attribute", "weapon"].includes(item.type)) return null;
 
   const customization = calculateAttributeCustomization({ type: item.type, name: item.name, system: systemData });
+  const mechanics = buildAttributeModifierMechanics({ type: item.type, name: item.name, system: systemData });
   const groups = Object.entries(ATTRIBUTE_MODIFIER_CONFIG).map(([type, config]) => {
     const entries = buildModifierEntriesForType(systemData[config.field], type);
     const subtotal = entries.reduce((sum, entry) => sum + entry.rankImpact, 0);
@@ -473,6 +478,7 @@ function buildAttributeModifiers(item, systemData) {
     rawSubtotalLabel: formatSignedNumber(rawSubtotal),
     effectiveCostPerRank: customization.effectiveCostPerRank,
     totalCost: customization.totalCost,
+    mechanics,
     warnings: customization.warnings
   };
 }
@@ -496,6 +502,7 @@ function modifierReferenceFromDocument(document, type) {
     allowedAttributes: system.allowedAttributes ?? "",
     pointModifier: Number(system.pointModifier) || config.pointModifier,
     assignmentCount: 1,
+    rulesNotes: system.rulesNotes ?? "",
     notes: assignmentRange ? `Assignments: ${assignmentRange}` : ""
   };
 }
