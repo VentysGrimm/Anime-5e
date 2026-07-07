@@ -1,0 +1,288 @@
+{
+  "pack": "anime5e-folstavia.character-options",
+  "documentType": "Item",
+  "sourceBook": "Anime 5E Folstavia: The Infinite Crossroads",
+  "sourceAbbreviation": "FOL",
+  "sourceModuleId": "anime5e-folstavia",
+  "contentCategory": "attribute",
+  "folders": [
+    {
+      "name": "Attributes - Folstavia",
+      "color": "#6f7f90"
+    },
+    {
+      "name": "Techniques - Folstavia",
+      "color": "#7f6a52"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Exorcism",
+      "type": "attribute",
+      "folder": "Attributes - Folstavia",
+      "img": "icons/svg/holy-symbol.svg",
+      "system": {
+        "rank": 1,
+        "cost": 1,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.attribute.exorcism",
+        "sourcePage": 16,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "attribute",
+        "importId": "folstavia.attribute.exorcism",
+        "ability": "Wisdom",
+        "category": "Spiritual",
+        "scope": "1 target; Touch; Instantaneous",
+        "progression": "+2 check bonus per Rank to exorcising mind-invading effects",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF pp. 16-17.</p><p><strong>Rules Summary:</strong> Releases victims from possession, supernatural control, or Mind Control through a Wisdom contest and can turn undead with a saving throw DC based on the exorcist's Wisdom, Proficiency Bonus, and Rank.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.attribute.exorcism",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 16,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "attribute",
+            "importId": "folstavia.attribute.exorcism"
+          }
+        }
+      }
+    },
+    {
+      "name": "Infusion",
+      "type": "attribute",
+      "folder": "Attributes - Folstavia",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 8,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.attribute.infusion",
+        "sourcePage": 17,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "attribute",
+        "importId": "folstavia.attribute.infusion",
+        "ability": "Situationally Variable",
+        "category": "Flexible Power",
+        "scope": "Situational",
+        "progression": "+4 Infusion Points per Rank",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 17.</p><p><strong>Rules Summary:</strong> Grants a pool of Infusion Points that can be reassigned among Attributes within a chosen major theme once per short or long rest.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.attribute.infusion",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 17,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "attribute",
+            "importId": "folstavia.attribute.infusion"
+          }
+        }
+      }
+    },
+    {
+      "name": "Infusion - Lesser",
+      "type": "attribute",
+      "folder": "Attributes - Folstavia",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.attribute.infusion-lesser",
+        "sourcePage": 17,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "attribute",
+        "importId": "folstavia.attribute.infusion-lesser",
+        "ability": "Situationally Variable",
+        "category": "Flexible Power",
+        "scope": "Situational; minor theme",
+        "progression": "+2 Infusion Points per Rank",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 17.</p><p><strong>Rules Summary:</strong> A narrowed version of Infusion limited to a minor category such as one element, small locality, or restricted concept.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.attribute.infusion-lesser",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 17,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "attribute",
+            "importId": "folstavia.attribute.infusion-lesser"
+          }
+        }
+      }
+    },
+    {
+      "name": "Telekinesis",
+      "type": "attribute",
+      "folder": "Attributes - Folstavia",
+      "img": "icons/svg/teleport.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.attribute.telekinesis",
+        "sourcePage": 18,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "attribute",
+        "importId": "folstavia.attribute.telekinesis",
+        "ability": "Intelligence",
+        "category": "Movement and Control",
+        "scope": "1 target; 30-foot radius; Instantaneous",
+        "progression": "Descriptive lift/manipulation scale by Rank",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 18.</p><p><strong>Rules Summary:</strong> Moves and manipulates physical objects at range, including careful handling, slow movement, or offensive use by hurling objects.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.attribute.telekinesis",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 18,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "attribute",
+            "importId": "folstavia.attribute.telekinesis"
+          }
+        }
+      }
+    },
+    {
+      "name": "Death Dodge",
+      "type": "technique",
+      "folder": "Techniques - Folstavia",
+      "img": "icons/svg/dodge.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.technique.death-dodge",
+        "sourcePage": 16,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "technique",
+        "importId": "folstavia.technique.death-dodge",
+        "category": "Combat Technique",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 16.</p><p><strong>Rules Summary:</strong> Once per short or long rest, automatically prevents combat damage from dropping the character below 1 HP for the current round.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.technique.death-dodge",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 16,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "technique",
+            "importId": "folstavia.technique.death-dodge"
+          }
+        }
+      }
+    },
+    {
+      "name": "Deflection",
+      "type": "technique",
+      "folder": "Techniques - Folstavia",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.technique.deflection",
+        "sourcePage": 16,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "technique",
+        "importId": "folstavia.technique.deflection",
+        "category": "Combat Technique",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 16.</p><p><strong>Rules Summary:</strong> Allows a DC 15 Dexterity Saving Throw to turn aside many ranged Weapon attacks.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.technique.deflection",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 16,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "technique",
+            "importId": "folstavia.technique.deflection"
+          }
+        }
+      }
+    },
+    {
+      "name": "Reflection",
+      "type": "technique",
+      "folder": "Techniques - Folstavia",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.technique.reflection",
+        "sourcePage": 16,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "technique",
+        "importId": "folstavia.technique.reflection",
+        "category": "Combat Technique",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 16.</p><p><strong>Rules Summary:</strong> Builds on Deflection to redirect a suitable ranged Weapon attack at another target by spending the next attack action.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.technique.reflection",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 16,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "technique",
+            "importId": "folstavia.technique.reflection"
+          }
+        }
+      }
+    },
+    {
+      "name": "Rush Attack",
+      "type": "technique",
+      "folder": "Techniques - Folstavia",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.technique.rush-attack",
+        "sourcePage": 16,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "technique",
+        "importId": "folstavia.technique.rush-attack",
+        "category": "Combat Technique",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 16.</p><p><strong>Rules Summary:</strong> Doubles base unarmed or melee weapon damage when a faster character can charge, leap, or dive into melee; a miss leaves the attacker exposed.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.technique.rush-attack",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 16,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "technique",
+            "importId": "folstavia.technique.rush-attack"
+          }
+        }
+      }
+    }
+  ]
+}

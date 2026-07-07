@@ -1,0 +1,352 @@
+{
+  "pack": "anime5e-folstavia.journals",
+  "documentType": "JournalEntry",
+  "sourceBook": "Anime 5E Folstavia: The Infinite Crossroads",
+  "sourceAbbreviation": "FOL",
+  "sourceModuleId": "anime5e-folstavia",
+  "contentCategory": "setting",
+  "folders": [
+    {
+      "name": "Folstavia - Setting",
+      "color": "#5b6f90"
+    },
+    {
+      "name": "Folstavia - Regions",
+      "color": "#607887"
+    },
+    {
+      "name": "Folstavia - Factions",
+      "color": "#7f6a52"
+    },
+    {
+      "name": "Folstavia - Monsters and NPCs",
+      "color": "#7a4d4d"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Folstavia: The Infinite Crossroads Overview",
+      "folder": "Folstavia - Setting",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 14.</p><p>Folstavia is the official fantasy setting for Anime 5E, a world where the Eight Lands are shaped by dimensional crossings, ancient wars, Nox corruption, and source-backed player options.</p><p>Use this module for setting-specific Species, Classes, Attributes, equipment, monsters, NPCs, and regional campaign hooks.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-the-infinite-crossroads-overview",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 14,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-the-infinite-crossroads-overview"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: New Attributes and Character Options",
+      "folder": "Folstavia - Setting",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 16.</p><p>Folstavia adds combat techniques, Exorcism, Infusion, Telekinesis, new Species packages, and setting Classes that plug into the base Anime 5E point structure.</p><p>These entries live in the module character-options pack with Folstavia source tags.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-new-attributes-and-character-options",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 16,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-new-attributes-and-character-options"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Five Anchors and Factions",
+      "folder": "Folstavia - Factions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 67.</p><p>The setting's Anchor factions connect regional heroes, courier work, monster hunting, magical scholarship, security, and diplomacy across the Eight Lands.</p><p>Use this as the starting reference for faction contacts, patrons, and campaign obligations.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-five-anchors-and-factions",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 67,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-five-anchors-and-factions"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Arzam - The Broken Empire",
+      "folder": "Folstavia - Regions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 89.</p><p>Arzam is the fractured home of the Lucian Empire, Statue of Limitation suppression fields, reformers, rebels, gladiators, and imperial legions.</p><p>Campaigns here lean toward low magic, political danger, and resistance against or within imperial power.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-arzam-the-broken-empire",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 89,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-arzam-the-broken-empire"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Enikonto - Land of a Million Dreams",
+      "folder": "Folstavia - Regions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 102.</p><p>Enikonto is a prosperous and diverse Human homeland of many nations, including the Six Titans, threatened by the Great Nox Desert and Shadow Mistress Kiyo.</p><p>It suits heroic tournaments, diplomacy, Nox intrigue, and broad multicultural adventure.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-enikonto-land-of-a-million-dreams",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 102,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-enikonto-land-of-a-million-dreams"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Mizibia - War of Steam and Spirit",
+      "folder": "Folstavia - Regions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 113.</p><p>Mizibia blends steam, spirit, New Quessia, resistance, and industrial conflict against the Muddell Empire.</p><p>Use it for war stories, Maker engineering, rescue missions, and campaigns about rebuilding under pressure.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-mizibia-war-of-steam-and-spirit",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 113,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-mizibia-war-of-steam-and-spirit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Nagoron - Land of Hunters and Horrors",
+      "folder": "Folstavia - Regions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 123.</p><p>Nagoron is a land of hunters, undead, Nox pressure, and grim survival where monster hunting is a civic necessity.</p><p>It is the strongest anchor for horror-fantasy, bastions under siege, and perilous Deeplands expeditions.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-nagoron-land-of-hunters-and-horrors",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 123,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-nagoron-land-of-hunters-and-horrors"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Omincia - The Shattered Continent",
+      "folder": "Folstavia - Regions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 137.</p><p>Omincia is the broken continent left by cataclysm, warped geography, ruins, dangerous nodes, and old imperial scars.</p><p>Use it for exploration, salvage, strange hazards, and campaigns about healing or exploiting a wounded land.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-omincia-the-shattered-continent",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 137,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-omincia-the-shattered-continent"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Pachana - Stronghold of Adventure",
+      "folder": "Folstavia - Regions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 151.</p><p>Pachana is a stronghold of adventure, Deeplands access, urban intrigue, and secret vulnerabilities beneath bold surface societies.</p><p>It supports ruin-delving, faction play, deep travel, and regional defence campaigns.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-pachana-stronghold-of-adventure",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 151,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-pachana-stronghold-of-adventure"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Quessia - Living Fortress",
+      "folder": "Folstavia - Regions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 162.</p><p>Quessia is Folstavia's iconic living fortress: heroic, magically advanced, heavily defended, and constantly opposed by Zhumok's forces.</p><p>It is the main stage for epic defence, Exemplar politics, sky corps action, and chosen-hero legacies.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-quessia-living-fortress",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 162,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-quessia-living-fortress"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Sagaria - Impossible Archipelago",
+      "folder": "Folstavia - Regions",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 179.</p><p>Sagaria is an archipelago of seas, sky islands, cloudsea travel, privateers, and impossible routes.</p><p>It is ideal for skyship play, exploration, trade disputes, piracy, and dimension-crossing travel.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-sagaria-impossible-archipelago",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 179,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-sagaria-impossible-archipelago"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia: Monsters and NPCs",
+      "folder": "Folstavia - Monsters and NPCs",
+      "pages": [
+        {
+          "name": "Overview",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 217.</p><p>Folstavia's monster chapter adds Nox fiends, constructs, undead, sky horrors, and new NPC guidance. This module includes representative monster actors and named NPC actors with source-tagged summaries.</p><p>Use the source book for the complete prose and tactical variants while the actor entries provide Foundry-native hooks for play.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-monsters-and-npcs",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 217,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-monsters-and-npcs"
+          }
+        }
+      }
+    }
+  ]
+}

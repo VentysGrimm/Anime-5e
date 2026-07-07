@@ -1,0 +1,254 @@
+{
+  "pack": "anime5e-folstavia.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Classes - Folstavia",
+      "color": "#8a7f5e"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Martialist",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 46.</p><p><strong>Hit Die:</strong> d10. <strong>Primary Ability:</strong> Strength or Dexterity. <strong>Saving Throws:</strong> Strength, Constitution.</p><p><strong>Rules Summary:</strong> Special non-supernatural combat class for guards, soldiers, mercenaries, and martial heroes who want broad baseline fighting talent.</p><p><strong>Proficiencies:</strong> Light, medium, and heavy armour; shields; simple weapons; martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.class.martialist",
+        "sourcePage": 48,
+        "importId": "folstavia.class.martialist",
+        "hitDice": "d10",
+        "primaryAbility": "Strength or Dexterity",
+        "savingThrows": "Strength, Constitution",
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.martialist",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 48,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "class",
+            "importId": "folstavia.class.martialist"
+          }
+        }
+      }
+    },
+    {
+      "name": "Exemplar",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 48.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Wisdom. <strong>Saving Throws:</strong> Wisdom, Charisma.</p><p><strong>Rules Summary:</strong> Cause-bound champion chosen by an ethos, order, god, or ideal, blending flexible magic with martial and support capability.</p><p><strong>Proficiencies:</strong> Light and medium armour; shields; simple weapons; select 4 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.class.exemplar",
+        "sourcePage": 50,
+        "importId": "folstavia.class.exemplar",
+        "hitDice": "d8",
+        "primaryAbility": "Wisdom",
+        "savingThrows": "Wisdom, Charisma",
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.exemplar",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 50,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "class",
+            "importId": "folstavia.class.exemplar"
+          }
+        }
+      }
+    },
+    {
+      "name": "Maker",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/book.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 50.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Intelligence. <strong>Saving Throws:</strong> Intelligence.</p><p><strong>Rules Summary:</strong> Magical-science inventor who uses Infusion and prepared creations to build custom wonders, devices, and field solutions.</p><p><strong>Proficiencies:</strong> Light and medium armour; simple weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.class.maker",
+        "sourcePage": 52,
+        "importId": "folstavia.class.maker",
+        "hitDice": "d6",
+        "primaryAbility": "Intelligence",
+        "savingThrows": "Intelligence",
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.maker",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 52,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "class",
+            "importId": "folstavia.class.maker"
+          }
+        }
+      }
+    },
+    {
+      "name": "Pilot",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 54.</p><p><strong>Hit Die:</strong> d6. <strong>Primary Ability:</strong> Dexterity. <strong>Saving Throws:</strong> Dexterity, Wisdom.</p><p><strong>Rules Summary:</strong> Equipment-focused class for wielders of powerful magical gear, vehicles, or mecha, trading personal breadth for signature hardware.</p><p><strong>Proficiencies:</strong> Light armour; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.class.pilot",
+        "sourcePage": 56,
+        "importId": "folstavia.class.pilot",
+        "hitDice": "d6",
+        "primaryAbility": "Dexterity",
+        "savingThrows": "Dexterity, Wisdom",
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.pilot",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 56,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "class",
+            "importId": "folstavia.class.pilot"
+          }
+        }
+      }
+    },
+    {
+      "name": "Strider",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia, p. 58.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Charisma. <strong>Saving Throws:</strong> Constitution, Wisdom.</p><p><strong>Rules Summary:</strong> Dimensional-energy wielder who heals, teleports, protects, survives hostile realities, and moves allies across impossible distances.</p><p><strong>Proficiencies:</strong> Light and medium armour; shields; simple weapons; select 2 martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.class.strider",
+        "sourcePage": 60,
+        "importId": "folstavia.class.strider",
+        "hitDice": "d8",
+        "primaryAbility": "Charisma",
+        "savingThrows": "Constitution, Wisdom",
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.strider",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 60,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "class",
+            "importId": "folstavia.class.strider"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mindmancer",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 54.</p><p><strong>Hit Die:</strong> d4. <strong>Primary Ability:</strong> Intelligence. <strong>Saving Throws:</strong> Intelligence, Wisdom.</p><p><strong>Rules Summary:</strong> Focused psychic controller who develops Mind Control, Telepathy, mental defences, supernatural senses, and knowledge gained through mental intrusion.</p><p><strong>Proficiencies:</strong> Simple weapons; two tools of choice; four skills of choice.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.class.mindmancer",
+        "sourcePage": 54,
+        "importId": "folstavia.class.mindmancer",
+        "hitDice": "d4",
+        "primaryAbility": "Intelligence",
+        "savingThrows": "Intelligence, Wisdom",
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.mindmancer",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 54,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "class",
+            "importId": "folstavia.class.mindmancer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Simulake",
+      "type": "class",
+      "folder": "Classes - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 58.</p><p><strong>Hit Die:</strong> d8. <strong>Primary Ability:</strong> Constitution. <strong>Saving Throws:</strong> Constitution, Charisma.</p><p><strong>Rules Summary:</strong> Adaptive mimic and power dampener who copies capabilities, later suppresses hostile abilities, and grows into a flexible support or counter-power role.</p><p><strong>Proficiencies:</strong> All armour and shields; simple and martial weapons.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.class.simulake",
+        "sourcePage": 58,
+        "importId": "folstavia.class.simulake",
+        "hitDice": "d8",
+        "primaryAbility": "Constitution",
+        "savingThrows": "Constitution, Charisma",
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "class"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.class.simulake",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 58,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "class",
+            "importId": "folstavia.class.simulake"
+          }
+        }
+      }
+    }
+  ],
+  "sourceBook": "Anime 5E Folstavia: The Infinite Crossroads",
+  "sourceAbbreviation": "FOL",
+  "sourceModuleId": "anime5e-folstavia",
+  "contentCategory": "class"
+}

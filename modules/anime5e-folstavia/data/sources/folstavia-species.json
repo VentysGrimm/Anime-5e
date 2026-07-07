@@ -1,0 +1,724 @@
+{
+  "pack": "anime5e-folstavia.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Species - Folstavia DnD Variants",
+      "color": "#8a7f5e"
+    },
+    {
+      "name": "Species - Folstavia",
+      "color": "#7f6a52"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Dragonborn, Crucible (DnD) (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia DnD Variants",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 21.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 13.</p><p><strong>Rules Summary:</strong> Folstavia Dragonborn variant with Strength, Constitution, lesser elemental immunity, Common/Draconic language, regeneration, ageing resilience, and elemental breath.</p>",
+        "rank": 1,
+        "cost": 13,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.dragonborn-crucible",
+        "sourcePage": 21,
+        "importId": "folstavia.species.dragonborn-crucible",
+        "points": 13,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.dragonborn-crucible",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 21,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.dragonborn-crucible"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dwarf, Gear (DnD) (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia DnD Variants",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 22.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Folstavia Dwarf variant with Strength, Constitution, Intelligence, light armour proficiency, Engineering and poison-save edge, darkvision, language, skill proficiency, and weapon proficiency.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.dwarf-gear",
+        "sourcePage": 22,
+        "importId": "folstavia.species.dwarf-gear",
+        "points": 12,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.dwarf-gear",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 22,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.dwarf-gear"
+          }
+        }
+      }
+    },
+    {
+      "name": "Elf, Dawn (DnD) (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia DnD Variants",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 23.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 14.</p><p><strong>Rules Summary:</strong> Folstavia Elf variant with Dexterity, Intelligence, Wisdom, charm-save edge, darkvision, hearing/sight, Common/Elvish language, ageing and sleep resilience, and Prestidigitation.</p>",
+        "rank": 1,
+        "cost": 14,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.elf-dawn",
+        "sourcePage": 23,
+        "importId": "folstavia.species.elf-dawn",
+        "points": 14,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.elf-dawn",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 23,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.elf-dawn"
+          }
+        }
+      }
+    },
+    {
+      "name": "Half-Elf, Dawn (DnD) (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia DnD Variants",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 23.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Folstavia Half-Elf variant blending Dawn Elf magic with flexible ability bonuses, Dexterity/Wisdom/Charisma, charm-save edge, darkvision, language, ageing/sleep resilience, and Prestidigitation.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.half-elf-dawn",
+        "sourcePage": 23,
+        "importId": "folstavia.species.half-elf-dawn",
+        "points": 12,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.half-elf-dawn",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 23,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.half-elf-dawn"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gnome, Earth (DnD) (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia DnD Variants",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 24.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 6.</p><p><strong>Rules Summary:</strong> Folstavia Gnome variant with Dexterity, Intelligence, Wisdom, AC/attack bonuses, lesser earth Dynamic Powers, darkvision, language, and small-size tradeoffs.</p>",
+        "rank": 1,
+        "cost": 6,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.gnome-earth",
+        "sourcePage": 24,
+        "importId": "folstavia.species.gnome-earth",
+        "points": 6,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.gnome-earth",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 24,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.gnome-earth"
+          }
+        }
+      }
+    },
+    {
+      "name": "Halfling, Wisp (DnD) (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia DnD Variants",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 25.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 7.</p><p><strong>Rules Summary:</strong> Folstavia Halfling variant with Dexterity, Charisma, AC and combat bonuses, fear and stealth edges, language, rerolls, a pocket dimension, and small-size tradeoffs.</p>",
+        "rank": 1,
+        "cost": 7,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.halfling-wisp",
+        "sourcePage": 25,
+        "importId": "folstavia.species.halfling-wisp",
+        "points": 7,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.halfling-wisp",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 25,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.halfling-wisp"
+          }
+        }
+      }
+    },
+    {
+      "name": "Orc, Root (DnD) (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia DnD Variants",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 26.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 9.</p><p><strong>Rules Summary:</strong> Folstavia Half-Orc/Orc variant with Strength, Constitution, Death Dodge combat technique, darkvision, Common/Orc language, extra melee damage, and Druidcraft.</p>",
+        "rank": 1,
+        "cost": 9,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.orc-root",
+        "sourcePage": 26,
+        "importId": "folstavia.species.orc-root",
+        "points": 9,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.orc-root",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 26,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.orc-root"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tiefling, Mokrath (DnD) (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia DnD Variants",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 27.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 11.</p><p><strong>Rules Summary:</strong> Folstavia Tiefling variant with Constitution, Intelligence, Charisma, charm-save edge, darkvision, lesser fire immunity, Common/Infernal language, and Fire Bolt.</p>",
+        "rank": 1,
+        "cost": 11,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.tiefling-mokrath",
+        "sourcePage": 27,
+        "importId": "folstavia.species.tiefling-mokrath",
+        "points": 11,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.tiefling-mokrath",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 27,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.tiefling-mokrath"
+          }
+        }
+      }
+    },
+    {
+      "name": "Arbolan",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 30.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 10.</p><p><strong>Rules Summary:</strong> Plant-linked folk with Constitution, Wisdom, Dynamic Powers (Balance), photosynthesis, and fire vulnerability.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.arbolan",
+        "sourcePage": 30,
+        "importId": "folstavia.species.arbolan",
+        "points": 10,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.arbolan",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 30,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.arbolan"
+          }
+        }
+      }
+    },
+    {
+      "name": "Centaur",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 31.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 10.</p><p><strong>Rules Summary:</strong> Powerful quadruped folk with Strength, Constitution, Rush Attack, fast movement, Tough, and a strong kick weapon.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.centaur",
+        "sourcePage": 31,
+        "importId": "folstavia.species.centaur",
+        "points": 10,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.centaur",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 31,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.centaur"
+          }
+        }
+      }
+    },
+    {
+      "name": "Crogoblin (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 32.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Folstavia version of the Crogoblin species: Strength, combat techniques, darkvision, bodily resistance, magic nullification, Tough, and initiative/Wisdom drawbacks.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.crogoblin",
+        "sourcePage": 32,
+        "importId": "folstavia.species.crogoblin",
+        "points": 12,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.crogoblin",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 32,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.crogoblin"
+          }
+        }
+      }
+    },
+    {
+      "name": "Dhamphyr",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 33.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Vampire-like folk with Strength, Dexterity, fast movement, special regeneration, ageing/disease/lack-of-air resilience, infrared supersense, and a Turned-style Cursed weakness.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.dhamphyr",
+        "sourcePage": 33,
+        "importId": "folstavia.species.dhamphyr",
+        "points": 12,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.dhamphyr",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 33,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.dhamphyr"
+          }
+        }
+      }
+    },
+    {
+      "name": "Effigy",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 34.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 15.</p><p><strong>Rules Summary:</strong> Construct-like folk with AC bonus, poison immunity, bodily resistance, piercing protection, broad resilience, and lightning vulnerability.</p>",
+        "rank": 1,
+        "cost": 15,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.effigy",
+        "sourcePage": 34,
+        "importId": "folstavia.species.effigy",
+        "points": 15,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.effigy",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 34,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.effigy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Faceted",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 35.</p><p><strong>Size:</strong> Large. <strong>Point Cost:</strong> 14.</p><p><strong>Rules Summary:</strong> Crystal folk with Constitution, light control, Strength edge, speed, acid resistance, extra impact, protection, resilience, crystal flare, and large-body combat drawbacks.</p>",
+        "rank": 1,
+        "cost": 14,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.faceted",
+        "sourcePage": 35,
+        "importId": "folstavia.species.faceted",
+        "points": 14,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.faceted",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 35,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.faceted"
+          }
+        }
+      }
+    },
+    {
+      "name": "Karaki",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 36.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 12.</p><p><strong>Rules Summary:</strong> Octopus-like folk with Strength, Constitution, Intelligence, water-enhanced AC and senses, extra arms and fluid-squirting features, underwater resilience, water speed, and Charisma drawback.</p>",
+        "rank": 1,
+        "cost": 12,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.karaki",
+        "sourcePage": 36,
+        "importId": "folstavia.species.karaki",
+        "points": 12,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.karaki",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 36,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.karaki"
+          }
+        }
+      }
+    },
+    {
+      "name": "Loralai (Folstavia)",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 37.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 13.</p><p><strong>Rules Summary:</strong> Folstavia version of the Loralai species: Dexterity/Wisdom, underwater attack edge, aquatic features, heightened senses in water, languages, underwater resilience, water sense, and water speed.</p>",
+        "rank": 1,
+        "cost": 13,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.loralai",
+        "sourcePage": 37,
+        "importId": "folstavia.species.loralai",
+        "points": 13,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.loralai",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 37,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.loralai"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mantai",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 38.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 13.</p><p><strong>Rules Summary:</strong> Insect-like folk with Strength, Intelligence, an extra action, 360-degree vision and extra arms, heightened taste/vision, and bludgeoning protection.</p>",
+        "rank": 1,
+        "cost": 13,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.mantai",
+        "sourcePage": 38,
+        "importId": "folstavia.species.mantai",
+        "points": 13,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.mantai",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 38,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.mantai"
+          }
+        }
+      }
+    },
+    {
+      "name": "Nuki",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 39.</p><p><strong>Size:</strong> Small. <strong>Point Cost:</strong> 8.</p><p><strong>Rules Summary:</strong> Small folk with Dexterity, Wisdom, AC and combat bonuses, exorcism talent, strong senses, Common/Sylvan language, speedburst movement, and small-size tradeoffs.</p>",
+        "rank": 1,
+        "cost": 8,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.nuki",
+        "sourcePage": 39,
+        "importId": "folstavia.species.nuki",
+        "points": 8,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.nuki",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 39,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.nuki"
+          }
+        }
+      }
+    },
+    {
+      "name": "Obake",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 40.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 10.</p><p><strong>Rules Summary:</strong> Shapeshifting folk represented by lesser Dynamic Powers (Identities), allowing Medium-sized folk forms and limited copied physical traits.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.obake",
+        "sourcePage": 40,
+        "importId": "folstavia.species.obake",
+        "points": 10,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.obake",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 40,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.obake"
+          }
+        }
+      }
+    },
+    {
+      "name": "Raynari",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 41.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 14.</p><p><strong>Rules Summary:</strong> Fox-like folk with Dexterity, Charisma, social edge, darkvision, hearing/smell, shrinking size change, and speedburst movement.</p>",
+        "rank": 1,
+        "cost": 14,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.raynari",
+        "sourcePage": 41,
+        "importId": "folstavia.species.raynari",
+        "points": 14,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.raynari",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 41,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.raynari"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ukuma",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 42.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 15.</p><p><strong>Rules Summary:</strong> Ursine folk with Strength, Constitution, smell, cold protection, growth, telekinesis, claw weapons, and a Dexterity drawback.</p>",
+        "rank": 1,
+        "cost": 15,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.ukuma",
+        "sourcePage": 42,
+        "importId": "folstavia.species.ukuma",
+        "points": 15,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.ukuma",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 42,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.ukuma"
+          }
+        }
+      }
+    },
+    {
+      "name": "Yokai",
+      "type": "species",
+      "folder": "Species - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, p. 43.</p><p><strong>Size:</strong> Medium. <strong>Point Cost:</strong> 10.</p><p><strong>Rules Summary:</strong> Broad mythic category with Strength, Constitution, 5 mutation discretionary points, humanoid alternate identity, regeneration, wall-crawling, and a Charisma drawback.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.species.yokai",
+        "sourcePage": 43,
+        "importId": "folstavia.species.yokai",
+        "points": 10,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "species"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.species.yokai",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 43,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "species",
+            "importId": "folstavia.species.yokai"
+          }
+        }
+      }
+    }
+  ],
+  "sourceBook": "Anime 5E Folstavia: The Infinite Crossroads",
+  "sourceAbbreviation": "FOL",
+  "sourceModuleId": "anime5e-folstavia",
+  "contentCategory": "species"
+}

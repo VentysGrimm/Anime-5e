@@ -1,0 +1,777 @@
+{
+  "pack": "anime5e-folstavia.creatures",
+  "documentType": "Actor",
+  "sourceBook": "Anime 5E Folstavia: The Infinite Crossroads",
+  "sourceAbbreviation": "FOL",
+  "sourceModuleId": "anime5e-folstavia",
+  "contentCategory": "creature",
+  "folders": [
+    {
+      "name": "Monsters - Folstavia",
+      "color": "#7a4d4d"
+    },
+    {
+      "name": "Nox Fiends - Folstavia",
+      "color": "#5f4d78"
+    },
+    {
+      "name": "Constructs - Folstavia",
+      "color": "#607887"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Automaton",
+      "type": "monster",
+      "folder": "Constructs - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Muddell Empire mechanical infantry soldier with programmed discipline, armour, and basic ranged/melee weaponry.",
+          "speciesAndSize": "Medium humanoid construct",
+          "actorRole": "Construct soldier",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 86,
+          "homelandHabitat": "Battlefields; most common in Mizibia",
+          "communities": "Infantry units of every size",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 220,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.automaton",
+          "importId": "folstavia.creature.automaton"
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 11,
+            "max": 11
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "AC 15; HP 11; poison immunity, mental resistance, disease/fear/pain resilience.",
+          "offenseSummary": "Greatsword +4 for 2d6+2 slashing; Longbow +3 for 1d8+1 piercing.",
+          "attacks": {
+            "primary": {
+              "weapon": "Greatsword",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "2d6+2",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Longbow",
+              "modifier": "+3",
+              "attackType": "Ranged",
+              "range": "1,000 feet",
+              "damage": "1d8+1",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 220.</p><p>CR 1/2 construct infantry with scale mail, greatsword, longbow, poison immunity, and programmed Obligated drawbacks.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.automaton",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 220,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.automaton"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bolegom",
+      "type": "monster",
+      "folder": "Monsters - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Small mushroom-and-beetle ambusher also called a Nox-cap, dangerous in swarms and able to drain blood.",
+          "speciesAndSize": "Small mycoid monstrosity",
+          "actorRole": "Ambush predator",
+          "challengeRating": "1/4",
+          "experienceValue": 50,
+          "totalPoints": 66,
+          "homelandHabitat": "Forests and wetlands",
+          "communities": "Small clans",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 221,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.bolegom",
+          "importId": "folstavia.creature.bolegom"
+        },
+        "combat": {
+          "armourClass": 14,
+          "hitPoints": {
+            "value": 7,
+            "max": 7
+          },
+          "movementSpeed": 15,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "AC 14; HP 7; camouflage, darkvision, wall-crawling, speedburst.",
+          "offenseSummary": "Shortbow +4 for 1d8+2 piercing; Snap-Bite with Vampiric effect.",
+          "attacks": {
+            "primary": {
+              "weapon": "Shortbow",
+              "modifier": "+4",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "1d8+2",
+              "damageType": "piercing"
+            },
+            "secondary": {
+              "weapon": "Snap-Bite",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "2d4",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 221.</p><p>CR 1/4 small ambusher with AC Bonus, Combat Mastery, camouflage, wall-crawling, and Vampiric bite.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.bolegom",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 221,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.bolegom"
+          }
+        }
+      }
+    },
+    {
+      "name": "Cerean",
+      "type": "monster",
+      "folder": "Nox Fiends - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Cactus-like Nox fiend formed from corrupted plant or shapeshifting Folk, skilled with traps and spine volleys.",
+          "speciesAndSize": "Medium humanoid plant",
+          "actorRole": "Nox plant predator",
+          "challengeRating": "3",
+          "experienceValue": 700,
+          "totalPoints": 124,
+          "homelandHabitat": "Deserts and arid regions; common in Enikonto and Omincia",
+          "communities": "Solitary or small tribes",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 222,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.cerean",
+          "importId": "folstavia.creature.cerean"
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 26,
+            "max": 26
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "AC 16; HP 26; plant control, trap/survival skill, speedburst and quiet movement.",
+          "offenseSummary": "Blood Spines for 3d6+3 piercing aura; Spine Shot for 3d6+1 piercing at range.",
+          "attacks": {
+            "primary": {
+              "weapon": "Blood Spines",
+              "modifier": "",
+              "attackType": "Melee",
+              "damage": "3d6+3",
+              "damageType": "piercing"
+            },
+            "secondary": {
+              "weapon": "Spine Shot",
+              "modifier": "",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "3d6+1",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 222.</p><p>CR 3 plant fiend with high AC, Rush Attack, plant control, trap expertise, and spine weapons.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.cerean",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 222,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.cerean"
+          }
+        }
+      }
+    },
+    {
+      "name": "Corpse-Spider",
+      "type": "monster",
+      "folder": "Nox Fiends - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Large necromantic spider-thing built from corpses, webbing victims for Nox masters and feeding on blood.",
+          "speciesAndSize": "Large arachnid monstrosity; undead",
+          "actorRole": "Undead controller",
+          "challengeRating": "6",
+          "experienceValue": 2300,
+          "totalPoints": 156,
+          "homelandHabitat": "Nox-controlled regions; common in Quessia and Nagoron",
+          "communities": "Solitary or small packs",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 223,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.corpse-spider",
+          "importId": "folstavia.creature.corpse-spider"
+        },
+        "combat": {
+          "armourClass": 14,
+          "hitPoints": {
+            "value": 60,
+            "max": 60
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 3,
+          "defenseSummary": "AC 14; HP 60; fast, undead resilience, poison immunity, non-magical weapon resistance, wall-crawling.",
+          "offenseSummary": "Bite for 2d8+6 piercing; Webbing tangles targets at range.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "",
+              "attackType": "Melee",
+              "damage": "2d8+6",
+              "damageType": "piercing"
+            },
+            "secondary": {
+              "weapon": "Webbing",
+              "modifier": "",
+              "attackType": "Ranged",
+              "range": "30 feet",
+              "damage": "Tangle 20 HP",
+              "damageType": "control"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 223.</p><p>CR 6 undead monstrosity with extra actions, many limbs, wall-crawling, bite, and webbing control.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.corpse-spider",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 223,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.corpse-spider"
+          }
+        }
+      }
+    },
+    {
+      "name": "Young Nox Verdigris Dragon",
+      "type": "monster",
+      "folder": "Nox Fiends - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Large corrupted dragon with acid and poison breath, flight, swimming, and mutation-based curse notes.",
+          "speciesAndSize": "Large winged quadruped; draconic",
+          "actorRole": "Nox dragon",
+          "challengeRating": "10",
+          "experienceValue": 5900,
+          "totalPoints": 200,
+          "homelandHabitat": "Deeplands, mountain rivers, Nox-tainted regions",
+          "communities": "Solitary or mating pairs",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 224,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.young-nox-verdigris-dragon",
+          "importId": "folstavia.creature.young-nox-verdigris-dragon"
+        },
+        "combat": {
+          "armourClass": 17,
+          "hitPoints": {
+            "value": 75,
+            "max": 75
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "90 feet/round",
+          "waterSpeed": "30 feet/round",
+          "customMovement": "",
+          "proficiencyBonus": 4,
+          "defenseSummary": "AC 17; HP 75; acid/poison immunity, regeneration limiter, underwater resilience.",
+          "offenseSummary": "Bite, claw, and Nox Breath cone combining acid and poison damage.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "",
+              "attackType": "Melee",
+              "damage": "2d8+6 + 1d6 acid + 1d6 poison",
+              "damageType": "piercing/acid/poison"
+            },
+            "secondary": {
+              "weapon": "Nox Breath",
+              "modifier": "DC 14 Con",
+              "attackType": "Cone",
+              "range": "30 feet",
+              "damage": "3d12 acid + 3d12 poison",
+              "damageType": "acid/poison"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 224.</p><p>CR 10 Nox dragon with flight, water speed, acid/poison breath, bite, claws, and mutation curse drawback.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.young-nox-verdigris-dragon",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 224,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.young-nox-verdigris-dragon"
+          }
+        }
+      }
+    },
+    {
+      "name": "Draugur",
+      "type": "monster",
+      "folder": "Nox Fiends - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Jealous undead soldier animated by Nox-tinged resentment, common in cold northern battlefields.",
+          "speciesAndSize": "Medium humanoid undead",
+          "actorRole": "Undead soldier",
+          "challengeRating": "2",
+          "experienceValue": 450,
+          "totalPoints": 112,
+          "homelandHabitat": "Harsh terrain and tombs; common in Sagaria and northern Quessia",
+          "communities": "Small to medium packs",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 225,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.draugur",
+          "importId": "folstavia.creature.draugur"
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 30,
+            "max": 30
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "AC 15; HP 30; chain shirt and shield, blindsight, undead resilience, poison immunity.",
+          "offenseSummary": "Battleaxe +4 for 1d8+2 slashing; Spear for ranged piercing.",
+          "attacks": {
+            "primary": {
+              "weapon": "Battleaxe",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "1d8+2",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Spear",
+              "modifier": "+2",
+              "attackType": "Ranged",
+              "range": "30 feet",
+              "damage": "1d6",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 225.</p><p>CR 2 undead warrior with armour/shield, jumping, martial weapon proficiency, and broad undead resilience.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.draugur",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 225,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.draugur"
+          }
+        }
+      }
+    },
+    {
+      "name": "Droneslate",
+      "type": "monster",
+      "folder": "Constructs - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Stone, wire, and crystal Nox construct bound to Zhumok's will, able to fight and impose simple mind control.",
+          "speciesAndSize": "Medium humanoid construct",
+          "actorRole": "Nox construct soldier",
+          "challengeRating": "4",
+          "experienceValue": 1100,
+          "totalPoints": 136,
+          "homelandHabitat": "Battlefields; anywhere Zhumok reigns",
+          "communities": "Small to large military units",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 226,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.droneslate",
+          "importId": "folstavia.creature.droneslate"
+        },
+        "combat": {
+          "armourClass": 18,
+          "hitPoints": {
+            "value": 43,
+            "max": 43
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 3,
+          "defenseSummary": "AC 18; HP 43; poison immunity, melee/ranged protection, disease/pain/paralysis resilience.",
+          "offenseSummary": "Greatsword +5 for 2d6+5 slashing; Longbow +5 for 1d8+5 piercing; Mind Control support.",
+          "attacks": {
+            "primary": {
+              "weapon": "Greatsword",
+              "modifier": "+5",
+              "attackType": "Melee",
+              "damage": "2d6+5",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Longbow",
+              "modifier": "+5",
+              "attackType": "Ranged",
+              "range": "1,000 feet",
+              "damage": "1d8+5",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 226.</p><p>CR 4 construct with Death Dodge, Flanking Defence, Mind Control, strong protection, and Obligated defect.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.droneslate",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 226,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.droneslate"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gormalos",
+      "type": "monster",
+      "folder": "Monsters - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Gargantuan flying cephalopod known as a sky kraken, feared around Sagaria and storm clouds.",
+          "speciesAndSize": "Gargantuan cephalopod monstrosity",
+          "actorRole": "Sky kraken",
+          "challengeRating": "13",
+          "experienceValue": 10000,
+          "totalPoints": 256,
+          "homelandHabitat": "Storm clouds",
+          "communities": "Solitary or family units",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 227,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.gormalos",
+          "importId": "folstavia.creature.gormalos"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 175,
+            "max": 175
+          },
+          "movementSpeed": 60,
+          "flightSpeed": "300 feet/round",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 4,
+          "defenseSummary": "AC 10; HP 175; huge Strength, lightning resistance, protected body, multiple extra actions.",
+          "offenseSummary": "Bite, tentacles, and inky poison cloud with obscuring effect.",
+          "attacks": {
+            "primary": {
+              "weapon": "Bite",
+              "modifier": "",
+              "attackType": "Melee",
+              "damage": "3d8+14",
+              "damageType": "piercing"
+            },
+            "secondary": {
+              "weapon": "Inky Cloud",
+              "modifier": "DC 14 Con",
+              "attackType": "Area",
+              "range": "100 feet",
+              "damage": "2d6",
+              "damageType": "poison"
+            },
+            "tertiary": {
+              "weapon": "Tentacle",
+              "modifier": "",
+              "attackType": "Melee",
+              "damage": "2d8+14",
+              "damageType": "bludgeoning"
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 227.</p><p>CR 13 flying cephalopod monstrosity with extra actions, bite, tentacles, poison cloud, and storm-cloud habitat.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.gormalos",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 227,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.gormalos"
+          }
+        }
+      }
+    },
+    {
+      "name": "Nox Hobgoblin",
+      "type": "monster",
+      "folder": "Nox Fiends - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Disciplined goblinism fiend created from fallen Elves and used as Nox Horde officers and archers.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Nox commander infantry",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": 90,
+          "homelandHabitat": "All non-aquatic lands",
+          "communities": "Tribes and hordes of every size",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 1,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 228,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "creature",
+          "sourceId": "folstavia.creature.nox-hobgoblin",
+          "importId": "folstavia.creature.nox-hobgoblin"
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 9,
+            "max": 9
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "AC 16; HP 9; chain shirt and shield, darkvision, warfare/perception training.",
+          "offenseSummary": "Longsword +3 for 1d8+1 slashing; Longbow +3 for 1d8+1 piercing.",
+          "attacks": {
+            "primary": {
+              "weapon": "Longsword",
+              "modifier": "+3",
+              "attackType": "Melee",
+              "damage": "1d8+1",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Longbow",
+              "modifier": "+3",
+              "attackType": "Ranged",
+              "range": "1,000 feet",
+              "damage": "1d8+1",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 228.</p><p>CR 1/2 disciplined Nox soldier with armour, longbow, longsword, darkvision, and battlefield skills.</p>",
+        "notes": {
+          "overview": "",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": ""
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.creature.nox-hobgoblin",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 228,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "creature",
+            "importId": "folstavia.creature.nox-hobgoblin"
+          }
+        }
+      }
+    }
+  ]
+}

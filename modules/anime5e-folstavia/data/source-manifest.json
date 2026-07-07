@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "anime5e-folstavia.sources",
+  "label": "Anime 5e Folstavia Sources",
+  "sourceBook": "Anime 5E Folstavia: The Infinite Crossroads",
+  "sourceAbbreviation": "FOL",
+  "sourceModuleId": "anime5e-folstavia",
+  "contentCategory": "setting",
+  "includes": [
+    "data/sources/folstavia-species.json",
+    "data/sources/folstavia-classes.json",
+    "data/sources/folstavia-attributes.json",
+    "data/sources/folstavia-items.json",
+    "data/sources/folstavia-creatures.json",
+    "data/sources/folstavia-npcs.json",
+    "data/sources/folstavia-journals.json"
+  ]
+}

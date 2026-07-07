@@ -1,0 +1,415 @@
+{
+  "pack": "anime5e-folstavia.items",
+  "documentType": "Item",
+  "sourceBook": "Anime 5E Folstavia: The Infinite Crossroads",
+  "sourceAbbreviation": "FOL",
+  "sourceModuleId": "anime5e-folstavia",
+  "contentCategory": "item",
+  "folders": [
+    {
+      "name": "Vehicles - Folstavia",
+      "color": "#607887"
+    },
+    {
+      "name": "Weapons - Folstavia",
+      "color": "#8c624f"
+    },
+    {
+      "name": "Maker Gear - Folstavia",
+      "color": "#7f657d"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Ash Scorpion",
+      "type": "vehicle",
+      "folder": "Vehicles - Folstavia",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 5,
+        "cost": 20,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.vehicle.ash-scorpion",
+        "sourcePage": 209,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "vehicle",
+        "importId": "folstavia.vehicle.ash-scorpion",
+        "armourClass": 16,
+        "speed": "Ground 90 feet/round or 10 mph; wall-crawling",
+        "passengers": "5 people",
+        "cargo": "1 ton",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 209.</p><p><strong>Rules Summary:</strong> Huge iron construct vehicle with Scorpion Fury fire weapon, piercing sting, wall-crawling, and frequent-maintenance requirement.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.vehicle.ash-scorpion",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 209,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "vehicle",
+            "importId": "folstavia.vehicle.ash-scorpion"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hybrid Galleon",
+      "type": "vehicle",
+      "folder": "Vehicles - Folstavia",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 6,
+        "cost": 24,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.vehicle.hybrid-galleon",
+        "sourcePage": 209,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "vehicle",
+        "importId": "folstavia.vehicle.hybrid-galleon",
+        "armourClass": 11,
+        "speed": "Flight 30 mph; Water 30 mph",
+        "passengers": "50 people",
+        "cargo": "10 tons",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 209.</p><p><strong>Rules Summary:</strong> Huge wind-powered air-and-water galleon with four ballista weapon mounts and heavy transport capacity.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.vehicle.hybrid-galleon",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 209,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "vehicle",
+            "importId": "folstavia.vehicle.hybrid-galleon"
+          }
+        }
+      }
+    },
+    {
+      "name": "Refrigerated Delivery Carriage",
+      "type": "vehicle",
+      "folder": "Vehicles - Folstavia",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.vehicle.refrigerated-delivery-carriage",
+        "sourcePage": 209,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "vehicle",
+        "importId": "folstavia.vehicle.refrigerated-delivery-carriage",
+        "armourClass": 11,
+        "speed": "Ground 10 mph; road-bound",
+        "passengers": "25 people equivalent",
+        "cargo": "5 tons refrigerated",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 209.</p><p><strong>Rules Summary:</strong> Climate-controlled magical carriage for preserving food shipments; slow and road-bound but prized by merchants.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.vehicle.refrigerated-delivery-carriage",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 209,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "vehicle",
+            "importId": "folstavia.vehicle.refrigerated-delivery-carriage"
+          }
+        }
+      }
+    },
+    {
+      "name": "Storm Dreadnought",
+      "type": "vehicle",
+      "folder": "Vehicles - Folstavia",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 20,
+        "cost": 80,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.vehicle.storm-dreadnought",
+        "sourcePage": 210,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "vehicle",
+        "importId": "folstavia.vehicle.storm-dreadnought",
+        "armourClass": 10,
+        "speed": "Flight 30 mph; Water 30 mph",
+        "passengers": "100 people",
+        "cargo": "25 tons",
+        "crew": "Skyship crew with artillery and workshop support",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 210.</p><p><strong>Rules Summary:</strong> Gargantuan Quessian sky warship with weather Dynamic Powers, lightning/thunder cannon batteries, workshop facilities, and protected hull.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.vehicle.storm-dreadnought",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 210,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "vehicle",
+            "importId": "folstavia.vehicle.storm-dreadnought"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wind Cutter",
+      "type": "vehicle",
+      "folder": "Vehicles - Folstavia",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "rank": 4,
+        "cost": 16,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.vehicle.wind-cutter",
+        "sourcePage": 210,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "vehicle",
+        "importId": "folstavia.vehicle.wind-cutter",
+        "armourClass": 10,
+        "speed": "Flight 100 mph; Water 30 mph",
+        "passengers": "25 people",
+        "cargo": "5 tons",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 210.</p><p><strong>Rules Summary:</strong> Common Sagarian skyship with wind control, flight crystal endurance, water travel, and broad upgrade potential.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.vehicle.wind-cutter",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 210,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "vehicle",
+            "importId": "folstavia.vehicle.wind-cutter"
+          }
+        }
+      }
+    },
+    {
+      "name": "Bolt Repeater",
+      "type": "weapon",
+      "folder": "Weapons - Folstavia",
+      "img": "icons/svg/crossed-swords.svg",
+      "system": {
+        "rank": 1,
+        "cost": 4,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.weapon.bolt-repeater",
+        "sourcePage": 211,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "weapon",
+        "importId": "folstavia.weapon.bolt-repeater",
+        "category": "Ranged Item Weapon",
+        "range": "100 feet",
+        "damage": "5d4",
+        "damageType": "piercing",
+        "ammo": "6 shots",
+        "properties": "Spreading, Ammo, Hands, Save, Unreliable",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 211.</p><p><strong>Rules Summary:</strong> Heavy magical repeating weapon that sprays crossbow bolts at several targets but is ammunition-hungry and unreliable.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.weapon.bolt-repeater",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 211,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "weapon",
+            "importId": "folstavia.weapon.bolt-repeater"
+          }
+        }
+      }
+    },
+    {
+      "name": "Crash Sword",
+      "type": "weapon",
+      "folder": "Weapons - Folstavia",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.weapon.crash-sword",
+        "sourcePage": 211,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "weapon",
+        "importId": "folstavia.weapon.crash-sword",
+        "category": "Melee Item Weapon",
+        "damage": "2d6 bludgeoning + 2d6 slashing",
+        "damageType": "bludgeoning/slashing",
+        "properties": "Multidimensional, Hands, Infusion (Making)",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 211.</p><p><strong>Rules Summary:</strong> Oversized anti-undead blade with Critical Strike, Making Infusion points, multidimensional reach, and a high Strength expectation.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.weapon.crash-sword",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 211,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "weapon",
+            "importId": "folstavia.weapon.crash-sword"
+          }
+        }
+      }
+    },
+    {
+      "name": "Force Bow",
+      "type": "weapon",
+      "folder": "Weapons - Folstavia",
+      "img": "icons/svg/archery-target.svg",
+      "system": {
+        "rank": 3,
+        "cost": 12,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.weapon.force-bow",
+        "sourcePage": 211,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "weapon",
+        "importId": "folstavia.weapon.force-bow",
+        "category": "Ranged Item Weapon",
+        "range": "100 feet or 1,000 feet by arrow mode",
+        "damage": "3d6 force or 2d10 force",
+        "damageType": "force",
+        "properties": "Accurate, Area eruption, Range, Save, conjured ammunition",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 211.</p><p><strong>Rules Summary:</strong> Beginner-friendly magical bow that improves combat accuracy and fires either straight force arrows or charged eruption arrows.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.weapon.force-bow",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 211,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "weapon",
+            "importId": "folstavia.weapon.force-bow"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gatecutter",
+      "type": "weapon",
+      "folder": "Weapons - Folstavia",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.weapon.gatecutter",
+        "sourcePage": 212,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "weapon",
+        "importId": "folstavia.weapon.gatecutter",
+        "category": "Melee Item Weapon",
+        "damage": "3d6",
+        "damageType": "slashing",
+        "properties": "Multidimensional, Portals, charges",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 212.</p><p><strong>Rules Summary:</strong> Adamantine-hilted portal blade that combines a multidimensional slash with limited daily portal Dynamic Powers.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.weapon.gatecutter",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 212,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "weapon",
+            "importId": "folstavia.weapon.gatecutter"
+          }
+        }
+      }
+    },
+    {
+      "name": "Staff of Fury",
+      "type": "weapon",
+      "folder": "Weapons - Folstavia",
+      "img": "icons/svg/fire.svg",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.weapon.staff-of-fury",
+        "sourcePage": 212,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "weapon",
+        "importId": "folstavia.weapon.staff-of-fury",
+        "category": "Ranged Item Weapon",
+        "range": "100 feet",
+        "damage": "3d8",
+        "damageType": "fire",
+        "properties": "Area, Range, Selective, Save",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 212.</p><p><strong>Rules Summary:</strong> Flame staff that selectively strikes enemies in an area and carries basic heat-control magic.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.weapon.staff-of-fury",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 212,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "weapon",
+            "importId": "folstavia.weapon.staff-of-fury"
+          }
+        }
+      }
+    },
+    {
+      "name": "Wingblade",
+      "type": "weapon",
+      "folder": "Weapons - Folstavia",
+      "img": "icons/svg/star.svg",
+      "system": {
+        "rank": 2,
+        "cost": 8,
+        "source": "Anime 5E Folstavia: The Infinite Crossroads",
+        "sourceId": "folstavia.weapon.wingblade",
+        "sourcePage": 212,
+        "sourceAbbreviation": "FOL",
+        "sourceModuleId": "anime5e-folstavia",
+        "sourceCategory": "weapon",
+        "importId": "folstavia.weapon.wingblade",
+        "category": "Thrown Item Weapon",
+        "range": "30 feet",
+        "damage": "3d6",
+        "damageType": "slashing",
+        "properties": "AC Bonus, Extra Actions - Lesser, self-returning flight, Save",
+        "description": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 212.</p><p><strong>Rules Summary:</strong> Self-guiding wing-shaped throwing blade with a catching gauntlet, defensive enchantment, and fast return flight.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.weapon.wingblade",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 212,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "weapon",
+            "importId": "folstavia.weapon.wingblade"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -63,4 +63,5 @@ Current standalone module packages:
 - `modules/anime5e-mounts-and-monsters`
 - `modules/anime5e-monstrum-libri-vol1`
 - `modules/anime5e-monstrum-libri-vol2`
+- `modules/anime5e-folstavia`
 

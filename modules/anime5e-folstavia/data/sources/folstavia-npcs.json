@@ -1,0 +1,970 @@
+{
+  "pack": "anime5e-folstavia.creatures",
+  "documentType": "Actor",
+  "sourceBook": "Anime 5E Folstavia: The Infinite Crossroads",
+  "sourceAbbreviation": "FOL",
+  "sourceModuleId": "anime5e-folstavia",
+  "contentCategory": "npc",
+  "folders": [
+    {
+      "name": "Allies - Folstavia",
+      "color": "#5f7f62"
+    },
+    {
+      "name": "Rivals and Enemies - Folstavia",
+      "color": "#7a4d4d"
+    },
+    {
+      "name": "Factions - Folstavia",
+      "color": "#7f6a52"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Captain Marina Tennyson",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Privateer captain of the Crimson Swan and a useful ally or friendly rival for early Folstavia campaigns.",
+          "speciesAndSize": "Human",
+          "actorRole": "Pilot",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Crimson Swan",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 6,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 245,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.captain-marina-tennyson",
+          "importId": "folstavia.npc.captain-marina-tennyson"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 245.</p><p>Human; Pilot 6.</p>",
+        "notes": {
+          "overview": "<p>Privateer captain of the Crimson Swan and a useful ally or friendly rival for early Folstavia campaigns.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Crimson Swan</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Pilot",
+              "level": 6,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.captain-marina-tennyson",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 245,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.captain-marina-tennyson"
+          }
+        }
+      }
+    },
+    {
+      "name": "Delemuro Tonosi",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Quartermaster of the Crimson Swan, managing money, contacts, and trade opportunities for the crew.",
+          "speciesAndSize": "Loralai",
+          "actorRole": "Broker",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Crimson Swan",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 5,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 245,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.delemuro-tonosi",
+          "importId": "folstavia.npc.delemuro-tonosi"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 245.</p><p>Loralai; Broker 5.</p>",
+        "notes": {
+          "overview": "<p>Quartermaster of the Crimson Swan, managing money, contacts, and trade opportunities for the crew.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Crimson Swan</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Broker",
+              "level": 5,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.delemuro-tonosi",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 245,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.delemuro-tonosi"
+          }
+        }
+      }
+    },
+    {
+      "name": "Little Bob",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Veteran Effigy pilot of the wind cutter Big Bob and one of the Crossroads Sentries.",
+          "speciesAndSize": "Effigy",
+          "actorRole": "Pilot",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Crossroads Sentries",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 10,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 245,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.little-bob",
+          "importId": "folstavia.npc.little-bob"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 245.</p><p>Effigy; Pilot 10.</p>",
+        "notes": {
+          "overview": "<p>Veteran Effigy pilot of the wind cutter Big Bob and one of the Crossroads Sentries.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Crossroads Sentries</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Pilot",
+              "level": 10,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.little-bob",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 245,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.little-bob"
+          }
+        }
+      }
+    },
+    {
+      "name": "Feena Tarin",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Earth-born Asrai hero whose idealism helps steer the Big Bob crew toward people in need.",
+          "speciesAndSize": "Asrai",
+          "actorRole": "Light Bender",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Crossroads Sentries",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 11,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 245,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.feena-tarin",
+          "importId": "folstavia.npc.feena-tarin"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 245.</p><p>Asrai; Light Bender 11.</p>",
+        "notes": {
+          "overview": "<p>Earth-born Asrai hero whose idealism helps steer the Big Bob crew toward people in need.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Crossroads Sentries</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Light Bender",
+              "level": 11,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.feena-tarin",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 245,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.feena-tarin"
+          }
+        }
+      }
+    },
+    {
+      "name": "Trin the Exemplar",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Leader of the Palladion Five, bearer of Palladion arms, and one of Quessia's most visible champions.",
+          "speciesAndSize": "Dawn Elf-Loralai Hybrid",
+          "actorRole": "Exemplar",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Palladion Five",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 15,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 246,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.trin-the-exemplar",
+          "importId": "folstavia.npc.trin-the-exemplar"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 246.</p><p>Dawn Elf-Loralai Hybrid; Exemplar 15.</p>",
+        "notes": {
+          "overview": "<p>Leader of the Palladion Five, bearer of Palladion arms, and one of Quessia's most visible champions.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Palladion Five</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Exemplar",
+              "level": 15,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.trin-the-exemplar",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 246,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.trin-the-exemplar"
+          }
+        }
+      }
+    },
+    {
+      "name": "Ravinet",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Long-suffering but loyal member of the Palladion Five, often serving as the group's practical voice.",
+          "speciesAndSize": "Nuki",
+          "actorRole": "Nature Spellbinder",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Palladion Five",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 15,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 246,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.ravinet",
+          "importId": "folstavia.npc.ravinet"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 246.</p><p>Nuki; Nature Spellbinder 15.</p>",
+        "notes": {
+          "overview": "<p>Long-suffering but loyal member of the Palladion Five, often serving as the group's practical voice.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Palladion Five</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Nature Spellbinder",
+              "level": 15,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.ravinet",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 246,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.ravinet"
+          }
+        }
+      }
+    },
+    {
+      "name": "Runako Masuku",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "A modest freighter and altruistic merchant who moves vital staples where people need them most.",
+          "speciesAndSize": "Human",
+          "actorRole": "Broker",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Merchants",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 2,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 246,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.runako-masuku",
+          "importId": "folstavia.npc.runako-masuku"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 246.</p><p>Human; Broker 2.</p>",
+        "notes": {
+          "overview": "<p>A modest freighter and altruistic merchant who moves vital staples where people need them most.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Merchants</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Broker",
+              "level": 2,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.runako-masuku",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 246,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.runako-masuku"
+          }
+        }
+      }
+    },
+    {
+      "name": "Artemisia Burchard",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Sought-after courier from New Quessia with extreme teleportation talent and a lonely streak.",
+          "speciesAndSize": "Arbolan",
+          "actorRole": "Strider",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Merchants",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 6,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 246,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.artemisia-burchard",
+          "importId": "folstavia.npc.artemisia-burchard"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 246.</p><p>Arbolan; Strider 6.</p>",
+        "notes": {
+          "overview": "<p>Sought-after courier from New Quessia with extreme teleportation talent and a lonely streak.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Merchants</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Strider",
+              "level": 6,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.artemisia-burchard",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 246,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.artemisia-burchard"
+          }
+        }
+      }
+    },
+    {
+      "name": "Erwin Prock",
+      "type": "npc",
+      "folder": "Rivals and Enemies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Masked fraud known as Twilight Wand, creating false threats to enrich himself as Mister Slick.",
+          "speciesAndSize": "Dawn Half-Elf",
+          "actorRole": "Magical Guy",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Merchants",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 3,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 246,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.erwin-prock",
+          "importId": "folstavia.npc.erwin-prock"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 246.</p><p>Dawn Half-Elf; Magical Guy 3.</p>",
+        "notes": {
+          "overview": "<p>Masked fraud known as Twilight Wand, creating false threats to enrich himself as Mister Slick.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Merchants</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Magical Guy",
+              "level": 3,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.erwin-prock",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 246,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.erwin-prock"
+          }
+        }
+      }
+    },
+    {
+      "name": "Raul Sandino",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Myriad Order envoy working to reconnect the Eight Lands while surviving Nox, Lucian, and local political threats.",
+          "speciesAndSize": "Raynari",
+          "actorRole": "Psionicist",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Diplomats",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 3,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 248,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.raul-sandino",
+          "importId": "folstavia.npc.raul-sandino"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 248.</p><p>Raynari; Psionicist 3.</p>",
+        "notes": {
+          "overview": "<p>Myriad Order envoy working to reconnect the Eight Lands while surviving Nox, Lucian, and local political threats.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Diplomats</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Psionicist",
+              "level": 3,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.raul-sandino",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 248,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.raul-sandino"
+          }
+        }
+      }
+    },
+    {
+      "name": "Darcia Griffith",
+      "type": "npc",
+      "folder": "Allies - Folstavia",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Irish anime fan and Earth-born Effigy who returns to Folstavia out of love for the strange world.",
+          "speciesAndSize": "Effigy",
+          "actorRole": "Isekai Student",
+          "challengeRating": "",
+          "experienceValue": null,
+          "totalPoints": null,
+          "homelandHabitat": "Folstavia",
+          "communities": "Diplomats",
+          "alignment": "",
+          "ageAndGender": ""
+        },
+        "level": 5,
+        "source": {
+          "book": "Anime 5E Folstavia: The Infinite Crossroads",
+          "page": 248,
+          "abbreviation": "FOL",
+          "moduleId": "anime5e-folstavia",
+          "category": "npc",
+          "sourceId": "folstavia.npc.darcia-griffith",
+          "importId": "folstavia.npc.darcia-griffith"
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 20,
+            "max": 20
+          },
+          "movementSpeed": 30,
+          "flightSpeed": "",
+          "waterSpeed": "",
+          "customMovement": "",
+          "proficiencyBonus": 2,
+          "defenseSummary": "",
+          "offenseSummary": "",
+          "attacks": {
+            "primary": {
+              "weapon": "",
+              "modifier": "",
+              "damageType": "",
+              "damage": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF p. 248.</p><p>Effigy; Isekai Student 5.</p>",
+        "notes": {
+          "overview": "<p>Irish anime fan and Earth-born Effigy who returns to Folstavia out of love for the strange world.</p>",
+          "combat": "",
+          "attributes": "",
+          "inventory": "",
+          "group": "<p>Diplomats</p>"
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Isekai Student",
+              "level": 5,
+              "hitDice": ""
+            },
+            "secondary": {},
+            "tertiary": {}
+          }
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.npc.darcia-griffith",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 248,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "npc",
+            "importId": "folstavia.npc.darcia-griffith"
+          }
+        }
+      }
+    }
+  ]
+}
