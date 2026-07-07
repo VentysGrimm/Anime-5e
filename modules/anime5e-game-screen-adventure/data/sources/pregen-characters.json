@@ -57,7 +57,26 @@
             "max": 20
           },
           "proficiencyBonus": 2,
-          "movementSpeed": 30
+          "movementSpeed": 30,
+          "flightSpeed": "30 feet/round",
+          "attacks": {
+            "primary": {
+              "weapon": "Scimitar (Dexterity)",
+              "modifier": "+5",
+              "attackType": "Melee",
+              "damage": "1d6+3",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Longbow",
+              "modifier": "+5",
+              "attackType": "Ranged",
+              "range": "1,000 feet",
+              "damage": "1d8+3",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
         },
         "source": {
           "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
@@ -128,7 +147,25 @@
             "max": 20
           },
           "proficiencyBonus": 2,
-          "movementSpeed": 30
+          "movementSpeed": 30,
+          "attacks": {
+            "primary": {
+              "weapon": "Light Hammer",
+              "modifier": "+3",
+              "attackType": "Melee",
+              "damage": "1d4+1",
+              "damageType": "bludgeoning"
+            },
+            "secondary": {
+              "weapon": "Sling",
+              "modifier": "+3",
+              "attackType": "Ranged",
+              "range": "30 feet",
+              "damage": "1d4+1",
+              "damageType": "bludgeoning"
+            },
+            "tertiary": {}
+          }
         },
         "source": {
           "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
@@ -199,7 +236,25 @@
             "max": 20
           },
           "proficiencyBonus": 2,
-          "movementSpeed": 30
+          "movementSpeed": 30,
+          "attacks": {
+            "primary": {
+              "weapon": "Battleaxe",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "1d8+2",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Hand Crossbow",
+              "modifier": "+3",
+              "attackType": "Ranged",
+              "range": "30 feet",
+              "damage": "1d6+1",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
         },
         "source": {
           "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
@@ -270,7 +325,25 @@
             "max": 20
           },
           "proficiencyBonus": 2,
-          "movementSpeed": 30
+          "movementSpeed": 30,
+          "attacks": {
+            "primary": {
+              "weapon": "Quarterstaff",
+              "modifier": "+5",
+              "attackType": "Melee",
+              "damage": "1d6+4",
+              "damageType": "bludgeoning"
+            },
+            "secondary": {
+              "weapon": "Sling",
+              "modifier": "+5",
+              "attackType": "Ranged",
+              "range": "30 feet",
+              "damage": "1d4+4",
+              "damageType": "bludgeoning"
+            },
+            "tertiary": {}
+          }
         },
         "source": {
           "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
@@ -341,7 +414,25 @@
             "max": 20
           },
           "proficiencyBonus": 2,
-          "movementSpeed": 30
+          "movementSpeed": 30,
+          "attacks": {
+            "primary": {
+              "weapon": "Dagger (Dexterity)",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "1d4+2",
+              "damageType": "piercing"
+            },
+            "secondary": {
+              "weapon": "Spear",
+              "modifier": "+4",
+              "attackType": "Ranged",
+              "range": "30 feet",
+              "damage": "1d6+2",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
         },
         "source": {
           "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",
@@ -377,7 +468,7 @@
           "description": "Medium Wood Elf Magical Girl 2 pre-generated character for Carry on Wayward Son.",
           "speciesAndSize": "Medium Wood Elf",
           "actorRole": "Pregenerated Character",
-          "totalPoints": 0
+          "totalPoints": 117
         },
         "level": 2,
         "experience": 300,
@@ -412,7 +503,25 @@
             "max": 20
           },
           "proficiencyBonus": 2,
-          "movementSpeed": 30
+          "movementSpeed": 35,
+          "attacks": {
+            "primary": {
+              "weapon": "Rapier (Dexterity)",
+              "modifier": "+3",
+              "attackType": "Melee",
+              "damage": "1d8+1",
+              "damageType": "piercing"
+            },
+            "secondary": {
+              "weapon": "Longbow",
+              "modifier": "+3",
+              "attackType": "Ranged",
+              "range": "1,000 feet",
+              "damage": "1d8+1",
+              "damageType": "piercing"
+            },
+            "tertiary": {}
+          }
         },
         "source": {
           "book": "Anime 5E Game Screen Adventure Pre-Gens Digital Expansion",

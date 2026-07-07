@@ -27,6 +27,7 @@ Then create a world using the `Anime 5e` game system.
 - `packs/` is a tracked shell for Foundry compendium databases created at runtime.
 - `tools/validate-package.mjs` performs a lightweight local sanity check.
 - `tools/validate-content-module.mjs` validates standalone Anime 5e content modules created from `module-template/`.
+- `tools/validate-regression-fixtures.mjs` checks source-backed regression fixtures, pregenerated character stats, actor attacks, and standalone module source validity.
 - `module-template/` contains a reusable Foundry module scaffold for source-backed Anime 5e expansions.
 - `modules/` contains source-backed standalone expansion modules that can be installed separately from the base system.
 - `docs/issue-8-verification.md` records the first-pass source review and playable-system verification scope.

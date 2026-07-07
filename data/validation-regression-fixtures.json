@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "scratchCharacters": [
+    {
+      "name": "Core Rules Level 1 Scratch Character",
+      "notes": "Minimal Core Rules character fixture for validating a from-scratch level 1 build path without relying on imported pregens.",
+      "system": {
+        "level": 1,
+        "experience": 0,
+        "identity": {
+          "speciesAndSize": "Medium Raceless Character",
+          "actorRole": "Scratch validation character",
+          "startingDiscretionaryPoints": 80,
+          "totalPoints": 80
+        },
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 12
+          },
+          "intelligence": {
+            "value": 13
+          },
+          "wisdom": {
+            "value": 12
+          },
+          "charisma": {
+            "value": 11
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 7,
+            "max": 7
+          },
+          "energy": {
+            "value": 10,
+            "max": 10
+          },
+          "proficiencyBonus": 2,
+          "movementSpeed": 30,
+          "attacks": {
+            "primary": {
+              "weapon": "Training Sword",
+              "modifier": "+4",
+              "attackType": "Melee",
+              "damage": "1d6+2",
+              "damageType": "slashing"
+            },
+            "secondary": {
+              "weapon": "Shortbow",
+              "modifier": "+4",
+              "attackType": "Ranged",
+              "range": "100 feet",
+              "damage": "1d6+2",
+              "damageType": "piercing"
+            }
+          }
+        }
+      },
+      "expected": {
+        "level": 1,
+        "experience": 0,
+        "abilityScoreCost": 72,
+        "startingDiscretionaryPoints": 80,
+        "remainingPoints": 8,
+        "armourClass": 12,
+        "hitPoints": 7,
+        "energy": 10,
+        "proficiencyBonus": 2,
+        "movementSpeed": 30,
+        "requiredAttackCount": 2
+      }
+    }
+  ],
+  "gameScreenPregens": [
+    {
+      "sourceId": "game-screen-adventure.pregen.kitavia-shadowsbane",
+      "name": "Kitavia Shadowsbane",
+      "level": 2,
+      "armourClass": 14,
+      "hitPoints": 15,
+      "energy": 20,
+      "proficiencyBonus": 2,
+      "movementSpeed": 30,
+      "flightSpeed": "30 feet/round",
+      "totalPoints": 113,
+      "requiredAttackCount": 2
+    },
+    {
+      "sourceId": "game-screen-adventure.pregen.robin-smythe",
+      "name": "Robin Smythe",
+      "level": 2,
+      "armourClass": 11,
+      "hitPoints": 5,
+      "energy": 20,
+      "proficiencyBonus": 2,
+      "movementSpeed": 30,
+      "totalPoints": 107,
+      "requiredAttackCount": 2
+    },
+    {
+      "sourceId": "game-screen-adventure.pregen.earthrender-allain",
+      "name": "Earthrender Allain",
+      "level": 2,
+      "armourClass": 12,
+      "hitPoints": 15,
+      "energy": 20,
+      "proficiencyBonus": 2,
+      "movementSpeed": 30,
+      "totalPoints": 111,
+      "requiredAttackCount": 2
+    },
+    {
+      "sourceId": "game-screen-adventure.pregen.boeyo-the-inker",
+      "name": "Boeyo the Inker",
+      "level": 2,
+      "armourClass": 16,
+      "hitPoints": 16,
+      "energy": 20,
+      "proficiencyBonus": 2,
+      "movementSpeed": 30,
+      "totalPoints": 108,
+      "requiredAttackCount": 2
+    },
+    {
+      "sourceId": "game-screen-adventure.pregen.frensheatha",
+      "name": "Frensheatha",
+      "level": 2,
+      "armourClass": 12,
+      "hitPoints": 10,
+      "energy": 20,
+      "proficiencyBonus": 2,
+      "movementSpeed": 30,
+      "totalPoints": 109,
+      "requiredAttackCount": 2
+    },
+    {
+      "sourceId": "game-screen-adventure.pregen.defender-bright-jae",
+      "name": "Defender Bright (Jae)",
+      "level": 2,
+      "armourClass": 12,
+      "hitPoints": 13,
+      "energy": 20,
+      "proficiencyBonus": 2,
+      "movementSpeed": 35,
+      "totalPoints": 117,
+      "requiredAttackCount": 2
+    }
+  ],
+  "actorSourceChecks": [
+    {
+      "path": "data/sources/core/creatures/monsters-core-rules.json",
+      "label": "Core Rules monsters",
+      "minimumDocuments": 4,
+      "requireAttackDamage": true
+    },
+    {
+      "path": "modules/anime5e-game-screen-adventure/data/sources/pregen-characters.json",
+      "label": "Game Screen pregenerated characters",
+      "minimumDocuments": 6,
+      "requireAttackDamage": true
+    },
+    {
+      "path": "modules/anime5e-mounts-and-monsters/data/sources/mounts-and-monsters-actors.json",
+      "label": "Mounts and Monsters actors",
+      "minimumDocuments": 4,
+      "requireCombatSummary": true
+    },
+    {
+      "path": "modules/anime5e-monstrum-libri-vol1/data/sources/creatures-vol1.json",
+      "label": "Monstrum Libri Vol. 1 creatures",
+      "minimumDocuments": 1,
+      "requireAttackDamage": true
+    },
+    {
+      "path": "modules/anime5e-monstrum-libri-vol2/data/sources/creatures-vol2.json",
+      "label": "Monstrum Libri Vol. 2 creatures",
+      "minimumDocuments": 1,
+      "requireAttackDamage": true
+    }
+  ],
+  "contentModules": [
+    "modules/anime5e-hybrid-species",
+    "modules/anime5e-bonus-character-options",
+    "modules/anime5e-adventuring-accessories",
+    "modules/anime5e-game-screen-adventure",
+    "modules/anime5e-mounts-and-monsters",
+    "modules/anime5e-monstrum-libri-vol1",
+    "modules/anime5e-monstrum-libri-vol2",
+    "modules/anime5e-folstavia",
+    "modules/anime5e-beyonder-worlds"
+  ]
+}

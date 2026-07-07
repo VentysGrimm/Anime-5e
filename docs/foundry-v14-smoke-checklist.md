@@ -27,6 +27,13 @@ The folder name must match the package id in `system.json`: `anime5e`.
 3. Open and close each created sheet.
 4. Edit a simple text or numeric field on each representative sheet, close it, reopen it, and confirm the value persists.
 
+## Character Regression Smoke
+
+1. Create a 1st-level Character actor from a blank sheet.
+2. Enter six ability scores, HP, Energy, Armour Class, movement, and two common attacks.
+3. Confirm the sheet shows Proficiency Bonus +2 and the entered attack/damage rows can roll to chat.
+4. Import the Game Screen Adventure pregenerated characters and compare HP, AC, Energy, Proficiency Bonus, movement, total points, and attack rows against `data/validation-regression-fixtures.json`.
+
 ## Compendium Smoke
 
 1. Open the **Configure Settings** menu.
@@ -34,6 +41,13 @@ The folder name must match the package id in `system.json`: `anime5e`.
 3. Confirm each declared pack appears in the Compendium sidebar.
 4. Open at least one core Item pack, one core Actor pack, one supplemental Item pack, one supplemental Actor pack, and one Journal pack.
 5. Drag a representative Item entry to a Character actor and confirm no console error appears.
+
+## Module Smoke
+
+1. Enable each standalone Anime 5e module one at a time.
+2. Confirm its declared packs appear and can be opened.
+3. Import or open representative Species/Class, Item, Actor, and Journal entries from each enabled module.
+4. Disable the module, reload the world, and confirm the base system still loads without missing-pack or missing-document console errors.
 
 ## Recording Results
 
