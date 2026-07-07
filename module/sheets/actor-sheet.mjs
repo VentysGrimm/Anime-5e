@@ -1,5 +1,11 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
 import {
+  buildCombatManoeuvreChatContent,
+  combineD20Modes,
+  getCombatManoeuvre,
+  getCombatManoeuvreGroups
+} from "../rules/combat-manoeuvres.mjs";
+import {
   applySizeTemplateItem,
   applySpeciesItem,
   removeSizeTemplateItem,
@@ -535,11 +541,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { key: "tertiary", data: system.combat.attacks.tertiary }
     ].map((row) => ({
       ...row,
+      label: row.data.weapon || `${row.key.charAt(0).toUpperCase()}${row.key.slice(1)} Attack`,
       d20Modes: D20_ROLL_MODES.map((mode) => ({
         ...mode,
         selected: mode.key === (row.data.d20Mode || "normal")
       }))
     }));
+    context.combatManoeuvres = this.constructor._prepareCombatManoeuvreContext();
 
     return context;
   }
@@ -1025,6 +1033,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     return `${formatSigned(effectBonus)} effective ${numberOrZero(ability?.effectiveValue)}`;
   }
 
+  static _prepareCombatManoeuvreContext() {
+    const groups = getCombatManoeuvreGroups();
+    return {
+      groups,
+      defaultId: groups.flatMap((group) => group.entries)[0]?.id ?? ""
+    };
+  }
+
   static _prepareCombatEffectContext(system) {
     const hitPointBonus = numberOrZero(system.combat?.hitPoints?.effectBonus);
     const energyBonus = numberOrZero(system.combat?.energy?.effectBonus);
@@ -1183,6 +1199,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='roll-damage']").forEach((button) => {
       button.addEventListener("click", this._onRollDamage.bind(this));
+    });
+    element.querySelectorAll("[data-action='roll-combat-manoeuvre']").forEach((button) => {
+      button.addEventListener("click", this._onRollCombatManoeuvre.bind(this));
+    });
+    element.querySelectorAll("[data-action='post-combat-manoeuvre']").forEach((button) => {
+      button.addEventListener("click", this._onPostCombatManoeuvre.bind(this));
     });
     element.querySelectorAll("[data-action='apply-damage'], [data-action='apply-healing']").forEach((button) => {
       button.addEventListener("click", this._onApplyHitPointChange.bind(this));
@@ -1454,6 +1476,68 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     }
 
     await this._rollFormula(formula, `${attack.weapon || "Attack"} Damage`);
+  }
+
+  async _onRollCombatManoeuvre(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".combat-manoeuvre-panel");
+    const manoeuvre = getCombatManoeuvre(panel?.querySelector("[data-manoeuvre-input='id']")?.value);
+    if (!manoeuvre) return;
+    if (manoeuvre.rollKind !== "attack") {
+      ui.notifications?.warn(`${manoeuvre.label} is a reminder. Post it to chat instead of rolling an attack.`);
+      return;
+    }
+
+    const attackKey = panel?.querySelector("[data-manoeuvre-input='attack']")?.value ?? "primary";
+    const attack = this.actor.system.combat?.attacks?.[attackKey];
+    if (!attack) return;
+
+    const modifier = Number(attack.modifier) || 0;
+    const situationalModifier = numberOrZero(attack.situationalModifier);
+    const shouldApplyRangePenalty = settingEnabled("applyRangePenalties");
+    const rangePenalty = shouldApplyRangePenalty ? numberOrZero(attack.rangePenalty) : 0;
+    const modifiers = [modifier];
+    if (situationalModifier) modifiers.push(situationalModifier);
+    if (rangePenalty) modifiers.push(-rangePenalty);
+
+    const attackMode = attack.d20Mode || "normal";
+    const rollMode = combineD20Modes(attackMode, manoeuvre.rollMode);
+    const attackName = attack.weapon || `${attackKey.charAt(0).toUpperCase()}${attackKey.slice(1)} Attack`;
+    const details = [
+      { label: "Manoeuvre", value: manoeuvre.label },
+      { label: "Effect", value: manoeuvre.summary },
+      { label: "Attack Type", value: attack.attackType },
+      { label: "Range", value: attack.range },
+      attackMode !== rollMode ? { label: "Combined Mode", value: rollMode } : null,
+      situationalModifier ? { label: "Situational", value: formatSigned(situationalModifier) } : null,
+      rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null,
+      { label: "Source", value: `Core Rules PDF p. ${manoeuvre.sourcePage}` }
+    ].filter(Boolean);
+
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${attackName}: ${manoeuvre.label}`, {
+      mode: rollMode,
+      details,
+      targetNumber: numberOrNull(attack.targetArmourClass),
+      showMargin: settingEnabled("showMarginOfSuccess"),
+      showCritical: settingEnabled("showCriticalRollNotes")
+    });
+  }
+
+  async _onPostCombatManoeuvre(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".combat-manoeuvre-panel");
+    const manoeuvre = getCombatManoeuvre(panel?.querySelector("[data-manoeuvre-input='id']")?.value);
+    if (!manoeuvre) return;
+
+    const attackKey = panel?.querySelector("[data-manoeuvre-input='attack']")?.value ?? "";
+    const attack = attackKey ? this.actor.system.combat?.attacks?.[attackKey] : null;
+    const attackName = attack?.weapon || "";
+    const rollMode = attack ? combineD20Modes(attack.d20Mode || "normal", manoeuvre.rollMode) : manoeuvre.rollMode;
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: buildCombatManoeuvreChatContent(manoeuvre, { actor: this.actor, attackName, rollMode })
+    });
   }
 
   async _onUseItem(event) {

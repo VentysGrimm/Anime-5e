@@ -177,6 +177,30 @@
       }
     },
     {
+      "name": "Combat Manoeuvres Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Combat Manoeuvres",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 161-168, 171.</p><p>Combat manoeuvres are optional Core Rules procedures for attack actions and tactical actions. The actor sheet can post these references to chat or roll a selected common attack with the manoeuvre's advantage or disadvantage guidance applied.</p><ul><li><strong>Tactical actions:</strong> Aim and Wait for Opening prepare advantage for a later ranged or melee attack. Total Defence forces attackers to roll at disadvantage.</li><li><strong>Grappling:</strong> Grapple uses an unarmed attack to grab instead of damage. Later attacks can Lock, Throw, Pin, or attempt to disarm by grabbing the weapon.</li><li><strong>Called shots:</strong> Disarm, Vital Spot, Weak Point, Specific Location, and Knock Out are declared before the attack and usually impose disadvantage unless a relevant Combat Technique removes it.</li><li><strong>Attack manoeuvres:</strong> Two-Weapon Fighting, Multiple Targets, Strike to Wound, Total Attack, Surprise Attack, Touch Target, and Mounted Fast Attack change attack roll mode, damage handling, target AC, or defensive risk.</li><li><strong>Modifiers:</strong> Advantage and disadvantage cancel each other and do not stack. Range penalties, cover, flanking, total attack, total defence, and target state should be reviewed before damage is resolved.</li></ul>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.combat-manoeuvres",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 161,
+            "importId": "core.rules.combat-manoeuvres"
+          }
+        }
+      }
+    },
+    {
       "name": "Damage Recovery and Energy Quick Reference",
       "folder": "Core Rules Reference",
       "pages": [

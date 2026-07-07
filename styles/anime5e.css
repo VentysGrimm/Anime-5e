@@ -1484,7 +1484,8 @@
 }
 
 .anime5e .quick-roll-panel,
-.anime5e .movement-mode-panel {
+.anime5e .movement-mode-panel,
+.anime5e .combat-manoeuvre-panel {
   background: rgba(255, 255, 255, 0.64);
   border: 1px solid var(--anime5e-border);
   display: grid;
@@ -1493,7 +1494,8 @@
 }
 
 .anime5e .quick-roll-panel h3,
-.anime5e .movement-mode-panel h3 {
+.anime5e .movement-mode-panel h3,
+.anime5e .combat-manoeuvre-panel h3 {
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0;
@@ -1502,7 +1504,8 @@
 }
 
 .anime5e .quick-roll-controls,
-.anime5e .movement-mode-grid {
+.anime5e .movement-mode-grid,
+.anime5e .combat-manoeuvre-controls {
   align-items: end;
   display: grid;
   gap: 8px;
@@ -1510,7 +1513,8 @@
 }
 
 .anime5e .quick-roll-controls label,
-.anime5e .movement-mode-grid label {
+.anime5e .movement-mode-grid label,
+.anime5e .combat-manoeuvre-controls label {
   display: grid;
   font-size: 0.78rem;
   font-weight: 800;
@@ -1852,6 +1856,7 @@
   .anime5e .encounter-threat-grid,
   .anime5e .encounter-threat-result-grid,
   .anime5e .folio-page-heading,
+  .anime5e .combat-manoeuvre-controls,
   .anime5e .quick-roll-controls,
   .anime5e .movement-mode-grid,
   .anime5e .save-roll-controls,

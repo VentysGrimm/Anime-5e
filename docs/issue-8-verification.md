@@ -104,6 +104,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Core Rules deprivation now has source-backed Adventuring Risk Items, a rules-reference Journal entry, and actor-sheet Hit Point cap tracking for incurable deprivation loss until the deprivation ends.
 - Actor sheets now expose buttons for the core rules-reference Journal pack, linking character creation, character options, rolls, combat, advancement, item construction, and GM guidance references by source ID.
 - Character sheets now include a Level Up action near the class/level panel. It confirms the advance, updates actor level, XP, proficiency bonus, a single unambiguous owned Class item, point validation, and posts the level-up result to chat.
+- Actor sheets now include Core Rules combat manoeuvre controls. They can post source-backed manoeuvre reminders or roll a selected common attack with manoeuvre advantage/disadvantage guidance while preserving later damage, save, and target-state rulings for GM adjudication.
 
 ## Missing Files Required For Load
 

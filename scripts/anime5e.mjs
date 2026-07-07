@@ -50,6 +50,7 @@ import {
   showEncounterThreatDialog
 } from "../module/apps/encounter-threat-dialog.mjs";
 import { importCoreCompendiumData } from "../module/data/compendiums.mjs";
+import * as Anime5eCombatManoeuvres from "../module/rules/combat-manoeuvres.mjs";
 import { registerCreationWorkflowHooks } from "../module/rules/creation-workflow.mjs";
 import * as Anime5ePoints from "../module/rules/points.mjs";
 import * as Anime5eResources from "../module/rules/resources.mjs";
@@ -104,6 +105,7 @@ Hooks.once("init", () => {
 
   game.anime5e = {
     config: ANIME5E,
+    combatManoeuvres: Anime5eCombatManoeuvres,
     importCoreCompendiumData,
     points: Anime5ePoints,
     resources: Anime5eResources,

@@ -61,6 +61,7 @@ Useful controls:
 - Quick Rolls roll ability checks, proficient checks, or configured checks with DC and bonus.
 - Saving throw buttons roll ability saves with optional proficiency.
 - Initiative rolls the actor's initiative value.
+- Combat Manoeuvres can post Core Rules manoeuvre reminders or roll a selected common attack with the manoeuvre's advantage/disadvantage guidance.
 - Attack and Damage buttons roll common attack rows.
 - Owned weapon, Attribute, power, spell, and technique actions roll from their Item fields.
 

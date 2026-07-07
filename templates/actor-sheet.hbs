@@ -560,6 +560,33 @@
               </label>
             </div>
           </section>
+          <section class="combat-manoeuvre-panel" aria-label="Combat Manoeuvres">
+            <h3>Combat Manoeuvres</h3>
+            <div class="combat-manoeuvre-controls">
+              <label>
+                Manoeuvre
+                <select data-manoeuvre-input="id">
+                  {{#each combatManoeuvres.groups as |group|}}
+                    <optgroup label="{{group.label}}">
+                      {{#each group.entries as |entry|}}
+                        <option value="{{entry.id}}">{{entry.label}} ({{entry.rollModeLabel}})</option>
+                      {{/each}}
+                    </optgroup>
+                  {{/each}}
+                </select>
+              </label>
+              <label>
+                Attack Row
+                <select data-manoeuvre-input="attack">
+                  {{#each attackRows as |attackRow|}}
+                    <option value="{{attackRow.key}}">{{attackRow.label}}</option>
+                  {{/each}}
+                </select>
+              </label>
+              <button type="button" class="roll-action" data-action="roll-combat-manoeuvre"><i class="fas fa-dice-d20"></i> Roll</button>
+              <button type="button" class="roll-action" data-action="post-combat-manoeuvre"><i class="fas fa-comment"></i> Post</button>
+            </div>
+          </section>
           <div class="folio-table attack-table action-table">
             <div class="table-header">Weapon</div>
             <div class="table-header">Mod</div>

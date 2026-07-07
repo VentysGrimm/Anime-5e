@@ -50,6 +50,8 @@ Anime 5e registers these world settings:
 
 Use Tracked Energy when the table wants the sheet to spend and restore Energy directly. Use Manual when Energy is a chat note or table decision. Use Disabled when the campaign does not use Energy bookkeeping.
 
+The Combat Manoeuvres controls on actor sheets cover the Core Rules optional manoeuvres from the action chapter. They can post the manoeuvre reference to chat or roll a selected common attack with the manoeuvre's advantage/disadvantage guidance. Apply DM-facing rulings such as target AC changes, knock-out saves, Weak Point size, and damage adjustment before final damage is resolved.
+
 ## Modules
 
 Standalone Anime 5e expansion modules live under `modules/` in this repository and can be installed separately as Foundry modules. Current modules cover Hybrid Species, Bonus Character Options, Adventuring Accessories, Game Screen Adventure, Mounts & Monsters, Monstrum Libri Vol. 1, Monstrum Libri Vol. 2, Folstavia, and Beyonder Worlds.
