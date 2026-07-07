@@ -31,9 +31,11 @@ The remaining-point result is guidance, not a hidden lock. If a GM grants a spec
 
 ## Species, Size, And Class
 
-Drag source-backed Species and Class Items from the compendiums whenever possible. The sheet reads those Items for point totals, species workflow summaries, class-level summaries, class-derived benefits, managed class-grant sync, and validation warnings.
+Drag source-backed Species, Size Template, and Class Items from the compendiums whenever possible. The sheet reads those Items for point totals, species workflow summaries, species trait sync, size modifiers, class-level summaries, class-derived benefits, managed class-grant sync, and validation warnings.
 
-Use the Species Workflow to mark the applied Species. Use the Size Template workflow to mark the selected size template; applied size modifiers can update derived summaries such as Armour Class while leaving table-review notes visible.
+Use the Species Workflow to mark the applied Species. Applied Species ability modifiers contribute to effective ability scores, and Sync Traits creates managed species-paid Attribute and Defect Items from the source trait block. Raceless Character is the 0-point path for saving Race Points for discretionary choices; prebuilt Hybrid Species items use the same sync path.
+
+Use the Size Template workflow to mark the selected size template. The Core Rules size templates use signed point modifiers and can apply AC, attack, range/speed, lift/carry, Strength, damage inflicted, and standard damage received modifiers where the sheet can calculate them.
 
 For classes, set the Class Item level. The actor compares owned Class levels with actor level and warns when they do not match. Class-granted Attribute benefits sync to class-paid owned Attribute Items that do not spend discretionary points. Multiclass characters can advance one owned Class at a time; duplicate proficiencies, duplicate benefits, and point reallocations appear in the Class Benefit Sync and Reallocation Review panels for GM review.
 

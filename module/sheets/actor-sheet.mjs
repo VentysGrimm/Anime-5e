@@ -13,6 +13,7 @@ import {
   summarizePointState
 } from "../rules/creation-workflow.mjs";
 import { syncClassGrantedBenefits } from "../rules/class-benefits.mjs";
+import { syncSpeciesGrantedTraits } from "../rules/species-traits.mjs";
 import {
   buildCoreAttributeEffectContext,
   buildCoreAttributeUsageContext,
@@ -321,6 +322,11 @@ function numberOrNull(value) {
   return Number.isFinite(number) ? number : null;
 }
 
+function numberFromText(value) {
+  const match = String(value ?? "").match(/[+-]?\d+/);
+  return match ? Number(match[0]) : 0;
+}
+
 function hasNumericEntry(value) {
   return value !== undefined && value !== null && value !== "" && Number.isFinite(Number(value));
 }
@@ -339,6 +345,11 @@ function settingEnabled(key) {
   } catch {
     return false;
   }
+}
+
+function isStandardDamageType(value) {
+  const text = String(value ?? "").trim().toLowerCase();
+  return !text || ["standard", "bludgeoning", "piercing", "slashing"].includes(text);
 }
 
 function sourceIdForItem(item) {
@@ -489,13 +500,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.system = system;
     context.items = items.map((item) => this.constructor._prepareItemContext(item));
     context.itemGroups = this.constructor._prepareItemGroups(context.items);
+    context.pointSummary = this.constructor._preparePointSummary(system, items);
     context.linkedActors = await this.constructor._prepareLinkedActorContext(items);
     context.equipment = this.constructor._prepareEquipmentContext(system, items, context.items);
-    context.speciesWorkflow = this.constructor._prepareSpeciesWorkflowContext(system, items, context.items);
+    context.speciesWorkflow = this.constructor._prepareSpeciesWorkflowContext(system, items, context.items, context.pointSummary.speciesTraitPlan);
     context.sizeTemplateWorkflow = this.constructor._prepareSizeTemplateWorkflowContext(system, items, context.items);
     context.attributeOffense = this.constructor._prepareAttributeOffenseContext(items, context.items);
     context.complexAttributes = this.constructor._prepareComplexAttributeContext(items, context.items);
-    context.pointSummary = this.constructor._preparePointSummary(system, items);
     context.creation = this.constructor._prepareCreationContext(system, context.pointSummary, items);
     context.advancement = this.constructor._prepareAdvancementContext(system, context.pointSummary);
     context.attributeEffects = buildCoreAttributeEffectContext({
@@ -805,14 +816,16 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       const modifier = item.system?.armourClassModifier ?? item.system?.armourClass;
       return total + numberOrZero(modifier);
     }, 0);
-    const armourClass = (selectedArmour?.armourClass ?? manualArmourClass) + shieldBonus;
+    const sizeArmourClassModifier = numberOrZero(system.creation?.sizeTemplateArmourClassModifier);
+    const armourClass = (selectedArmour?.armourClass ?? manualArmourClass) + shieldBonus + (selectedArmour ? sizeArmourClassModifier : 0);
     const armourDetails = [
       selectedArmour ? `${selectedArmour.item.name} ${selectedArmour.armourClass}` : `Manual AC ${manualArmourClass}`,
       ...equippedShields.map((item) => {
         const modifier = item.system?.armourClassModifier ?? item.system?.armourClass;
         return `${item.name} +${numberOrZero(modifier)}`;
-      })
-    ];
+      }),
+      selectedArmour && sizeArmourClassModifier ? `Size ${formatSigned(sizeArmourClassModifier)}` : null
+    ].filter(Boolean);
 
     return {
       armourClass,
@@ -825,7 +838,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     };
   }
 
-  static _prepareSpeciesWorkflowContext(system, rawItems, preparedItems) {
+  static _prepareSpeciesWorkflowContext(system, rawItems, preparedItems, speciesTraitPlan = {}) {
     const preparedById = new Map(preparedItems.map((item) => [item.id, item]));
     const appliedRef = String(system.creation?.speciesApplied ?? "");
     const identityRace = String(system.identity?.race ?? "").trim();
@@ -837,6 +850,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         const pointCost = Math.max(0, Number(item.system?.points ?? item.system?.cost) || 0);
         const isApplied = appliedRef === item.uuid || appliedRef === item.id || (!!identityRace && identityRace === item.name);
         const summary = stripHtml(item.system?.description);
+        const abilityBonuses = Array.isArray(item.system?.abilityBonuses) ? item.system.abilityBonuses : [];
+        const attributes = Array.isArray(item.system?.attributes) ? item.system.attributes : [];
+        const defects = Array.isArray(item.system?.defects) ? item.system.defects : [];
+        const languages = Array.isArray(item.system?.languages) ? item.system.languages : [];
+        const movement = Array.isArray(item.system?.movement) ? item.system.movement : [];
 
         return {
           ...(prepared ?? {}),
@@ -848,6 +866,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           pointCost,
           pointCostLabel: `${pointCost} Point${pointCost === 1 ? "" : "s"}`,
           isApplied,
+          speciesSize: item.system?.speciesSize ?? "",
+          abilityBonuses,
+          attributes,
+          defects,
+          languages,
+          movement,
+          traitNotes: item.system?.traitNotes ?? "",
           summary: summary.length > 220 ? `${summary.slice(0, 217)}...` : summary
         };
       });
@@ -870,10 +895,10 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       },
       {
         label: "Hybrid Species",
-        status: hasHybridSpecies ? "Owned" : "Placeholder",
+        status: hasHybridSpecies ? "Ready" : "Import",
         note: hasHybridSpecies
-          ? "Use prebuilt Hybrid Species items; the constructor is still manual."
-          : "Prebuilt hybrids can be imported; full constructor automation is pending."
+          ? "Apply a prebuilt Hybrid Species item; ability bonuses and managed traits sync like other Species."
+          : "Import prebuilt hybrids from the Hybrid Species module or build one as a Species item."
       }
     ];
 
@@ -886,6 +911,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       hasApplied: !!appliedSpecies,
       appliedName: appliedSpecies?.name ?? identityRace,
       appliedSource: appliedSpecies?.sourceLabel ?? "",
+      appliedSpecies,
+      traitPlan: speciesTraitPlan,
       totalCost: species.reduce((total, item) => total + item.pointCost, 0),
       warnings
     };
@@ -900,16 +927,20 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       .map((item) => {
         const prepared = preparedById.get(item.id);
         const sourceLabel = [item.system?.source, item.system?.sourcePage ? `p. ${item.system.sourcePage}` : null].filter(Boolean).join(", ");
-        const pointCost = Math.max(0, Number(item.system?.points ?? item.system?.cost) || 0);
+        const pointCost = Number(item.system?.points ?? item.system?.costModifier ?? item.system?.cost) || 0;
         const isApplied = appliedRef === item.uuid || appliedRef === item.id || (!!identitySizeTemplate && identitySizeTemplate === item.name);
         const modifiers = [
           hasText(item.system?.sizeCategory) ? { label: "Category", value: item.system.sizeCategory } : null,
+          hasText(item.system?.typicalHeight) ? { label: "Height", value: item.system.typicalHeight } : null,
+          hasText(item.system?.typicalWeight) ? { label: "Weight", value: item.system.typicalWeight } : null,
+          hasText(item.system?.liftCarryModifier) ? { label: "Lift/Carry", value: item.system.liftCarryModifier } : null,
+          hasText(item.system?.strengthModifier) ? { label: "Strength", value: item.system.strengthModifier } : null,
+          hasText(item.system?.strengthCheckModifier) ? { label: "Strength Check", value: item.system.strengthCheckModifier } : null,
+          hasText(item.system?.damageModifier) ? { label: "Damage Inflicted", value: item.system.damageModifier } : null,
+          hasText(item.system?.receivedDamageModifier) ? { label: "Damage Received", value: item.system.receivedDamageModifier } : null,
           Number(item.system?.armourClassModifier) ? { label: "AC", value: formatSigned(Number(item.system.armourClassModifier)) } : null,
           Number(item.system?.attackModifier) ? { label: "Offense Roll", value: formatSigned(Number(item.system.attackModifier)) } : null,
-          hasText(item.system?.damageModifier) ? { label: "Damage", value: item.system.damageModifier } : null,
-          hasText(item.system?.movementModifier) ? { label: "Movement", value: item.system.movementModifier } : null,
-          hasText(item.system?.liftCarryModifier) ? { label: "Lift/Carry", value: item.system.liftCarryModifier } : null,
-          hasText(item.system?.receivedDamageModifier) ? { label: "Received Damage", value: item.system.receivedDamageModifier } : null,
+          hasText(item.system?.rangeSpeedModifier ?? item.system?.movementModifier) ? { label: "Range/Speed", value: item.system.rangeSpeedModifier ?? item.system.movementModifier } : null,
           hasText(item.system?.space) ? { label: "Space", value: item.system.space } : null,
           hasText(item.system?.reach) ? { label: "Reach", value: item.system.reach } : null
         ].filter(Boolean);
@@ -1106,7 +1137,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         numberOrZero(creation.sizeTemplateAttackModifier) ? `Offense Roll ${formatSigned(numberOrZero(creation.sizeTemplateAttackModifier))}` : null,
         hasText(creation.sizeTemplateDamageModifier) ? `Damage ${creation.sizeTemplateDamageModifier}` : null,
         hasText(creation.sizeTemplateStrengthModifier) ? `Strength ${creation.sizeTemplateStrengthModifier}` : null,
-        hasText(creation.sizeTemplateMovementModifier) ? `Movement ${creation.sizeTemplateMovementModifier}` : null
+        hasText(creation.sizeTemplateMovementModifier) ? `Range/Speed ${creation.sizeTemplateMovementModifier}` : null,
+        hasText(creation.sizeTemplateLiftCarryModifier) ? `Lift/Carry ${creation.sizeTemplateLiftCarryModifier}` : null,
+        hasText(creation.sizeTemplateReceivedDamageModifier) ? `Received Damage ${creation.sizeTemplateReceivedDamageModifier}` : null,
+        hasText(creation.sizeTemplateSpace) ? `Size ${creation.sizeTemplateSpace}` : null,
+        hasText(creation.sizeTemplateReach) ? `Reach ${creation.sizeTemplateReach}` : null
       ].filter(Boolean),
       recommendedDiscretionaryPoints: calculateRecommendedDiscretionaryPoints(startingLevel),
       recommendedExperience,
@@ -1289,6 +1324,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='remove-species']").forEach((button) => {
       button.addEventListener("click", this._onRemoveSpecies.bind(this));
+    });
+    element.querySelectorAll("[data-action='sync-species-traits']").forEach((button) => {
+      button.addEventListener("click", this._onSyncSpeciesTraits.bind(this));
     });
     element.querySelectorAll("[data-action='apply-size-template']").forEach((button) => {
       button.addEventListener("click", this._onApplySizeTemplate.bind(this));
@@ -1480,8 +1518,10 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const situationalModifier = numberOrZero(attack.situationalModifier);
     const shouldApplyRangePenalty = settingEnabled("applyRangePenalties");
     const rangePenalty = shouldApplyRangePenalty ? numberOrZero(attack.rangePenalty) : 0;
+    const sizeAttackModifier = numberOrZero(this.actor.system.creation?.sizeTemplateAttackModifier);
     const modifiers = [modifier];
     if (situationalModifier) modifiers.push(situationalModifier);
+    if (sizeAttackModifier) modifiers.push(sizeAttackModifier);
     if (rangePenalty) modifiers.push(-rangePenalty);
 
     const rollMode = attack.d20Mode || "normal";
@@ -1489,6 +1529,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { label: "Attack Type", value: attack.attackType },
       { label: "Range", value: attack.range },
       situationalModifier ? { label: "Situational", value: formatSigned(situationalModifier) } : null,
+      sizeAttackModifier ? { label: "Size", value: formatSigned(sizeAttackModifier) } : null,
       rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null
     ].filter(Boolean);
 
@@ -1511,7 +1552,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       return;
     }
 
-    await this._rollFormula(formula, `${attack.weapon || "Attack"} Damage`);
+    const sizeDamageModifier = numberFromText(this.actor.system.creation?.sizeTemplateDamageModifier);
+    const damageFormula = sizeDamageModifier ? `${formula} ${sizeDamageModifier > 0 ? "+" : "-"} ${Math.abs(sizeDamageModifier)}` : formula;
+    const details = [
+      sizeDamageModifier ? { label: "Size Damage", value: formatSigned(sizeDamageModifier) } : null
+    ].filter(Boolean);
+
+    await this._rollFormula(damageFormula, `${attack.weapon || "Attack"} Damage`, { details });
   }
 
   async _onRollCombatManoeuvre(event) {
@@ -1532,8 +1579,10 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const situationalModifier = numberOrZero(attack.situationalModifier);
     const shouldApplyRangePenalty = settingEnabled("applyRangePenalties");
     const rangePenalty = shouldApplyRangePenalty ? numberOrZero(attack.rangePenalty) : 0;
+    const sizeAttackModifier = numberOrZero(this.actor.system.creation?.sizeTemplateAttackModifier);
     const modifiers = [modifier];
     if (situationalModifier) modifiers.push(situationalModifier);
+    if (sizeAttackModifier) modifiers.push(sizeAttackModifier);
     if (rangePenalty) modifiers.push(-rangePenalty);
 
     const attackMode = attack.d20Mode || "normal";
@@ -1546,6 +1595,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { label: "Range", value: attack.range },
       attackMode !== rollMode ? { label: "Combined Mode", value: rollMode } : null,
       situationalModifier ? { label: "Situational", value: formatSigned(situationalModifier) } : null,
+      sizeAttackModifier ? { label: "Size", value: formatSigned(sizeAttackModifier) } : null,
       rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null,
       { label: "Source", value: `Core Rules PDF p. ${manoeuvre.sourcePage}` }
     ].filter(Boolean);
@@ -1758,11 +1808,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!item) return;
 
     const modifier = Number(item.system?.attackModifier ?? item.system?.attackBonus) || 0;
+    const sizeAttackModifier = numberOrZero(this.actor.system.creation?.sizeTemplateAttackModifier);
     const details = [
       { label: "Category", value: item.system?.category },
-      { label: "Range", value: item.system?.range }
-    ];
-    await this._rollFormula(buildD20Formula([modifier]), `${item.name} Attack`, {
+      { label: "Range", value: item.system?.range },
+      sizeAttackModifier ? { label: "Size", value: formatSigned(sizeAttackModifier) } : null
+    ].filter(Boolean);
+    await this._rollFormula(buildD20Formula([modifier, sizeAttackModifier].filter(Boolean)), `${item.name} Attack`, {
       details,
       showCritical: settingEnabled("showCriticalRollNotes")
     });
@@ -1777,8 +1829,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       return;
     }
 
+    const sizeDamageModifier = numberFromText(this.actor.system.creation?.sizeTemplateDamageModifier);
+    const damageFormula = sizeDamageModifier ? `${formula} ${sizeDamageModifier > 0 ? "+" : "-"} ${Math.abs(sizeDamageModifier)}` : formula;
     const damageType = item.system?.damageType ? ` (${item.system.damageType})` : "";
-    await this._rollFormula(formula, `${item.name} Damage${damageType}`);
+    const details = [
+      sizeDamageModifier ? { label: "Size Damage", value: formatSigned(sizeDamageModifier) } : null
+    ].filter(Boolean);
+    await this._rollFormula(damageFormula, `${item.name} Damage${damageType}`, { details });
   }
 
   static _normalizeAbilityKey(value) {
@@ -1841,8 +1898,13 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   async _applyHitPointChange(amount, mode, damageType = "") {
-    const change = await applyHitPointChange(this.actor, amount, mode);
+    const sizeReceivedDamageModifier = mode === "damage" && isStandardDamageType(damageType)
+      ? numberFromText(this.actor.system.creation?.sizeTemplateReceivedDamageModifier)
+      : 0;
+    const adjustedAmount = mode === "damage" ? Math.max(0, amount + sizeReceivedDamageModifier) : amount;
+    const change = await applyHitPointChange(this.actor, adjustedAmount, mode);
     const label = mode === "healing" ? "heals" : "takes";
+    const sizeLine = sizeReceivedDamageModifier ? ` Size received-damage modifier ${formatSigned(sizeReceivedDamageModifier)} adjusted ${amount} to ${adjustedAmount}.` : "";
     const typedAmount = mode === "damage" && damageType ? `${change.amount} ${escapeHtml(damageType)}` : change.amount;
     const noun = mode === "healing" ? "HP" : "damage";
     const tempLine = mode === "damage" && change.absorbed
@@ -1851,7 +1913,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.${tempLine}</p>`
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.${sizeLine}${tempLine}</p>`
     });
   }
 
@@ -2252,6 +2314,15 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!item || item.type !== "species") return;
 
     await removeSpeciesItem(this.actor, item);
+  }
+
+  async _onSyncSpeciesTraits(event) {
+    event.preventDefault();
+    if (!this.isEditable) return;
+
+    const result = await syncSpeciesGrantedTraits(this.actor);
+    await this.actor.update(summarizePointState(this.actor));
+    ui.notifications?.info(`Species traits synced: ${result.created} created, ${result.updated} updated, ${result.deleted} removed.`);
   }
 
   async _onApplySizeTemplate(event) {

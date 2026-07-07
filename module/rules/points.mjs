@@ -1,6 +1,7 @@
 const ABILITY_KEYS = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma"];
 
 import { buildClassBenefitPlan, isClassGrantedBenefitItem } from "./class-benefits.mjs";
+import { buildSpeciesTraitPlan, isSpeciesGrantedTraitItem } from "./species-traits.mjs";
 
 export const LEVEL_XP_THRESHOLDS = Object.freeze({
   1: 0,
@@ -478,6 +479,10 @@ export function calculateDefectRefund(item) {
 
 export function calculateSpeciesCost(item) {
   const system = item?.system ?? item ?? {};
+  if (item?.type === "sizeTemplate") {
+    if (system.points !== undefined && system.points !== null && system.points !== "") return numberOrZero(system.points);
+    if (system.costModifier !== undefined && system.costModifier !== null && system.costModifier !== "") return numberOrZero(system.costModifier);
+  }
   return positiveNumber(system.points ?? system.cost);
 }
 
@@ -520,7 +525,7 @@ export function calculateOwnedPointTotals(items = []) {
     const type = item?.type;
     const system = item?.system ?? {};
 
-    if (isClassGrantedBenefitItem(item)) continue;
+    if (isClassGrantedBenefitItem(item) || isSpeciesGrantedTraitItem(item)) continue;
 
     if (type === "attribute" || type === "itemAttribute" || type === "power" || type === "technique" || type === "weapon") {
       const customization = calculateAttributeCustomization(item);
@@ -569,6 +574,7 @@ export function calculatePointSummary(system = {}, items = []) {
   const classLevelState = summarizeClassLevelState(items, system.level);
   const classBenefits = summarizeSingleClassBenefits(items, system.level);
   const classBenefitPlan = buildClassBenefitPlan(items);
+  const speciesTraitPlan = buildSpeciesTraitPlan(system, items);
   const benchmark = getCharacterBenchmark(system.level);
   const benchmarkSummary = summarizeCharacterBenchmark(benchmark);
   const benchmarkWarnings = calculateBenchmarkWarnings(system, items);
@@ -584,7 +590,7 @@ export function calculatePointSummary(system = {}, items = []) {
     + owned.attributeCost
     + owned.equipmentCost;
   const remaining = available - totalSpent;
-  const warnings = [...owned.warningItems, ...classLevelState.warnings, ...classBenefits.warnings, ...classBenefitPlan.warnings, ...benchmarkWarnings];
+  const warnings = [...owned.warningItems, ...classLevelState.warnings, ...classBenefits.warnings, ...classBenefitPlan.warnings, ...speciesTraitPlan.warnings, ...benchmarkWarnings];
 
   if (remaining < 0) warnings.push("Point spending exceeds available points.");
   if ((manualSpent > 0 || manualRefund > 0) && !manualAdjustmentNotes) {
@@ -612,6 +618,7 @@ export function calculatePointSummary(system = {}, items = []) {
     classLevel: classLevelState,
     classBenefits,
     classBenefitPlan,
+    speciesTraitPlan,
     benchmark,
     benchmarkSummary,
     benchmarkWarnings,

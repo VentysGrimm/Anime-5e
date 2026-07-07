@@ -393,9 +393,70 @@
             <span>Applied Species <strong>{{#if speciesWorkflow.hasApplied}}{{speciesWorkflow.appliedName}}{{else}}None{{/if}}</strong></span>
             <span>Species Points <strong>{{speciesWorkflow.totalCost}}</strong></span>
           </div>
+          {{#if editable}}
+            <div class="creation-actions">
+              <button type="button" data-action="sync-species-traits"><i class="fas fa-sync-alt"></i><span>Sync Traits</span></button>
+            </div>
+          {{/if}}
           {{#each speciesWorkflow.warnings as |warning|}}
             <p class="sheet-warning">{{warning}}</p>
           {{/each}}
+          {{#each speciesWorkflow.traitPlan.warnings as |warning|}}
+            <p class="sheet-warning">{{warning}}</p>
+          {{/each}}
+          {{#if speciesWorkflow.appliedSpecies}}
+            <section class="species-trait-breakdown">
+              <header>
+                <h3>{{speciesWorkflow.appliedSpecies.name}}</h3>
+                <span>{{speciesWorkflow.appliedSpecies.speciesSize}}</span>
+              </header>
+              {{#if speciesWorkflow.appliedSpecies.abilityBonuses}}
+                <div class="species-trait-grid ability-bonus-grid">
+                  <div class="table-header">Ability</div>
+                  <div class="table-header">Bonus</div>
+                  <div class="table-header">Points</div>
+                  <div class="table-header">Notes</div>
+                  {{#each speciesWorkflow.appliedSpecies.abilityBonuses as |bonus|}}
+                    <span>{{bonus.ability}}</span>
+                    <span>{{bonus.modifier}}</span>
+                    <span>{{bonus.points}}</span>
+                    <span>{{bonus.notes}}</span>
+                  {{/each}}
+                </div>
+              {{/if}}
+              {{#if speciesWorkflow.traitPlan.hasTraits}}
+                <ol class="species-managed-trait-list">
+                  {{#each speciesWorkflow.traitPlan.managedTraits as |trait|}}
+                    <li>
+                      <span>{{trait.name}}</span>
+                      <strong>{{trait.type}} Rank {{trait.rank}} - {{trait.statusLabel}}</strong>
+                      <small>{{trait.detail}}</small>
+                    </li>
+                  {{/each}}
+                </ol>
+              {{/if}}
+              {{#if speciesWorkflow.appliedSpecies.languages}}
+                <div class="species-trait-tags">
+                  {{#each speciesWorkflow.appliedSpecies.languages as |language|}}<span>{{language}}</span>{{/each}}
+                </div>
+              {{/if}}
+              {{#if speciesWorkflow.appliedSpecies.movement}}
+                <div class="species-trait-grid movement-grid">
+                  <div class="table-header">Mode</div>
+                  <div class="table-header">Speed</div>
+                  <div class="table-header">Notes</div>
+                  {{#each speciesWorkflow.appliedSpecies.movement as |movement|}}
+                    <span>{{movement.mode}}</span>
+                    <span>{{movement.speed}}</span>
+                    <span>{{movement.notes}}</span>
+                  {{/each}}
+                </div>
+              {{/if}}
+              {{#if speciesWorkflow.appliedSpecies.traitNotes}}
+                <p>{{speciesWorkflow.appliedSpecies.traitNotes}}</p>
+              {{/if}}
+            </section>
+          {{/if}}
           <div class="species-workflow-paths">
             {{#each speciesWorkflow.specialPaths as |path|}}
               <span>

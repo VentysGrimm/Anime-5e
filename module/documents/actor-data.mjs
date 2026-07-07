@@ -1,5 +1,6 @@
 import { applyPointSummaryToSystem } from "../rules/points.mjs";
 import { ABILITY_KEYS, calculateCoreAttributeEffects } from "../rules/attribute-effects.mjs";
+import { calculateSpeciesEffects } from "../rules/species-traits.mjs";
 
 const fields = foundry.data.fields;
 
@@ -24,6 +25,27 @@ function numberField(initial = 0, options = {}) {
 function numberOrFallback(value, fallback = 0) {
   const number = Number(value);
   return Number.isFinite(number) ? number : fallback;
+}
+
+function numberFromText(value) {
+  const match = String(value ?? "").match(/[+-]?\d+/);
+  return match ? Number(match[0]) : 0;
+}
+
+function multiplierFromText(value) {
+  const text = String(value ?? "").trim().toLowerCase();
+  if (!text || text === "x1" || text === "1" || text === "-") return 1;
+
+  const multiplier = text.match(/x\s*(\d+(?:\.\d+)?)/);
+  if (multiplier) return Math.max(0, Number(multiplier[1]) || 1);
+
+  const divisor = text.match(/[÷/]\s*(\d+(?:\.\d+)?)/);
+  if (divisor) {
+    const number = Number(divisor[1]);
+    return number > 0 ? 1 / number : 1;
+  }
+
+  return 1;
 }
 
 function textOrFallback(value, fallback = "") {
@@ -140,6 +162,10 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         sizeTemplateDamageModifier: textField(),
         sizeTemplateStrengthModifier: textField(),
         sizeTemplateMovementModifier: textField(),
+        sizeTemplateLiftCarryModifier: textField(),
+        sizeTemplateReceivedDamageModifier: textField(),
+        sizeTemplateSpace: textField(),
+        sizeTemplateReach: textField(),
         classApplied: textField(),
         validationStatus: textField("draft"),
         validationNotes: textField()
@@ -259,12 +285,16 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
     const sourceSystem = this.parent?._source?.system ?? this;
     const ownedItems = this.parent?.items?.contents ?? [];
     const attributeEffects = calculateCoreAttributeEffects({ system: sourceSystem, items: ownedItems });
+    const speciesEffects = calculateSpeciesEffects({ system: sourceSystem, items: ownedItems });
+    const sizeStrengthBonus = numberFromText(sourceSystem.creation?.sizeTemplateStrengthModifier);
 
     for (const abilityKey of ABILITY_KEYS) {
       const ability = this.abilities[abilityKey];
       const sourceAbility = sourceSystem.abilities?.[abilityKey] ?? ability;
       const baseValue = numberOrFallback(sourceAbility.value, numberOrFallback(ability.value, 10));
-      const effectBonus = attributeEffects.abilityBonuses[abilityKey] ?? 0;
+      const effectBonus = (attributeEffects.abilityBonuses[abilityKey] ?? 0)
+        + (speciesEffects.abilityBonuses[abilityKey] ?? 0)
+        + (abilityKey === "strength" ? sizeStrengthBonus : 0);
       const effectiveValue = Math.max(0, baseValue + effectBonus);
 
       ability.value = baseValue;
@@ -300,12 +330,16 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
 
     const movement = attributeEffects.movement;
     const baseMovementSpeed = Math.max(0, numberOrFallback(sourceSystem.combat?.movementSpeed, numberOrFallback(this.combat.movementSpeed, 30)));
+    const sizeMovementLabel = textOrFallback(sourceSystem.creation?.sizeTemplateMovementModifier, "");
+    const sizeMovementMultiplier = multiplierFromText(sizeMovementLabel);
     movement.baseGroundSpeed = baseMovementSpeed;
     const specialModes = movement.specialModes.map((mode) => String(mode));
     const specialModeText = specialModes.join(", ");
     this.combat.baseMovementSpeed = baseMovementSpeed;
-    this.combat.movementSpeed = movement.groundSpeed;
-    this.combat.movementSpeedMultiplier = movement.multiplierLabel;
+    this.combat.movementSpeed = Math.max(0, Math.round(movement.groundSpeed * sizeMovementMultiplier));
+    this.combat.movementSpeedMultiplier = [movement.multiplierLabel, sizeMovementLabel ? `Size ${sizeMovementLabel}` : ""]
+      .filter((entry) => entry && entry !== "x1")
+      .join(" ");
     this.combat.flightSpeed = movement.flightSpeed || textOrFallback(sourceSystem.combat?.flightSpeed, this.combat.flightSpeed);
     this.combat.waterSpeed = movement.waterSpeed || textOrFallback(sourceSystem.combat?.waterSpeed, this.combat.waterSpeed);
     this.combat.climbSpeed = textOrFallback(sourceSystem.combat?.climbSpeed, this.combat.climbSpeed);
@@ -321,7 +355,8 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
       this.combat.burrowSpeed ? `Burrow ${this.combat.burrowSpeed}` : "",
       this.combat.customMovement ? `Custom ${this.combat.customMovement}` : ""
     ].filter(Boolean);
-    this.combat.movementSummary = [...movement.summary, ...manualMovement].join("; ");
+    const sizeMovementSummary = sizeMovementLabel ? [`Size Template range/speed ${sizeMovementLabel}`] : [];
+    this.combat.movementSummary = [...movement.summary, ...sizeMovementSummary, ...manualMovement].join("; ");
 
     this.creation.startingLevel = Math.max(1, Number(this.creation.startingLevel) || Number(this.level) || 1);
     this.creation.startingExperience = Math.max(0, Number(this.creation.startingExperience) || Number(this.experience) || 0);

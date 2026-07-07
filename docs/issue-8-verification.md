@@ -107,6 +107,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Character sheets now include a Level Up action near the class/level panel. It confirms the advance, updates actor level, XP, proficiency bonus, a single unambiguous owned Class item, point validation, and posts the level-up result to chat.
 - Level Up also raises the character's source Discretionary Point budget to the Core Rules level benchmark when needed, and the Journal advancement panel shows current source budget, benchmark budget, and remaining points for allocation.
 - Class progression now syncs class-granted Attribute benefits into managed, class-paid owned Attribute items, excludes those generated items from discretionary point spending, exposes class choice and duplicate/reallocation review rows, and lets multiclass actors advance a specific owned Class item from the Folio.
+- Applied Species now derive ability modifiers and sync species-granted Attributes/Defects into managed, species-paid owned Items. Core Rules Table 05 Size Template items now carry signed point modifiers and apply AC, attack, range/speed, lift/carry, Strength, damage inflicted, and standard damage received modifiers where the sheet can calculate them.
 - Actor sheets now include Core Rules combat manoeuvre controls. They can post source-backed manoeuvre reminders or roll a selected common attack with manoeuvre advantage/disadvantage guidance while preserving later damage, save, and target-state rulings for GM adjudication.
 
 ## Missing Files Required For Load

@@ -522,6 +522,52 @@
   line-height: 1.25;
 }
 
+.anime5e .species-trait-breakdown {
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 8px;
+  padding: 8px;
+}
+
+.anime5e .species-trait-breakdown header {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.anime5e .species-trait-breakdown h3 {
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.anime5e .species-managed-trait-list {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  max-height: 160px;
+  overflow: auto;
+  padding: 0;
+}
+
+.anime5e .species-managed-trait-list li {
+  align-items: center;
+  border-top: 1px solid var(--anime5e-border);
+  display: grid;
+  gap: 6px 8px;
+  grid-template-columns: minmax(90px, 0.7fr) minmax(130px, 1fr);
+  padding: 4px 0;
+}
+
+.anime5e .species-managed-trait-list small {
+  grid-column: 1 / -1;
+}
+
 .anime5e .species-workflow-list,
 .anime5e .size-template-workflow-list {
   display: grid;
@@ -1904,6 +1950,7 @@
   .anime5e .species-workflow-list li,
   .anime5e .species-workflow-paths,
   .anime5e .species-workflow-summary,
+  .anime5e .species-managed-trait-list li,
   .anime5e .species-trait-grid,
   .anime5e .species-trait-summary,
   .anime5e .size-template-workflow-list li,

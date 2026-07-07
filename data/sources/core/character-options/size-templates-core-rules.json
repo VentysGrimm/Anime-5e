@@ -1,0 +1,299 @@
+{
+  "pack": "anime5e.character-options",
+  "documentType": "Item",
+  "folders": [
+    {
+      "name": "Size Templates - Core Rules",
+      "color": "#8a7651"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Diminutive Size Template",
+      "type": "sizeTemplate",
+      "folder": "Size Templates - Core Rules",
+      "img": "icons/svg/resize.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, pp. 44-45.</p><p><strong>Size:</strong> Diminutive. <strong>Point Modifier:</strong> -15.</p><p><strong>Rules Summary:</strong> Very small body with high AC and attack modifiers, heavy Strength, damage, speed, and carrying penalties, and increased standard damage received.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.size-template.diminutive",
+        "sourcePage": 44,
+        "importId": "core.size-template.diminutive",
+        "points": -15,
+        "costModifier": -15,
+        "sizeCategory": "Diminutive",
+        "typicalHeight": "6 in to 1 ft",
+        "typicalWeight": "Up to 1 lb",
+        "liftCarryModifier": "/125",
+        "strengthModifier": "-8",
+        "strengthCheckModifier": "Disadvantage",
+        "damageModifier": "-6",
+        "receivedDamageModifier": "+6",
+        "armourClassModifier": 6,
+        "attackModifier": 6,
+        "movementModifier": "/8",
+        "rangeSpeedModifier": "/8",
+        "space": "6 in to 1 ft",
+        "reach": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.size-template.diminutive",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 44,
+            "importId": "core.size-template.diminutive"
+          }
+        }
+      }
+    },
+    {
+      "name": "Tiny Size Template",
+      "type": "sizeTemplate",
+      "folder": "Size Templates - Core Rules",
+      "img": "icons/svg/resize.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, pp. 44-45.</p><p><strong>Size:</strong> Tiny. <strong>Point Modifier:</strong> -10.</p><p><strong>Rules Summary:</strong> Small body with strong AC and attack modifiers, reduced Strength, damage, speed, and carrying capacity, and increased standard damage received.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.size-template.tiny",
+        "sourcePage": 44,
+        "importId": "core.size-template.tiny",
+        "points": -10,
+        "costModifier": -10,
+        "sizeCategory": "Tiny",
+        "typicalHeight": "1 ft to 2 ft",
+        "typicalWeight": "1 - 8 lb",
+        "liftCarryModifier": "/25",
+        "strengthModifier": "-4",
+        "strengthCheckModifier": "Disadvantage",
+        "damageModifier": "-4",
+        "receivedDamageModifier": "+4",
+        "armourClassModifier": 4,
+        "attackModifier": 4,
+        "movementModifier": "/4",
+        "rangeSpeedModifier": "/4",
+        "space": "1 ft to 2 ft",
+        "reach": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.size-template.tiny",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 44,
+            "importId": "core.size-template.tiny"
+          }
+        }
+      }
+    },
+    {
+      "name": "Small Size Template",
+      "type": "sizeTemplate",
+      "folder": "Size Templates - Core Rules",
+      "img": "icons/svg/resize.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, pp. 44-45.</p><p><strong>Size:</strong> Small. <strong>Point Modifier:</strong> -5.</p><p><strong>Rules Summary:</strong> Compact body with modest AC and attack modifiers, lower Strength damage, slower range/speed, and reduced carrying capacity.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.size-template.small",
+        "sourcePage": 44,
+        "importId": "core.size-template.small",
+        "points": -5,
+        "costModifier": -5,
+        "sizeCategory": "Small",
+        "typicalHeight": "2 ft to 4 ft",
+        "typicalWeight": "8 - 60 lb",
+        "liftCarryModifier": "/5",
+        "strengthModifier": "0",
+        "strengthCheckModifier": "Disadvantage",
+        "damageModifier": "-2",
+        "receivedDamageModifier": "+2",
+        "armourClassModifier": 2,
+        "attackModifier": 2,
+        "movementModifier": "/2",
+        "rangeSpeedModifier": "/2",
+        "space": "2 ft to 4 ft",
+        "reach": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.size-template.small",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 44,
+            "importId": "core.size-template.small"
+          }
+        }
+      }
+    },
+    {
+      "name": "Medium Size Template",
+      "type": "sizeTemplate",
+      "folder": "Size Templates - Core Rules",
+      "img": "icons/svg/resize.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, pp. 44-45.</p><p><strong>Size:</strong> Medium. <strong>Point Modifier:</strong> 0.</p><p><strong>Rules Summary:</strong> Human-scale baseline. Most Anime 5E Races are Medium and do not need a size template unless the group wants the baseline recorded explicitly.</p>",
+        "rank": 1,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.size-template.medium",
+        "sourcePage": 44,
+        "importId": "core.size-template.medium",
+        "points": 0,
+        "costModifier": 0,
+        "sizeCategory": "Medium",
+        "typicalHeight": "4 ft to 8 ft",
+        "typicalWeight": "60 - 500 lb",
+        "liftCarryModifier": "x1",
+        "strengthModifier": "0",
+        "strengthCheckModifier": "",
+        "damageModifier": "0",
+        "receivedDamageModifier": "0",
+        "armourClassModifier": 0,
+        "attackModifier": 0,
+        "movementModifier": "x1",
+        "rangeSpeedModifier": "x1",
+        "space": "4 ft to 8 ft",
+        "reach": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.size-template.medium",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 44,
+            "importId": "core.size-template.medium"
+          }
+        }
+      }
+    },
+    {
+      "name": "Large Size Template",
+      "type": "sizeTemplate",
+      "folder": "Size Templates - Core Rules",
+      "img": "icons/svg/resize.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, pp. 44-45.</p><p><strong>Size:</strong> Large. <strong>Point Modifier:</strong> 5.</p><p><strong>Rules Summary:</strong> Large body with increased carrying capacity, advantage on Strength checks, stronger impacts, resilience to standard damage, lower AC and attack rolls, and doubled range/speed.</p>",
+        "rank": 1,
+        "cost": 5,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.size-template.large",
+        "sourcePage": 44,
+        "importId": "core.size-template.large",
+        "points": 5,
+        "costModifier": 5,
+        "sizeCategory": "Large",
+        "typicalHeight": "8 ft to 16 ft",
+        "typicalWeight": "500 lb - 2 tons",
+        "liftCarryModifier": "x5",
+        "strengthModifier": "0",
+        "strengthCheckModifier": "Advantage",
+        "damageModifier": "+2",
+        "receivedDamageModifier": "-2",
+        "armourClassModifier": -2,
+        "attackModifier": -2,
+        "movementModifier": "x2",
+        "rangeSpeedModifier": "x2",
+        "space": "8 ft to 16 ft",
+        "reach": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.size-template.large",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 44,
+            "importId": "core.size-template.large"
+          }
+        }
+      }
+    },
+    {
+      "name": "Huge Size Template",
+      "type": "sizeTemplate",
+      "folder": "Size Templates - Core Rules",
+      "img": "icons/svg/resize.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, pp. 44-45.</p><p><strong>Size:</strong> Huge. <strong>Point Modifier:</strong> 10.</p><p><strong>Rules Summary:</strong> Huge body with Strength +4, major carrying capacity, advantage on Strength checks, stronger impacts, standard damage resilience, lower AC and attack rolls, and quadrupled range/speed.</p>",
+        "rank": 1,
+        "cost": 10,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.size-template.huge",
+        "sourcePage": 44,
+        "importId": "core.size-template.huge",
+        "points": 10,
+        "costModifier": 10,
+        "sizeCategory": "Huge",
+        "typicalHeight": "16 ft to 32 ft",
+        "typicalWeight": "2 - 16 tons",
+        "liftCarryModifier": "x25",
+        "strengthModifier": "+4",
+        "strengthCheckModifier": "Advantage",
+        "damageModifier": "+4",
+        "receivedDamageModifier": "-4",
+        "armourClassModifier": -4,
+        "attackModifier": -4,
+        "movementModifier": "x4",
+        "rangeSpeedModifier": "x4",
+        "space": "16 ft to 32 ft",
+        "reach": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.size-template.huge",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 44,
+            "importId": "core.size-template.huge"
+          }
+        }
+      }
+    },
+    {
+      "name": "Gargantuan Size Template",
+      "type": "sizeTemplate",
+      "folder": "Size Templates - Core Rules",
+      "img": "icons/svg/resize.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, pp. 44-45.</p><p><strong>Size:</strong> Gargantuan. <strong>Point Modifier:</strong> 15.</p><p><strong>Rules Summary:</strong> Enormous body with Strength +8, extreme carrying capacity, advantage on Strength checks, heavy impact damage, standard damage resilience, lower AC and attack rolls, and eightfold range/speed.</p>",
+        "rank": 1,
+        "cost": 15,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.size-template.gargantuan",
+        "sourcePage": 44,
+        "importId": "core.size-template.gargantuan",
+        "points": 15,
+        "costModifier": 15,
+        "sizeCategory": "Gargantuan",
+        "typicalHeight": "32 ft to 64 ft",
+        "typicalWeight": "16 - 125 tons",
+        "liftCarryModifier": "x125",
+        "strengthModifier": "+8",
+        "strengthCheckModifier": "Advantage",
+        "damageModifier": "+6",
+        "receivedDamageModifier": "-6",
+        "armourClassModifier": -6,
+        "attackModifier": -6,
+        "movementModifier": "x8",
+        "rangeSpeedModifier": "x8",
+        "space": "32 ft to 64 ft",
+        "reach": ""
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.size-template.gargantuan",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 44,
+            "importId": "core.size-template.gargantuan"
+          }
+        }
+      }
+    }
+  ]
+}

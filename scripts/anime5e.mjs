@@ -57,6 +57,7 @@ import * as Anime5eDynamicPowers from "../module/rules/dynamic-powers.mjs";
 import * as Anime5ePoints from "../module/rules/points.mjs";
 import * as Anime5eResources from "../module/rules/resources.mjs";
 import * as Anime5eRolls from "../module/rules/rolls.mjs";
+import * as Anime5eSpeciesTraits from "../module/rules/species-traits.mjs";
 import { Anime5eActorSheet, Anime5eBasicActorSheet } from "../module/sheets/actor-sheet.mjs";
 import { Anime5eItemSheet } from "../module/sheets/item-sheet.mjs";
 
@@ -114,6 +115,7 @@ Hooks.once("init", () => {
     points: Anime5ePoints,
     resources: Anime5eResources,
     rolls: Anime5eRolls,
+    speciesTraits: Anime5eSpeciesTraits,
     showEncounterThreatDialog,
     showCoreCompendiumImportDialog
   };

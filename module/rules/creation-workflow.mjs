@@ -1,5 +1,6 @@
 import { proficiencyBonusForLevel } from "./points.mjs";
 import { syncClassGrantedBenefits } from "./class-benefits.mjs";
+import { syncSpeciesGrantedTraits } from "./species-traits.mjs";
 
 const SPECIES_TYPES = new Set(["species"]);
 const SIZE_TEMPLATE_TYPES = new Set(["sizeTemplate"]);
@@ -35,7 +36,11 @@ function sizeTemplateState(item) {
     attackModifier: numberOrZero(system.attackModifier),
     damageModifier: textValue(system.damageModifier),
     strengthModifier: textValue(system.strengthModifier),
-    movementModifier: textValue(system.movementModifier)
+    movementModifier: textValue(system.rangeSpeedModifier || system.movementModifier),
+    liftCarryModifier: textValue(system.liftCarryModifier),
+    receivedDamageModifier: textValue(system.receivedDamageModifier),
+    space: textValue(system.space || system.typicalHeight),
+    reach: textValue(system.reach)
   };
 }
 
@@ -120,7 +125,7 @@ export async function applySpeciesItem(actor, item) {
   };
 
   const result = await actor.update(update);
-  await syncClassGrantedBenefits(actor);
+  await syncSpeciesGrantedTraits(actor);
   return result;
 }
 
@@ -138,7 +143,9 @@ export async function removeSpeciesItem(actor, item) {
     update["system.creation.speciesApplied"] = "";
   }
 
-  return actor.update(update);
+  const result = await actor.update(update);
+  await syncSpeciesGrantedTraits(actor);
+  return result;
 }
 
 export async function applySizeTemplateItem(actor, item) {
@@ -153,6 +160,10 @@ export async function applySizeTemplateItem(actor, item) {
     "system.creation.sizeTemplateDamageModifier": nextState.damageModifier,
     "system.creation.sizeTemplateStrengthModifier": nextState.strengthModifier,
     "system.creation.sizeTemplateMovementModifier": nextState.movementModifier,
+    "system.creation.sizeTemplateLiftCarryModifier": nextState.liftCarryModifier,
+    "system.creation.sizeTemplateReceivedDamageModifier": nextState.receivedDamageModifier,
+    "system.creation.sizeTemplateSpace": nextState.space,
+    "system.creation.sizeTemplateReach": nextState.reach,
     "system.combat.armourClass": nextArmourClass,
     ...summarizePointState(actor)
   };
@@ -178,10 +189,16 @@ export async function removeSizeTemplateItem(actor, item) {
     update["system.creation.sizeTemplateDamageModifier"] = "";
     update["system.creation.sizeTemplateStrengthModifier"] = "";
     update["system.creation.sizeTemplateMovementModifier"] = "";
+    update["system.creation.sizeTemplateLiftCarryModifier"] = "";
+    update["system.creation.sizeTemplateReceivedDamageModifier"] = "";
+    update["system.creation.sizeTemplateSpace"] = "";
+    update["system.creation.sizeTemplateReach"] = "";
     update["system.combat.armourClass"] = Math.max(0, sourceArmourClass(actor) - previousArmourClassModifier);
   }
 
-  return actor.update(update);
+  const result = await actor.update(update);
+  await syncClassGrantedBenefits(actor);
+  return result;
 }
 
 async function applyClass(actor, item) {
@@ -225,6 +242,7 @@ export function registerCreationWorkflowHooks() {
     if (SPECIES_TYPES.has(item.type)) {
       const applied = String(actor.system?.creation?.speciesApplied ?? "");
       if (applied === item.uuid || applied === item.id) return applySpeciesItem(actor, item);
+      return syncSpeciesGrantedTraits(actor);
     }
     if (SIZE_TEMPLATE_TYPES.has(item.type)) {
       const applied = String(actor.system?.creation?.sizeTemplateApplied ?? "");

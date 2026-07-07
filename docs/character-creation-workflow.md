@@ -34,9 +34,11 @@ This milestone starts the Anime 5e character creation build path.
 - Added a Folio Level Up action near the level/class panel that advances actor level, XP threshold, proficiency bonus, and a single unambiguous owned Class item; multiclass actors use per-Class advance buttons so the player chooses which Class level increases.
 - Attribute and Weapon point customization now supports effective rank, cost adjustments, Enhancement/Limiter references, final-cost overrides, and override-note warnings.
 - Added structured trait data for all 14 Core Rules Anime 5E species, including ability bonuses, Attributes, Defects, languages, movement, and subrace notes.
+- Applied Species now derive ability modifiers and can sync species-granted Attributes and Defects into managed, species-paid owned Items marked with `flags.anime5e.speciesGrant.managed`.
 - Added `Raceless Character` as a 0-point source-backed Species item for characters that save Race Points for discretionary Attributes.
-- Added Species Workflow special-path visibility for Raceless and Hybrid Species. Hybrid Species remains a placeholder/use-prebuilt path until a full constructor is implemented.
-- Size Template application now tracks applied template modifiers and applies Armour Class modifiers to the actor while displaying other size modifiers for manual review.
+- Added Species Workflow special-path visibility for Raceless and Hybrid Species. Prebuilt Hybrid Species items now use the same ability and managed-trait sync path as core Species.
+- Added Core Rules Table 05 Size Template items for Diminutive, Tiny, Small, Medium, Large, Huge, and Gargantuan, including signed point modifiers.
+- Size Template application now tracks AC, attack, range/speed, lift/carry, Strength, damage inflicted, damage received, and body-size modifiers. AC, attack rolls, damage rolls, standard damage received, effective Strength, and ground speed apply those modifiers automatically where the sheet has enough data.
 - Added Journal-tab advancement bookkeeping for level/XP progress, Engagement Bonus Points, other non-levelling point awards, remaining points, and advancement notes.
 - The Level Up action now raises the character's source Discretionary Point budget to the Core Rules level benchmark when needed and posts the new allocation target to chat.
 
@@ -49,6 +51,7 @@ The point helper can warn when:
 - remaining/unspent points are negative in the advancement bookkeeping panel;
 - no Species/Race item is attached;
 - multiple Species/Race items are attached;
+- species-granted trait items need sync;
 - no Class item is attached;
 - no Class item with a level is attached;
 - attached Class items have incomplete levels;
@@ -60,8 +63,8 @@ The point helper can warn when:
 - level-up point budgets should be reviewed when remaining points are negative after advancement;
 - ranked Defects have no point return.
 - a character exceeds the optional Table 01 benchmark limits for their level band.
-- multiple Species/Race items are attached before hybrid construction is fully automated.
+- multiple Species/Race items are attached before choosing a single applied Species or a prebuilt Hybrid Species item.
 
 ## Next build step
 
-Add preview-before-apply behaviour for Species and Class items, then expand class-derived HP, hit dice automation, and full Hybrid Species construction.
+Add preview-before-apply behaviour for Species and Class items, then expand class-derived HP, hit dice automation, and deeper custom Hybrid Species construction beyond prebuilt hybrid source items.

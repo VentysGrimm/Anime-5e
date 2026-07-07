@@ -335,15 +335,20 @@ export class Anime5eSizeTemplateData extends Anime5eBaseItemData {
   static defineSchema() {
     return {
       ...super.defineSchema(),
+      points: numberField(0),
       sizeCategory: textField(),
       costModifier: numberField(0),
       armourClassModifier: numberField(0),
       attackModifier: numberField(0),
       damageModifier: textField(),
       strengthModifier: textField(),
+      strengthCheckModifier: textField(),
       movementModifier: textField(),
+      rangeSpeedModifier: textField(),
       liftCarryModifier: textField(),
       receivedDamageModifier: textField(),
+      typicalHeight: textField(),
+      typicalWeight: textField(),
       space: textField(),
       reach: textField()
     };
