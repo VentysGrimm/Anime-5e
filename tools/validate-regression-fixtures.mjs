@@ -553,6 +553,84 @@ function validateAdventuringRiskSources() {
   if (!ruleSourceIds.has("core.rules.health-risks")) fail("Core rules reference: missing health risks quick reference.");
 }
 
+function validateCoreCreatureSources() {
+  const expectedMonsters = [
+    "Kobold",
+    "Goblin",
+    "Orc",
+    "Bugbear",
+    "Ogre",
+    "Hell Hound",
+    "Mummy",
+    "Troll",
+    "Wyvern",
+    "Stone Giant",
+    "Succubus",
+    "Young White Dragon",
+    "Purple Worm",
+    "Adult Red Dragon"
+  ];
+  const expectedNeomorphs = ["Cabbit", "Elephox", "Gryphon", "Jackalope", "Nue", "Wolverpotamus"];
+  const expectedTableNpcs = [
+    "Apprentice Wizard",
+    "Assassin",
+    "Commoner",
+    "Cultist",
+    "Elementalist",
+    "Guard",
+    "Highway Bandit",
+    "Hired Sword",
+    "Informant",
+    "Knight",
+    "Merchant",
+    "Mind Spy",
+    "Noble Adventurer",
+    "Protector",
+    "Scout",
+    "Soldier",
+    "Street Urchin",
+    "Thug",
+    "Village Guardian",
+    "Zombie"
+  ];
+
+  const monsters = getDocuments(readJson(repoPath("data/sources/core/creatures/monsters-core-rules.json")));
+  const monsterNames = new Set(monsters.map((document) => document.name));
+  for (const name of expectedMonsters) {
+    if (!monsterNames.has(name)) fail(`Core monsters: missing ${name}.`);
+  }
+
+  const neomorphs = getDocuments(readJson(repoPath("data/sources/core/creatures/neomorphs-core-rules.json")));
+  const neomorphNames = new Set(neomorphs.map((document) => document.name));
+  for (const name of expectedNeomorphs) {
+    if (!neomorphNames.has(name)) fail(`Core neomorphs: missing ${name}.`);
+  }
+  for (const name of expectedNeomorphs) {
+    if (!neomorphNames.has(`${name} - Battle`)) fail(`Core neomorphs: missing ${name} - Battle.`);
+  }
+
+  const npcs = getDocuments(readJson(repoPath("data/sources/core/creatures/npcs-core-rules.json")));
+  if (npcs.some((document) => /placeholder/i.test(document.name ?? ""))) fail("Core NPCs: placeholder entry should not remain.");
+  const npcByName = new Map(npcs.map((document) => [document.name, document]));
+  for (const name of expectedTableNpcs) {
+    const npc = npcByName.get(name);
+    if (!npc) {
+      fail(`Core NPCs: missing Table 33 NPC ${name}.`);
+      continue;
+    }
+    const label = `Core NPC ${name}`;
+    const combat = combatOf(npc);
+    if (npc.type !== "npc") fail(`${label}: expected npc actor type.`);
+    if (!sourceIdOf(npc)) fail(`${label}: missing source id.`);
+    if (npc.system?.source?.page !== 238) fail(`${label}: expected PDF source page 238.`);
+    if (!npc.system?.identity?.challengeRating) fail(`${label}: missing Challenge Rating.`);
+    if (!npc.system?.identity?.experienceValue) fail(`${label}: missing XP value.`);
+    if (combat.armourClass === undefined || combat.armourClass === null || combat.armourClass === "") fail(`${label}: missing Armour Class.`);
+    if (!combat.hitPoints?.max && combat.hitPoints?.max !== 0) fail(`${label}: missing max Hit Points.`);
+    if (countAttacksWithDamage(npc) === 0) fail(`${label}: missing Table 33 damage attack.`);
+  }
+}
+
 function validatePregens() {
   const source = readJson(repoPath("modules/anime5e-game-screen-adventure/data/sources/pregen-characters.json"));
   const documentsBySourceId = new Map(getDocuments(source).map((document) => [sourceIdOf(document), document]));
@@ -661,6 +739,7 @@ await validateDamageTypeRules();
 await validateResourceRecoveryRules();
 validateStoryEnergyRules();
 validateAdventuringRiskSources();
+validateCoreCreatureSources();
 validatePregens();
 validateActorSources();
 validateContentModules();

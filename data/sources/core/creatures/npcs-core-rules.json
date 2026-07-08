@@ -53,45 +53,1896 @@
       }
     },
     {
-      "name": "Allies and Enemies Table Placeholder",
+      "name": "Apprentice Wizard",
       "type": "npc",
       "folder": "NPCs - Core Rules",
       "img": "icons/svg/mystery-man.svg",
       "system": {
         "identity": {
-          "description": "Source-backed placeholder for the Chapter 11 Allies and Enemies table and future encounter reference workflow.",
-          "speciesAndSize": "Reference",
-          "actorRole": "Encounter Reference",
-          "challengeRating": "",
-          "experienceValue": null,
+          "description": "Apprentice Wizard is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1",
+          "experienceValue": 200,
           "totalPoints": null,
           "homelandHabitat": "Campaign-specific",
-          "communities": "NPC allies, rivals, enemies, and organisations",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
           "alignment": "Varies"
         },
         "source": {
           "book": "Anime 5E Fifth Edition Core Rules",
-          "page": 236,
-          "sourceId": "core.npc.allies-and-enemies-placeholder",
-          "importId": "core.npc.allies-and-enemies-placeholder"
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.apprentice-wizard",
+          "importId": "core.npc.apprentice-wizard"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 10
+          },
+          "constitution": {
+            "value": 11
+          },
+          "intelligence": {
+            "value": 15
+          },
+          "wisdom": {
+            "value": 13
+          },
+          "charisma": {
+            "value": 10
+          }
         },
         "combat": {
-          "armourNotes": "Not a combat stat block",
-          "defenseSummary": "Encounter table data remains a future reference/import slice.",
-          "offenseSummary": "Use this placeholder as the expansion point for generated ally, rival, and enemy entries."
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 6,
+            "max": 6
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 10.",
+          "defenseSummary": "AC 10; HP 6; Saves INT, WIS.",
+          "offenseSummary": "Table 33 damage 1d6; CR 1; 200 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+2",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6"
+            }
+          }
         },
-        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 236.</p><p><strong>Placeholder:</strong> The Allies and Enemies table is reserved as a future reference table or journal entry. This actor marks the source location and keeps the creature compendium import path ready without claiming automated encounter math.</p>",
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Wizard",
+              "level": 1,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Apprentice Wizard; Wizard 1; STR 10, DEX 10, CON 11, INT 15, WIS 13, CHA 10; PROF +2; Saves INT, WIS; AC 10; HP 6; Damage 1d6; CR 1; XP 200.</p>",
         "notes": {
-          "overview": "<p>Future encounter tooling can replace this placeholder with table data, journal guidance, or generated NPC references.</p>"
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
         }
       },
       "flags": {
         "anime5e": {
-          "sourceId": "core.npc.allies-and-enemies-placeholder",
+          "sourceId": "core.npc.apprentice-wizard",
           "source": {
             "book": "Anime 5E Fifth Edition Core Rules",
-            "page": 236,
-            "importId": "core.npc.allies-and-enemies-placeholder"
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.apprentice-wizard"
+          }
+        }
+      }
+    },
+    {
+      "name": "Assassin",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Assassin is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "3",
+          "experienceValue": 700,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.assassin",
+          "importId": "core.npc.assassin"
+        },
+        "level": 3,
+        "abilities": {
+          "strength": {
+            "value": 11
+          },
+          "dexterity": {
+            "value": 16
+          },
+          "constitution": {
+            "value": 14
+          },
+          "intelligence": {
+            "value": 13
+          },
+          "wisdom": {
+            "value": 11
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 22,
+            "max": 22
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 15.",
+          "defenseSummary": "AC 15; HP 22; Saves DEX, INT.",
+          "offenseSummary": "Table 33 damage 1d6; CR 3; 700 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+2",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Rogue",
+              "level": 3,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Assassin; Rogue 3; STR 11, DEX 16, CON 14, INT 13, WIS 11, CHA 10; PROF +2; Saves DEX, INT; AC 15; HP 22; Damage 1d6; CR 3; XP 700.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.assassin",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.assassin"
+          }
+        }
+      }
+    },
+    {
+      "name": "Commoner",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Commoner is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1/4",
+          "experienceValue": 50,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.commoner",
+          "importId": "core.npc.commoner"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 10
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 4,
+            "max": 4
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 1,
+          "armourNotes": "Table 33 AC 10.",
+          "defenseSummary": "AC 10; HP 4; Saves None.",
+          "offenseSummary": "Table 33 damage 1d4; CR 1/4; 50 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+1",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d4"
+            }
+          }
+        },
+        "progression": {
+          "classes": {}
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Commoner; classless; STR 10, DEX 10, CON 10, INT 10, WIS 10, CHA 10; PROF +1; Saves None; AC 10; HP 4; Damage 1d4; CR 1/4; XP 50.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.commoner",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.commoner"
+          }
+        }
+      }
+    },
+    {
+      "name": "Cultist",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Cultist is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1/2",
+          "experienceValue": 100,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.cultist",
+          "importId": "core.npc.cultist"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 14
+          }
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 8,
+            "max": 8
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 1,
+          "armourNotes": "Table 33 AC 11.",
+          "defenseSummary": "AC 11; HP 8; Saves WIS.",
+          "offenseSummary": "Table 33 damage 1d6; CR 1/2; 100 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+1",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6"
+            }
+          }
+        },
+        "progression": {
+          "classes": {}
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Cultist; classless; STR 10, DEX 12, CON 10, INT 10, WIS 10, CHA 14; PROF +1; Saves WIS; AC 11; HP 8; Damage 1d6; CR 1/2; XP 100.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.cultist",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.cultist"
+          }
+        }
+      }
+    },
+    {
+      "name": "Elementalist",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Elementalist is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.elementalist",
+          "importId": "core.npc.elementalist"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 14
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 12
+          }
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 6,
+            "max": 6
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 11.",
+          "defenseSummary": "AC 11; HP 6; Saves INT.",
+          "offenseSummary": "Table 33 damage 1d6; CR 1; 200 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+2",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Spellbinder",
+              "level": 1,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Elementalist; Spellbinder 1; STR 10, DEX 12, CON 10, INT 14, WIS 10, CHA 12; PROF +2; Saves INT; AC 11; HP 6; Damage 1d6; CR 1; XP 200.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.elementalist",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.elementalist"
+          }
+        }
+      }
+    },
+    {
+      "name": "Guard",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Guard is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.guard",
+          "importId": "core.npc.guard"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 14
+          },
+          "dexterity": {
+            "value": 12
+          },
+          "constitution": {
+            "value": 12
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 12
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 11,
+            "max": 11
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 16.",
+          "defenseSummary": "AC 16; HP 11; Saves STR, CON.",
+          "offenseSummary": "Table 33 damage 1d6+2; CR 1; 200 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+4",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6+2"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Fighter",
+              "level": 1,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Guard; Fighter 1; STR 14, DEX 12, CON 12, INT 10, WIS 12, CHA 10; PROF +2; Saves STR, CON; AC 16; HP 11; Damage 1d6+2; CR 1; XP 200.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.guard",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.guard"
+          }
+        }
+      }
+    },
+    {
+      "name": "Highway Bandit",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Highway Bandit is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "2",
+          "experienceValue": 450,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.highway-bandit",
+          "importId": "core.npc.highway-bandit"
+        },
+        "level": 2,
+        "abilities": {
+          "strength": {
+            "value": 14
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 13
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 13,
+          "hitPoints": {
+            "value": 28,
+            "max": 28
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 13.",
+          "defenseSummary": "AC 13; HP 28; Saves STR, CON.",
+          "offenseSummary": "Table 33 damage 1d8+2; CR 2; 450 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+4",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d8+2"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Fighter",
+              "level": 1,
+              "hitDice": ""
+            },
+            "secondary": {
+              "name": "Rogue",
+              "level": 1,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Highway Bandit; Fighter 1, Rogue 1; STR 14, DEX 13, CON 13, INT 10, WIS 10, CHA 10; PROF +2; Saves STR, CON; AC 13; HP 28; Damage 1d8+2; CR 2; XP 450.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.highway-bandit",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.highway-bandit"
+          }
+        }
+      }
+    },
+    {
+      "name": "Hired Sword",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Hired Sword is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "3",
+          "experienceValue": 700,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.hired-sword",
+          "importId": "core.npc.hired-sword"
+        },
+        "level": 3,
+        "abilities": {
+          "strength": {
+            "value": 14
+          },
+          "dexterity": {
+            "value": 10
+          },
+          "constitution": {
+            "value": 14
+          },
+          "intelligence": {
+            "value": 12
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 12
+          }
+        },
+        "combat": {
+          "armourClass": 15,
+          "hitPoints": {
+            "value": 26,
+            "max": 26
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 15.",
+          "defenseSummary": "AC 15; HP 26; Saves STR, CON.",
+          "offenseSummary": "Table 33 damage 1d10+2; CR 3; 700 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+4",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d10+2"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Fighter",
+              "level": 3,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Hired Sword; Fighter 3; STR 14, DEX 10, CON 14, INT 12, WIS 10, CHA 12; PROF +2; Saves STR, CON; AC 15; HP 26; Damage 1d10+2; CR 3; XP 700.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.hired-sword",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.hired-sword"
+          }
+        }
+      }
+    },
+    {
+      "name": "Informant",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Informant is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.informant",
+          "importId": "core.npc.informant"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 12
+          },
+          "wisdom": {
+            "value": 14
+          },
+          "charisma": {
+            "value": 13
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 6,
+            "max": 6
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 12.",
+          "defenseSummary": "AC 12; HP 6; Saves CHA.",
+          "offenseSummary": "Table 33 damage 1d6; CR 1; 200 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+2",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6"
+            }
+          }
+        },
+        "progression": {
+          "classes": {}
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Informant; classless; STR 10, DEX 13, CON 10, INT 12, WIS 14, CHA 13; PROF +2; Saves CHA; AC 12; HP 6; Damage 1d6; CR 1; XP 200.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.informant",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.informant"
+          }
+        }
+      }
+    },
+    {
+      "name": "Knight",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Knight is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "4",
+          "experienceValue": 1100,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.knight",
+          "importId": "core.npc.knight"
+        },
+        "level": 4,
+        "abilities": {
+          "strength": {
+            "value": 16
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 13
+          },
+          "charisma": {
+            "value": 13
+          }
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 25,
+            "max": 25
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 16.",
+          "defenseSummary": "AC 16; HP 25; Saves STR, WIS.",
+          "offenseSummary": "Table 33 damage 1d8+3; CR 4; 1100 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+5",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d8+3"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Samurai",
+              "level": 4,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Knight; Samurai 4; STR 16, DEX 14, CON 10, INT 10, WIS 13, CHA 13; PROF +2; Saves STR, WIS; AC 16; HP 25; Damage 1d8+3; CR 4; XP 1100.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.knight",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.knight"
+          }
+        }
+      }
+    },
+    {
+      "name": "Merchant",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Merchant is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.merchant",
+          "importId": "core.npc.merchant"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 10
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 13
+          },
+          "wisdom": {
+            "value": 15
+          },
+          "charisma": {
+            "value": 14
+          }
+        },
+        "combat": {
+          "armourClass": 10,
+          "hitPoints": {
+            "value": 6,
+            "max": 6
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 10.",
+          "defenseSummary": "AC 10; HP 6; Saves WIS.",
+          "offenseSummary": "Table 33 damage 1d4; CR 1; 200 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+2",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d4"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Broker",
+              "level": 1,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Merchant; Broker 1; STR 10, DEX 10, CON 10, INT 13, WIS 15, CHA 14; PROF +2; Saves WIS; AC 10; HP 6; Damage 1d4; CR 1; XP 200.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.merchant",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.merchant"
+          }
+        }
+      }
+    },
+    {
+      "name": "Mind Spy",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Mind Spy is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.mind-spy",
+          "importId": "core.npc.mind-spy"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 10
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 16
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 6,
+            "max": 6
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 11.",
+          "defenseSummary": "AC 11; HP 6; Saves INT, CHA.",
+          "offenseSummary": "Table 33 damage 1d6; CR 1; 200 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+2",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Psionicist",
+              "level": 1,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Mind Spy; Psionicist 1; STR 10, DEX 10, CON 10, INT 16, WIS 10, CHA 16; PROF +2; Saves INT, CHA; AC 11; HP 6; Damage 1d6; CR 1; XP 200.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.mind-spy",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.mind-spy"
+          }
+        }
+      }
+    },
+    {
+      "name": "Noble Adventurer",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Noble Adventurer is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "2",
+          "experienceValue": 450,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.noble-adventurer",
+          "importId": "core.npc.noble-adventurer"
+        },
+        "level": 2,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 12
+          },
+          "intelligence": {
+            "value": 12
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 10,
+            "max": 10
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 12.",
+          "defenseSummary": "AC 12; HP 10; Saves DEX, CON, WIS.",
+          "offenseSummary": "Table 33 damage 1d8; CR 2; 450 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+2",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d8"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Adventurer",
+              "level": 2,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Noble Adventurer; Adventurer 2; STR 10, DEX 13, CON 12, INT 12, WIS 10, CHA 16; PROF +2; Saves DEX, CON, WIS; AC 12; HP 10; Damage 1d8; CR 2; XP 450.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.noble-adventurer",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.noble-adventurer"
+          }
+        }
+      }
+    },
+    {
+      "name": "Protector",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Protector is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.protector",
+          "importId": "core.npc.protector"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 10
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 14
+          },
+          "charisma": {
+            "value": 16
+          }
+        },
+        "combat": {
+          "armourClass": 8,
+          "hitPoints": {
+            "value": 10,
+            "max": 10
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 8.",
+          "defenseSummary": "AC 8; HP 10; Saves WIS, CHA.",
+          "offenseSummary": "Table 33 damage 1d6; CR 1; 200 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+2",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Magical Girl",
+              "level": 1,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Protector; Magical Girl 1; STR 10, DEX 14, CON 10, INT 10, WIS 14, CHA 16; PROF +2; Saves WIS, CHA; AC 8; HP 10; Damage 1d6; CR 1; XP 200.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.protector",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.protector"
+          }
+        }
+      }
+    },
+    {
+      "name": "Scout",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Scout is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1",
+          "experienceValue": 200,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.scout",
+          "importId": "core.npc.scout"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 14
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 10
+          },
+          "intelligence": {
+            "value": 13
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 13,
+          "hitPoints": {
+            "value": 10,
+            "max": 10
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 13.",
+          "defenseSummary": "AC 13; HP 10; Saves STR, INT.",
+          "offenseSummary": "Table 33 damage 1d6+2; CR 1; 200 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+4",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6+2"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Hunter",
+              "level": 1,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Scout; Hunter 1; STR 14, DEX 14, CON 10, INT 13, WIS 10, CHA 10; PROF +2; Saves STR, INT; AC 13; HP 10; Damage 1d6+2; CR 1; XP 200.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.scout",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.scout"
+          }
+        }
+      }
+    },
+    {
+      "name": "Soldier",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Soldier is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "3",
+          "experienceValue": 700,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.soldier",
+          "importId": "core.npc.soldier"
+        },
+        "level": 3,
+        "abilities": {
+          "strength": {
+            "value": 14
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 14
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 16,
+          "hitPoints": {
+            "value": 26,
+            "max": 26
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 16.",
+          "defenseSummary": "AC 16; HP 26; Saves STR, CON.",
+          "offenseSummary": "Table 33 damage 1d10+2; CR 3; 700 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+4",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d10+2"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Fighter",
+              "level": 3,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Soldier; Fighter 3; STR 14, DEX 13, CON 14, INT 10, WIS 10, CHA 10; PROF +2; Saves STR, CON; AC 16; HP 26; Damage 1d10+2; CR 3; XP 700.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.soldier",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.soldier"
+          }
+        }
+      }
+    },
+    {
+      "name": "Street Urchin",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Street Urchin is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1/8",
+          "experienceValue": 25,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.street-urchin",
+          "importId": "core.npc.street-urchin"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 6
+          },
+          "dexterity": {
+            "value": 13
+          },
+          "constitution": {
+            "value": 6
+          },
+          "intelligence": {
+            "value": 9
+          },
+          "wisdom": {
+            "value": 14
+          },
+          "charisma": {
+            "value": 8
+          }
+        },
+        "combat": {
+          "armourClass": 11,
+          "hitPoints": {
+            "value": 2,
+            "max": 2
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 1,
+          "armourNotes": "Table 33 AC 11.",
+          "defenseSummary": "AC 11; HP 2; Saves None.",
+          "offenseSummary": "Table 33 damage 1d4-2; CR 1/8; 25 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "-1",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d4-2"
+            }
+          }
+        },
+        "progression": {
+          "classes": {}
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Street Urchin; classless; STR 6, DEX 13, CON 6, INT 9, WIS 14, CHA 8; PROF +1; Saves None; AC 11; HP 2; Damage 1d4-2; CR 1/8; XP 25.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.street-urchin",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.street-urchin"
+          }
+        }
+      }
+    },
+    {
+      "name": "Thug",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Thug is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "3",
+          "experienceValue": 700,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.thug",
+          "importId": "core.npc.thug"
+        },
+        "level": 3,
+        "abilities": {
+          "strength": {
+            "value": 15
+          },
+          "dexterity": {
+            "value": 11
+          },
+          "constitution": {
+            "value": 14
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 12,
+          "hitPoints": {
+            "value": 18,
+            "max": 18
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 12.",
+          "defenseSummary": "AC 12; HP 18; Saves DEX, CON, WIS.",
+          "offenseSummary": "Table 33 damage 1d6+2; CR 3; 700 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+4",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d6+2"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Adventurer",
+              "level": 3,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Thug; Adventurer 3; STR 15, DEX 11, CON 14, INT 10, WIS 10, CHA 10; PROF +2; Saves DEX, CON, WIS; AC 12; HP 18; Damage 1d6+2; CR 3; XP 700.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.thug",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.thug"
+          }
+        }
+      }
+    },
+    {
+      "name": "Village Guardian",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Village Guardian is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "2",
+          "experienceValue": 450,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.village-guardian",
+          "importId": "core.npc.village-guardian"
+        },
+        "level": 2,
+        "abilities": {
+          "strength": {
+            "value": 12
+          },
+          "dexterity": {
+            "value": 14
+          },
+          "constitution": {
+            "value": 16
+          },
+          "intelligence": {
+            "value": 10
+          },
+          "wisdom": {
+            "value": 10
+          },
+          "charisma": {
+            "value": 10
+          }
+        },
+        "combat": {
+          "armourClass": 13,
+          "hitPoints": {
+            "value": 9,
+            "max": 9
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 13.",
+          "defenseSummary": "AC 13; HP 9; Saves CON.",
+          "offenseSummary": "Table 33 damage 1d8+2; CR 2; 450 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+4",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d8+2"
+            }
+          }
+        },
+        "progression": {
+          "classes": {
+            "primary": {
+              "name": "Warder",
+              "level": 2,
+              "hitDice": ""
+            }
+          }
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Village Guardian; Warder 2; STR 12, DEX 14, CON 16, INT 10, WIS 10, CHA 10; PROF +2; Saves CON; AC 13; HP 9; Damage 1d8+2; CR 2; XP 450.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.village-guardian",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.village-guardian"
+          }
+        }
+      }
+    },
+    {
+      "name": "Zombie",
+      "type": "npc",
+      "folder": "NPCs - Core Rules",
+      "img": "icons/svg/mystery-man.svg",
+      "system": {
+        "identity": {
+          "description": "Zombie is a Table 33 Allies and Enemies NPC profile for quick campaign encounters.",
+          "speciesAndSize": "Medium humanoid",
+          "actorRole": "Ally or Enemy",
+          "challengeRating": "1/4",
+          "experienceValue": 50,
+          "totalPoints": null,
+          "homelandHabitat": "Campaign-specific",
+          "communities": "Allies, rivals, enemies, settlements, factions, or travel encounters",
+          "alignment": "Varies"
+        },
+        "source": {
+          "book": "Anime 5E Fifth Edition Core Rules",
+          "page": 238,
+          "abbreviation": "A5ECR",
+          "moduleId": "anime5e",
+          "category": "npc",
+          "sourceId": "core.npc.zombie",
+          "importId": "core.npc.zombie"
+        },
+        "level": 1,
+        "abilities": {
+          "strength": {
+            "value": 13
+          },
+          "dexterity": {
+            "value": 6
+          },
+          "constitution": {
+            "value": 16
+          },
+          "intelligence": {
+            "value": 3
+          },
+          "wisdom": {
+            "value": 6
+          },
+          "charisma": {
+            "value": 5
+          }
+        },
+        "combat": {
+          "armourClass": 8,
+          "hitPoints": {
+            "value": 22,
+            "max": 22
+          },
+          "movementSpeed": 30,
+          "proficiencyBonus": 2,
+          "armourNotes": "Table 33 AC 8.",
+          "defenseSummary": "AC 8; HP 22; Saves WIS.",
+          "offenseSummary": "Table 33 damage 1d4+1; CR 1/4; 50 XP.",
+          "attacks": {
+            "primary": {
+              "weapon": "Table 33 Attack",
+              "modifier": "+3",
+              "attackType": "Melee or Ranged",
+              "damageType": "standard",
+              "damage": "1d4+1"
+            }
+          }
+        },
+        "progression": {
+          "classes": {}
+        },
+        "statBlock": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 238.</p><p><strong>Table 33:</strong> Zombie; classless; STR 13, DEX 6, CON 16, INT 3, WIS 6, CHA 5; PROF +2; Saves WIS; AC 8; HP 22; Damage 1d4+1; CR 1/4; XP 50.</p>",
+        "notes": {
+          "overview": "<p>Use this NPC as a fast ally, rival, enemy, or travel encounter. Replace the generic attack label with the scene weapon or ability when needed.</p>"
+        }
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.npc.zombie",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 238,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "npc",
+            "importId": "core.npc.zombie"
           }
         }
       }
