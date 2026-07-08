@@ -58,7 +58,7 @@ const MULTILINE_FIELDS = new Set([
   "trainingTechniques",
   "weaponNotes"
 ]);
-const CONSTRUCTION_ITEM_TYPES = new Set(["equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "vehicle"]);
+const CONSTRUCTION_ITEM_TYPES = new Set(["armor", "craftingProject", "equipment", "itemAttribute", "itemOfPower", "loot", "material", "mecha", "mount", "shield", "vehicle", "weapon"]);
 const WEAPON_ATTRIBUTE_SOURCE_ID = "core.attribute.weapon";
 const ATTRIBUTE_MODIFIER_CONFIG = {
   enhancement: {
@@ -600,11 +600,30 @@ function buildItemActions(item, systemData) {
 function buildConstructionPlaceholder(item, systemData = item.system ?? {}) {
   if (!CONSTRUCTION_ITEM_TYPES.has(item.type)) return null;
 
+  if (item.type === "craftingProject") {
+    const progress = Number(systemData.progress) || 0;
+    const requiredProgress = Number(systemData.requiredProgress) || 0;
+    const progressLabel = requiredProgress ? `${progress} / ${requiredProgress}` : String(progress);
+
+    return {
+      message: "Track DM-approved construction parameters, materials, helpers, progress, and completion state for this project.",
+      rows: [
+        { label: "Target Item", value: systemData.targetItem || "Unassigned" },
+        { label: "Status", value: systemData.status || "Planning" },
+        { label: "Progress", value: progressLabel },
+        { label: "Material Cost", value: systemData.materialCost || "Unpriced" },
+        { label: "DC", value: systemData.dc ?? "DM-set" },
+        { label: "Linked Item", value: hasText(systemData.linkedItemUuid) ? "Linked" : "None" }
+      ]
+    };
+  }
+
   if (item.type === "itemOfPower") {
     const basePoints = Number(systemData.points ?? systemData.cost) || 0;
     const attributePoints = Number(systemData.embeddedAttributePoints) || 0;
     const defectRefunds = Number(systemData.embeddedDefectPoints) || 0;
     const totalPoints = calculateEquipmentPointCost({ type: item.type, system: systemData });
+    const itemAttributeRanks = Math.ceil(totalPoints / 5);
 
     return {
       message: "Track contained Attributes and Defects here; use the point fields as the Item of Power construction ledger.",
@@ -612,14 +631,33 @@ function buildConstructionPlaceholder(item, systemData = item.system ?? {}) {
         { label: "Base Item Points", value: basePoints },
         { label: "Contained Attribute Points", value: attributePoints },
         { label: "Contained Defect Refunds", value: defectRefunds ? `-${defectRefunds}` : 0 },
-        { label: "Total Item Cost", value: totalPoints }
+        { label: "Total Item Cost", value: totalPoints },
+        { label: "Item Attribute Ranks", value: itemAttributeRanks },
+        { label: "Point Protection", value: totalPoints > 0 ? "Protected" : "Mundane" }
       ]
     };
   }
 
+  const customization = ["attribute", "itemAttribute", "weapon"].includes(item.type)
+    ? calculateAttributeCustomization({ type: item.type, name: item.name, system: systemData })
+    : null;
+  const equipmentPointCost = calculateEquipmentPointCost({ type: item.type, system: systemData });
+  const explicitPointCost = Number(systemData.points ?? systemData.cost) || 0;
+  const pointCost = customization?.totalCost ?? (equipmentPointCost || explicitPointCost);
+  const itemAttributeRanks = pointCost > 0 ? Math.ceil(pointCost / 5) : 0;
+  const rows = [
+    { label: "Point Cost", value: pointCost },
+    { label: "Item Attribute Ranks", value: itemAttributeRanks },
+    { label: "Point Protection", value: pointCost > 0 ? "Protected" : "Mundane" },
+    { label: "Construction Status", value: systemData.constructionStatus || "Manual bookkeeping" },
+    hasText(systemData.value) ? { label: "Value", value: `${systemData.value} ${systemData.currency || ""}`.trim() } : null,
+    hasText(systemData.weight) ? { label: "Weight", value: systemData.weight } : null,
+    hasText(systemData.sourceTable) ? { label: "Source Table", value: systemData.sourceTable } : null
+  ].filter(Boolean);
+
   return {
-    message: "Point-built item construction is not fully automated yet. Track rank, points, Attribute Summary, value, weight, attunement, and construction notes here.",
-    rows: []
+    message: "Track point-built Item cost, Item Attribute coverage, point protection, construction status, materials, time, helpers, value, weight, and DM notes.",
+    rows
   };
 }
 

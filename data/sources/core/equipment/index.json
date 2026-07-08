@@ -3445,7 +3445,7 @@
       "folder": "Shields",
       "img": "icons/svg/shield.svg",
       "system": {
-        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 3 gp. <strong>Armour Class Bonus:</strong> +1. <strong>Free Hands:</strong> 2 (Disadvantage). <strong>Dexterity:</strong> -. <strong>Weight:</strong> 4 lb. <strong>Source Table:</strong> Core Rules Shields Table.</p><p><strong>Rules Summary:</strong> Buckler is a Core Rules shield option from the armour and shields table.</p>",
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 3 gp. <strong>Armour Class Bonus:</strong> +1. <strong>Free Hands:</strong> 2 (Disadvantage). <strong>Dexterity:</strong> -. <strong>Materials:</strong> Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval. <strong>Weight:</strong> 4 lb. <strong>Source Table:</strong> Core Rules Shields Table.</p><p><strong>Rules Summary:</strong> Buckler is a Core Rules shield option from the armour and shields table.</p>",
         "rank": 1,
         "cost": 0,
         "source": "Anime 5E Fifth Edition Core Rules",
@@ -3464,9 +3464,9 @@
         "weight": "4 lb",
         "sourceTable": "Core Rules Shields Table",
         "shieldSize": "Buckler",
-        "material": "",
+        "material": "Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval",
         "freeHands": "2 (Disadvantage)",
-        "properties": "Value: 3 gp; AC Bonus: +1; Free Hands: 2 (Disadvantage); Dexterity: -; Weight: 4 lb"
+        "properties": "Value: 3 gp; AC Bonus: +1; Free Hands: 2 (Disadvantage); Dexterity: -; Materials: Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval; Weight: 4 lb"
       },
       "flags": {
         "anime5e": {
@@ -3485,7 +3485,7 @@
       "folder": "Shields",
       "img": "icons/svg/shield.svg",
       "system": {
-        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 10 gp. <strong>Armour Class Bonus:</strong> +2. <strong>Free Hands:</strong> 1. <strong>Dexterity:</strong> -. <strong>Weight:</strong> 6 lb. <strong>Source Table:</strong> Core Rules Shields Table.</p><p><strong>Rules Summary:</strong> Small Shield is a Core Rules shield option from the armour and shields table.</p>",
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 10 gp. <strong>Armour Class Bonus:</strong> +2. <strong>Free Hands:</strong> 1. <strong>Dexterity:</strong> -. <strong>Materials:</strong> Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval. <strong>Weight:</strong> 6 lb. <strong>Source Table:</strong> Core Rules Shields Table.</p><p><strong>Rules Summary:</strong> Small Shield is a Core Rules shield option from the armour and shields table.</p>",
         "rank": 1,
         "cost": 0,
         "source": "Anime 5E Fifth Edition Core Rules",
@@ -3504,9 +3504,9 @@
         "weight": "6 lb",
         "sourceTable": "Core Rules Shields Table",
         "shieldSize": "Small",
-        "material": "",
+        "material": "Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval",
         "freeHands": "1",
-        "properties": "Value: 10 gp; AC Bonus: +2; Free Hands: 1; Dexterity: -; Weight: 6 lb"
+        "properties": "Value: 10 gp; AC Bonus: +2; Free Hands: 1; Dexterity: -; Materials: Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval; Weight: 6 lb"
       },
       "flags": {
         "anime5e": {
@@ -3525,7 +3525,7 @@
       "folder": "Shields",
       "img": "icons/svg/shield.svg",
       "system": {
-        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 20 gp. <strong>Armour Class Bonus:</strong> +3. <strong>Free Hands:</strong> 1. <strong>Dexterity:</strong> Disadvantage. <strong>Weight:</strong> 10 lb. <strong>Source Table:</strong> Core Rules Shields Table.</p><p><strong>Rules Summary:</strong> Large Shield is a Core Rules shield option from the armour and shields table.</p>",
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 198.</p><p><strong>Value:</strong> 20 gp. <strong>Armour Class Bonus:</strong> +3. <strong>Free Hands:</strong> 1. <strong>Dexterity:</strong> Disadvantage. <strong>Materials:</strong> Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval. <strong>Weight:</strong> 10 lb. <strong>Source Table:</strong> Core Rules Shields Table.</p><p><strong>Rules Summary:</strong> Large Shield is a Core Rules shield option from the armour and shields table.</p>",
         "rank": 1,
         "cost": 0,
         "source": "Anime 5E Fifth Edition Core Rules",
@@ -3544,9 +3544,9 @@
         "weight": "10 lb",
         "sourceTable": "Core Rules Shields Table",
         "shieldSize": "Large",
-        "material": "",
+        "material": "Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval",
         "freeHands": "1",
-        "properties": "Value: 20 gp; AC Bonus: +3; Free Hands: 1; Dexterity: Disadvantage; Weight: 10 lb"
+        "properties": "Value: 20 gp; AC Bonus: +3; Free Hands: 1; Dexterity: Disadvantage; Materials: Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval; Weight: 10 lb"
       },
       "flags": {
         "anime5e": {

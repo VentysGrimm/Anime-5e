@@ -419,6 +419,7 @@ const shields = [
   ["Small Shield", 2, "10 gp", "1", "-", "6 lb"],
   ["Large Shield", 3, "20 gp", "1", "Disadvantage", "10 lb"]
 ];
+const shieldMaterialGuidance = "Plant, Leather, Animal Scales, Wood, Metal; material or crafting quality may modify AC by +/-1 with DM approval";
 
 const namedItems = [
   ["3D Manoeuvring Gear", "Adventuring Gear", 200, 1, 4, "Harness that grants exceptional three-axis movement through grappling hooks, jets, and stunt mobility.", "Combat Technique 2; Fast 2; Special Movement 4; Special Requirement 1."],
@@ -748,6 +749,7 @@ function shieldDocument([name, armourClass, value, hands, dexterity, weight]) {
       ["Armour Class Bonus", `+${armourClass}`],
       ["Free Hands", hands],
       ["Dexterity", dexterity],
+      ["Materials", shieldMaterialGuidance],
       ["Weight", weight],
       ["Source Table", sourceTable]
     ],
@@ -765,9 +767,9 @@ function shieldDocument([name, armourClass, value, hands, dexterity, weight]) {
       weight,
       sourceTable,
       shieldSize,
-      material: "",
+      material: shieldMaterialGuidance,
       freeHands: hands,
-      properties: `Value: ${value}; AC Bonus: +${armourClass}; Free Hands: ${hands}; Dexterity: ${dexterity}; Weight: ${weight}`
+      properties: `Value: ${value}; AC Bonus: +${armourClass}; Free Hands: ${hands}; Dexterity: ${dexterity}; Materials: ${shieldMaterialGuidance}; Weight: ${weight}`
     }
   });
 }
