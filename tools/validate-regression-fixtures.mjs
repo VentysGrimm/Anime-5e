@@ -97,6 +97,57 @@ function combatOf(document) {
   return document.system?.combat ?? {};
 }
 
+function moduleRootPath(moduleId, relativePath = "") {
+  return repoPath(path.join("modules", moduleId, relativePath));
+}
+
+function readModuleJson(moduleId, relativePath) {
+  return readJson(moduleRootPath(moduleId, relativePath));
+}
+
+function moduleSourceDocuments(moduleId, relativePath) {
+  return getDocuments(readModuleJson(moduleId, relativePath));
+}
+
+function collectModuleSourceFiles(moduleId, relativePath = "data/source-manifest.json", seen = new Set()) {
+  const normalizedPath = relativePath.replaceAll("\\", "/");
+  if (seen.has(normalizedPath)) return [];
+  seen.add(normalizedPath);
+
+  const source = readModuleJson(moduleId, normalizedPath);
+  const sources = [{ relativePath: normalizedPath, source }];
+  for (const includePath of source.includes ?? []) {
+    sources.push(...collectModuleSourceFiles(moduleId, includePath, seen));
+  }
+  return sources;
+}
+
+function requireMinimumDocuments(label, documents, minimum) {
+  if (documents.length < minimum) {
+    fail(`${label}: expected at least ${minimum} documents, got ${documents.length}.`);
+  }
+}
+
+function requireDocumentNames(label, documents, expectedNames) {
+  const names = new Set(documents.map((document) => document.name));
+  for (const name of expectedNames) {
+    if (!names.has(name)) fail(`${label}: missing ${name}.`);
+  }
+}
+
+function requireDocumentSourceIds(label, documents, expectedSourceIds) {
+  const sourceIds = new Set(documents.map(sourceIdOf));
+  for (const sourceId of expectedSourceIds) {
+    if (!sourceIds.has(sourceId)) fail(`${label}: missing ${sourceId}.`);
+  }
+}
+
+function documentText(document) {
+  return (document.pages ?? [])
+    .map((page) => page.text?.content ?? "")
+    .join("\n");
+}
+
 function validateScratchCharacters() {
   for (const character of fixture.scratchCharacters ?? []) {
     const system = character.system ?? {};
@@ -631,6 +682,127 @@ function validateCoreCreatureSources() {
   }
 }
 
+function validateSupplementalSourcebookContent() {
+  const requiredModuleIds = [
+    "anime5e-adventuring-accessories",
+    "anime5e-beyonder-worlds",
+    "anime5e-bonus-character-options",
+    "anime5e-folstavia",
+    "anime5e-game-screen-adventure",
+    "anime5e-hybrid-species",
+    "anime5e-monstrum-libri-vol1",
+    "anime5e-monstrum-libri-vol2",
+    "anime5e-mounts-and-monsters"
+  ];
+  const configuredModuleIds = new Set((fixture.contentModules ?? []).map((modulePath) => path.basename(modulePath)));
+
+  for (const moduleId of requiredModuleIds) {
+    if (!configuredModuleIds.has(moduleId)) fail(`Supplemental modules: ${moduleId} is not listed in regression fixtures.`);
+    if (!fs.existsSync(moduleRootPath(moduleId, "module.json"))) {
+      fail(`Supplemental modules: missing modules/${moduleId}/module.json.`);
+      continue;
+    }
+
+    const packPrefix = `${moduleId}.`;
+    for (const { relativePath, source } of collectModuleSourceFiles(moduleId)) {
+      if (relativePath.includes("data/sources/core/")) {
+        fail(`Supplemental modules: ${moduleId}/${relativePath} must not live under core sources.`);
+      }
+
+      if (source.pack) {
+        if (!source.pack.startsWith(packPrefix)) {
+          fail(`Supplemental modules: ${moduleId}/${relativePath} writes to ${source.pack} instead of a ${packPrefix} pack.`);
+        }
+        if (source.pack.startsWith("anime5e.")) {
+          fail(`Supplemental modules: ${moduleId}/${relativePath} writes supplemental content into a core pack.`);
+        }
+      }
+
+      for (const document of getDocuments(source)) {
+        const systemSource = document.system?.source && typeof document.system.source === "object" ? document.system.source : {};
+        const effectiveModuleId = document.flags?.anime5e?.source?.moduleId
+          ?? systemSource.moduleId
+          ?? document.system?.sourceModuleId
+          ?? document.sourceModuleId
+          ?? source.sourceModuleId;
+
+        if (!effectiveModuleId) {
+          fail(`Supplemental modules: ${moduleId}/${relativePath} -> ${document.name ?? "(unnamed)"} is missing source module id.`);
+        } else if (effectiveModuleId !== moduleId) {
+          fail(`Supplemental modules: ${moduleId}/${relativePath} -> ${document.name ?? "(unnamed)"} has source module id ${effectiveModuleId}.`);
+        }
+      }
+    }
+  }
+
+  const folstaviaJournals = moduleSourceDocuments("anime5e-folstavia", "data/sources/folstavia-journals.json");
+  const folstaviaSpecies = moduleSourceDocuments("anime5e-folstavia", "data/sources/folstavia-species.json");
+  const folstaviaClasses = moduleSourceDocuments("anime5e-folstavia", "data/sources/folstavia-classes.json");
+  const folstaviaAttributes = moduleSourceDocuments("anime5e-folstavia", "data/sources/folstavia-attributes.json");
+  const folstaviaItems = moduleSourceDocuments("anime5e-folstavia", "data/sources/folstavia-items.json");
+  const folstaviaCreatures = moduleSourceDocuments("anime5e-folstavia", "data/sources/folstavia-creatures.json");
+  const folstaviaNpcs = moduleSourceDocuments("anime5e-folstavia", "data/sources/folstavia-npcs.json");
+  requireMinimumDocuments("Folstavia journals", folstaviaJournals, 13);
+  requireMinimumDocuments("Folstavia species", folstaviaSpecies, 20);
+  requireMinimumDocuments("Folstavia classes", folstaviaClasses, 7);
+  requireMinimumDocuments("Folstavia attributes", folstaviaAttributes, 8);
+  requireMinimumDocuments("Folstavia items and vehicles", folstaviaItems, 10);
+  requireMinimumDocuments("Folstavia creatures", folstaviaCreatures, 9);
+  requireMinimumDocuments("Folstavia NPCs", folstaviaNpcs, 10);
+  requireDocumentNames("Folstavia vehicles", folstaviaItems, ["Ash Scorpion", "Hybrid Galleon", "Refrigerated Delivery Carriage", "Storm Dreadnought", "Wind Cutter"]);
+  requireDocumentNames("Folstavia named NPCs", folstaviaNpcs, ["Captain Marina Tennyson", "Feena Tarin", "Trin the Exemplar"]);
+  const folstaviaMapIndex = folstaviaJournals.find((document) => sourceIdOf(document) === "folstavia.journal.folstavia-map-index");
+  if (!folstaviaMapIndex) {
+    fail("Folstavia maps: missing source-backed map index journal.");
+  } else {
+    if (folstaviaMapIndex.folder !== "Folstavia - Maps") fail("Folstavia maps: map index journal is not in the map folder.");
+    const mapIndexText = documentText(folstaviaMapIndex);
+    if (!mapIndexText.includes("PDF pp. 74-75")) fail("Folstavia maps: map index should cite the PDF viewer map spread.");
+    if (!mapIndexText.includes("source-material/maps/")) fail("Folstavia maps: map index should reference the local-only map cache location.");
+  }
+
+  const beyonderJournals = moduleSourceDocuments("anime5e-beyonder-worlds", "data/sources/beyonder-worlds-journals.json");
+  requireDocumentSourceIds("Beyonder Worlds genre journals", beyonderJournals, [
+    "beyonder-worlds.journal.science-fiction",
+    "beyonder-worlds.journal.mecha-fantasy",
+    "beyonder-worlds.journal.urban-fantasy",
+    "beyonder-worlds.journal.cyberpunk",
+    "beyonder-worlds.journal.modern-earth"
+  ]);
+  requireMinimumDocuments("Beyonder Worlds character options", moduleSourceDocuments("anime5e-beyonder-worlds", "data/sources/beyonder-worlds-character-options.json"), 20);
+  requireMinimumDocuments("Beyonder Worlds classes", moduleSourceDocuments("anime5e-beyonder-worlds", "data/sources/beyonder-worlds-classes.json"), 10);
+  requireMinimumDocuments("Beyonder Worlds species", moduleSourceDocuments("anime5e-beyonder-worlds", "data/sources/beyonder-worlds-species.json"), 7);
+  requireMinimumDocuments("Beyonder Worlds items", moduleSourceDocuments("anime5e-beyonder-worlds", "data/sources/beyonder-worlds-items.json"), 50);
+  requireMinimumDocuments("Beyonder Worlds threats", moduleSourceDocuments("anime5e-beyonder-worlds", "data/sources/beyonder-worlds-threats.json"), 15);
+
+  requireMinimumDocuments("Adventuring Accessories items", moduleSourceDocuments("anime5e-adventuring-accessories", "data/sources/items-adventuring-accessories.json"), 2);
+  requireMinimumDocuments("Adventuring Accessories mecha", moduleSourceDocuments("anime5e-adventuring-accessories", "data/sources/mecha-adventuring-accessories.json"), 5);
+  requireMinimumDocuments("Game Screen adventure journals", moduleSourceDocuments("anime5e-game-screen-adventure", "data/sources/adventure-journals.json"), 3);
+  requireMinimumDocuments("Game Screen adventure NPCs", moduleSourceDocuments("anime5e-game-screen-adventure", "data/sources/adventure-npcs.json"), 3);
+  requireMinimumDocuments("Game Screen pregenerated characters", moduleSourceDocuments("anime5e-game-screen-adventure", "data/sources/pregen-characters.json"), 6);
+  requireMinimumDocuments("Mounts and Monsters mounts", moduleSourceDocuments("anime5e-mounts-and-monsters", "data/sources/mount-items.json"), 1);
+  requireMinimumDocuments("Mounts and Monsters actors", moduleSourceDocuments("anime5e-mounts-and-monsters", "data/sources/mounts-and-monsters-actors.json"), 4);
+  requireMinimumDocuments("Monstrum Libri Vol. 1 creatures", moduleSourceDocuments("anime5e-monstrum-libri-vol1", "data/sources/creatures-vol1.json"), 1);
+  requireMinimumDocuments("Monstrum Libri Vol. 2 creatures", moduleSourceDocuments("anime5e-monstrum-libri-vol2", "data/sources/creatures-vol2.json"), 1);
+
+  const actorSheetSource = fs.readFileSync(repoPath("module/sheets/actor-sheet.mjs"), "utf8");
+  for (const tabId of ["overview", "attributes", "skills", "defects", "powers", "inventory", "combat", "companions", "biography", "journal"]) {
+    if (!actorSheetSource.includes(`id: "${tabId}"`)) fail(`Character Folio sheet: missing ${tabId} tab.`);
+  }
+
+  const actorTemplateSource = fs.readFileSync(repoPath("templates/actor-sheet.hbs"), "utf8");
+  for (const snippet of [
+    "tabbed-folio-sheet",
+    "system.notes.family",
+    "system.notes.goals",
+    "system.notes.group",
+    "system.notes.advancement",
+    "system.notes.journal"
+  ]) {
+    if (!actorTemplateSource.includes(snippet)) fail(`Character Folio sheet: missing ${snippet}.`);
+  }
+}
+
 function validatePregens() {
   const source = readJson(repoPath("modules/anime5e-game-screen-adventure/data/sources/pregen-characters.json"));
   const documentsBySourceId = new Map(getDocuments(source).map((document) => [sourceIdOf(document), document]));
@@ -740,6 +912,7 @@ await validateResourceRecoveryRules();
 validateStoryEnergyRules();
 validateAdventuringRiskSources();
 validateCoreCreatureSources();
+validateSupplementalSourcebookContent();
 validatePregens();
 validateActorSources();
 validateContentModules();

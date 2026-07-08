@@ -11,6 +11,10 @@
       "color": "#5b6f90"
     },
     {
+      "name": "Folstavia - Maps",
+      "color": "#49705e"
+    },
+    {
       "name": "Folstavia - Regions",
       "color": "#607887"
     },
@@ -47,6 +51,33 @@
             "moduleId": "anime5e-folstavia",
             "category": "setting",
             "importId": "folstavia.journal.folstavia-the-infinite-crossroads-overview"
+          }
+        }
+      }
+    },
+    {
+      "name": "Folstavia Map Index",
+      "folder": "Folstavia - Maps",
+      "pages": [
+        {
+          "name": "Map Pack Reference",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Folstavia: The Infinite Crossroads, PDF pp. 74-75; Folstavia Map Pack.</p><p>The Folstavia world map orients the Eight Lands, major seas, and the Frostwind Isles. The source-material map cache includes the world spread plus regional references for Arzam, Enikonto, Mizibia, Nagoron/Quessia/Frostwind, Omincia, Pachana, and Sagaria.</p><p>Map image files remain local-only under <code>source-material/maps/</code> and are not packaged by this module slice. Use this index to match the source map to a local Scene import when a table wants map play.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "folstavia.journal.folstavia-map-index",
+          "source": {
+            "book": "Anime 5E Folstavia: The Infinite Crossroads",
+            "page": 74,
+            "abbreviation": "FOL",
+            "moduleId": "anime5e-folstavia",
+            "category": "setting",
+            "importId": "folstavia.journal.folstavia-map-index"
           }
         }
       }
