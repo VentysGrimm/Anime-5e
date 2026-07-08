@@ -32,6 +32,11 @@ function numberFromText(value) {
   return match ? Number(match[0]) : 0;
 }
 
+function hitDieSizeFromText(value) {
+  const match = String(value ?? "").match(/d\s*(\d+)/i);
+  return match ? Number(match[1]) : numberFromText(value);
+}
+
 function multiplierFromText(value) {
   const text = String(value ?? "").trim().toLowerCase();
   if (!text || text === "x1" || text === "1" || text === "-") return 1;
@@ -93,6 +98,14 @@ function hitPointResourceField(initial = 10, options = {}) {
     effectBonus: numberField(0),
     temporary: numberField(0, { min: 0 }),
     deprivationLoss: numberField(0, { min: 0 })
+  });
+}
+
+function hitDiceResourceField() {
+  return new fields.SchemaField({
+    spent: numberField(0, { min: 0 }),
+    total: numberField(0, { min: 0 }),
+    dieSize: numberField(8, { min: 0 })
   });
 }
 
@@ -247,6 +260,7 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
       }),
       combat: new fields.SchemaField({
         hitPoints: hitPointResourceField(20, { allowNegative: true }),
+        hitDice: hitDiceResourceField(),
         energy: resourceField(10),
         armourClass: numberField(10),
         baseArmourClass: numberField(10),
@@ -321,6 +335,15 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
     hitPoints.value = Math.min(hitPoints.value, hitPoints.max);
     hitPoints.value = Math.max(-(baseHitPointMax + attributeEffects.hitPointMaxBonus), hitPoints.value);
     hitPoints.temporary = Math.max(0, numberOrFallback(sourceSystem.combat?.hitPoints?.temporary, hitPoints.temporary));
+
+    const hitDice = this.combat.hitDice;
+    const sourceHitDice = sourceSystem.combat?.hitDice ?? {};
+    const classRows = Object.values(sourceSystem.progression?.classes ?? {});
+    const classHitDiceTotal = classRows.reduce((total, row) => total + Math.max(0, numberOrFallback(row?.level, 0)), 0);
+    const firstClassHitDieSize = classRows.map((row) => hitDieSizeFromText(row?.hitDice)).find((size) => size > 0);
+    hitDice.total = classHitDiceTotal || Math.max(0, numberOrFallback(sourceHitDice.total, hitDice.total));
+    hitDice.dieSize = firstClassHitDieSize || Math.max(0, numberOrFallback(sourceHitDice.dieSize, hitDice.dieSize || 8));
+    hitDice.spent = Math.min(hitDice.total, Math.max(0, numberOrFallback(sourceHitDice.spent, hitDice.spent)));
 
     const energy = this.combat.energy;
     const baseEnergyMax = Math.max(0, numberOrFallback(sourceSystem.combat?.energy?.max, numberOrFallback(energy.max, 10)));

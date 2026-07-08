@@ -42,9 +42,14 @@ import {
 } from "../rules/points.mjs";
 import {
   ENERGY_USAGE_MODES,
+  applyLongRestRecovery,
   applyDeprivationLoss,
   applyEnergyChange,
   applyHitPointChange,
+  applyShortRestRecovery,
+  buildShortRestHitDiceFormula,
+  calculateWoundPressure,
+  summarizeHitDice,
   getEnergyUsageMode
 } from "../rules/resources.mjs";
 import { openCoreRulesReference } from "../rules/rules-reference.mjs";
@@ -302,6 +307,9 @@ const REQUIRED_NUMBER_DEFAULTS = {
   "system.combat.hitPoints.max": 0,
   "system.combat.hitPoints.value": 0,
   "system.combat.hitPoints.temporary": 0,
+  "system.combat.hitDice.dieSize": 8,
+  "system.combat.hitDice.spent": 0,
+  "system.combat.hitDice.total": 0,
   "system.combat.energy.max": 0,
   "system.combat.energy.value": 0,
   "system.combat.armourClass": 10,
@@ -549,6 +557,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
     context.energyMode = this.constructor._prepareEnergyModeContext();
+    context.restRecovery = this.constructor._prepareRestRecoveryContext(system);
     context.dynamicPowers = this.constructor._prepareDynamicPowerContext(items);
     context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system, context.pointSummary);
     context.transportProfile = this.constructor._prepareTransportProfileContext(this.actor, system);
@@ -803,6 +812,26 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       tracked: mode === ENERGY_USAGE_MODES.tracked,
       manual: mode === ENERGY_USAGE_MODES.manual,
       disabled: mode === ENERGY_USAGE_MODES.disabled
+    };
+  }
+
+  static _prepareRestRecoveryContext(system) {
+    const hitDice = summarizeHitDice(system);
+    const woundPressure = calculateWoundPressure(system);
+    const woundPressureEnabled = settingEnabled("applyWoundPressurePenalties");
+    const woundPressureStatus = woundPressure.active
+      ? woundPressureEnabled
+        ? `Wound pressure active at ${woundPressure.current}/${woundPressure.max} HP; disadvantage applies to d20 rolls.`
+        : `Wound pressure threshold active at ${woundPressure.current}/${woundPressure.max} HP.`
+      : `Wound pressure starts at ${woundPressure.threshold} HP.`;
+
+    return {
+      hitDice,
+      woundPressure: {
+        ...woundPressure,
+        enabled: woundPressureEnabled,
+        status: woundPressureStatus
+      }
     };
   }
 
@@ -1319,6 +1348,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='spend-energy'], [data-action='restore-energy']").forEach((button) => {
       button.addEventListener("click", this._onApplyEnergyChange.bind(this));
     });
+    element.querySelectorAll("[data-action='short-rest-recovery']").forEach((button) => {
+      button.addEventListener("click", this._onShortRestRecovery.bind(this));
+    });
+    element.querySelectorAll("[data-action='long-rest-recovery']").forEach((button) => {
+      button.addEventListener("click", this._onLongRestRecovery.bind(this));
+    });
     element.querySelectorAll("[data-action='use-item']").forEach((button) => {
       button.addEventListener("click", this._onUseItem.bind(this));
     });
@@ -1449,6 +1484,26 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     return normalizeRequiredNumbers(submitData);
   }
 
+  _applyWoundPressureRollMode(mode = "normal", details = []) {
+    const pressure = calculateWoundPressure(this.actor.system);
+    if (!pressure.active || !settingEnabled("applyWoundPressurePenalties")) {
+      return { mode, details };
+    }
+
+    const resolvedMode = combineD20Modes(mode, "disadvantage");
+    const modeLine = resolvedMode === mode ? "disadvantage applied" : `${mode} resolves as ${resolvedMode}`;
+    return {
+      mode: resolvedMode,
+      details: [
+        ...details,
+        {
+          label: "Wound Pressure",
+          value: `${pressure.current}/${pressure.max} HP is at or below ${pressure.threshold}; ${modeLine}.`
+        }
+      ]
+    };
+  }
+
   async _onRollAbility(event) {
     event.preventDefault();
     const abilityKey = event.currentTarget.dataset.ability;
@@ -1456,18 +1511,27 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!ability) return;
 
     const label = event.currentTarget.dataset.label ?? `${abilityKey} Check`;
-    await this._rollFormula(buildD20Formula([ability.modifier]), label);
+    const rollState = this._applyWoundPressureRollMode("normal");
+    await this._rollFormula(buildD20Formula([ability.modifier], { mode: rollState.mode }), label, {
+      mode: rollState.mode,
+      details: rollState.details
+    });
   }
 
   async _onRollInitiative(event) {
     event.preventDefault();
     const initiative = this.actor.system.combat?.initiative ?? 0;
     const panel = event.currentTarget.closest(".combat-panel");
-    const rollMode = panel?.querySelector("[data-roll-input='initiativeD20Mode']")?.value ?? "normal";
+    const selectedRollMode = panel?.querySelector("[data-roll-input='initiativeD20Mode']")?.value ?? "normal";
+    const rollState = this._applyWoundPressureRollMode(selectedRollMode);
+    const rollMode = rollState.mode;
     const formula = buildD20Formula([initiative], { mode: rollMode });
     const combatant = this._getActiveCombatant();
     if (!combatant) {
-      await this._rollFormula(formula, "Initiative", { mode: rollMode });
+      await this._rollFormula(formula, "Initiative", {
+        mode: rollMode,
+        details: rollState.details
+      });
       return;
     }
 
@@ -1482,7 +1546,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           label: "Initiative",
           formula,
           result: roll.total,
-          mode: rollMode
+          mode: rollMode,
+          details: rollState.details
         })
       });
     } catch (error) {
@@ -1509,9 +1574,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
     const dcLabel = dc > 0 ? ` vs DC ${dc}` : "";
+    const rollState = this._applyWoundPressureRollMode(rollMode);
     // Anime 5E Core Rules pp. 153-156 define checks, saving throws, initiative, and attacks as d20 plus the relevant modifiers.
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${mode.label}: ${abilityLabel}${dcLabel}`, {
-      mode: rollMode,
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${mode.label}: ${abilityLabel}${dcLabel}`, {
+      mode: rollState.mode,
+      details: rollState.details,
       targetNumber: dc > 0 ? dc : null,
       showMargin: dc > 0
     });
@@ -1533,7 +1600,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (situationalBonus) modifiers.push(situationalBonus);
 
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${mode.label} Contest: ${abilityLabel}`, { mode: rollMode });
+    const rollState = this._applyWoundPressureRollMode(rollMode);
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${mode.label} Contest: ${abilityLabel}`, {
+      mode: rollState.mode,
+      details: rollState.details
+    });
   }
 
   async _onRollSavingThrow(event) {
@@ -1551,7 +1622,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
     const proficiencyLabel = includeProficiency ? "Proficient " : "";
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${abilityLabel} ${proficiencyLabel}Saving Throw`, { mode: rollMode });
+    const rollState = this._applyWoundPressureRollMode(rollMode);
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${abilityLabel} ${proficiencyLabel}Saving Throw`, {
+      mode: rollState.mode,
+      details: rollState.details
+    });
   }
 
   async _onRollAttack(event) {
@@ -1579,10 +1654,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null,
       ...coverDetails(attack)
     ].filter(Boolean);
+    const rollState = this._applyWoundPressureRollMode(rollMode, details);
 
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${attack.weapon || "Attack"} Roll`, {
-      mode: rollMode,
-      details,
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${attack.weapon || "Attack"} Roll`, {
+      mode: rollState.mode,
+      details: rollState.details,
       targetNumber: adjustedTargetArmourClass(attack),
       showMargin: settingEnabled("showMarginOfSuccess"),
       showCritical: settingEnabled("showCriticalRollNotes")
@@ -1647,10 +1723,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       ...coverDetails(attack),
       { label: "Source", value: `Core Rules PDF p. ${manoeuvre.sourcePage}` }
     ].filter(Boolean);
+    const rollState = this._applyWoundPressureRollMode(rollMode, details);
 
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${attackName}: ${manoeuvre.label}`, {
-      mode: rollMode,
-      details,
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${attackName}: ${manoeuvre.label}`, {
+      mode: rollState.mode,
+      details: rollState.details,
       targetNumber: adjustedTargetArmourClass(attack),
       showMargin: settingEnabled("showMarginOfSuccess"),
       showCritical: settingEnabled("showCriticalRollNotes")
@@ -1712,7 +1789,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const modifiers = [ability.modifier, this.actor.system.combat?.proficiencyBonus ?? 0];
     if (situationalBonus) modifiers.push(situationalBonus);
     const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${item.name} Check (${abilityLabel})`, { mode: rollMode });
+    const rollState = this._applyWoundPressureRollMode(rollMode);
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${item.name} Check (${abilityLabel})`, {
+      mode: rollState.mode,
+      details: rollState.details
+    });
   }
 
   async _onRollPowerCheck(event) {
@@ -1736,9 +1817,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { label: "Energy", value: item.system?.energyCost },
       { label: "Limits", value: item.system?.activationLimits ? "See item notes" : "" }
     ];
+    const rollState = this._applyWoundPressureRollMode("normal", details);
 
-    await this._rollFormula(buildD20Formula(modifiers), `${item.name} Power Check (${abilityLabel})`, {
-      details,
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${item.name} Power Check (${abilityLabel})`, {
+      details: rollState.details,
+      mode: rollState.mode,
       targetNumber: numberOrNull(item.system?.dc),
       showMargin: settingEnabled("showMarginOfSuccess")
     });
@@ -1789,10 +1872,11 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { label: "Energy", value: energyCost || item.system?.energyCost },
       { label: "Notes", value: notes }
     ];
+    const rollState = this._applyWoundPressureRollMode(rollMode, details);
 
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollMode }), `${item.name} Dynamic Power Check (${abilityLabel})`, {
-      details,
-      mode: rollMode,
+    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${item.name} Dynamic Power Check (${abilityLabel})`, {
+      details: rollState.details,
+      mode: rollState.mode,
       targetNumber: numberOrNull(item.system?.dc),
       showMargin: settingEnabled("showMarginOfSuccess")
     });
@@ -1862,8 +1946,10 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { label: "Range", value: item.system?.range },
       sizeAttackModifier ? { label: "Size", value: formatSigned(sizeAttackModifier) } : null
     ].filter(Boolean);
-    await this._rollFormula(buildD20Formula([modifier, sizeAttackModifier].filter(Boolean)), `${item.name} Attack`, {
-      details,
+    const rollState = this._applyWoundPressureRollMode("normal", details);
+    await this._rollFormula(buildD20Formula([modifier, sizeAttackModifier].filter(Boolean), { mode: rollState.mode }), `${item.name} Attack`, {
+      mode: rollState.mode,
+      details: rollState.details,
       showCritical: settingEnabled("showCriticalRollNotes")
     });
   }
@@ -2179,6 +2265,71 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       if (!String(classes[slot]?.name ?? "").trim()) return slot;
     }
     return "primary";
+  }
+
+  async _onShortRestRecovery(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".rest-recovery-panel");
+    const hitDiceSpent = Math.max(0, Math.trunc(Number(panel?.querySelector("[data-rest-input='hitDiceSpent']")?.value) || 0));
+    const hitDice = summarizeHitDice(this.actor.system);
+    const energyMode = getEnergyUsageMode();
+
+    if (hitDiceSpent > hitDice.available) {
+      ui.notifications?.warn(`${this.actor.name} only has ${hitDice.available} Hit Dice available.`);
+      return;
+    }
+    if (!hitDiceSpent && energyMode === ENERGY_USAGE_MODES.disabled) {
+      ui.notifications?.warn("Short rest has no tracked recovery while Energy is disabled and no Hit Dice are spent.");
+      return;
+    }
+
+    const hitDicePlan = buildShortRestHitDiceFormula(this.actor.system, hitDiceSpent);
+    let hpRecovery = 0;
+    let hpFormula = "";
+    if (hitDiceSpent) {
+      hpFormula = hitDicePlan.formula;
+      const hpRoll = await evaluateAnime5eFormula(hpFormula);
+      hpRecovery = Math.max(0, Math.trunc(Number(hpRoll.total) || 0));
+    }
+
+    let energyRecovery = 0;
+    if (energyMode !== ENERGY_USAGE_MODES.disabled) {
+      const energyRoll = await evaluateAnime5eFormula("1d8");
+      energyRecovery = Math.max(0, Math.trunc(Number(energyRoll.total) || 0));
+    }
+
+    const change = await applyShortRestRecovery(this.actor, {
+      energyRecovery,
+      hitDiceSpent,
+      hitPointRecovery: hpRecovery
+    });
+    const hpLine = hitDiceSpent
+      ? `<p><strong>HP:</strong> ${escapeHtml(hpFormula)} = ${change.hpRecovery}. HP ${change.hpCurrent} &rarr; ${change.hpNext} / ${change.hpMax}.</p>`
+      : "<p><strong>HP:</strong> no Hit Dice spent.</p>";
+    const hitDiceLine = hitDice.total
+      ? `<p><strong>Hit Dice:</strong> spent ${change.hitDiceSpent}; ${change.hitDiceBefore} &rarr; ${change.hitDiceAfter} spent / ${change.hitDiceTotal} total.</p>`
+      : "<p><strong>Hit Dice:</strong> no tracked Hit Dice pool.</p>";
+    const energyLine = change.energyDisabled
+      ? "<p><strong>Energy:</strong> tracking is disabled for this world.</p>"
+      : `<p><strong>Energy:</strong> 1d8 = ${change.energyAmount}. EP ${change.energyCurrent} &rarr; ${change.energyNext} / ${change.energyMax}.</p>`;
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> completes a short rest.</p>${hpLine}${energyLine}${hitDiceLine}`
+    });
+  }
+
+  async _onLongRestRecovery(event) {
+    event.preventDefault();
+    const change = await applyLongRestRecovery(this.actor);
+    const energyLine = change.energyDisabled
+      ? "<p><strong>Energy:</strong> tracking is disabled for this world.</p>"
+      : `<p><strong>Energy:</strong> EP ${change.energyCurrent} &rarr; ${change.energyNext} / ${change.energyMax}.</p>`;
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> completes a long rest.</p><p><strong>HP:</strong> ${change.hpCurrent} &rarr; ${change.hpNext} / ${change.hpMax}.</p>${energyLine}<p><strong>Hit Dice:</strong> regained ${change.hitDiceRegained}; ${change.hitDiceBefore} &rarr; ${change.hitDiceAfter} spent / ${change.hitDiceTotal} total.</p>`
+    });
   }
 
   async _onApplyEnergyChange(event) {

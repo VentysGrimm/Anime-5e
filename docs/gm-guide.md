@@ -45,6 +45,7 @@ Anime 5e registers these world settings:
 
 - Energy Usage Mode: `Tracked`, `Manual`, or `Disabled`.
 - Apply Range Penalties: subtract configured range penalties from common attack rolls.
+- Apply Wound Pressure Penalties: apply disadvantage to d20 rolls when an actor is at one-quarter maximum HP or lower.
 - Show Margin of Success: show the difference between attack totals and target Armour Class.
 - Show Critical Roll Notes: annotate attack rolls that keep natural 20 or natural 1 results.
 - Show Critical Roll Notes also checks attack margins against the Core Rules critical hit/failure thresholds. Extreme success doubles final damage, outrageous success triples it, extreme failure suggests one Table 22 consequence, and outrageous failure suggests two. Treat the Table 22 rolls as prompts; the Core Rules still allow the GM to choose a better-fitting consequence.
@@ -52,6 +53,8 @@ Anime 5e registers these world settings:
 Common attack rows include a cover selector. Half cover adds +2 to the target Armour Class, three-quarters cover adds +5, and total cover adds a chat-card reminder that most direct attacks cannot target the creature.
 
 Use Tracked Energy when the table wants the sheet to spend and restore Energy directly. Use Manual when Energy is a chat note or table decision. Use Disabled when the campaign does not use Energy bookkeeping.
+
+The Rest & Recovery panel automates the Core Rules recovery loop: short rests can spend available Hit Dice for HP, roll 1d8 Energy recovery when Energy is enabled, and post the result to chat; long rests restore HP, restore Energy when enabled, and regain spent Hit Dice up to half the actor's total. The wound-pressure status line shows the one-quarter-HP threshold even when the optional penalty setting is off.
 
 The Dynamic Power Expression panel appears when an actor owns Dynamic Powers or Dynamic Powers - Lesser. Select the owned power, choose the relevant ability, enter the approved effect Rank and Energy cost, then roll the check or post the expression to chat. In Tracked Energy mode, the posted expression spends the entered Energy and records the expression on the owned Item for repeat-effect review.
 
@@ -81,5 +84,5 @@ Core content belongs in core packs. Optional book content belongs in supplementa
 - Open every pack you expect to use that session.
 - Confirm PCs have no unresolved point warnings unless the ruling is documented.
 - Roll one PC attack, one monster attack, one ability check, one save, and one Item action.
-- Confirm Energy mode and combat roll settings match the campaign.
+- Confirm Energy mode, wound-pressure handling, rest recovery, and combat roll settings match the campaign.
 - Record any console errors, broken source references, or missing pack entries before updating release issues.

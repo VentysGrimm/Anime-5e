@@ -1727,7 +1727,8 @@
 }
 
 .anime5e .damage-panel,
-.anime5e .energy-panel {
+.anime5e .energy-panel,
+.anime5e .rest-recovery-panel {
   background: rgba(255, 255, 255, 0.64);
   border: 1px solid var(--anime5e-border);
   display: grid;
@@ -1736,7 +1737,8 @@
 }
 
 .anime5e .damage-panel h3,
-.anime5e .energy-panel h3 {
+.anime5e .energy-panel h3,
+.anime5e .rest-recovery-panel h3 {
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0;
@@ -1745,7 +1747,9 @@
 }
 
 .anime5e .damage-controls,
-.anime5e .energy-controls {
+.anime5e .energy-controls,
+.anime5e .rest-controls,
+.anime5e .rest-state-controls {
   align-items: end;
   display: grid;
   gap: 8px;
@@ -1756,8 +1760,40 @@
   grid-template-columns: minmax(76px, 1fr) auto auto;
 }
 
+.anime5e .rest-controls {
+  grid-template-columns: minmax(76px, 1fr) auto auto;
+}
+
+.anime5e .rest-state-controls,
+.anime5e .rest-summary {
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+}
+
+.anime5e .rest-summary {
+  display: grid;
+  gap: 8px;
+}
+
+.anime5e .rest-summary span {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--anime5e-border);
+  display: grid;
+  font-size: 0.72rem;
+  font-weight: 800;
+  gap: 2px;
+  min-width: 0;
+  padding: 6px;
+  text-transform: uppercase;
+}
+
+.anime5e .rest-summary strong {
+  font-size: 0.92rem;
+}
+
 .anime5e .damage-controls label,
-.anime5e .energy-controls label {
+.anime5e .energy-controls label,
+.anime5e .rest-controls label,
+.anime5e .rest-state-controls label {
   display: grid;
   font-size: 0.78rem;
   font-weight: 800;
@@ -1766,7 +1802,9 @@
 }
 
 .anime5e .damage-controls input,
-.anime5e .energy-controls input {
+.anime5e .energy-controls input,
+.anime5e .rest-controls input,
+.anime5e .rest-state-controls input {
   min-width: 0;
 }
 
@@ -1980,6 +2018,9 @@
   .anime5e .quick-roll-controls,
   .anime5e .movement-mode-grid,
   .anime5e .save-roll-controls,
+  .anime5e .rest-controls,
+  .anime5e .rest-state-controls,
+  .anime5e .rest-summary,
   .anime5e .ledger-heading,
   .anime5e .skill-roll-controls,
   .anime5e .species-workflow-list li,

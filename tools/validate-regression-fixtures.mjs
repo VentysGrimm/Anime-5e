@@ -13,6 +13,13 @@ import {
   criticalFailureConsequenceCount,
   describeCriticalFailureTableResult
 } from "../module/rules/rolls.mjs";
+import {
+  applyLongRestRecovery,
+  applyShortRestRecovery,
+  buildShortRestHitDiceFormula,
+  calculateWoundPressure,
+  summarizeHitDice
+} from "../module/rules/resources.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const fixturePath = path.join(root, "data/validation-regression-fixtures.json");
@@ -34,6 +41,27 @@ function fail(message) {
 
 function assertEqual(label, actual, expected) {
   if (actual !== expected) fail(`${label}: expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}.`);
+}
+
+function setPath(target, dottedPath, value) {
+  const parts = dottedPath.split(".");
+  let object = target;
+  for (const part of parts.slice(0, -1)) {
+    object[part] ??= {};
+    object = object[part];
+  }
+  object[parts.at(-1)] = value;
+}
+
+function createMockActor(system) {
+  return {
+    system: structuredClone(system),
+    update(updateData) {
+      for (const [pathKey, value] of Object.entries(updateData)) {
+        setPath(this, pathKey, value);
+      }
+    }
+  };
 }
 
 function getDocuments(source) {
@@ -257,6 +285,66 @@ function validateCriticalRollRules() {
   if (!failureDetails.some((detail) => detail.label === "Optional Natural 1")) fail("Critical failure details did not include the optional natural 1 note.");
 }
 
+async function validateResourceRecoveryRules() {
+  const restSystem = {
+    abilities: { constitution: { modifier: 2 } },
+    combat: {
+      hitPoints: { value: 4, max: 20 },
+      energy: { value: 3, max: 10 },
+      hitDice: { spent: 1, total: 3, dieSize: 8 }
+    },
+    progression: {
+      classes: {
+        primary: { level: 3, hitDice: "d8" }
+      }
+    }
+  };
+  const pressure = calculateWoundPressure(restSystem);
+  assertEqual("Wound pressure active", pressure.active, true);
+  assertEqual("Wound pressure threshold", pressure.threshold, 5);
+  assertEqual("Wound pressure inactive above threshold", calculateWoundPressure({
+    combat: { hitPoints: { value: 6, max: 20 } }
+  }).active, false);
+
+  const hitDice = summarizeHitDice(restSystem);
+  assertEqual("Hit Dice total", hitDice.total, 3);
+  assertEqual("Hit Dice available", hitDice.available, 2);
+  assertEqual("Hit Dice label", hitDice.label, "3d8");
+
+  const shortRestPlan = buildShortRestHitDiceFormula(restSystem, 2);
+  assertEqual("Short rest Hit Dice formula", shortRestPlan.formula, "2d8 + 4");
+  assertEqual("Short rest selected dice", shortRestPlan.hitDiceSpent, 2);
+
+  const shortRestActor = createMockActor(restSystem);
+  const shortRest = await applyShortRestRecovery(shortRestActor, {
+    energyRecovery: 5,
+    hitDiceSpent: 2,
+    hitPointRecovery: 11
+  });
+  assertEqual("Short rest HP next", shortRest.hpNext, 15);
+  assertEqual("Short rest actor HP", shortRestActor.system.combat.hitPoints.value, 15);
+  assertEqual("Short rest Energy next", shortRest.energyNext, 8);
+  assertEqual("Short rest Hit Dice spent", shortRestActor.system.combat.hitDice.spent, 3);
+
+  const longRestActor = createMockActor({
+    combat: {
+      hitPoints: { value: 1, max: 20 },
+      energy: { value: 0, max: 10 },
+      hitDice: { spent: 3, total: 5, dieSize: 10 }
+    },
+    progression: {
+      classes: {
+        primary: { level: 5, hitDice: "d10" }
+      }
+    }
+  });
+  const longRest = await applyLongRestRecovery(longRestActor);
+  assertEqual("Long rest HP next", longRest.hpNext, 20);
+  assertEqual("Long rest Energy next", longRest.energyNext, 10);
+  assertEqual("Long rest Hit Dice regained", longRest.hitDiceRegained, 2);
+  assertEqual("Long rest actor Hit Dice spent", longRestActor.system.combat.hitDice.spent, 1);
+}
+
 function validatePregens() {
   const source = readJson(repoPath("modules/anime5e-game-screen-adventure/data/sources/pregen-characters.json"));
   const documentsBySourceId = new Map(getDocuments(source).map((document) => [sourceIdOf(document), document]));
@@ -359,6 +447,7 @@ function validatePackage() {
 validateScratchCharacters();
 validateAttributeCustomizationRules();
 validateCriticalRollRules();
+await validateResourceRecoveryRules();
 validatePregens();
 validateActorSources();
 validateContentModules();

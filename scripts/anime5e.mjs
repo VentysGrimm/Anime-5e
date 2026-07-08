@@ -181,6 +181,15 @@ Hooks.once("init", () => {
     default: false
   });
 
+  game.settings.register(ANIME5E.id, "applyWoundPressurePenalties", {
+    name: "Apply Wound Pressure Penalties",
+    hint: "When an actor is at one-quarter maximum HP or lower, apply the Core Rules optional disadvantage pressure to d20 rolls.",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false
+  });
+
   Object.assign(CONFIG.Actor.dataModels, {
     character: Anime5eCharacterData,
     companion: Anime5eCompanionData,

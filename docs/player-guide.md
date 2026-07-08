@@ -68,10 +68,11 @@ Useful controls:
 - Combat Manoeuvres can post Core Rules manoeuvre reminders or roll a selected common attack with the manoeuvre's advantage/disadvantage guidance.
 - Attack and Damage buttons roll common attack rows.
 - Owned weapon, Attribute, power, spell, and technique actions roll from their Item fields.
+- Rest & Recovery rolls short-rest Hit Dice healing, restores 1d8 Energy when Energy tracking is enabled, restores all HP/Energy on a long rest, and regains spent Hit Dice up to half the character's total.
 
 Attack roll chat cards apply half cover and three-quarters cover to the target Armour Class before showing margin or critical guidance. Total cover leaves the target Armour Class unchanged and adds a reminder that the target usually cannot be attacked directly.
 
-The world settings control whether range penalties are applied automatically, whether Margin of Success is shown, and whether attack rolls add critical guidance. When enabled, attack chat cards note margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 failure consequences, and optional natural 20/natural 1 alternatives.
+The world settings control whether range penalties and wound-pressure disadvantage are applied automatically, whether Margin of Success is shown, and whether attack rolls add critical guidance. When enabled, wound pressure applies disadvantage to d20 rolls while current HP is at one-quarter maximum HP or lower. Attack chat cards note margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 failure consequences, and optional natural 20/natural 1 alternatives.
 
 ## Level-Up
 
@@ -88,7 +89,7 @@ The world settings control whether range penalties are applied automatically, wh
 Before play, a character should have:
 
 - A level, experience value, Species or explicit Raceless choice, and at least one Class Item.
-- Six ability scores, Hit Points, Energy Points, Armour Class, movement, and proficiency bonus.
+- Six ability scores, Hit Points, Hit Dice, Energy Points, Armour Class, movement, and proficiency bonus.
 - At least one common attack or roll-capable combat Item.
 - Point Summary with no unexplained negative remaining points.
 - Manual notes for every table ruling that changes point totals.

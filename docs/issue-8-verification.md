@@ -44,11 +44,11 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 
 - Generated-effect automation for Dynamic Powers beyond the first-pass expression tracker.
 - Combat Techniques automation beyond source-backed item documents.
-- Critical hit margins, conditions, and recovery automation.
+- Conditions and deeper status-effect automation.
 - Full equipment automation for weapons, armor, shields, vehicles, mecha, mounts, and Items of Power.
 - Monster variant import and NPC stat-block parsing from the monster/adventure books.
 - Reputation, faction/path restrictions, law/consequence tracking, and quest/task generation hooks. These are not part of the clearly defined core package pass yet.
-- Generated Dynamic Powers effects, Combat Techniques automation, conditions, recovery automation, and deeper item-specific automation remain the next mechanical gaps after the first item use/roll pass.
+- Generated Dynamic Powers effects, Combat Techniques automation, conditions, and deeper item-specific automation remain the next mechanical gaps after the first item use/roll pass.
 
 ## Foundry VTT v14 Compatibility Notes
 
@@ -71,6 +71,8 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Quick Rolls can compare ability or proficient checks to an entered Difficulty Class and show the target and margin in chat.
 - Characters can apply damage or healing to their own Hit Points from the combat panel.
 - Temporary Hit Points are tracked separately and absorb incoming damage before current Hit Points are reduced.
+- Characters can track Hit Dice, roll short-rest Hit Dice recovery, recover 1d8 Energy on a short rest when Energy tracking is enabled, restore HP/Energy on a long rest, and regain spent Hit Dice up to half their total.
+- Optional wound-pressure automation can apply disadvantage to d20 rolls when current HP is at one-quarter maximum HP or lower.
 - Combat movement now tracks ground, fly, water/swim, climb, burrow, and custom movement entries alongside derived Attribute movement summaries.
 - Common attack rows track attack type, range, d20 mode, target Armour Class, cover, optional range penalty, damage type, and damage formula.
 - Optional combat settings control range-penalty application, Margin of Success display, and critical roll annotations.
@@ -113,6 +115,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Actor sheets now include Core Rules combat manoeuvre controls. They can post source-backed manoeuvre reminders or roll a selected common attack with manoeuvre advantage/disadvantage guidance while preserving later damage, save, and target-state rulings for GM adjudication.
 - Attack roll chat cards now support Core Rules critical guidance when enabled: margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 critical failure consequences, and optional natural 20/natural 1 alternatives.
 - Common attack rows now support Core Rules cover handling for half cover, three-quarters cover, and total cover reminders on attack and combat manoeuvre roll chat cards.
+- Actor sheets now include Rest & Recovery controls for Core Rules short rests, long rests, Hit Dice spending/regain, Energy recovery, and one-quarter-HP wound-pressure status. The Apply Wound Pressure Penalties world setting routes low-HP d20 rolls through disadvantage while preserving advantage/disadvantage cancellation.
 
 ## Missing Files Required For Load
 

@@ -810,6 +810,36 @@
             </div>
             {{/if}}
           </section>
+          <section class="rest-recovery-panel" aria-label="Rest And Recovery">
+            <h3>Rest & Recovery</h3>
+            <p class="sheet-warning">{{restRecovery.woundPressure.status}}</p>
+            <div class="rest-summary">
+              <span>Available HD <strong>{{restRecovery.hitDice.available}} / {{restRecovery.hitDice.total}}</strong><small>{{restRecovery.hitDice.label}}</small></span>
+              <span>Wound Threshold <strong>{{restRecovery.woundPressure.threshold}}</strong><small>{{restRecovery.woundPressure.current}} / {{restRecovery.woundPressure.max}} HP</small></span>
+            </div>
+            <div class="rest-state-controls">
+              <label>
+                Total HD
+                <input type="number" name="system.combat.hitDice.total" value="{{system.combat.hitDice.total}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Spent HD
+                <input type="number" name="system.combat.hitDice.spent" value="{{system.combat.hitDice.spent}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Die Size
+                <input type="number" name="system.combat.hitDice.dieSize" value="{{system.combat.hitDice.dieSize}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+            </div>
+            <div class="rest-controls">
+              <label>
+                Spend HD
+                <input type="number" data-rest-input="hitDiceSpent" value="0" min="0" max="{{restRecovery.hitDice.available}}">
+              </label>
+              <button type="button" class="roll-action" data-action="short-rest-recovery"><i class="fas fa-hourglass-half"></i> Short Rest</button>
+              <button type="button" class="roll-action" data-action="long-rest-recovery"><i class="fas fa-bed"></i> Long Rest</button>
+            </div>
+          </section>
           <section class="equipped-summary" aria-label="Equipped Combat Gear">
             <h3>Equipped Gear</h3>
             <div class="equipped-ac">
