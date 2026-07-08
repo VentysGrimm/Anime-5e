@@ -11,6 +11,19 @@ function systemOf(target) {
   return target?.system ?? target ?? {};
 }
 
+function normalizedTypeTerms(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .split(/[,;/&|]+|\band\b|\bor\b/)
+    .map((entry) => entry.trim())
+    .filter(Boolean);
+}
+
+function damageTypeMatches(terms, damageTypes) {
+  if (!terms.length || !damageTypes.length) return false;
+  return terms.some((term) => damageTypes.some((type) => term === type || term.includes(type) || type.includes(term)));
+}
+
 export function parseHitDieSize(value) {
   const match = String(value ?? "").match(/d\s*(\d+)/i);
   if (match) return Math.max(0, Math.trunc(Number(match[1]) || 0));
@@ -116,6 +129,52 @@ export function calculateWoundPressure(target = {}) {
   };
 }
 
+export function adjustDamageForType(amount, damageType = "", damageProfile = {}) {
+  const base = safeAmount(amount);
+  const damageTypes = normalizedTypeTerms(damageType || "standard");
+  const immunityTerms = normalizedTypeTerms(damageProfile.immunities);
+  const resistanceTerms = normalizedTypeTerms(damageProfile.resistances);
+  const vulnerabilityTerms = normalizedTypeTerms(damageProfile.vulnerabilities);
+  const reductionTerms = normalizedTypeTerms(damageProfile.reductionTypes);
+  const reduction = safeAmount(damageProfile.reduction);
+  const immune = damageTypeMatches(immunityTerms, damageTypes);
+  const resistant = !immune && damageTypeMatches(resistanceTerms, damageTypes);
+  const vulnerable = !immune && damageTypeMatches(vulnerabilityTerms, damageTypes);
+  const reductionApplies = !immune && reduction > 0 && (!reductionTerms.length || damageTypeMatches(reductionTerms, damageTypes));
+  let adjusted = base;
+  const notes = [];
+
+  if (immune) {
+    adjusted = 0;
+    notes.push("immunity reduces damage to 0");
+  } else {
+    if (resistant) {
+      adjusted = Math.floor(adjusted / 2);
+      notes.push("resistance halves damage");
+    }
+    if (vulnerable) {
+      adjusted *= 2;
+      notes.push("vulnerability doubles damage");
+    }
+    if (reductionApplies) {
+      adjusted = Math.max(0, adjusted - reduction);
+      notes.push(`damage reduction subtracts ${reduction}`);
+    }
+  }
+
+  return {
+    adjusted,
+    base,
+    damageType: damageTypes.join(", "),
+    immune,
+    notes,
+    reduction,
+    reductionApplies,
+    resistant,
+    vulnerable
+  };
+}
+
 export const ENERGY_USAGE_MODES = {
   tracked: "tracked",
   manual: "manual",
@@ -131,13 +190,17 @@ export function getEnergyUsageMode() {
   }
 }
 
-export async function applyHitPointChange(actor, amount, mode = "damage") {
+export async function applyHitPointChange(actor, amount, mode = "damage", options = {}) {
   const hitPoints = actor.system.combat.hitPoints;
   const current = Number(hitPoints.value) || 0;
   const max = Math.max(0, Number(hitPoints.max) || 0);
   const temporary = Math.max(0, Number(hitPoints.temporary) || 0);
   const minimum = -max;
-  const change = safeAmount(amount);
+  const requestedAmount = safeAmount(amount);
+  const damageAdjustment = mode === "damage"
+    ? adjustDamageForType(requestedAmount, options.damageType, actor.system.combat.damageProfile)
+    : null;
+  const change = damageAdjustment?.adjusted ?? requestedAmount;
   let next = current;
   let nextTemporary = temporary;
   let absorbed = 0;
@@ -155,7 +218,7 @@ export async function applyHitPointChange(actor, amount, mode = "damage") {
     "system.combat.hitPoints.value": next,
     "system.combat.hitPoints.temporary": nextTemporary
   });
-  return { amount: change, absorbed, current, max, next, temporary, nextTemporary };
+  return { amount: change, absorbed, current, damageAdjustment, max, next, requestedAmount, temporary, nextTemporary };
 }
 
 export async function applyDeprivationLoss(actor, amount, mode = "apply") {

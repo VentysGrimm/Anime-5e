@@ -72,6 +72,8 @@ Useful controls:
 
 When Aim or Wait for Opening is tracked, the next attack roll gains the prepared tactical advantage in the roll card. Clear the tracked state after the prepared attack is spent. Grapple, Lock, Throw, Pin, and Disarm by Grapple can be tracked with the current target so the held, pinned, or released state stays visible on the actor sheet.
 
+Damage Type Handling lets the sheet apply typed immunity, resistance, vulnerability, and flat reduction when damage is applied. Enter comma-separated damage labels such as `fire`, `slashing`, `poison`, or `standard`; the damage chat card shows each adjustment before HP changes.
+
 Attack roll chat cards apply half cover and three-quarters cover to the target Armour Class before showing margin or critical guidance. Total cover leaves the target Armour Class unchanged and adds a reminder that the target usually cannot be attacked directly.
 
 The world settings control whether range penalties and wound-pressure disadvantage are applied automatically, whether Margin of Success is shown, and whether attack rolls add critical guidance. When enabled, wound pressure applies disadvantage to d20 rolls while current HP is at one-quarter maximum HP or lower. Attack chat cards note margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 failure consequences, and optional natural 20/natural 1 alternatives.

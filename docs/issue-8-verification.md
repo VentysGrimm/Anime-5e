@@ -71,6 +71,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Quick Rolls can compare ability or proficient checks to an entered Difficulty Class and show the target and margin in chat.
 - Characters can apply damage or healing to their own Hit Points from the combat panel.
 - Temporary Hit Points are tracked separately and absorb incoming damage before current Hit Points are reduced.
+- Damage Type Handling applies actor immunities, resistances, vulnerabilities, and flat damage reduction before temporary HP and current HP are updated, and reports the adjustment in chat.
 - Characters can track Hit Dice, roll short-rest Hit Dice recovery, recover 1d8 Energy on a short rest when Energy tracking is enabled, restore HP/Energy on a long rest, and regain spent Hit Dice up to half their total.
 - Optional wound-pressure automation can apply disadvantage to d20 rolls when current HP is at one-quarter maximum HP or lower.
 - Combat movement now tracks ground, fly, water/swim, climb, burrow, and custom movement entries alongside derived Attribute movement summaries.

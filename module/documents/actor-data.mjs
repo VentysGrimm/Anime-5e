@@ -144,6 +144,17 @@ function combatActionStateField() {
   });
 }
 
+function damageProfileField() {
+  return new fields.SchemaField({
+    immunities: textField(),
+    resistances: textField(),
+    vulnerabilities: textField(),
+    reduction: numberField(0, { min: 0 }),
+    reductionTypes: textField(),
+    notes: textField()
+  });
+}
+
 class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
   static LOCALIZATION_PREFIXES = ["ANIME5E.Actor"];
 
@@ -289,6 +300,7 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
         armourNotes: textField(),
         defenseSummary: textField(),
         offenseSummary: textField(),
+        damageProfile: damageProfileField(),
         proficiencyBonus: numberField(2),
         initiative: numberField(0),
         attacks: new fields.SchemaField({

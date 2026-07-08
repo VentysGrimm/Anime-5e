@@ -1733,6 +1733,7 @@
 }
 
 .anime5e .damage-panel,
+.anime5e .damage-profile-panel,
 .anime5e .energy-panel,
 .anime5e .rest-recovery-panel {
   background: rgba(255, 255, 255, 0.64);
@@ -1743,6 +1744,7 @@
 }
 
 .anime5e .damage-panel h3,
+.anime5e .damage-profile-panel h3,
 .anime5e .energy-panel h3,
 .anime5e .rest-recovery-panel h3 {
   font-size: 0.82rem;
@@ -1753,6 +1755,7 @@
 }
 
 .anime5e .damage-controls,
+.anime5e .damage-profile-controls,
 .anime5e .energy-controls,
 .anime5e .rest-controls,
 .anime5e .rest-state-controls {
@@ -1797,6 +1800,7 @@
 }
 
 .anime5e .damage-controls label,
+.anime5e .damage-profile-controls label,
 .anime5e .energy-controls label,
 .anime5e .rest-controls label,
 .anime5e .rest-state-controls label {
@@ -1808,10 +1812,15 @@
 }
 
 .anime5e .damage-controls input,
+.anime5e .damage-profile-controls input,
 .anime5e .energy-controls input,
 .anime5e .rest-controls input,
 .anime5e .rest-state-controls input {
   min-width: 0;
+}
+
+.anime5e .damage-profile-controls .wide {
+  grid-column: span 2;
 }
 
 .anime5e .save-roll-panel {
@@ -2015,6 +2024,7 @@
   .anime5e .class-benefit-list li,
   .anime5e .class-progression-table,
   .anime5e .damage-controls,
+  .anime5e .damage-profile-controls,
   .anime5e .dynamic-power-controls,
   .anime5e .energy-controls,
   .anime5e .encounter-threat-grid,
@@ -2043,6 +2053,7 @@
   }
 
   .anime5e .combat-action-state .wide,
+  .anime5e .damage-profile-controls .wide,
   .anime5e .dynamic-power-controls .wide {
     grid-column: auto;
   }

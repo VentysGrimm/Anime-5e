@@ -802,6 +802,35 @@
               <button type="button" class="roll-action" data-action="apply-healing"><i class="fas fa-heart"></i> Heal</button>
             </div>
           </section>
+          <section class="damage-profile-panel" aria-label="Damage Type Handling">
+            <h3>Damage Type Handling</h3>
+            <div class="damage-profile-controls">
+              <label>
+                Immunities
+                <input type="text" name="system.combat.damageProfile.immunities" value="{{system.combat.damageProfile.immunities}}" placeholder="fire, poison" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Resistances
+                <input type="text" name="system.combat.damageProfile.resistances" value="{{system.combat.damageProfile.resistances}}" placeholder="cold, slashing" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Vulnerabilities
+                <input type="text" name="system.combat.damageProfile.vulnerabilities" value="{{system.combat.damageProfile.vulnerabilities}}" placeholder="psychic" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Reduction
+                <input type="number" name="system.combat.damageProfile.reduction" value="{{system.combat.damageProfile.reduction}}" min="0" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Reduction Types
+                <input type="text" name="system.combat.damageProfile.reductionTypes" value="{{system.combat.damageProfile.reductionTypes}}" placeholder="melee, ranged, standard" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label class="wide">
+                Notes
+                <input type="text" name="system.combat.damageProfile.notes" value="{{system.combat.damageProfile.notes}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+            </div>
+          </section>
           <section class="deprivation-panel" aria-label="Deprivation Hit Point Loss">
             <h3>Deprivation</h3>
             <div class="damage-controls">

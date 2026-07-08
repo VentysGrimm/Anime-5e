@@ -313,6 +313,7 @@ const REQUIRED_NUMBER_DEFAULTS = {
   "system.combat.hitDice.dieSize": 8,
   "system.combat.hitDice.spent": 0,
   "system.combat.hitDice.total": 0,
+  "system.combat.damageProfile.reduction": 0,
   "system.combat.energy.max": 0,
   "system.combat.energy.value": 0,
   "system.combat.armourClass": 10,
@@ -2130,7 +2131,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       ? numberFromText(this.actor.system.creation?.sizeTemplateReceivedDamageModifier)
       : 0;
     const adjustedAmount = mode === "damage" ? Math.max(0, amount + sizeReceivedDamageModifier) : amount;
-    const change = await applyHitPointChange(this.actor, adjustedAmount, mode);
+    const change = await applyHitPointChange(this.actor, adjustedAmount, mode, { damageType });
     const label = mode === "healing" ? "heals" : "takes";
     const sizeLine = sizeReceivedDamageModifier ? ` Size received-damage modifier ${formatSigned(sizeReceivedDamageModifier)} adjusted ${amount} to ${adjustedAmount}.` : "";
     const typedAmount = mode === "damage" && damageType ? `${change.amount} ${escapeHtml(damageType)}` : change.amount;
@@ -2138,10 +2139,14 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const tempLine = mode === "damage" && change.absorbed
       ? ` ${change.absorbed} absorbed by temporary HP (${change.temporary} &rarr; ${change.nextTemporary}).`
       : "";
+    const damageAdjustment = change.damageAdjustment;
+    const typeLine = mode === "damage" && damageAdjustment?.notes?.length
+      ? ` Damage type handling: ${escapeHtml(damageAdjustment.notes.join("; "))} (${damageAdjustment.base} &rarr; ${damageAdjustment.adjusted}).`
+      : "";
 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.${sizeLine}${tempLine}</p>`
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.${sizeLine}${typeLine}${tempLine}</p>`
     });
   }
 

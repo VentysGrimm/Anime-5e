@@ -19,6 +19,8 @@ import {
   describeCriticalFailureTableResult
 } from "../module/rules/rolls.mjs";
 import {
+  adjustDamageForType,
+  applyHitPointChange,
   applyLongRestRecovery,
   applyShortRestRecovery,
   buildShortRestHitDiceFormula,
@@ -306,6 +308,43 @@ function validateCombatManoeuvreStateRules() {
   if (!grappleState.notes.includes("pinned target suffers disadvantage")) fail("Grapple pin state did not include source-backed effect notes.");
 }
 
+async function validateDamageTypeRules() {
+  const profile = {
+    immunities: "poison",
+    resistances: "fire, slashing",
+    vulnerabilities: "cold",
+    reduction: 2,
+    reductionTypes: "standard, slashing"
+  };
+
+  const immune = adjustDamageForType(12, "Poison", profile);
+  assertEqual("Poison immunity damage", immune.adjusted, 0);
+  if (!immune.notes.some((note) => note.includes("immunity"))) fail("Poison immunity did not report an immunity note.");
+
+  const resistant = adjustDamageForType(11, "Fire", profile);
+  assertEqual("Fire resistance damage", resistant.adjusted, 5);
+
+  const vulnerable = adjustDamageForType(6, "Cold", profile);
+  assertEqual("Cold vulnerability damage", vulnerable.adjusted, 12);
+
+  const reduced = adjustDamageForType(11, "Slashing", profile);
+  assertEqual("Slashing resistance and reduction damage", reduced.adjusted, 3);
+
+  const standard = adjustDamageForType(7, "", profile);
+  assertEqual("Standard damage reduction", standard.adjusted, 5);
+
+  const actor = createMockActor({
+    combat: {
+      hitPoints: { value: 10, max: 20, temporary: 4 },
+      damageProfile: { resistances: "fire" }
+    }
+  });
+  const change = await applyHitPointChange(actor, 8, "damage", { damageType: "fire" });
+  assertEqual("Typed damage application adjusted amount", change.amount, 4);
+  assertEqual("Typed damage temporary HP", actor.system.combat.hitPoints.temporary, 0);
+  assertEqual("Typed damage current HP", actor.system.combat.hitPoints.value, 10);
+}
+
 async function validateResourceRecoveryRules() {
   const restSystem = {
     abilities: { constitution: { modifier: 2 } },
@@ -469,6 +508,7 @@ validateScratchCharacters();
 validateAttributeCustomizationRules();
 validateCriticalRollRules();
 validateCombatManoeuvreStateRules();
+await validateDamageTypeRules();
 await validateResourceRecoveryRules();
 validatePregens();
 validateActorSources();
