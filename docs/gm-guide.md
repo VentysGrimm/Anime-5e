@@ -37,7 +37,7 @@ When creating a monster manually:
 4. Use attack and damage buttons to verify the combat rows before the session.
 5. Put long source text in the book, not the actor. Use short original summaries and page references in Foundry.
 
-The GM-only Anime 5e Encounter Threat settings menu opens a manual Challenge Rating and threat comparison tool. Enter party size, party level, creature CR, creature count, and any threat or XP overrides, then use the result as encounter guidance.
+The GM-only Anime 5e Encounter Threat settings menu derives Challenge Rating and XP from opponent Points using the Core Rules table, then compares party threat against creature CR and count. Enter manual CR, XP, or threat overrides when the source actor already has adjudicated values.
 
 ## Optional Rules And World Settings
 

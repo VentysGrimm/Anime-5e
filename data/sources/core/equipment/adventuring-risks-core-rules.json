@@ -340,6 +340,636 @@
           }
         }
       }
+    },
+    {
+      "name": "Poison - Contact",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/poison.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Contact poison is built as a Weapon effect with Blight and Contact Enhancements plus the Toxic Limiter. Bare skin contact or a touch attack can force a Constitution Saving Throw; contact poison usually also works if ingested.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.poison-contact",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.poison-contact",
+        "category": "Poison",
+        "status": "Active",
+        "save": "Constitution Saving Throw",
+        "effect": "Apply the poison's Blight effect if the target fails the save.",
+        "riskNotes": "<p>One dose affects a single target and remains on the object until a hit, touch, wipe-off, or DM-adjudicated degradation.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.poison-contact",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.poison-contact"
+          }
+        }
+      }
+    },
+    {
+      "name": "Poison - Ingested",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/poison.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Ingested poison is built with the Blight Enhancement plus Ingest and Toxic Limiters. It is consumed in food or drink and forces a Constitution Saving Throw when the dose is taken.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.poison-ingested",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.poison-ingested",
+        "category": "Poison",
+        "status": "Active",
+        "save": "Constitution Saving Throw",
+        "effect": "Apply the poison's Blight effect if the target fails the save.",
+        "riskNotes": "<p>Use when the poison is prepared into a meal, added to a drink, or slipped into food immediately before consumption.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.poison-ingested",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.poison-ingested"
+          }
+        }
+      }
+    },
+    {
+      "name": "Poison - Inhaled",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/poison.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Inhaled poison is built with Area and Blight Enhancements plus Save and Toxic Limiters. Each target in the area checks against the Save Limiter and then resolves the Blight effect.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.poison-inhaled",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.poison-inhaled",
+        "category": "Poison",
+        "status": "Active",
+        "save": "Dexterity check for Save Limiter; Constitution Saving Throw for Blight",
+        "effect": "Apply the poison's Blight effect to each affected target that fails.",
+        "riskNotes": "<p>Use for toxic fumes, swamp or mine gases, monster defences, alchemical clouds, or siege smoke.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.poison-inhaled",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.poison-inhaled"
+          }
+        }
+      }
+    },
+    {
+      "name": "Poison - Injury",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/poison.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> Injury poison is built with Blight and Linked Enhancements plus the Toxic Limiter. It must be delivered through a wound, linked attack, weapon trap, needle, or similar hit.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.poison-injury",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.poison-injury",
+        "category": "Poison",
+        "status": "Active",
+        "save": "Constitution Saving Throw",
+        "effect": "No effect if the linked attack misses; apply the poison's Blight effect if delivered and the target fails.",
+        "riskNotes": "<p>Injury poisons that deal damage are also ingested poisons by default unless the source says otherwise.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.poison-injury",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.poison-injury"
+          }
+        }
+      }
+    },
+    {
+      "name": "Poison - Treatment",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/poison.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 180.</p><p><strong>Rules Summary:</strong> A healer who diagnoses the poison can attempt Wisdom (Medicine) to halt the toxin. The DC equals the poison's Blight strength: DC 10 for one assignment, DC 15 for two, or DC 20 for three.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.poison-treatment",
+        "sourcePage": 180,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.poison-treatment",
+        "category": "Poison",
+        "status": "Treatment",
+        "save": "Wisdom (Medicine)",
+        "effect": "A precise antitoxin reduces treatment to DC 10 with advantage.",
+        "riskNotes": "<p>Use this as the treatment reminder for any poison risk whose Blight assignment count is known.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.poison-treatment",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.poison-treatment"
+          }
+        }
+      }
+    },
+    {
+      "name": "Disease - Direct Contact",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/biohazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> Direct-contact disease spreads through person-to-person contact, skin contact, bodily-fluid exchange, or droplets from coughing, sneezing, and speaking.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.disease-direct-contact",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.disease-direct-contact",
+        "category": "Disease",
+        "status": "Exposure",
+        "effect": "Resolve the disease like poison when weaponised, or track exposure and symptoms as a campaign condition.",
+        "riskNotes": "<p>Use this entry for communicable diseases spread by close contact between characters.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.disease-direct-contact",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.disease-direct-contact"
+          }
+        }
+      }
+    },
+    {
+      "name": "Disease - Indirect Contact",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/biohazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> Indirect-contact disease spreads through air, contaminated objects, food or drink, or animal-to-person transfer. Treat airborne, contact, ingest, and injury vectors like the matching poison delivery categories when weaponised.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.disease-indirect-contact",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.disease-indirect-contact",
+        "category": "Disease",
+        "status": "Exposure",
+        "effect": "Use the relevant poison-style delivery workflow for inhaled, contact, ingested, or injury transmission.",
+        "riskNotes": "<p>Use for contaminated spaces, objects, meals, water, vermin, or infected injuries.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.disease-indirect-contact",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.disease-indirect-contact"
+          }
+        }
+      }
+    },
+    {
+      "name": "Disease - Genetic Disorder",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/biohazard.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> Genetic disorders are not normally associated with the Weapon Attribute. Model their expressed disadvantages with Defects rather than poison-style delivery and saves.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.disease-genetic-disorder",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.disease-genetic-disorder",
+        "category": "Disease",
+        "status": "Reference",
+        "effect": "Represent ongoing disadvantages with suitable Defect items.",
+        "riskNotes": "<p>Use for inherited or mutation-based conditions that should affect a build rather than a short encounter.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.disease-genetic-disorder",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.disease-genetic-disorder"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Chemical Exposure",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/acid.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> Acids and bases can burn tissue, scar flesh, or kill during full-body exposure. Localised chemical exposure usually inflicts 1d2 to 1d10 damage each round until washed away.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-chemical-exposure",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-chemical-exposure",
+        "category": "Environmental Damage",
+        "status": "Active",
+        "interval": "Each round until washed away",
+        "damage": "1d2 to 1d10 damage for localised exposure; more for extreme exposure",
+        "damageRoll": "1d6",
+        "damageType": "acid",
+        "effect": "Wash away the chemical thoroughly to end continued damage.",
+        "riskNotes": "<p>The default roll is a midpoint convenience. Change the risk damage roll to 1d2, 1d4, 1d8, 1d10, or a larger formula when the exposure is stronger.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-chemical-exposure",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-chemical-exposure"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Cold Air",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/frozen.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> For every 18 F / 10 C below freezing, cold air exposure inflicts 1 damage every 10 minutes. Wind chill can double or triple this damage, while clothing or shelter can reduce or eliminate it.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-cold-air",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-cold-air",
+        "category": "Environmental Damage",
+        "status": "Active",
+        "interval": "Every 10 minutes per 18 F / 10 C below freezing",
+        "damage": "1 damage per temperature step",
+        "damageRoll": "1",
+        "damageType": "cold",
+        "effect": "Apply once per temperature step; modify for wind chill, clothing, or shelter.",
+        "riskNotes": "<p>Example: -40 F / -40 C is four steps below freezing, or 4 damage every 10 minutes before wind-chill and shelter adjustments.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-cold-air",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-cold-air"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Freezing Liquid",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/frozen.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> Exposure to cold liquids inflicts greater harm than cold air. For every 18 F / 10 C below freezing, the character suffers 2 damage each round and may suffer severe hypothermia.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-freezing-liquid",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-freezing-liquid",
+        "category": "Environmental Damage",
+        "status": "Active",
+        "interval": "Each round per 18 F / 10 C below freezing",
+        "damage": "2 damage per temperature step",
+        "damageRoll": "2",
+        "damageType": "cold",
+        "effect": "Apply once per temperature step each round while the exposure continues.",
+        "riskNotes": "<p>Use alongside the deprivation entries if the freezing exposure also prevents shelter, rest, or warmth over time.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-freezing-liquid",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-freezing-liquid"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Fire",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/fire.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> Fire damage is heat damage from direct contact or heated air. Approximate per-round damage is candle flame 1d2, small fire 1d4, medium fire 1d6, large fire 1d8, or blazing inferno 1d10.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-fire",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-fire",
+        "category": "Environmental Damage",
+        "status": "Active",
+        "interval": "Each round",
+        "damage": "1d2 candle, 1d4 small, 1d6 medium, 1d8 large, 1d10 inferno",
+        "damageRoll": "1d6",
+        "damageType": "fire",
+        "effect": "Smoke inhalation or oxygen loss may add separate damage or deprivation.",
+        "riskNotes": "<p>The default roll is medium fire. Edit the damage roll to match the fire scale before applying.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-fire",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-fire"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Impact and Falling",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/falling.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> Falls and similar impacts inflict 1d6 bludgeoning damage per 10 feet fallen, to a maximum of 20d6. The DM may allow an appropriate Dexterity (Acrobatics) Saving Throw to halve the damage.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-impact-falling",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-impact-falling",
+        "category": "Environmental Damage",
+        "status": "Active",
+        "save": "Dexterity (Acrobatics) Saving Throw, DM option",
+        "damage": "1d6 bludgeoning per 10 feet, maximum 20d6",
+        "damageRoll": "1d6",
+        "damageType": "bludgeoning",
+        "effect": "Roll once per 10-foot increment and cap at 20d6; halve on a successful DM-approved save.",
+        "riskNotes": "<p>Edit the damage roll to the full fall formula, such as 4d6 for 40 feet, before applying.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-impact-falling",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-impact-falling"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Suffocation",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/daze.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 181.</p><p><strong>Rules Summary:</strong> A character can hold breath for 1 + Constitution modifier minutes, minimum 30 seconds. After running out of breath or choking, they survive Constitution modifier rounds, minimum 1, then drop to 0 HP and are dying until they can breathe.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-suffocation",
+        "sourcePage": 181,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-suffocation",
+        "category": "Environmental Damage",
+        "status": "Active",
+        "interval": "After breath and survival rounds expire",
+        "effect": "Drops to 0 Hit Points and cannot regain Hit Points or stabilize until able to breathe.",
+        "riskNotes": "<p>Use the actor HP controls to set 0 HP when the suffocation timer expires.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-suffocation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 181,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-suffocation"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Pressure",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 182.</p><p><strong>Rules Summary:</strong> Gradually increased pressure causes no significant damage up to 10 atmospheres. Each atmosphere beyond 10 inflicts 1 damage each round; underwater pressure increases about one atmosphere per 30 feet of depth.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-pressure",
+        "sourcePage": 182,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-pressure",
+        "category": "Environmental Damage",
+        "status": "Active",
+        "interval": "Each round per atmosphere beyond 10",
+        "damage": "1 damage per atmosphere beyond 10",
+        "damageRoll": "1",
+        "damageType": "bludgeoning",
+        "effect": "Apply once per atmosphere above the safe threshold each round.",
+        "riskNotes": "<p>Example: 1,200 feet underwater is about 40 atmospheres, or 30 damage each round.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-pressure",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 182,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-pressure"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Vacuum",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/explosion.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 182.</p><p><strong>Rules Summary:</strong> Partial vacuums inflict 1d6 damage each round. Near-complete or strong vacuums inflict 2d8 damage each round and can also cause oxygen deprivation effects.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-vacuum",
+        "sourcePage": 182,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-vacuum",
+        "category": "Environmental Damage",
+        "status": "Active",
+        "interval": "Each round",
+        "damage": "1d6 partial vacuum, 2d8 strong vacuum",
+        "damageRoll": "1d6",
+        "damageType": "standard",
+        "effect": "Use suffocation rules too if the vacuum prevents breathing.",
+        "riskNotes": "<p>The default roll is partial vacuum. Change the damage roll to 2d8 for near-complete or strong vacuum exposure.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-vacuum",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 182,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-vacuum"
+          }
+        }
+      }
+    },
+    {
+      "name": "Environmental Damage - Radiation",
+      "type": "adventuringRisk",
+      "folder": "Adventuring Risks - Core Rules",
+      "img": "icons/svg/radiation.svg",
+      "system": {
+        "description": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, p. 182.</p><p><strong>Rules Summary:</strong> Radiation damage usually has little immediate effect, but severe exposure can become fatal within hours or days as cellular damage overwhelms the body. Lower exposure can cause long-term sickness, cancer, and death.</p>",
+        "rank": 0,
+        "cost": 0,
+        "source": "Anime 5E Fifth Edition Core Rules",
+        "sourceId": "core.adventuring-risk.environment-radiation",
+        "sourcePage": 182,
+        "sourceAbbreviation": "A5ECR",
+        "sourceModuleId": "anime5e",
+        "sourceCategory": "adventuring-risk",
+        "importId": "core.adventuring-risk.environment-radiation",
+        "category": "Environmental Damage",
+        "status": "Delayed",
+        "onset": "Hours, days, months, or years depending on exposure",
+        "effect": "Track delayed sickness, cellular damage, cancer, or death as a campaign condition.",
+        "riskNotes": "<p>The Core Rules do not give a fixed immediate damage formula for radiation; use this as the delayed-effect reminder.</p>"
+      },
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.adventuring-risk.environment-radiation",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 182,
+            "abbreviation": "A5ECR",
+            "moduleId": "anime5e",
+            "category": "adventuring-risk",
+            "importId": "core.adventuring-risk.environment-radiation"
+          }
+        }
+      }
     }
   ]
 }

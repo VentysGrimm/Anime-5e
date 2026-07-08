@@ -662,6 +662,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       system.dc !== undefined && system.dc !== null ? `DC ${system.dc}` : null,
       system.interval,
       system.damage,
+      system.damageRoll ? `Roll ${system.damageRoll}` : null,
       system.damageType,
       system.armourClass !== undefined ? `AC ${system.armourClass}` : null,
       system.speed,
@@ -673,6 +674,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     ].filter(Boolean);
     const canApplyDeprivation = item.type === "adventuringRisk"
       && (/deprivation/i.test(system.category ?? "") || /deprivation/i.test(system.sourceId ?? "") || /deprivation/i.test(item.name ?? ""));
+    const canApplyRiskDamage = item.type === "adventuringRisk" && hasText(system.damageRoll);
 
     return {
       id: item.id,
@@ -690,6 +692,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       linkActorIcon: hasText(system.linkedActorUuid) ? "fa-external-link-alt" : "fa-link",
       linkActorTitle: hasText(system.linkedActorUuid) ? "Open linked actor" : "Create linked actor",
       canUse: true,
+      canApplyRiskDamage,
       canRoll: hasText(system.roll),
       canSkillCheck: item.type === "skill"
         || item.type === "tool"
@@ -1382,6 +1385,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     });
     element.querySelectorAll("[data-action='apply-risk-deprivation']").forEach((button) => {
       button.addEventListener("click", this._onApplyRiskDeprivation.bind(this));
+    });
+    element.querySelectorAll("[data-action='apply-risk-damage']").forEach((button) => {
+      button.addEventListener("click", this._onApplyRiskDamage.bind(this));
     });
     element.querySelectorAll("[data-action='spend-energy'], [data-action='restore-energy']").forEach((button) => {
       button.addEventListener("click", this._onApplyEnergyChange.bind(this));
@@ -2150,7 +2156,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await this._applyHitPointChange(amount, mode, typeInput?.value ?? "");
   }
 
-  async _applyHitPointChange(amount, mode, damageType = "") {
+  async _applyHitPointChange(amount, mode, damageType = "", options = {}) {
     const sizeReceivedDamageModifier = mode === "damage" && isStandardDamageType(damageType)
       ? numberFromText(this.actor.system.creation?.sizeTemplateReceivedDamageModifier)
       : 0;
@@ -2167,10 +2173,15 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const typeLine = mode === "damage" && damageAdjustment?.notes?.length
       ? ` Damage type handling: ${escapeHtml(damageAdjustment.notes.join("; "))} (${damageAdjustment.base} &rarr; ${damageAdjustment.adjusted}).`
       : "";
+    const sourceLine = options.sourceLabel
+      ? ` Source: ${escapeHtml(options.sourceLabel)}${options.sourceFormula ? ` (${escapeHtml(options.sourceFormula)} = ${escapeHtml(options.sourceTotal ?? amount)})` : ""}.`
+      : "";
+    const intervalLine = options.interval ? ` Interval: ${escapeHtml(options.interval)}.` : "";
+    const effectLine = options.effect ? ` Effect: ${escapeHtml(options.effect)}.` : "";
 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.${sizeLine}${typeLine}${tempLine}</p>`
+      content: `<p><strong>${escapeHtml(this.actor.name)}</strong> ${label} ${typedAmount} ${noun}. HP ${change.current} &rarr; ${change.next} / ${change.max}.${sourceLine}${intervalLine}${effectLine}${sizeLine}${typeLine}${tempLine}</p>`
     });
   }
 
@@ -2189,6 +2200,35 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (!item || item.type !== "adventuringRisk") return;
 
     await this._applyDeprivationChange(1, "apply", item);
+  }
+
+  async _onApplyRiskDamage(event) {
+    event.preventDefault();
+    const item = this._getEmbeddedItem(event);
+    if (!item || item.type !== "adventuringRisk") return;
+
+    const formula = item.system?.damageRoll?.trim();
+    if (!formula) {
+      ui.notifications?.warn(`${item.name} has no risk damage roll.`);
+      return;
+    }
+
+    let roll;
+    try {
+      roll = await evaluateAnime5eFormula(formula);
+    } catch (error) {
+      console.error("anime5e | Failed to roll adventuring risk damage", item.name, formula, error);
+      ui.notifications?.error(`Anime 5e could not roll "${formula}". Check the risk damage roll and try again.`);
+      return;
+    }
+
+    await this._applyHitPointChange(roll.total, "damage", item.system?.damageType ?? "", {
+      effect: item.system?.effect,
+      interval: item.system?.interval,
+      sourceFormula: formula,
+      sourceLabel: item.name,
+      sourceTotal: roll.total
+    });
   }
 
   async _applyDeprivationChange(amount, mode, item = null) {

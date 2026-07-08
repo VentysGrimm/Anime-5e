@@ -213,6 +213,8 @@ export class Anime5eAdventuringRiskData extends Anime5eBaseItemData {
       onset: textField(),
       duration: textField(),
       damage: textField(),
+      damageRoll: textField(),
+      damageType: textField(),
       effect: textField(),
       riskNotes: htmlField()
     };

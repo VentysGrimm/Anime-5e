@@ -12,6 +12,7 @@ import {
   getCombatManoeuvre,
   manoeuvreGrantsTacticalAttackBonus
 } from "../module/rules/combat-manoeuvres.mjs";
+import { challengeRatingForPoints, parseChallengeRating, xpForChallengeRating } from "../module/rules/challenge-ratings.mjs";
 import { calculateAttributeCustomization } from "../module/rules/points.mjs";
 import {
   buildCriticalRollDetails,
@@ -364,6 +365,19 @@ function validateCombatManoeuvreStateRules() {
   if (!grappleState.notes.includes("pinned target suffers disadvantage")) fail("Grapple pin state did not include source-backed effect notes.");
 }
 
+function validateChallengeRatingRules() {
+  assertEqual("CR 1/8 parse", parseChallengeRating("1/8"), 0.125);
+  assertEqual("CR 1/4 XP", xpForChallengeRating("1/4"), 50);
+  assertEqual("CR 0 point lookup", challengeRatingForPoints(50).cr, "0");
+  assertEqual("CR 1 point lookup", challengeRatingForPoints(96).cr, "1");
+  assertEqual("CR 8 point lookup", challengeRatingForPoints(180).cr, "8");
+  assertEqual("CR 14 point lookup", challengeRatingForPoints(261).cr, "14");
+  assertEqual("CR 28 point lookup", challengeRatingForPoints(600).cr, "28");
+  assertEqual("CR 30 point lookup", challengeRatingForPoints(651).cr, "30");
+  assertEqual("CR beyond table lookup", challengeRatingForPoints(701).cr, "30+");
+  assertEqual("CR beyond table flag", challengeRatingForPoints(701).beyondTable, true);
+}
+
 async function validateDamageTypeRules() {
   const profile = {
     immunities: "poison",
@@ -487,6 +501,58 @@ function validateStoryEnergyRules() {
   }), true);
 }
 
+function validateAdventuringRiskSources() {
+  const riskSource = readJson(repoPath("data/sources/core/equipment/adventuring-risks-core-rules.json"));
+  const risks = getDocuments(riskSource);
+  const riskBySourceId = new Map(risks.map((risk) => [sourceIdOf(risk), risk]));
+  const requiredRisks = [
+    "core.adventuring-risk.poison-contact",
+    "core.adventuring-risk.poison-ingested",
+    "core.adventuring-risk.poison-inhaled",
+    "core.adventuring-risk.poison-injury",
+    "core.adventuring-risk.disease-direct-contact",
+    "core.adventuring-risk.disease-indirect-contact",
+    "core.adventuring-risk.disease-genetic-disorder",
+    "core.adventuring-risk.environment-chemical-exposure",
+    "core.adventuring-risk.environment-cold-air",
+    "core.adventuring-risk.environment-fire",
+    "core.adventuring-risk.environment-impact-falling",
+    "core.adventuring-risk.environment-pressure",
+    "core.adventuring-risk.environment-vacuum",
+    "core.adventuring-risk.deprivation-starvation",
+    "core.adventuring-risk.deprivation-drowning"
+  ];
+
+  for (const sourceId of requiredRisks) {
+    if (!riskBySourceId.has(sourceId)) fail(`Adventuring risks: missing ${sourceId}.`);
+  }
+
+  const categories = risks.reduce((counts, risk) => {
+    const category = risk.system?.category ?? "Uncategorized";
+    counts[category] = (counts[category] ?? 0) + 1;
+    return counts;
+  }, {});
+  if ((categories.Poison ?? 0) < 4) fail("Adventuring risks: expected at least four poison entries.");
+  if ((categories.Disease ?? 0) < 3) fail("Adventuring risks: expected at least three disease entries.");
+  if ((categories["Environmental Damage"] ?? 0) < 7) fail("Adventuring risks: expected at least seven environmental damage entries.");
+  if ((categories.Deprivation ?? 0) < 9) fail("Adventuring risks: expected the full deprivation table.");
+
+  for (const sourceId of [
+    "core.adventuring-risk.environment-chemical-exposure",
+    "core.adventuring-risk.environment-fire",
+    "core.adventuring-risk.environment-impact-falling",
+    "core.adventuring-risk.environment-vacuum"
+  ]) {
+    const risk = riskBySourceId.get(sourceId);
+    if (!String(risk?.system?.damageRoll ?? "").trim()) fail(`${sourceId}: missing risk damage roll.`);
+    if (!String(risk?.system?.damageType ?? "").trim()) fail(`${sourceId}: missing risk damage type.`);
+  }
+
+  const rulesSource = readJson(repoPath("data/sources/core/rules/core-rules-reference.json"));
+  const ruleSourceIds = new Set(getDocuments(rulesSource).map(sourceIdOf));
+  if (!ruleSourceIds.has("core.rules.health-risks")) fail("Core rules reference: missing health risks quick reference.");
+}
+
 function validatePregens() {
   const source = readJson(repoPath("modules/anime5e-game-screen-adventure/data/sources/pregen-characters.json"));
   const documentsBySourceId = new Map(getDocuments(source).map((document) => [sourceIdOf(document), document]));
@@ -590,9 +656,11 @@ validateScratchCharacters();
 validateAttributeCustomizationRules();
 validateCriticalRollRules();
 validateCombatManoeuvreStateRules();
+validateChallengeRatingRules();
 await validateDamageTypeRules();
 await validateResourceRecoveryRules();
 validateStoryEnergyRules();
+validateAdventuringRiskSources();
 validatePregens();
 validateActorSources();
 validateContentModules();

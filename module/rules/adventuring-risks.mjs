@@ -30,6 +30,8 @@ export function buildAdventuringRiskChatContent(item) {
     detailRow("Onset", system.onset),
     detailRow("Duration", system.duration),
     detailRow("Damage", system.damage),
+    detailRow("Damage Roll", system.damageRoll),
+    detailRow("Damage Type", system.damageType),
     detailRow("Effect", system.effect),
     detailRow("Notes", system.riskNotes)
   ].join("");

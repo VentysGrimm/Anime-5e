@@ -1506,6 +1506,7 @@
                 <div class="item-tags">{{#each item.tags as |tag|}}<span>{{tag}}</span>{{/each}}</div>
                 <div class="item-actions">
                   {{#if item.canUse}}<button type="button" data-action="use-item" title="Post Reminder"><i class="fas fa-comment"></i></button>{{/if}}
+                  {{#if item.canApplyRiskDamage}}<button type="button" data-action="apply-risk-damage" title="Apply Risk Damage"><i class="fas fa-bolt"></i></button>{{/if}}
                   {{#if item.canApplyDeprivation}}<button type="button" data-action="apply-risk-deprivation" title="Apply Deprivation Loss"><i class="fas fa-hourglass-half"></i></button>{{/if}}
                   {{#if ../editable}}<button type="button" data-action="edit-item" title="Edit"><i class="fas fa-edit"></i></button><button type="button" data-action="delete-item" title="Delete"><i class="fas fa-trash"></i></button>{{/if}}
                 </div>

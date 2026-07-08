@@ -225,6 +225,30 @@
       }
     },
     {
+      "name": "Health Risks Quick Reference",
+      "folder": "Core Rules Reference",
+      "pages": [
+        {
+          "name": "Poisons, Disease, and Environmental Damage",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<p><strong>Source:</strong> Anime 5E Fifth Edition Core Rules, PDF pp. 180-182.</p><p>Health risks cover poison, disease, environmental damage, and deprivation. Adventuring Risk items can post source reminders, and risk entries with a Damage Roll can apply typed HP damage through the actor sheet.</p><table><thead><tr><th>Risk</th><th>Workflow</th></tr></thead><tbody><tr><td>Contact Poison</td><td>Constitution save on bare-skin contact or touch attack; uses Blight, Contact, and Toxic.</td></tr><tr><td>Ingested Poison</td><td>Constitution save after consuming poisoned food or drink; uses Blight, Ingest, and Toxic.</td></tr><tr><td>Inhaled Poison</td><td>Area targets check the Save Limiter and then the Blight effect; use for toxic fumes or clouds.</td></tr><tr><td>Injury Poison</td><td>Only delivered on a linked hit or wound; missed attacks do not apply it.</td></tr><tr><td>Disease</td><td>Use direct, indirect, or genetic-disorder entries; weaponised diseases follow poison-style delivery.</td></tr><tr><td>Chemical, cold, fire, impact, pressure, vacuum</td><td>Edit the Damage Roll to the scene scale, then apply risk damage from the actor sheet.</td></tr><tr><td>Suffocation and radiation</td><td>Track timers, delayed effects, or 0 HP manually because the source does not give a normal damage roll.</td></tr></tbody></table><p>Poison treatment uses Wisdom (Medicine) against Blight DC 10, 15, or 20 depending on assignment count; a precise antitoxin makes treatment DC 10 with advantage.</p>"
+          }
+        }
+      ],
+      "flags": {
+        "anime5e": {
+          "sourceId": "core.rules.health-risks",
+          "source": {
+            "book": "Anime 5E Fifth Edition Core Rules",
+            "page": 180,
+            "importId": "core.rules.health-risks"
+          }
+        }
+      }
+    },
+    {
       "name": "Deprivation Quick Reference",
       "folder": "Core Rules Reference",
       "pages": [

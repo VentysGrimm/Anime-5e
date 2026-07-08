@@ -142,6 +142,7 @@ const FIELD_LABELS = {
   creatureType: "Creature Type",
   currency: "Currency",
   damage: "Damage",
+  damageRoll: "Damage Roll",
   damageType: "Damage Type",
   dc: "DC",
   damageModifier: "Damage Modifier",
