@@ -229,6 +229,7 @@ function validateAttributeCustomizationRules() {
       rank: 3,
       cost: 1,
       allowedEnhancements: "Range",
+      effectTargets: "Ally within approved range",
       enhancementReferences: [
         {
           name: "Range",
@@ -251,6 +252,16 @@ function validateAttributeCustomizationRules() {
   const rangedAcMechanics = buildAttributeModifierMechanics(rangedAcBonus);
   if (!rangedAcMechanics.tags.includes("Effective Rank 2")) fail("Ranged AC Bonus mechanics did not include effective-rank tag.");
   if (!rangedAcMechanics.tags.includes("Range 1")) fail("Ranged AC Bonus mechanics did not include Range tag.");
+  if (rangedAcMechanics.automation.scope !== "Range 1") fail("Ranged AC Bonus mechanics did not automate Range scope.");
+
+  const untrackedRangeAcBonus = structuredClone(rangedAcBonus);
+  delete untrackedRangeAcBonus.system.effectTargets;
+  const untrackedRangeEffects = calculateCoreAttributeEffects({
+    system: { combat: { hitPoints: { max: 20 }, movementSpeed: 30 } },
+    items: [untrackedRangeAcBonus]
+  });
+  assertEqual("Untracked Range AC Bonus derived AC", untrackedRangeEffects.armourClassBonus, 0);
+  if (!untrackedRangeEffects.unapplied.length) fail("Untracked Range AC Bonus should wait for tracked targets before applying.");
 
   const depletedTough = {
     type: "attribute",
@@ -277,6 +288,48 @@ function validateAttributeCustomizationRules() {
   const depletedUsage = buildCoreAttributeUsageContext(depletedTough);
   assertEqual("Tough Deplete Energy payment required", depletedUsage.energy.requiresPayment, true);
   if (!depletedUsage.summary.some((entry) => entry.includes("Deplete 1"))) fail("Tough Deplete usage summary did not include Deplete mechanics.");
+
+  const areaDurationHealing = {
+    type: "attribute",
+    name: "Healing",
+    system: {
+      sourceId: "core.attribute.healing",
+      rank: 4,
+      cost: 1,
+      allowedEnhancements: "Area, Duration, Targets",
+      enhancementReferences: [
+        {
+          name: "Area",
+          sourceId: "core.enhancement.area",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 2
+        },
+        {
+          name: "Duration",
+          sourceId: "core.enhancement.duration",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 1
+        },
+        {
+          name: "Targets",
+          sourceId: "core.enhancement.targets",
+          appliesTo: "Attribute",
+          pointModifier: 1,
+          assignmentCount: 3
+        }
+      ],
+      limiterReferences: []
+    }
+  };
+  const areaDurationUsage = buildCoreAttributeUsageContext(areaDurationHealing);
+  assertEqual("Area/Duration automation scope", areaDurationUsage.scope, "Area 2");
+  assertEqual("Area/Duration automation duration", areaDurationUsage.duration, "Duration 1");
+  assertEqual("Area/Duration automation targets", areaDurationUsage.targetCount, "Targets 3");
+  assertEqual("Area/Duration automation status", areaDurationUsage.active, false);
+  if (!areaDurationUsage.blockers.some((entry) => entry.includes("remaining time"))) fail("Duration automation did not require remaining duration tracking.");
+  if (!areaDurationUsage.blockers.some((entry) => entry.includes("tracked targets"))) fail("Area/Targets automation did not require tracked targets.");
 }
 
 function validateCriticalRollRules() {

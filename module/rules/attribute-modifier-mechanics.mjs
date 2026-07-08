@@ -135,6 +135,28 @@ const MECHANICS = {
   }
 };
 
+const TRACKING_REQUIREMENTS = {
+  "core.limiter.activation": (count) => `Activation ${count}: record preparation state before use.`,
+  "core.limiter.assisted": (count) => `Assisted ${count}: record required assistants before use.`,
+  "core.limiter.backlash": (count) => `Backlash ${count}: record failure or miss consequence.`,
+  "core.limiter.charges": (count) => `Charges ${count}: track remaining uses.`,
+  "core.limiter.concentration": (count) => `Concentration ${count}: track focus and interruption state.`,
+  "core.limiter.consumable": (count) => `Consumable ${count}: record consumed focus or material.`,
+  "core.limiter.dependent": (count) => `Dependent ${count}: record the required active effect.`,
+  "core.limiter.detectable": (count) => `Detectable ${count}: record detection method or trace.`,
+  "core.limiter.emotional": (count) => `Emotional ${count}: record the active emotional trigger.`,
+  "core.limiter.environmental": (count) => `Environmental ${count}: record the active environment or condition.`,
+  "core.limiter.equipment": (count) => `Equipment ${count}: record the required supporting gear.`,
+  "core.limiter.imbue": (count) => `Imbue ${count}: record the imbued target and duration.`,
+  "core.limiter.irreversible": (count) => `Irreversible ${count}: record the reversal condition.`,
+  "core.limiter.maximum": (count) => `Maximum ${count}: use effective Rank as the active output.`,
+  "core.limiter.object": (count) => `Object ${count}: record the affected object.`,
+  "core.limiter.recovery": (count) => `Recovery ${count}: record the next available use.`,
+  "core.limiter.semi-permanent": (count) => `Semi-Permanent ${count}: record suppression state when inactive.`,
+  "core.limiter.unique-limiter": (count) => `Unique Limiter ${count}: record the custom restriction.`,
+  "core.limiter.unpredictable": (count) => `Unpredictable ${count}: record the check or random outcome.`
+};
+
 function numberOrZero(value) {
   const number = Number(value);
   return Number.isFinite(number) ? number : 0;
@@ -182,13 +204,194 @@ function fallbackMechanic(reference, type) {
   };
 }
 
+function assignmentLabel(count) {
+  return `${count} assignment${count === 1 ? "" : "s"}`;
+}
+
+function fieldEffect({ field, label, value, summary, requiresDurationTracking = false, requiresTargetTracking = false, requiresEnergyPayment = false }) {
+  return {
+    field,
+    label,
+    value,
+    summary,
+    requiresDurationTracking,
+    requiresTargetTracking,
+    requiresEnergyPayment,
+    requiresTrackingNotes: false
+  };
+}
+
+function trackingEffect(entry, summary) {
+  return {
+    field: "tracking",
+    label: entry.name,
+    value: entry.assignmentLabel,
+    summary,
+    requiresDurationTracking: false,
+    requiresTargetTracking: false,
+    requiresEnergyPayment: false,
+    requiresTrackingNotes: true
+  };
+}
+
+function buildAutomationEffects(entry, fallbackAutomation) {
+  const count = entry.assignmentCount;
+  const countLabel = entry.assignmentLabel;
+  const assignments = assignmentLabel(count);
+
+  if (entry.key === "core.enhancement.area") {
+    return [
+      fieldEffect({
+        field: "scope",
+        label: "Area",
+        value: `Area ${countLabel}`,
+        summary: `Area ${countLabel}: track affected area before applying derived effects.`,
+        requiresTargetTracking: true
+      })
+    ];
+  }
+
+  if (entry.key === "core.enhancement.duration") {
+    return [
+      fieldEffect({
+        field: "duration",
+        label: "Duration",
+        value: `Duration ${countLabel}`,
+        summary: `Duration ${countLabel}: track remaining duration while active.`,
+        requiresDurationTracking: true
+      })
+    ];
+  }
+
+  if (entry.key === "core.enhancement.potent") {
+    return [
+      fieldEffect({
+        field: "effectiveRank",
+        label: "Potent",
+        value: `Potent ${countLabel}`,
+        summary: `Potent ${countLabel}: effective Rank remains the automated output.`
+      })
+    ];
+  }
+
+  if (entry.key === "core.enhancement.range") {
+    return [
+      fieldEffect({
+        field: "scope",
+        label: "Range",
+        value: `Range ${countLabel}`,
+        summary: `Range ${countLabel}: track external range or target before applying off-self effects.`,
+        requiresTargetTracking: true
+      })
+    ];
+  }
+
+  if (entry.key === "core.enhancement.targets") {
+    return [
+      fieldEffect({
+        field: "targetCount",
+        label: "Targets",
+        value: `Targets ${countLabel}`,
+        summary: `Targets ${countLabel}: track affected targets before applying derived effects.`,
+        requiresTargetTracking: true
+      })
+    ];
+  }
+
+  if (entry.key === "core.limiter.deplete") {
+    return [
+      fieldEffect({
+        field: "energyCost",
+        label: "Energy",
+        value: `Deplete ${countLabel}`,
+        summary: `Deplete ${countLabel}: Energy payment is required before derived effects apply.`,
+        requiresEnergyPayment: true
+      })
+    ];
+  }
+
+  if (entry.key === "core.limiter.permanent") {
+    return [
+      fieldEffect({
+        field: "duration",
+        label: "Permanent",
+        value: `Permanent ${countLabel}`,
+        summary: `Permanent ${countLabel}: derived effect is continuous unless suspended.`
+      })
+    ];
+  }
+
+  if (entry.key === "core.limiter.semi-permanent") {
+    return [
+      fieldEffect({
+        field: "duration",
+        label: "Semi-Permanent",
+        value: `Semi-Permanent ${countLabel}`,
+        summary: `Semi-Permanent ${countLabel}: normally active; track suppression state.`
+      }),
+      trackingEffect(entry, TRACKING_REQUIREMENTS[entry.key]?.(countLabel) ?? fallbackAutomation)
+    ];
+  }
+
+  const trackingRequirement = TRACKING_REQUIREMENTS[entry.key]?.(countLabel);
+  if (trackingRequirement) return [trackingEffect(entry, trackingRequirement)];
+
+  return [
+    fieldEffect({
+      field: "rules",
+      label: entry.name,
+      value: assignments,
+      summary: fallbackAutomation
+    })
+  ];
+}
+
+function combinedFieldValue(effects, field) {
+  return effects
+    .filter((effect) => effect.field === field && effect.value)
+    .map((effect) => effect.value)
+    .join("; ");
+}
+
+function combineAutomation(entries) {
+  const effects = entries.flatMap((entry) => entry.effects.map((effect) => ({
+    ...effect,
+    source: entry.name,
+    sourceType: entry.type,
+    sourceKey: entry.key,
+    assignmentCount: entry.assignmentCount
+  })));
+  const trackingRequirements = effects
+    .filter((effect) => effect.requiresTrackingNotes)
+    .map((effect) => effect.summary)
+    .filter(Boolean);
+  const summaries = effects
+    .map((effect) => effect.summary)
+    .filter(Boolean);
+
+  return {
+    active: effects.length > 0,
+    effects,
+    scope: combinedFieldValue(effects, "scope"),
+    duration: combinedFieldValue(effects, "duration"),
+    targetCount: combinedFieldValue(effects, "targetCount"),
+    energyCost: combinedFieldValue(effects, "energyCost"),
+    effectiveRank: combinedFieldValue(effects, "effectiveRank"),
+    requiresDurationTracking: effects.some((effect) => effect.requiresDurationTracking),
+    requiresTargetTracking: effects.some((effect) => effect.requiresTargetTracking),
+    requiresEnergyPayment: effects.some((effect) => effect.requiresEnergyPayment),
+    requiresTrackingNotes: trackingRequirements.length > 0,
+    trackingRequirements,
+    summaries
+  };
+}
+
 function buildMechanicEntry(reference, type) {
   const assignmentCount = positiveInteger(reference?.assignmentCount);
   const key = referenceKey(reference, type);
   const mechanic = MECHANICS[key] ?? fallbackMechanic(reference, type);
   const rulesNotes = stripHtml(reference?.rulesNotes) || stripHtml(reference?.notes);
-
-  return {
+  const entry = {
     type,
     key,
     name: String(reference?.name || mechanic.label).trim(),
@@ -197,10 +400,16 @@ function buildMechanicEntry(reference, type) {
     assignmentLabel: String(assignmentCount),
     pointModifier: numberOrZero(reference?.pointModifier),
     tag: mechanic.tag(assignmentCount),
-    automation: mechanic.automation,
     rulesNotes,
     unresolved: String(reference?.notes ?? "").toLowerCase().includes("unresolved")
       || (!reference?.sourceId && !reference?.uuid)
+  };
+  const effects = buildAutomationEffects(entry, mechanic.automation);
+
+  return {
+    ...entry,
+    automation: effects.map((effect) => effect.summary).filter(Boolean).join("; ") || mechanic.automation,
+    effects
   };
 }
 
@@ -220,6 +429,7 @@ export function buildAttributeModifierMechanics(item) {
     ...asArray(system.limiterReferences).map((reference) => buildMechanicEntry(reference, "limiter"))
   ];
   const customization = calculateAttributeCustomization(item);
+  const automation = combineAutomation(entries);
   const warnings = entries
     .filter((entry) => entry.unresolved)
     .map((entry) => `${entry.name} mechanic reference is unresolved.`);
@@ -236,6 +446,11 @@ export function buildAttributeModifierMechanics(item) {
     actualRank: customization.actualRank,
     effectiveRank: customization.effectiveRank,
     rankChanged,
+    automation,
     warnings
   };
+}
+
+export function buildAttributeModifierAutomation(item) {
+  return buildAttributeModifierMechanics(item).automation;
 }

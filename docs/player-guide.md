@@ -43,7 +43,7 @@ For classes, set the Class Item level. The actor compares owned Class levels wit
 
 Attributes and Defects work best as owned Items. Edit the Item rank and cost or point-return fields, then check Point Summary for the result.
 
-On Attribute and Weapon item sheets, add source-backed Enhancements or Limiters by source ID or UUID in Attribute Customization. Assigned modifiers recalculate effective Rank, show mechanic rows for the incurred changes, and drive derived automation from effective Rank instead of raw Rank. Deplete Limiters require an Energy Cost entry for exact tracked spending; without one, the use card prompts manual Energy tracking.
+On Attribute and Weapon item sheets, add source-backed Enhancements or Limiters by source ID or UUID in Attribute Customization. Assigned modifiers recalculate effective Rank, show mechanic rows for the incurred changes, and drive derived automation from effective Rank instead of raw Rank. Area, Range, Targets, and Duration assignments feed scope, target, and duration tracking; Deplete Limiters require an Energy Cost entry for exact tracked spending, and without one the use card prompts manual Energy tracking.
 
 Attributes, powers, spells, techniques, weapons, and other roll-capable Items can expose sheet action buttons:
 
@@ -62,7 +62,7 @@ On the Combat tab, enter common attacks with weapon name, attack modifier, attac
 Useful controls:
 
 - Ability buttons roll ability checks.
-- Quick Rolls roll ability checks, proficient checks, or configured checks with DC and bonus. When a DC is entered, the chat card shows the target and margin.
+- Quick Rolls roll ability checks, proficient checks, or configured checks with DC and bonus. When a DC is entered, the chat card shows the target and margin. The Dialog button opens the same controls in a modal with an optional custom label.
 - Saving throw buttons roll ability saves with optional proficiency.
 - Initiative rolls the actor's initiative value.
 - Combat Manoeuvres can post Core Rules manoeuvre reminders, roll a selected common attack with the manoeuvre's advantage/disadvantage guidance, and track tactical/grapple state against a named target.

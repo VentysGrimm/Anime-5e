@@ -28,6 +28,7 @@ import {
   calculateEffectiveAttributeRank
 } from "../rules/attribute-modifier-mechanics.mjs";
 import { buildAdventuringRiskChatContent } from "../rules/adventuring-risks.mjs";
+import { showAnime5eRollDialog } from "../apps/roll-dialog.mjs";
 import {
   buildDynamicPowerExpressionChatContent,
   buildDynamicPowerTrackingNote,
@@ -1343,6 +1344,9 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='roll-quick']").forEach((button) => {
       button.addEventListener("click", this._onRollQuick.bind(this));
     });
+    element.querySelectorAll("[data-action='open-roll-dialog']").forEach((button) => {
+      button.addEventListener("click", this._onOpenRollDialog.bind(this));
+    });
     element.querySelectorAll("[data-action='roll-contest']").forEach((button) => {
       button.addEventListener("click", this._onRollContest.bind(this));
     });
@@ -1608,52 +1612,63 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   async _onRollQuick(event) {
     event.preventDefault();
     const panel = event.currentTarget.closest(".quick-roll-panel");
-    const abilityKey = panel?.querySelector("[data-roll-input='ability']")?.value ?? "strength";
-    const modeKey = panel?.querySelector("[data-roll-input='mode']")?.value ?? "ability";
-    const rollMode = panel?.querySelector("[data-roll-input='d20Mode']")?.value ?? "normal";
-    const dc = Number(panel?.querySelector("[data-roll-input='dc']")?.value) || 0;
-    const situationalBonus = Number(panel?.querySelector("[data-roll-input='bonus']")?.value) || 0;
-    const ability = this.actor.system.abilities?.[abilityKey];
+    await this._rollQuickData(this._readQuickRollPanel(panel, "check"));
+  }
+
+  async _onOpenRollDialog(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".quick-roll-panel");
+
+    return showAnime5eRollDialog({
+      actor: this.actor,
+      abilities: Object.entries(ABILITY_LABELS).map(([key, label]) => ({ key, label })),
+      rollModes: Object.entries(ROLL_MODES).map(([key, mode]) => ({ key, label: mode.label })),
+      d20Modes: D20_ROLL_MODES,
+      initial: this._readQuickRollPanel(panel, "check"),
+      onRoll: (data) => this._rollQuickData(data)
+    });
+  }
+
+  _readQuickRollPanel(panel, rollKind = "check") {
+    return {
+      abilityKey: panel?.querySelector("[data-roll-input='ability']")?.value ?? "strength",
+      bonus: Number(panel?.querySelector("[data-roll-input='bonus']")?.value) || 0,
+      dc: Number(panel?.querySelector("[data-roll-input='dc']")?.value) || 0,
+      modeKey: panel?.querySelector("[data-roll-input='mode']")?.value ?? "ability",
+      rollKind,
+      rollMode: panel?.querySelector("[data-roll-input='d20Mode']")?.value ?? "normal"
+    };
+  }
+
+  async _rollQuickData({ abilityKey = "strength", modeKey = "ability", rollMode = "normal", dc = 0, bonus = 0, label = "", rollKind = "check" } = {}) {
+    const normalizedAbilityKey = this.constructor._normalizeAbilityKey(abilityKey) ?? "strength";
+    const ability = this.actor.system.abilities?.[normalizedAbilityKey];
     const mode = ROLL_MODES[modeKey] ?? ROLL_MODES.ability;
     if (!ability) return;
 
     const modifiers = [ability.modifier];
     if (mode.includeProficiency) modifiers.push(this.actor.system.combat?.proficiencyBonus ?? 0);
-    if (situationalBonus) modifiers.push(situationalBonus);
+    if (bonus) modifiers.push(bonus);
 
-    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
-    const dcLabel = dc > 0 ? ` vs DC ${dc}` : "";
+    const abilityLabel = ABILITY_LABELS[normalizedAbilityKey] ?? normalizedAbilityKey;
     const rollState = this._applyWoundPressureRollMode(rollMode);
+    const targetNumber = rollKind === "contest" ? null : Math.max(0, Math.trunc(Number(dc) || 0));
+    const defaultLabel = rollKind === "contest"
+      ? `${mode.label} Contest: ${abilityLabel}`
+      : `${mode.label}: ${abilityLabel}${targetNumber > 0 ? ` vs DC ${targetNumber}` : ""}`;
     // Anime 5E Core Rules pp. 153-156 define checks, saving throws, initiative, and attacks as d20 plus the relevant modifiers.
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${mode.label}: ${abilityLabel}${dcLabel}`, {
+    return this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), label || defaultLabel, {
       mode: rollState.mode,
       details: rollState.details,
-      targetNumber: dc > 0 ? dc : null,
-      showMargin: dc > 0
+      targetNumber: targetNumber > 0 ? targetNumber : null,
+      showMargin: targetNumber > 0
     });
   }
 
   async _onRollContest(event) {
     event.preventDefault();
     const panel = event.currentTarget.closest(".quick-roll-panel");
-    const abilityKey = panel?.querySelector("[data-roll-input='ability']")?.value ?? "strength";
-    const modeKey = panel?.querySelector("[data-roll-input='mode']")?.value ?? "ability";
-    const rollMode = panel?.querySelector("[data-roll-input='d20Mode']")?.value ?? "normal";
-    const situationalBonus = Number(panel?.querySelector("[data-roll-input='bonus']")?.value) || 0;
-    const ability = this.actor.system.abilities?.[abilityKey];
-    const mode = ROLL_MODES[modeKey] ?? ROLL_MODES.ability;
-    if (!ability) return;
-
-    const modifiers = [ability.modifier];
-    if (mode.includeProficiency) modifiers.push(this.actor.system.combat?.proficiencyBonus ?? 0);
-    if (situationalBonus) modifiers.push(situationalBonus);
-
-    const abilityLabel = ABILITY_LABELS[abilityKey] ?? abilityKey;
-    const rollState = this._applyWoundPressureRollMode(rollMode);
-    await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${mode.label} Contest: ${abilityLabel}`, {
-      mode: rollState.mode,
-      details: rollState.details
-    });
+    await this._rollQuickData(this._readQuickRollPanel(panel, "contest"));
   }
 
   async _onRollSavingThrow(event) {

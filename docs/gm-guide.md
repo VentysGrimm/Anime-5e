@@ -60,6 +60,8 @@ The Damage Type Handling panel gives each actor typed immunities, resistances, v
 
 The Dynamic Power Expression panel appears when an actor owns Dynamic Powers or Dynamic Powers - Lesser. Select the owned power, choose the relevant ability, enter the approved effect Rank and Energy cost, then roll the check or post the expression to chat. In Tracked Energy mode, the posted expression spends the entered Energy and records the expression on the owned Item for repeat-effect review.
 
+Attribute Enhancement and Limiter assignments are source-backed mechanics on Attribute and Weapon items. They recalculate effective Rank, feed derived actor effects, and hold affected effects as unapplied when automated scope, target, duration, or Energy requirements still need tracking.
+
 The Combat Manoeuvres controls on actor sheets cover the Core Rules optional manoeuvres from the action chapter. They can post the manoeuvre reference to chat, roll a selected common attack with the manoeuvre's advantage/disadvantage guidance, or track the current tactical/grapple state. Aim and Wait for Opening apply prepared advantage to attack rolls until the state is cleared; Total Defence, Grapple, Lock, Throw, Pin, and Disarm by Grapple stay visible as actor state for the table to adjudicate. Apply DM-facing rulings such as target AC changes, knock-out saves, Weak Point size, and damage adjustment before final damage is resolved.
 
 ## Modules

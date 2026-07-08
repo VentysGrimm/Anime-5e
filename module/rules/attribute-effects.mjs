@@ -208,15 +208,16 @@ export function buildCoreAttributeUsageContext(item, options = {}) {
   const rank = Math.max(0, Math.trunc(numberOrZero(options.rank ?? rankForItem(item))));
   const effectKey = options.effectKey ?? effectKeyForItem(item);
   const energy = resolveCoreAttributeEnergyCost(item, rank);
-  const scope = textValue(system.scope);
-  const duration = textValue(system.duration);
-  const targetCount = textValue(system.targetCount);
+  const modifierMechanics = buildAttributeModifierMechanics(item);
+  const modifierAutomation = modifierMechanics.automation ?? {};
+  const scope = textValue(system.scope) || textValue(modifierAutomation.scope);
+  const duration = textValue(system.duration) || textValue(modifierAutomation.duration);
+  const targetCount = textValue(system.targetCount) || textValue(modifierAutomation.targetCount);
   const durationRemaining = textValue(system.durationRemaining);
   const targets = textValue(system.effectTargets);
   const linkedTarget = textValue(system.linkedActorUuid) || textValue(system.linkedItemUuid) || textValue(system.linkedDocumentUuid);
   const effectActive = system.effectActive !== false;
   const energyPaid = system.energyPaid === true;
-  const modifierMechanics = buildAttributeModifierMechanics(item);
   const blockers = [];
 
   if (!effectActive) blockers.push("not marked active");
@@ -233,7 +234,9 @@ export function buildCoreAttributeUsageContext(item, options = {}) {
     targetCount ? `Targets: ${targetCount}` : null,
     targets ? `Affected: ${targets}` : null,
     !targets && linkedTarget ? "Linked target" : null,
-    modifierMechanics.tags.length ? `Modifiers: ${modifierMechanics.tags.join(", ")}` : null
+    modifierMechanics.tags.length ? `Modifiers: ${modifierMechanics.tags.join(", ")}` : null,
+    modifierAutomation.summaries?.length ? `Automation: ${modifierAutomation.summaries.join("; ")}` : null,
+    modifierAutomation.trackingRequirements?.length ? `Tracking: ${modifierAutomation.trackingRequirements.join("; ")}` : null
   ].filter(Boolean);
 
   return {
@@ -250,6 +253,7 @@ export function buildCoreAttributeUsageContext(item, options = {}) {
     targets,
     linkedTarget,
     modifierMechanics,
+    modifierAutomation,
     blockers,
     summary,
     label: summary.join(" | "),

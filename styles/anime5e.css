@@ -1292,6 +1292,44 @@
   padding: 5px 6px;
 }
 
+.anime5e.roll-dialog,
+.anime5e .roll-dialog-form {
+  display: grid;
+  gap: 10px;
+}
+
+.anime5e .roll-dialog-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+}
+
+.anime5e .roll-dialog-grid label {
+  display: grid;
+  font-size: 0.76rem;
+  font-weight: 800;
+  gap: 3px;
+  text-transform: uppercase;
+}
+
+.anime5e .roll-dialog-grid .wide {
+  grid-column: span 2;
+}
+
+.anime5e .roll-dialog-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-start;
+}
+
+.anime5e .roll-dialog-actions button {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+  justify-content: center;
+  min-height: 30px;
+}
+
 .anime5e .attribute-modifier-group {
   display: grid;
   gap: 6px;
@@ -2055,6 +2093,14 @@
   .anime5e .combat-action-state .wide,
   .anime5e .damage-profile-controls .wide,
   .anime5e .dynamic-power-controls .wide {
+    grid-column: auto;
+  }
+
+  .anime5e .roll-dialog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .anime5e .roll-dialog-grid .wide {
     grid-column: auto;
   }
 
