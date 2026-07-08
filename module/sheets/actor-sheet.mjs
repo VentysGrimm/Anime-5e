@@ -52,7 +52,10 @@ import {
   applyHitPointChange,
   applyShortRestRecovery,
   buildShortRestHitDiceFormula,
+  canUseMajorPlayerRetcon,
   calculateWoundPressure,
+  dramaticFeatEnergyCost,
+  playerRetconEnergyCost,
   summarizeHitDice,
   getEnergyUsageMode
 } from "../rules/resources.mjs";
@@ -1383,6 +1386,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='spend-energy'], [data-action='restore-energy']").forEach((button) => {
       button.addEventListener("click", this._onApplyEnergyChange.bind(this));
     });
+    element.querySelectorAll("[data-action='dramatic-feat']").forEach((button) => {
+      button.addEventListener("click", this._onDramaticFeat.bind(this));
+    });
+    element.querySelectorAll("[data-action='player-retcon']").forEach((button) => {
+      button.addEventListener("click", this._onPlayerRetcon.bind(this));
+    });
     element.querySelectorAll("[data-action='short-rest-recovery']").forEach((button) => {
       button.addEventListener("click", this._onShortRestRecovery.bind(this));
     });
@@ -2458,6 +2467,86 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
     const mode = event.currentTarget.dataset.action === "restore-energy" ? "restore" : "spend";
     await this._applyEnergyChange(amount, mode);
+  }
+
+  async _onDramaticFeat(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".energy-panel");
+    const bonus = Math.max(1, Math.trunc(Number(panel?.querySelector("[data-energy-input='dramaticFeatBonus']")?.value) || 1));
+    const energyCost = dramaticFeatEnergyCost(bonus);
+    const energyResult = await this._spendStoryEnergy(energyCost, "Dramatic Feat");
+    if (!energyResult) return null;
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<article class="anime5e chat-card"><h3>Dramatic Feat</h3><p><strong>${escapeHtml(this.actor.name)}</strong> applies ${formatSigned(bonus)} to a d20 roll after seeing the result.</p>${energyResult.line}<p><small>Anime 5E Fifth Edition Core Rules, PDF p. 176.</small></p></article>`
+    });
+  }
+
+  async _onPlayerRetcon(event) {
+    event.preventDefault();
+    const scale = event.currentTarget.dataset.retconScale === "major" ? "major" : "minor";
+    const title = scale === "major" ? "Major Player Retcon" : "Minor Player Retcon";
+    const canUseMajor = canUseMajorPlayerRetcon({
+      level: this.actor.system?.level,
+      items: this.actor.items?.contents ?? []
+    });
+
+    if (scale === "major" && !canUseMajor) {
+      ui.notifications?.warn("Major Player Retcon requires Level 8+ or the Energised Attribute.");
+      return null;
+    }
+
+    const panel = event.currentTarget.closest(".energy-panel");
+    const detail = String(panel?.querySelector("[data-energy-input='retconDetail']")?.value ?? "").trim();
+    const energyCost = playerRetconEnergyCost(scale);
+    const energyResult = await this._spendStoryEnergy(energyCost, title);
+    if (!energyResult) return null;
+
+    const detailLine = detail ? `<p><strong>Plot Detail:</strong> ${escapeHtml(detail)}</p>` : "";
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<article class="anime5e chat-card"><h3>${title}</h3><p><strong>${escapeHtml(this.actor.name)}</strong> requests a ${scale} plot change with DM permission.</p>${detailLine}${energyResult.line}<p><small>Anime 5E Fifth Edition Core Rules, PDF p. 176.</small></p></article>`
+    });
+  }
+
+  async _spendStoryEnergy(amount, label) {
+    const energyCost = Math.max(0, Math.trunc(Number(amount) || 0));
+    if (!energyCost) {
+      ui.notifications?.warn(`${label} needs an Energy cost.`);
+      return null;
+    }
+
+    const energyMode = getEnergyUsageMode();
+    const energy = this.actor.system?.combat?.energy ?? {};
+    const current = Math.max(0, Number(energy.value) || 0);
+    const max = Math.max(0, Number(energy.max) || 0);
+
+    if (energyMode === ENERGY_USAGE_MODES.disabled) {
+      ui.notifications?.warn("Energy tracking is disabled for this world.");
+      return {
+        paid: false,
+        line: `<p><strong>Energy:</strong> ${energyCost} Energy required; tracking is disabled for this world.</p>`
+      };
+    }
+
+    if (energyMode === ENERGY_USAGE_MODES.manual) {
+      return {
+        paid: false,
+        line: `<p><strong>Energy:</strong> ${energyCost} Energy approved; track payment manually.</p>`
+      };
+    }
+
+    if (current < energyCost) {
+      ui.notifications?.warn(`${this.actor.name} needs ${energyCost} Energy for ${label}, but only has ${current}.`);
+      return null;
+    }
+
+    const change = await applyEnergyChange(this.actor, energyCost, "spend");
+    return {
+      paid: true,
+      line: `<p><strong>Energy:</strong> spent ${change.amount}. EP ${change.current} &rarr; ${change.next} / ${max || change.max}.</p>`
+    };
   }
 
   async _applyEnergyChange(amount, mode) {

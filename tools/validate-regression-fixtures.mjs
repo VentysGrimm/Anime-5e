@@ -24,7 +24,10 @@ import {
   applyLongRestRecovery,
   applyShortRestRecovery,
   buildShortRestHitDiceFormula,
+  canUseMajorPlayerRetcon,
   calculateWoundPressure,
+  dramaticFeatEnergyCost,
+  playerRetconEnergyCost,
   summarizeHitDice
 } from "../module/rules/resources.mjs";
 
@@ -458,6 +461,32 @@ async function validateResourceRecoveryRules() {
   assertEqual("Long rest actor Hit Dice spent", longRestActor.system.combat.hitDice.spent, 1);
 }
 
+function validateStoryEnergyRules() {
+  assertEqual("Dramatic Feat +1 Energy cost", dramaticFeatEnergyCost(1), 5);
+  assertEqual("Dramatic Feat +3 Energy cost", dramaticFeatEnergyCost(3), 15);
+  assertEqual("Minor Player Retcon Energy cost", playerRetconEnergyCost("minor"), 10);
+  assertEqual("Major Player Retcon Energy cost", playerRetconEnergyCost("major"), 50);
+  assertEqual("Major Player Retcon low-level gate", canUseMajorPlayerRetcon({
+    level: 7,
+    items: []
+  }), false);
+  assertEqual("Major Player Retcon level gate", canUseMajorPlayerRetcon({
+    level: 8,
+    items: []
+  }), true);
+  assertEqual("Major Player Retcon Energised gate", canUseMajorPlayerRetcon({
+    level: 3,
+    items: [
+      {
+        type: "attribute",
+        system: {
+          sourceId: "core.attribute.energised"
+        }
+      }
+    ]
+  }), true);
+}
+
 function validatePregens() {
   const source = readJson(repoPath("modules/anime5e-game-screen-adventure/data/sources/pregen-characters.json"));
   const documentsBySourceId = new Map(getDocuments(source).map((document) => [sourceIdOf(document), document]));
@@ -563,6 +592,7 @@ validateCriticalRollRules();
 validateCombatManoeuvreStateRules();
 await validateDamageTypeRules();
 await validateResourceRecoveryRules();
+validateStoryEnergyRules();
 validatePregens();
 validateActorSources();
 validateContentModules();

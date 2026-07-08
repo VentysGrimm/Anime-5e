@@ -859,6 +859,19 @@
               <button type="button" class="roll-action" data-action="spend-energy"><i class="fas fa-bolt"></i> Spend</button>
               <button type="button" class="roll-action" data-action="restore-energy"><i class="fas fa-plus"></i> Restore</button>
             </div>
+            <div class="story-energy-controls">
+              <label>
+                Feat Bonus
+                <input type="number" data-energy-input="dramaticFeatBonus" value="1" min="1">
+              </label>
+              <button type="button" class="roll-action" data-action="dramatic-feat"><i class="fas fa-star"></i> Dramatic Feat</button>
+              <label class="wide">
+                Retcon Detail
+                <input type="text" data-energy-input="retconDetail">
+              </label>
+              <button type="button" class="roll-action" data-action="player-retcon" data-retcon-scale="minor"><i class="fas fa-pen-nib"></i> Minor Retcon</button>
+              <button type="button" class="roll-action" data-action="player-retcon" data-retcon-scale="major"><i class="fas fa-feather-alt"></i> Major Retcon</button>
+            </div>
             {{/if}}
           </section>
           <section class="rest-recovery-panel" aria-label="Rest And Recovery">

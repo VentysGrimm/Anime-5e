@@ -119,6 +119,7 @@ The source-material directory is intentionally ignored for GitHub publishing; th
 - Attack roll chat cards now support Core Rules critical guidance when enabled: margin-based double/triple-damage critical hits, margin-based critical failures, suggested Table 22 critical failure consequences, and optional natural 20/natural 1 alternatives.
 - Common attack rows now support Core Rules cover handling for half cover, three-quarters cover, and total cover reminders on attack and combat manoeuvre roll chat cards.
 - Actor sheets now include Rest & Recovery controls for Core Rules short rests, long rests, Hit Dice spending/regain, Energy recovery, and one-quarter-HP wound-pressure status. The Apply Wound Pressure Penalties world setting routes low-HP d20 rolls through disadvantage while preserving advantage/disadvantage cancellation.
+- Actor sheets now include Core Rules Dramatic Feat and Player Retcon Energy actions, with 5 Energy per +1 Dramatic Feat bonus, 10 Energy minor Retcons, and 50 Energy major Retcons gated to Level 8+ or Energised actors.
 
 ## Missing Files Required For Load
 

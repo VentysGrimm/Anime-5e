@@ -54,6 +54,8 @@ Common attack rows include a cover selector. Half cover adds +2 to the target Ar
 
 Use Tracked Energy when the table wants the sheet to spend and restore Energy directly. Use Manual when Energy is a chat note or table decision. Use Disabled when the campaign does not use Energy bookkeeping.
 
+The Energy panel includes Core Rules Dramatic Feat and Player Retcon actions. Dramatic Feats spend 5 Energy per +1 after a d20 roll; minor Retcons cost 10 Energy, and major Retcons cost 50 Energy with the source-level gate of Level 8+ or the Energised Attribute.
+
 The Rest & Recovery panel automates the Core Rules recovery loop: short rests can spend available Hit Dice for HP, roll 1d8 Energy recovery when Energy is enabled, and post the result to chat; long rests restore HP, restore Energy when enabled, and regain spent Hit Dice up to half the actor's total. The wound-pressure status line shows the one-quarter-HP threshold even when the optional penalty setting is off.
 
 The Damage Type Handling panel gives each actor typed immunities, resistances, vulnerabilities, and flat damage reduction. Use the same labels that appear in attack rows and source stat blocks, such as fire, poison, slashing, or standard. When damage is applied, the chat card reports immunity, halving, doubling, or reduction before temporary HP and current HP are updated.

@@ -181,6 +181,12 @@ export const ENERGY_USAGE_MODES = {
   disabled: "disabled"
 };
 
+export const DRAMATIC_FEAT_ENERGY_PER_BONUS = 5;
+export const PLAYER_RETCON_ENERGY_COSTS = {
+  minor: 10,
+  major: 50
+};
+
 export function getEnergyUsageMode() {
   try {
     const mode = game.settings.get("anime5e", "energyUsageMode");
@@ -188,6 +194,32 @@ export function getEnergyUsageMode() {
   } catch {
     return ENERGY_USAGE_MODES.tracked;
   }
+}
+
+export function dramaticFeatEnergyCost(bonus = 1) {
+  return safeAmount(bonus) * DRAMATIC_FEAT_ENERGY_PER_BONUS;
+}
+
+export function playerRetconEnergyCost(scale = "minor") {
+  return PLAYER_RETCON_ENERGY_COSTS[scale] ?? PLAYER_RETCON_ENERGY_COSTS.minor;
+}
+
+function sourceIdForItem(item) {
+  return String(
+    item?.system?.sourceId
+      ?? item?.system?.importId
+      ?? item?.flags?.anime5e?.sourceId
+      ?? item?.flags?.anime5e?.source?.importId
+      ?? ""
+  ).trim().toLowerCase();
+}
+
+export function hasEnergisedAttribute(items = []) {
+  return (items ?? []).some((item) => item?.type === "attribute" && sourceIdForItem(item) === "core.attribute.energised");
+}
+
+export function canUseMajorPlayerRetcon({ level = 1, items = [] } = {}) {
+  return safeAmount(level) >= 8 || hasEnergisedAttribute(items);
 }
 
 export async function applyHitPointChange(actor, amount, mode = "damage", options = {}) {

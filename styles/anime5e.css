@@ -1795,6 +1795,7 @@
 .anime5e .damage-controls,
 .anime5e .damage-profile-controls,
 .anime5e .energy-controls,
+.anime5e .story-energy-controls,
 .anime5e .rest-controls,
 .anime5e .rest-state-controls {
   align-items: end;
@@ -1805,6 +1806,10 @@
 
 .anime5e .energy-controls {
   grid-template-columns: minmax(76px, 1fr) auto auto;
+}
+
+.anime5e .story-energy-controls {
+  grid-template-columns: minmax(82px, 0.7fr) auto minmax(150px, 1.3fr) auto auto;
 }
 
 .anime5e .rest-controls {
@@ -1840,6 +1845,7 @@
 .anime5e .damage-controls label,
 .anime5e .damage-profile-controls label,
 .anime5e .energy-controls label,
+.anime5e .story-energy-controls label,
 .anime5e .rest-controls label,
 .anime5e .rest-state-controls label {
   display: grid;
@@ -1852,6 +1858,7 @@
 .anime5e .damage-controls input,
 .anime5e .damage-profile-controls input,
 .anime5e .energy-controls input,
+.anime5e .story-energy-controls input,
 .anime5e .rest-controls input,
 .anime5e .rest-state-controls input {
   min-width: 0;
@@ -1859,6 +1866,10 @@
 
 .anime5e .damage-profile-controls .wide {
   grid-column: span 2;
+}
+
+.anime5e .story-energy-controls .wide {
+  grid-column: auto;
 }
 
 .anime5e .save-roll-panel {
@@ -2078,6 +2089,7 @@
   .anime5e .rest-summary,
   .anime5e .ledger-heading,
   .anime5e .skill-roll-controls,
+  .anime5e .story-energy-controls,
   .anime5e .species-workflow-list li,
   .anime5e .species-workflow-paths,
   .anime5e .species-workflow-summary,
@@ -2092,7 +2104,8 @@
 
   .anime5e .combat-action-state .wide,
   .anime5e .damage-profile-controls .wide,
-  .anime5e .dynamic-power-controls .wide {
+  .anime5e .dynamic-power-controls .wide,
+  .anime5e .story-energy-controls .wide {
     grid-column: auto;
   }
 
