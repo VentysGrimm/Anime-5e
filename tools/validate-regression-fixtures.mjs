@@ -7,6 +7,11 @@ import {
   buildAttributeModifierMechanics,
   calculateEffectiveAttributeRank
 } from "../module/rules/attribute-modifier-mechanics.mjs";
+import {
+  buildCombatManoeuvreState,
+  getCombatManoeuvre,
+  manoeuvreGrantsTacticalAttackBonus
+} from "../module/rules/combat-manoeuvres.mjs";
 import { calculateAttributeCustomization } from "../module/rules/points.mjs";
 import {
   buildCriticalRollDetails,
@@ -285,6 +290,22 @@ function validateCriticalRollRules() {
   if (!failureDetails.some((detail) => detail.label === "Optional Natural 1")) fail("Critical failure details did not include the optional natural 1 note.");
 }
 
+function validateCombatManoeuvreStateRules() {
+  const aim = getCombatManoeuvre("aim");
+  const aimState = buildCombatManoeuvreState(aim, { attackName: "Bow", target: "Bugbear" });
+  assertEqual("Aim tactical state label", aimState.tacticalAction, "Aiming");
+  assertEqual("Aim tactical state target", aimState.target, "Bugbear");
+  if (!aimState.notes.includes("Attack row: Bow")) fail("Aim state did not preserve attack-row context.");
+  assertEqual("Aim grants tactical attack bonus", manoeuvreGrantsTacticalAttackBonus("aim"), true);
+  assertEqual("Total Defence does not grant outgoing attack bonus", manoeuvreGrantsTacticalAttackBonus("total-defence"), false);
+
+  const grapple = getCombatManoeuvre("grapple-pin");
+  const grappleState = buildCombatManoeuvreState(grapple, { target: "Ogre" });
+  assertEqual("Grapple pin state label", grappleState.grappleState, "Pinned");
+  assertEqual("Grapple pin target", grappleState.target, "Ogre");
+  if (!grappleState.notes.includes("pinned target suffers disadvantage")) fail("Grapple pin state did not include source-backed effect notes.");
+}
+
 async function validateResourceRecoveryRules() {
   const restSystem = {
     abilities: { constitution: { modifier: 2 } },
@@ -447,6 +468,7 @@ function validatePackage() {
 validateScratchCharacters();
 validateAttributeCustomizationRules();
 validateCriticalRollRules();
+validateCombatManoeuvreStateRules();
 await validateResourceRecoveryRules();
 validatePregens();
 validateActorSources();

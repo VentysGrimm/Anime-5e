@@ -699,9 +699,30 @@
                   {{/each}}
                 </select>
               </label>
+              <label>
+                Target
+                <input type="text" data-manoeuvre-input="target" value="{{combatActionState.target}}">
+              </label>
               <button type="button" class="roll-action" data-action="roll-combat-manoeuvre"><i class="fas fa-dice-d20"></i> Roll</button>
               <button type="button" class="roll-action" data-action="post-combat-manoeuvre"><i class="fas fa-comment"></i> Post</button>
+              <button type="button" class="roll-action" data-action="track-combat-manoeuvre"><i class="fas fa-thumbtack"></i> Track</button>
             </div>
+            <div class="combat-action-state">
+              <label>
+                Tactical
+                <input type="text" name="system.combat.actionState.tacticalAction" value="{{system.combat.actionState.tacticalAction}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label>
+                Grapple
+                <input type="text" name="system.combat.actionState.grappleState" value="{{system.combat.actionState.grappleState}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <label class="wide">
+                Notes
+                <input type="text" name="system.combat.actionState.notes" value="{{system.combat.actionState.notes}}" {{#unless editable}}disabled{{/unless}}>
+              </label>
+              <button type="button" class="roll-action" data-action="clear-combat-action-state"><i class="fas fa-eraser"></i> Clear</button>
+            </div>
+            <p class="sheet-warning">{{combatActionState.summary}}</p>
           </section>
           <div class="folio-table attack-table action-table">
             <div class="table-header">Weapon</div>

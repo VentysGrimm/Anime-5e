@@ -58,7 +58,7 @@ The Rest & Recovery panel automates the Core Rules recovery loop: short rests ca
 
 The Dynamic Power Expression panel appears when an actor owns Dynamic Powers or Dynamic Powers - Lesser. Select the owned power, choose the relevant ability, enter the approved effect Rank and Energy cost, then roll the check or post the expression to chat. In Tracked Energy mode, the posted expression spends the entered Energy and records the expression on the owned Item for repeat-effect review.
 
-The Combat Manoeuvres controls on actor sheets cover the Core Rules optional manoeuvres from the action chapter. They can post the manoeuvre reference to chat or roll a selected common attack with the manoeuvre's advantage/disadvantage guidance. Apply DM-facing rulings such as target AC changes, knock-out saves, Weak Point size, and damage adjustment before final damage is resolved.
+The Combat Manoeuvres controls on actor sheets cover the Core Rules optional manoeuvres from the action chapter. They can post the manoeuvre reference to chat, roll a selected common attack with the manoeuvre's advantage/disadvantage guidance, or track the current tactical/grapple state. Aim and Wait for Opening apply prepared advantage to attack rolls until the state is cleared; Total Defence, Grapple, Lock, Throw, Pin, and Disarm by Grapple stay visible as actor state for the table to adjudicate. Apply DM-facing rulings such as target AC changes, knock-out saves, Weak Point size, and damage adjustment before final damage is resolved.
 
 ## Modules
 
@@ -83,6 +83,6 @@ Core content belongs in core packs. Optional book content belongs in supplementa
 - Import or refresh compendiums after pulling new source changes.
 - Open every pack you expect to use that session.
 - Confirm PCs have no unresolved point warnings unless the ruling is documented.
-- Roll one PC attack, one monster attack, one ability check, one save, and one Item action.
+- Roll one PC attack, one monster attack, one ability check, one save, one Item action, and one tracked tactical or grappling manoeuvre.
 - Confirm Energy mode, wound-pressure handling, rest recovery, and combat roll settings match the campaign.
 - Record any console errors, broken source references, or missing pack entries before updating release issues.

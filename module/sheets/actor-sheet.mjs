@@ -1,9 +1,12 @@
 import { buildD20Formula, evaluateAnime5eFormula, renderRollFlavor, rollAnime5eFormula } from "../rules/rolls.mjs";
 import {
   buildCombatManoeuvreChatContent,
+  buildCombatManoeuvreState,
+  buildCombatManoeuvreStateChatContent,
   combineD20Modes,
   getCombatManoeuvre,
-  getCombatManoeuvreGroups
+  getCombatManoeuvreGroups,
+  manoeuvreGrantsTacticalAttackBonus
 } from "../rules/combat-manoeuvres.mjs";
 import {
   applySizeTemplateItem,
@@ -558,6 +561,7 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.combatEffects = this.constructor._prepareCombatEffectContext(system);
     context.energyMode = this.constructor._prepareEnergyModeContext();
     context.restRecovery = this.constructor._prepareRestRecoveryContext(system);
+    context.combatActionState = this.constructor._prepareCombatActionStateContext(system);
     context.dynamicPowers = this.constructor._prepareDynamicPowerContext(items);
     context.creatureProfile = this.constructor._prepareCreatureProfileContext(this.actor, system, context.pointSummary);
     context.transportProfile = this.constructor._prepareTransportProfileContext(this.actor, system);
@@ -832,6 +836,26 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         enabled: woundPressureEnabled,
         status: woundPressureStatus
       }
+    };
+  }
+
+  static _prepareCombatActionStateContext(system) {
+    const state = system.combat?.actionState ?? {};
+    const active = hasText(state.tacticalAction)
+      || hasText(state.grappleState)
+      || hasText(state.target)
+      || hasText(state.notes);
+
+    return {
+      ...state,
+      active,
+      summary: active
+        ? [
+          state.tacticalAction ? `Tactical: ${state.tacticalAction}` : "",
+          state.grappleState ? `Grapple: ${state.grappleState}` : "",
+          state.target ? `Target: ${state.target}` : ""
+        ].filter(Boolean).join(" | ")
+        : "No tracked tactical or grapple state."
     };
   }
 
@@ -1336,6 +1360,12 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     element.querySelectorAll("[data-action='post-combat-manoeuvre']").forEach((button) => {
       button.addEventListener("click", this._onPostCombatManoeuvre.bind(this));
     });
+    element.querySelectorAll("[data-action='track-combat-manoeuvre']").forEach((button) => {
+      button.addEventListener("click", this._onTrackCombatManoeuvre.bind(this));
+    });
+    element.querySelectorAll("[data-action='clear-combat-action-state']").forEach((button) => {
+      button.addEventListener("click", this._onClearCombatActionState.bind(this));
+    });
     element.querySelectorAll("[data-action='apply-damage'], [data-action='apply-healing']").forEach((button) => {
       button.addEventListener("click", this._onApplyHitPointChange.bind(this));
     });
@@ -1504,6 +1534,24 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     };
   }
 
+  _applyTacticalActionRollMode(mode = "normal", details = []) {
+    const state = this.actor.system.combat?.actionState ?? {};
+    if (!hasText(state.tacticalAction) || !manoeuvreGrantsTacticalAttackBonus(state.sourceId)) return { mode, details };
+
+    const resolvedMode = combineD20Modes(mode, "advantage");
+    const modeLine = resolvedMode === mode ? "advantage applied" : `${mode} resolves as ${resolvedMode}`;
+    return {
+      mode: resolvedMode,
+      details: [
+        ...details,
+        {
+          label: "Tactical Action",
+          value: `${state.tacticalAction || "Prepared action"}: ${modeLine}. Clear the state after the prepared attack is spent.`
+        }
+      ]
+    };
+  }
+
   async _onRollAbility(event) {
     event.preventDefault();
     const abilityKey = event.currentTarget.dataset.ability;
@@ -1654,7 +1702,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       rangePenalty ? { label: "Range Penalty", value: `-${rangePenalty}` } : null,
       ...coverDetails(attack)
     ].filter(Boolean);
-    const rollState = this._applyWoundPressureRollMode(rollMode, details);
+    const tacticalState = this._applyTacticalActionRollMode(rollMode, details);
+    const rollState = this._applyWoundPressureRollMode(tacticalState.mode, tacticalState.details);
 
     await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${attack.weapon || "Attack"} Roll`, {
       mode: rollState.mode,
@@ -1723,7 +1772,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       ...coverDetails(attack),
       { label: "Source", value: `Core Rules PDF p. ${manoeuvre.sourcePage}` }
     ].filter(Boolean);
-    const rollState = this._applyWoundPressureRollMode(rollMode, details);
+    const tacticalState = this._applyTacticalActionRollMode(rollMode, details);
+    const rollState = this._applyWoundPressureRollMode(tacticalState.mode, tacticalState.details);
 
     await this._rollFormula(buildD20Formula(modifiers, { mode: rollState.mode }), `${attackName}: ${manoeuvre.label}`, {
       mode: rollState.mode,
@@ -1748,6 +1798,49 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     return ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       content: buildCombatManoeuvreChatContent(manoeuvre, { actor: this.actor, attackName, rollMode })
+    });
+  }
+
+  async _onTrackCombatManoeuvre(event) {
+    event.preventDefault();
+    const panel = event.currentTarget.closest(".combat-manoeuvre-panel");
+    const manoeuvre = getCombatManoeuvre(panel?.querySelector("[data-manoeuvre-input='id']")?.value);
+    if (!manoeuvre) return;
+
+    const attackKey = panel?.querySelector("[data-manoeuvre-input='attack']")?.value ?? "";
+    const attack = attackKey ? this.actor.system.combat?.attacks?.[attackKey] : null;
+    const attackName = attack?.weapon || "";
+    const target = panel?.querySelector("[data-manoeuvre-input='target']")?.value
+      ?? this.actor.system.combat?.actionState?.target
+      ?? "";
+    const state = buildCombatManoeuvreState(manoeuvre, { attackName, target });
+    if (!state) return;
+
+    await this.actor.update({
+      "system.combat.actionState.tacticalAction": state.tacticalAction,
+      "system.combat.actionState.grappleState": state.grappleState,
+      "system.combat.actionState.target": state.target,
+      "system.combat.actionState.notes": state.notes,
+      "system.combat.actionState.sourceId": state.sourceId,
+      "system.combat.actionState.sourcePage": state.sourcePage
+    });
+
+    return ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: buildCombatManoeuvreStateChatContent(manoeuvre, state, { actor: this.actor })
+    });
+  }
+
+  async _onClearCombatActionState(event) {
+    event.preventDefault();
+
+    await this.actor.update({
+      "system.combat.actionState.tacticalAction": "",
+      "system.combat.actionState.grappleState": "",
+      "system.combat.actionState.target": "",
+      "system.combat.actionState.notes": "",
+      "system.combat.actionState.sourceId": "",
+      "system.combat.actionState.sourcePage": null
     });
   }
 
@@ -1946,7 +2039,8 @@ export class Anime5eActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       { label: "Range", value: item.system?.range },
       sizeAttackModifier ? { label: "Size", value: formatSigned(sizeAttackModifier) } : null
     ].filter(Boolean);
-    const rollState = this._applyWoundPressureRollMode("normal", details);
+    const tacticalState = this._applyTacticalActionRollMode("normal", details);
+    const rollState = this._applyWoundPressureRollMode(tacticalState.mode, tacticalState.details);
     await this._rollFormula(buildD20Formula([modifier, sizeAttackModifier].filter(Boolean), { mode: rollState.mode }), `${item.name} Attack`, {
       mode: rollState.mode,
       details: rollState.details,

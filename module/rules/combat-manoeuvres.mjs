@@ -218,6 +218,19 @@ const COMBAT_MANOEUVRES = [
 
 const MANOEUVRES_BY_ID = new Map(COMBAT_MANOEUVRES.map((entry) => [entry.id, entry]));
 
+const STATE_LABELS = {
+  aim: "Aiming",
+  "wait-opening": "Waiting For Opening",
+  "total-defence": "Total Defence",
+  grapple: "Grappling",
+  "grapple-lock": "Locked",
+  "grapple-throw": "Thrown / Released",
+  "grapple-pin": "Pinned",
+  "grapple-disarm": "Grappling Weapon"
+};
+
+const TACTICAL_ATTACK_BONUS_IDS = new Set(["aim", "wait-opening"]);
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -255,6 +268,36 @@ export function combineD20Modes(...modes) {
   return normalized[0];
 }
 
+export function manoeuvreGrantsTacticalAttackBonus(id) {
+  return TACTICAL_ATTACK_BONUS_IDS.has(id);
+}
+
+export function buildCombatManoeuvreState(manoeuvre, { target = "", attackName = "" } = {}) {
+  if (!manoeuvre) return null;
+
+  const targetName = String(target ?? "").trim();
+  const targetLine = targetName ? ` Target: ${targetName}.` : "";
+  const attackLine = attackName ? ` Attack row: ${attackName}.` : "";
+  const state = {
+    sourceId: manoeuvre.id,
+    sourcePage: manoeuvre.sourcePage,
+    target: targetName,
+    tacticalAction: "",
+    grappleState: "",
+    notes: `${manoeuvre.summary}${targetLine}${attackLine}`.trim()
+  };
+
+  if (manoeuvre.category === "tactical") {
+    state.tacticalAction = STATE_LABELS[manoeuvre.id] ?? manoeuvre.label;
+  } else if (manoeuvre.category === "grappling") {
+    state.grappleState = STATE_LABELS[manoeuvre.id] ?? manoeuvre.label;
+  } else {
+    state.notes = `${manoeuvre.label}: ${state.notes}`;
+  }
+
+  return state;
+}
+
 export function buildCombatManoeuvreChatContent(manoeuvre, { actor = null, rollMode = null, attackName = "" } = {}) {
   if (!manoeuvre) return "";
 
@@ -274,6 +317,29 @@ export function buildCombatManoeuvreChatContent(manoeuvre, { actor = null, rollM
     <article class="anime5e chat-card roll-card combat-manoeuvre-card">
       <h3>${escapeHtml(manoeuvre.label)}</h3>
       <p>${escapeHtml(manoeuvre.summary)}</p>
+      <dl class="roll-summary">${rows}</dl>
+    </article>
+  `;
+}
+
+export function buildCombatManoeuvreStateChatContent(manoeuvre, state, { actor = null } = {}) {
+  if (!manoeuvre || !state) return "";
+
+  const details = [
+    { label: "Actor", value: actor?.name ?? "" },
+    { label: "Tactical", value: state.tacticalAction },
+    { label: "Grapple", value: state.grappleState },
+    { label: "Target", value: state.target },
+    { label: "Source", value: `${SOURCE_BOOK}, PDF p. ${manoeuvre.sourcePage}` }
+  ].filter((detail) => detail.value);
+  const rows = details
+    .map((detail) => `<dt>${escapeHtml(detail.label)}</dt><dd>${escapeHtml(detail.value)}</dd>`)
+    .join("");
+
+  return `
+    <article class="anime5e chat-card roll-card combat-manoeuvre-card">
+      <h3>${escapeHtml(manoeuvre.label)} State</h3>
+      <p>${escapeHtml(state.notes)}</p>
       <dl class="roll-summary">${rows}</dl>
     </article>
   `;

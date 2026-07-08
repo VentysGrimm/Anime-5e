@@ -65,10 +65,12 @@ Useful controls:
 - Quick Rolls roll ability checks, proficient checks, or configured checks with DC and bonus. When a DC is entered, the chat card shows the target and margin.
 - Saving throw buttons roll ability saves with optional proficiency.
 - Initiative rolls the actor's initiative value.
-- Combat Manoeuvres can post Core Rules manoeuvre reminders or roll a selected common attack with the manoeuvre's advantage/disadvantage guidance.
+- Combat Manoeuvres can post Core Rules manoeuvre reminders, roll a selected common attack with the manoeuvre's advantage/disadvantage guidance, and track tactical/grapple state against a named target.
 - Attack and Damage buttons roll common attack rows.
 - Owned weapon, Attribute, power, spell, and technique actions roll from their Item fields.
 - Rest & Recovery rolls short-rest Hit Dice healing, restores 1d8 Energy when Energy tracking is enabled, restores all HP/Energy on a long rest, and regains spent Hit Dice up to half the character's total.
+
+When Aim or Wait for Opening is tracked, the next attack roll gains the prepared tactical advantage in the roll card. Clear the tracked state after the prepared attack is spent. Grapple, Lock, Throw, Pin, and Disarm by Grapple can be tracked with the current target so the held, pinned, or released state stays visible on the actor sheet.
 
 Attack roll chat cards apply half cover and three-quarters cover to the target Armour Class before showing margin or critical guidance. Total cover leaves the target Armour Class unchanged and adds a reminder that the target usually cannot be attacked directly.
 

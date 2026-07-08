@@ -133,6 +133,17 @@ function attackEntryField() {
   });
 }
 
+function combatActionStateField() {
+  return new fields.SchemaField({
+    tacticalAction: textField(),
+    grappleState: textField(),
+    target: textField(),
+    notes: textField(),
+    sourceId: textField(),
+    sourcePage: optionalNumberField()
+  });
+}
+
 class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
   static LOCALIZATION_PREFIXES = ["ANIME5E.Actor"];
 
@@ -284,7 +295,8 @@ class Anime5eBaseActorData extends foundry.abstract.TypeDataModel {
           primary: attackEntryField(),
           secondary: attackEntryField(),
           tertiary: attackEntryField()
-        })
+        }),
+        actionState: combatActionStateField()
       }),
       progression: new fields.SchemaField({
         classes: new fields.SchemaField({

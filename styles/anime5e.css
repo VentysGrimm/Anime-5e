@@ -1611,6 +1611,7 @@
 .anime5e .quick-roll-controls,
 .anime5e .movement-mode-grid,
 .anime5e .combat-manoeuvre-controls,
+.anime5e .combat-action-state,
 .anime5e .dynamic-power-controls {
   align-items: end;
   display: grid;
@@ -1621,12 +1622,17 @@
 .anime5e .quick-roll-controls label,
 .anime5e .movement-mode-grid label,
 .anime5e .combat-manoeuvre-controls label,
+.anime5e .combat-action-state label,
 .anime5e .dynamic-power-controls label {
   display: grid;
   font-size: 0.78rem;
   font-weight: 800;
   gap: 3px;
   text-transform: uppercase;
+}
+
+.anime5e .combat-action-state .wide {
+  grid-column: span 2;
 }
 
 .anime5e .dynamic-power-controls .wide {
@@ -2015,6 +2021,7 @@
   .anime5e .encounter-threat-result-grid,
   .anime5e .folio-page-heading,
   .anime5e .combat-manoeuvre-controls,
+  .anime5e .combat-action-state,
   .anime5e .quick-roll-controls,
   .anime5e .movement-mode-grid,
   .anime5e .save-roll-controls,
@@ -2035,6 +2042,7 @@
     grid-template-columns: 1fr;
   }
 
+  .anime5e .combat-action-state .wide,
   .anime5e .dynamic-power-controls .wide {
     grid-column: auto;
   }
